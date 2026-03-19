@@ -35,23 +35,21 @@ export default async function LoginPage() {
         </div>
       </div>
 
-      {/* Image Section - RIGHT with Text on LEFT side of image */}
+      {/* Image Section - RIGHT with Text on LEFT side - NO OVERLAY */}
       <div 
         className="flex-1 bg-cover bg-center relative order-2"
         style={{ backgroundImage: `url('/login-bg.png')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
-        
-        {/* Text positioned on LEFT side of the image */}
+        {/* Text positioned on LEFT side of the image - BLUE TEXT */}
         <div className="absolute left-0 top-0 bottom-0 flex items-center">
-          <div className="text-white pl-16 pr-8 max-w-md">
+          <div className="text-blue-600 pl-16 pr-8 max-w-md">
             <h2 className="text-4xl font-light tracking-wider mb-6">
               Market Intelligence
             </h2>
-            <p className="text-lg text-white/90 leading-relaxed mb-4">
+            <p className="text-lg leading-relaxed mb-4">
               Real-time insights across crypto, medtech, and emerging markets.
             </p>
-            <div className="flex items-center gap-8 mt-8 text-sm text-white/70">
+            <div className="flex items-center gap-8 mt-8 text-sm">
               <div className="text-center">
                 <div className="text-2xl font-light">50+</div>
                 <div>Crypto Assets</div>
