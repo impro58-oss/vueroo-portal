@@ -12,13 +12,15 @@ export default async function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
+      {/* Image Section */}
       <div 
         className="flex-1 bg-cover bg-center relative"
-        style={{ backgroundImage: `url('/ocean-waves.png')` }}
+        style={{ backgroundImage: `url('/login-bg.png')` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/30" />
       </div>
 
+      {/* Login Section */}
       <div className="w-[420px] bg-white flex flex-col justify-center px-12 shadow-[-20px_0_60px_rgba(0,0,0,0.3)]">
         <div className="mb-8">
           <h1 className="text-3xl font-light tracking-[4px] text-gray-900">
@@ -27,10 +29,17 @@ export default async function LoginPage() {
           <p className="text-sm text-gray-500 mt-2 tracking-[2px] uppercase">
             Intelligence Platform
           </p>
+          <p className="text-xs text-gray-400 mt-4 italic">
+            "Intelligence for the Sovereign Investor"
+          </p>
         </div>
+
         <LoginForm />
+
         <div className="mt-8 text-center">
-          <p className="text-xs text-gray-400">Private Access Only</p>
+          <p className="text-xs text-gray-400">
+            Private Access Only
+          </p>
         </div>
       </div>
     </div>
