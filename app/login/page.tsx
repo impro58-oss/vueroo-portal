@@ -12,16 +12,8 @@ export default async function LoginPage() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Image Section */}
-      <div 
-        className="flex-1 bg-cover bg-center relative"
-        style={{ backgroundImage: `url('/login-bg.png')` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/30" />
-      </div>
-
-      {/* Login Section */}
-      <div className="w-[420px] bg-white flex flex-col justify-center px-12 shadow-[-20px_0_60px_rgba(0,0,0,0.3)]">
+      {/* Login Section - LEFT */}
+      <div className="w-[420px] bg-white flex flex-col justify-center px-12 shadow-[20px_0_60px_rgba(0,0,0,0.3)] order-1">
         <div className="mb-8">
           <h1 className="text-3xl font-light tracking-[4px] text-gray-900">
             VUER<span className="font-semibold text-blue-600">OO</span>
@@ -41,6 +33,14 @@ export default async function LoginPage() {
             Private Access Only
           </p>
         </div>
+      </div>
+
+      {/* Image Section - RIGHT */}
+      <div 
+        className="flex-1 bg-cover bg-center relative order-2"
+        style={{ backgroundImage: `url('/login-bg.png')` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-black/30" />
       </div>
     </div>
   )
