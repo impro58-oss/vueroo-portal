@@ -35,28 +35,31 @@ export default async function LoginPage() {
         </div>
       </div>
 
-      {/* Image Section - RIGHT with Text Overlay */}
+      {/* Image Section - RIGHT with Text on LEFT side of image */}
       <div 
-        className="flex-1 bg-cover bg-center relative order-2 flex items-center justify-center"
+        className="flex-1 bg-cover bg-center relative order-2"
         style={{ backgroundImage: `url('/login-bg.png')` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/30 to-transparent" />
-        <{/* Text overlay on image */}
-        <div className="relative z-10 text-white text-center px-12 max-w-lg">
-          <h2 className="text-4xl font-light tracking-wider mb-6">
-            Market Intelligence
-          </h2>
-          <p className="text-lg text-white/90 leading-relaxed mb-4">
-            Real-time insights across crypto, medtech, and emerging markets.
-          </p>
-          <div className="flex items-center justify-center gap-8 mt-8 text-sm text-white/70">
-            <div className="text-center">
-              <div className="text-2xl font-light">50+</div>
-              <div>Crypto Assets</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-light">24/7</div>
-              <div>Live Monitoring</div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+        
+        {/* Text positioned on LEFT side of the image */}
+        <div className="absolute left-0 top-0 bottom-0 flex items-center">
+          <div className="text-white pl-16 pr-8 max-w-md">
+            <h2 className="text-4xl font-light tracking-wider mb-6">
+              Market Intelligence
+            </h2>
+            <p className="text-lg text-white/90 leading-relaxed mb-4">
+              Real-time insights across crypto, medtech, and emerging markets.
+            </p>
+            <div className="flex items-center gap-8 mt-8 text-sm text-white/70">
+              <div className="text-center">
+                <div className="text-2xl font-light">50+</div>
+                <div>Crypto Assets</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-light">24/7</div>
+                <div>Live Monitoring</div>
+              </div>
             </div>
           </div>
         </div>
