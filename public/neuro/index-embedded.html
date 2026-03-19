@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="portfolio-data.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .sidebar-item { transition: all 0.2s; }
@@ -19,6 +18,7 @@
         .section-hidden { display: none; }
         .section-visible { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .gap-row { background: rgba(239, 68, 68, 0.1); }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen">
@@ -128,7 +128,7 @@
                                 </div>
                                 <span class="text-sm text-slate-400">Portfolio Gaps</span>
                             </div>
-                            <div class="text-2xl font-bold">4</div>
+                            <div class="text-2xl font-bold text-red-400">9</div>
                             <div class="text-sm text-red-400 mt-1">Critical Priority</div>
                         </div>
                     </div>
@@ -141,13 +141,6 @@
                         </div>
                         
                         <div class="bg-slate-800 rounded-lg p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold text-orange-300">Product Portfolio Matrix</h3>
-                                <div class="flex gap-2 text-xs">
-                                    <span class="flex items-center gap-1"><i class="fas fa-check-circle text-emerald-400"></i> Full</span>
-                                    <span class="flex items-center gap-1"><i class="fas fa-times-circle text-red-400"></i> None</span>
-                                </div>
-                            </div>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-left text-sm" id="dashboardPortfolioTable">
                                     <thead class="bg-slate-700">
@@ -161,7 +154,7 @@
                                             <th class="p-3">Cerenovus</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="divide-y divide-slate-700" id="dashboardPortfolioBody">
+                                    <tbody id="dashboardPortfolioBody" class="divide-y divide-slate-700">
                                         <!-- Populated by JS -->
                                     </tbody>
                                 </table>
@@ -193,16 +186,6 @@
                                     <p class="text-xs text-slate-500 mt-1">5 hours ago</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3 p-3 bg-slate-800 rounded-lg">
-                                <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-info text-blue-400 text-sm"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium">Market Update</p>
-                                    <p class="text-sm text-slate-400">Flow diverter market expanding with 3 new competitors entering in Q4.</p>
-                                    <p class="text-xs text-slate-500 mt-1">1 day ago</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -221,7 +204,6 @@
                         <p class="text-slate-400">Clinical trials, publications, and research pipeline tracking</p>
                     </header>
 
-                    <!-- Research Content -->
                     <div class="bg-slate-900 rounded-xl p-8 border border-slate-800">
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                             <div class="bg-slate-800 rounded-lg p-6">
@@ -256,7 +238,6 @@
                             </div>
                         </div>
 
-                        <!-- Recent Publications -->
                         <h3 class="text-lg font-semibold mb-4">Recent Key Publications</h3>
                         <div class="space-y-3">
                             <div class="flex items-start gap-4 p-4 bg-slate-800 rounded-lg">
@@ -368,7 +349,78 @@
                         <p class="text-slate-400">Company financial performance and market share analysis</p>
                     </header>
 
-                    <iframe src="revenue-v2.html" class="w-full h-[calc(100vh-200px)] border-0 rounded-xl bg-slate-900"></iframe>
+                    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-slate-800 rounded-lg p-6">
+                                <h3 class="font-semibold mb-4">Revenue by Company (2024)</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span>Stryker</span>
+                                        <span class="font-bold">$1.45B</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-blue-500 h-2 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Medtronic</span>
+                                        <span class="font-bold">$1.28B</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 88%"></div>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Penumbra</span>
+                                        <span class="font-bold">$0.42B</span>
+                                    </div>
+                                    <div class="w-full bg-slate-700 rounded-full h-2">
+                                        <div class="bg-purple-500 h-2 rounded-full" style="width: 29%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800 rounded-lg p-6">
+                                <h3 class="font-semibold mb-4">Market Share</h3>
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                                        <span class="text-sm">Stryker: 34.5%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                        <span class="text-sm">Medtronic: 30.5%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                                        <span class="text-sm">Penumbra: 10.0%</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-orange-500"></div>
+                                        <span class="text-sm">Others: 25.0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800 rounded-lg p-6">
+                                <h3 class="font-semibold mb-4">Growth Trends</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <span>Penumbra</span>
+                                        <span class="text-emerald-400">+11.2%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Stryker</span>
+                                        <span class="text-emerald-400">+8.5%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Medtronic</span>
+                                        <span class="text-emerald-400">+6.2%</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>Microvention</span>
+                                        <span class="text-emerald-400">+5.8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -385,7 +437,11 @@
                         <p class="text-slate-400">Comprehensive competitor landscape analysis and portfolio tracking</p>
                     </header>
 
-                    <iframe src="competitive-intelligence.html" class="w-full h-[calc(100vh-200px)] border-0 rounded-xl bg-slate-900"></iframe>
+                    <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="competitorCards">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -417,7 +473,6 @@
                                 <label class="block text-slate-400 text-sm mb-1">Product Category</label>
                                 <select id="categoryFilter" onchange="filterPortfolio()" class="w-full bg-slate-700 border border-slate-600 rounded px-3 py-2 text-sm text-white">
                                     <option value="all">All Categories</option>
-                                    <!-- Populated dynamically -->
                                 </select>
                             </div>
                         </div>
@@ -446,7 +501,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="portfolioTableBody" class="divide-y divide-slate-700">
-                                    <!-- Populated dynamically -->
+                                    <!-- Populated by JS -->
                                 </tbody>
                             </table>
                         </div>
@@ -457,41 +512,50 @@
     </div>
 
     <script>
-        // Navigation
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('section-visible');
-                section.classList.add('section-hidden');
-            });
-            
-            // Show target section
-            const target = document.getElementById('section-' + sectionId);
-            if (target) {
-                target.classList.remove('section-hidden');
-                target.classList.add('section-visible');
+        // ============================================
+        // EMBEDDED DATA - All data included in file
+        // ============================================
+        
+        // Portfolio Data
+        const portfolioData = {
+            categories: [
+                { id: "coils", name: "Coils", segment: "hemorrhagic", wallaby: { present: true, products: "Avenir, PICO" }, competitors: { medtronic: "Axium, Axium MicroFX", stryker: "Target XXL, Target 360", microvention: "Cosmos, Hypersoft", penumbra: "PC400, POD400", cerenovus: "GALAXY G3, DELTAFILL" }},
+                { id: "fd", name: "Flow Diverters", segment: "hemorrhagic", wallaby: { present: true, products: "p64 (MW)(HPC)" }, competitors: { medtronic: "Pipeline Flex, Vantage", stryker: "Surpass Evolve", microvention: "FRED (X)", penumbra: "—", cerenovus: "BRAVO" }},
+                { id: "minifd", name: "Mini Flow Diverters", segment: "hemorrhagic", wallaby: { present: true, products: "p48 MW (HPC)" }, competitors: { medtronic: "Pipeline Shield", stryker: "Surpass Evolve", microvention: "FRED jr", penumbra: "—", cerenovus: "—" }},
+                { id: "stents_lasercut", name: "Stents - Lasercut", segment: "hemorrhagic", wallaby: { present: true, products: "pEGASUS" }, competitors: { medtronic: "Solitaire AB", stryker: "Neuroform Atlas", microvention: "—", penumbra: "—", cerenovus: "Enterprise 2" }},
+                { id: "stents_bif", name: "Stents - Bifurcation", segment: "hemorrhagic", wallaby: { present: true, products: "pCONUS" }, competitors: { medtronic: "—", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "Pulserider" }},
+                { id: "thrombectomy_lvo", name: "Thrombectomy LVO", segment: "ais", wallaby: { present: true, products: "pRESET" }, competitors: { medtronic: "Solitaire X", stryker: "Trevo, Trevo 2", microvention: "Eric", penumbra: "3D Revasc", cerenovus: "Embotrap" }},
+                { id: "thrombectomy_mevo", name: "Thrombectomy MeVO", segment: "ais", wallaby: { present: true, products: "pRESET LT" }, competitors: { medtronic: "3MM Solitaire X", stryker: "Trevo XP", microvention: "Eric", penumbra: "—", cerenovus: "Embotrap" }},
+                { id: "aspiration", name: "Aspiration Catheters", segment: "ais", wallaby: { present: true, products: "pHLO, Esperance" }, competitors: { medtronic: "React, ARC", stryker: "AXS Catalyst, Vecta", microvention: "Sofia Plus", penumbra: "MAX, ACE, Jet7", cerenovus: "Embovac, Cereglide" }},
+                { id: "bgc", name: "Balloon Guide Catheters", segment: "ais", wallaby: { present: true, products: "Paragon BGC" }, competitors: { medtronic: "Cello", stryker: "Flowgate 2", microvention: "Bobby", penumbra: "—", cerenovus: "Emboguard" }},
+                { id: "catheter_017", name: "0.017\" Microcatheters", segment: "access", wallaby: { present: true, products: "pNOVUS 17" }, competitors: { medtronic: "Echelon, Phenom", stryker: "Excelsior SL10", microvention: "Headway 17", penumbra: "—", cerenovus: "Prowler" }},
+                { id: "catheter_021", name: "0.021\" Microcatheters", segment: "access", wallaby: { present: true, products: "pNOVUS 21" }, competitors: { medtronic: "Phenom, Rebar", stryker: "Trevo Pro 18", microvention: "Headway 21", penumbra: "—", cerenovus: "Prowler" }},
+                { id: "guidewire_014", name: "0.014\" Guidewires", segment: "access", wallaby: { present: true, products: "pORTAL" }, competitors: { medtronic: "Avigo, Mirage", stryker: "Synchro 2", microvention: "Traxess", penumbra: "—", cerenovus: "Neuroscout" }},
+                { id: "dac", name: "DAC", segment: "access", wallaby: { present: true, products: "pHLO DAC" }, competitors: { medtronic: "Navien", stryker: "AXS Catalyst DAC", microvention: "SOFIA EX", penumbra: "Neuron", cerenovus: "—" }},
+                { id: "neurosheath", name: "Neurosheath", segment: "access", wallaby: { present: true, products: "Pilote" }, competitors: { medtronic: "—", stryker: "AXS Infinity", microvention: "Destination", penumbra: "Neuron MAX", cerenovus: "Cerebase" }},
+                { id: "pta_balloon", name: "PTA Balloon", segment: "atherosclerosis", wallaby: { present: true, products: "pITA" }, competitors: { medtronic: "Submarine Rapido", stryker: "—", microvention: "Metacross", penumbra: "—", cerenovus: "—" }},
+                { id: "vasospasm", name: "Vasospasm Treatment", segment: "atherosclerosis", wallaby: { present: true, products: "pRELAX" }, competitors: { medtronic: "Solitaire", stryker: "Trevo", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "icad", name: "ICAD Stent", segment: "atherosclerosis", wallaby: { present: true, products: "pEGASUS" }, competitors: { medtronic: "—", stryker: "Wingspan", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "small_profile", name: "Small Profile Aspiration", segment: "ais", wallaby: { present: true, products: "3F+" }, competitors: { medtronic: "ARC Mini", stryker: "—", microvention: "—", penumbra: "3MAX, RED 43", cerenovus: "—" }},
+                { id: "intrasaccular", name: "Intrasaccular Devices", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Artisse", stryker: "Contour", microvention: "WEB", penumbra: "—", cerenovus: "—" }},
+                { id: "remodelling", name: "Remodelling Balloons", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "HyperForm, HyperGlide", stryker: "Transform", microvention: "Scepter", penumbra: "—", cerenovus: "Ascent" }},
+                { id: "stents_braided", name: "Stents - Braided", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "—", stryker: "—", microvention: "LVIS (Jr)", penumbra: "—", cerenovus: "—" }},
+                { id: "largebore", name: "Large Bore Catheters", segment: "ais", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "—", stryker: "AXS Vecta 74", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "aspiration_pump", name: "Aspiration Pump", segment: "ais", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Riptide", stryker: "AXS Universal", microvention: "Gomco", penumbra: "Engine (Artemis)", cerenovus: "Nouvag" }},
+                { id: "liquid_embolic", name: "Liquid Embolic", segment: "hemorrhagic", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Onyx", stryker: "—", microvention: "PHIL", penumbra: "—", cerenovus: "Truefill" }},
+                { id: "detachable_tip", name: "Detachable Tip Microcatheters", segment: "access", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Apollo", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "onyx_compatible", name: "Onyx Compatible Microcatheters", segment: "access", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Apollo, Marathon", stryker: "—", microvention: "—", penumbra: "—", cerenovus: "—" }},
+                { id: "carotid", name: "Carotid Stent", segment: "atherosclerosis", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Protégé RX", stryker: "—", microvention: "Casper, Roadsaver", penumbra: "—", cerenovus: "—" }},
+                { id: "embolic_protection", name: "Embolic Protection", segment: "atherosclerosis", wallaby: { present: false, products: null, gap: true }, competitors: { medtronic: "Spider FX", stryker: "—", microvention: "Empro", penumbra: "—", cerenovus: "—" }},
+                { id: "catheter_027", name: "0.027\" Microcatheters", segment: "access", wallaby: { present: false, products: "(pNOVUS 27)", gap: false, limited: true }, competitors: { medtronic: "Marksman", stryker: "Excelsior XT-27", microvention: "Headway 27", penumbra: "Lantern, Velocity", cerenovus: "Prowler" }}
+            ],
+            segments: {
+                hemorrhagic: "Hemorrhagic Treatment",
+                ais: "Ischemic Stroke",
+                atherosclerosis: "Atherosclerosis",
+                access: "Access & Delivery"
             }
-            
-            // Update sidebar
-            document.querySelectorAll('.sidebar-item').forEach(item => {
-                item.classList.remove('active');
-                item.classList.add('text-slate-400');
-            });
-            const navItem = document.getElementById('nav-' + sectionId);
-            if (navItem) {
-                navItem.classList.add('active');
-                navItem.classList.remove('text-slate-400');
-            }
-
-            // Initialize section-specific content
-            if (sectionId === 'portfolio') {
-                initPortfolioSection();
-            } else if (sectionId === 'epidemiology') {
-                renderEpidemiologyTable();
-            } else if (sectionId === 'dashboard') {
-                renderDashboardPortfolio();
-            }
-        }
+        };
 
         // Epidemiology Data
         const epidemiologyData = [
@@ -504,6 +568,57 @@
             { country: 'Brazil', region: 'latam', stroke: 220000, aneurysm: 9200, evt: 28000, rate: '12.7%', growth: '+6.2%' }
         ];
 
+        // Competitor Data
+        const competitorData = [
+            { name: 'Stryker', revenue: '$1.45B', share: '34.5%', growth: '+8.5%', products: 12, gaps: 2, color: 'blue' },
+            { name: 'Medtronic', revenue: '$1.28B', share: '30.5%', growth: '+6.2%', products: 11, gaps: 3, color: 'emerald' },
+            { name: 'Penumbra', revenue: '$0.42B', share: '10.0%', growth: '+11.2%', products: 8, gaps: 5, color: 'purple' },
+            { name: 'Microvention', revenue: '$0.38B', share: '9.0%', growth: '+5.8%', products: 9, gaps: 4, color: 'orange' },
+            { name: 'Cerenovus', revenue: '$0.35B', share: '8.3%', growth: '+4.5%', products: 7, gaps: 6, color: 'red' },
+            { name: 'Wallaby Phenox', revenue: '$0.22B', share: '5.2%', growth: '+15.3%', products: 18, gaps: 9, color: 'cyan' }
+        ];
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('section-visible');
+                section.classList.add('section-hidden');
+            });
+            
+            const target = document.getElementById('section-' + sectionId);
+            if (target) {
+                target.classList.remove('section-hidden');
+                target.classList.add('section-visible');
+            }
+            
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.classList.remove('active');
+                item.classList.add('text-slate-400');
+            });
+            const navItem = document.getElementById('nav-' + sectionId);
+            if (navItem) {
+                navItem.classList.add('active');
+                navItem.classList.remove('text-slate-400');
+            }
+
+            if (sectionId === 'portfolio') {
+                initPortfolioSection();
+            } else if (sectionId === 'epidemiology') {
+                renderEpidemiologyTable();
+            } else if (sectionId === 'competitors') {
+                renderCompetitorCards();
+            } else if (sectionId === 'dashboard') {
+                renderDashboardPortfolio();
+            }
+        }
+
+        // ============================================
+        // EPIDEMIOLOGY
+        // ============================================
+        
         function renderEpidemiologyTable() {
             const region = document.getElementById('regionFilter')?.value || 'all';
             const tbody = document.getElementById('epidemiologyTable');
@@ -523,7 +638,10 @@
             `).join('');
         }
 
-        // Portfolio Functions
+        // ============================================
+        // PORTFOLIO
+        // ============================================
+        
         function initPortfolioSection() {
             populateCategoryDropdown();
             renderPortfolioTable();
@@ -531,12 +649,9 @@
 
         function populateCategoryDropdown() {
             const select = document.getElementById('categoryFilter');
-            if (!select || !window.portfolioData) return;
+            if (!select) return;
             
-            // Clear existing except first option
             select.innerHTML = '<option value="all">All Categories</option>';
-            
-            // Add categories from data
             portfolioData.categories.forEach(cat => {
                 const option = document.createElement('option');
                 option.value = cat.id;
@@ -547,26 +662,26 @@
 
         function renderPortfolioTable() {
             const tbody = document.getElementById('portfolioTableBody');
-            if (!tbody || !window.portfolioData) return;
+            if (!tbody) return;
             
             tbody.innerHTML = portfolioData.categories.map(cat => {
-                const competitorData = portfolioData.competitors[cat.id] || {};
-                const isGap = cat.gap;
+                const isGap = cat.wallaby.gap;
+                const isLimited = cat.wallaby.limited;
                 
                 return `
-                    <tr data-category="${cat.id}" class="${isGap ? 'gap-row bg-red-900/10' : ''}">
+                    <tr data-category="${cat.id}" class="${isGap ? 'gap-row' : ''}">
                         <td class="p-3 font-medium ${isGap ? 'text-red-300' : ''}">${cat.name}</td>
                         <td class="p-3">
                             ${isGap 
                                 ? '<i class="fas fa-times-circle text-red-400 mr-1"></i><span class="text-red-300">GAP</span>' 
-                                : `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.wallaby}`
+                                : `<i class="fas ${isLimited ? 'fa-exclamation-circle text-amber-400' : 'fa-check-circle text-emerald-400'} mr-1"></i>${cat.wallaby.products}`
                             }
                         </td>
-                        <td class="p-3">${competitorData.Medtronic ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Medtronic}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Stryker ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Stryker}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Microvention ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Microvention}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Penumbra ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Penumbra}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Cerenovus ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Cerenovus}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3">${cat.competitors.medtronic !== "—" ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.competitors.medtronic}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3">${cat.competitors.stryker !== "—" ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.competitors.stryker}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3">${cat.competitors.microvention !== "—" ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.competitors.microvention}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3">${cat.competitors.penumbra !== "—" ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.competitors.penumbra}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3">${cat.competitors.cerenovus !== "—" ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.competitors.cerenovus}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
                     </tr>
                 `;
             }).join('');
@@ -582,12 +697,10 @@
                 const isGapRow = row.classList.contains('gap-row');
                 let showRow = true;
                 
-                // Category filter
                 if (categoryFilter !== 'all' && category !== categoryFilter) {
                     showRow = false;
                 }
                 
-                // View filter
                 if (viewFilter === 'gaps' && !isGapRow) {
                     showRow = false;
                 } else if (viewFilter === 'wallaby') {
@@ -600,35 +713,72 @@
 
         function renderDashboardPortfolio() {
             const tbody = document.getElementById('dashboardPortfolioBody');
-            if (!tbody || !window.portfolioData) return;
+            if (!tbody) return;
             
-            // Show only first 5 rows on dashboard
             const categories = portfolioData.categories.slice(0, 5);
             
             tbody.innerHTML = categories.map(cat => {
-                const competitorData = portfolioData.competitors[cat.id] || {};
-                const isGap = cat.gap;
+                const isGap = cat.wallaby.gap;
                 
                 return `
-                    <tr data-category="${cat.id}" class="${isGap ? 'gap-row bg-red-900/10' : ''}">
+                    <tr class="${isGap ? 'gap-row' : ''}">
                         <td class="p-3 font-medium ${isGap ? 'text-red-300' : ''}">${cat.name}</td>
                         <td class="p-3">
                             ${isGap 
                                 ? '<i class="fas fa-times-circle text-red-400 mr-1"></i><span class="text-red-300">GAP</span>' 
-                                : `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.wallaby}`
+                                : `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${cat.wallaby.products.split(',')[0]}`
                             }
                         </td>
-                        <td class="p-3">${competitorData.Medtronic ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Medtronic.split(',')[0]}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Stryker ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Stryker.split(',')[0]}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Microvention ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Microvention.split(',')[0]}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Penumbra ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Penumbra.split(',')[0]}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
-                        <td class="p-3">${competitorData.Cerenovus ? `<i class="fas fa-check-circle text-emerald-400 mr-1"></i>${competitorData.Cerenovus.split(',')[0]}` : '<i class="fas fa-times-circle text-red-400 mr-1"></i>None'}</td>
+                        <td class="p-3 text-xs">${cat.competitors.medtronic !== "—" ? cat.competitors.medtronic.split(',')[0] : '—'}</td>
+                        <td class="p-3 text-xs">${cat.competitors.stryker !== "—" ? cat.competitors.stryker.split(',')[0] : '—'}</td>
+                        <td class="p-3 text-xs">${cat.competitors.microvention !== "—" ? cat.competitors.microvention.split(',')[0] : '—'}</td>
+                        <td class="p-3 text-xs">${cat.competitors.penumbra !== "—" ? cat.competitors.penumbra.split(',')[0] : '—'}</td>
+                        <td class="p-3 text-xs">${cat.competitors.cerenovus !== "—" ? cat.competitors.cerenovus.split(',')[0] : '—'}</td>
                     </tr>
                 `;
             }).join('');
         }
 
-        // Initialize on load
+        // ============================================
+        // COMPETITORS
+        // ============================================
+        
+        function renderCompetitorCards() {
+            const container = document.getElementById('competitorCards');
+            if (!container) return;
+            
+            container.innerHTML = competitorData.map(comp => `
+                <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-lg">${comp.name}</h3>
+                        <span class="text-${comp.color}-400 font-bold">${comp.share}</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Revenue</span>
+                            <span class="font-medium">${comp.revenue}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Growth</span>
+                            <span class="text-emerald-400">${comp.growth}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Products</span>
+                            <span class="font-medium">${comp.products}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Portfolio Gaps</span>
+                            <span class="text-red-400">${comp.gaps}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ============================================
+        // INITIALIZE
+        // ============================================
+        
         document.addEventListener('DOMContentLoaded', () => {
             renderDashboardPortfolio();
             renderEpidemiologyTable();
