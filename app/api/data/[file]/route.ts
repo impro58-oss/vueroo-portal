@@ -28,36 +28,18 @@ export async function GET(
       );
     }
 
-    // Fetch from GitHub
-    const githubUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${file}.json?ref=${GITHUB_BRANCH}`;
+    // Try raw GitHub content URL (simpler, no API needed)
+    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/${file}.json`;
     
-    if (!GITHUB_TOKEN) {
-      console.error('GITHUB_TOKEN not set');
-      return NextResponse.json(
-        { error: 'Server configuration error' },
-        { status: 500 }
-      );
-    }
-    
-    const response = await fetch(githubUrl, {
-      headers: {
-        'Authorization': `Bearer ${GITHUB_TOKEN}`,
-        'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'Vueroo-API'
-      }
-    });
+    const response = await fetch(rawUrl);
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error('GitHub API error:', response.status, errorBody);
-      throw new Error(`GitHub API error: ${response.status} - ${errorBody}`);
+      console.error('GitHub fetch error:', response.status, rawUrl);
+      throw new Error(`GitHub error: ${response.status}`);
     }
-
-    const data = await response.json();
     
-    // Decode base64 content
-    const content = Buffer.from(data.content, 'base64').toString('utf8');
-    const jsonData = JSON.parse(content);
+    const jsonData = await response.json();
 
     // Return JSON with caching headers
     return NextResponse.json(jsonData, {
