@@ -28,21 +28,24 @@ export async function GET(
       );
     }
 
-    // Try raw GitHub content URL (simpler, no API needed)
-    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/${file}.json`;
+    // Try API endpoint with raw media type for private repos
+    const apiUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${file}.json?ref=${GITHUB_BRANCH}`;
     
-    const response = await fetch(rawUrl, {
-      headers: GITHUB_TOKEN ? {
-        'Authorization': `token ${GITHUB_TOKEN}`
-      } : {}
+    const response = await fetch(apiUrl, {
+      headers: {
+        'Authorization': `Bearer ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github.raw',
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
     });
 
     if (!response.ok) {
       const errorBody = await response.text();
-      console.error('GitHub fetch error:', response.status, rawUrl);
-      throw new Error(`GitHub error: ${response.status}`);
+      console.error('GitHub API error:', response.status, errorBody);
+      throw new Error(`GitHub API error: ${response.status}`);
     }
     
+    // For raw endpoint, response is direct JSON
     const jsonData = await response.json();
 
     // Return JSON with caching headers
