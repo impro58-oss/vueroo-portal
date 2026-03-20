@@ -67,10 +67,10 @@ export async function GET(
       }
     });
 
-  } catch (error) {
-    console.error('API Error:', error);
+  } catch (error: any) {
+    console.error('API Error:', error.message);
     return NextResponse.json(
-      { error: 'Failed to fetch data' },
+      { error: 'Failed to fetch data', details: error.message },
       { status: 500 }
     );
   }
