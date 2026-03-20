@@ -31,7 +31,11 @@ export async function GET(
     // Try raw GitHub content URL (simpler, no API needed)
     const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}/${file}.json`;
     
-    const response = await fetch(rawUrl);
+    const response = await fetch(rawUrl, {
+      headers: GITHUB_TOKEN ? {
+        'Authorization': `token ${GITHUB_TOKEN}`
+      } : {}
+    });
 
     if (!response.ok) {
       const errorBody = await response.text();
