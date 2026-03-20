@@ -11,10 +11,19 @@ export default function DataTestPage() {
   useEffect(() => {
     async function loadData() {
       try {
-        const portfolioData = await MedTechData.getPortfolioData();
+        const response = await fetch('/api/data/portfolio-data', {
+          credentials: 'include'
+        });
+        
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`HTTP ${response.status}: ${errorText}`);
+        }
+        
+        const portfolioData = await response.json();
         setData(portfolioData);
-      } catch (err) {
-        setError('Failed to load data');
+      } catch (err: any) {
+        setError(err.message || 'Failed to load data');
       } finally {
         setLoading(false);
       }
