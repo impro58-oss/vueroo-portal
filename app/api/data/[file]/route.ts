@@ -31,6 +31,14 @@ export async function GET(
     // Fetch from GitHub
     const githubUrl = `https://api.github.com/repos/${GITHUB_REPO}/contents/${file}.json?ref=${GITHUB_BRANCH}`;
     
+    if (!GITHUB_TOKEN) {
+      console.error('GITHUB_TOKEN not set');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+    
     const response = await fetch(githubUrl, {
       headers: {
         'Authorization': `Bearer ${GITHUB_TOKEN}`,
