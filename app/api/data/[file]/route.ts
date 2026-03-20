@@ -10,7 +10,7 @@ export async function GET(
 ) {
   try {
     // Check authentication
-    const session = request.cookies.get('session');
+    const session = request.cookies.get('vueroo-session');
     if (!session) {
       return NextResponse.json(
         { error: 'Unauthorized' },
