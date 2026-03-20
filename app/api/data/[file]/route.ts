@@ -48,7 +48,9 @@ export async function GET(
     });
 
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
+      const errorBody = await response.text();
+      console.error('GitHub API error:', response.status, errorBody);
+      throw new Error(`GitHub API error: ${response.status} - ${errorBody}`);
     }
 
     const data = await response.json();
