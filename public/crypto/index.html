@@ -413,15 +413,29 @@
             if (coins.length === 0) return;
             
             grid.innerHTML = coins.map(c => {
-                const bgClass = c.confidence >= 65 ? 'bg-emerald-500/30' : c.confidence >= 45 ? 'bg-amber-500/30' : 'bg-slate-700/30';
+                // Signal-based background colors
+                let bgClass;
+                if (c.signal === 'long') {
+                    bgClass = 'bg-emerald-500/40 border-emerald-500/60';
+                } else if (c.signal === 'short') {
+                    bgClass = 'bg-red-500/40 border-red-500/60';
+                } else if (c.compression) {
+                    bgClass = 'bg-purple-500/40 border-purple-500/60';
+                } else {
+                    bgClass = 'bg-slate-700/30 border-slate-600/30';
+                }
+                
                 const signalColor = c.signal === 'long' ? '#10B981' : c.signal === 'short' ? '#EF4444' : '#6B7280';
-                const compRing = c.compression ? 'ring-2 ring-purple-500' : '';
+                const borderClass = c.compression ? 'ring-2 ring-purple-500' : '';
+                
                 return `
-                    <a href="https://www.tradingview.com/chart/?symbol=BINANCE:${c.symbol}USDT" target="_blank" rel="noopener noreferrer" class="heat-cell ${bgClass} ${compRing} hover:scale-105 hover:ring-2 hover:ring-blue-500 transition-all" title="Open ${c.symbol}/USDT on TradingView">
+                    <a href="https://www.tradingview.com/chart/?symbol=BINANCE:${c.symbol}USDT" target="_blank" rel="noopener noreferrer" 
+                       class="heat-cell ${bgClass} ${borderClass} border hover:scale-105 transition-all" 
+                       title="${c.symbol}/USDT - ${c.signal.toUpperCase()}">
                         <div class="text-xs font-bold text-white">${c.symbol}</div>
                         <div class="text-xs text-slate-300">${CryptoDataLoader.formatPrice(c.price)}</div>
-                        <div class="text-xs mt-1" style="color:${signalColor}">${c.signal.substring(0,1).toUpperCase()}</div>
-                        ${c.compression ? '<div class="text-[8px] text-purple-400">COMP</div>' : ''}
+                        <div class="text-xs mt-1 font-semibold" style="color:${signalColor}">${c.signal.toUpperCase()}</div>
+                        ${c.compression ? '<div class="text-[8px] text-purple-300 font-medium">COMP</div>' : ''}
                     </a>
                 `;
             }).join('');
