@@ -274,7 +274,6 @@
                 <header class="mb-6">
                     <div class="flex items-center justify-between">
                         <div>
-                            <h1 class="text-3xl font-bold text-emerald-400">MedTech Revenue Intelligence</h1>
                             <p class="text-slate-400 mt-1">Neurovascular Market: Company Revenue Analytics</p>
                         </div>
                     </div>
@@ -669,64 +668,28 @@
 
     <!-- EMBEDDED DATA AND FUNCTIONS - ZERO DEPENDENCIES -->
     <script>
-        // FALLBACK DATA: Embedded directly in HTML
-        const FALLBACK_EPIDEMIOLOGY = {
-            regions: {
-                china: { name: "China", flag: "🇨🇳", population: 1412000000, "2024": { annualStrokes: { value: 3300000 }, strokeDeaths: { value: 1500000 }, prevalence: { value: 17800000 }, treatmentAccess: { ivTpa: 25, mt: 8 } }, "2030": { projectedStrokes: { value: 4200000 } } },
-                usa: { name: "United States", flag: "🇺🇸", population: 335000000, "2024": { annualStrokes: { value: 795000 }, strokeDeaths: { value: 160000 }, prevalence: { value: 4500000 }, treatmentAccess: { ivTpa: 40, mt: 25 } }, "2030": { projectedStrokes: { value: 920000 } } },
-                japan: { name: "Japan", flag: "🇯🇵", population: 125000000, "2024": { annualStrokes: { value: 280000 }, strokeDeaths: { value: 110000 }, prevalence: { value: 2200000 }, treatmentAccess: { ivTpa: 45, mt: 20 } }, "2030": { projectedStrokes: { value: 310000 } } },
-                germany: { name: "Germany", flag: "🇩🇪", population: 84000000, "2024": { annualStrokes: { value: 195000 }, strokeDeaths: { value: 65000 }, prevalence: { value: 1200000 }, treatmentAccess: { ivTpa: 50, mt: 30 } }, "2030": { projectedStrokes: { value: 230000 } } },
-                eu: { name: "European Union", flag: "🇪🇺", population: 447000000, "2024": { annualStrokes: { value: 1100000 }, strokeDeaths: { value: 450000 }, prevalence: { value: 9000000 }, treatmentAccess: { ivTpa: 35, mt: 18 } }, "2030": { projectedStrokes: { value: 1350000 } } }
-            },
-            global: {
-                "2024": { annualStrokes: { value: 12200000 }, strokeDeaths: { value: 6500000 }, prevalence: { value: 101000000 }, treatmentAccess: { mechanicalThrombectomy: { global: 12 } } },
-                "2030": { projectedStrokes: { value: 15100000 } }
-            }
-        };
+        // All data loads from GitHub (rooquest1 repo) - no embedded data
+        const DATA_BASE = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
         
-        const FALLBACK_REVENUE = {
-            companies: [
-                { name: "Stryker", ticker: "SYK", headquarters: "USA", marketCap: 85000000000, annualRevenue: 20500000000, revenueGrowth: 8.5, neurovascularRevenue: 1450000000, neurovascularGrowth: 9.1 },
-                { name: "Medtronic", ticker: "MDT", headquarters: "Ireland", marketCap: 120000000000, annualRevenue: 32300000000, revenueGrowth: 3.2, neurovascularRevenue: 1380000000, neurovascularGrowth: 8.8 },
-                { name: "Johnson & Johnson", ticker: "JNJ", headquarters: "USA", marketCap: 380000000000, annualRevenue: 95000000000, revenueGrowth: 6.8, neurovascularRevenue: 680000000, neurovascularGrowth: 9.2 },
-                { name: "Microvention/Terumo", ticker: "TER", headquarters: "Japan", marketCap: 45000000000, annualRevenue: 6200000000, revenueGrowth: 12.1, neurovascularRevenue: 520000000, neurovascularGrowth: 10.0 },
-                { name: "Penumbra", ticker: "PEN", headquarters: "USA", marketCap: 5200000000, annualRevenue: 1180000000, revenueGrowth: 24.8, neurovascularRevenue: 380000000, neurovascularGrowth: 11.2 },
-                { name: "Balt", ticker: "Private", headquarters: "France", marketCap: 0, annualRevenue: 180000000, revenueGrowth: 15.3, neurovascularRevenue: 180000000, neurovascularGrowth: 9.5 },
-                { name: "Wallaby Phenox", ticker: "Private", headquarters: "Germany", marketCap: 0, annualRevenue: 95000000, revenueGrowth: 35.2, neurovascularRevenue: 95000000, neurovascularGrowth: 12.7 }
-            ]
-        };
-        
-        // DYNAMIC DATA LOADER - NO FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                // All data loads from rooquest1 GitHub repo - single source of truth
-                var dataBase = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
-                
-                // Load epidemiology
-                var epiPromise = fetch(dataBase + '/data.json?t=' + Date.now())
-                    .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
-                    .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
-                
-                // Load revenue from rooquest1
-                var revPromise = fetch(dataBase + '/revenue-historical.json?t=' + Date.now())
-                    .then(function(r) {
-                        if (!r.ok) throw new Error('Revenue HTTP ' + r.status);
-                        return r.json();
-                    });
-                
-                return Promise.all([epiPromise, revPromise])
-                    .then(function(results) {
-                        console.log('✅ Loaded all data from rooquest1 GitHub');
-                        return {
-                            epidemiology: results[0],
-                            revenue: results[1],
-                            portfolio: null
-                        };
-                    })
-                    .catch(function(err) {
-                        console.error('❌ Failed to load data from GitHub:', err);
-                        throw err;
-                    });
+                return Promise.all([
+                    fetch(DATA_BASE + '/data.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('EPI')),
+                    fetch(DATA_BASE + '/revenue-historical.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('REV')),
+                    fetch(DATA_BASE + '/competitor-intelligence.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('CI')),
+                    fetch(DATA_BASE + '/portfolio-matrix.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('PM'))
+                ]).then(function(results) {
+                    console.log('✅ All data loaded from rooquest1 GitHub');
+                    return {
+                        epidemiology: results[0],
+                        revenue: results[1],
+                        competitors: results[2],
+                        portfolio: results[3]
+                    };
+                }).catch(function(err) {
+                    console.error('❌ Failed to load data from GitHub:', err);
+                    throw new Error('Data sync failed. Check GitHub connectivity.');
+                });
             },
             formatNumber: function(num, compact) {
                 if (num === null || num === undefined) return '--';
@@ -855,8 +818,10 @@
             document.getElementById('top-regions-table').innerHTML = tableHtml;
         }
 
-        // COMPETITOR INTELLIGENCE DATA AND FUNCTIONS
-        const CI_COMPANIES = [
+        // COMPETITOR INTELLIGENCE - data loaded from GitHub
+        function getCICompanies() {
+            return appData && appData.competitors ? appData.competitors.companies : [];
+        }
             {
                 id: "medtronic",
                 name: "Medtronic",
@@ -1130,7 +1095,7 @@
             // Get revenue data from appData if available
             var revData = (window.appData && window.appData.revenue && window.appData.revenue.companies) ? window.appData.revenue.companies : [];
             
-            var filtered = CI_COMPANIES.filter(function(company) {
+            var filtered = getCICompanies().filter(function(company) {
                 if (company.id === 'phenox') return false;
                 
                 if (filterType === 'high' && company.threatLevel !== 'high') return false;
@@ -1211,7 +1176,7 @@
         }
 
         function showCompanyDetail(companyId) {
-            var company = CI_COMPANIES.find(function(c) { return c.id === companyId; });
+            var company = getCICompanies().find(function(c) { return c.id === companyId; });
             if (!company) return;
             
             // Get revenue from appData
@@ -1281,8 +1246,8 @@
             if (!tbody) return;
             
             var html = '';
-            for (var i = 0; i < CI_COMPANIES.length; i++) {
-                var c = CI_COMPANIES[i];
+            for (var i = 0; i < getCICompanies().length; i++) {
+                var c = getCICompanies()[i];
                 if (c.id === 'phenox') continue;
                 
                 var p = c.products;
@@ -1338,19 +1303,10 @@
             });
         }
 
-        // PORTFOLIO MATRIX FUNCTIONS
-        const PM_DATA = {
-            categories: [
-                { key: 'coils', label: 'Coils', wallaby: ['Avenir'], medtronic: ['Axium'], stryker: ['Target'], microvention: ['Cosmos'], penumbra: ['SMART'], cerenovus: ['GALAXY'] },
-                { key: 'flowDiverters', label: 'Flow Diverters', wallaby: ['p64'], medtronic: ['Pipeline'], stryker: ['Surpass'], microvention: ['FRED'], penumbra: [], cerenovus: ['BRAVO'] },
-                { key: 'stents', label: 'Stents', wallaby: ['pCONUS2'], medtronic: ['Enterprise'], stryker: ['Neuroform'], microvention: ['LVIS'], penumbra: [], cerenovus: ['Enterprise 2'] },
-                { key: 'aspiration', label: 'Aspiration', wallaby: ['Esperance'], medtronic: ['React'], stryker: ['AXS'], microvention: ['SOFIA'], penumbra: ['ACE/MAX'], cerenovus: ['EMBOVAC'] },
-                { key: 'intrasaccular', label: 'Intrasaccular', wallaby: [], medtronic: ['Artisse'], stryker: ['Contour'], microvention: ['WEB'], penumbra: [], cerenovus: [], isGap: true },
-                { key: 'retrievers', label: 'Stent Retrievers', wallaby: ['pRESET'], medtronic: ['Solitaire'], stryker: ['Trevo'], microvention: ['ERIC'], penumbra: ['3D Revasc'], cerenovus: ['EMBOTRAP'] },
-                { key: 'balloons', label: 'Balloons', wallaby: ['pARAGON'], medtronic: ['Cello'], stryker: ['FlowGate2'], microvention: ['Scepter'], penumbra: [], cerenovus: ['Ascent'] },
-                { key: 'pump', label: 'Aspiration Pump', wallaby: [], medtronic: [], stryker: ['AXS Universal'], microvention: [], penumbra: ['ENGINE'], cerenovus: [], isGap: true }
-            ]
-        };
+        // PORTFOLIO MATRIX - data loaded from GitHub
+        function getPMData() {
+            return appData && appData.portfolio ? appData.portfolio : { categories: [] };
+        }
 
         // Store chart instances for updates
         var pmCoverageChart = null;
@@ -1364,8 +1320,8 @@
             
             for (var i = 0; i < companies.length; i++) {
                 var count = 0;
-                for (var j = 0; j < PM_DATA.categories.length; j++) {
-                    var cat = PM_DATA.categories[j];
+                for (var j = 0; j < getPMData().categories.length; j++) {
+                    var cat = getPMData().categories[j];
                     var products = cat[companies[i]];
                     if (products && products.length > 0) count++;
                 }
@@ -1380,8 +1336,8 @@
             var data = [];
             var colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899', '#14B8A6'];
             
-            for (var i = 0; i < PM_DATA.categories.length; i++) {
-                var cat = PM_DATA.categories[i];
+            for (var i = 0; i < getPMData().categories.length; i++) {
+                var cat = getPMData().categories[i];
                 var count = 0;
                 var companies = ['wallaby', 'medtronic', 'stryker', 'microvention', 'penumbra', 'cerenovus'];
                 for (var j = 0; j < companies.length; j++) {
@@ -1488,7 +1444,7 @@
             var view = viewFilter ? viewFilter.value : 'all';
             var category = catFilter ? catFilter.value : 'all';
             
-            var filteredCategories = PM_DATA.categories.filter(function(cat) {
+            var filteredCategories = getPMData().categories.filter(function(cat) {
                 if (category !== 'all' && cat.key !== category) return false;
                 if (view === 'gaps' && !cat.isGap) return false;
                 return true;
