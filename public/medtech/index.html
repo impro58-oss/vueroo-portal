@@ -346,14 +346,34 @@
             ]
         };
         
-        // EMBEDDED DATA LOADER
+        // EMBEDDED DATA LOADER WITH JSON FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                return Promise.resolve({
-                    epidemiology: FALLBACK_EPIDEMIOLOGY,
-                    revenue: FALLBACK_REVENUE,
-                    portfolio: null
-                });
+                var self = this;
+                // Try to fetch from JSON file first
+                return fetch('data/data.json')
+                    .then(function(response) {
+                        if (response.ok) {
+                            return response.json();
+                        }
+                        throw new Error('JSON not available');
+                    })
+                    .then(function(jsonData) {
+                        console.log('Loaded data from JSON file');
+                        return {
+                            epidemiology: jsonData,
+                            revenue: FALLBACK_REVENUE,
+                            portfolio: null
+                        };
+                    })
+                    .catch(function(error) {
+                        console.log('JSON fetch failed, using embedded fallback:', error.message);
+                        return {
+                            epidemiology: FALLBACK_EPIDEMIOLOGY,
+                            revenue: FALLBACK_REVENUE,
+                            portfolio: null
+                        };
+                    });
             },
             formatNumber: function(num, compact) {
                 if (num === null || num === undefined) return '--';
