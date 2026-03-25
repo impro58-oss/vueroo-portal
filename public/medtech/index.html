@@ -96,6 +96,11 @@
                     <i class="fas fa-file-alt w-5"></i>
                     <span>Research Hub</span>
                 </button>
+                <a href="due-diligence-template.html" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-slate-800 transition">
+                    <i class="fas fa-clipboard-check w-5"></i>
+                    <span>Due Diligence Template</span>
+                    <i class="fas fa-external-link-alt text-xs text-slate-500 ml-auto"></i>
+                </a>
             </nav>
             
             <div class="p-4 border-t border-slate-800">
@@ -691,20 +696,37 @@
             ]
         };
         
-        // EMBEDDED DATA LOADER WITH JSON FALLBACK
+        // DYNAMIC DATA LOADER - NO FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                var self = this;
-                var baseUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
+                // Try local data files first, then GitHub raw
+                var localBase = './data';
+                var githubBase = 'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/medtech/data';
                 
-                // Fetch both epidemiology and revenue data
-                var epiPromise = fetch(baseUrl + '/data.json?t=' + Date.now())
+                // Try local first, fall back to GitHub
+                var loadJson = function(filename) {
+                    return fetch(localBase + '/' + filename + '?t=' + Date.now())
+                        .then(function(r) {
+                            if (!r.ok) throw new Error('Local 404: ' + filename);
+                            return r.json();
+                        })
+                        .catch(function() {
+                            // Fall back to GitHub
+                            return fetch(githubBase + '/' + filename + '?t=' + Date.now())
+                                .then(function(r) {
+                                    if (!r.ok) throw new Error('GitHub 404: ' + filename);
+                                    return r.json();
+                                });
+                        });
+                };
+                
+                // Load epidemiology from original source
+                var epiPromise = fetch('https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/data.json?t=' + Date.now())
                     .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
                     .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
                 
-                var revPromise = fetch(baseUrl + '/revenue-summary.json?t=' + Date.now())
-                    .then(function(r) { return r.ok ? r.json() : Promise.reject('REV 404'); })
-                    .catch(function() { return FALLBACK_REVENUE; });
+                // Load revenue from NEW historical JSON
+                var revPromise = loadJson('revenue-historical.json');
                 
                 return Promise.all([epiPromise, revPromise])
                     .then(function(results) {
@@ -715,13 +737,10 @@
                             portfolio: null
                         };
                     })
-                    .catch(function() {
-                        console.log('Using fallback data');
-                        return {
-                            epidemiology: FALLBACK_EPIDEMIOLOGY,
-                            revenue: FALLBACK_REVENUE,
-                            portfolio: null
-                        };
+                    .catch(function(err) {
+                        console.error('Failed to load data:', err);
+                        // Show error but DON'T use fallback for revenue
+                        throw err;
                     });
             },
             formatNumber: function(num, compact) {
@@ -1549,6 +1568,7 @@
         var selectedRevenueCompanies = new Set();
         var trendChart = null;
         var shareChart = null;
+        var currentYearRange = 'all';
         
         const companyColors = {
             'Stryker': '#10B981',
@@ -1569,36 +1589,39 @@
         
         function loadRevenueData() {
             if (!appData || !appData.revenue || !appData.revenue.companies) {
-                // Use fallback data
-                revenueData = [
-                    { company: 'Stryker', revenue2024: 1450, revenue2030: 2450, cagr: 9.1, color: '#10B981', ticker: 'SYK', headquarters: 'USA' },
-                    { company: 'Medtronic', revenue2024: 1380, revenue2030: 2280, cagr: 8.8, color: '#3B82F6', ticker: 'MDT', headquarters: 'Ireland' },
-                    { company: 'Johnson & Johnson', revenue2024: 680, revenue2030: 1150, cagr: 9.2, color: '#8B5CF6', ticker: 'JNJ', headquarters: 'USA' },
-                    { company: 'Microvention/Terumo', revenue2024: 520, revenue2030: 920, cagr: 10.0, color: '#EF4444', ticker: 'TER', headquarters: 'Japan' },
-                    { company: 'Penumbra', revenue2024: 380, revenue2030: 720, cagr: 11.2, color: '#F59E0B', ticker: 'PEN', headquarters: 'USA' },
-                    { company: 'Balt', revenue2024: 180, revenue2030: 310, cagr: 9.5, color: '#06B6D4', ticker: 'Private', headquarters: 'France' },
-                    { company: 'Wallaby Phenox', revenue2024: 95, revenue2030: 195, cagr: 12.7, color: '#EC4899', ticker: 'Private', headquarters: 'Germany' }
-                ];
-            } else {
-                // Transform data from appData
-                revenueData = appData.revenue.companies.map(function(c) {
-                    var rev2024 = c.neurovascularRevenue || c.neurovascular_revenue || c.annualRevenue || c.annual_revenue || 0;
-                    var growth = c.neurovascularGrowth || c.neurovascular_growth || c.cagr || 8.5;
-                    var rev2030 = c.revenue2030 || c.revenue_2030 || Math.round(rev2024 * Math.pow(1 + growth/100, 6));
-                    
-                    return {
-                        company: c.name || c.company,
-                        revenue2024: rev2024 / 1000000, // Convert to millions
-                        revenue2030: rev2030 / 1000000,
-                        cagr: growth,
-                        color: companyColors[c.name || c.company] || '#3B82F6',
-                        ticker: c.ticker,
-                        headquarters: c.headquarters
-                    };
-                }).sort(function(a, b) { return b.revenue2024 - a.revenue2024; });
+                showRevenueError('No revenue data available. Please ensure revenue-historical.json is deployed.');
+                return;
             }
             
+            // Transform data from NEW historical JSON format
+            revenueData = appData.revenue.companies.map(function(c) {
+                var hist = c.historicalRevenue || {};
+                var proj = c.projectedRevenue || {};
+                
+                return {
+                    company: c.name,
+                    ticker: c.ticker,
+                    headquarters: c.headquarters,
+                    color: companyColors[c.name] || '#3B82F6',
+                    cagr: c.cagr,
+                    // All historical years
+                    '2020': hist['2020'] || 0,
+                    '2021': hist['2021'] || 0,
+                    '2022': hist['2022'] || 0,
+                    '2023': hist['2023'] || 0,
+                    '2024': hist['2024'] || 0,
+                    // All projected years
+                    '2025': proj['2025'] || 0,
+                    '2026': proj['2026'] || 0,
+                    '2027': proj['2027'] || 0,
+                    '2028': proj['2028'] || 0,
+                    '2029': proj['2029'] || 0,
+                    '2030': proj['2030'] || 0
+                };
+            }).sort(function(a, b) { return b['2024'] - a['2024']; });
+            
             // Initialize selected companies (all by default)
+            selectedRevenueCompanies.clear();
             revenueData.forEach(function(c) { selectedRevenueCompanies.add(c.company); });
             
             updateRevenueMetrics();
@@ -1607,8 +1630,27 @@
             updateRevenueTable();
         }
         
+        function showRevenueError(message) {
+            var section = document.getElementById('section-revenue');
+            if (section) {
+                section.innerHTML = '<div class="p-8 text-center"><div class="text-xl font-bold text-red-400 mb-2">Error Loading Revenue Data</div><div class="text-slate-400">' + message + '</div></div>';
+            }
+        }
+        
+        function getYearRange() {
+            var filter = document.getElementById('yearFilter');
+            return filter ? filter.value : 'all';
+        }
+        
+        function getYearsForRange(range) {
+            if (range === '2020-2024') return ['2020', '2021', '2022', '2023', '2024'];
+            if (range === '2024-2030') return ['2024', '2025', '2026', '2027', '2028', '2029', '2030'];
+            // 'all' - full range
+            return ['2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028', '2029', '2030'];
+        }
+        
         function updateRevenueMetrics() {
-            var total2024 = revenueData.reduce(function(sum, c) { return sum + c.revenue2024; }, 0);
+            var total2024 = revenueData.reduce(function(sum, c) { return sum + (c['2024'] || 0); }, 0);
             var topCompany = revenueData[0];
             var avgCAGR = revenueData.reduce(function(sum, c) { return sum + c.cagr; }, 0) / revenueData.length;
             
@@ -1676,26 +1718,20 @@
             if (shareChart) { shareChart.destroy(); }
             
             var filteredData = revenueData.filter(function(c) { return selectedRevenueCompanies.has(c.company); });
+            var yearRange = getYearRange();
+            var years = getYearsForRange(yearRange);
             
-            // Trend Chart
+            // Trend Chart - uses actual historical/projected data
             var trendCtx = document.getElementById('trendChart');
             if (trendCtx) {
                 trendChart = new Chart(trendCtx, {
                     type: 'line',
                     data: {
-                        labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                        labels: years,
                         datasets: filteredData.map(function(d) {
                             return {
                                 label: d.company,
-                                data: [
-                                    d.revenue2024,
-                                    d.revenue2024 * Math.pow(1 + d.cagr/100, 1),
-                                    d.revenue2024 * Math.pow(1 + d.cagr/100, 2),
-                                    d.revenue2024 * Math.pow(1 + d.cagr/100, 3),
-                                    d.revenue2024 * Math.pow(1 + d.cagr/100, 4),
-                                    d.revenue2024 * Math.pow(1 + d.cagr/100, 5),
-                                    d.revenue2030
-                                ],
+                                data: years.map(function(y) { return d[y] || 0; }),
                                 borderColor: d.color,
                                 backgroundColor: d.color + '20',
                                 tension: 0.4,
@@ -1723,7 +1759,7 @@
                 });
             }
             
-            // Market Share Chart
+            // Market Share Chart - based on 2024 data
             var shareCtx = document.getElementById('shareChart');
             if (shareCtx) {
                 shareChart = new Chart(shareCtx, {
@@ -1731,7 +1767,7 @@
                     data: {
                         labels: filteredData.map(function(d) { return d.company; }),
                         datasets: [{
-                            data: filteredData.map(function(d) { return d.revenue2024; }),
+                            data: filteredData.map(function(d) { return d['2024'] || 0; }),
                             backgroundColor: filteredData.map(function(d) { return d.color; })
                         }]
                     },
@@ -1753,10 +1789,12 @@
             var filteredData = revenueData.filter(function(c) { return selectedRevenueCompanies.has(c.company); });
             
             tbody.innerHTML = filteredData.map(function(c) {
+                var rev2024 = c['2024'] || 0;
+                var rev2030 = c['2030'] || 0;
                 return '<tr class="hover:bg-slate-700/50">' +
                     '<td class="p-3 font-medium">' + c.company + '</td>' +
-                    '<td class="p-3 text-right text-emerald-400">$' + c.revenue2024.toFixed(0) + 'M</td>' +
-                    '<td class="p-3 text-right">$' + c.revenue2030.toFixed(0) + 'M</td>' +
+                    '<td class="p-3 text-right text-emerald-400">$' + rev2024.toFixed(0) + 'M</td>' +
+                    '<td class="p-3 text-right">$' + rev2030.toFixed(0) + 'M</td>' +
                     '<td class="p-3 text-right text-yellow-400">' + c.cagr.toFixed(1) + '%</td>' +
                     '<td class="p-3 text-slate-400">' + (c.headquarters || '') + '</td>' +
                     '</tr>';
