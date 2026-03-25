@@ -1254,55 +1254,56 @@
             var view = viewFilter ? viewFilter.value : 'all';
             var category = catFilter ? catFilter.value : 'all';
             
-            var filteredCategories = getPMData().categories.filter(function(cat) {
-                if (category !== 'all' && cat.key !== category) return false;
-                if (view === 'gaps' && !cat.isGap) return false;
+            var pmData = getPMData();
+            if (!pmData || !pmData.categories || pmData.categories.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="p-8 text-center text-slate-400">No portfolio data available. Check data loading.</td></tr>';
+                return;
+            }
+            
+            var filteredCategories = pmData.categories.filter(function(cat) {
+                if (category !== 'all' && cat.id !== category) return false;
                 return true;
             });
             
             var html = '';
             for (var i = 0; i < filteredCategories.length; i++) {
                 var cat = filteredCategories[i];
-                var rowClass = cat.isGap ? 'bg-red-900/10' : '';
-                var labelClass = cat.isGap ? 'text-red-300' : '';
+                var rowClass = '';
                 
-                html += '<tr class="hover:bg-slate-800/50 transition ' + rowClass + '">';
-                html += '<td class="p-3 font-medium sticky left-0 bg-slate-900 ' + labelClass + '">' + cat.label + '</td>';
+                html += '<tr class="hover:bg-slate-800/50 transition ' + rowClass + '"'>';
+                html += '<td class="p-3 font-medium sticky left-0 bg-slate-900">' + cat.name + '</td>';
                 
-                // Helper to render cell
-                function renderCell(products) {
-                    if (products && products.length > 0) {
-                        var productList = products.join(', ');
-                        return '<td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle mr-1"></i></span><span class="text-slate-300">' + productList + '</span></td>';
-                    } else if (cat.isGap) {
-                        return '<td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle mr-1"></i></span><span class="text-red-300 font-medium">GAP</span></td>';
+                // Helper to render cell - takes company data object
+                function renderCell(companyData) {
+                    if (companyData && companyData.products && companyData.products.length > 0) {
+                        var productList = companyData.products.join(', ');
+                        var strength = companyData.strength || 'medium';
+                        var strengthColor = strength === 'high' ? 'text-emerald-400' : strength === 'medium' ? 'text-yellow-400' : 'text-slate-400';
+                        return '<td class="p-3"><span class="' + strengthColor + '"><i class="fas fa-check-circle mr-1"></i></span><span class="text-slate-300">' + productList + '</span></td>';
                     } else {
-                        return '<td class="p-3"><span class="text-slate-600"><i class="fas fa-times"></i></span></td>';
+                        return '<td class="p-3"><span class="text-slate-600"><i class="fas fa-minus"></i></span></td>';
                     }
                 }
                 
-                // Show/hide columns based on view
-                if (view !== 'competitors') html += renderCell(cat.wallaby);
+                // Render cells for each company
                 html += renderCell(cat.medtronic);
                 html += renderCell(cat.stryker);
                 html += renderCell(cat.microvention);
                 html += renderCell(cat.penumbra);
-                html += renderCell(cat.cerenovus);
+                html += renderCell(cat.jnj);
+                html += renderCell(cat.phenox);
                 
                 html += '</tr>';
             }
             
             tbody.innerHTML = html || '<tr><td colspan="7" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
-            
-            // Update charts
-            initPortfolioCharts();
         }
 
         // Initialize Portfolio Matrix when section shown
         document.querySelectorAll('.nav-item').forEach(function(btn) {
             btn.addEventListener('click', function() {
-                var section = this.getAttribute('onclick').match(/showSection\('([^']+)'\)/);
-                if (section && section[1] === 'portfolio') {
+                var onclickAttr = this.getAttribute('onclick');
+                if (onclickAttr && onclickAttr.indexOf("'portfolio'") > -1) {
                     setTimeout(function() { updatePortfolioMatrix(); }, 100);
                 }
             });
