@@ -1182,17 +1182,18 @@
         function getCategoryDistribution() {
             var labels = [];
             var data = [];
-            var colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899', '#14B8A6'];
+            var colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899', '#14B8A6', '#6366F1', '#F472B6'];
+            
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
             
             for (var i = 0; i < getPMData().categories.length; i++) {
                 var cat = getPMData().categories[i];
                 var count = 0;
-                var companies = ['wallaby', 'medtronic', 'stryker', 'microvention', 'penumbra', 'cerenovus'];
                 for (var j = 0; j < companies.length; j++) {
-                    var products = cat[companies[j]];
-                    if (products && products.length > 0) count++;
+                    var companyData = cat[companies[j]];
+                    if (companyData && companyData.products && companyData.products.length > 0) count++;
                 }
-                labels.push(cat.label);
+                labels.push(cat.name);  // Use cat.name, not cat.label
                 data.push(count);
             }
             
@@ -1294,12 +1295,35 @@
             
             var pmData = getPMData();
             if (!pmData || !pmData.categories || pmData.categories.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="7" class="p-8 text-center text-slate-400">No portfolio data available. Check data loading.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="11" class="p-8 text-center text-slate-400">No portfolio data available. Check data loading.</td></tr>';
                 return;
             }
             
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
+            
             var filteredCategories = pmData.categories.filter(function(cat) {
+                // Filter by category
                 if (category !== 'all' && cat.id !== category) return false;
+                
+                // Filter by view type
+                if (view === 'comprehensive') {
+                    // Show categories with 6+ companies having products
+                    var companiesWithProducts = 0;
+                    for (var i = 0; i < companies.length; i++) {
+                        var companyData = cat[companies[i]];
+                        if (companyData && companyData.products && companyData.products.length > 0) companiesWithProducts++;
+                    }
+                    if (companiesWithProducts < 6) return false;
+                } else if (view === 'gaps') {
+                    // Show categories with < 5 companies having products
+                    var companiesWithProducts = 0;
+                    for (var i = 0; i < companies.length; i++) {
+                        var companyData = cat[companies[i]];
+                        if (companyData && companyData.products && companyData.products.length > 0) companiesWithProducts++;
+                    }
+                    if (companiesWithProducts >= 5) return false;
+                }
+                // 'all' shows everything
                 return true;
             });
             
@@ -1346,7 +1370,10 @@
             btn.addEventListener('click', function() {
                 var onclickAttr = this.getAttribute('onclick');
                 if (onclickAttr && onclickAttr.indexOf("'portfolio'") > -1) {
-                    setTimeout(function() { updatePortfolioMatrix(); }, 100);
+                    setTimeout(function() { 
+                        initPortfolioCharts();  // Initialize charts first
+                        updatePortfolioMatrix(); // Then update table
+                    }, 100);
                 }
             });
         });
