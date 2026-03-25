@@ -462,14 +462,89 @@
             </section>
 
             <section id="section-portfolio" class="section p-8">
-                <div class="text-center py-20">
-                    <i class="fas fa-th-large text-5xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Portfolio Matrix</h3>
-                    <p class="text-slate-400 mb-4">View the complete product portfolio analysis.</p>
-                    <a href="portfolio-dashboard.html" class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition">
-                        <i class="fas fa-external-link-alt"></i>
-                        Open Portfolio Dashboard
-                    </a>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Product Portfolio Intelligence</h2>
+                    <p class="text-slate-400">Competitive Product Mapping & Market Coverage Analysis</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="glass rounded-xl p-4 mb-6 border border-slate-800">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-slate-400 text-sm mb-2">View</label>
+                            <select id="pmViewFilter" onchange="updatePortfolioMatrix()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                                <option value="all">All Companies</option>
+                                <option value="wallaby">Wallaby/Phenox Focus</option>
+                                <option value="competitors">Competitors Only</option>
+                                <option value="gaps">Coverage Gaps</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm mb-2">Product Category</label>
+                            <select id="pmCategoryFilter" onchange="updatePortfolioMatrix()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
+                                <option value="all">All Categories</option>
+                                <option value="coils">Coils</option>
+                                <option value="flowDiverters">Flow Diverters</option>
+                                <option value="stents">Stents</option>
+                                <option value="aspiration">Aspiration</option>
+                                <option value="intrasaccular">Intrasaccular</option>
+                                <option value="retrievers">Stent Retrievers</option>
+                                <option value="balloons">Balloons</option>
+                                <option value="pump">Aspiration Pump</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Total Products</div>
+                        <div class="text-2xl font-bold text-blue-400">45+</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Wallaby Coverage</div>
+                        <div class="text-2xl font-bold text-emerald-400">7/10</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Top Competitor</div>
+                        <div class="text-2xl font-bold text-purple-400">Stryker</div>
+                    </div>
+                    <div class="glass rounded-xl p-4 border border-slate-800">
+                        <div class="text-slate-400 text-xs uppercase tracking-wide mb-1">Coverage Gaps</div>
+                        <div class="text-2xl font-bold text-yellow-400">3</div>
+                    </div>
+                </div>
+
+                <!-- Product Matrix -->
+                <div class="glass rounded-xl p-6 border border-slate-800">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-white">Product Portfolio Matrix</h3>
+                        <div class="flex gap-4 text-xs">
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded"></span> Full</span>
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-amber-500 rounded"></span> Partial</span>
+                            <span class="flex items-center gap-1"><span class="w-3 h-3 bg-red-500 rounded"></span> None</span>
+                        </div>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm" id="portfolioMatrixTable">
+                            <thead class="bg-slate-900/50">
+                                <tr>
+                                    <th class="p-3 text-slate-400 font-medium sticky left-0 bg-slate-900">Category</th>
+                                    <th class="p-3 text-slate-400 font-medium">Wallaby</th>
+                                    <th class="p-3 text-slate-400 font-medium">Medtronic</th>
+                                    <th class="p-3 text-slate-400 font-medium">Stryker</th>
+                                    <th class="p-3 text-slate-400 font-medium">Microvention</th>
+                                    <th class="p-3 text-slate-400 font-medium">Penumbra</th>
+                                    <th class="p-3 text-slate-400 font-medium">Cerenovus</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800" id="portfolioMatrixBody">
+                                <!-- Rendered via JS -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
@@ -1168,6 +1243,81 @@
                 renderCompetitorIntel(filter, this.value);
             });
         }
+
+        // PORTFOLIO MATRIX FUNCTIONS
+        const PM_DATA = {
+            categories: [
+                { key: 'coils', label: 'Coils', wallaby: ['Avenir'], medtronic: ['Axium'], stryker: ['Target'], microvention: ['Cosmos'], penumbra: ['SMART'], cerenovus: ['GALAXY'] },
+                { key: 'flowDiverters', label: 'Flow Diverters', wallaby: ['p64'], medtronic: ['Pipeline'], stryker: ['Surpass'], microvention: ['FRED'], penumbra: [], cerenovus: ['BRAVO'] },
+                { key: 'stents', label: 'Stents', wallaby: ['pCONUS2'], medtronic: ['Enterprise'], stryker: ['Neuroform'], microvention: ['LVIS'], penumbra: [], cerenovus: ['Enterprise 2'] },
+                { key: 'aspiration', label: 'Aspiration', wallaby: ['Esperance'], medtronic: ['React'], stryker: ['AXS'], microvention: ['SOFIA'], penumbra: ['ACE/MAX'], cerenovus: ['EMBOVAC'] },
+                { key: 'intrasaccular', label: 'Intrasaccular', wallaby: [], medtronic: ['Artisse'], stryker: ['Contour'], microvention: ['WEB'], penumbra: [], cerenovus: [], isGap: true },
+                { key: 'retrievers', label: 'Stent Retrievers', wallaby: ['pRESET'], medtronic: ['Solitaire'], stryker: ['Trevo'], microvention: ['ERIC'], penumbra: ['3D Revasc'], cerenovus: ['EMBOTRAP'] },
+                { key: 'balloons', label: 'Balloons', wallaby: ['pARAGON'], medtronic: ['Cello'], stryker: ['FlowGate2'], microvention: ['Scepter'], penumbra: [], cerenovus: ['Ascent'] },
+                { key: 'pump', label: 'Aspiration Pump', wallaby: [], medtronic: [], stryker: ['AXS Universal'], microvention: [], penumbra: ['ENGINE'], cerenovus: [], isGap: true }
+            ]
+        };
+
+        function updatePortfolioMatrix() {
+            var viewFilter = document.getElementById('pmViewFilter');
+            var catFilter = document.getElementById('pmCategoryFilter');
+            var tbody = document.getElementById('portfolioMatrixBody');
+            
+            if (!tbody) return;
+            
+            var view = viewFilter ? viewFilter.value : 'all';
+            var category = catFilter ? catFilter.value : 'all';
+            
+            var filteredCategories = PM_DATA.categories.filter(function(cat) {
+                if (category !== 'all' && cat.key !== category) return false;
+                if (view === 'gaps' && !cat.isGap) return false;
+                return true;
+            });
+            
+            var html = '';
+            for (var i = 0; i < filteredCategories.length; i++) {
+                var cat = filteredCategories[i];
+                var rowClass = cat.isGap ? 'bg-red-900/10' : '';
+                var labelClass = cat.isGap ? 'text-red-300' : '';
+                
+                html += '<tr class="hover:bg-slate-800/50 transition ' + rowClass + '">';
+                html += '<td class="p-3 font-medium sticky left-0 bg-slate-900 ' + labelClass + '">' + cat.label + '</td>';
+                
+                // Helper to render cell
+                function renderCell(products) {
+                    if (products && products.length > 0) {
+                        var productList = products.join(', ');
+                        return '<td class="p-3"><span class="text-emerald-400"><i class="fas fa-check-circle mr-1"></i></span><span class="text-slate-300">' + productList + '</span></td>';
+                    } else if (cat.isGap) {
+                        return '<td class="p-3"><span class="text-red-400"><i class="fas fa-times-circle mr-1"></i></span><span class="text-red-300 font-medium">GAP</span></td>';
+                    } else {
+                        return '<td class="p-3"><span class="text-slate-600"><i class="fas fa-times"></i></span></td>';
+                    }
+                }
+                
+                // Show/hide columns based on view
+                if (view !== 'competitors') html += renderCell(cat.wallaby);
+                html += renderCell(cat.medtronic);
+                html += renderCell(cat.stryker);
+                html += renderCell(cat.microvention);
+                html += renderCell(cat.penumbra);
+                html += renderCell(cat.cerenovus);
+                
+                html += '</tr>';
+            }
+            
+            tbody.innerHTML = html || '<tr><td colspan="7" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
+        }
+
+        // Initialize Portfolio Matrix when section shown
+        document.querySelectorAll('.nav-item').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var section = this.getAttribute('onclick').match(/showSection\('([^']+)'\)/);
+                if (section && section[1] === 'portfolio') {
+                    setTimeout(function() { updatePortfolioMatrix(); }, 100);
+                }
+            });
+        });
 
         // Region filter
         var regionFilter = document.getElementById('regionFilter');
