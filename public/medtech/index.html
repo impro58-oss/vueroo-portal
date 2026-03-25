@@ -350,13 +350,13 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 var self = this;
-                // Try to fetch from JSON file first (absolute path)
-                return fetch('/medtech/data/data.json')
+                // Try to fetch from GitHub raw URL first
+                return fetch('https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/medtech/data/data.json')
                     .then(function(response) {
                         if (response.ok) {
                             return response.json();
                         }
-                        throw new Error('JSON not available - status: ' + response.status);
+                        throw new Error('GitHub JSON not available - status: ' + response.status);
                     })
                     .then(function(jsonData) {
                         console.log('Loaded data from JSON file');
