@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockVue Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .nav-item { transition: all 0.2s; cursor: pointer; }
+        .nav-item:hover { background: rgba(59, 130, 246, 0.2); }
+        .nav-item.active { background: rgba(59, 130, 246, 0.3); border-left: 3px solid #3B82F6; }
+        .section { display: none; }
+        .section.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .stock-card { transition: all 0.3s ease; }
+        .stock-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .signal-long { border-left: 3px solid #10B981; }
+        .signal-short { border-left: 3px solid #EF4444; }
+        .signal-hold { border-left: 3px solid #6B7280; }
+        .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .loading-skeleton { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; background: rgba(148, 163, 184, 0.2); }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .data-status { transition: all 0.3s ease; }
+        .data-status.loading { color: #FBBF24; }
+        .data-status.live { color: #10B981; }
+        .data-status.error { color: #EF4444; }
+        .category-badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 600; text-transform: uppercase; }
+        .badge-active { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .badge-trending { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-gainers { background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-losers { background: rgba(239, 68, 68, 0.2); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-white">StockVue</h1>
+                        <p class="text-xs text-slate-400">Market Intelligence</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="flex-1 py-4">
+                <div class="px-4 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Overview</div>
+                <button onclick="showSection('dashboard')" id="nav-dashboard" class="nav-item active w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-globe w-5"></i><span>Market Pulse</span>
+                </button>
+                
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Categories</div>
+                <button onclick="showSection('most-active')" id="nav-most-active" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-fire w-5"></i><span>Most Active</span>
+                </button>
+                <button onclick="showSection('trending')" id="nav-trending" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-arrow-trend-up w-5"></i><span>Trending</span>
+                </button>
+                <button onclick="showSection('gainers')" id="nav-gainers" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-chart-line w-5"></i><span>52W Gainers</span>
+                </button>
+                <button onclick="showSection('losers')" id="nav-losers" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-arrow-trend-down w-5"></i><span>Losers</span>
+                </button>
+                
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Analysis</div>
+                <button onclick="showSection('opportunities')" id="nav-opportunities" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                    <i class="fas fa-bullseye w-5"></i><span>Opportunities</span>
+                </button>
+                
+                <div class="px-4 mt-4 mb-2">
+                    <button onclick="refreshData()" class="w-full py-2 px-3 bg-blue-600/80 hover:bg-blue-600 rounded-lg text-xs font-medium text-white transition flex items-center justify-center gap-2">
+                        <i class="fas fa-sync-alt"></i> Refresh Data
+                    </button>
+                    <div class="mt-2 text-[10px] text-slate-500 text-center">
+                        Source: Yahoo Finance
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="p-4 border-t border-slate-800">
+                <div class="text-xs text-slate-500">Data Status</div>
+                <div id="data-status" class="data-status loading text-sm font-medium">
+                    <i class="fas fa-circle-notch fa-spin mr-1"></i> Loading...
+                </div>
+                <div class="text-xs text-slate-500 mt-2">Last Scan</div>
+                <div id="last-scan" class="text-sm text-slate-300">--</div>
+                
+                <div class="text-xs text-slate-500 mt-2">Assets Tracked</div>
+                <div id="assets-tracked" class="text-sm text-emerald-400">100</div>
+                
+                <button onclick="refreshData()" class="mt-3 w-full py-2 px-3 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium text-white transition">
+                    <i class="fas fa-sync-alt mr-1"></i> Refresh
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto bg-slate-950">
+            
+            <!-- DASHBOARD SECTION -->
+            <div id="dashboard" class="section active">
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-800 p-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-slate-400 text-sm mb-2">US Stock Market Intelligence</p>
+                            <h2 class="text-4xl font-bold gradient-text mb-2">StockVue Dashboard</h2>
+                            <p class="text-slate-400">Real-time market data from Yahoo Finance • Updated every 3 hours</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="text-right">
+                                <div class="text-xs text-slate-500">Market Status</div>
+                                <div class="text-sm text-emerald-400 font-medium"><i class="fas fa-circle text-xs mr-1"></i>Live</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                        <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-slate-400 text-sm">Stocks Scanned</div>
+                                <i class="fas fa-database text-slate-600"></i>
+                            </div>
+                            <div id="metric-total-stocks" class="text-3xl font-bold text-white">--</div>
+                            <div class="text-xs text-slate-500 mt-1">Across 4 categories</div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-slate-400 text-sm">Signals Today</div>
+                                <i class="fas fa-bullseye text-slate-600"></i>
+                            </div>
+                            <div id="metric-signals" class="text-3xl font-bold text-emerald-400">--</div>
+                            <div class="text-xs text-slate-500 mt-1">Long/Short opportunities</div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-slate-400 text-sm">Long Signals</div>
+                                <i class="fas fa-arrow-up text-slate-600"></i>
+                            </div>
+                            <div id="metric-long" class="text-3xl font-bold text-blue-400">--</div>
+                            <div class="text-xs text-slate-500 mt-1">Bullish setups</div>
+                        </div>
+
+                        <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="text-slate-400 text-sm">Short Signals</div>
+                                <i class="fas fa-arrow-down text-slate-600"></i>
+                            </div>
+                            <div id="metric-short" class="text-3xl font-bold text-red-400">--</div>
+                            <div class="text-xs text-slate-500 mt-1">Bearish setups</div>
+                        </div>
+                    </div>
+
+                    <!-- Market Overview -->
+                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+                        <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-white">Top Market Movers</h3>
+                            <span id="movers-count" class="text-xs text-slate-500">-- stocks</span>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-slate-800">
+                                    <tr class="text-slate-400 text-xs">
+                                        <th class="p-4 font-medium">Symbol</th>
+                                        <th class="p-4 font-medium">Name</th>
+                                        <th class="p-4 font-medium">Category</th>
+                                        <th class="p-4 font-medium text-right">Price</th>
+                                        <th class="p-4 font-medium text-right">Change</th>
+                                        <th class="p-4 font-medium text-right">Volume</th>
+                                        <th class="p-4 font-medium text-center">Signal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="movers-table-body" class="text-sm">
+                                    <!-- Dynamic content -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY SECTIONS (Dynamic) -->
+            <div id="most-active" class="section">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Most Active Stocks</h2>
+                    <div id="most-active-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Dynamic cards -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="trending" class="section">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Trending Stocks</h2>
+                    <div id="trending-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Dynamic cards -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="gainers" class="section">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">52-Week Gainers</h2>
+                    <div id="gainers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Dynamic cards -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="losers" class="section">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Market Losers</h2>
+                    <div id="losers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Dynamic cards -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="opportunities" class="section">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold text-white mb-6">Trading Opportunities</h2>
+                    <p class="text-slate-400 mb-6">Stocks with clear momentum signals from Yahoo Finance market data.</p>
+                    
+                    <div id="opportunities-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <!-- Dynamic cards -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Data source from GitHub
+        const DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/stocks/stocks_latest.json';
+        
+        let stockData = null;
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+        });
+        
+        async function loadData() {
+            try {
+                const response = await fetch(DATA_URL + '?t=' + Date.now());
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                
+                stockData = await response.json();
+                
+                document.getElementById('data-status').className = 'data-status live text-sm font-medium';
+                document.getElementById('data-status').innerHTML = '<i class="fas fa-check-circle mr-1"></i> Live';
+                
+                // Update timestamp
+                const scanTime = new Date(stockData.scan_timestamp);
+                document.getElementById('last-scan').textContent = scanTime.toLocaleString('en-US', {
+                    month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+                });
+                
+                // Update metrics
+                document.getElementById('metric-total-stocks').textContent = stockData.total_stocks || '--';
+                document.getElementById('metric-signals').textContent = stockData.signals_found || '--';
+                document.getElementById('metric-long').textContent = stockData.long_opportunities || '--';
+                document.getElementById('metric-short').textContent = stockData.short_opportunities || '--';
+                document.getElementById('assets-tracked').textContent = stockData.total_stocks || '100';
+                document.getElementById('movers-count').textContent = (stockData.results?.length || 0) + ' stocks';
+                
+                // Render sections
+                renderMoversTable();
+                renderCategoryGrids();
+                renderOpportunities();
+                
+            } catch (error) {
+                console.error('Failed to load stock data:', error);
+                document.getElementById('data-status').className = 'data-status error text-sm font-medium';
+                document.getElementById('data-status').innerHTML = '<i class="fas fa-exclamation-circle mr-1"></i> Error';
+            }
+        }
+        
+        function refreshData() {
+            document.getElementById('data-status').className = 'data-status loading text-sm font-medium';
+            document.getElementById('data-status').innerHTML = '<i class="fas fa-circle-notch fa-spin mr-1"></i> Refreshing...';
+            loadData();
+        }
+        
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            document.getElementById(sectionId).classList.add('active');
+            document.getElementById('nav-' + sectionId).classList.add('active');
+        }
+        
+        function renderMoversTable() {
+            const tbody = document.getElementById('movers-table-body');
+            if (!tbody || !stockData?.results) return;
+            
+            // Get top 15 by absolute change
+            const movers = [...stockData.results]
+                .sort((a, b) => Math.abs(b.change_percent || 0) - Math.abs(a.change_percent || 0))
+                .slice(0, 15);
+            
+            tbody.innerHTML = movers.map(stock => {
+                const signalClass = stock.signal === 'long' ? 'text-emerald-400' : stock.signal === 'short' ? 'text-red-400' : 'text-slate-500';
+                const signalIcon = stock.signal === 'long' ? 'fa-arrow-up' : stock.signal === 'short' ? 'fa-arrow-down' : 'fa-minus';
+                const categoryClass = stock.category === 'most_active' ? 'badge-active' : stock.category === 'trending' ? 'badge-trending' : stock.category === 'gainers_52w' ? 'badge-gainers' : 'badge-losers';
+                const categoryLabel = stock.category === 'gainers_52w' ? '52W Gainer' : stock.category.replace('_', ' ');
+                
+                return `
+                    <tr class="hover:bg-slate-800/50 border-b border-slate-800">
+                        <td class="p-4 font-mono font-bold text-white">${stock.symbol}</td>
+                        <td class="p-4 text-slate-300">${stock.name}</td>
+                        <td class="p-4"><span class="category-badge ${categoryClass}">${categoryLabel}</span></td>
+                        <td class="p-4 text-right font-mono">$${stock.price?.toFixed(2) || '--'}</td>
+                        <td class="p-4 text-right ${(stock.change_percent || 0) >= 0 ? 'text-emerald-400' : 'text-red-400'}">
+                            ${(stock.change_percent > 0 ? '+' : '') + (stock.change_percent?.toFixed(2) || '0.00')}%
+                        </td>
+                        <td class="p-4 text-right text-slate-400">${formatVolume(stock.volume)}</td>
+                        <td class="p-4 text-center"><i class="fas ${signalIcon} ${signalClass}"></i></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+        
+        function renderCategoryGrids() {
+            if (!stockData?.results) return;
+            
+            const categories = {
+                'most-active': 'most_active',
+                'trending': 'trending',
+                'gainers': 'gainers_52w',
+                'losers': 'losers'
+            };
+            
+            Object.entries(categories).forEach(([sectionId, category]) => {
+                const grid = document.getElementById(sectionId + '-grid');
+                if (!grid) return;
+                
+                const stocks = stockData.results.filter(s => s.category === category).slice(0, 12);
+                
+                grid.innerHTML = stocks.map(stock => renderStockCard(stock)).join('');
+            });
+        }
+        
+        function renderOpportunities() {
+            const grid = document.getElementById('opportunities-grid');
+            if (!grid || !stockData?.results) return;
+            
+            const opportunities = stockData.results
+                .filter(s => s.signal === 'long' || s.signal === 'short')
+                .sort((a, b) => (b.confidence || 0) - (a.confidence || 0))
+                .slice(0, 10);
+            
+            grid.innerHTML = opportunities.map(stock => renderOpportunityCard(stock)).join('');
+        }
+        
+        function renderStockCard(stock) {
+            const signalClass = stock.signal === 'long' ? 'signal-long' : stock.signal === 'short' ? 'signal-short' : 'signal-hold';
+            const changeColor = (stock.change_percent || 0) >= 0 ? 'text-emerald-400' : 'text-red-400';
+            const changeSign = (stock.change_percent > 0) ? '+' : '';
+            
+            return `
+                <div class="stock-card ${signalClass} bg-slate-900 rounded-xl border border-slate-800 p-4">
+                    <div class="flex items-start justify-between mb-3">
+                        <div>
+                            <div class="font-mono font-bold text-white text-lg">${stock.symbol}</div>
+                            <div class="text-xs text-slate-400 truncate max-w-[150px]">${stock.name}</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-white">$${stock.price?.toFixed(2) || '--'}</div>
+                            <div class="text-xs ${changeColor}">${changeSign}${stock.change_percent?.toFixed(2) || '0.00'}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="text-slate-500">Vol: ${formatVolume(stock.volume)}</span>
+                        ${stock.signal !== 'hold' ? `<span class="${stock.signal === 'long' ? 'text-emerald-400' : 'text-red-400'} font-medium">${stock.signal.toUpperCase()} ${Math.round((stock.confidence || 0) * 100)}%</span>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderOpportunityCard(stock) {
+            const isLong = stock.signal === 'long';
+            const signalColor = isLong ? 'text-emerald-400' : 'text-red-400';
+            const signalBg = isLong ? 'bg-emerald-900/30 border-emerald-800' : 'bg-red-900/30 border-red-800';
+            
+            return `
+                <div class="${signalBg} border rounded-xl p-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="font-mono font-bold text-white text-xl">${stock.symbol}</span>
+                                <span class="px-2 py-0.5 bg-slate-800 rounded text-xs text-slate-300">${stock.category.replace('_', ' ')}</span>
+                            </div>
+                            <div class="text-sm text-slate-400 mt-1">${stock.name}</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold ${signalColor}">${stock.signal.toUpperCase()}</div>
+                            <div class="text-sm text-slate-400">${Math.round((stock.confidence || 0) * 100)}% confidence</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <div class="text-xs text-slate-500">Price</div>
+                            <div class="font-mono text-white">$${stock.price?.toFixed(2) || '--'}</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500">Change</div>
+                            <div class="font-mono ${(stock.change_percent || 0) >= 0 ? 'text-emerald-400' : 'text-red-400'}">${(stock.change_percent > 0 ? '+' : '') + (stock.change_percent?.toFixed(2) || '0.00')}%</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500">Volume</div>
+                            <div class="font-mono text-slate-300">${formatVolume(stock.volume)}</div>
+                        </div>
+                    </div>
+                    
+                    ${stock.reasons?.length ? `
+                        <div class="text-xs text-slate-400">
+                            <i class="fas fa-info-circle mr-1"></i>${stock.reasons.slice(0, 2).join(' • ')}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+        
+        function formatVolume(num) {
+            if (!num) return '--';
+            if (num >= 1e9) return (num / 1e9).toFixed(1) + 'B';
+            if (num >= 1e6) return (num / 1e6).toFixed(1) + 'M';
+            if (num >= 1e3) return (num / 1e3).toFixed(1) + 'K';
+            return num.toString();
+        }
+    </script>
+</body>
+</html>
