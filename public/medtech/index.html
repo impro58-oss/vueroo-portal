@@ -699,38 +699,23 @@
         // DYNAMIC DATA LOADER - NO FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                // Try local data files first, then GitHub raw
-                var localBase = './data';
-                var githubBase = 'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/medtech/data';
-                
-                // Try local first, fall back to GitHub
-                var loadJson = function(filename) {
-                    return fetch(localBase + '/' + filename + '?t=' + Date.now())
-                        .then(function(r) {
-                            if (!r.ok) throw new Error('Local 404: ' + filename);
-                            return r.json();
-                        })
-                        .catch(function() {
-                            // Fall back to GitHub
-                            return fetch(githubBase + '/' + filename + '?t=' + Date.now())
-                                .then(function(r) {
-                                    if (!r.ok) throw new Error('GitHub 404: ' + filename);
-                                    return r.json();
-                                });
-                        });
-                };
+                var dataBase = './data';
                 
                 // Load epidemiology from original source
                 var epiPromise = fetch('https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/data.json?t=' + Date.now())
                     .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
                     .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
                 
-                // Load revenue from NEW historical JSON
-                var revPromise = loadJson('revenue-historical.json');
+                // Load revenue from local historical JSON
+                var revPromise = fetch(dataBase + '/revenue-historical.json?t=' + Date.now())
+                    .then(function(r) {
+                        if (!r.ok) throw new Error('Revenue data not found');
+                        return r.json();
+                    });
                 
                 return Promise.all([epiPromise, revPromise])
                     .then(function(results) {
-                        console.log('Loaded data from JSON files');
+                        console.log('✅ Loaded data from JSON files');
                         return {
                             epidemiology: results[0],
                             revenue: results[1],
@@ -738,8 +723,7 @@
                         };
                     })
                     .catch(function(err) {
-                        console.error('Failed to load data:', err);
-                        // Show error but DON'T use fallback for revenue
+                        console.error('❌ Failed to load data:', err);
                         throw err;
                     });
             },
