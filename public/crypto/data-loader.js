@@ -32,7 +32,21 @@ function extractTimestamp(filename) {
  */
 async function loadLatestScan() {
     try {
-        // Try crypto_latest.json first - always has the most recent scan
+        // Try test file first for debugging
+        const testUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_test.json';
+        try {
+            const response = await fetch(testUrl);
+            if (response.ok) {
+                const data = await response.json();
+                latestData = data;
+                console.log('Loaded TEST data from crypto_test.json');
+                return data;
+            }
+        } catch (e) {
+            console.log('Test file not found, trying live data...');
+        }
+        
+        // Try crypto_latest.json - always has the most recent scan
         const latestJsonUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_latest.json';
         try {
             const response = await fetch(latestJsonUrl);
