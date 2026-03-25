@@ -636,7 +636,7 @@
                                     <th class="p-3 text-slate-400 font-medium">Penumbra</th>
                                     <th class="p-3 text-slate-400 font-medium">J&J</th>
                                     <th class="p-3 text-slate-400 font-medium">Balt</th>
-                                    <th class="p-3 text-pink-400 font-medium bg-pink-500/10 border border-pink-500/30">★ Wallaby Phenox</th>
+                                    <th class="p-3 font-medium bg-[#39FF14]/10 border-2 border-[#39FF14] text-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.3)]">★ Wallaby Phenox</th>
                                     <th class="p-3 text-slate-400 font-medium">Rapid</th>
                                     <th class="p-3 text-slate-400 font-medium">Acandis</th>
                                     <th class="p-3 text-slate-400 font-medium">Imperative</th>
@@ -724,13 +724,13 @@
                     <!-- Portfolio Manager -->
                     <a href="/medtech/portfolio-manager.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group lg:col-span-2">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-edit text-pink-400 text-xl"></i>
+                            <div class="w-12 h-12 bg-[#39FF14]/20 rounded-xl flex items-center justify-center border border-[#39FF14]/50 shadow-[0_0_15px_rgba(57,255,20,0.3)]">
+                                <i class="fas fa-edit text-[#39FF14] text-xl"></i>
                             </div>
-                            <div class="text-sm text-slate-400">Portfolio Manager (Beta)</div>
+                            <div class="text-sm text-[#39FF14] font-medium">Portfolio Manager (Beta)</div>
                         </div>
                         <p class="text-slate-400 text-sm mb-4">Interactive product portfolio editor - edit, add, and export competitor data locally. No GitHub commits.</p>
-                        <div class="flex items-center text-pink-400 text-sm group-hover:text-pink-300 transition">
+                        <div class="flex items-center text-[#39FF14] text-sm group-hover:text-[#50FF30] transition">
                             <span>Open Editor</span>
                             <i class="fas fa-arrow-right ml-2"></i>
                         </div>
@@ -1179,7 +1179,7 @@
             var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
             var companyLabels = ['Medtronic', 'Stryker', 'Microvention', 'Penumbra', 'J&J', 'Balt', 'Wallaby Phenox', 'Rapid', 'Acandis', 'Imperative'];
             var counts = [];
-            var colors = ['#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#EC4899', '#8B5CF6', '#06B6D4', '#14B8A6', '#6366F1', '#F472B6'];
+            var colors = ['#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#EC4899', '#8B5CF6', '#39FF14', '#14B8A6', '#6366F1', '#F472B6'];
             
             for (var i = 0; i < companies.length; i++) {
                 var count = 0;
@@ -1350,29 +1350,34 @@
                 html += '<tr class="hover:bg-slate-800/50 transition ' + rowClass + '">';
                 html += '<td class="p-3 font-medium sticky left-0 bg-slate-900">' + cat.name + '</td>';
                 
-                // Helper to render cell - takes company data object
-                function renderCell(companyData) {
+                // Helper to render cell - takes company data object and company name
+                function renderCell(companyData, companyName) {
+                    var isWallaby = companyName === 'phenox';
                     if (companyData && companyData.products && companyData.products.length > 0) {
                         var productList = companyData.products.join(', ');
                         var strength = companyData.strength || 'medium';
                         var strengthColor = strength === 'high' ? 'text-emerald-400' : strength === 'medium' ? 'text-yellow-400' : 'text-slate-400';
-                        return '<td class="p-3"><span class="' + strengthColor + '"><i class="fas fa-check-circle mr-1"></i></span><span class="text-slate-300">' + productList + '</span></td>';
+                        var cellClass = isWallaby ? 'p-3 border border-[#39FF14]/50 bg-[#39FF14]/5' : 'p-3';
+                        var checkColor = isWallaby ? 'text-[#39FF14]' : strengthColor;
+                        return '<td class="' + cellClass + '" style="' + (isWallaby ? 'box-shadow: inset 0 0 8px rgba(57,255,20,0.1);' : '') + '"><span class="' + checkColor + '"><i class="fas fa-check-circle mr-1"></i></span><span class="' + (isWallaby ? 'text-white font-medium' : 'text-slate-300') + '">' + productList + '</span></td>';
                     } else {
-                        return '<td class="p-3"><span class="text-slate-600"><i class="fas fa-minus"></i></span></td>';
+                        var emptyCellClass = isWallaby ? 'p-3 border border-[#39FF14]/30 bg-[#39FF14]/5' : 'p-3';
+                        var emptyIcon = '<i class="far fa-circle text-slate-600"></i>'; // Neutral circle outline
+                        return '<td class="' + emptyCellClass + '" style="' + (isWallaby ? 'box-shadow: inset 0 0 5px rgba(57,255,20,0.05);' : '') + '"><span class="text-slate-600">' + emptyIcon + '</span></td>';
                     }
                 }
                 
                 // Render cells for each company
-                html += renderCell(cat.medtronic);
-                html += renderCell(cat.stryker);
-                html += renderCell(cat.microvention);
-                html += renderCell(cat.penumbra);
-                html += renderCell(cat.jnj);
-                html += renderCell(cat.balt);
-                html += renderCell(cat.phenox);
-                html += renderCell(cat.rapid);
-                html += renderCell(cat.acandis);
-                html += renderCell(cat.imperative);
+                html += renderCell(cat.medtronic, 'medtronic');
+                html += renderCell(cat.stryker, 'stryker');
+                html += renderCell(cat.microvention, 'microvention');
+                html += renderCell(cat.penumbra, 'penumbra');
+                html += renderCell(cat.jnj, 'jnj');
+                html += renderCell(cat.balt, 'balt');
+                html += renderCell(cat.phenox, 'phenox');
+                html += renderCell(cat.rapid, 'rapid');
+                html += renderCell(cat.acandis, 'acandis');
+                html += renderCell(cat.imperative, 'imperative');
                 
                 html += '</tr>';
             }
