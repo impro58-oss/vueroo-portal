@@ -366,5 +366,43 @@
         }
     })();
     </script>
+
+    <!-- Quick Links Section -->
+    <div class="max-w-7xl mx-auto p-6 pt-0">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- Competitive Intelligence -->
+            <a href="/medtech/competitive-intelligence.html" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-blue-500/50 transition card-hover group">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chess text-blue-400"></i>
+                    </div>
+                    <div class="font-semibold text-white">Competitive Intelligence</div>
+                </div>
+                <p class="text-sm text-slate-400">Full competitor analysis with Wallaby positioning</p>
+            </a>
+
+            <!-- Revenue Dashboard -->
+            <a href="/medtech/index.html" onclick="sessionStorage.setItem('navigateToRevenue', 'true'); return true;" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-emerald-500/50 transition card-hover group">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-pie text-emerald-400"></i>
+                    </div>
+                    <div class="font-semibold text-white">Revenue Dashboard</div>
+                </div>
+                <p class="text-sm text-slate-400">Company financials and market share analysis</p>
+            </a>
+
+            <!-- Portfolio Matrix -->
+            <a href="/medtech/index.html" onclick="sessionStorage.setItem('navigateToPortfolio', 'true'); return true;" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition card-hover group">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-th text-amber-400"></i>
+                    </div>
+                    <div class="font-semibold text-white">Portfolio Matrix</div>
+                </div>
+                <p class="text-sm text-slate-400">Product coverage and competitive positioning</p>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

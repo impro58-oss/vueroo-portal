@@ -831,6 +831,15 @@
                 if (appData) {
                     renderDashboard();
                     document.getElementById('loading-overlay').style.display = 'none';
+                    
+                    // Check if navigation from Global Heatmap was requested
+                    if (sessionStorage.getItem('navigateToRevenue') === 'true') {
+                        sessionStorage.removeItem('navigateToRevenue');
+                        showSection('revenue');
+                    } else if (sessionStorage.getItem('navigateToPortfolio') === 'true') {
+                        sessionStorage.removeItem('navigateToPortfolio');
+                        showSection('portfolio');
+                    }
                 } else {
                     throw new Error('No data loaded');
                 }
