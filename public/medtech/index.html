@@ -699,17 +699,16 @@
         // DYNAMIC DATA LOADER - NO FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                // All data loads from GitHub - single source of truth
-                var rooquest1Base = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
-                var portalBase = 'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/medtech/data';
+                // All data loads from rooquest1 GitHub repo - single source of truth
+                var dataBase = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
                 
-                // Load epidemiology from rooquest1 repo
-                var epiPromise = fetch(rooquest1Base + '/data.json?t=' + Date.now())
+                // Load epidemiology
+                var epiPromise = fetch(dataBase + '/data.json?t=' + Date.now())
                     .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
                     .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
                 
-                // Load revenue from vueroo-portal repo (GitHub - not local)
-                var revPromise = fetch(portalBase + '/revenue-historical.json?t=' + Date.now())
+                // Load revenue from rooquest1
+                var revPromise = fetch(dataBase + '/revenue-historical.json?t=' + Date.now())
                     .then(function(r) {
                         if (!r.ok) throw new Error('Revenue HTTP ' + r.status);
                         return r.json();
@@ -717,7 +716,7 @@
                 
                 return Promise.all([epiPromise, revPromise])
                     .then(function(results) {
-                        console.log('✅ Loaded all data from GitHub');
+                        console.log('✅ Loaded all data from rooquest1 GitHub');
                         return {
                             epidemiology: results[0],
                             revenue: results[1],
