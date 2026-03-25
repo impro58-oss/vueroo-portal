@@ -516,6 +516,23 @@
                     </div>
                 </div>
 
+                <!-- Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <h3 class="text-lg font-semibold text-blue-300 mb-4">Product Coverage by Company</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="pmCoverageChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <h3 class="text-lg font-semibold text-emerald-300 mb-4">Product Category Distribution</h3>
+                        <div class="relative h-64 w-full">
+                            <canvas id="pmCategoryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Product Matrix -->
                 <div class="glass rounded-xl p-6 border border-slate-800">
                     <div class="flex items-center justify-between mb-4">
@@ -1258,6 +1275,132 @@
             ]
         };
 
+        // Store chart instances for updates
+        var pmCoverageChart = null;
+        var pmCategoryChart = null;
+
+        function getCoverageCounts() {
+            var companies = ['wallaby', 'medtronic', 'stryker', 'microvention', 'penumbra', 'cerenovus'];
+            var companyLabels = ['Wallaby', 'Medtronic', 'Stryker', 'Microvention', 'Penumbra', 'Cerenovus'];
+            var counts = [];
+            var colors = ['#EC4899', '#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#8B5CF6'];
+            
+            for (var i = 0; i < companies.length; i++) {
+                var count = 0;
+                for (var j = 0; j < PM_DATA.categories.length; j++) {
+                    var cat = PM_DATA.categories[j];
+                    var products = cat[companies[i]];
+                    if (products && products.length > 0) count++;
+                }
+                counts.push(count);
+            }
+            
+            return { labels: companyLabels, data: counts, colors: colors };
+        }
+
+        function getCategoryDistribution() {
+            var labels = [];
+            var data = [];
+            var colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4', '#EC4899', '#14B8A6'];
+            
+            for (var i = 0; i < PM_DATA.categories.length; i++) {
+                var cat = PM_DATA.categories[i];
+                var count = 0;
+                var companies = ['wallaby', 'medtronic', 'stryker', 'microvention', 'penumbra', 'cerenovus'];
+                for (var j = 0; j < companies.length; j++) {
+                    var products = cat[companies[j]];
+                    if (products && products.length > 0) count++;
+                }
+                labels.push(cat.label);
+                data.push(count);
+            }
+            
+            return { labels: labels, data: data, colors: colors };
+        }
+
+        function initPortfolioCharts() {
+            var coverageCtx = document.getElementById('pmCoverageChart');
+            var categoryCtx = document.getElementById('pmCategoryChart');
+            
+            if (!coverageCtx || !categoryCtx) return;
+            
+            // Destroy existing charts if they exist
+            if (pmCoverageChart) { pmCoverageChart.destroy(); }
+            if (pmCategoryChart) { pmCategoryChart.destroy(); }
+            
+            var coverageData = getCoverageCounts();
+            var categoryData = getCategoryDistribution();
+            
+            // Coverage Chart (Bar)
+            pmCoverageChart = new Chart(coverageCtx, {
+                type: 'bar',
+                data: {
+                    labels: coverageData.labels,
+                    datasets: [{
+                        label: 'Categories Covered',
+                        data: coverageData.data,
+                        backgroundColor: coverageData.colors,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1e293b',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        y: {
+                            max: 8,
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8' }
+                        }
+                    }
+                }
+            });
+            
+            // Category Chart (Pie)
+            pmCategoryChart = new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: categoryData.labels,
+                    datasets: [{
+                        data: categoryData.data,
+                        backgroundColor: categoryData.colors,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#94a3b8', font: { size: 10 } }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1e293b',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+
         function updatePortfolioMatrix() {
             var viewFilter = document.getElementById('pmViewFilter');
             var catFilter = document.getElementById('pmCategoryFilter');
@@ -1307,6 +1450,9 @@
             }
             
             tbody.innerHTML = html || '<tr><td colspan="7" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
+            
+            // Update charts
+            initPortfolioCharts();
         }
 
         // Initialize Portfolio Matrix when section shown
