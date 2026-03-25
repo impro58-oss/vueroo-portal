@@ -2,6 +2,7 @@
  * NeuroVue Data Loader
  * Dynamic JSON loading with GitHub fallback
  * Version: 2.0 - Dynamic Data Discovery
+ * Cache-bust: 2026-03-25-1616
  */
 
 // Configuration
