@@ -535,30 +535,29 @@
             }
         };
         
-        // Debug: Check if data-loader loaded
-        if (typeof NeuroVueDataLoader === 'undefined') {
-            console.warn('data-loader.js not loaded - using embedded fallback data');
-            window.NeuroVueDataLoader = {
-                loadNeuroVueData: async function() {
-                    return {
-                        epidemiology: FALLBACK_EPIDEMIOLOGY,
-                        revenue: FALLBACK_REVENUE,
-                        portfolio: null
-                    };
-                },
-                getGlobalStats: EmbeddedDataLoader.getGlobalStats,
-                processEpidemiologyData: EmbeddedDataLoader.processEpidemiologyData,
-                processRevenueData: EmbeddedDataLoader.processRevenueData,
-                processPortfolioData: function() { return []; },
-                formatNumber: EmbeddedDataLoader.formatNumber,
-                formatCurrency: EmbeddedDataLoader.formatCurrency,
-                formatPercent: function(num) { return num ? num.toFixed(1) + '%' : '--'; }
-            };
-        }
+        // ALWAYS create NeuroVueDataLoader with embedded data (fallback first, will be overwritten if external loads)
+        window.NeuroVueDataLoader = {
+            loadNeuroVueData: function() {
+                return Promise.resolve({
+                    epidemiology: FALLBACK_EPIDEMIOLOGY,
+                    revenue: FALLBACK_REVENUE,
+                    portfolio: null
+                });
+            },
+            getGlobalStats: EmbeddedDataLoader.getGlobalStats,
+            processEpidemiologyData: EmbeddedDataLoader.processEpidemiologyData,
+            processRevenueData: EmbeddedDataLoader.processRevenueData,
+            processPortfolioData: function() { return []; },
+            formatNumber: EmbeddedDataLoader.formatNumber,
+            formatCurrency: EmbeddedDataLoader.formatCurrency,
+            formatPercent: function(num) { return num ? num.toFixed(1) + '%' : '--'; }
+        };
+        
+        console.log('Embedded NeuroVueDataLoader created');
         
         // State
-        let appData = null;
-        let currentSection = 'dashboard';
+        var appData = null;
+        var currentSection = 'dashboard';
 
         // Initialize
         document.addEventListener('DOMContentLoaded', async () => {
