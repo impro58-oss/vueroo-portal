@@ -630,6 +630,7 @@
             NeuroVueDataLoader.loadNeuroVueData().then(function(data) {
                 console.log('Data loaded:', data);
                 appData = data;
+                window.appData = data; // Make globally accessible for CI
                 
                 if (appData) {
                     renderDashboard();
@@ -700,8 +701,6 @@
                 website: "https://www.medtronic.com/en-us/l/e/neurovascular.html",
                 threatLevel: "high",
                 portfolio: "complete",
-                revenue: "$32.3B",
-                neuroRevenue: "$1.38B",
                 products: {
                     coils: ["Axium", "Axium Prime", "Nexus"],
                     flowDiverters: ["Pipeline Shield", "Pipeline Flex", "Pipeline Vantage"],
@@ -725,8 +724,6 @@
                 website: "https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular.html",
                 threatLevel: "high",
                 portfolio: "complete",
-                revenue: "$20.5B",
-                neuroRevenue: "$1.45B",
                 products: {
                     coils: ["Target 360", "Target 3D", "Tetra"],
                     flowDiverters: ["Surpass Streamline", "Surpass Evolve"],
@@ -750,8 +747,6 @@
                 website: "https://www.terumoneuro.com/emea",
                 threatLevel: "high",
                 portfolio: "complete",
-                revenue: "$6.2B",
-                neuroRevenue: "$520M",
                 products: {
                     coils: ["HydroCoil", "HyperSoft", "Cosmos"],
                     flowDiverters: ["FRED", "FRED Jr.", "FRED X"],
@@ -775,8 +770,6 @@
                 website: "https://www.penumbrainc.com/neuro/",
                 threatLevel: "high",
                 portfolio: "specialized",
-                revenue: "$1.18B",
-                neuroRevenue: "$380M",
                 products: {
                     coils: ["SMART COIL"],
                     flowDiverters: [],
@@ -800,8 +793,6 @@
                 website: "https://www.jnjmedtech.com/en-US/companies/cerenovus",
                 threatLevel: "high",
                 portfolio: "complete",
-                revenue: "$95B",
-                neuroRevenue: "$680M",
                 products: {
                     coils: ["CEREPAK", "GALAXY G3"],
                     flowDiverters: ["BRAVO"],
@@ -825,8 +816,6 @@
                 website: "https://baltgroup.com/products/",
                 threatLevel: "medium",
                 portfolio: "selective",
-                revenue: "$180M",
-                neuroRevenue: "$180M",
                 products: {
                     coils: ["Optima", "OptiMAX", "Prestige Plus"],
                     flowDiverters: ["Silk Vista"],
@@ -850,8 +839,6 @@
                 website: "https://www.acandis.com/en/product-portfolio/",
                 threatLevel: "low",
                 portfolio: "specialized",
-                revenue: "$45M",
-                neuroRevenue: "$45M",
                 products: {
                     coils: [],
                     flowDiverters: ["DERIVO", "DERIVO 2", "DERIVO 2heal"],
@@ -875,8 +862,6 @@
                 website: "https://imperativecare.com/stroke/",
                 threatLevel: "medium",
                 portfolio: "emerging",
-                revenue: "$65M",
-                neuroRevenue: "$65M",
                 products: {
                     coils: [],
                     flowDiverters: [],
@@ -899,8 +884,6 @@
                 country: "🇮🇱 Israel",
                 threatLevel: "low",
                 portfolio: "emerging",
-                revenue: "$35M",
-                neuroRevenue: "$35M",
                 products: {
                     coils: [],
                     flowDiverters: [],
@@ -923,8 +906,6 @@
                 country: "🇩🇪 Germany",
                 threatLevel: "low",
                 portfolio: "emerging",
-                revenue: "$800M",
-                neuroRevenue: "$40M",
                 products: {
                     coils: [],
                     flowDiverters: [],
@@ -947,8 +928,6 @@
                 country: "🇩🇪 Germany",
                 threatLevel: "self",
                 portfolio: "selective",
-                revenue: "$95M",
-                neuroRevenue: "$95M",
                 products: {
                     coils: ["Avenir"],
                     flowDiverters: ["p64", "p48", "p46", "pCONUS2"],
@@ -984,6 +963,9 @@
             var grid = document.getElementById('ciCompanyGrid');
             if (!grid) return;
             
+            // Get revenue data from appData if available
+            var revData = (window.appData && window.appData.revenue && window.appData.revenue.companies) ? window.appData.revenue.companies : [];
+            
             var filtered = CI_COMPANIES.filter(function(company) {
                 if (company.id === 'phenox') return false;
                 
@@ -1014,6 +996,13 @@
                 var portfolioClass = c.portfolio === 'complete' ? 'bg-green-500/20 text-green-400' : c.portfolio === 'specialized' ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-500/20 text-slate-400';
                 var productCount = getProductCount(c.products);
                 
+                // Look up revenue from appData
+                var revMatch = revData.find(function(r) { 
+                    return r.id === c.id || r.name.toLowerCase() === c.name.toLowerCase() || r.name.toLowerCase().includes(c.name.split(' ')[0].toLowerCase());
+                });
+                var revenue = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.annualRevenue) : 'N/A';
+                var neuroRev = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.neurovascularRevenue) : 'N/A';
+                
                 html += '<div class="glass rounded-xl p-5 border border-slate-800 hover:border-slate-700 transition cursor-pointer" onclick="showCompanyDetail(\'' + c.id + '\')">';
                 html += '<div class="flex items-start justify-between mb-3">';
                 html += '<div><div class="font-bold text-white text-lg">' + c.name + '</div>';
@@ -1023,8 +1012,8 @@
                 html += '<span class="px-2 py-1 rounded text-xs font-medium ' + portfolioClass + '">' + c.portfolio + '</span>';
                 html += '</div></div>';
                 html += '<div class="grid grid-cols-2 gap-3 mb-3 text-sm">';
-                html += '<div><div class="text-slate-400">Revenue</div><div class="text-white">' + c.revenue + '</div></div>';
-                html += '<div><div class="text-slate-400">Neuro</div><div class="text-blue-400">' + c.neuroRevenue + '</div></div>';
+                html += '<div><div class="text-slate-400">Revenue</div><div class="text-white">' + revenue + '</div></div>';
+                html += '<div><div class="text-slate-400">Neuro</div><div class="text-blue-400">' + neuroRev + '</div></div>';
                 html += '</div>';
                 html += '<div class="text-xs text-slate-400 mb-1">Products: ' + productCount + ' total</div>';
                 html += '<div class="flex flex-wrap gap-1 mb-3">';
@@ -1061,6 +1050,14 @@
             var company = CI_COMPANIES.find(function(c) { return c.id === companyId; });
             if (!company) return;
             
+            // Get revenue from appData
+            var revData = (window.appData && window.appData.revenue && window.appData.revenue.companies) ? window.appData.revenue.companies : [];
+            var revMatch = revData.find(function(r) { 
+                return r.id === company.id || r.name.toLowerCase() === company.name.toLowerCase() || r.name.toLowerCase().includes(company.name.split(' ')[0].toLowerCase());
+            });
+            var revenue = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.annualRevenue) : 'N/A';
+            var neuroRev = revMatch ? NeuroVueDataLoader.formatCurrency(revMatch.neurovascularRevenue) : 'N/A';
+            
             var p = company.products;
             var productsHtml = '';
             var categories = [
@@ -1091,7 +1088,7 @@
             modal.id = 'ciModal';
             modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4';
             modal.style = 'background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);';
-            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-center justify-between mb-4"><div><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400">' + company.country + ' • ' + company.ticker + '</div>' + (company.website ? '<a href="' + company.website + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-xs mt-1 transition"><i class="fas fa-external-link-alt"></i> Visit Website</a>' : '') + '</div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + company.revenue + '</span> • Neuro: <span class="text-blue-400">' + company.neuroRevenue + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
+            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-center justify-between mb-4"><div><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400">' + company.country + ' • ' + company.ticker + '</div>' + (company.website ? '<a href="' + company.website + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-xs mt-1 transition"><i class="fas fa-external-link-alt"></i> Visit Website</a>' : '') + '</div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + revenue + '</span> • Neuro: <span class="text-blue-400">' + neuroRev + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
             document.body.appendChild(modal);
         }
 
