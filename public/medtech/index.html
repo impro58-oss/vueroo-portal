@@ -189,30 +189,6 @@
                         </div>
                     </div>
 
-                    <!-- Global Heatmap Iframe -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-8">
-                        <div class="p-6 border-b border-slate-800">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white">Global Neurovascular Heat Map</h3>
-                                    <p class="text-sm text-slate-400">Interactive geographic visualization of stroke burden</p>
-                                </div>
-                                <a href="global-heatmap-v3b.html" target="_blank" class="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 rounded-lg text-sm transition">
-                                    Full Screen <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="relative" style="height: 600px;">
-                            <iframe 
-                                src="global-heatmap-v3b.html" 
-                                class="w-full h-full border-0"
-                                title="Global Neurovascular Heat Map"
-                                loading="lazy"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
-                    </div>
-
                     <!-- Top Regions Table -->
                     <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-8">
                         <div class="p-6 border-b border-slate-800">
@@ -560,29 +536,52 @@
         var currentSection = 'dashboard';
 
         // Initialize
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                console.log('Initializing NeuroVue Dashboard...');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing NeuroVue Dashboard...');
+            
+            // Load data using promise (no async/await for maximum compatibility)
+            NeuroVueDataLoader.loadNeuroVueData().then(function(data) {
+                console.log('Data loaded:', data);
+                appData = data;
                 
-                // Load data
-                appData = await NeuroVueDataLoader.loadNeuroVueData();
-                console.log('Data loaded:', appData);
-                
-                if (appData) {
-                    renderDashboard();
-                    renderEpidemiology();
-                    renderRevenue();
-                    renderCompetitors();
-                    renderPortfolio();
-                    updateLastUpdated();
+               if (appData) {
+                    console.log('Rendering dashboard with data:', appData);
+                    try {
+                        renderDashboard();
+                        console.log('renderDashboard complete');
+                    } catch(e) { console.error('renderDashboard failed:', e); }
+                    
+                    try {
+                        renderEpidemiology();
+                        console.log('renderEpidemiology complete');
+                    } catch(e) { console.error('renderEpidemiology failed:', e); }
+                    
+                    try {
+                        renderRevenue();
+                        console.log('renderRevenue complete');
+                    } catch(e) { console.error('renderRevenue failed:', e); }
+                    
+                    try {
+                        renderCompetitors();
+                        console.log('renderCompetitors complete');
+                    } catch(e) { console.error('renderCompetitors failed:', e); }
+                    
+                    try {
+                        renderPortfolio();
+                        console.log('renderPortfolio complete');
+                    } catch(e) { console.error('renderPortfolio failed:', e); }
+                    
+                    try {
+                        updateLastUpdated();
+                        console.log('updateLastUpdated complete');
+                    } catch(e) { console.error('updateLastUpdated failed:', e); }
                     
                     // Hide loading overlay
                     document.getElementById('loading-overlay').style.display = 'none';
                 } else {
                     throw new Error('No data loaded');
                 }
-                
-            } catch (error) {
+            }).catch(function(error) {
                 console.error('Failed to initialize NeuroVue:', error);
                 document.getElementById('loading-overlay').innerHTML = `
                     <div class="text-center">
@@ -591,7 +590,7 @@
                         <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Retry</button>
                     </div>
                 `;
-            }
+            });
         });
 
         function showSection(sectionId) {
@@ -614,8 +613,13 @@
         }
 
         function renderDashboard() {
-            if (!appData || !appData.epidemiology) return;
+            console.log('renderDashboard called, appData:', appData);
+            if (!appData || !appData.epidemiology) {
+                console.log('renderDashboard: early return - appData or epidemiology missing');
+                return;
+            }
             
+            console.log('renderDashboard: processing epidemiology data');
             const stats = NeuroVueDataLoader.getGlobalStats(appData.epidemiology);
             const regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
             
