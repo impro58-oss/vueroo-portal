@@ -283,14 +283,146 @@
             </section>
 
             <section id="section-competitors" class="section p-8">
-                <div class="text-center py-20">
-                    <i class="fas fa-chess text-5xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Competitor Intelligence</h3>
-                    <p class="text-slate-400 mb-4">View the full competitive dashboard.</p>
-                    <a href="competitive-intelligence.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition">
-                        <i class="fas fa-external-link-alt"></i>
-                        Open Full CI Dashboard
-                    </a>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Competitive Intelligence</h2>
+                    <p class="text-slate-400">Neurovascular market landscape and competitor analysis</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="glass rounded-xl p-4 mb-6 border border-slate-800">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <span class="text-sm text-slate-400 mr-2">Filter by:</span>
+                        <button class="ci-filter-btn active px-3 py-1.5 rounded-full text-sm font-medium bg-blue-600 text-white transition" data-filter="all">All Companies</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="high">High Threat</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="complete">Complete Portfolio</button>
+                        <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="gaps">Has Major Gaps</button>
+                        <div class="flex-1"></div>
+                        <div class="relative">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                            <input type="text" id="ciSearchInput" placeholder="Search companies or products..." 
+                                   class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-64">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Company Cards -->
+                    <div class="lg:col-span-2">
+                        <div id="ciCompanyGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Companies rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sidebar: Insights & Wallaby -->
+                    <div class="space-y-6">
+                        <!-- Wallaby Status Card -->
+                        <div class="glass rounded-xl p-6 border border-blue-800/50" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(15, 23, 42, 0.8));">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white">Wallaby Position</h3>
+                                    <span class="text-xs text-blue-400">Your Company</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-slate-400">Portfolio Coverage</span>
+                                    <span class="text-sm font-mono text-green-400">7/10 Categories</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                                
+                                <div class="mt-4 space-y-2">
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Unique bifurcation device (pCONUS2)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Strong coil portfolio (Avenir)</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                        <span class="text-slate-300">Growing flow diverter line (p64)</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 pt-4 border-t border-slate-800">
+                                    <p class="text-sm font-medium text-red-400 mb-2">Critical Gaps:</p>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">No intrasaccular device</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">Limited radial access</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm px-3 py-2 rounded-lg" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2)); border-left: 3px solid #EF4444;">
+                                            <i class="fas fa-times-circle text-red-500"></i>
+                                            <span class="text-slate-300">No aspiration pump</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Insights -->
+                        <div class="glass rounded-xl p-6 border border-slate-800">
+                            <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                                Strategic Insights
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-yellow-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-yellow-400">Intrasaccular Gap:</span> 
+                                        WEB, Artisse, and Contour dominate this fast-growing segment. Major opportunity for Wallaby.
+                                    </p>
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-blue-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-blue-400">Radial Trend:</span> 
+                                        Competitors investing heavily in radial-first approaches (RIST, FUBUKI, BMX81).
+                                    </p>
+                                </div>
+                                <div class="p-3 bg-slate-800/50 rounded-lg border-l-2 border-green-500">
+                                    <p class="text-sm text-slate-300">
+                                        <span class="font-semibold text-green-400">Aspiration Leader:</span> 
+                                        Penumbra ENGINE sets the standard. Wallaby needs dedicated pump strategy.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Market Overview -->
+                        <div class="glass rounded-xl p-6 border border-slate-800">
+                            <h3 class="font-bold text-white mb-4">Market Overview</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-blue-400">12</div>
+                                    <div class="text-xs text-slate-400">Competitors</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-green-400">4</div>
+                                    <div class="text-xs text-slate-400">Full Portfolio</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-yellow-400">3</div>
+                                    <div class="text-xs text-slate-400">Major Threats</div>
+                                </div>
+                                <div class="text-center p-3 bg-slate-800 rounded-lg">
+                                    <div class="text-2xl font-bold text-red-400">5</div>
+                                    <div class="text-xs text-slate-400">Wallaby Gaps</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -512,6 +644,269 @@
                 html += '<div class="glass rounded-xl p-6 border border-slate-800"><div class="flex items-center justify-between mb-4"><div><div class="font-semibold text-white text-lg">' + c.name + '</div><div class="text-sm text-slate-400">' + c.ticker + ' • ' + c.headquarters + '</div></div><div class="text-right"><div class="font-bold text-emerald-400">' + NeuroVueDataLoader.formatCurrency(c.marketCap) + '</div><div class="text-xs text-slate-400">Market Cap</div></div></div><div class="grid grid-cols-2 gap-4 mb-4"><div><div class="text-xs text-slate-400">Annual Revenue</div><div class="text-white font-semibold">' + NeuroVueDataLoader.formatCurrency(c.annualRevenue) + '</div></div><div><div class="text-xs text-slate-400">Revenue Growth</div><div class="text-emerald-400 font-semibold">+' + c.revenueGrowth + '%</div></div></div><div class="border-t border-slate-800 pt-4"><div class="text-xs text-slate-400 mb-2">Neurovascular Revenue</div><div class="text-lg font-bold text-blue-400">' + NeuroVueDataLoader.formatCurrency(c.neurovascularRevenue) + '</div><div class="text-xs text-slate-400">' + c.neurovascularGrowth + '% YoY</div></div></div>';
             }
             document.getElementById('revenue-grid').innerHTML = html;
+        }
+
+        // COMPETITOR INTELLIGENCE DATA AND FUNCTIONS
+        const CI_COMPANIES = [
+            {
+                id: "stryker",
+                name: "Stryker",
+                ticker: "SYK",
+                country: "🇺🇸 USA",
+                threatLevel: "high",
+                portfolio: "complete",
+                revenue: "$20.5B",
+                neuroRevenue: "$1.45B",
+                products: ["Trevo", "AXS Catalyst", "Pipeline Flex", "Target", "AXS Vecta", "AXS Infinity"],
+                strengths: "Complete portfolio, strong stent retriever",
+                weaknesses: "Premium pricing",
+                gaps: "Limited in bifurcation"
+            },
+            {
+                id: "medtronic",
+                name: "Medtronic",
+                ticker: "MDT",
+                country: "🇮🇪 Ireland",
+                threatLevel: "high",
+                portfolio: "complete",
+                revenue: "$32.3B",
+                neuroRevenue: "$1.38B",
+                products: ["Solitaire", "Pipeline Flex", "Apollo", "Avigo", "Export", "Riptide"],
+                strengths: "Broad portfolio, strong coils",
+                weaknesses: "Complex pricing",
+                gaps: "Limited radial"
+            },
+            {
+                id: "penumbra",
+                name: "Penumbra",
+                ticker: "PEN",
+                country: "🇺🇸 USA",
+                threatLevel: "high",
+                portfolio: "specialized",
+                revenue: "$1.18B",
+                neuroRevenue: "$380M",
+                products: ["Penumbra System", "Engine", "3D Revascularization"],
+                strengths: "Aspiration leader, 3D tech",
+                weaknesses: "Limited stent retriever",
+                gaps: "No stent retriever"
+            },
+            {
+                id: "microvention",
+                name: "Microvention/Terumo",
+                ticker: "TER",
+                country: "🇯🇵 Japan",
+                threatLevel: "medium",
+                portfolio: "complete",
+                revenue: "$6.2B",
+                neuroRevenue: "$520M",
+                products: ["WEB", "FRED", "Junior", "TruSelect", "Sofia", "Chikai"],
+                strengths: "WEB device, flow diverters",
+                weaknesses: "Limited US presence",
+                gaps: "Weak stent retriever"
+            },
+            {
+                id: "jj",
+                name: "Johnson & Johnson (Cerenovus)",
+                ticker: "JNJ",
+                country: "🇺🇸 USA",
+                threatLevel: "high",
+                portfolio: "complete",
+                revenue: "$95B",
+                neuroRevenue: "$680M",
+                products: ["EmboTrap", "Galaxy", "VFC", "Cerebase", "Cerenovus coils"],
+                strengths: "EmboTrap stent retriever",
+                weaknesses: "Limited aspiration",
+                gaps: "No aspiration pump"
+            },
+            {
+                id: "balt",
+                name: "Balt",
+                ticker: "Private",
+                country: "🇫🇷 France",
+                threatLevel: "medium",
+                portfolio: "selective",
+                revenue: "$180M",
+                neuroRevenue: "$180M",
+                products: ["FRED", "Leo", "BMX family", "Catch Mini"],
+                strengths: "European leader",
+                weaknesses: "Limited US market",
+                gaps: "Limited stent retriever"
+            },
+            {
+                id: "phenox",
+                name: "Wallaby Phenox",
+                ticker: "Private",
+                country: "🇩🇪 Germany",
+                threatLevel: "self",
+                portfolio: "selective",
+                revenue: "$95M",
+                neuroRevenue: "$95M",
+                products: ["p64", "p48", "pCONUS2", "Avenir", "FRED"],
+                strengths: "Bifurcation device (pCONUS2)",
+                weaknesses: "No aspiration pump",
+                gaps: "No intrasaccular, limited radial"
+            },
+            {
+                id: "acandis",
+                name: "Acandis",
+                ticker: "Private",
+                country: "🇩🇪 Germany",
+                threatLevel: "low",
+                portfolio: "specialized",
+                revenue: "$45M",
+                neuroRevenue: "$45M",
+                products: ["pCONUS", "Aperio"],
+                strengths: "European focus",
+                weaknesses: "Limited global presence",
+                gaps: "Narrow portfolio"
+            },
+            {
+                id: "sequent",
+                name: "Sequent Medical (Balt)",
+                ticker: "Private",
+                country: "🇺🇸 USA",
+                threatLevel: "low",
+                portfolio: "specialized",
+                revenue: "$25M",
+                neuroRevenue: "$25M",
+                products: ["Contour"],
+                strengths: "Neck remodeling",
+                weaknesses: "Single product focus",
+                gaps: "Limited portfolio"
+            },
+            {
+                id: "rapid",
+                name: "Rapid Medical",
+                ticker: "Private",
+                country: "🇮🇱 Israel",
+                threatLevel: "medium",
+                portfolio: "emerging",
+                revenue: "$35M",
+                neuroRevenue: "$35M",
+                products: ["TIGERTRIEVER", "Comaneci"],
+                strengths: "Adjustable stent retriever",
+                weaknesses: "Early stage",
+                gaps: "Limited track record"
+            },
+            {
+                id: "biotronik",
+                name: "Biotronik",
+                ticker: "Private",
+                country: "🇩🇪 Germany",
+                threatLevel: "low",
+                portfolio: "emerging",
+                revenue: "$800M",
+                neuroRevenue: "$40M",
+                products: ["Observant"],
+                strengths: "Cardiac expertise",
+                weaknesses: "Limited neuro focus",
+                gaps: "Early in neuro"
+            },
+            {
+                id: "imperative",
+                name: "Imperative Care",
+                ticker: "Private",
+                country: "🇺🇸 USA",
+                threatLevel: "medium",
+                portfolio: "emerging",
+                revenue: "$65M",
+                neuroRevenue: "$65M",
+                products: ["Zoom RDD", "Zoom 88"],
+                strengths: "Radial first approach",
+                weaknesses: "Limited portfolio depth",
+                gaps: "Narrow indication"
+            }
+        ];
+
+        function renderCompetitorIntel(filterType, searchTerm) {
+            var grid = document.getElementById('ciCompanyGrid');
+            if (!grid) return;
+            
+            var filtered = CI_COMPANIES.filter(function(company) {
+                if (company.id === 'phenox') return false;
+                
+                if (filterType === 'high' && company.threatLevel !== 'high') return false;
+                if (filterType === 'complete' && company.portfolio !== 'complete') return false;
+                if (filterType === 'gaps' && !company.gaps.includes('gap')) return false;
+                
+                if (searchTerm) {
+                    var search = searchTerm.toLowerCase();
+                    var matchName = company.name.toLowerCase().includes(search);
+                    var matchProducts = company.products.some(function(p) { return p.toLowerCase().includes(search); });
+                    if (!matchName && !matchProducts) return false;
+                }
+                
+                return true;
+            });
+            
+            var html = '';
+            for (var i = 0; i < filtered.length; i++) {
+                var c = filtered[i];
+                var threatClass = c.threatLevel === 'high' ? 'bg-red-500/20 text-red-400' : c.threatLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-slate-500/20 text-slate-400';
+                var portfolioClass = c.portfolio === 'complete' ? 'bg-green-500/20 text-green-400' : c.portfolio === 'specialized' ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-500/20 text-slate-400';
+                
+                html += '<div class="glass rounded-xl p-5 border border-slate-800 hover:border-slate-700 transition">';
+                html += '<div class="flex items-start justify-between mb-3">';
+                html += '<div><div class="font-bold text-white text-lg">' + c.name + '</div>';
+                html += '<div class="text-sm text-slate-400">' + c.country + ' • ' + c.ticker + '</div></div>';
+                html += '<div class="flex flex-col gap-1">';
+                html += '<span class="px-2 py-1 rounded text-xs font-medium ' + threatClass + '">' + c.threatLevel.toUpperCase() + '</span>';
+                html += '<span class="px-2 py-1 rounded text-xs font-medium ' + portfolioClass + '">' + c.portfolio + '</span>';
+                html += '</div></div>';
+                html += '<div class="grid grid-cols-2 gap-3 mb-3 text-sm">';
+                html += '<div><div class="text-slate-400">Revenue</div><div class="text-white">' + c.revenue + '</div></div>';
+                html += '<div><div class="text-slate-400">Neuro</div><div class="text-blue-400">' + c.neuroRevenue + '</div></div>';
+                html += '</div>';
+                html += '<div class="flex flex-wrap gap-1 mb-3">';
+                for (var j = 0; j < Math.min(c.products.length, 4); j++) {
+                    html += '<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">' + c.products[j] + '</span>';
+                }
+                if (c.products.length > 4) {
+                    html += '<span class="px-2 py-1 text-xs text-slate-500">+' + (c.products.length - 4) + '</span>';
+                }
+                html += '</div>';
+                html += '<div class="text-xs"><div class="text-green-400 mb-1">✓ ' + c.strengths + '</div>';
+                html += '<div class="text-red-400">⚠ ' + c.gaps + '</div></div>';
+                html += '</div>';
+            }
+            
+            grid.innerHTML = html || '<div class="col-span-2 text-center py-12 text-slate-400">No companies match the selected filter</div>';
+        }
+
+        // Initialize Competitor Intel when section shown
+        document.querySelectorAll('.nav-item').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var section = this.getAttribute('onclick').match(/showSection\('([^']+)'\)/);
+                if (section && section[1] === 'competitors') {
+                    setTimeout(function() { renderCompetitorIntel('all', ''); }, 100);
+                }
+            });
+        });
+
+        // CI Filter buttons
+        document.querySelectorAll('.ci-filter-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.ci-filter-btn').forEach(function(b) {
+                    b.classList.remove('active', 'bg-blue-600', 'text-white');
+                    b.classList.add('bg-slate-800', 'text-slate-300');
+                });
+                this.classList.add('active', 'bg-blue-600', 'text-white');
+                this.classList.remove('bg-slate-800', 'text-slate-300');
+                
+                var filter = this.getAttribute('data-filter');
+                var search = document.getElementById('ciSearchInput') ? document.getElementById('ciSearchInput').value : '';
+                renderCompetitorIntel(filter, search);
+            });
+        });
+
+        // CI Search input
+        var ciSearch = document.getElementById('ciSearchInput');
+        if (ciSearch) {
+            ciSearch.addEventListener('input', function() {
+                var activeFilter = document.querySelector('.ci-filter-btn.active');
+                var filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
+                renderCompetitorIntel(filter, this.value);
+            });
         }
 
         // Region filter
