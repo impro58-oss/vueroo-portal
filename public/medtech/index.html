@@ -350,13 +350,13 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 var self = this;
-                // Try to fetch from JSON file first
-                return fetch('data/data.json')
+                // Try to fetch from JSON file first (relative path)
+                return fetch('./data/data.json')
                     .then(function(response) {
                         if (response.ok) {
                             return response.json();
                         }
-                        throw new Error('JSON not available');
+                        throw new Error('JSON not available - status: ' + response.status);
                     })
                     .then(function(jsonData) {
                         console.log('Loaded data from JSON file');
