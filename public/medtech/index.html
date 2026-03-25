@@ -807,7 +807,6 @@
                 
                 if (appData) {
                     renderDashboard();
-                    renderRevenue();
                     document.getElementById('loading-overlay').style.display = 'none';
                 } else {
                     throw new Error('No data loaded');
@@ -850,18 +849,6 @@
                 tableHtml += '<tr class="hover:bg-slate-800/50 transition"><td class="py-3 px-4"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="py-3 px-4 text-right text-emerald-400">' + r.mt + '%</td><td class="py-3 px-4 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
             }
             document.getElementById('top-regions-table').innerHTML = tableHtml;
-        }
-
-        function renderRevenue() {
-            if (!appData || !appData.revenue || !appData.revenue.companies) return;
-            
-            var companies = NeuroVueDataLoader.processRevenueData(appData.revenue);
-            var html = '';
-            for (var i = 0; i < companies.length; i++) {
-                var c = companies[i];
-                html += '<div class="glass rounded-xl p-6 border border-slate-800"><div class="flex items-center justify-between mb-4"><div><div class="font-semibold text-white text-lg">' + c.name + '</div><div class="text-sm text-slate-400">' + c.ticker + ' • ' + c.headquarters + '</div></div><div class="text-right"><div class="font-bold text-emerald-400">' + NeuroVueDataLoader.formatCurrency(c.marketCap) + '</div><div class="text-xs text-slate-400">Market Cap</div></div></div><div class="grid grid-cols-2 gap-4 mb-4"><div><div class="text-xs text-slate-400">Annual Revenue</div><div class="text-white font-semibold">' + NeuroVueDataLoader.formatCurrency(c.annualRevenue) + '</div></div><div><div class="text-xs text-slate-400">Revenue Growth</div><div class="text-emerald-400 font-semibold">+' + c.revenueGrowth + '%</div></div></div><div class="border-t border-slate-800 pt-4"><div class="text-xs text-slate-400 mb-2">Neurovascular Revenue</div><div class="text-lg font-bold text-blue-400">' + NeuroVueDataLoader.formatCurrency(c.neurovascularRevenue) + '</div><div class="text-xs text-slate-400">' + c.neurovascularGrowth + '% YoY</div></div></div>';
-            }
-            document.getElementById('revenue-grid').innerHTML = html;
         }
 
         // COMPETITOR INTELLIGENCE DATA AND FUNCTIONS
@@ -1625,10 +1612,15 @@
             var topCompany = revenueData[0];
             var avgCAGR = revenueData.reduce(function(sum, c) { return sum + c.cagr; }, 0) / revenueData.length;
             
-            document.getElementById('metricTotal2024').textContent = '$' + (total2024 / 1000).toFixed(1) + 'B';
-            document.getElementById('metricTopCompany').textContent = topCompany ? topCompany.company : '--';
-            document.getElementById('metricCompanies').textContent = revenueData.length;
-            document.getElementById('metricCAGR').textContent = avgCAGR.toFixed(1) + '%';
+            var elTotal = document.getElementById('metricTotal2024');
+            var elTop = document.getElementById('metricTopCompany');
+            var elCount = document.getElementById('metricCompanies');
+            var elCAGR = document.getElementById('metricCAGR');
+            
+            if (elTotal) elTotal.textContent = '$' + (total2024 / 1000).toFixed(1) + 'B';
+            if (elTop) elTop.textContent = topCompany ? topCompany.company : '--';
+            if (elCount) elCount.textContent = revenueData.length;
+            if (elCAGR) elCAGR.textContent = avgCAGR.toFixed(1) + '%';
         }
         
         function initRevenueCompanySelector() {
@@ -1780,7 +1772,9 @@
         // Initialize Revenue Dashboard when section is shown
         document.querySelectorAll('.nav-item').forEach(function(btn) {
             btn.addEventListener('click', function() {
-                var section = this.getAttribute('onclick').match(/showSection\('([^']+)'\)/);
+                var onclickAttr = this.getAttribute('onclick');
+                if (!onclickAttr) return;
+                var section = onclickAttr.match(/showSection\('([^']+)'\)/);
                 if (section && section[1] === 'revenue') {
                     setTimeout(function() { 
                         if (revenueData.length === 0) {
