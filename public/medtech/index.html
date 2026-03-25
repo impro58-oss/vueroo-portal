@@ -438,8 +438,20 @@
         </main>
     </div>
 
-    <script src="data-loader.js"></script>
+    <script src="data-loader.js?v=4"></script>
     <script>
+        // Debug: Check if data-loader loaded
+        if (typeof NeuroVueDataLoader === 'undefined') {
+            console.error('CRITICAL: data-loader.js failed to load! NeuroVueDataLoader is undefined');
+            document.getElementById('loading-overlay').innerHTML = `
+                <div class="text-center">
+                    <div class="text-xl font-bold text-red-400 mb-2">Script Load Error</div>
+                    <div class="text-slate-400">data-loader.js failed to load (404)</div>
+                    <div class="text-sm text-slate-500 mt-2">Check console for details</div>
+                </div>
+            `;
+        }
+        
         // State
         let appData = null;
         let currentSection = 'dashboard';
