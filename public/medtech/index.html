@@ -630,12 +630,16 @@
                             <thead class="bg-slate-900/50">
                                 <tr>
                                     <th class="p-3 text-slate-400 font-medium sticky left-0 bg-slate-900">Category</th>
-                                    <th class="p-3 text-slate-400 font-medium">Wallaby</th>
                                     <th class="p-3 text-slate-400 font-medium">Medtronic</th>
                                     <th class="p-3 text-slate-400 font-medium">Stryker</th>
                                     <th class="p-3 text-slate-400 font-medium">Microvention</th>
                                     <th class="p-3 text-slate-400 font-medium">Penumbra</th>
-                                    <th class="p-3 text-slate-400 font-medium">Cerenovus</th>
+                                    <th class="p-3 text-slate-400 font-medium">J&J</th>
+                                    <th class="p-3 text-slate-400 font-medium">Balt</th>
+                                    <th class="p-3 text-slate-400 font-medium">Phenox</th>
+                                    <th class="p-3 text-slate-400 font-medium">Rapid</th>
+                                    <th class="p-3 text-slate-400 font-medium">Acandis</th>
+                                    <th class="p-3 text-slate-400 font-medium">Imperative</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-800" id="portfolioMatrixBody">
@@ -1157,17 +1161,17 @@
         var pmCategoryChart = null;
 
         function getCoverageCounts() {
-            var companies = ['wallaby', 'medtronic', 'stryker', 'microvention', 'penumbra', 'cerenovus'];
-            var companyLabels = ['Wallaby', 'Medtronic', 'Stryker', 'Microvention', 'Penumbra', 'Cerenovus'];
+            var companies = ['medtronic', 'stryker', 'microvention', 'penumbra', 'jnj', 'balt', 'phenox', 'rapid', 'acandis', 'imperative'];
+            var companyLabels = ['Medtronic', 'Stryker', 'Microvention', 'Penumbra', 'J&J', 'Balt', 'Phenox', 'Rapid', 'Acandis', 'Imperative'];
             var counts = [];
-            var colors = ['#EC4899', '#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#8B5CF6'];
+            var colors = ['#3B82F6', '#10B981', '#EF4444', '#F59E0B', '#EC4899', '#8B5CF6', '#06B6D4', '#14B8A6', '#6366F1', '#F472B6'];
             
             for (var i = 0; i < companies.length; i++) {
                 var count = 0;
                 for (var j = 0; j < getPMData().categories.length; j++) {
                     var cat = getPMData().categories[j];
-                    var products = cat[companies[i]];
-                    if (products && products.length > 0) count++;
+                    var companyData = cat[companies[i]];
+                    if (companyData && companyData.products && companyData.products.length > 0) count++;
                 }
                 counts.push(count);
             }
@@ -1325,12 +1329,16 @@
                 html += renderCell(cat.microvention);
                 html += renderCell(cat.penumbra);
                 html += renderCell(cat.jnj);
+                html += renderCell(cat.balt);
                 html += renderCell(cat.phenox);
+                html += renderCell(cat.rapid);
+                html += renderCell(cat.acandis);
+                html += renderCell(cat.imperative);
                 
                 html += '</tr>';
             }
             
-            tbody.innerHTML = html || '<tr><td colspan="7" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
+            tbody.innerHTML = html || '<tr><td colspan="11" class="p-8 text-center text-slate-400">No categories match the selected filter</td></tr>';
         }
 
         // Initialize Portfolio Matrix when section shown
