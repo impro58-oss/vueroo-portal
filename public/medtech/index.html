@@ -646,9 +646,7 @@
                 </div>
             </section>
 
-            <!-- Research Hub Section -->
             <section id="section-research" class="section p-8">
-                <!-- Header -->
                 <header class="mb-8">
                     <div class="flex items-center justify-between">
                         <div>
@@ -658,7 +656,6 @@
                     </div>
                 </header>
 
-                <!-- Research Tools Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Global Heatmap -->
                     <a href="global-heatmap-v3b.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group">
@@ -719,21 +716,6 @@
                             <i class="fas fa-arrow-right ml-2"></i>
                         </div>
                     </a>
-
-                    <!-- Competitive Intelligence Full Dashboard -->
-                    <a href="competitive-intelligence.html" class="glass rounded-2xl p-6 card-hover border border-slate-800 block group col-span-full md:col-span-2">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-chess text-white text-xl"></i>
-                            </div>
-                            <div class="text-sm text-slate-400">Full Competitive Intelligence Dashboard</div>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-4">Complete competitive analysis with detailed product portfolios, strategic positioning, and market intelligence for all major neurovascular players</p>
-                        <div class="flex items-center text-blue-400 text-sm group-hover:text-blue-300 transition">
-                            <span>Launch Full Dashboard</span>
-                            <i class="fas fa-external-link-alt ml-2"></i>
-                        </div>
-                    </a>
                 </div>
             </section>
 
@@ -748,10 +730,10 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 return Promise.all([
-                    fetch(DATA_BASE + '/data.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('EPI')),
-                    fetch(DATA_BASE + '/revenue-historical.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('REV')),
-                    fetch(DATA_BASE + '/competitor-intelligence.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('CI')),
-                    fetch(DATA_BASE + '/portfolio-matrix.json?t=' + Date.now()).then(r => r.ok ? r.json() : Promise.reject('PM'))
+                    fetch(DATA_BASE + '/data.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('EPI'); }),
+                    fetch(DATA_BASE + '/revenue-historical.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('REV'); }),
+                    fetch(DATA_BASE + '/competitor-intelligence.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('CI'); }),
+                    fetch(DATA_BASE + '/portfolio-matrix.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('PM'); })
                 ]).then(function(results) {
                     console.log('✅ All data loaded from rooquest1 GitHub');
                     return {
