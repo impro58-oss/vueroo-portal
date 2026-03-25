@@ -517,26 +517,35 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 var self = this;
-                // Try to fetch from GitHub raw URL with cache-buster
-                return fetch('https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/data.json?t=' + Date.now())
-                    .then(function(response) {
-                        if (response.ok) {
-                            return response.json();
-                        }
-                        throw new Error('GitHub JSON not available - status: ' + response.status);
-                    })
-                    .then(function(jsonData) {
-                        console.log('Loaded data from JSON file');
+                var baseUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data';
+                
+                // Fetch both epidemiology and revenue data
+                var epiPromise = fetch(baseUrl + '/data.json?t=' + Date.now())
+                    .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
+                    .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
+                
+                var revPromise = fetch(baseUrl + '/revenue-summary.json?t=' + Date.now())
+                    .then(function(r) { return r.ok ? r.json() : Promise.reject('REV 404'); })
+                    .catch(function() { return FALLBACK_REVENUE; });
+                
+                return Promise.all([epiPromise, revPromise])
+                    .then(function(results) {
+                        console.log('Loaded data from JSON files');
                         return {
-                            epidemiology: jsonData,
-                            revenue: FALLBACK_REVENUE,
+                            epidemiology: results[0],
+                            revenue: results[1],
                             portfolio: null
                         };
                     })
-                    .catch(function(error) {
-                        console.log('JSON fetch failed, using embedded fallback:', error.message);
+                    .catch(function() {
+                        console.log('Using fallback data');
                         return {
                             epidemiology: FALLBACK_EPIDEMIOLOGY,
+                            revenue: FALLBACK_REVENUE,
+                            portfolio: null
+                        };
+                    });
+            },
                             revenue: FALLBACK_REVENUE,
                             portfolio: null
                         };
