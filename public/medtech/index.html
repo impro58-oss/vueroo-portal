@@ -729,11 +729,27 @@
         
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
+                // Load all data files with individual error handling
+                var loadJson = function(url, name) {
+                    return fetch(url + '?t=' + Date.now())
+                        .then(function(r) {
+                            if (!r.ok) {
+                                console.warn('Failed to load ' + name + ': HTTP ' + r.status);
+                                return null;
+                            }
+                            return r.json();
+                        })
+                        .catch(function(err) {
+                            console.warn('Failed to load ' + name + ':', err);
+                            return null;
+                        });
+                };
+                
                 return Promise.all([
-                    fetch(DATA_BASE + '/data.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('EPI'); }),
-                    fetch(DATA_BASE + '/revenue-historical.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('REV'); }),
-                    fetch(DATA_BASE + '/competitor-intelligence.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('CI'); }),
-                    fetch(DATA_BASE + '/portfolio-matrix.json?t=' + Date.now()).then(function(r) { return r.ok ? r.json() : Promise.reject('PM'); })
+                    loadJson(DATA_BASE + '/data.json', 'Epidemiology'),
+                    loadJson(DATA_BASE + '/revenue-historical.json', 'Revenue'),
+                    loadJson(DATA_BASE + '/competitor-intelligence.json', 'Competitors'),
+                    loadJson(DATA_BASE + '/portfolio-matrix.json', 'Portfolio')
                 ]).then(function(results) {
                     console.log('✅ All data loaded from rooquest1 GitHub');
                     return {
@@ -823,29 +839,38 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Initializing NeuroVue Dashboard...');
             
+            // Check if navigation from Global Heatmap was requested (AFTER data loads)
+            var navigateToSection = null;
+            if (sessionStorage.getItem('navigateToRevenue') === 'true') {
+                navigateToSection = 'revenue';
+                sessionStorage.removeItem('navigateToRevenue');
+            } else if (sessionStorage.getItem('navigateToPortfolio') === 'true') {
+                navigateToSection = 'portfolio';
+                sessionStorage.removeItem('navigateToPortfolio');
+            }
+            
             NeuroVueDataLoader.loadNeuroVueData().then(function(data) {
-                console.log('Data loaded:', data);
+                console.log('✅ Data loaded:', data);
                 appData = data;
-                window.appData = data; // Make globally accessible for CI
+                window.appData = data;
                 
-                if (appData) {
+                if (appData && appData.epidemiology) {
                     renderDashboard();
                     document.getElementById('loading-overlay').style.display = 'none';
                     
-                    // Check if navigation from Global Heatmap was requested
-                    if (sessionStorage.getItem('navigateToRevenue') === 'true') {
-                        sessionStorage.removeItem('navigateToRevenue');
-                        showSection('revenue');
-                    } else if (sessionStorage.getItem('navigateToPortfolio') === 'true') {
-                        sessionStorage.removeItem('navigateToPortfolio');
-                        showSection('portfolio');
+                    // Navigate to requested section after dashboard renders
+                    if (navigateToSection) {
+                        setTimeout(function() { showSection(navigateToSection); }, 100);
                     }
                 } else {
-                    throw new Error('No data loaded');
+                    throw new Error('Epidemiology data not loaded from GitHub');
                 }
             }).catch(function(error) {
-                console.error('Failed to initialize NeuroVue:', error);
-                document.getElementById('loading-overlay').innerHTML = '<div class="text-center"><div class="text-xl font-bold text-red-400 mb-2">Failed to Load Data</div><div class="text-slate-400">' + error.message + '</div></div>';
+                console.error('❌ Failed to initialize NeuroVue:', error);
+                document.getElementById('loading-overlay').innerHTML = 
+                    '<div class="text-center"><div class="text-xl font-bold text-red-400 mb-2">Failed to Load Data</div>' +
+                    '<div class="text-slate-400">' + error.message + '</div>' +
+                    '<button onclick="location.reload()" class="mt-4 px-4 py-2 bg-blue-600 rounded text-white hover:bg-blue-500">Retry</button></div>';
             });
         });
 
