@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 
 export default function NeuroVuePage() {
-  // Serve the static HTML file
-  redirect('/neuro/index.html')
+  // Redirect to the new medtech dashboard (v7 - working version)
+  redirect('/medtech/')
 }
