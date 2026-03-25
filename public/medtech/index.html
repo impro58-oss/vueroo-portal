@@ -288,7 +288,7 @@
                     <p class="text-slate-400">Neurovascular market landscape and competitor analysis</p>
                 </div>
 
-                <!-- Filters -->
+                <!-- Filters & Actions -->
                 <div class="glass rounded-xl p-4 mb-6 border border-slate-800">
                     <div class="flex flex-wrap items-center gap-3">
                         <span class="text-sm text-slate-400 mr-2">Filter by:</span>
@@ -297,10 +297,45 @@
                         <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="complete">Complete Portfolio</button>
                         <button class="ci-filter-btn px-3 py-1.5 rounded-full text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition" data-filter="gaps">Has Major Gaps</button>
                         <div class="flex-1"></div>
+                        <button id="compareBtn" onclick="toggleComparison()" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium transition flex items-center gap-2">
+                            <i class="fas fa-th-large"></i>
+                            Compare Portfolio
+                        </button>
                         <div class="relative">
                             <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
                             <input type="text" id="ciSearchInput" placeholder="Search companies or products..." 
                                    class="pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm focus:outline-none focus:border-blue-500 w-64">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Matrix (Hidden by default) -->
+                <div id="ciComparisonView" class="hidden mb-6">
+                    <div class="glass rounded-xl p-6 border border-slate-800">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-bold text-white text-lg">Portfolio Comparison Matrix</h3>
+                            <button onclick="hideComparison()" class="text-slate-400 hover:text-white transition">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="border-b border-slate-700">
+                                        <th class="text-left py-3 px-2 text-slate-400 font-medium sticky left-0 bg-slate-900">Company</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Coils</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Flow Div.</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Stents</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Aspiration</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Intrasacc.</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Retrievers</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Balloons</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Radial</th>
+                                        <th class="text-center py-3 px-2 text-slate-400 font-medium">Pump</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ciComparisonTable"></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -649,6 +684,30 @@
         // COMPETITOR INTELLIGENCE DATA AND FUNCTIONS
         const CI_COMPANIES = [
             {
+                id: "medtronic",
+                name: "Medtronic",
+                ticker: "MDT",
+                country: "🇺🇸 USA",
+                threatLevel: "high",
+                portfolio: "complete",
+                revenue: "$32.3B",
+                neuroRevenue: "$1.38B",
+                products: {
+                    coils: ["Axium", "Axium Prime", "Nexus"],
+                    flowDiverters: ["Pipeline Shield", "Pipeline Flex", "Pipeline Vantage"],
+                    stents: ["Enterprise"],
+                    aspiration: ["React 68/71", "Riptide"],
+                    intrasaccular: ["Artisse", "Barrel"],
+                    retrievers: ["Solitaire AB", "Solitaire X"],
+                    balloons: ["Cello", "HyperForm"],
+                    radial: ["RIST .079"],
+                    pump: false
+                },
+                strengths: ["Market leader", "Complete portfolio", "Strong clinical data"],
+                gaps: [],
+                notes: "Benchmark competitor. Strong in all categories."
+            },
+            {
                 id: "stryker",
                 name: "Stryker",
                 ticker: "SYK",
@@ -657,24 +716,44 @@
                 portfolio: "complete",
                 revenue: "$20.5B",
                 neuroRevenue: "$1.45B",
-                products: ["Trevo", "AXS Catalyst", "Pipeline Flex", "Target", "AXS Vecta", "AXS Infinity"],
-                strengths: "Complete portfolio, strong stent retriever",
-                weaknesses: "Premium pricing",
-                gaps: "Limited in bifurcation"
+                products: {
+                    coils: ["Target 360", "Target 3D", "Tetra"],
+                    flowDiverters: ["Surpass Streamline", "Surpass Evolve"],
+                    stents: ["Neuroform Atlas", "Wingspan"],
+                    aspiration: ["AXS Catalyst", "AXS Broadway"],
+                    intrasaccular: ["Contour", "Neqstent", "Trenza"],
+                    retrievers: ["Trevo NXT", "Trevo XP"],
+                    balloons: ["FlowGate2", "Gateway"],
+                    radial: ["AXS Infinity"],
+                    pump: ["AXS Universal"]
+                },
+                strengths: ["Strong coils", "Complete portfolio", "Growing flow diverter share"],
+                gaps: [],
+                notes: "Major threat across all segments. Strong in stent retrievers."
             },
             {
-                id: "medtronic",
-                name: "Medtronic",
-                ticker: "MDT",
-                country: "🇮🇪 Ireland",
+                id: "microvention",
+                name: "Microvention / Terumo",
+                ticker: "TER",
+                country: "🇯🇵 Japan",
                 threatLevel: "high",
                 portfolio: "complete",
-                revenue: "$32.3B",
-                neuroRevenue: "$1.38B",
-                products: ["Solitaire", "Pipeline Flex", "Apollo", "Avigo", "Export", "Riptide"],
-                strengths: "Broad portfolio, strong coils",
-                weaknesses: "Complex pricing",
-                gaps: "Limited radial"
+                revenue: "$6.2B",
+                neuroRevenue: "$520M",
+                products: {
+                    coils: ["HydroCoil", "HyperSoft", "Cosmos"],
+                    flowDiverters: ["FRED", "FRED Jr.", "FRED X"],
+                    stents: ["LVIS", "LVIS Jr."],
+                    aspiration: ["SOFIA Plus", "SOFIA Flow"],
+                    intrasaccular: ["WEB System"],
+                    retrievers: ["ERIC"],
+                    balloons: ["Scepter C", "Scepter XC"],
+                    radial: ["FUBUKI"],
+                    pump: false
+                },
+                strengths: ["WEB intrasaccular leader", "Complete portfolio", "Strong in Asia"],
+                gaps: ["No dedicated pump"],
+                notes: "WEB is dominant intrasaccular device. Major Wallaby threat."
             },
             {
                 id: "penumbra",
@@ -685,24 +764,20 @@
                 portfolio: "specialized",
                 revenue: "$1.18B",
                 neuroRevenue: "$380M",
-                products: ["Penumbra System", "Engine", "3D Revascularization"],
-                strengths: "Aspiration leader, 3D tech",
-                weaknesses: "Limited stent retriever",
-                gaps: "No stent retriever"
-            },
-            {
-                id: "microvention",
-                name: "Microvention/Terumo",
-                ticker: "TER",
-                country: "🇯🇵 Japan",
-                threatLevel: "medium",
-                portfolio: "complete",
-                revenue: "$6.2B",
-                neuroRevenue: "$520M",
-                products: ["WEB", "FRED", "Junior", "TruSelect", "Sofia", "Chikai"],
-                strengths: "WEB device, flow diverters",
-                weaknesses: "Limited US presence",
-                gaps: "Weak stent retriever"
+                products: {
+                    coils: ["SMART COIL"],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: ["ACE", "MAX", "RED", "JET"],
+                    intrasaccular: [],
+                    retrievers: ["3D Revascularization"],
+                    balloons: [],
+                    radial: ["BMX 81"],
+                    pump: ["Penumbra ENGINE"]
+                },
+                strengths: ["Aspiration leader", "ENGINE pump standard", "Strong MT position"],
+                gaps: ["No flow diverters", "No stents", "Limited coils", "No intrasaccular"],
+                notes: "Dominates aspiration + pump market. No flow diverters = opportunity."
             },
             {
                 id: "jj",
@@ -713,10 +788,20 @@
                 portfolio: "complete",
                 revenue: "$95B",
                 neuroRevenue: "$680M",
-                products: ["EmboTrap", "Galaxy", "VFC", "Cerebase", "Cerenovus coils"],
-                strengths: "EmboTrap stent retriever",
-                weaknesses: "Limited aspiration",
-                gaps: "No aspiration pump"
+                products: {
+                    coils: ["CEREPAK", "GALAXY G3"],
+                    flowDiverters: ["BRAVO"],
+                    stents: ["ENTERPRISE 2"],
+                    aspiration: ["EMBOVAC"],
+                    intrasaccular: [],
+                    retrievers: ["EMBOTRAP II", "EMBOTRAP III"],
+                    balloons: ["EMBOGUARD"],
+                    radial: [],
+                    pump: false
+                },
+                strengths: ["Complete except gaps", "Strong stent retrievers", "J&J backing"],
+                gaps: ["No intrasaccular", "No dedicated pump", "Limited radial"],
+                notes: "Complete portfolio except intrasaccular. Strong brand."
             },
             {
                 id: "balt",
@@ -727,24 +812,20 @@
                 portfolio: "selective",
                 revenue: "$180M",
                 neuroRevenue: "$180M",
-                products: ["FRED", "Leo", "BMX family", "Catch Mini"],
-                strengths: "European leader",
-                weaknesses: "Limited US market",
-                gaps: "Limited stent retriever"
-            },
-            {
-                id: "phenox",
-                name: "Wallaby Phenox",
-                ticker: "Private",
-                country: "🇩🇪 Germany",
-                threatLevel: "self",
-                portfolio: "selective",
-                revenue: "$95M",
-                neuroRevenue: "$95M",
-                products: ["p64", "p48", "pCONUS2", "Avenir", "FRED"],
-                strengths: "Bifurcation device (pCONUS2)",
-                weaknesses: "No aspiration pump",
-                gaps: "No intrasaccular, limited radial"
+                products: {
+                    coils: ["Optima", "OptiMAX", "Prestige Plus"],
+                    flowDiverters: ["Silk Vista"],
+                    stents: ["LEO+"],
+                    aspiration: ["Raptor"],
+                    intrasaccular: [],
+                    retrievers: ["Catchview"],
+                    balloons: ["Eclipse 2L"],
+                    radial: [],
+                    pump: false
+                },
+                strengths: ["Strong coils", "Silk Vista flow diverter", "French innovation"],
+                gaps: ["No intrasaccular", "No pump", "Limited radial"],
+                notes: "Strong European player. Good coil portfolio."
             },
             {
                 id: "acandis",
@@ -755,52 +836,20 @@
                 portfolio: "specialized",
                 revenue: "$45M",
                 neuroRevenue: "$45M",
-                products: ["pCONUS", "Aperio"],
-                strengths: "European focus",
-                weaknesses: "Limited global presence",
-                gaps: "Narrow portfolio"
-            },
-            {
-                id: "sequent",
-                name: "Sequent Medical (Balt)",
-                ticker: "Private",
-                country: "🇺🇸 USA",
-                threatLevel: "low",
-                portfolio: "specialized",
-                revenue: "$25M",
-                neuroRevenue: "$25M",
-                products: ["Contour"],
-                strengths: "Neck remodeling",
-                weaknesses: "Single product focus",
-                gaps: "Limited portfolio"
-            },
-            {
-                id: "rapid",
-                name: "Rapid Medical",
-                ticker: "Private",
-                country: "🇮🇱 Israel",
-                threatLevel: "medium",
-                portfolio: "emerging",
-                revenue: "$35M",
-                neuroRevenue: "$35M",
-                products: ["TIGERTRIEVER", "Comaneci"],
-                strengths: "Adjustable stent retriever",
-                weaknesses: "Early stage",
-                gaps: "Limited track record"
-            },
-            {
-                id: "biotronik",
-                name: "Biotronik",
-                ticker: "Private",
-                country: "🇩🇪 Germany",
-                threatLevel: "low",
-                portfolio: "emerging",
-                revenue: "$800M",
-                neuroRevenue: "$40M",
-                products: ["Observant"],
-                strengths: "Cardiac expertise",
-                weaknesses: "Limited neuro focus",
-                gaps: "Early in neuro"
+                products: {
+                    coils: [],
+                    flowDiverters: ["DERIVO", "DERIVO 2", "DERIVO 2heal"],
+                    stents: ["ACCERO", "ACCLINO", "CREDO"],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: ["APERIO"],
+                    balloons: ["NeuroSpeed"],
+                    radial: ["NeuroSlider"],
+                    pump: false
+                },
+                strengths: ["Strong German engineering", "CREDO stenosis stent", "Radial microcatheters"],
+                gaps: ["No coils", "No aspiration", "No intrasaccular", "No pump"],
+                notes: "Niche player. Strong stents but missing major categories."
             },
             {
                 id: "imperative",
@@ -811,12 +860,108 @@
                 portfolio: "emerging",
                 revenue: "$65M",
                 neuroRevenue: "$65M",
-                products: ["Zoom RDD", "Zoom 88"],
-                strengths: "Radial first approach",
-                weaknesses: "Limited portfolio depth",
-                gaps: "Narrow indication"
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: ["Zoom 35", "Zoom 71", "Zoom 88", "Zoom RDL"],
+                    intrasaccular: [],
+                    retrievers: [],
+                    balloons: [],
+                    radial: ["Zoom RDL"],
+                    pump: false
+                },
+                strengths: ["Aspiration focus", "Radial access", "Pure-play MT"],
+                gaps: ["No coils", "No stents", "No flow diverters", "No intrasaccular", "No balloons"],
+                notes: "Aspiration-only strategy. Limited threat to Wallaby."
+            },
+            {
+                id: "rapid",
+                name: "Rapid Medical",
+                ticker: "Private",
+                country: "🇮🇱 Israel",
+                threatLevel: "low",
+                portfolio: "emerging",
+                revenue: "$35M",
+                neuroRevenue: "$35M",
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: ["TIGERTRIEVER"],
+                    balloons: [],
+                    radial: [],
+                    pump: false
+                },
+                strengths: ["TIGERTRIEVER innovation", "Drivewire technology", "Israeli agility"],
+                gaps: ["No coils", "No stents", "No flow diverters", "No aspiration", "No balloons", "No intrasaccular"],
+                notes: "Niche retriever player. No broader portfolio."
+            },
+            {
+                id: "biotronik",
+                name: "Biotronik",
+                ticker: "Private",
+                country: "🇩🇪 Germany",
+                threatLevel: "low",
+                portfolio: "emerging",
+                revenue: "$800M",
+                neuroRevenue: "$40M",
+                products: {
+                    coils: [],
+                    flowDiverters: [],
+                    stents: [],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: [],
+                    balloons: [],
+                    radial: [],
+                    pump: false
+                },
+                strengths: ["Cardiac expertise"],
+                gaps: ["Early in neuro", "No established neuro products"],
+                notes: "Early entrant to neurovascular. Limited market presence."
+            },
+            {
+                id: "phenox",
+                name: "Wallaby Phenox",
+                ticker: "Private",
+                country: "🇩🇪 Germany",
+                threatLevel: "self",
+                portfolio: "selective",
+                revenue: "$95M",
+                neuroRevenue: "$95M",
+                products: {
+                    coils: ["Avenir"],
+                    flowDiverters: ["p64", "p48", "p46", "pCONUS2"],
+                    stents: [],
+                    aspiration: [],
+                    intrasaccular: [],
+                    retrievers: [],
+                    balloons: [],
+                    radial: ["pCONUS2"],
+                    pump: false
+                },
+                strengths: ["Unique bifurcation device", "Strong German quality", "Innovation focus"],
+                gaps: ["No intrasaccular", "No aspiration pump", "Limited stents"],
+                notes: "pCONUS2 is unique bifurcation solution. Key Wallaby differentiator."
             }
         ];
+
+        function getProductCount(products) {
+            var count = 0;
+            if (products.coils) count += products.coils.length;
+            if (products.flowDiverters) count += products.flowDiverters.length;
+            if (products.stents) count += products.stents.length;
+            if (products.aspiration) count += products.aspiration.length;
+            if (products.intrasaccular) count += products.intrasaccular.length;
+            if (products.retrievers) count += products.retrievers.length;
+            if (products.balloons) count += products.balloons.length;
+            if (products.radial) count += products.radial.length;
+            if (products.pump && products.pump !== false) count += products.pump.length;
+            return count;
+        }
 
         function renderCompetitorIntel(filterType, searchTerm) {
             var grid = document.getElementById('ciCompanyGrid');
@@ -827,12 +972,18 @@
                 
                 if (filterType === 'high' && company.threatLevel !== 'high') return false;
                 if (filterType === 'complete' && company.portfolio !== 'complete') return false;
-                if (filterType === 'gaps' && !company.gaps.includes('gap')) return false;
+                if (filterType === 'gaps' && (!company.gaps || company.gaps.length === 0)) return false;
                 
                 if (searchTerm) {
                     var search = searchTerm.toLowerCase();
                     var matchName = company.name.toLowerCase().includes(search);
-                    var matchProducts = company.products.some(function(p) { return p.toLowerCase().includes(search); });
+                    var matchProducts = false;
+                    var p = company.products;
+                    if (p.coils) p.coils.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.flowDiverters) p.flowDiverters.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.stents) p.stents.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.aspiration) p.aspiration.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
+                    if (p.retrievers) p.retrievers.forEach(function(x) { if (x.toLowerCase().includes(search)) matchProducts = true; });
                     if (!matchName && !matchProducts) return false;
                 }
                 
@@ -844,8 +995,9 @@
                 var c = filtered[i];
                 var threatClass = c.threatLevel === 'high' ? 'bg-red-500/20 text-red-400' : c.threatLevel === 'medium' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-slate-500/20 text-slate-400';
                 var portfolioClass = c.portfolio === 'complete' ? 'bg-green-500/20 text-green-400' : c.portfolio === 'specialized' ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-500/20 text-slate-400';
+                var productCount = getProductCount(c.products);
                 
-                html += '<div class="glass rounded-xl p-5 border border-slate-800 hover:border-slate-700 transition">';
+                html += '<div class="glass rounded-xl p-5 border border-slate-800 hover:border-slate-700 transition cursor-pointer" onclick="showCompanyDetail(\'' + c.id + '\')">';
                 html += '<div class="flex items-start justify-between mb-3">';
                 html += '<div><div class="font-bold text-white text-lg">' + c.name + '</div>';
                 html += '<div class="text-sm text-slate-400">' + c.country + ' • ' + c.ticker + '</div></div>';
@@ -857,20 +1009,119 @@
                 html += '<div><div class="text-slate-400">Revenue</div><div class="text-white">' + c.revenue + '</div></div>';
                 html += '<div><div class="text-slate-400">Neuro</div><div class="text-blue-400">' + c.neuroRevenue + '</div></div>';
                 html += '</div>';
+                html += '<div class="text-xs text-slate-400 mb-1">Products: ' + productCount + ' total</div>';
                 html += '<div class="flex flex-wrap gap-1 mb-3">';
-                for (var j = 0; j < Math.min(c.products.length, 4); j++) {
-                    html += '<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">' + c.products[j] + '</span>';
+                
+                // Show key products by category
+                var allProducts = [];
+                if (c.products.coils && c.products.coils.length) allProducts.push(c.products.coils[0]);
+                if (c.products.flowDiverters && c.products.flowDiverters.length) allProducts.push(c.products.flowDiverters[0]);
+                if (c.products.retrievers && c.products.retrievers.length) allProducts.push(c.products.retrievers[0]);
+                if (c.products.intrasaccular && c.products.intrasaccular.length) allProducts.push(c.products.intrasaccular[0]);
+                if (c.products.pump && c.products.pump !== false && c.products.pump.length) allProducts.push(c.products.pump[0]);
+                
+                for (var j = 0; j < Math.min(allProducts.length, 4); j++) {
+                    html += '<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">' + allProducts[j] + '</span>';
                 }
-                if (c.products.length > 4) {
-                    html += '<span class="px-2 py-1 text-xs text-slate-500">+' + (c.products.length - 4) + '</span>';
+                if (allProducts.length > 4) {
+                    html += '<span class="px-2 py-1 text-xs text-slate-500">+' + (productCount - 4) + '</span>';
                 }
                 html += '</div>';
-                html += '<div class="text-xs"><div class="text-green-400 mb-1">✓ ' + c.strengths + '</div>';
-                html += '<div class="text-red-400">⚠ ' + c.gaps + '</div></div>';
+                
+                if (c.strengths && c.strengths.length > 0) {
+                    html += '<div class="text-xs text-green-400 mb-1">✓ ' + c.strengths[0] + (c.strengths.length > 1 ? ' +' + (c.strengths.length - 1) : '') + '</div>';
+                }
+                if (c.gaps && c.gaps.length > 0) {
+                    html += '<div class="text-xs text-red-400">⚠ ' + c.gaps[0] + (c.gaps.length > 1 ? ' +' + (c.gaps.length - 1) : '') + '</div>';
+                }
                 html += '</div>';
             }
             
             grid.innerHTML = html || '<div class="col-span-2 text-center py-12 text-slate-400">No companies match the selected filter</div>';
+        }
+
+        function showCompanyDetail(companyId) {
+            var company = CI_COMPANIES.find(function(c) { return c.id === companyId; });
+            if (!company) return;
+            
+            var p = company.products;
+            var productsHtml = '';
+            var categories = [
+                { key: 'coils', label: 'Coils' },
+                { key: 'flowDiverters', label: 'Flow Diverters' },
+                { key: 'stents', label: 'Stents' },
+                { key: 'aspiration', label: 'Aspiration' },
+                { key: 'intrasaccular', label: 'Intrasaccular' },
+                { key: 'retrievers', label: 'Retrievers' },
+                { key: 'balloons', label: 'Balloons' },
+                { key: 'radial', label: 'Radial Access' },
+                { key: 'pump', label: 'Aspiration Pump' }
+            ];
+            
+            for (var i = 0; i < categories.length; i++) {
+                var cat = categories[i];
+                var items = p[cat.key];
+                if (items && items !== false && items.length > 0) {
+                    productsHtml += '<div class="mb-3"><div class="text-xs text-slate-400 mb-1">' + cat.label + '</div><div class="flex flex-wrap gap-1">';
+                    for (var j = 0; j < items.length; j++) {
+                        productsHtml += '<span class="px-2 py-1 bg-blue-900/30 border border-blue-700/50 rounded text-xs text-blue-300">' + items[j] + '</span>';
+                    }
+                    productsHtml += '</div></div>';
+                }
+            }
+            
+            var modal = document.createElement('div');
+            modal.id = 'ciModal';
+            modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4';
+            modal.style = 'background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);';
+            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-center justify-between mb-4"><div><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400">' + company.country + ' • ' + company.ticker + '</div></div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + company.revenue + '</span> • Neuro: <span class="text-blue-400">' + company.neuroRevenue + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
+            document.body.appendChild(modal);
+        }
+
+        function closeCompanyDetail() {
+            var modal = document.getElementById('ciModal');
+            if (modal) modal.remove();
+        }
+
+        function toggleComparison() {
+            var view = document.getElementById('ciComparisonView');
+            if (view) {
+                view.classList.toggle('hidden');
+                if (!view.classList.contains('hidden')) {
+                    renderComparisonMatrix();
+                }
+            }
+        }
+
+        function hideComparison() {
+            var view = document.getElementById('ciComparisonView');
+            if (view) view.classList.add('hidden');
+        }
+
+        function renderComparisonMatrix() {
+            var tbody = document.getElementById('ciComparisonTable');
+            if (!tbody) return;
+            
+            var html = '';
+            for (var i = 0; i < CI_COMPANIES.length; i++) {
+                var c = CI_COMPANIES[i];
+                if (c.id === 'phenox') continue;
+                
+                var p = c.products;
+                html += '<tr class="border-b border-slate-800 hover:bg-slate-800/50 transition">';
+                html += '<td class="py-3 px-2 font-medium text-white sticky left-0 bg-slate-900">' + c.name + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.coils && p.coils.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.coils.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.flowDiverters && p.flowDiverters.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.flowDiverters.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.stents && p.stents.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.stents.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.aspiration && p.aspiration.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.aspiration.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.intrasaccular && p.intrasaccular.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.intrasaccular.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.retrievers && p.retrievers.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.retrievers.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.balloons && p.balloons.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.balloons.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.radial && p.radial.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.radial.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '<td class="py-3 px-2 text-center">' + (p.pump && p.pump !== false && p.pump.length ? '<i class="fas fa-check text-green-500"></i><div class="text-xs text-slate-500">' + p.pump.length + '</div>' : '<i class="fas fa-times text-slate-600"></i>') + '</td>';
+                html += '</tr>';
+            }
+            tbody.innerHTML = html;
         }
 
         // Initialize Competitor Intel when section shown
