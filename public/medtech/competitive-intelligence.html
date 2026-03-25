@@ -277,6 +277,7 @@
                 website: 'https://www.medtronic.com/en-us/l/e/neurovascular.html',
                 logo: 'M',
                 color: 'blue',
+                neuroRevenue: 2200,
                 products: {
                     coils: ['Axium', 'Axium Prime', 'Nexus'],
                     flowDiverters: ['Pipeline Shield', 'Pipeline Flex', 'Pipeline Vantage'],
@@ -300,6 +301,7 @@
                 website: 'https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular.html',
                 logo: 'S',
                 color: 'green',
+                neuroRevenue: 1450,
                 products: {
                     coils: ['Target 360', 'Target 3D', 'Tetra'],
                     flowDiverters: ['Surpass Streamline', 'Surpass Evolve'],
@@ -323,6 +325,7 @@
                 website: 'https://www.terumoneuro.com/emea',
                 logo: 'MV',
                 color: 'red',
+                neuroRevenue: 850,
                 products: {
                     coils: ['HydroCoil', 'HyperSoft', 'Cosmos'],
                     flowDiverters: ['FRED', 'FRED Jr.', 'FRED X'],
@@ -346,6 +349,7 @@
                 website: 'https://www.penumbrainc.com/neuro/',
                 logo: 'P',
                 color: 'purple',
+                neuroRevenue: 920,
                 products: {
                     coils: ['SMART COIL'],
                     flowDiverters: [],
@@ -369,6 +373,7 @@
                 website: 'https://www.jnjmedtech.com/en-US/companies/cerenovus',
                 logo: 'CJ',
                 color: 'indigo',
+                neuroRevenue: 680,
                 products: {
                     coils: ['CEREPAK', 'GALAXY G3'],
                     flowDiverters: ['BRAVO'],
@@ -392,6 +397,7 @@
                 website: 'https://baltgroup.com/products/',
                 logo: 'B',
                 color: 'cyan',
+                neuroRevenue: 320,
                 products: {
                     coils: ['Optima', 'OptiMAX', 'Prestige Plus'],
                     flowDiverters: ['Silk Vista'],
@@ -415,6 +421,7 @@
                 website: 'https://www.acandis.com/en/product-portfolio/',
                 logo: 'A',
                 color: 'orange',
+                neuroRevenue: 180,
                 products: {
                     coils: [],
                     flowDiverters: ['DERIVO', 'DERIVO 2', 'DERIVO 2heal'],
@@ -438,6 +445,7 @@
                 website: 'https://imperativecare.com/stroke/',
                 logo: 'IC',
                 color: 'pink',
+                neuroRevenue: 140,
                 products: {
                     coils: [],
                     flowDiverters: [],
@@ -461,6 +469,7 @@
                 website: 'https://www.rapid-medical.com/',
                 logo: 'RM',
                 color: 'teal',
+                neuroRevenue: 85,
                 products: {
                     coils: [],
                     flowDiverters: [],
@@ -560,6 +569,7 @@
                                 <h3 class="font-bold text-white">${company.name}</h3>
                                 <div class="flex items-center gap-2 text-xs text-slate-400">
                                     <i class="fas fa-map-marker-alt"></i> ${company.hq}
+                                    ${company.neuroRevenue ? '<span class="ml-2 text-emerald-400"><i class="fas fa-dollar-sign"></i> ' + (company.neuroRevenue >= 1000 ? (company.neuroRevenue/1000).toFixed(1) + 'B' : company.neuroRevenue + 'M') + '</span>' : ''}
                                     ${company.threat === 'high' ? '<span class="text-red-400 ml-2"><i class="fas fa-exclamation-triangle"></i> High Threat</span>' : ''}
                                 </div>
                             </div>
