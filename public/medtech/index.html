@@ -98,591 +98,407 @@
             </nav>
             
             <div class="p-4 border-t border-slate-800">
-                <div class="text-xs text-slate-500">Last Updated</div>
-                <div id="lastUpdated" class="text-sm text-slate-300">Loading...</div>
-                <div class="text-xs text-slate-500 mt-2">Data Source</div>
-                <div class="text-sm text-emerald-400">GitHub Live</div>
+                <a href="competitive-intelligence.html" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 hover:border-blue-500/50 transition">
+                    <i class="fas fa-external-link-alt text-blue-400"></i>
+                    <div>
+                        <div class="font-medium text-sm text-white">Full CI Dashboard</div>
+                    </div>
+                </a>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto bg-slate-950">
+        <main class="flex-1 overflow-y-auto">
             
-            <!-- SECTION: Dashboard Overview -->
-            <section id="section-dashboard" class="section active">
-                <!-- Hero Header -->
-                <div class="bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-800 p-8">
-                    <div class="max-w-6xl mx-auto">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full border border-blue-800">Live Data</span>
-                            <span class="px-3 py-1 bg-emerald-900/50 text-emerald-400 text-xs font-medium rounded-full border border-emerald-800">Neurovascular Focus</span>
+            <!-- Header -->
+            <header class="sticky top-0 z-40 glass border-b border-slate-800 px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 id="page-title" class="text-2xl font-bold text-white">Global Neurovascular Intelligence</h2>
+                        <p id="last-updated" class="text-sm text-slate-400 mt-1">Last updated: March 2024</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 text-slate-400 hover:text-white transition">
+                            <i class="fas fa-search text-lg"></i>
+                        </button>
+                        <button class="p-2 text-slate-400 hover:text-white transition">
+                            <i class="fas fa-bell text-lg"></i>
+                        </button>
+                        <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white"></i>
                         </div>
-                        <h2 class="text-4xl font-bold text-white mb-3">NeuroVue <span class="gradient-text">Intelligence</span></h2>
-                        <p class="text-xl text-slate-400 max-w-3xl">Neurovascular medtech market intelligence with real-time epidemiology and competitive data.</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="section active p-8">
+                <!-- Hero Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heartbeat text-blue-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Annual Strokes</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-strokes">--</div>
+                        <div class="text-sm text-emerald-400 mt-2"><i class="fas fa-arrow-up mr-1"></i>+3.6% YoY</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-skull-crossbones text-red-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Stroke Deaths</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-deaths">--</div>
+                        <div class="text-sm text-slate-400 mt-2">Mortality Rate</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-purple-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">Prevalence</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-prevalence">--</div>
+                        <div class="text-sm text-slate-400 mt-2">Living with stroke</div>
+                    </div>
+                    
+                    <div class="glass rounded-2xl p-6 card-hover border border-slate-800">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-procedures text-emerald-400 text-xl"></i>
+                            </div>
+                            <div class="text-sm text-slate-400">MT Access</div>
+                        </div>
+                        <div class="text-3xl font-bold text-white metric-glow" id="hero-mt">--%</div>
+                        <div class="text-sm text-emerald-400 mt-2">Mechanical Thrombectomy</div>
                     </div>
                 </div>
 
-                <div class="p-8 max-w-7xl mx-auto">
-                    <!-- Hero Stats -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 card-hover">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-heart-pulse text-red-400 text-xl"></i>
-                                </div>
-                                <span class="text-xs text-emerald-400 flex items-center gap-1">
-                                    <i class="fas fa-arrow-up"></i> 3.6% CAGR
-                                </span>
-                            </div>
-                            <div class="text-3xl font-bold text-white metric-glow" style="color: #ef4444;" id="hero-strokes">--</div>
-                            <div class="text-slate-400 text-sm mt-1">Annual Strokes (2024)</div>
+                <!-- 2030 Projection -->
+                <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-700/50 rounded-xl p-6 mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-chart-line text-purple-400 text-xl"></i>
                         </div>
-
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 card-hover">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-skull text-amber-400 text-xl"></i>
-                                </div>
-                                <span class="text-xs text-slate-400">Global</span>
-                            </div>
-                            <div class="text-3xl font-bold text-amber-400 metric-glow" id="hero-deaths">--</div>
-                            <div class="text-slate-400 text-sm mt-1">Stroke Deaths / Year</div>
+                        <div class="flex-1">
+                            <div class="font-semibold text-purple-400 text-lg">2030 Projection</div>
+                            <div class="text-slate-300">Stroke incidence projected to reach <span class="text-white font-bold" id="projection-2030">--</span> cases annually by 2030</div>
                         </div>
-
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 card-hover">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-users text-blue-400 text-xl"></i>
-                                </div>
-                                <span class="text-xs text-emerald-400">Growing</span>
-                            </div>
-                            <div class="text-3xl font-bold text-blue-400 metric-glow" id="hero-prevalence">--</div>
-                            <div class="text-slate-400 text-sm mt-1">Living Survivors</div>
-                        </div>
-
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 card-hover">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-hospital text-emerald-400 text-xl"></i>
-                                </div>
-                                <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded">12%</span>
-                            </div>
-                            <div class="text-3xl font-bold text-emerald-400 metric-glow" id="hero-mt">--</div>
-                            <div class="text-slate-400 text-sm mt-1">MT Access Rate</div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-purple-400" id="cagr-value">+3.6%</div>
+                            <div class="text-sm text-slate-400">Annual Growth</div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- 2030 Projection -->
-                    <div class="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-700/50 rounded-xl p-6 mb-8">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-chart-line text-purple-400 text-xl"></i>
-                            </div>
-                            <div class="flex-1">
-                                <div class="font-semibold text-purple-400 text-lg">2030 Projection</div>
-                                <div class="text-slate-300">Stroke incidence projected to reach <span class="text-white font-bold" id="projection-2030">--</span> cases annually by 2030</div>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-2xl font-bold text-purple-400" id="cagr-value">+3.6%</div>
-                                <div class="text-sm text-slate-400">Annual Growth</div>
-                            </div>
+                <!-- Top Regions Table -->
+                <div class="glass rounded-2xl border border-slate-800 overflow-hidden">
+                    <div class="p-6 border-b border-slate-800">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Top Regions by Stroke Burden</h3>
+                            <select id="regionFilter" class="bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm">
+                                <option value="all">All Regions</option>
+                                <option value="asia">Asia Pacific</option>
+                                <option value="europe">Europe</option>
+                                <option value="americas">Americas</option>
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Global Heatmap Iframe -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-8">
-                        <div class="p-6 border-b border-slate-800">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white">Global Neurovascular Heat Map</h3>
-                                    <p class="text-sm text-slate-400">Interactive geographic visualization of stroke burden</p>
-                                </div>
-                                <a href="global-heatmap-v3b.html" target="_blank" class="px-4 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-400 rounded-lg text-sm transition">
-                                    Full Screen <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="relative" style="height: 600px;">
-                            <iframe 
-                                src="global-heatmap-v3b.html" 
-                                class="w-full h-full border-0"
-                                title="Global Neurovascular Heat Map"
-                                loading="lazy"
-                                allowfullscreen
-                            ></iframe>
-                        </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-slate-900/50">
+                                <tr>
+                                    <th class="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">Annual Strokes</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">Deaths</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">MT Rate</th>
+                                    <th class="text-right py-3 px-4 text-slate-400 font-medium">2030 Proj.</th>
+                                </tr>
+                            </thead>
+                            <tbody id="top-regions-table" class="divide-y divide-slate-800">
+                                <!-- Data rendered here -->
+                            </tbody>
+                        </table>
                     </div>
+                </div>
 
-                    <!-- Top Regions Table -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden mb-8">
-                        <div class="p-6 border-b border-slate-800">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-lg font-semibold text-white">Top Markets by Stroke Volume</h3>
-                                    <p class="text-sm text-slate-400">Regions with highest annual stroke incidence</p>
-                                </div>
-                                <button onclick="showSection('epidemiology')" class="px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 rounded-lg text-sm transition">
-                                    View All <i class="fas fa-arrow-right ml-2"></i>
-                                </button>
+                <!-- Quick Links -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <a href="competitive-intelligence.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chess text-blue-400 text-xl"></i>
                             </div>
+                            <div class="font-semibold text-white">Competitive Intelligence</div>
                         </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-slate-800">
-                                    <tr>
-                                        <th class="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Annual Strokes</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Deaths</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">MT Access</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">2030 Proj.</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="top-regions-table" class="divide-y divide-slate-800">
-                                    <tr><td colspan="5" class="py-8 text-center text-slate-400">Loading data...</td></tr>
-                                </tbody>
-                            </table>
+                        <p class="text-sm text-slate-400">Full competitor analysis with Wallaby positioning</p>
+                    </a>
+                    
+                    <a href="revenue-v2.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-chart-pie text-green-400 text-xl"></i>
+                            </div>
+                            <div class="font-semibold text-white">Revenue Dashboard</div>
                         </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <a href="global-heatmap-v3b.html" target="_blank" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-blue-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-globe-americas text-purple-400"></i>
-                                </div>
-                                <div class="font-semibold text-white">Global Heat Map</div>
+                        <p class="text-sm text-slate-400">Company financials and market share analysis</p>
+                    </a>
+                    
+                    <a href="portfolio-dashboard.html" class="glass rounded-xl p-6 card-hover border border-slate-800 block">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-th-large text-purple-400 text-xl"></i>
                             </div>
-                            <p class="text-sm text-slate-400">Interactive geographic visualization</p>
-                        </a>
+                            <div class="font-semibold text-white">Portfolio Matrix</div>
+                        </div>
+                        <p class="text-sm text-slate-400">Product category coverage across competitors</p>
+                    </a>
+                </div>
+            </section>
 
-                        <a href="revenue-v2.html" target="_blank" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-emerald-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-chart-pie text-emerald-400"></i>
-                                </div>
-                                <div class="font-semibold text-white">Revenue Dashboard</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Company financial analysis</p>
-                        </a>
-
-                        <a href="portfolio-dashboard.html" target="_blank" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-th text-amber-400"></i>
-                                </div>
-                                <div class="font-semibold text-white">Portfolio Matrix</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Product coverage analysis</p>
-                        </a>
+            <!-- Revenue Section -->
+            <section id="section-revenue" class="section p-8">
+                <div id="revenue-grid" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Revenue cards rendered here -->
+                    <div class="col-span-full py-12 text-center text-slate-400">
+                        <i class="fas fa-spinner fa-spin text-blue-400 text-3xl mb-3"></i>
+                        <div>Loading revenue data...</div>
                     </div>
                 </div>
             </section>
 
-            <!-- SECTION: Epidemiology -->
-            <section id="section-epidemiology" class="section">
-                <div class="p-8 max-w-7xl mx-auto">
-                    <header class="mb-8">
-                        <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white">
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <h2 class="text-2xl font-bold text-white">Epidemiology</h2>
-                        </div>
-                        <p class="text-slate-400">Global stroke and aneurysm epidemiology data</p>
-                    </header>
-
-                    <!-- Filters -->
-                    <div class="flex gap-4 mb-6">
-                        <select id="regionFilter" class="bg-slate-800 border border-slate-700 text-white rounded-lg px-4 py-2">
-                            <option value="all">All Regions</option>
-                            <option value="na">North America</option>
-                            <option value="eu">Europe</option>
-                            <option value="apac">Asia Pacific</option>
-                            <option value="latam">Latin America</option>
-                        </select>
-                    </div>
-
-                    <!-- Full Epidemiology Table -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
-                        <div class="p-6 border-b border-slate-800">
-                            <h3 class="text-lg font-semibold text-white">Regional Epidemiology Data</h3>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead class="bg-slate-800">
-                                    <tr>
-                                        <th class="text-left py-3 px-4 text-slate-400 font-medium">Region</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Population</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Annual Strokes</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">Deaths</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">IV tPA %</th>
-                                        <th class="text-right py-3 px-4 text-slate-400 font-medium">MT %</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="epidemiology-table-full" class="divide-y divide-slate-800">
-                                    <tr><td colspan="6" class="py-8 text-center text-slate-400">Loading data...</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <!-- Other Sections -->
+            <section id="section-epidemiology" class="section p-8">
+                <div class="text-center py-20">
+                    <i class="fas fa-chart-bar text-5xl text-slate-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Epidemiology Data</h3>
+                    <p class="text-slate-400">Detailed regional analysis available in the table above.</p>
                 </div>
             </section>
 
-            <!-- SECTION: Revenue Analysis -->
-            <section id="section-revenue" class="section">
-                <div class="p-8 max-w-7xl mx-auto">
-                    <header class="mb-8">
-                        <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white">
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <h2 class="text-2xl font-bold text-white">Revenue Analysis</h2>
-                        </div>
-                        <p class="text-slate-400">Neurovascular company financial performance</p>
-                    </header>
-
-                    <div id="revenue-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div class="col-span-full py-12 text-center text-slate-400">Loading revenue data...</div>
-                    </div>
+            <section id="section-competitors" class="section p-8">
+                <div class="text-center py-20">
+                    <i class="fas fa-chess text-5xl text-slate-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Competitor Intelligence</h3>
+                    <p class="text-slate-400 mb-4">View the full competitive dashboard.</p>
+                    <a href="competitive-intelligence.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open Full CI Dashboard
+                    </a>
                 </div>
             </section>
 
-            <!-- SECTION: Competitors -->
-            <section id="section-competitors" class="section">
-                <div class="p-8 max-w-7xl mx-auto">
-                    <header class="mb-8">
-                        <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white">
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <h2 class="text-2xl font-bold text-white">Competitor Intelligence</h2>
-                        </div>
-                        <p class="text-slate-400">11 major neurovascular players</p>
-                    </header>
-
-                    <div id="competitors-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="col-span-full py-12 text-center text-slate-400">Loading competitor data...</div>
-                    </div>
+            <section id="section-portfolio" class="section p-8">
+                <div class="text-center py-20">
+                    <i class="fas fa-th-large text-5xl text-slate-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Portfolio Matrix</h3>
+                    <p class="text-slate-400 mb-4">View the complete product portfolio analysis.</p>
+                    <a href="portfolio-dashboard.html" class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open Portfolio Dashboard
+                    </a>
                 </div>
             </section>
 
-            <!-- SECTION: Portfolio Matrix -->
-            <section id="section-portfolio" class="section">
-                <div class="p-8 max-w-7xl mx-auto">
-                    <header class="mb-8">
-                        <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white">
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <h2 class="text-2xl font-bold text-white">Portfolio Matrix</h2>
-                        </div>
-                        <p class="text-slate-400">Product coverage across categories</p>
-                    </header>
-
-                    <div id="portfolio-content">
-                        <div class="py-12 text-center text-slate-400">Loading portfolio data...</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION: Research Hub -->
-            <section id="section-research" class="section">
-                <div class="p-8 max-w-7xl mx-auto">
-                    <header class="mb-8">
-                        <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white">
-                                <i class="fas fa-arrow-left"></i>
-                            </button>
-                            <h2 class="text-2xl font-bold text-white">Research Hub</h2>
-                        </div>
-                        <p class="text-slate-400">Additional resources and analysis</p>
-                    </header>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <a href="platform-analysis.html" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-blue-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-microscope text-blue-400 text-xl"></i>
-                                <div class="font-semibold text-white">Platform Analysis</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Comprehensive platform evaluation</p>
-                        </a>
-
-                        <a href="competition-optic.html" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-emerald-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-crosshairs text-emerald-400 text-xl"></i>
-                                <div class="font-semibold text-white">Competition Optic</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Competitive landscape analysis</p>
-                        </a>
-
-                        <a href="platform-naming.html" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-amber-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-tag text-amber-400 text-xl"></i>
-                                <div class="font-semibold text-white">Platform Naming</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Branding and naming guidelines</p>
-                        </a>
-
-                        <a href="competitive-intelligence.html" class="bg-slate-900 rounded-xl p-6 border border-slate-800 hover:border-purple-500/50 transition card-hover">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-chess text-purple-400 text-xl"></i>
-                                <div class="font-semibold text-white">Full CI Dashboard</div>
-                            </div>
-                            <p class="text-sm text-slate-400">Complete competitive intelligence</p>
-                        </a>
-                    </div>
+            <section id="section-research" class="section p-8">
+                <div class="text-center py-20">
+                    <i class="fas fa-file-alt text-5xl text-slate-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">Research Hub</h3>
+                    <p class="text-slate-400">Research documents and analysis coming soon.</p>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <script src="data-loader.js"></script>
+    <!-- EMBEDDED DATA AND FUNCTIONS - ZERO DEPENDENCIES -->
     <script>
+        // FALLBACK DATA: Embedded directly in HTML
+        const FALLBACK_EPIDEMIOLOGY = {
+            regions: {
+                china: { name: "China", flag: "🇨🇳", population: 1412000000, "2024": { annualStrokes: { value: 3300000 }, strokeDeaths: { value: 1500000 }, prevalence: { value: 17800000 }, treatmentAccess: { ivTpa: 25, mt: 8 } }, "2030": { projectedStrokes: { value: 4200000 } } },
+                usa: { name: "United States", flag: "🇺🇸", population: 335000000, "2024": { annualStrokes: { value: 795000 }, strokeDeaths: { value: 160000 }, prevalence: { value: 4500000 }, treatmentAccess: { ivTpa: 40, mt: 25 } }, "2030": { projectedStrokes: { value: 920000 } } },
+                japan: { name: "Japan", flag: "🇯🇵", population: 125000000, "2024": { annualStrokes: { value: 280000 }, strokeDeaths: { value: 110000 }, prevalence: { value: 2200000 }, treatmentAccess: { ivTpa: 45, mt: 20 } }, "2030": { projectedStrokes: { value: 310000 } } },
+                germany: { name: "Germany", flag: "🇩🇪", population: 84000000, "2024": { annualStrokes: { value: 195000 }, strokeDeaths: { value: 65000 }, prevalence: { value: 1200000 }, treatmentAccess: { ivTpa: 50, mt: 30 } }, "2030": { projectedStrokes: { value: 230000 } } },
+                eu: { name: "European Union", flag: "🇪🇺", population: 447000000, "2024": { annualStrokes: { value: 1100000 }, strokeDeaths: { value: 450000 }, prevalence: { value: 9000000 }, treatmentAccess: { ivTpa: 35, mt: 18 } }, "2030": { projectedStrokes: { value: 1350000 } } }
+            },
+            global: {
+                "2024": { annualStrokes: { value: 12200000 }, strokeDeaths: { value: 6500000 }, prevalence: { value: 101000000 }, treatmentAccess: { mechanicalThrombectomy: { global: 12 } } },
+                "2030": { projectedStrokes: { value: 15100000 } }
+            }
+        };
+        
+        const FALLBACK_REVENUE = {
+            companies: [
+                { name: "Stryker", ticker: "SYK", headquarters: "USA", marketCap: 85000000000, annualRevenue: 20500000000, revenueGrowth: 8.5, neurovascularRevenue: 1450000000, neurovascularGrowth: 9.1 },
+                { name: "Medtronic", ticker: "MDT", headquarters: "Ireland", marketCap: 120000000000, annualRevenue: 32300000000, revenueGrowth: 3.2, neurovascularRevenue: 1380000000, neurovascularGrowth: 8.8 },
+                { name: "Johnson & Johnson", ticker: "JNJ", headquarters: "USA", marketCap: 380000000000, annualRevenue: 95000000000, revenueGrowth: 6.8, neurovascularRevenue: 680000000, neurovascularGrowth: 9.2 },
+                { name: "Microvention/Terumo", ticker: "TER", headquarters: "Japan", marketCap: 45000000000, annualRevenue: 6200000000, revenueGrowth: 12.1, neurovascularRevenue: 520000000, neurovascularGrowth: 10.0 },
+                { name: "Penumbra", ticker: "PEN", headquarters: "USA", marketCap: 5200000000, annualRevenue: 1180000000, revenueGrowth: 24.8, neurovascularRevenue: 380000000, neurovascularGrowth: 11.2 },
+                { name: "Balt", ticker: "Private", headquarters: "France", marketCap: 0, annualRevenue: 180000000, revenueGrowth: 15.3, neurovascularRevenue: 180000000, neurovascularGrowth: 9.5 },
+                { name: "Wallaby Phenox", ticker: "Private", headquarters: "Germany", marketCap: 0, annualRevenue: 95000000, revenueGrowth: 35.2, neurovascularRevenue: 95000000, neurovascularGrowth: 12.7 }
+            ]
+        };
+        
+        // EMBEDDED DATA LOADER
+        window.NeuroVueDataLoader = {
+            loadNeuroVueData: function() {
+                return Promise.resolve({
+                    epidemiology: FALLBACK_EPIDEMIOLOGY,
+                    revenue: FALLBACK_REVENUE,
+                    portfolio: null
+                });
+            },
+            formatNumber: function(num, compact) {
+                if (num === null || num === undefined) return '--';
+                if (num === 0) return '0';
+                if (compact) {
+                    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+                    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                    if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                }
+                return num.toLocaleString();
+            },
+            formatCurrency: function(num) {
+                if (num === null || num === undefined || num === 0) return '--';
+                if (num >= 1000000000) return '$' + (num / 1000000000).toFixed(1) + 'B';
+                if (num >= 1000000) return '$' + (num / 1000000).toFixed(0) + 'M';
+                if (num >= 1000) return '$' + (num / 1000).toFixed(1) + 'K';
+                return '$' + num.toLocaleString();
+            },
+            getGlobalStats: function(data) {
+                const global = data && data.global && data.global['2024'] ? data.global['2024'] : {};
+                return {
+                    annualStrokes: global.annualStrokes ? global.annualStrokes.value : 12200000,
+                    strokeDeaths: global.strokeDeaths ? global.strokeDeaths.value : 6500000,
+                    prevalence: global.prevalence ? global.prevalence.value : 101000000,
+                    mt: global.treatmentAccess && global.treatmentAccess.mechanicalThrombectomy ? global.treatmentAccess.mechanicalThrombectomy.global : 12,
+                    projected2030: data && data.global && data.global['2030'] && data.global['2030'].projectedStrokes ? data.global['2030'].projectedStrokes.value : 15100000
+                };
+            },
+            processEpidemiologyData: function(data) {
+                if (!data || !data.regions) return [];
+                const result = [];
+                Object.keys(data.regions).forEach(function(key) {
+                    const region = data.regions[key];
+                    if (!region || !region['2024']) return;
+                    const d2024 = region['2024'];
+                    const d2030 = region['2030'];
+                    result.push({
+                        name: region.name,
+                        flag: region.flag,
+                        population: region.population || 0,
+                        annualStrokes: d2024.annualStrokes ? d2024.annualStrokes.value : 0,
+                        strokeDeaths: d2024.strokeDeaths ? d2024.strokeDeaths.value : 0,
+                        prevalence: d2024.prevalence ? d2024.prevalence.value : 0,
+                        ivTpa: d2024.treatmentAccess ? d2024.treatmentAccess.ivTpa : 0,
+                        mt: d2024.treatmentAccess ? d2024.treatmentAccess.mt : 0,
+                        projected2030: d2030 && d2030.projectedStrokes ? d2030.projectedStrokes.value : 0
+                    });
+                });
+                return result.sort(function(a, b) { return b.annualStrokes - a.annualStrokes; });
+            },
+            processRevenueData: function(data) {
+                if (!data || !data.companies) return [];
+                return data.companies.map(function(c) {
+                    return {
+                        name: c.name,
+                        ticker: c.ticker || 'N/A',
+                        headquarters: c.headquarters || 'Unknown',
+                        marketCap: c.marketCap || c.market_cap || 0,
+                        annualRevenue: c.annualRevenue || c.annual_revenue || 0,
+                        revenueGrowth: c.revenueGrowth || c.revenue_growth || 0,
+                        neurovascularRevenue: c.neurovascularRevenue || c.neurovascular_revenue || 0,
+                        neurovascularGrowth: c.neurovascularGrowth || c.neurovascular_growth || 0
+                    };
+                }).sort(function(a, b) { return b.neurovascularRevenue - a.neurovascularRevenue; });
+            }
+        };
+        
+        console.log('Embedded NeuroVueDataLoader created');
+        
         // State
-        let appData = null;
-        let currentSection = 'dashboard';
+        var appData = null;
+        var currentSection = 'dashboard';
 
         // Initialize
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                console.log('Initializing NeuroVue Dashboard...');
-                
-                // Load data
-                appData = await NeuroVueDataLoader.loadNeuroVueData();
-                console.log('Data loaded:', appData);
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing NeuroVue Dashboard...');
+            
+            NeuroVueDataLoader.loadNeuroVueData().then(function(data) {
+                console.log('Data loaded:', data);
+                appData = data;
                 
                 if (appData) {
                     renderDashboard();
-                    renderEpidemiology();
                     renderRevenue();
-                    renderCompetitors();
-                    renderPortfolio();
-                    updateLastUpdated();
-                    
-                    // Hide loading overlay
                     document.getElementById('loading-overlay').style.display = 'none';
                 } else {
                     throw new Error('No data loaded');
                 }
-                
-            } catch (error) {
+            }).catch(function(error) {
                 console.error('Failed to initialize NeuroVue:', error);
-                document.getElementById('loading-overlay').innerHTML = `
-                    <div class="text-center">
-                        <div class="text-xl font-bold text-red-400 mb-2">Failed to Load Data</div>
-                        <div class="text-slate-400">${error.message}</div>
-                        <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Retry</button>
-                    </div>
-                `;
-            }
+                document.getElementById('loading-overlay').innerHTML = '<div class="text-center"><div class="text-xl font-bold text-red-400 mb-2">Failed to Load Data</div><div class="text-slate-400">' + error.message + '</div></div>';
+            });
         });
 
         function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+            document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
             
-            // Remove active from all nav
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            
-            // Show selected
-            document.getElementById(`section-${sectionId}`)?.classList.add('active');
-            document.getElementById(`nav-${sectionId}`)?.classList.add('active');
+            var sectionEl = document.getElementById('section-' + sectionId);
+            var navEl = document.getElementById('nav-' + sectionId);
+            if (sectionEl) sectionEl.classList.add('active');
+            if (navEl) navEl.classList.add('active');
             
             currentSection = sectionId;
-            
-            // Scroll to top
-            document.querySelector('main').scrollTop = 0;
+            if (document.querySelector('main')) document.querySelector('main').scrollTop = 0;
         }
 
         function renderDashboard() {
-            if (!appData?.epidemiology) return;
+            if (!appData || !appData.epidemiology) return;
             
-            const stats = NeuroVueDataLoader.getGlobalStats(appData.epidemiology);
-            const regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
+            var stats = NeuroVueDataLoader.getGlobalStats(appData.epidemiology);
+            var regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
             
-            // Update hero stats
             document.getElementById('hero-strokes').textContent = NeuroVueDataLoader.formatNumber(stats.annualStrokes, true);
             document.getElementById('hero-deaths').textContent = NeuroVueDataLoader.formatNumber(stats.strokeDeaths, true);
             document.getElementById('hero-prevalence').textContent = NeuroVueDataLoader.formatNumber(stats.prevalence, true);
             document.getElementById('hero-mt').textContent = stats.mt + '%';
             document.getElementById('projection-2030').textContent = NeuroVueDataLoader.formatNumber(stats.projected2030, true);
             
-            // Top regions table
-            const topRegions = regions.slice(0, 10);
-            document.getElementById('top-regions-table').innerHTML = topRegions.map(r => `
-                <tr class="hover:bg-slate-800/50 transition">
-                    <td class="py-3 px-4">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">${r.flag}</span>
-                            <span class="text-white font-medium">${r.name}</span>
-                        </div>
-                    </td>
-                    <td class="py-3 px-4 text-right text-slate-300">${NeuroVueDataLoader.formatNumber(r.annualStrokes)}</td>
-                    <td class="py-3 px-4 text-right text-slate-300">${NeuroVueDataLoader.formatNumber(r.strokeDeaths)}</td>
-                    <td class="py-3 px-4 text-right text-emerald-400">${r.mt}%</td>
-                    <td class="py-3 px-4 text-right text-purple-400">${NeuroVueDataLoader.formatNumber(r.projected2030)}</td>
-                </tr>
-            `).join('');
-        }
-
-        function renderEpidemiology() {
-            if (!appData?.epidemiology) return;
-            
-            const regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
-            const tbody = document.getElementById('epidemiology-table-full');
-            
-            tbody.innerHTML = regions.map(r => `
-                <tr class="hover:bg-slate-800/50 transition">
-                    <td class="py-3 px-4">
-                        <div class="flex items-center gap-2">
-                            <span class="text-lg">${r.flag}</span>
-                            <span class="text-white font-medium">${r.name}</span>
-                        </div>
-                    </td>
-                    <td class="py-3 px-4 text-right text-slate-300">${NeuroVueDataLoader.formatNumber(r.population)}</td>
-                    <td class="py-3 px-4 text-right text-red-400">${NeuroVueDataLoader.formatNumber(r.annualStrokes)}</td>
-                    <td class="py-3 px-4 text-right text-amber-400">${NeuroVueDataLoader.formatNumber(r.strokeDeaths)}</td>
-                    <td class="py-3 px-4 text-right text-blue-400">${r.ivTpa}%</td>
-                    <td class="py-3 px-4 text-right text-emerald-400">${r.mt}%</td>
-                </tr>
-            `).join('');
+            var topRegions = regions.slice(0, 10);
+            var tableHtml = '';
+            for (var i = 0; i < topRegions.length; i++) {
+                var r = topRegions[i];
+                tableHtml += '<tr class="hover:bg-slate-800/50 transition"><td class="py-3 px-4"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="py-3 px-4 text-right text-emerald-400">' + r.mt + '%</td><td class="py-3 px-4 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
+            }
+            document.getElementById('top-regions-table').innerHTML = tableHtml;
         }
 
         function renderRevenue() {
-            if (!appData?.revenue || !appData.revenue.companies || appData.revenue.companies.length === 0) {
-                document.getElementById('revenue-grid').innerHTML = `
-                    <div class="col-span-full py-12 text-center text-slate-400">
-                        <i class="fas fa-spinner fa-spin text-blue-400 text-3xl mb-3"></i>
-                        <div>Loading revenue data...</div>
-                    </div>
-                `;
-                return;
+            if (!appData || !appData.revenue || !appData.revenue.companies) return;
+            
+            var companies = NeuroVueDataLoader.processRevenueData(appData.revenue);
+            var html = '';
+            for (var i = 0; i < companies.length; i++) {
+                var c = companies[i];
+                html += '<div class="glass rounded-xl p-6 border border-slate-800"><div class="flex items-center justify-between mb-4"><div><div class="font-semibold text-white text-lg">' + c.name + '</div><div class="text-sm text-slate-400">' + c.ticker + ' • ' + c.headquarters + '</div></div><div class="text-right"><div class="font-bold text-emerald-400">' + NeuroVueDataLoader.formatCurrency(c.marketCap) + '</div><div class="text-xs text-slate-400">Market Cap</div></div></div><div class="grid grid-cols-2 gap-4 mb-4"><div><div class="text-xs text-slate-400">Annual Revenue</div><div class="text-white font-semibold">' + NeuroVueDataLoader.formatCurrency(c.annualRevenue) + '</div></div><div><div class="text-xs text-slate-400">Revenue Growth</div><div class="text-emerald-400 font-semibold">+' + c.revenueGrowth + '%</div></div></div><div class="border-t border-slate-800 pt-4"><div class="text-xs text-slate-400 mb-2">Neurovascular Revenue</div><div class="text-lg font-bold text-blue-400">' + NeuroVueDataLoader.formatCurrency(c.neurovascularRevenue) + '</div><div class="text-xs text-slate-400">' + c.neurovascularGrowth + '% YoY</div></div></div>';
             }
-            
-            const companies = NeuroVueDataLoader.processRevenueData(appData.revenue);
-            
-            document.getElementById('revenue-grid').innerHTML = companies.map(c => `
-                <div class="company-card bg-slate-900 rounded-xl p-6 border border-slate-800">
-                    <div class="flex items-center justify-between mb-4">
-                        <div>
-                            <div class="font-semibold text-white text-lg">${c.name}</div>
-                            <div class="text-sm text-slate-400">${c.ticker} • ${c.headquarters}</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="font-bold text-emerald-400">${NeuroVueDataLoader.formatCurrency(c.marketCap)}</div>
-                            <div class="text-xs text-slate-400">Market Cap</div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <div class="text-xs text-slate-400">Annual Revenue</div>
-                            <div class="text-white font-semibold">${NeuroVueDataLoader.formatCurrency(c.annualRevenue)}</div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-slate-400">Revenue Growth</div>
-                            <div class="text-emerald-400 font-semibold">${c.revenueGrowth > 0 ? '+' : ''}${c.revenueGrowth}%</div>
-                        </div>
-                    </div>
-                    <div class="border-t border-slate-800 pt-4">
-                        <div class="text-xs text-slate-400 mb-2">Neurovascular Revenue</div>
-                        <div class="text-lg font-bold text-blue-400">${NeuroVueDataLoader.formatCurrency(c.neurovascularRevenue)}</div>
-                        <div class="text-xs text-slate-400">${c.neurovascularGrowth > 0 ? '+' : ''}${c.neurovascularGrowth}% YoY</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderCompetitors() {
-            // Use revenue data as proxy for competitors
-            if (!appData?.revenue) {
-                document.getElementById('competitors-grid').innerHTML = `
-                    <div class="col-span-full py-12 text-center text-slate-400">
-                        <i class="fas fa-exclamation-triangle text-amber-400 text-3xl mb-3"></i>
-                        <div>Competitor data not available</div>
-                    </div>
-                `;
-                return;
-            }
-            
-            const companies = NeuroVueDataLoader.processRevenueData(appData.revenue);
-            
-            document.getElementById('competitors-grid').innerHTML = companies.map(c => `
-                <div class="company-card bg-slate-900 rounded-xl p-6 border border-slate-800">
-                    <div class="flex items-center justify-between mb-3">
-                        <div class="font-semibold text-white">${c.name}</div>
-                        <span class="text-xs text-slate-400">${c.ticker}</span>
-                    </div>
-                    <div class="text-sm text-slate-400 mb-3">${c.headquarters}</div>
-                    <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-                        <div class="text-xs text-slate-400">Neuro Revenue</div>
-                        <div class="font-semibold text-blue-400">${NeuroVueDataLoader.formatCurrency(c.neurovascularRevenue)}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderPortfolio() {
-            if (!appData?.portfolio || !appData.portfolio.product_categories) {
-                // Use fallback data
-                const categories = NeuroVueDataLoader.processPortfolioData(null);
-                renderPortfolioContent(categories);
-                return;
-            }
-            
-            const categories = NeuroVueDataLoader.processPortfolioData(appData.portfolio);
-            renderPortfolioContent(categories);
-        }
-        
-        function renderPortfolioContent(categories) {
-            if (!categories || categories.length === 0) {
-                document.getElementById('portfolio-content').innerHTML = `
-                    <div class="py-12 text-center text-slate-400">
-                        <i class="fas fa-spinner fa-spin text-blue-400 text-3xl mb-3"></i>
-                        <div>Loading portfolio data...</div>
-                    </div>
-                `;
-                return;
-            }
-            
-            document.getElementById('portfolio-content').innerHTML = categories.map(cat => `
-                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6 mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-semibold text-white">${cat.name}</h3>
-                        <span class="text-sm text-slate-400">${cat.totalProducts} products</span>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        ${cat.products.slice(0, 8).map(p => `
-                            <span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm">
-                                ${p.name}
-                            </span>
-                        `).join('')}
-                        ${cat.products.length > 8 ? `<span class="px-3 py-1 text-slate-500 text-sm">+${cat.products.length - 8} more</span>` : ''}
-                    </div>
-                    ${cat.marketLeaders && cat.marketLeaders.length > 0 ? `
-                        <div class="mt-4 pt-4 border-t border-slate-800">
-                            <div class="text-xs text-slate-400 mb-2">Market Leaders</div>
-                            <div class="flex gap-2 flex-wrap">
-                                ${cat.marketLeaders.map(l => `
-                                    <span class="px-2 py-1 bg-blue-900/30 text-blue-400 rounded text-xs">${l}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
-
-        function updateLastUpdated() {
-            const now = new Date();
-            document.getElementById('lastUpdated').textContent = now.toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long', day: 'numeric'
-            });
+            document.getElementById('revenue-grid').innerHTML = html;
         }
 
         // Region filter
-        document.getElementById('regionFilter')?.addEventListener('change', renderEpidemiology);
+        var regionFilter = document.getElementById('regionFilter');
+        if (regionFilter) {
+            regionFilter.addEventListener('change', renderDashboard);
+        }
     </script>
 </body>
 </html>
