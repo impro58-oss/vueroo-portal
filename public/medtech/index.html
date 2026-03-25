@@ -487,8 +487,10 @@
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             
             // Show selected
-            document.getElementById(`section-${sectionId}`)?.classList.add('active');
-            document.getElementById(`nav-${sectionId}`)?.classList.add('active');
+            const sectionEl = document.getElementById('section-' + sectionId);
+            const navEl = document.getElementById('nav-' + sectionId);
+            if (sectionEl) sectionEl.classList.add('active');
+            if (navEl) navEl.classList.add('active');
             
             currentSection = sectionId;
             
@@ -497,7 +499,7 @@
         }
 
         function renderDashboard() {
-            if (!appData?.epidemiology) return;
+            if (!appData || !appData.epidemiology) return;
             
             const stats = NeuroVueDataLoader.getGlobalStats(appData.epidemiology);
             const regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
@@ -528,7 +530,7 @@
         }
 
         function renderEpidemiology() {
-            if (!appData?.epidemiology) return;
+            if (!appData || !appData.epidemiology) return;
             
             const regions = NeuroVueDataLoader.processEpidemiologyData(appData.epidemiology);
             const tbody = document.getElementById('epidemiology-table-full');
