@@ -350,8 +350,8 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 var self = this;
-                // Try to fetch from GitHub raw URL first
-                return fetch('https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/medtech/data/data.json')
+                // Try to fetch from GitHub raw URL first (rooquest1 repo)
+                return fetch('https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/data.json')
                     .then(function(response) {
                         if (response.ok) {
                             return response.json();
