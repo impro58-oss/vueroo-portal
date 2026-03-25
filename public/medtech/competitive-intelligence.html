@@ -301,7 +301,7 @@
                 website: 'https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular.html',
                 logo: 'S',
                 color: 'green',
-                neuroRevenue: 1450,
+                neuroRevenue: 1800,
                 products: {
                     coils: ['Target 360', 'Target 3D', 'Tetra'],
                     flowDiverters: ['Surpass Streamline', 'Surpass Evolve'],
@@ -325,7 +325,7 @@
                 website: 'https://www.terumoneuro.com/emea',
                 logo: 'MV',
                 color: 'red',
-                neuroRevenue: 850,
+                neuroRevenue: 450,
                 products: {
                     coils: ['HydroCoil', 'HyperSoft', 'Cosmos'],
                     flowDiverters: ['FRED', 'FRED Jr.', 'FRED X'],
@@ -349,7 +349,7 @@
                 website: 'https://www.penumbrainc.com/neuro/',
                 logo: 'P',
                 color: 'purple',
-                neuroRevenue: 920,
+                neuroRevenue: 1200,
                 products: {
                     coils: ['SMART COIL'],
                     flowDiverters: [],
@@ -397,7 +397,7 @@
                 website: 'https://baltgroup.com/products/',
                 logo: 'B',
                 color: 'cyan',
-                neuroRevenue: 320,
+                neuroRevenue: 95,
                 products: {
                     coils: ['Optima', 'OptiMAX', 'Prestige Plus'],
                     flowDiverters: ['Silk Vista'],
@@ -644,6 +644,7 @@
                                 <h2 class="text-2xl font-bold text-white">${company.name}</h2>
                                 <div class="flex items-center gap-3 text-sm text-slate-400 mt-1">
                                     <span><i class="fas fa-map-marker-alt mr-1"></i>${company.hq}</span>
+                                    ${company.neuroRevenue ? `<span class="text-emerald-400"><i class="fas fa-chart-line mr-1"></i>Neuro Revenue: $${company.neuroRevenue >= 1000 ? (company.neuroRevenue/1000).toFixed(1) + 'B' : company.neuroRevenue + 'M'}</span>` : ''}
                                     <span class="px-2 py-0.5 rounded ${company.threat === 'high' ? 'bg-red-900/50 text-red-400' : company.threat === 'medium' ? 'bg-yellow-900/50 text-yellow-400' : 'bg-slate-800 text-slate-400'}">${company.threat === 'self' ? 'Your Company' : company.threat + ' threat'}</span>
                                 </div>
                             </div>
