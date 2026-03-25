@@ -311,7 +311,7 @@
             document.getElementById('stat-comp').textContent = counts.compression;
             
             // Update sidebar
-            const scanTime = new Date(data.analysis_time);
+            const scanTime = new Date(data.scan_timestamp || data.analysis_time);
             document.getElementById('last-scan').textContent = scanTime.toLocaleString('en-US', {
                 month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'
             });
