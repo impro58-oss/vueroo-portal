@@ -699,18 +699,25 @@
         // DYNAMIC DATA LOADER - NO FALLBACK
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
-                var dataBase = './data';
+                // Use absolute path for Vercel deployment
+                var dataBase = '/medtech/data';
                 
                 // Load epidemiology from original source
                 var epiPromise = fetch('https://raw.githubusercontent.com/impro58-oss/rooquest1/master/medtech-intelligence/dashboard/data/data.json?t=' + Date.now())
                     .then(function(r) { return r.ok ? r.json() : Promise.reject('EPI 404'); })
                     .catch(function() { return FALLBACK_EPIDEMIOLOGY; });
                 
-                // Load revenue from local historical JSON
+                // Load revenue from historical JSON
+                console.log('Fetching revenue data from:', dataBase + '/revenue-historical.json');
                 var revPromise = fetch(dataBase + '/revenue-historical.json?t=' + Date.now())
                     .then(function(r) {
-                        if (!r.ok) throw new Error('Revenue data not found');
+                        console.log('Revenue fetch response:', r.status, r.statusText);
+                        if (!r.ok) throw new Error('Revenue HTTP ' + r.status);
                         return r.json();
+                    })
+                    .catch(function(err) {
+                        console.error('Revenue fetch failed:', err);
+                        throw err;
                     });
                 
                 return Promise.all([epiPromise, revPromise])
