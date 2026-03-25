@@ -350,8 +350,8 @@
         window.NeuroVueDataLoader = {
             loadNeuroVueData: function() {
                 var self = this;
-                // Try to fetch from JSON file first (relative path)
-                return fetch('./data/data.json')
+                // Try to fetch from JSON file first (absolute path)
+                return fetch('/medtech/data/data.json')
                     .then(function(response) {
                         if (response.ok) {
                             return response.json();
