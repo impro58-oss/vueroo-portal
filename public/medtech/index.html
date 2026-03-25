@@ -356,10 +356,77 @@
 
             <!-- Other Sections -->
             <section id="section-epidemiology" class="section p-8">
-                <div class="text-center py-20">
-                    <i class="fas fa-chart-bar text-5xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Epidemiology Data</h3>
-                    <p class="text-slate-400">Detailed regional analysis available in the table above.</p>
+                <div class="mb-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white mb-2">Global Stroke Epidemiology</h2>
+                            <p class="text-slate-400">Comprehensive stroke burden and treatment access intelligence</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button id="epiViewSummary" class="view-toggle-btn active px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium transition" onclick="setEpidemiologyView('summary')">
+                                Summary
+                            </button>
+                            <button id="epiViewDetailed" class="view-toggle-btn px-4 py-2 bg-slate-700 text-slate-300 rounded-lg text-sm font-medium transition hover:bg-slate-600" onclick="setEpidemiologyView('detailed')">
+                                Detailed
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary View -->
+                <div id="epidemiologySummaryView" class="space-y-6">
+                    <!-- Global Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Annual Strokes (2024)</div>
+                            <div id="epiAnnualStrokes" class="text-2xl font-bold text-emerald-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">cases/year</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Stroke Deaths</div>
+                            <div id="epiStrokeDeaths" class="text-2xl font-bold text-red-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">deaths/year</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">Survivors</div>
+                            <div id="epiSurvivors" class="text-2xl font-bold text-blue-400 mt-1">--</div>
+                            <div class="text-xs text-slate-500 mt-1">living with stroke</div>
+                        </div>
+                        <div class="bg-slate-800 rounded-lg p-4">
+                            <div class="text-slate-400 text-xs uppercase tracking-wide">MT Access</div>
+                            <div id="epiMTAccess" class="text-2xl font-bold text-purple-400 mt-1">--%</div>
+                            <div class="text-xs text-slate-500 mt-1">of eligible patients</div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Table -->
+                    <div class="bg-slate-800 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-emerald-300 mb-4">Regional Stroke Burden</h3>
+                        <div class="overflow-x-auto">
+                            <table id="epidemiologyTable" class="w-full text-left text-sm">
+                                <thead class="bg-slate-700">
+                                    <tr>
+                                        <th class="p-3">Region</th>
+                                        <th class="p-3 text-right">Annual Strokes</th>
+                                        <th class="p-3 text-right">Deaths</th>
+                                        <th class="p-3 text-right">Survivors</th>
+                                        <th class="p-3 text-right">MT Access</th>
+                                        <th class="p-3 text-right">2030 Proj</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed View -->
+                <div id="epidemiologyDetailedView" class="space-y-6 hidden">
+                    <div id="epiDetailedContent" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Detailed cards inserted by JS -->
+                    </div>
                 </div>
             </section>
 
@@ -765,12 +832,14 @@
                 };
                 
                 return Promise.all([
-                    loadJson(DATA_BASE + '/data.json', 'Epidemiology'),
-                    loadJson(DATA_BASE + '/revenue-historical.json', 'Revenue'),
+                    loadJson(DATA_BASE + '/epidemiology-comprehensive.json', 'Epidemiology'),
+                    loadJson(DATA_BASE + '/revenue-summary.json', 'Revenue'),
                     loadJson(DATA_BASE + '/competitor-intelligence.json', 'Competitors'),
                     loadJson(DATA_BASE + '/portfolio-matrix.json', 'Portfolio')
                 ]).then(function(results) {
                     console.log('✅ All data loaded from rooquest1 GitHub');
+                    console.log('📊 Epidemiology:', results[0] ? 'Loaded' : 'Failed');
+                    console.log('💰 Revenue:', results[1] ? 'Loaded' : 'Failed');
                     return {
                         epidemiology: results[0],
                         revenue: results[1],
@@ -800,13 +869,15 @@
                 return '$' + num.toLocaleString();
             },
             getGlobalStats: function(data) {
-                const global = data && data.global && data.global['2024'] ? data.global['2024'] : {};
+                // Handle both old format and new comprehensive format
+                const summary = data && data.global && data.global.summary ? data.global.summary : {};
+                const global2024 = summary['2024'] || (data && data.global && data.global['2024'] ? data.global['2024'] : {});
                 return {
-                    annualStrokes: global.annualStrokes ? global.annualStrokes.value : 12200000,
-                    strokeDeaths: global.strokeDeaths ? global.strokeDeaths.value : 6500000,
-                    prevalence: global.prevalence ? global.prevalence.value : 101000000,
-                    mt: global.treatmentAccess && global.treatmentAccess.mechanicalThrombectomy ? global.treatmentAccess.mechanicalThrombectomy.global : 12,
-                    projected2030: data && data.global && data.global['2030'] && data.global['2030'].projectedStrokes ? data.global['2030'].projectedStrokes.value : 15100000
+                    annualStrokes: global2024.annualStrokes ? global2024.annualStrokes.value : 12200000,
+                    strokeDeaths: global2024.strokeDeaths ? global2024.strokeDeaths.value : 6500000,
+                    prevalence: global2024.prevalence ? global2024.prevalence.value : 101000000,
+                    mt: global2024.treatmentAccess && global2024.treatmentAccess.mechanicalThrombectomy ? global2024.treatmentAccess.mechanicalThrombectomy.global : 12,
+                    projected2030: summary['2030'] && summary['2030'].projectedStrokes ? summary['2030'].projectedStrokes.value : 15100000
                 };
             },
             processEpidemiologyData: function(data) {
@@ -814,19 +885,41 @@
                 const result = [];
                 Object.keys(data.regions).forEach(function(key) {
                     const region = data.regions[key];
-                    if (!region || !region['2024']) return;
-                    const d2024 = region['2024'];
-                    const d2030 = region['2030'];
+                    if (!region) return;
+                    
+                    // Handle pending regions
+                    if (region.status === 'pending_extraction') {
+                        result.push({
+                            name: region.name || key,
+                            flag: region.flag,
+                            population: region.population2024 || 0,
+                            status: 'pending',
+                            annualStrokes: 0,
+                            strokeDeaths: 0,
+                            prevalence: 0,
+                            ivTpa: 0,
+                            mt: 0,
+                            projected2030: 0
+                        });
+                        return;
+                    }
+                    
+                    // Use summary data if available (comprehensive format)
+                    const summaryData = region.summary;
+                    const d2024 = summaryData && summaryData['2024'] ? summaryData['2024'] : (region['2024'] || {});
+                    const d2030 = summaryData && summaryData['2030'] ? summaryData['2030'] : (region['2030'] || {});
+                    
                     result.push({
-                        name: region.name,
+                        name: region.name || key,
                         flag: region.flag,
-                        population: region.population || 0,
+                        population: region.population2024 || region.population || 0,
+                        status: 'complete',
                         annualStrokes: d2024.annualStrokes ? d2024.annualStrokes.value : 0,
                         strokeDeaths: d2024.strokeDeaths ? d2024.strokeDeaths.value : 0,
                         prevalence: d2024.prevalence ? d2024.prevalence.value : 0,
                         ivTpa: d2024.treatmentAccess ? d2024.treatmentAccess.ivTpa : 0,
                         mt: d2024.treatmentAccess ? d2024.treatmentAccess.mt : 0,
-                        projected2030: d2030 && d2030.projectedStrokes ? d2030.projectedStrokes.value : 0
+                        projected2030: d2030.projectedStrokes ? d2030.projectedStrokes.value : 0
                     });
                 });
                 return result.sort(function(a, b) { return b.annualStrokes - a.annualStrokes; });
@@ -925,6 +1018,109 @@
                 tableHtml += '<tr class="hover:bg-slate-800/50 transition"><td class="py-3 px-4"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="py-3 px-4 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="py-3 px-4 text-right text-emerald-400">' + r.mt + '%</td><td class="py-3 px-4 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
             }
             document.getElementById('top-regions-table').innerHTML = tableHtml;
+            
+            // Also render epidemiology section if data available
+            if (appData.epidemiology) {
+                renderEpidemiologyDashboard();
+            }
+        }
+        
+        // EPIDEMIOLOGY DASHBOARD FUNCTIONS
+        var currentEpiView = 'summary';
+        
+        function setEpidemiologyView(view) {
+            currentEpiView = view;
+            document.getElementById('epidemiologySummaryView').classList.toggle('hidden', view !== 'summary');
+            document.getElementById('epidemiologyDetailedView').classList.toggle('hidden', view !== 'detailed');
+            document.getElementById('epiViewSummary').classList.toggle('active', view === 'summary');
+            document.getElementById('epiViewDetailed').classList.toggle('active', view === 'detailed');
+            
+            if (view === 'detailed') {
+                renderEpidemiologyDetailed();
+            }
+        }
+        
+        function renderEpidemiologyDashboard() {
+            if (!appData || !appData.epidemiology) return;
+            
+            var data = appData.epidemiology;
+            var summary = data.global && data.global.summary ? data.global.summary : {};
+            var global2024 = summary['2024'] || (data.global && data.global['2024']) || {};
+            
+            // Update summary metrics
+            var strokesEl = document.getElementById('epiAnnualStrokes');
+            var deathsEl = document.getElementById('epiStrokeDeaths');
+            var survivorsEl = document.getElementById('epiSurvivors');
+            var mtEl = document.getElementById('epiMTAccess');
+            
+            if (strokesEl && global2024.annualStrokes) {
+                strokesEl.textContent = NeuroVueDataLoader.formatNumber(global2024.annualStrokes.value, true);
+            }
+            if (deathsEl && global2024.strokeDeaths) {
+                deathsEl.textContent = NeuroVueDataLoader.formatNumber(global2024.strokeDeaths.value, true);
+            }
+            if (survivorsEl && global2024.prevalence) {
+                survivorsEl.textContent = NeuroVueDataLoader.formatNumber(global2024.prevalence.value, true);
+            }
+            if (mtEl && global2024.treatmentAccess && global2024.treatmentAccess.mechanicalThrombectomy) {
+                mtEl.textContent = global2024.treatmentAccess.mechanicalThrombectomy.global + '%';
+            }
+            
+            // Render regional table
+            var regions = NeuroVueDataLoader.processEpidemiologyData(data);
+            var tbody = document.querySelector('#epidemiologyTable tbody');
+            if (tbody) {
+                tbody.innerHTML = regions.map(function(r) {
+                    if (r.status === 'pending') {
+                        return '<tr class="hover:bg-slate-800/50 transition opacity-60"><td class="p-3"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span><span class="text-xs bg-yellow-900/50 text-yellow-400 px-2 py-0.5 rounded">Pending Data</span></div></td><td class="p-3 text-right text-slate-500" colspan="5">Data extraction in progress</td></tr>';
+                    }
+                    return '<tr class="hover:bg-slate-800/50 transition"><td class="p-3"><div class="flex items-center gap-2"><span class="text-lg">' + r.flag + '</span><span class="text-white font-medium">' + r.name + '</span></div></td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.annualStrokes) + '</td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.strokeDeaths) + '</td><td class="p-3 text-right text-slate-300">' + NeuroVueDataLoader.formatNumber(r.prevalence) + '</td><td class="p-3 text-right text-emerald-400">' + r.mt + '%</td><td class="p-3 text-right text-purple-400">' + NeuroVueDataLoader.formatNumber(r.projected2030) + '</td></tr>';
+                }).join('');
+            }
+        }
+        
+        function renderEpidemiologyDetailed() {
+            var container = document.getElementById('epiDetailedContent');
+            if (!container || !appData || !appData.epidemiology) return;
+            
+            var data = appData.epidemiology;
+            var regions = data.regions || {};
+            var html = '';
+            
+            Object.keys(regions).forEach(function(key) {
+                var region = regions[key];
+                if (region.status === 'pending_extraction') return;
+                
+                var detailed = region.detailed || {};
+                var summary = region.summary || {};
+                var d2024 = summary['2024'] || {};
+                
+                html += '<div class="bg-slate-800 rounded-lg p-6">';
+                html += '<div class="flex items-center gap-3 mb-4"><span class="text-2xl">' + region.flag + '</span><h3 class="text-xl font-bold text-white">' + region.name + '</h3></div>';
+                
+                // Key stats
+                html += '<div class="grid grid-cols-2 gap-4 mb-4">';
+                if (d2024.annualStrokes) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">Annual Strokes</div><div class="text-lg font-bold text-emerald-400">' + NeuroVueDataLoader.formatNumber(d2024.annualStrokes.value) + '</div></div>';
+                }
+                if (d2024.treatmentAccess) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">MT Access</div><div class="text-lg font-bold text-blue-400">' + d2024.treatmentAccess.mt + '%</div></div>';
+                }
+                html += '</div>';
+                
+                // Key insights
+                if (detailed.keyInsights && detailed.keyInsights.length > 0) {
+                    html += '<div class="text-sm text-slate-300"><ul class="space-y-1">';
+                    detailed.keyInsights.slice(0, 3).forEach(function(insight) {
+                        html += '<li class="flex items-start gap-2"><i class="fas fa-check-circle text-emerald-400 mt-0.5"></i><span>' + insight + '</span></li>';
+                    });
+                    html += '</ul></div>';
+                }
+                
+                html += '</div>';
+            });
+            
+            container.innerHTML = html || '<div class="col-span-2 text-center text-slate-500 py-8">Detailed data available for major regions only</div>';
         }
 
         // COMPETITOR INTELLIGENCE - data loaded from GitHub
