@@ -688,6 +688,7 @@
                 name: "Medtronic",
                 ticker: "MDT",
                 country: "🇺🇸 USA",
+                website: "https://www.medtronic.com/en-us/l/e/neurovascular.html",
                 threatLevel: "high",
                 portfolio: "complete",
                 revenue: "$32.3B",
@@ -712,6 +713,7 @@
                 name: "Stryker",
                 ticker: "SYK",
                 country: "🇺🇸 USA",
+                website: "https://www.stryker.com/us/en/portfolios/neurotechnology-spine/neurovascular.html",
                 threatLevel: "high",
                 portfolio: "complete",
                 revenue: "$20.5B",
@@ -736,6 +738,7 @@
                 name: "Microvention / Terumo",
                 ticker: "TER",
                 country: "🇯🇵 Japan",
+                website: "https://www.terumoneuro.com/emea",
                 threatLevel: "high",
                 portfolio: "complete",
                 revenue: "$6.2B",
@@ -760,6 +763,7 @@
                 name: "Penumbra",
                 ticker: "PEN",
                 country: "🇺🇸 USA",
+                website: "https://www.penumbrainc.com/neuro/",
                 threatLevel: "high",
                 portfolio: "specialized",
                 revenue: "$1.18B",
@@ -784,6 +788,7 @@
                 name: "Johnson & Johnson (Cerenovus)",
                 ticker: "JNJ",
                 country: "🇺🇸 USA",
+                website: "https://www.jnjmedtech.com/en-US/companies/cerenovus",
                 threatLevel: "high",
                 portfolio: "complete",
                 revenue: "$95B",
@@ -808,6 +813,7 @@
                 name: "Balt",
                 ticker: "Private",
                 country: "🇫🇷 France",
+                website: "https://baltgroup.com/products/",
                 threatLevel: "medium",
                 portfolio: "selective",
                 revenue: "$180M",
@@ -832,6 +838,7 @@
                 name: "Acandis",
                 ticker: "Private",
                 country: "🇩🇪 Germany",
+                website: "https://www.acandis.com/en/product-portfolio/",
                 threatLevel: "low",
                 portfolio: "specialized",
                 revenue: "$45M",
@@ -856,6 +863,7 @@
                 name: "Imperative Care",
                 ticker: "Private",
                 country: "🇺🇸 USA",
+                website: "https://imperativecare.com/stroke/",
                 threatLevel: "medium",
                 portfolio: "emerging",
                 revenue: "$65M",
@@ -1074,7 +1082,7 @@
             modal.id = 'ciModal';
             modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4';
             modal.style = 'background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);';
-            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-center justify-between mb-4"><div><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400">' + company.country + ' • ' + company.ticker + '</div></div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + company.revenue + '</span> • Neuro: <span class="text-blue-400">' + company.neuroRevenue + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
+            modal.innerHTML = '<div class="bg-slate-900 rounded-2xl max-w-2xl w-full border border-slate-700 shadow-2xl max-h-[90vh] overflow-y-auto"><div class="p-6"><div class="flex items-center justify-between mb-4"><div><div class="font-bold text-white text-2xl">' + company.name + '</div><div class="text-slate-400">' + company.country + ' • ' + company.ticker + '</div>' + (company.website ? '<a href="' + company.website + '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-xs mt-1 transition"><i class="fas fa-external-link-alt"></i> Visit Website</a>' : '') + '</div><button onclick="closeCompanyDetail()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times text-xl"></i></button></div><div class="mb-4"><div class="text-xs text-slate-400 mb-2">Revenue: <span class="text-white">' + company.revenue + '</span> • Neuro: <span class="text-blue-400">' + company.neuroRevenue + '</span></div><div class="text-sm text-slate-300 mb-4">' + company.notes + '</div><div class="mb-4">' + productsHtml + '</div><div class="grid grid-cols-2 gap-4"><div><div class="text-xs text-slate-400 mb-2">Strengths:</div>' + (company.strengths ? company.strengths.map(function(s) { return '<div class="text-sm text-green-400 mb-1">✓ ' + s + '</div>'; }).join('') : '') + '</div><div><div class="text-xs text-slate-400 mb-2">Gaps:</div>' + (company.gaps ? company.gaps.map(function(g) { return '<div class="text-sm text-red-400 mb-1">⚠ ' + g + '</div>'; }).join('') : '<div class="text-sm text-slate-500">None identified</div>') + '</div></div></div></div></div>';
             document.body.appendChild(modal);
         }
 
