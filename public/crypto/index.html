@@ -325,6 +325,10 @@
             renderHeatMap();
             renderOpportunities();
             renderPortfolio();
+            
+            // Log data summary for debugging
+            console.log(`CryptoVue: Loaded ${coins.length} coins`);
+            console.log(`Signals: ${counts.long} long, ${counts.short} short, ${counts.hold || coins.length - counts.long - counts.short} hold`);
         }
 
         function updateStatus(state, message) {
