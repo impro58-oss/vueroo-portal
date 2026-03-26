@@ -30,19 +30,16 @@ function extractTimestamp(filename) {
 /**
  * Load the most recent scan data - DYNAMIC DISCOVERY
  * Fetches from GitHub only (Vercel compatible)
- * Includes cache-busting to ensure fresh data
+ * Includes cache-busting to ensure fresh data (no headers to avoid CORS)
  */
 async function loadLatestScan() {
     try {
         // Always use GitHub for Vercel deployment
-        // Add cache-busting parameter to force fresh data
+        // Add cache-busting parameter only (headers trigger CORS preflight)
         const cacheBuster = Date.now();
         const latestJsonUrl = GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
         try {
-            const response = await fetch(latestJsonUrl, {
-                cache: 'no-store',
-                headers: { 'Cache-Control': 'no-cache' }
-            });
+            const response = await fetch(latestJsonUrl);
             if (response.ok) {
                 const data = await response.json();
                 latestData = data;
@@ -65,16 +62,13 @@ async function loadLatestScan() {
 
 /**
  * Fetch from GitHub only (for Vercel deployment)
- * Includes cache-busting to ensure fresh data
+ * Cache-busting only, no headers to avoid CORS preflight
  */
 async function fetchWithFallback(localPath, githubUrl) {
     // Try GitHub first (always works on Vercel)
     try {
         const cacheBuster = Date.now();
-        const response = await fetch(githubUrl + '?t=' + cacheBuster, {
-            cache: 'no-store',
-            headers: { 'Cache-Control': 'no-cache' }
-        });
+        const response = await fetch(githubUrl + '?t=' + cacheBuster);
         if (response.ok) {
             return await response.json();
         }
