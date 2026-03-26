@@ -817,16 +817,25 @@
             loadNeuroVueData: function() {
                 // Load all data files with individual error handling
                 var loadJson = function(url, name) {
-                    return fetch(url + '?t=' + Date.now())
+                    var fullUrl = url + '?t=' + Date.now();
+                    console.log('📡 Loading:', name, 'from', fullUrl);
+                    return fetch(fullUrl)
                         .then(function(r) {
                             if (!r.ok) {
-                                console.warn('Failed to load ' + name + ': HTTP ' + r.status);
+                                console.error('❌ Failed to load ' + name + ': HTTP ' + r.status);
                                 return null;
                             }
-                            return r.json();
+                            return r.json().then(function(data) {
+                                console.log('✅ Loaded', name + ':', data ? 'Success' : 'Empty');
+                                if (name === 'Epidemiology' && data) {
+                                    console.log('   - Global summary:', data.global && data.global.summary ? 'Present' : 'Missing');
+                                    console.log('   - Regions:', data.regions ? Object.keys(data.regions).length : 0);
+                                }
+                                return data;
+                            });
                         })
                         .catch(function(err) {
-                            console.warn('Failed to load ' + name + ':', err);
+                            console.error('❌ Failed to load ' + name + ':', err);
                             return null;
                         });
                 };
