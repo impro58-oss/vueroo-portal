@@ -356,10 +356,6 @@
             setTimeout(() => document.getElementById('loading-overlay').remove(), 500);
         });
 
-        // Global chart instances
-        let categoryChart = null;
-        let signalChart = null;
-
         async function loadData() {
             try {
                 // Destroy existing charts before loading new data
