@@ -171,7 +171,7 @@
                 <div id="last-scan" class="text-sm text-slate-300 font-mono">--</div>
                 
                 <div class="text-xs text-slate-500">Assets Tracked</div>
-                <div id="assets-tracked" class="text-lg text-emerald-400 font-bold">100</div>
+                <div id="assets-tracked" class="text-lg text-emerald-400 font-bold">12</div>
                 
                 <!-- Back to Main Dashboard -->
                 <a href="/dashboard" class="mt-4 w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-lg text-sm font-medium text-white transition flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
@@ -356,8 +356,21 @@
             setTimeout(() => document.getElementById('loading-overlay').remove(), 500);
         });
 
+        // Global chart instances
+        let categoryChart = null;
+        let signalChart = null;
+
         async function loadData() {
             try {
+                // Destroy existing charts before loading new data
+                if (categoryChart) {
+                    categoryChart.destroy();
+                    categoryChart = null;
+                }
+                if (signalChart) {
+                    signalChart.destroy();
+                    signalChart = null;
+                }
                 const response = await fetch(DATA_URL + '?t=' + Date.now());
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 
@@ -637,6 +650,16 @@
 
         function initCharts() {
             if (!stockData?.results) return;
+            
+            // Destroy existing charts first
+            if (categoryChart) {
+                categoryChart.destroy();
+                categoryChart = null;
+            }
+            if (signalChart) {
+                signalChart.destroy();
+                signalChart = null;
+            }
             
             // Category Chart
             const categories = {};
