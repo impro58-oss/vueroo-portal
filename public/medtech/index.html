@@ -1837,11 +1837,12 @@
             tbody.innerHTML = filteredData.map(function(c) {
                 var rev2024 = c['2024'] || 0;
                 var rev2030 = c['2030'] || 0;
+                var cagr = c.cagr || 0;
                 return '<tr class="hover:bg-slate-700/50">' +
                     '<td class="p-3 font-medium">' + c.company + '</td>' +
                     '<td class="p-3 text-right text-emerald-400">$' + rev2024.toFixed(0) + 'M</td>' +
                     '<td class="p-3 text-right">$' + rev2030.toFixed(0) + 'M</td>' +
-                    '<td class="p-3 text-right text-yellow-400">' + c.cagr.toFixed(1) + '%</td>' +
+                    '<td class="p-3 text-right text-yellow-400">' + cagr.toFixed(1) + '%</td>' +
                     '<td class="p-3 text-slate-400">' + (c.headquarters || '') + '</td>' +
                     '</tr>';
             }).join('');
