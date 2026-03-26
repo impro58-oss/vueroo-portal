@@ -52,6 +52,7 @@
         .badge-trending { background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(16,185,129,0.1)); color: #34D399; border: 1px solid rgba(16,185,129,0.3); }
         .badge-gainers { background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(245,158,11,0.1)); color: #FBBF24; border: 1px solid rgba(245,158,11,0.3); }
         .badge-losers { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(239,68,68,0.1)); color: #F87171; border: 1px solid rgba(239,68,68,0.3); }
+        .badge-default { background: linear-gradient(135deg, rgba(148,163,184,0.2), rgba(148,163,184,0.1)); color: #94A3B8; border: 1px solid rgba(148,163,184,0.3); }
         
         /* Heat Map Cells */
         .heat-cell { transition: all 0.3s ease; cursor: pointer; }
@@ -428,21 +429,26 @@
             tbody.innerHTML = movers.map(stock => {
                 const changeColor = (stock.change_percent || 0) >= 0 ? 'text-emerald-400' : 'text-red-400';
                 const changeSign = (stock.change_percent > 0) ? '+' : '';
-                const signalIcon = stock.signal === 'long' ? 'fa-arrow-up text-emerald-400' : 
+                const signalIcon = stock.signal === 'long' ? 'fa-arrow-up text-emerald-400' :
                                  stock.signal === 'short' ? 'fa-arrow-down text-red-400' : 'fa-minus text-slate-500';
-                
+
+                // Handle missing category (Alpha Vantage data doesn't have category)
                 const badgeClass = stock.category === 'most_active' ? 'badge-active' :
                                  stock.category === 'trending' ? 'badge-trending' :
-                                 stock.category === 'gainers_52w' ? 'badge-gainers' : 'badge-losers';
-                
-                const catLabel = stock.category === 'gainers_52w' ? '52W Gainer' : stock.category.replace('_', ' ');
-                
+                                 stock.category === 'gainers_52w' ? 'badge-gainers' : 'badge-default';
+
+                const catLabel = stock.category === 'gainers_52w' ? '52W Gainer' :
+                                stock.category ? stock.category.replace(/_/g, ' ') : 'Standard';
+
+                // Handle missing name (use symbol as fallback)
+                const displayName = stock.name || stock.symbol || 'Unknown';
+
                 return `
                     <tr class="group hover:bg-slate-800/50 transition border-b border-slate-800/50">
                         <td class="p-4">
-                            <div class="font-mono font-bold text-white text-base">${stock.symbol}</div>
+                            <div class="font-mono font-bold text-white text-base">${stock.symbol || '--'}</div>
                         </td>
-                        <td class="p-4"><div class="text-slate-300 max-w-[150px] truncate">${stock.name}</div></td>
+                        <td class="p-4"><div class="text-slate-300 max-w-[150px] truncate">${displayName}</div></td>
                         <td class="p-4"><span class="badge ${badgeClass}">${catLabel}</span></td>
                         <td class="p-4 text-right font-mono text-white">$${stock.price?.toFixed(2) || '--'}</td>
                         <td class="p-4 text-right font-mono ${changeColor}">${changeSign}${stock.change_percent?.toFixed(2) || '0.00'}%</td>
@@ -468,6 +474,9 @@
                 const change = stock.change_percent || 0;
                 const absChange = Math.abs(change);
                 
+                // Handle missing name field
+                const displayName = stock.name || stock.symbol || 'Unknown';
+                
                 // Color intensity based on change magnitude
                 let bgColor, textColor;
                 if (change > 0) {
@@ -483,8 +492,8 @@
                 return `
                     <div class="heat-cell rounded-lg p-3 text-center" 
                          style="background: ${bgColor}; border: 1px solid rgba(255,255,255,0.1);"
-                         title="${stock.name}: ${change > 0 ? '+' : ''}${change.toFixed(2)}%">
-                        <div class="font-mono font-bold text-white text-sm">${stock.symbol}</div>
+                         title="${displayName}: ${change > 0 ? '+' : ''}${change.toFixed(2)}%">
+                        <div class="font-mono font-bold text-white text-sm">${stock.symbol || '--'}</div>
                         <div class="text-xs mt-1" style="color: ${textColor}">${change > 0 ? '+' : ''}${change.toFixed(1)}%</div>
                     </div>
                 `;
@@ -505,8 +514,18 @@
                 const grid = document.getElementById(sectionId + '-grid');
                 if (!grid) return;
                 
-                const stocks = stockData.results.filter(s => s.category === category).slice(0, 12);
-                grid.innerHTML = stocks.map(stock => renderEnhancedStockCard(stock)).join('');
+                // Alpha Vantage data doesn't have categories, show all stocks in each grid
+                // or filter by signal type if that makes sense
+                const stocks = stockData.results
+                    .filter(s => s.category === category || !s.category) // Show if no category assigned
+                    .slice(0, 12);
+                
+                if (stocks.length === 0) {
+                    // Fallback: show top movers for this category
+                    grid.innerHTML = '<div class="text-slate-400 text-center py-8">No data available for this category</div>';
+                } else {
+                    grid.innerHTML = stocks.map(stock => renderEnhancedStockCard(stock)).join('');
+                }
             });
         }
 
@@ -531,15 +550,18 @@
             const confidenceBadge = stock.confidence >= 0.7 ? 'bg-emerald-500/20 text-emerald-400' :
                                    stock.confidence >= 0.5 ? 'bg-blue-500/20 text-blue-400' : '';
             
+            // Handle missing name field
+            const displayName = stock.name || stock.symbol || 'Unknown';
+            
             return `
                 <div class="stock-card ${signalClass} glass rounded-xl border border-slate-700/50 p-5 relative overflow-hidden">
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <div class="flex items-center gap-2">
-                                <span class="font-mono font-bold text-white text-xl">${stock.symbol}</span>
+                                <span class="font-mono font-bold text-white text-xl">${stock.symbol || '--'}</span>
                                 ${stock.signal !== 'hold' ? `<span class="w-2 h-2 rounded-full ${stock.signal === 'long' ? 'bg-emerald-400 animate-pulse' : 'bg-red-400 animate-pulse'}"></span>` : ''}
                             </div>
-                            <div class="text-sm text-slate-400 mt-1 truncate max-w-[180px]">${stock.name}</div>
+                            <div class="text-sm text-slate-400 mt-1 truncate max-w-[180px]">${displayName}</div>
                         </div>
                         <div class="text-right">
                             <div class="font-mono text-xl text-white">$${stock.price?.toFixed(2) || '--'}</div>
@@ -570,14 +592,14 @@
                     <div class="flex items-start justify-between mb-4">
                         <div>
                             <div class="flex items-center gap-3">
-                                <span class="font-mono font-bold text-white text-2xl">${stock.symbol}</span>
-                                <span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">${stock.category.replace('_', ' ')}</span>
+                                <span class="font-mono font-bold text-white text-2xl">${stock.symbol || '--'}</span>
+                                ${stock.category ? `<span class="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300">${stock.category.replace(/_/g, ' ')}</span>` : ''}
                             </div>
-                            <div class="text-sm text-slate-400 mt-1">${stock.name}</div>
+                            <div class="text-sm text-slate-400 mt-1">${stock.name || stock.symbol || 'Unknown'}</div>
                         </div>
                         <div class="text-right">
-                            <div class="text-3xl font-bold ${signalColor}">${stock.signal.toUpperCase()}</div>
-                            <div class="text-sm text-slate-400">${(stock.confidence * 100).toFixed(0)}% confidence</div>
+                            <div class="text-3xl font-bold ${signalColor}">${(stock.signal || 'hold').toUpperCase()}</div>
+                            <div class="text-sm text-slate-400">${(stock.confidence ? stock.confidence * 100 : 0).toFixed(0)}% confidence</div>
                         </div>
                     </div>
                     
@@ -613,7 +635,8 @@
             // Category Chart
             const categories = {};
             stockData.results.forEach(s => {
-                categories[s.category] = (categories[s.category] || 0) + 1;
+                const cat = s.category || 'uncategorized';
+                categories[cat] = (categories[cat] || 0) + 1;
             });
             
             const categoryCtx = document.getElementById('categoryChart');
@@ -621,7 +644,7 @@
                 categoryChart = new Chart(categoryCtx, {
                     type: 'doughnut',
                     data: {
-                        labels: Object.keys(categories).map(k => k.replace('_', ' ').toUpperCase()),
+                        labels: Object.keys(categories).map(k => k === 'uncategorized' ? 'STANDARD' : k.replace(/_/g, ' ').toUpperCase()),
                         datasets: [{
                             data: Object.values(categories),
                             backgroundColor: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'],
