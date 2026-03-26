@@ -45,6 +45,19 @@ export default function DashboardPage() {
           <h3 className="text-lg font-medium text-gray-900 mb-2">StockVue</h3>
           <p className="text-sm text-gray-500">US stock market intelligence.</p>
         </a>
+
+        <a href="/cyclevue/" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-purple-100 rounded-lg">
+              <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">PATTERN</span>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">CycleVue</h3>
+          <p className="text-sm text-gray-500">Economic cycle intelligence (1924-2124).</p>
+        </a>
       </div>
     </div>
   )

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CycleVue — Economic Cycle Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .chart-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cycle-wave-ecm { stroke: #3b82f6; stroke-width: 2; }
+        .cycle-wave-structural { stroke: #10b981; stroke-width: 2.5; }
+        .cycle-wave-generational { stroke: #f59e0b; stroke-width: 3; }
+        .cycle-wave-combined { stroke: #a855f7; stroke-width: 3; }
+        
+        .phase-a { fill: rgba(239, 68, 68, 0.2); }
+        .phase-b { fill: rgba(16, 185, 129, 0.2); }
+        .phase-c { fill: rgba(245, 158, 11, 0.2); }
+        
+        .inflection-point {
+            fill: #fff;
+            stroke: #1e293b;
+            stroke-width: 2;
+        }
+        
+        .grid-line { stroke: #334155; stroke-dasharray: 4,4; }
+        .axis-line { stroke: #475569; }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 12px;
+            pointer-events: none;
+            font-size: 13px;
+            z-index: 1000;
+            max-width: 280px;
+        }
+        
+        .legend-item { cursor: pointer; transition: opacity 0.2s; }
+        .legend-item:hover { opacity: 0.8; }
+        .legend-item.hidden { opacity: 0.4; text-decoration: line-through; }
+        
+        .zoom-controls button {
+            transition: all 0.2s;
+        }
+        
+        .zoom-controls button:hover {
+            transform: scale(1.05);
+        }
+        
+        .current-year-marker {
+            stroke: #ef4444;
+            stroke-width: 2;
+            stroke-dasharray: 8,4;
+        }
+        
+        .phase-label {
+            font-size: 11px;
+            fill: #94a3b8;
+            text-anchor: middle;
+        }
+        
+        @media (max-width: 768px) {
+            .chart-wrapper { height: 400px; }
+        }
+    </style>
+</head>
+<body class="p-6">
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto mb-8">
+        <div class="flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">
+                    CycleVue
+                </h1>
+                <p class="text-slate-400 mt-2 text-lg">
+                    Economic Cycle Intelligence — Pattern Recognition from 1924-2124
+                </p>
+            </div>
+            <div class="text-right">
+                <div class="text-sm text-slate-400">Current Position</div>
+                <div class="text-2xl font-bold text-white" id="current-position">2026</div>
+                <div class="text-sm text-emerald-400" id="current-phase">Late Expansion</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Cycle Compass -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-compass text-blue-400"></i>
+                Cycle Compass — Where Are We?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- ECM -->
+                <div class="bg-slate-800/50 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-blue-400 font-semibold">ECM Cycle</span>
+                        <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">8.6 Years</span>
+                    </div>
+                    <div class="relative h-2 bg-slate-700 rounded-full mb-3">
+                        <div class="absolute h-full bg-blue-500 rounded-full" style="width: 70%"></div>
+                        <div class="absolute h-full w-2 bg-white rounded-full" style="left: 70%"></div>
+                    </div>
+                    <div class="text-sm text-slate-300">
+                        <div>Started: 2020</div>
+                        <div>Next: 2028</div>
+                        <div class="text-amber-400 mt-2">Late Phase (70%)</div>
+                    </div>
+                </div>
+                
+                <!-- Structural -->
+                <div class="bg-slate-800/50 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-emerald-400 font-semibold">Structural</span>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">18 Years</span>
+                    </div>
+                    <div class="relative h-2 bg-slate-700 rounded-full mb-3">
+                        <div class="absolute h-full bg-emerald-500 rounded-full" style="width: 38%"></div>
+                        <div class="absolute h-full w-2 bg-white rounded-full" style="left: 38%"></div>
+                    </div>
+                    <div class="text-sm text-slate-300">
+                        <div>Started: 2019</div>
+                        <div>Next: 2035</div>
+                        <div class="text-emerald-400 mt-2">Recovery Phase (38%)</div>
+                    </div>
+                </div>
+                
+                <!-- Generational -->
+                <div class="bg-slate-800/50 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-amber-400 font-semibold">Generational</span>
+                        <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">54 Years</span>
+                    </div>
+                    <div class="relative h-2 bg-slate-700 rounded-full mb-3">
+                        <div class="absolute h-full bg-amber-500 rounded-full" style="width: 11%"></div>
+                        <div class="absolute h-full w-2 bg-white rounded-full" style="left: 11%"></div>
+                    </div>
+                    <div class="text-sm text-slate-300">
+                        <div>Started: 2020</div>
+                        <div>Next: 2074</div>
+                        <div class="text-amber-400 mt-2">Early Phase (11%)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chart -->
+        <div class="glass rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-wave-square text-purple-400"></i>
+                    Cycle Synthesis (1924-2124)
+                </h2>
+                
+                <!-- Legend -->
+                <div class="flex items-center gap-4 text-sm" id="chart-legend">
+                    <div class="legend-item flex items-center gap-2" data-cycle="ecm">
+                        <div class="w-4 h-1 bg-blue-500 rounded"></div>
+                        <span class="text-blue-400">ECM (8.6yr)</span>
+                    </div>
+                    <div class="legend-item flex items-center gap-2" data-cycle="structural">
+                        <div class="w-4 h-1.5 bg-emerald-500 rounded"></div>
+                        <span class="text-emerald-400">Structural (18yr)</span>
+                    </div>
+                    <div class="legend-item flex items-center gap-2" data-cycle="generational">
+                        <div class="w-4 h-2 bg-amber-500 rounded"></div>
+                        <span class="text-amber-400">Generational (54yr)</span>
+                    </div>
+                    <div class="legend-item flex items-center gap-2" data-cycle="combined">
+                        <div class="w-4 h-2 bg-purple-500 rounded"></div>
+                        <span class="text-purple-400 font-semibold">Combined</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart -->
+            <div id="cycle-chart" class="chart-wrapper w-full" style="height: 500px;"></div>
+            
+            <!-- Zoom Controls -->
+            <div class="flex items-center justify-center gap-2 mt-4 zoom-controls">
+                <button onclick="zoomToCentury()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm transition">
+                    100 Years
+                </button>
+                <button onclick="zoomToDecade()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm transition">
+                    25 Years
+                </button>
+                <button onclick="zoomToYear()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm transition">
+                    10 Years
+                </button>
+                <button onclick="resetZoom()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm transition">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Phase Timeline -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-clock text-amber-400"></i>
+                PMM Phase Timeline
+            </h2>
+            <div class="overflow-x-auto">
+                <div class="min-w-max">
+                    <div class="flex items-center gap-1" id="phase-timeline">
+                        <!-- Generated via JS -->
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6 mt-4 text-sm">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 bg-red-500/30 border border-red-500 rounded"></div>
+                    <span class="text-slate-300">A — Panic Years</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 bg-emerald-500/30 border border-emerald-500 rounded"></div>
+                    <span class="text-slate-300">B — Good Times</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 bg-amber-500/30 border border-amber-500 rounded"></div>
+                    <span class="text-slate-300">C — Hard Times</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Inflection Points -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-bullseye text-rose-400"></i>
+                Key Inflection Points
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="inflection-grid">
+                <!-- Generated via JS -->
+            </div>
+        </div>
+
+        <!-- Pattern Recognition -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-search text-cyan-400"></i>
+                Historical Analogues — Pattern Recognition
+            </h2>
+            <div class="space-y-4" id="pattern-matches">
+                <div class="bg-slate-800/50 rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-line text-amber-400"></i>
+                            </div>
+                            <div>
+                                <div class="text-lg font-semibold text-white">2006-2007</div>
+                                <div class="text-sm text-amber-400">Pre-Financial Crisis</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-amber-400">72%</div>
+                            <div class="text-xs text-slate-400">Similarity</div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-slate-300 mb-3">
+                        Current conditions show strong alignment with the period preceding the 2008 crisis.
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">Flat Yield Curve</span>
+                        <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded text-xs">High Valuation</span>
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">Fed Tightening</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip hidden"></div>
+
+    <!-- Scripts -->
+    <script src="cycle-data.js"></script>
+    <script src="cycle-renderer.js"></script>
+    
+    <script>
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCycleVue();
+        });
+    </script>
+</body>
+</html>
