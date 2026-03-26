@@ -38,26 +38,28 @@ async function loadLatestScan() {
         // Add cache-busting parameter only (headers trigger CORS preflight)
         const cacheBuster = Date.now();
         const latestJsonUrl = GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
-        try {
-            const response = await fetch(latestJsonUrl);
-            if (response.ok) {
-                const data = await response.json();
-                latestData = data;
-                console.log('Loaded latest scan from GitHub:', latestJsonUrl);
-                console.log('Scan timestamp:', data.scan_timestamp);
-                return data;
-            }
-        } catch (e) {
-            console.log('GitHub fetch failed, trying fallback...');
+        
+        console.log('Fetching:', latestJsonUrl);
+        
+        const response = await fetch(latestJsonUrl);
+        
+        if (response.ok) {
+            const data = await response.json();
+            latestData = data;
+            console.log('✅ Loaded latest scan from GitHub:', data.scan_timestamp);
+            console.log('Total symbols:', data.total_symbols);
+            return data;
+        } else {
+            console.error('❌ crypto_latest.json fetch failed:', response.status, response.statusText);
         }
         
-        // Try fallback list with exact filenames
-        return await loadFallbackScan();
-        
-    } catch (error) {
-        console.error('Error loading latest scan:', error);
-        return await loadFallbackScan();
+    } catch (e) {
+        console.error('❌ Error fetching crypto_latest.json:', e.message);
     }
+    
+    // Try fallback list with exact filenames
+    console.log('Trying fallback scan files...');
+    return await loadFallbackScan();
 }
 
 /**
