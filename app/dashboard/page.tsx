@@ -46,7 +46,7 @@ export default function DashboardPage() {
           <p className="text-sm text-gray-500">US stock market intelligence.</p>
         </a>
 
-        <a href="/cyclevue/" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
+        <a href="/dashboard/cyclevue" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-purple-100 rounded-lg">
               <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
