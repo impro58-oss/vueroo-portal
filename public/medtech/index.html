@@ -842,7 +842,7 @@
                 
                 return Promise.all([
                     loadJson(DATA_BASE + '/epidemiology-comprehensive.json', 'Epidemiology'),
-                    loadJson(DATA_BASE + '/revenue-summary.json', 'Revenue'),
+                    loadJson(DATA_BASE + '/revenue-historical.json', 'Revenue'),
                     loadJson(DATA_BASE + '/competitor-intelligence.json', 'Competitors'),
                     loadJson(DATA_BASE + '/portfolio-matrix.json', 'Portfolio')
                 ]).then(function(results) {
