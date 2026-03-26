@@ -8,6 +8,7 @@
 const DATA_PATH = '../skills/tradingview-claw-v2/';
 const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/';
+const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/';
 
 // State
 let latestData = null;
@@ -28,22 +29,22 @@ function extractTimestamp(filename) {
 
 /**
  * Load the most recent scan data - DYNAMIC DISCOVERY
- * Fetches file list from GitHub API or uses known pattern
+ * Fetches from GitHub only (Vercel compatible)
  */
 async function loadLatestScan() {
     try {
-        // Try crypto_latest.json - always has the most recent scan
-        const latestJsonUrl = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/crypto_latest.json';
+        // Always use GitHub for Vercel deployment
+        const latestJsonUrl = GITHUB_DATA_URL + 'crypto_latest.json';
         try {
             const response = await fetch(latestJsonUrl);
             if (response.ok) {
                 const data = await response.json();
                 latestData = data;
-                console.log('Loaded latest scan from crypto_latest.json');
+                console.log('Loaded latest scan from GitHub:', latestJsonUrl);
                 return data;
             }
         } catch (e) {
-            console.log('crypto_latest.json not found, trying fallback...');
+            console.log('GitHub fetch failed, trying fallback...');
         }
         
         // Try fallback list with exact filenames
@@ -56,26 +57,29 @@ async function loadLatestScan() {
 }
 
 /**
- * Fetch with local path + GitHub fallback
+ * Fetch from GitHub only (for Vercel deployment)
  */
 async function fetchWithFallback(localPath, githubUrl) {
+    // Try GitHub first (always works on Vercel)
     try {
-        // Try local first
-        const response = await fetch(localPath);
+        const response = await fetch(githubUrl);
         if (response.ok) {
             return await response.json();
         }
     } catch (e) {
-        // Try GitHub raw
-        try {
-            const response = await fetch(githubUrl);
-            if (response.ok) {
-                return await response.json();
-            }
-        } catch (e2) {
-            throw new Error('Both local and GitHub fetch failed');
-        }
+        console.log('GitHub fetch failed:', githubUrl);
     }
+    
+    // Try local as fallback
+    try {
+        const response = await fetch(localPath);
+        if (response.ok) {
+            return await response.json();
+        }
+    } catch (e2) {
+        throw new Error('Both GitHub and local fetch failed');
+    }
+    
     return null;
 }
 
@@ -113,18 +117,18 @@ function generatePotentialFilenames() {
 
 /**
  * Fallback: Use curated list of recent known files
- * Updated: 2026-03-25 - includes latest scans
+ * Updated: 2026-03-26 - includes latest scans
  */
 async function loadFallbackScan() {
     const fallbackFiles = [
-        'top_50_analysis_20260325_080031.json',  // Latest: March 25, 8:00 AM
-        'top_50_analysis_20260325_040031.json',  // March 25, 4:00 AM
-        'top_50_analysis_20260325_000035.json',  // March 25, 12:00 AM
-        'top_50_analysis_20260324_200035.json',  // March 24, 8:00 PM
-        'top_50_analysis_20260324_160033.json',  // March 24, 4:00 PM
-        'top_50_analysis_20260324_120036.json',  // March 24, 12:00 PM
-        'top_50_analysis_20260324_080028.json',  // March 24, 8:00 AM
-        'top_50_analysis_20260324_040031.json'   // March 24, 4:00 AM
+        'top_50_analysis_20260326_080159.json',  // Latest: March 26, 8:01 AM
+        'top_50_analysis_20260326_040159.json',   // March 26, 4:01 AM
+        'top_50_analysis_20260326_000159.json',   // March 26, 12:00 AM
+        'top_50_analysis_20260325_200159.json',   // March 25, 8:00 PM
+        'top_50_analysis_20260325_160159.json',   // March 25, 4:00 PM
+        'top_50_analysis_20260325_120159.json',   // March 25, 12:00 PM
+        'top_50_analysis_20260325_080159.json',   // March 25, 8:00 AM
+        'top_50_analysis_20260325_040159.json'    // March 25, 4:00 AM
     ];
     
     for (const filename of fallbackFiles) {
