@@ -913,22 +913,20 @@
                         return;
                     }
                     
-                    // Use summary data if available (comprehensive format)
-                    const summaryData = region.summary;
-                    const d2024 = summaryData && summaryData['2024'] ? summaryData['2024'] : (region['2024'] || {});
-                    const d2030 = summaryData && summaryData['2030'] ? summaryData['2030'] : (region['2030'] || {});
+                    // Use summary data directly (flat structure in comprehensive format)
+                    const summary = region.summary || {};
                     
                     result.push({
                         name: region.name || key,
                         flag: region.flag,
                         population: region.population2024 || region.population || 0,
                         status: 'complete',
-                        annualStrokes: d2024.annualStrokes ? d2024.annualStrokes.value : 0,
-                        strokeDeaths: d2024.strokeDeaths ? d2024.strokeDeaths.value : 0,
-                        prevalence: d2024.prevalence ? d2024.prevalence.value : 0,
-                        ivTpa: d2024.treatmentAccess ? d2024.treatmentAccess.ivTpa : 0,
-                        mt: d2024.treatmentAccess ? d2024.treatmentAccess.mt : 0,
-                        projected2030: d2030.projectedStrokes ? d2030.projectedStrokes.value : 0
+                        annualStrokes: summary.annualStrokes ? summary.annualStrokes.value : 0,
+                        strokeDeaths: summary.strokeDeaths ? summary.strokeDeaths.value : 0,
+                        prevalence: summary.prevalence ? summary.prevalence.value : 0,
+                        ivTpa: summary.treatmentAccess ? summary.treatmentAccess.ivTpa : 0,
+                        mt: summary.treatmentAccess ? summary.treatmentAccess.mt : 0,
+                        projected2030: summary['2030Projection'] ? summary['2030Projection'].value : 0
                     });
                 });
                 return result.sort(function(a, b) { return b.annualStrokes - a.annualStrokes; });
@@ -1056,7 +1054,8 @@
             
             var data = appData.epidemiology;
             var summary = data.global && data.global.summary ? data.global.summary : {};
-            var global2024 = summary['2024'] || (data.global && data.global['2024']) || {};
+            var global2024 = summary['2024'] || {};
+            var treatmentAccess = summary.treatmentAccess2024 || {};
             
             // Update summary metrics
             var strokesEl = document.getElementById('epiAnnualStrokes');
@@ -1073,8 +1072,8 @@
             if (survivorsEl && global2024.prevalence) {
                 survivorsEl.textContent = NeuroVueDataLoader.formatNumber(global2024.prevalence.value, true);
             }
-            if (mtEl && global2024.treatmentAccess && global2024.treatmentAccess.mechanicalThrombectomy) {
-                mtEl.textContent = global2024.treatmentAccess.mechanicalThrombectomy.global + '%';
+            if (mtEl && treatmentAccess.mechanicalThrombectomy) {
+                mtEl.textContent = treatmentAccess.mechanicalThrombectomy.global + '%';
             }
             
             // Render regional table
@@ -1104,18 +1103,17 @@
                 
                 var detailed = region.detailed || {};
                 var summary = region.summary || {};
-                var d2024 = summary['2024'] || {};
                 
                 html += '<div class="bg-slate-800 rounded-lg p-6">';
                 html += '<div class="flex items-center gap-3 mb-4"><span class="text-2xl">' + region.flag + '</span><h3 class="text-xl font-bold text-white">' + region.name + '</h3></div>';
                 
                 // Key stats
                 html += '<div class="grid grid-cols-2 gap-4 mb-4">';
-                if (d2024.annualStrokes) {
-                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">Annual Strokes</div><div class="text-lg font-bold text-emerald-400">' + NeuroVueDataLoader.formatNumber(d2024.annualStrokes.value) + '</div></div>';
+                if (summary.annualStrokes) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">Annual Strokes</div><div class="text-lg font-bold text-emerald-400">' + NeuroVueDataLoader.formatNumber(summary.annualStrokes.value) + '</div></div>';
                 }
-                if (d2024.treatmentAccess) {
-                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">MT Access</div><div class="text-lg font-bold text-blue-400">' + d2024.treatmentAccess.mt + '%</div></div>';
+                if (summary.treatmentAccess) {
+                    html += '<div class="bg-slate-700/50 rounded p-3"><div class="text-xs text-slate-400">MT Access</div><div class="text-lg font-bold text-blue-400">' + summary.treatmentAccess.mt + '%</div></div>';
                 }
                 html += '</div>';
                 
