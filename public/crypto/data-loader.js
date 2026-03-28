@@ -51,15 +51,17 @@ async function loadLatestScan() {
             return data;
         } else {
             console.error('❌ crypto_latest.json fetch failed:', response.status, response.statusText);
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
     } catch (e) {
         console.error('❌ Error fetching crypto_latest.json:', e.message);
     }
     
-    // Try fallback list with exact filenames
+    // Fallback: Try curated list
     console.log('Trying fallback scan files...');
     return await loadFallbackScan();
+}
 }
 
 /**
@@ -129,14 +131,14 @@ function generatePotentialFilenames() {
  */
 async function loadFallbackScan() {
     const fallbackFiles = [
-        'top_50_analysis_20260327_040208.json',  // LATEST: March 27, 4:02 AM
-        'top_50_analysis_20260327_000159.json',  // March 27, 12:01 AM
-        'top_50_analysis_20260326_200208.json',  // March 26, 8:02 PM
-        'top_50_analysis_20260326_160151.json',  // March 26, 4:01 PM
-        'top_50_analysis_20260326_120204.json',  // March 26, 12:02 PM
-        'top_50_analysis_20260326_080159.json',  // March 26, 8:01 AM
-        'top_50_analysis_20260326_040201.json',   // March 26, 4:02 AM
-        'top_50_analysis_20260326_000154.json'   // March 26, 12:01 AM
+        'top_50_analysis_20260328_120213.json',  // LATEST: March 28, 12:02 PM
+        'top_50_analysis_20260328_080155.json',  // March 28, 8:01 AM
+        'top_50_analysis_20260328_040158.json',  // March 28, 4:01 AM
+        'top_50_analysis_20260328_000210.json',  // March 28, 12:00 AM
+        'top_50_analysis_20260327_200157.json',  // March 27, 8:01 PM
+        'top_50_analysis_20260327_160203.json',  // March 27, 4:02 PM
+        'top_50_analysis_20260327_120206.json',  // March 27, 12:02 PM
+        'top_50_analysis_20260327_080201.json'   // March 27, 8:02 AM
     ];
     
     for (const filename of fallbackFiles) {
