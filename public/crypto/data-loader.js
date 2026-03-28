@@ -58,10 +58,51 @@ async function loadLatestScan() {
         console.error('❌ Error fetching crypto_latest.json:', e.message);
     }
     
-    // Fallback: Try curated list
+    // METHOD 2: Use GitHub API to list files dynamically
+    try {
+        console.log('Fetching file list from GitHub API...');
+        const apiUrl = 'https://api.github.com/repos/impro58-oss/rooquest1/contents/skills/tradingview-claw-v2';
+        
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        
+        const files = await response.json();
+        
+        // Filter for scan files and extract timestamps
+        const scanFiles = files
+            .filter(f => f.name.match(/top_50_analysis_\d{8}_\d{6}\.json/))
+            .map(f => ({
+                name: f.name,
+                timestamp: extractTimestamp(f.name),
+                download_url: f.download_url
+            }))
+            .sort((a, b) => b.timestamp - a.timestamp); // Newest first
+        
+        if (scanFiles.length === 0) {
+            throw new Error('No scan files found via GitHub API');
+        }
+        
+        // Try to load the newest file
+        const newestFile = scanFiles[0];
+        console.log('Found', scanFiles.length, 'scan files. Newest:', newestFile.name);
+        
+        const scanResponse = await fetch(newestFile.download_url + '?t=' + Date.now());
+        if (scanResponse.ok) {
+            const data = await scanResponse.json();
+            latestData = data;
+            console.log('Loaded scan from GitHub API:', newestFile.name);
+            return data;
+        }
+        
+    } catch (e) {
+        console.error('GitHub API method failed:', e.message);
+    }
+    
+    // METHOD 3: Fallback to hardcoded list (last resort)
     console.log('Trying fallback scan files...');
     return await loadFallbackScan();
-}
 }
 
 /**
