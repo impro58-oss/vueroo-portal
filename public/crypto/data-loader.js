@@ -7,8 +7,8 @@
 // Configuration
 const DATA_PATH = '../skills/tradingview-claw-v2/';
 const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/';
-const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/';
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/crypto/';
+const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/crypto/';
 
 // State
 let latestData = null;
