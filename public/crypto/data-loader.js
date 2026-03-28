@@ -16,6 +16,28 @@ let historicalData = [];
 let allCoins = new Set();
 
 /**
+ * Safely parse JSON that may contain NaN (from Python)
+ * JavaScript cannot parse NaN, so we replace it with null
+ */
+function safeJsonParse(text) {
+    // Replace all NaN with null (JSON.parse can handle null)
+    const cleaned = text.replace(/: NaN/g, ': null');
+    return JSON.parse(cleaned);
+}
+
+/**
+ * Fetch JSON with NaN handling
+ */
+async function fetchJsonSafe(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    const text = await response.text();
+    return safeJsonParse(text);
+}
+
+/**
  * Extract timestamp from filename for sorting
  * Format: top_50_analysis_YYYYMMDD_HHMMSS.json
  */
@@ -41,18 +63,11 @@ async function loadLatestScan() {
         
         console.log('Fetching:', latestJsonUrl);
         
-        const response = await fetch(latestJsonUrl);
-        
-        if (response.ok) {
-            const data = await response.json();
-            latestData = data;
-            console.log('✅ Loaded latest scan from GitHub:', data.scan_timestamp);
-            console.log('Total symbols:', data.total_symbols);
-            return data;
-        } else {
-            console.error('❌ crypto_latest.json fetch failed:', response.status, response.statusText);
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
+        const data = await fetchJsonSafe(latestJsonUrl);
+        latestData = data;
+        console.log('✅ Loaded latest scan from GitHub:', data.scan_timestamp);
+        console.log('Total symbols:', data.total_symbols);
+        return data;
         
     } catch (e) {
         console.error('❌ Error fetching crypto_latest.json:', e.message);
@@ -88,13 +103,11 @@ async function loadLatestScan() {
         const newestFile = scanFiles[0];
         console.log('Found', scanFiles.length, 'scan files. Newest:', newestFile.name);
         
-        const scanResponse = await fetch(newestFile.download_url + '?t=' + Date.now());
-        if (scanResponse.ok) {
-            const data = await scanResponse.json();
-            latestData = data;
-            console.log('Loaded scan from GitHub API:', newestFile.name);
-            return data;
-        }
+        // Use fetchJsonSafe to handle NaN values
+        const data = await fetchJsonSafe(newestFile.download_url + '?t=' + Date.now());
+        latestData = data;
+        console.log('Loaded scan from GitHub API:', newestFile.name);
+        return data;
         
     } catch (e) {
         console.error('GitHub API method failed:', e.message);
@@ -112,26 +125,17 @@ async function loadLatestScan() {
 async function fetchWithFallback(localPath, githubUrl) {
     // Try GitHub first (always works on Vercel)
     try {
-        const cacheBuster = Date.now();
-        const response = await fetch(githubUrl + '?t=' + cacheBuster);
-        if (response.ok) {
-            return await response.json();
-        }
+        return await fetchJsonSafe(githubUrl);
     } catch (e) {
         console.log('GitHub fetch failed:', githubUrl);
     }
     
     // Try local as fallback
     try {
-        const response = await fetch(localPath);
-        if (response.ok) {
-            return await response.json();
-        }
+        return await fetchJsonSafe(localPath);
     } catch (e2) {
         throw new Error('Both GitHub and local fetch failed');
     }
-    
-    return null;
 }
 
 /**
