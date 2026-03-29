@@ -113,7 +113,7 @@ async function loadFromFallback() {
     console.log('[CryptoVue] Attempting fallback load...');
     
     // Build fallback list from known pattern
-    // Files are named: top_50_analysis_YYYYMMDD_HHMMSS.json
+    // Files are named: top_200_analysis_YYYYMMDD_HHMMSS.json
     // Generate last 7 days of possible filenames
     const fallbacks = [];
     const now = new Date();
@@ -124,7 +124,7 @@ async function loadFromFallback() {
         
         // Add typical scan times
         ['000000', '040000', '080000', '120000', '160000', '200000'].forEach(time => {
-            fallbacks.push(`top_50_analysis_${dateStr}_${time}.json`);
+            fallbacks.push(`top_200_analysis_${dateStr}_${time}.json`);
         });
     }
     
@@ -192,7 +192,7 @@ async function loadLatestScan() {
  * Transform raw scan data to coin objects
  */
 function processScanData(data) {
-    // Handle both new format (crypto_latest.json) and old format (top_50_analysis)
+    // Handle both new format (crypto_latest.json) and old format (top_200_analysis)
     const results = data.results || data;
     const coins = [];
     
