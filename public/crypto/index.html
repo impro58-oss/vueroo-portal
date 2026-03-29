@@ -293,17 +293,19 @@
             updateStatus('loading', 'Loading...');
             
             try {
+                console.log('[CryptoVue Dashboard] Starting data load...');
                 const data = await CryptoDataLoader.loadLatestScan();
                 if (data && data.results) {
                     coins = CryptoDataLoader.processScanData(data);
                     latestScan = data;
                     updateDashboard(data);
                     updateStatus('live', 'Live Data');
+                    console.log('[CryptoVue Dashboard] ✅ Data loaded successfully');
                 } else {
-                    throw new Error('No data received');
+                    throw new Error('No data received from loader');
                 }
             } catch (error) {
-                console.error('Failed to load data:', error);
+                console.error('[CryptoVue Dashboard] ❌ Failed to load data:', error);
                 updateStatus('error', 'Error');
                 showFallbackMessage();
             }

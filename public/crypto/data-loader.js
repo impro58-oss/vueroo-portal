@@ -61,16 +61,28 @@ async function loadLatestScan() {
         const cacheBuster = Date.now();
         const latestJsonUrl = GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
         
-        console.log('Fetching:', latestJsonUrl);
+        console.log('[CryptoVue] Fetching from:', latestJsonUrl);
         
         const data = await fetchJsonSafe(latestJsonUrl);
         latestData = data;
-        console.log('✅ Loaded latest scan from GitHub:', data.scan_timestamp);
-        console.log('Total symbols:', data.total_symbols);
+        
+        // Verify timestamp freshness
+        const scanDate = new Date(data.scan_timestamp);
+        const now = new Date();
+        const ageHours = (now - scanDate) / (1000 * 60 * 60);
+        
+        console.log('[CryptoVue] ✅ Loaded latest scan from GitHub:', data.scan_timestamp);
+        console.log('[CryptoVue] Data age:', ageHours.toFixed(1), 'hours');
+        console.log('[CryptoVue] Total symbols:', data.total_symbols);
+        
+        if (ageHours > 6) {
+            console.warn('[CryptoVue] ⚠️ Data is older than 6 hours');
+        }
+        
         return data;
         
     } catch (e) {
-        console.error('❌ Error fetching crypto_latest.json:', e.message);
+        console.error('[CryptoVue] ❌ Error fetching crypto_latest.json:', e.message);
     }
     
     // METHOD 2: Use GitHub API to list files dynamically
