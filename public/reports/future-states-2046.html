@@ -30,7 +30,6 @@
  overflow-x: hidden;
  }
 
- /* ANIMATED GRID BACKGROUND */
  body::before {
  content: '';
  position: fixed;
@@ -44,9 +43,9 @@
  }
 
  .container {
- max-width: 960px;
+ max-width: 1100px;
  margin: 0 auto;
- padding: 0 24px;
+ padding: 0 32px;
  position: relative;
  z-index: 1;
  }
@@ -55,7 +54,6 @@
  header {
  padding: 60px 0 40px;
  border-bottom: 1px solid var(--border);
- position: relative;
  }
 
  .eyebrow {
@@ -65,17 +63,15 @@
  letter-spacing: 4px;
  text-transform: uppercase;
  margin-bottom: 16px;
- animation: fadeIn 0.8s ease forwards;
  }
 
  h1 {
  font-family: 'Playfair Display', serif;
- font-size: clamp(42px, 8vw, 90px);
+ font-size: clamp(48px, 10vw, 100px);
  font-weight: 900;
  color: var(--white);
- line-height: 0.95;
+ line-height: 0.9;
  margin-bottom: 24px;
- animation: slideUp 0.8s ease 0.1s both;
  }
 
  h1 span {
@@ -86,24 +82,22 @@
  .header-sub {
  font-size: 18px;
  color: var(--dim);
- max-width: 580px;
+ max-width: 600px;
  font-weight: 300;
- animation: slideUp 0.8s ease 0.2s both;
+ margin-bottom: 28px;
  }
 
  .header-badges {
  display: flex;
  gap: 12px;
- margin-top: 28px;
  flex-wrap: wrap;
- animation: slideUp 0.8s ease 0.3s both;
  }
 
  .badge {
  font-family: 'Space Mono', monospace;
  font-size: 10px;
  letter-spacing: 2px;
- padding: 6px 14px;
+ padding: 8px 16px;
  border: 1px solid;
  text-transform: uppercase;
  }
@@ -112,13 +106,12 @@
  .badge-red { border-color: var(--accent2); color: var(--accent2); }
  .badge-green { border-color: var(--accent3); color: var(--accent3); }
 
- /* SECTION HEADERS */
- .era-header {
- padding: 60px 0 0;
- animation: fadeIn 0.6s ease both;
+ /* SECTION STYLING - CONSISTENT ACROSS ALL SECTIONS */
+ .section-block {
+ margin: 60px 0;
  }
 
- .era-label {
+ .section-label {
  font-family: 'Space Mono', monospace;
  font-size: 10px;
  letter-spacing: 4px;
@@ -126,235 +119,206 @@
  margin-bottom: 8px;
  }
 
- .era-2045 .era-label { color: var(--accent1); }
- .era-2055 .era-label { color: var(--accent2); }
- .era-billion .era-label { color: var(--accent3); }
+ .section-one .section-label { color: var(--accent1); }
+ .section-two .section-label { color: var(--accent2); }
+ .section-three .section-label { color: var(--accent3); }
 
- .era-title {
+ .section-title {
  font-family: 'Playfair Display', serif;
- font-size: clamp(32px, 6vw, 64px);
+ font-size: clamp(36px, 7vw, 72px);
  font-weight: 900;
  color: var(--white);
  line-height: 1;
- margin-bottom: 8px;
+ margin-bottom: 12px;
  }
 
- .era-subtitle {
- font-size: 16px;
+ .section-subtitle {
+ font-size: 17px;
  color: var(--dim);
  font-style: italic;
- margin-bottom: 40px;
+ margin-bottom: 32px;
  }
 
- /* DIVIDER LINE */
- .era-divider {
- height: 1px;
+ .section-divider {
+ height: 2px;
  background: linear-gradient(90deg, var(--accent1), transparent);
  margin-bottom: 40px;
  }
- .era-2055 .era-divider { background: linear-gradient(90deg, var(--accent2), transparent); }
- .era-billion .era-divider { background: linear-gradient(90deg, var(--accent3), transparent); }
+ .section-two .section-divider { background: linear-gradient(90deg, var(--accent2), transparent); }
+ .section-three .section-divider { background: linear-gradient(90deg, var(--accent3), transparent); }
 
- /* SCENARIO CARDS */
- .persona-grid {
+ /* UNIFIED CARD GRID - ALL SECTIONS USE SAME STRUCTURE */
+ .card-grid {
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: repeat(2, 1fr);
  gap: 24px;
- margin-bottom: 40px;
  }
 
- @media (max-width: 640px) {
- .persona-grid { grid-template-columns: 1fr; }
+ @media (max-width: 768px) {
+ .card-grid { grid-template-columns: 1fr; }
  }
 
- .persona-card {
+ .card {
  background: var(--surface);
  border: 1px solid var(--border);
- padding: 28px;
+ padding: 32px;
  position: relative;
  overflow: hidden;
- transition: border-color 0.3s;
+ transition: all 0.3s;
+ min-height: 380px;
+ display: flex;
+ flex-direction: column;
  }
 
- .persona-card:hover { border-color: var(--accent1); }
- .scenario-risk .persona-card:hover { border-color: var(--accent2); }
+ .card:hover {
+ transform: translateY(-4px);
+ border-color: var(--accent1);
+ }
 
- .persona-card::before {
+ .card::before {
  content: '';
  position: absolute;
  top: 0; left: 0; right: 0;
- height: 2px;
+ height: 3px;
  }
- .positive-scenario .persona-card::before { background: var(--accent1); }
- .risk-scenario .persona-card::before { background: var(--accent2); }
- .neutral-scenario .persona-card::before { background: var(--accent3); }
 
- .persona-tag {
+ .card-positive::before { background: var(--accent1); }
+ .card-caution::before { background: var(--gold); }
+ .card-risk::before { background: var(--accent2); }
+ .card-opportunity::before { background: var(--accent3); }
+ .card-strategy::before { background: var(--accent1); }
+
+ .card-tag {
  font-family: 'Space Mono', monospace;
  font-size: 10px;
  letter-spacing: 3px;
  text-transform: uppercase;
  margin-bottom: 16px;
  }
- .positive-tag { color: var(--accent1); }
- .risk-tag { color: var(--accent2); }
- .neutral-tag { color: var(--accent3); }
- .gold-tag { color: var(--gold); }
 
- .persona-name {
+ .tag-positive { color: var(--accent1); }
+ .tag-caution { color: var(--gold); }
+ .tag-risk { color: var(--accent2); }
+ .tag-opportunity { color: var(--accent3); }
+ .tag-strategy { color: var(--accent1); }
+
+ .card-title {
  font-family: 'Playfair Display', serif;
  font-size: 26px;
  font-weight: 700;
  color: var(--white);
- margin-bottom: 4px;
+ margin-bottom: 6px;
+ line-height: 1.2;
  }
 
- .persona-probability {
+ .card-meta {
  font-family: 'Space Mono', monospace;
  font-size: 11px;
  color: var(--dim);
  margin-bottom: 20px;
  }
 
- .persona-content {
+ .card-body {
  font-size: 15px;
  color: var(--text);
- line-height: 1.7;
+ line-height: 1.8;
  font-weight: 300;
+ flex-grow: 1;
  }
 
- .persona-content strong {
+ .card-body strong {
  color: var(--white);
  font-weight: 700;
  }
 
- /* LIST STYLES */
- .feature-list {
+ .card-footer {
+ margin-top: 20px;
+ padding-top: 20px;
+ border-top: 1px solid var(--border);
+ }
+
+ /* FEATURE TAGS */
+ .tag-list {
  display: flex;
  flex-wrap: wrap;
  gap: 8px;
- margin-top: 20px;
  }
 
- .feature-tag {
+ .tag {
  font-family: 'Space Mono', monospace;
  font-size: 9px;
  letter-spacing: 1.5px;
- padding: 4px 10px;
+ padding: 6px 12px;
  background: rgba(0,229,255,0.08);
  border: 1px solid rgba(0,229,255,0.2);
  color: var(--accent1);
  text-transform: uppercase;
  }
- .risk-scenario .feature-tag {
+
+ .card-risk .tag {
  background: rgba(255,77,109,0.08);
  border-color: rgba(255,77,109,0.2);
  color: var(--accent2);
  }
 
- /* OPPORTUNITY GRID */
- .ideas-grid {
- display: grid;
- grid-template-columns: 1fr 1fr;
- gap: 20px;
- margin-bottom: 40px;
- }
-
- @media (max-width: 640px) {
- .ideas-grid { grid-template-columns: 1fr; }
- }
-
- .idea-card {
- background: var(--surface);
- border: 1px solid var(--border);
- padding: 24px;
- position: relative;
- transition: all 0.3s;
- }
-
- .idea-card:hover {
- border-color: var(--accent3);
- transform: translateY(-2px);
- }
-
- .idea-number {
- font-family: 'Space Mono', monospace;
- font-size: 10px;
- color: var(--accent3);
- letter-spacing: 2px;
- margin-bottom: 12px;
- }
-
- .idea-title {
- font-family: 'Playfair Display', serif;
- font-size: 20px;
- font-weight: 700;
- color: var(--white);
- margin-bottom: 10px;
- line-height: 1.2;
- }
-
- .idea-market {
- font-size: 24px;
+ /* MARKET METRICS */
+ .metric-large {
+ font-size: 32px;
  font-weight: 900;
  color: var(--accent3);
- margin-bottom: 8px;
+ margin: 8px 0;
  }
 
- .idea-desc {
- font-size: 14px;
- color: var(--text);
- font-weight: 300;
- line-height: 1.7;
+ .metric-label {
+ font-family: 'Space Mono', monospace;
+ font-size: 9px;
+ color: var(--dim);
+ letter-spacing: 2px;
+ text-transform: uppercase;
  }
 
- /* WORLD CONTEXT BLOCK */
- .world-block {
+ /* EXECUTIVE SUMMARY BLOCK */
+ .summary-block {
  background: rgba(0,229,255,0.04);
  border-left: 3px solid var(--accent1);
- padding: 24px 28px;
+ padding: 28px 32px;
  margin-bottom: 40px;
- font-size: 15px;
+ font-size: 16px;
  font-weight: 300;
  line-height: 1.8;
  }
- .risk-block {
- background: rgba(255,77,109,0.04);
- border-left-color: var(--accent2);
- }
 
- .world-block strong {
+ .summary-block strong {
  font-family: 'Space Mono', monospace;
  font-size: 11px;
  letter-spacing: 2px;
  text-transform: uppercase;
  display: block;
- margin-bottom: 10px;
+ margin-bottom: 12px;
  color: var(--accent1);
  }
- .risk-block strong { color: var(--accent2); }
 
- /* STAT CALLOUTS */
- .stat-row {
+ /* STATS ROW */
+ .stats-row {
  display: grid;
  grid-template-columns: repeat(3, 1fr);
- gap: 16px;
- margin: 32px 0;
+ gap: 20px;
+ margin: 40px 0;
  }
 
  @media (max-width: 640px) {
- .stat-row { grid-template-columns: 1fr; }
+ .stats-row { grid-template-columns: 1fr; }
  }
 
- .stat-box {
+ .stat-item {
  border: 1px solid var(--border);
- padding: 20px;
+ padding: 24px;
  text-align: center;
  }
 
- .stat-num {
+ .stat-value {
  font-family: 'Playfair Display', serif;
- font-size: 40px;
+ font-size: 48px;
  font-weight: 900;
  color: var(--white);
  line-height: 1;
@@ -363,12 +327,24 @@
 
  .stat-label {
  font-family: 'Space Mono', monospace;
- font-size: 9px;
+ font-size: 10px;
  color: var(--dim);
  letter-spacing: 2px;
  text-transform: uppercase;
- margin-top: 6px;
+ margin-top: 8px;
  display: block;
+ }
+
+ /* QUOTE BLOCK */
+ .quote-block {
+ font-family: 'Playfair Display', serif;
+ font-size: 24px;
+ font-style: italic;
+ color: var(--white);
+ border-left: 3px solid var(--gold);
+ padding-left: 28px;
+ margin: 48px 0;
+ line-height: 1.5;
  }
 
  /* FOOTER */
@@ -376,11 +352,15 @@
  margin-top: 80px;
  padding: 40px 0;
  border-top: 1px solid var(--border);
- display: flex;
- justify-content: space-between;
- align-items: center;
- flex-wrap: wrap;
- gap: 20px;
+ text-align: center;
+ }
+
+ .footer-mark {
+ font-family: 'Playfair Display', serif;
+ font-size: 18px;
+ color: var(--accent1);
+ font-style: italic;
+ margin-bottom: 12px;
  }
 
  .footer-note {
@@ -388,13 +368,6 @@
  font-size: 10px;
  color: var(--dim);
  letter-spacing: 1.5px;
- }
-
- .footer-mark {
- font-family: 'Playfair Display', serif;
- font-size: 16px;
- color: var(--accent1);
- font-style: italic;
  }
 
  /* ANIMATIONS */
@@ -408,7 +381,7 @@
  to { opacity: 1; transform: translateY(0); }
  }
 
- /* SCAN LINE EFFECT */
+ /* SCAN LINE */
  .scanline {
  position: fixed;
  top: 0; left: 0; right: 0;
@@ -425,42 +398,20 @@
  to { top: 100vh; }
  }
 
- /* BLINK */
  .blink {
  animation: blink 1.2s step-end infinite;
  }
+
  @keyframes blink {
  0%, 100% { opacity: 1; }
  50% { opacity: 0; }
- }
-
- .section-spacer { height: 60px; }
-
- blockquote {
- font-family: 'Playfair Display', serif;
- font-size: 22px;
- font-style: italic;
- color: var(--white);
- border-left: 3px solid var(--gold);
- padding-left: 24px;
- margin: 32px 0;
- line-height: 1.5;
- }
-
- .section-header {
- font-family: 'Playfair Display', serif;
- font-size: 28px;
- font-weight: 700;
- color: var(--white);
- margin-bottom: 24px;
- margin-top: 60px;
  }
 
  .print-button {
  position: fixed;
  top: 20px;
  right: 20px;
- padding: 10px 20px;
+ padding: 12px 24px;
  background: var(--surface);
  border: 1px solid var(--accent1);
  color: var(--accent1);
@@ -481,14 +432,13 @@
  @media print {
  .scanline, .print-button { display: none; }
  body { background: white; color: black; }
- .persona-card { background: white; border: 1px solid #ccc; }
+ .card { background: #f5f5f5; border: 1px solid #ccc; }
  }
 </style>
 </head>
 <body>
 
 <div class="scanline"></div>
-
 <button class="print-button no-print" onclick="window.print()">Export PDF</button>
 
 <div class="container">
@@ -506,10 +456,10 @@
  </header>
 
  <!-- EXECUTIVE SUMMARY -->
- <section>
- <div class="section-header">Executive Summary</div>
- <div class="world-block">
- <strong>// The Critical Window</strong>
+ <section class="section-block">
+ <div class="section-label" style="color: var(--accent1)">// Executive Summary</div>
+ <div class="summary-block">
+ <strong>The Critical Window</strong>
  Human civilization stands at a decisive inflection point. By 2046-2056, we will inhabit one of four distinct future scenarios 
  shaped by decisions made in the next decade. This report synthesizes research from multiple AI systems (Grok, GPT, Claude, Lumina), 
  academic sources, and market intelligence to map these futures and identify eight billion-dollar opportunities.
@@ -518,279 +468,340 @@
  After 2040, system dynamics dominate.
  </div>
 
- <div class="stat-row">
- <div class="stat-box">
- <span class="stat-num">$400B+</span>
+ <div class="stats-row">
+ <div class="stat-item">
+ <span class="stat-value">$400B+</span>
  <span class="stat-label">Combined Market by 2032</span>
  </div>
- <div class="stat-box">
- <span class="stat-num">26.1%</span>
+ <div class="stat-item">
+ <span class="stat-value">26.1%</span>
  <span class="stat-label">Max CAGR (Longevity)</span>
  </div>
- <div class="stat-box">
- <span class="stat-num">10yr</span>
+ <div class="stat-item">
+ <span class="stat-value">10yr</span>
  <span class="stat-label">Strategic Window</span>
  </div>
  </div>
  </section>
 
- <div class="section-spacer"></div>
-
  <!-- ============================= -->
- <!-- SECTION: FOUR SCENARIOS -->
+ <!-- SECTION ONE: FOUR SCENARIOS -->
  <!-- ============================= -->
- <section class="era-2045">
- <div class="era-header">
- <div class="era-label">// Section One</div>
- <div class="era-title">Four Plausible Futures</div>
- <div class="era-subtitle">Scenario Analysis for 2046-2056</div>
- <div class="era-divider"></div>
- </div>
+ <section class="section-block section-one">
+ <div class="section-label">// Section One</div>
+ <div class="section-title">Four Plausible Futures</div>
+ <div class="section-subtitle">Scenario Analysis for 2046-2056</div>
+ <div class="section-divider"></div>
 
- <!-- SCENARIO 1: POST-ANTHROPOCENE -->
- <div class="positive-scenario">
- <div class="persona-grid">
- <div class="persona-card">
- <div class="persona-tag positive-tag">// Scenario 1 — 15-25% Probability</div>
- <div class="persona-name">Post-Anthropocene</div>
- <div class="persona-probability">Restoration &amp; Harmony</div>
- <div class="persona-content">
+ <div class="card-grid">
+ <!-- SCENARIO 1 -->
+ <div class="card card-positive">
+ <div class="card-tag tag-positive">// Scenario 1 — 15-25% Probability</div>
+ <div class="card-title">Post-Anthropocene</div>
+ <div class="card-meta">Restoration &amp; Harmony</div>
+ <div class="card-body">
  <strong>The World:</strong> Climate stabilized below 2°C warming. Renewable energy dominance with fusion online. AI-augmented resource management. Localized economies with global coordination. Human lifespan extended to 120+ years.
  <br><br>
  <strong>Life in 2046:</strong> "Dynamic Living Spaces" — people can live anywhere. Work redefined as meaning over survival. Conscious-technology integration. Abundance-based economics emerging.
  <br><br>
  <strong>Required Path:</strong> Immediate global mobilization, 50% emissions reduction by 2035, complete energy transition by 2045.
  </div>
- <div class="feature-list">
- <span class="feature-tag">Fusion Online</span>
- <span class="feature-tag">Climate Stabilized</span>
- <span class="feature-tag">Abundance Economics</span>
- <span class="feature-tag">Lifespan 120+</span>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">Fusion Online</span>
+ <span class="tag">Climate Stabilized</span>
+ <span class="tag">Abundance Economics</span>
+ <span class="tag">Lifespan 120+</span>
+ </div>
  </div>
  </div>
 
- <div class="persona-card">
- <div class="persona-tag gold-tag">// Scenario 2 — 30-40% Probability</div>
- <div class="persona-name">Greentocracy</div>
- <div class="persona-probability">Managed Decline</div>
- <div class="persona-content">
+ <!-- SCENARIO 2 -->
+ <div class="card card-caution">
+ <div class="card-tag tag-caution">// Scenario 2 — 30-40% Probability</div>
+ <div class="card-title">Greentocracy</div>
+ <div class="card-meta">Managed Decline</div>
+ <div class="card-body">
  <strong>The World:</strong> Climate impacts force emergency governance. Resource rationing via AI systems. Restricted mobility (carbon passports). Stratified societies: climate havens vs. sacrifice zones. Surveillance state for sustainability enforcement.
  <br><br>
  <strong>Life in 2046:</strong> Basic needs met through technology efficiency. Limited personal freedom, high security. Urban concentration continues. Healthcare advanced but access stratified. Virtual reality as escape from constrained physical world.
  <br><br>
  <strong>Triggers:</strong> Cascading climate disasters between 2030-2040 trigger emergency measures.
  </div>
- <div class="feature-list">
- <span class="feature-tag">Emergency Gov</span>
- <span class="feature-tag">Carbon Passports</span>
- <span class="feature-tag">Stratified Access</span>
- <span class="feature-tag">Surveillance State</span>
- </div>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">Emergency Gov</span>
+ <span class="tag">Carbon Passports</span>
+ <span class="tag">Stratified Access</span>
+ <span class="tag">Surveillance State</span>
  </div>
  </div>
  </div>
 
- <div class="section-spacer"></div>
-
- <!-- SCENARIO 3: EXTINCTION EXPRESS -->
- <div class="risk-scenario">
- <div class="persona-grid">
- <div class="persona-card">
- <div class="persona-tag risk-tag">// Scenario 3 — 25-35% Probability</div>
- <div class="persona-name">Extinction Express</div>
- <div class="persona-probability">Collapse Trajectory</div>
- <div class="persona-content">
+ <!-- SCENARIO 3 -->
+ <div class="card card-risk">
+ <div class="card-tag tag-risk">// Scenario 3 — 25-35% Probability</div>
+ <div class="card-title">Extinction Express</div>
+ <div class="card-meta">Collapse Trajectory</div>
+ <div class="card-body">
  <strong>The World:</strong> 2-4°C warming crossed. Food/water/energy crises in cascading failure. Economic systems collapse. Nation-states fragment. Population decline to 6 billion by 2060. Mass migration and resource wars.
  <br><br>
  <strong>Life in 2046:</strong> Autonomous local communities. Subsistence agriculture returns. Urban depopulation to rural areas. Technology access fragmented. Barter and local currency economies. "Salvage civilization" — repurposing old tech.
  <br><br>
  <strong>Triggers:</strong> Tipping points crossed: ice sheet collapse, permafrost methane, ocean circulation shutdown.
  </div>
- <div class="feature-list">
- <span class="feature-tag">Systemic Collapse</span>
- <span class="feature-tag">Cascading Failures</span>
- <span class="feature-tag">Local Resilience</span>
- <span class="feature-tag">Salvage Economy</span>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">Systemic Collapse</span>
+ <span class="tag">Cascading Failures</span>
+ <span class="tag">Local Resilience</span>
+ <span class="tag">Salvage Economy</span>
+ </div>
  </div>
  </div>
 
- <div class="persona-card">
- <div class="persona-tag risk-tag">// Scenario 4 — 15-25% Probability</div>
- <div class="persona-name">Humans Inc.</div>
- <div class="persona-probability">Techno-Feudalism</div>
- <div class="persona-content">
+ <!-- SCENARIO 4 -->
+ <div class="card card-risk">
+ <div class="card-tag tag-risk">// Scenario 4 — 15-25% Probability</div>
+ <div class="card-title">Humans Inc.</div>
+ <div class="card-meta">Techno-Feudalism</div>
+ <div class="card-body">
  <strong>The World:</strong> Corporate states replace nation-states. AI systems optimize for efficiency over human values. Human labor largely obsolete. Basic income / "useless class" management. Biological/digital divide (enhanced vs. natural humans).
  <br><br>
  <strong>Life in 2046:</strong> Post-work society for most. AI companions, virtual existence. Stratified by access to enhancement technology. Meaning crisis, purpose through consumption/entertainment. Physical world degraded, digital world rich.
  <br><br>
  <strong>Path:</strong> Continued corporate consolidation + AGI breakthrough + geoengineering.
  </div>
- <div class="feature-list">
- <span class="feature-tag">Corporate States</span>
- <span class="feature-tag">Human Obsolescence</span>
- <span class="feature-tag">Bio-Digital Divide</span>
- <span class="feature-tag">Meaning Crisis</span>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">Corporate States</span>
+ <span class="tag">Human Obsolescence</span>
+ <span class="tag">Bio-Digital Divide</span>
+ <span class="tag">Meaning Crisis</span>
  </div>
  </div>
  </div>
  </div>
- </blockquote>
- </div>
-
- <div class="section-spacer"></div>
+ </section>
 
  <!-- ============================= -->
- <!-- SECTION: EIGHT OPPORTUNITIES -->
+ <!-- SECTION TWO: EIGHT OPPORTUNITIES -->
  <!-- ============================= -->
- <section class="era-billion">
- <div class="era-header">
- <div class="era-label">// Section Two</div>
- <div class="era-title">Eight Billion-Dollar Seeds</div>
- <div class="era-subtitle">Market Opportunities Positioned for 2046/2056</div>
- <div class="era-divider"></div>
- </div>
+ <section class="section-block section-two">
+ <div class="section-label">// Section Two</div>
+ <div class="section-title">Eight Billion-Dollar Seeds</div>
+ <div class="section-subtitle">Market Opportunities Positioned for 2046/2056</div>
+ <div class="section-divider"></div>
 
- <div class="ideas-grid">
-
- <div class="idea-card">
- <div class="idea-number">// 01</div>
- <div class="idea-title">Longevity Operating Systems</div>
- <div class="idea-market">$173B by 2032</div>
- <div class="idea-desc">
+ <div class="card-grid">
+ <!-- OPPORTUNITY 1 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 01 — Longevity</div>
+ <div class="card-title">Longevity Operating Systems</div>
+ <div class="metric-large">$173B</div>
+ <div class="metric-label">by 2032 | 26.1% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Healthcare → Health assurance; Reactive → Predictive. Unified platform combining biometric mesh, AI health twin, intervention engine, and longevity passport.
  <br><br>
  <strong>Revenue:</strong> SaaS ($200-500/month), B2B ($10K/employee/year). Data licensing, intervention marketplace.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 02</div>
- <div class="idea-title">AI Companion Infrastructure</div>
- <div class="idea-market">$500B+ potential</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 2 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 02 — AI Companions</div>
+ <div class="card-title">AI Companion Infrastructure</div>
+ <div class="metric-large">$500B+</div>
+ <div class="metric-label">potential | 32% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Tools → Companions; Transactional → Relational. Infrastructure layer enabling ALL companion apps: memory persistence, emotional modeling, multi-modal orchestration.
  <br><br>
  <strong>Revenue:</strong> API calls, enterprise licensing ($500K-2M/year), revenue share (10-20%).
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 03</div>
- <div class="idea-title">Purpose &amp; Meaning Platforms</div>
- <div class="idea-market">$15B+ by 2030</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 3 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 03 — Purpose</div>
+ <div class="card-title">Purpose &amp; Meaning Platforms</div>
+ <div class="metric-large">$15B+</div>
+ <div class="metric-label">by 2030 | 35%+ CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Work defines identity → Identity independent of work. Contribution marketplace, legacy builder, life narrative AI, community of practice.
  <br><br>
  <strong>Revenue:</strong> Subscription ($50-200/month), enterprise purpose programs, certification.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 04</div>
- <div class="idea-title">Climate Adaptation Real Estate</div>
- <div class="idea-market">$6.9T annual need</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 4 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 04 — Climate RE</div>
+ <div class="card-title">Climate Adaptation Real Estate</div>
+ <div class="metric-large">$6.9T</div>
+ <div class="metric-label">annual need | 10.5% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Location → Resilience. Resilience scoring, adaptation planning, resilient development, resilience insurance. Climate becomes #1 value driver.
  <br><br>
  <strong>Revenue:</strong> Assessments, development fees (5-10%), data licensing, insurance partnerships.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 05</div>
- <div class="idea-title">Spatial Learning Environments</div>
- <div class="idea-market">$65-155B by 2032</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 5 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 05 — Spatial Learning</div>
+ <div class="card-title">Spatial Learning Environments</div>
+ <div class="metric-large">$65-155B</div>
+ <div class="metric-label">by 2032 | 18-25% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Classroom → Immersive; Memorization → Experience. Learning Experience OS, adaptive AI, multi-user spaces. Enterprise adoption: 22% of large companies.
  <br><br>
  <strong>Revenue:</strong> School licensing ($50-200/student/year), enterprise training, content marketplace.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 06</div>
- <div class="idea-title">Neural Privacy &amp; Security</div>
- <div class="idea-market">$119B by 2032</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 6 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 06 — Neural Privacy</div>
+ <div class="card-title">Neural Privacy &amp; Security</div>
+ <div class="metric-large">$119B</div>
+ <div class="metric-label">by 2032 | 85.6% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Data privacy → Thought privacy. Neural encryption, cognitive firewalls, identity verification, consent management. Critical BCI infrastructure.
  <br><br>
  <strong>Revenue:</strong> Device licensing, enterprise security ($100K-1M), consumer subscription.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 07</div>
- <div class="idea-title">Post-Job Identity Systems</div>
- <div class="idea-market">$119B by 2032</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 7 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 07 — Identity</div>
+ <div class="card-title">Post-Job Identity Systems</div>
+ <div class="metric-large">$119B</div>
+ <div class="metric-label">by 2032 | 85.6% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Employer-verified → Self-sovereign. Skill verification, contribution ledger, reputation graph, portfolio builder. The LinkedIn of 2050.
  <br><br>
  <strong>Revenue:</strong> Premium profiles, enterprise verification, recruitment fees, API access.
  </div>
  </div>
 
- <div class="idea-card">
- <div class="idea-number">// 08</div>
- <div class="idea-title">Molecular Fabrication</div>
- <div class="idea-market">$155B by 2032</div>
- <div class="idea-desc">
+ <!-- OPPORTUNITY 8 -->
+ <div class="card card-opportunity">
+ <div class="card-tag tag-opportunity">// 08 — Fabrication</div>
+ <div class="card-title">Molecular Fabrication</div>
+ <div class="metric-large">$155B</div>
+ <div class="metric-label">by 2032 | 17-22% CAGR</div>
+ <div class="card-body">
  <strong>The Shift:</strong> Mass production → On-demand. Material OS, design marketplace, IP licensing for physical objects. The atom-economy App Store.
  <br><br>
  <strong>Revenue:</strong> Design marketplace (30%), material sales, OS licensing, enterprise.
  </div>
  </div>
-
  </div>
  </section>
 
- <div class="section-spacer"></div>
-
  <!-- ============================= -->
- <!-- SECTION: STRATEGIC RECOMMENDATIONS -->
+ <!-- SECTION THREE: STRATEGIC RECOMMENDATIONS -->
  <!-- ============================= -->
- <section>
- <div class="section-header">Strategic Recommendations</div>
- 
- <div class="world-block">
- <strong>// Optimal Positioning for Your Profile</strong>
- Given your neurovascular/medtech expertise, Ireland location, and mission alignment:
- </div>
+ <section class="section-block section-three">
+ <div class="section-label">// Section Three</div>
+ <div class="section-title">Strategic Recommendations</div>
+ <div class="section-subtitle">Optimal Positioning for Your Profile</div>
+ <div class="section-divider"></div>
 
- <div class="persona-grid">
- <div class="persona-card positive-scenario">
- <div class="persona-tag positive-tag">// Primary Focus</div>
- <div class="persona-name">Longevity OS</div>
- <div class="persona-probability">Neural/Biological Focus</div>
- <div class="persona-content">
+ <div class="card-grid">
+ <div class="card card-strategy">
+ <div class="card-tag tag-strategy">// Primary Focus</div>
+ <div class="card-title">Longevity OS</div>
+ <div class="card-meta">Neural/Biological Focus</div>
+ <div class="card-body">
  <strong>Why:</strong> Leverages existing neurovascular expertise. Defensible regulatory moat (FDA/EMA pathways). Massive market ($173B+ by 2032). Impact alignment (healthspan extension). Geographic fit (Ireland as biotech hub).
+ <br><br>
+ <strong>Positioning:</strong> Build unified platform combining biometric mesh, AI health twin, intervention engine, and longevity passport. Target both B2C ($200-500/month) and B2B ($10K/employee/year).
+ </div>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">$173B Market</span>
+ <span class="tag">26.1% CAGR</span>
+ <span class="tag">FDA Pathway</span>
+ </div>
  </div>
  </div>
 
- <div class="persona-card">
- <div class="persona-tag gold-tag">// Secondary</div>
- <div class="persona-name">Neural Privacy</div>
- <div class="persona-probability">Security Layer</div>
- <div class="persona-content">
- <strong>Why:</strong> Natural extension of neural interface expertise. Critical infrastructure layer. $119B market by 2032. First-mover advantage possible in emerging category.
+ <div class="card card-strategy">
+ <div class="card-tag tag-strategy">// Secondary Focus</div>
+ <div class="card-title">Neural Privacy &amp; Security</div>
+ <div class="card-meta">Security Layer</div>
+ <div class="card-body">
+ <strong>Why:</strong> Natural extension of neural interface expertise. Critical infrastructure layer. $119B market by 2032. First-mover advantage possible in emerging category. Essential for BCI era.
+ <br><br>
+ <strong>Positioning:</strong> Neural encryption, cognitive firewalls, identity verification, consent management. Target enterprise first ($100K-1M contracts), then consumer subscription.
+ </div>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">$119B Market</span>
+ <span class="tag">85.6% CAGR</span>
+ <span class="tag">BCI Critical</span>
  </div>
  </div>
  </div>
 
- <div class="section-spacer"></div>
+ <div class="card card-strategy">
+ <div class="card-tag tag-strategy">// Tertiary Focus</div>
+ <div class="card-title">Spatial Learning</div>
+ <div class="card-meta">Medical Training VR</div>
+ <div class="card-body">
+ <strong>Why:</strong> Combines neurovascular expertise with education. Natural extension into medical training simulations. $65-155B market by 2032. Enterprise adoption already at 22%.
+ <br><br>
+ <strong>Positioning:</strong> Learning Experience OS for medical training. Adaptive AI, multi-user surgical simulations, content marketplace. School licensing + enterprise training.
+ </div>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">$65-155B Market</span>
+ <span class="tag">22% Adoption</span>
+ <span class="tag">MedEd Focus</span>
+ </div>
+ </div>
+ </div>
 
- <blockquote>
- "The through-line: From managing to being. Removing friction between intention and manifestation. Ten steps now → One step in 2046 → Zero steps (thought only) in 2056."
- </blockquote>
+ <div class="card card-strategy">
+ <div class="card-tag tag-strategy">// Portfolio Summary</div>
+ <div class="card-title">Why This Portfolio?</div>
+ <div class="card-meta">Combined Market: $400B+</div>
+ <div class="card-body">
+ <strong>Leverages Expertise:</strong> Neurovascular/medtech background
+ <br><br>
+ <strong>Defensible Moat:</strong> FDA/EMA regulatory pathways
+ <br><br>
+ <strong>Massive Market:</strong> $400B+ combined by 2032
+ <br><br>
+ <strong>Geographic Fit:</strong> Ireland as emerging biotech hub
+ <br><br>
+ <strong>Impact Alignment:</strong> Healthspan, privacy, education
+ </div>
+ <div class="card-footer">
+ <div class="tag-list">
+ <span class="tag">$400B+ Market</span>
+ <span class="tag">Defensible</span>
+ <span class="tag">Impact</span>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="quote-block">
+ The through-line: From managing to being. Removing friction between intention and manifestation. Ten steps now → One step in 2046 → Zero steps (thought only) in 2056.
+ </div>
  </section>
 
  <!-- FOOTER -->
  <footer>
+ <div class="footer-mark">Future States // 2046 &amp; 2056</div>
  <div class="footer-note">
- // Research synthesized from Grok (xAI), GPT (OpenAI), Claude (Anthropic), and Lumina<br>
- // Market data: Grand View Research, Fortune Business Insights, McKinsey, OECD<br>
- // Report Version 1.0 | March 29, 2026 | For Internal Strategic Use
+ Research synthesized from Grok (xAI), GPT (OpenAI), Claude (Anthropic), and Lumina<br>
+ Market data: Grand View Research, Fortune Business Insights, McKinsey, OECD<br>
+ Report Version 1.0 | March 29, 2026 | For Internal Strategic Use
  </div>
- <div class="footer-mark">Future States™</div>
  </footer>
 
 </div>
