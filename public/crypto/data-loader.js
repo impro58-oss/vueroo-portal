@@ -10,12 +10,12 @@
  */
 
 const CONFIG = {
-    // Primary source - always try this first with cache-busting
-    GITHUB_DATA_URL: 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/',
-    GITHUB_SCAN_URL: 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/',
+    // Primary source - vueroo-data public repo
+    GITHUB_DATA_URL: 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/data/crypto/',
+    GITHUB_SCAN_URL: 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/skills/tradingview-claw-v2/',
     
-    // GitHub API for dynamic discovery (no cache)
-    GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/rooquest1/contents/skills/tradingview-claw-v2',
+    // GitHub API for dynamic discovery
+    GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/vueroo-data/contents/skills/tradingview-claw-v2',
     
     // Auto-generated fallback list (updated by deploy script)
     FALLBACK_FILES: [],  // Will be populated by /scripts/generate-fallback-list.ps1

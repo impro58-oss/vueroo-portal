@@ -8,8 +8,8 @@
  */
 
 const CONFIG = {
-    GITHUB_DATA_URL: 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/stocks/',
-    GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/rooquest1/contents/data/stocks',
+    GITHUB_DATA_URL: 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/data/stocks/',
+    GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/vueroo-data/contents/data/stocks',
     MAX_DATA_AGE_HOURS: 6
 };
 
