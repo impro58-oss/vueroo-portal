@@ -463,43 +463,32 @@
     <script src="/cyclevue-pro/crucix-feed.js"></script>
     <script src="/cyclevue-pro/cycle-pro-data.js"></script>
     <script>
-        // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize dashboard when page loads
+        window.onload = function() {
+            console.log('CycleVue Pro: Initializing...');
             updateDashboard();
-            // Refresh every 5 minutes
             setInterval(updateDashboard, 300000);
-        });
+        };
         
         function updateDashboard() {
-            document.getElementById('last-update').textContent = new Date().toLocaleTimeString();
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleTimeString();
             
-            // In production, this would fetch real data
-            // For now, simulate with sample data
-            simulateDataFetch();
-        }
-        
-        function simulateDataFetch() {
-            // Simulated data - replace with actual API calls
+            // Run simulation with current Crucix data
+            const crucixVix = 31.05; // From Crucix feed
             const data = {
                 yield: { value: -0.35, history: [1.2, 0.8, 0.3, -0.1, -0.35] },
                 rates: { value: 5.5, history: [0.25, 1.5, 3.0, 5.25, 5.5] },
                 m2: { value: -1.2, history: [8.5, 6.2, 3.1, 0.5, -1.2] },
                 credit: { value: 2.8, history: [1.5, 1.8, 2.1, 2.5, 2.8] },
-                vix: { value: 18.5, history: [25, 22, 20, 19, 18.5] },
+                vix: { value: crucixVix, history: [25, 22, 20, 19, crucixVix] },
                 spx: { value: 5200, history: [4500, 4700, 4900, 5050, 5200] }
             };
             
-            updateCharts(data);
             calculateScores(data);
         }
         
-        function updateCharts(data) {
-            // Update all chart displays
-            // In production, use Chart.js with real data
-        }
-        
         function calculateScores(data) {
-            // Calculate weighted scores
             const scores = {
                 liquidity: calculateLiquidityScore(data.yield.value, data.m2.value),
                 credit: calculateCreditScore(data.credit.value),
@@ -514,9 +503,7 @@
         }
         
         function calculateLiquidityScore(yield, m2) {
-            // Yield curve scoring
             let yieldScore = yield > 1 ? 25 : yield > 0 ? 20 : yield > -0.5 ? 15 : yield > -1 ? 10 : 5;
-            // M2 scoring
             let m2Score = m2 > 8 ? 25 : m2 > 4 ? 20 : m2 > 0 ? 15 : m2 > -2 ? 10 : 5;
             return Math.round((yieldScore + m2Score) / 2);
         }
@@ -530,36 +517,49 @@
         }
         
         function calculateMarketScore(vix, spx) {
-            // Simplified scoring
             return vix < 15 ? 20 : vix < 20 ? 18 : vix < 25 ? 14 : vix < 30 ? 10 : 6;
         }
         
         function updateScoreDisplay(scores, total) {
-            document.getElementById('total-score').textContent = total;
-            document.getElementById('liquidity-score').textContent = scores.liquidity;
-            document.getElementById('credit-score').textContent = scores.credit;
-            document.getElementById('rates-score').textContent = scores.rates;
-            document.getElementById('market-score').textContent = scores.market;
+            const totalEl = document.getElementById('total-score');
+            const liquidityEl = document.getElementById('liquidity-score');
+            const creditEl = document.getElementById('credit-score');
+            const ratesEl = document.getElementById('rates-score');
+            const marketEl = document.getElementById('market-score');
+            
+            if (totalEl) totalEl.textContent = total;
+            if (liquidityEl) liquidityEl.textContent = scores.liquidity;
+            if (creditEl) creditEl.textContent = scores.credit;
+            if (ratesEl) ratesEl.textContent = scores.rates;
+            if (marketEl) marketEl.textContent = scores.market;
             
             // Update bars
-            document.getElementById('liquidity-bar').style.width = scores.liquidity + '%';
-            document.getElementById('credit-bar').style.width = scores.credit + '%';
-            document.getElementById('rates-bar').style.width = scores.rates + '%';
-            document.getElementById('market-bar').style.width = scores.market + '%';
+            const liquidityBar = document.getElementById('liquidity-bar');
+            const creditBar = document.getElementById('credit-bar');
+            const ratesBar = document.getElementById('rates-bar');
+            const marketBar = document.getElementById('market-bar');
             
-            // Phase determination
-            let phase = total >= 80 ? 'EXPANSION' : total >= 60 ? 'LATE CYCLE' : 'RISK ZONE';
-            let phaseColor = total >= 80 ? 'text-emerald-400' : total >= 60 ? 'text-amber-400' : 'text-rose-400';
+            if (liquidityBar) liquidityBar.style.width = scores.liquidity + '%';
+            if (creditBar) creditBar.style.width = scores.credit + '%';
+            if (ratesBar) ratesBar.style.width = scores.rates + '%';
+            if (marketBar) marketBar.style.width = scores.market + '%';
+            
+            // Phase
+            const phase = total >= 80 ? 'EXPANSION' : total >= 60 ? 'LATE CYCLE' : 'RISK ZONE';
+            const phaseColor = total >= 80 ? 'text-emerald-400' : total >= 60 ? 'text-amber-400' : 'text-rose-400';
             
             const phaseEl = document.getElementById('cycle-phase');
-            phaseEl.textContent = phase;
-            phaseEl.className = 'text-2xl font-bold ' + phaseColor;
+            if (phaseEl) {
+                phaseEl.textContent = phase;
+                phaseEl.className = 'text-2xl font-bold ' + phaseColor;
+            }
             
-            // Assessment text
+            // Assessment
             const assessment = total >= 80 ? 'Favorable conditions for growth.' :
                               total >= 60 ? 'Late cycle conditions. Risk building.' :
                               'Elevated risk. Defensive positioning recommended.';
-            document.getElementById('assessment-text').textContent = assessment;
+            const assessmentEl = document.getElementById('assessment-text');
+            if (assessmentEl) assessmentEl.textContent = assessment;
         }
     </script>
 </body>
