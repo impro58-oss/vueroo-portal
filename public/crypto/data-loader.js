@@ -7,8 +7,8 @@
 // Configuration
 const DATA_PATH = '../skills/tradingview-claw-v2/';
 const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/crypto/';
-const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/crypto/';
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/';
+const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/';
 
 // State
 let latestData = null;
@@ -176,14 +176,14 @@ function generatePotentialFilenames() {
  */
 async function loadFallbackScan() {
     const fallbackFiles = [
-        'top_50_analysis_20260328_120213.json',  // LATEST: March 28, 12:02 PM
-        'top_50_analysis_20260328_080155.json',  // March 28, 8:01 AM
-        'top_50_analysis_20260328_040158.json',  // March 28, 4:01 AM
-        'top_50_analysis_20260328_000210.json',  // March 28, 12:00 AM
-        'top_50_analysis_20260327_200157.json',  // March 27, 8:01 PM
-        'top_50_analysis_20260327_160203.json',  // March 27, 4:02 PM
-        'top_50_analysis_20260327_120206.json',  // March 27, 12:02 PM
-        'top_50_analysis_20260327_080201.json'   // March 27, 8:02 AM
+        'top_50_analysis_20260329_130219.json',  // LATEST: March 29, 1:02 PM
+        'top_50_analysis_20260329_090000.json',  // March 29, 9:00 AM
+        'top_50_analysis_20260329_050000.json',  // March 29, 5:00 AM
+        'top_50_analysis_20260329_010000.json',  // March 29, 1:00 AM
+        'top_50_analysis_20260328_200000.json',  // March 28, 8:00 PM
+        'top_50_analysis_20260328_160000.json',  // March 28, 4:00 PM
+        'top_50_analysis_20260328_120213.json',  // March 28, 12:02 PM
+        'top_50_analysis_20260328_080155.json'   // March 28, 8:01 AM
     ];
     
     for (const filename of fallbackFiles) {
