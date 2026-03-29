@@ -18,7 +18,7 @@ const CONFIG = {
     GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/vueroo-data/contents/skills/tradingview-claw-v2',
     
     // Auto-generated fallback list (updated by deploy script)
-    FALLBACK_FILES: [],  // Will be populated by /scripts/generate-fallback-list.ps1
+    FALLBACK_FILES: [],
     
     // Acceptable data age (hours)
     MAX_DATA_AGE_HOURS: 6
@@ -30,10 +30,10 @@ let latestData = null;
 let allCoins = new Set();
 
 /**
- * Fetch JSON with automatic NaN handling (Python → JavaScript compatibility)
+ * Fetch JSON with automatic NaN handling (Python -> JavaScript compatibility)
  */
-async function fetchJsonSafe(url, options = {}) {
-    const response = await fetch(url, options);
+async function fetchJsonSafe(url) {
+    const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
@@ -53,25 +53,40 @@ function getDataAgeHours(timestamp) {
 }
 
 /**
+ * Format price for display
+ */
+function formatPrice(price) {
+    if (!price) return '$0.00';
+    if (price >= 1000) return '$' + price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    if (price >= 1) return '$' + price.toFixed(2);
+    if (price >= 0.01) return '$' + price.toFixed(4);
+    return '$' + price.toFixed(6);
+}
+
+/**
  * METHOD 1: Load from crypto_latest.json (primary)
  * Uses aggressive cache-busting to bypass GitHub CDN cache
  */
 async function loadFromLatestFile() {
-    const cacheBuster = Date.now();
-    const url = CONFIG.GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
-    
+    const url = CONFIG.GITHUB_DATA_URL + 'crypto_latest.json?t=' + Date.now();
     console.log('[CryptoVue] Attempting primary load:', url);
+    
     const data = await fetchJsonSafe(url);
+    latestData = data;
     
-    // Validate the data is recent enough
-    const ageHours = getDataAgeHours(data.scan_timestamp || data.analysis_time);
+    // Verify timestamp freshness
+    const scanDate = new Date(data.scan_timestamp);
+    const now = new Date();
+    const ageHours = (now - scanDate) / (1000 * 60 * 60);
     
-    if (ageHours > CONFIG.MAX_DATA_AGE_HOURS) {
-        console.warn(`[CryptoVue] Data is ${ageHours.toFixed(1)}h old, checking for newer...`);
-        throw new Error('Data too old');
+    console.log('[CryptoVue] ✅ Loaded latest scan from GitHub:', data.scan_timestamp);
+    console.log('[CryptoVue] Data age:', ageHours.toFixed(1), 'hours');
+    console.log('[CryptoVue] Total symbols:', data.total_symbols);
+    
+    if (ageHours > 6) {
+        console.warn('[CryptoVue] ⚠️ Data is older than 6 hours');
     }
     
-    console.log('[CryptoVue] ✅ Primary load successful:', data.scan_timestamp);
     return data;
 }
 
@@ -87,7 +102,7 @@ async function loadFromGitHubAPI() {
     
     // Find scan files and sort by date
     const scanFiles = files
-        .filter(f => f.name.match(/top_50_analysis_\d{8}_\d{6}\.json/))
+        .filter(f => f.name.match(/top_200_analysis_\d{8}_\d{6}\.json/))
         .sort((a, b) => b.name.localeCompare(a.name));  // Newest first
     
     if (scanFiles.length === 0) {
@@ -274,7 +289,8 @@ const CryptoDataLoader = {
     getSignalCounts,
     getCoinsBySignal,
     getOpportunities,
-    getDataAgeHours
+    getDataAgeHours,
+    formatPrice
 };
 
 // Auto-load on import (for testing)
