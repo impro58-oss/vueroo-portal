@@ -7,7 +7,21 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* 1. CycleVue - Economic Cycles */}
+        {/* 1. CycleVue Pro - Advanced Economic Cycles */}
+        <a href="/cyclevue-pro/" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border-2 border-purple-300">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-purple-100 rounded-lg">
+              <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">PRO</span>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">CycleVue Pro</h3>
+          <p className="text-sm text-gray-500">Advanced macro cycle intelligence + Crucix feed.</p>
+        </a>
+
+        {/* 2. CycleVue - Economic Cycles */}
         <a href="/dashboard/cyclevue" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-purple-100 rounded-lg">
