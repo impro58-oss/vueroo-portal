@@ -226,20 +226,19 @@ function processScanData(data) {
             confidenceLabel: result.confidence_label || result.trade_plan?.confidence_label || 'none',
             setupType: result.setup_type || result.trade_plan?.setup_type || 'none',
             strategy: result.strategy || 'MONITOR',
-            csrsi: {
-                state: result.csrsi_state,
-                zone: result.csrsi_zone,
-                red: result.csrsi_red,
-                upperBlue: result.csrsi_upper_blue,
-                lowerBlue: result.csrsi_lower_blue
-            },
-            rtom: {
-                bias: result.rtom_bias,
-                regime: result.rtom_regime,
-                position: result.rtom_position,
-                slopeShift: result.rtom_slope_shift,
-                sma200: result.rtom_200sma
-            },
+            // Flattened CS RSI properties for dashboard compatibility
+            csrsiState: result.csrsi_state || 'neutral',
+            csrsiZone: result.csrsi_zone || 'unknown',
+            csrsiRed: result.csrsi_red || 0,
+            csrsiUpperBlue: result.csrsi_upper_blue || 0,
+            csrsiLowerBlue: result.csrsi_lower_blue || 0,
+            // Flattened RTOM properties for dashboard compatibility
+            rtomBias: result.rtom_bias || 'flat',
+            rtomRegime: result.rtom_regime || 'stable',
+            rtomPosition: result.rtom_position || 'mid_zone',
+            rtomSlopeShift: result.rtom_slope_shift || 'neutral',
+            rtom200sma: result.rtom_200sma || 0,
+            // Other properties
             compression: result.compression || false,
             isCore: CORE_HOLDINGS.includes(symbol),
             dataSource: result.data_source || 'unknown',
