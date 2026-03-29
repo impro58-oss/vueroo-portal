@@ -405,8 +405,55 @@
         <!-- CRUCIX INTELLIGENCE FEED -->
         <div class="mt-6" id="crucix-container">
             <!-- Populated by crucix-feed.js -->
-            <div class="flex items-center justify-center p-8 text-slate-500">
-                <i class="fas fa-circle-notch fa-spin mr-2"></i> Loading Crucix intelligence...
+            <div class="glass rounded-xl p-6 border border-rose-500/20">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></div>
+                        <h3 class="text-lg font-semibold text-white">Crucix Intelligence</h3>
+                    </div>
+                    <span class="text-xs text-slate-400">27/29 sources</span>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">BTC</div>
+                        <div class="text-lg font-mono text-white">$66,561</div>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">ETH</div>
+                        <div class="text-lg font-mono text-white">$1,999</div>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">VIX</div>
+                        <div class="text-lg font-mono text-red-400">31.05</div>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">SPY</div>
+                        <div class="text-lg font-mono text-white">$634</div>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">Gold</div>
+                        <div class="text-lg font-mono text-white">$4,524</div>
+                    </div>
+                    <div class="bg-slate-900/50 rounded-lg p-3">
+                        <div class="text-xs text-slate-400 mb-1">WTI Oil</div>
+                        <div class="text-lg font-mono text-white">$99.64</div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold text-red-400 uppercase">HIGH</span>
+                        <span class="text-sm text-slate-300">25 new KEV entries in last 30 days — elevated exploit activity</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between text-xs text-slate-500">
+                    <span>Last update: 2026-03-29 16:30</span>
+                    <a href="https://www.crucix.live/" target="_blank" rel="noopener" class="text-rose-400 hover:text-rose-300">
+                        Open Crucix →
+                    </a>
+                </div>
             </div>
         </div>
 

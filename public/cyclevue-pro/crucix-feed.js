@@ -1,21 +1,31 @@
 // Crucix Feed Loader — Fetches and displays 27-source intelligence data
 
 async function loadCrucixData() {
-    const url = '/data/crucix_feed.json';
+    // Try multiple paths for the data file
+    const urls = [
+        '/data/crucix_feed.json',
+        '../data/crucix_feed.json',
+        'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/crucix_feed.json'
+    ];
     
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to load');
-        const data = await response.json();
-        
-        displayCrucixData(data);
-        return data;
-    } catch (error) {
-        console.error('Crucix load error:', error);
-        document.getElementById('crucix-container').innerHTML = 
-            '<p class="text-gray-400">Crucix data unavailable</p>';
-        return null;
+    for (const url of urls) {
+        try {
+            const response = await fetch(url);
+            if (response.ok) {
+                const data = await response.json();
+                displayCrucixData(data);
+                console.log('Crucix data loaded from:', url);
+                return data;
+            }
+        } catch (e) {
+            console.log('Failed to load from:', url);
+        }
     }
+    
+    console.error('Crucix: All fetch attempts failed');
+    document.getElementById('crucix-container').innerHTML = 
+        '<p class="text-gray-400 p-4">Crucix data unavailable. Check console for details.</p>';
+    return null;
 }
 
 function displayCrucixData(data) {
