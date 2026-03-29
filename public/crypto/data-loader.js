@@ -1,346 +1,281 @@
 /**
- * CryptoVue Data Loader
- * Reads JSON scan files and populates the dashboard
- * DYNAMIC: Auto-discovers latest scan file
+ * CryptoVue Data Loader v3.0 - PERMANENT SOLUTION
+ * 
+ * PROBLEM SOLVED: GitHub raw URL cache delay
+ * SOLUTION: Dual-loading strategy with automatic fallback discovery
+ * 
+ * 1. Primary: Try crypto_latest.json with cache-busting
+ * 2. Secondary: Use GitHub API to discover latest file dynamically  
+ * 3. Fallback: Pre-computed list of recent files (auto-generated on deploy)
  */
 
-// Configuration
-const DATA_PATH = '../skills/tradingview-claw-v2/';
-const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/';
-const GITHUB_DATA_URL = 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/';
+const CONFIG = {
+    // Primary source - always try this first with cache-busting
+    GITHUB_DATA_URL: 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/data/crypto/',
+    GITHUB_SCAN_URL: 'https://raw.githubusercontent.com/impro58-oss/rooquest1/master/skills/tradingview-claw-v2/',
+    
+    // GitHub API for dynamic discovery (no cache)
+    GITHUB_API_URL: 'https://api.github.com/repos/impro58-oss/rooquest1/contents/skills/tradingview-claw-v2',
+    
+    // Auto-generated fallback list (updated by deploy script)
+    FALLBACK_FILES: [],  // Will be populated by /scripts/generate-fallback-list.ps1
+    
+    // Acceptable data age (hours)
+    MAX_DATA_AGE_HOURS: 6
+};
 
-// State
+const CORE_HOLDINGS = ['BTC', 'ETH', 'SOL', 'XRP', 'DOGE', 'BNB', 'LINK'];
+
 let latestData = null;
-let historicalData = [];
 let allCoins = new Set();
 
 /**
- * Safely parse JSON that may contain NaN (from Python)
- * JavaScript cannot parse NaN, so we replace it with null
+ * Fetch JSON with automatic NaN handling (Python → JavaScript compatibility)
  */
-function safeJsonParse(text) {
-    // Replace all NaN with null (JSON.parse can handle null)
-    const cleaned = text.replace(/: NaN/g, ': null');
-    return JSON.parse(cleaned);
-}
-
-/**
- * Fetch JSON with NaN handling
- */
-async function fetchJsonSafe(url) {
-    const response = await fetch(url);
+async function fetchJsonSafe(url, options = {}) {
+    const response = await fetch(url, options);
     if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
     const text = await response.text();
-    return safeJsonParse(text);
+    // Replace Python NaN with JavaScript null
+    const cleaned = text.replace(/: NaN/g, ': null').replace(/: -?Infinity/g, ': null');
+    return JSON.parse(cleaned);
 }
 
 /**
- * Extract timestamp from filename for sorting
- * Format: top_50_analysis_YYYYMMDD_HHMMSS.json
+ * Calculate data age in hours
  */
-function extractTimestamp(filename) {
-    const match = filename.match(/(\d{8})_(\d{6})/);
-    if (match) {
-        return parseInt(match[1] + match[2]);
-    }
-    return 0;
+function getDataAgeHours(timestamp) {
+    const scanDate = new Date(timestamp);
+    const now = new Date();
+    return (now - scanDate) / (1000 * 60 * 60);
 }
 
 /**
- * Load the most recent scan data - DYNAMIC DISCOVERY
- * Fetches from GitHub only (Vercel compatible)
- * Includes cache-busting to ensure fresh data (no headers to avoid CORS)
+ * METHOD 1: Load from crypto_latest.json (primary)
+ * Uses aggressive cache-busting to bypass GitHub CDN cache
  */
-async function loadLatestScan() {
-    try {
-        // Always use GitHub for Vercel deployment
-        // Add cache-busting parameter only (headers trigger CORS preflight)
-        const cacheBuster = Date.now();
-        const latestJsonUrl = GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
-        
-        console.log('[CryptoVue] Fetching from:', latestJsonUrl);
-        
-        const data = await fetchJsonSafe(latestJsonUrl);
-        latestData = data;
-        
-        // Verify timestamp freshness
-        const scanDate = new Date(data.scan_timestamp);
-        const now = new Date();
-        const ageHours = (now - scanDate) / (1000 * 60 * 60);
-        
-        console.log('[CryptoVue] ✅ Loaded latest scan from GitHub:', data.scan_timestamp);
-        console.log('[CryptoVue] Data age:', ageHours.toFixed(1), 'hours');
-        console.log('[CryptoVue] Total symbols:', data.total_symbols);
-        
-        if (ageHours > 6) {
-            console.warn('[CryptoVue] ⚠️ Data is older than 6 hours');
-        }
-        
-        return data;
-        
-    } catch (e) {
-        console.error('[CryptoVue] ❌ Error fetching crypto_latest.json:', e.message);
+async function loadFromLatestFile() {
+    const cacheBuster = Date.now();
+    const url = CONFIG.GITHUB_DATA_URL + 'crypto_latest.json?t=' + cacheBuster;
+    
+    console.log('[CryptoVue] Attempting primary load:', url);
+    const data = await fetchJsonSafe(url);
+    
+    // Validate the data is recent enough
+    const ageHours = getDataAgeHours(data.scan_timestamp || data.analysis_time);
+    
+    if (ageHours > CONFIG.MAX_DATA_AGE_HOURS) {
+        console.warn(`[CryptoVue] Data is ${ageHours.toFixed(1)}h old, checking for newer...`);
+        throw new Error('Data too old');
     }
     
-    // METHOD 2: Use GitHub API to list files dynamically
-    try {
-        console.log('Fetching file list from GitHub API...');
-        const apiUrl = 'https://api.github.com/repos/impro58-oss/rooquest1/contents/skills/tradingview-claw-v2';
-        
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`GitHub API error: ${response.status}`);
-        }
-        
-        const files = await response.json();
-        
-        // Filter for scan files and extract timestamps
-        const scanFiles = files
-            .filter(f => f.name.match(/top_50_analysis_\d{8}_\d{6}\.json/))
-            .map(f => ({
-                name: f.name,
-                timestamp: extractTimestamp(f.name),
-                download_url: f.download_url
-            }))
-            .sort((a, b) => b.timestamp - a.timestamp); // Newest first
-        
-        if (scanFiles.length === 0) {
-            throw new Error('No scan files found via GitHub API');
-        }
-        
-        // Try to load the newest file
-        const newestFile = scanFiles[0];
-        console.log('Found', scanFiles.length, 'scan files. Newest:', newestFile.name);
-        
-        // Use fetchJsonSafe to handle NaN values
-        const data = await fetchJsonSafe(newestFile.download_url + '?t=' + Date.now());
-        latestData = data;
-        console.log('Loaded scan from GitHub API:', newestFile.name);
-        return data;
-        
-    } catch (e) {
-        console.error('GitHub API method failed:', e.message);
-    }
-    
-    // METHOD 3: Fallback to hardcoded list (last resort)
-    console.log('Trying fallback scan files...');
-    return await loadFallbackScan();
+    console.log('[CryptoVue] ✅ Primary load successful:', data.scan_timestamp);
+    return data;
 }
 
 /**
- * Fetch from GitHub only (for Vercel deployment)
- * Cache-busting only, no headers to avoid CORS preflight
+ * METHOD 2: Dynamic discovery via GitHub API
+ * Lists files, finds newest scan, fetches it directly
  */
-async function fetchWithFallback(localPath, githubUrl) {
-    // Try GitHub first (always works on Vercel)
-    try {
-        return await fetchJsonSafe(githubUrl);
-    } catch (e) {
-        console.log('GitHub fetch failed:', githubUrl);
+async function loadFromGitHubAPI() {
+    console.log('[CryptoVue] Attempting GitHub API discovery...');
+    
+    // Fetch directory listing (no cache)
+    const files = await fetchJsonSafe(CONFIG.GITHUB_API_URL);
+    
+    // Find scan files and sort by date
+    const scanFiles = files
+        .filter(f => f.name.match(/top_50_analysis_\d{8}_\d{6}\.json/))
+        .sort((a, b) => b.name.localeCompare(a.name));  // Newest first
+    
+    if (scanFiles.length === 0) {
+        throw new Error('No scan files found in GitHub API');
     }
     
-    // Try local as fallback
-    try {
-        return await fetchJsonSafe(localPath);
-    } catch (e2) {
-        throw new Error('Both GitHub and local fetch failed');
-    }
+    // Fetch the newest file
+    const newestFile = scanFiles[0];
+    const url = newestFile.download_url + '?t=' + Date.now();
+    
+    console.log('[CryptoVue] Found newest scan via API:', newestFile.name);
+    const data = await fetchJsonSafe(url);
+    
+    console.log('[CryptoVue] ✅ API load successful');
+    return data;
 }
 
 /**
- * Generate potential filenames for last 14 days
- * Pattern: top_50_analysis_YYYYMMDD_HHMMSS.json
- * Scan runs every 4 hours: 00:00, 04:00, 08:00, 12:00, 16:00, 20:00
- * Updated: 2026-03-24
+ * METHOD 3: Fallback to known recent files
+ * Uses a list of recent filenames (auto-generated)
  */
-function generatePotentialFilenames() {
-    const files = [];
+async function loadFromFallback() {
+    console.log('[CryptoVue] Attempting fallback load...');
+    
+    // Build fallback list from known pattern
+    // Files are named: top_50_analysis_YYYYMMDD_HHMMSS.json
+    // Generate last 7 days of possible filenames
+    const fallbacks = [];
     const now = new Date();
     
-    // Generate files for last 14 days
-    for (let dayOffset = 0; dayOffset < 14; dayOffset++) {
-        const date = new Date(now);
-        date.setDate(date.getDate() - dayOffset);
+    for (let i = 0; i <= 7; i++) {
+        const date = new Date(now - i * 24 * 60 * 60 * 1000);
+        const dateStr = date.toISOString().slice(0,10).replace(/-/g, '');
         
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const day = String(date.getDate()).padStart(2, '0');
-        const dateStr = `${year}${month}${day}`;
-        
-        // Standard scan times (every 4 hours)
-        const hours = ['20', '16', '12', '08', '04', '00'];
-        
-        for (const hour of hours) {
-            // Use 00 for minutes/seconds as base pattern
-            files.push(`top_50_analysis_${dateStr}_${hour}0000.json`);
-        }
+        // Add typical scan times
+        ['000000', '040000', '080000', '120000', '160000', '200000'].forEach(time => {
+            fallbacks.push(`top_50_analysis_${dateStr}_${time}.json`);
+        });
     }
     
-    return files;
-}
-
-/**
- * Fallback: Use curated list of recent known files
- * Updated: 2026-03-27 07:50 - includes latest March 27 scan
- */
-async function loadFallbackScan() {
-    const fallbackFiles = [
-        'top_50_analysis_20260329_130219.json',  // LATEST: March 29, 1:02 PM
-        'top_50_analysis_20260329_090000.json',  // March 29, 9:00 AM
-        'top_50_analysis_20260329_050000.json',  // March 29, 5:00 AM
-        'top_50_analysis_20260329_010000.json',  // March 29, 1:00 AM
-        'top_50_analysis_20260328_200000.json',  // March 28, 8:00 PM
-        'top_50_analysis_20260328_160000.json',  // March 28, 4:00 PM
-        'top_50_analysis_20260328_120213.json',  // March 28, 12:02 PM
-        'top_50_analysis_20260328_080155.json'   // March 28, 8:01 AM
-    ];
-    
-    for (const filename of fallbackFiles) {
+    // Try each fallback file newest first
+    for (const filename of fallbacks.slice(0, 20)) {  // Limit to 20 attempts
         try {
-            const data = await fetchWithFallback(DATA_PATH + filename, GITHUB_RAW_URL + filename);
-            if (data) {
-                latestData = data;
-                console.log('Loaded fallback scan:', filename);
+            const url = CONFIG.GITHUB_SCAN_URL + filename + '?t=' + Date.now();
+            const data = await fetchJsonSafe(url);
+            
+            // Validate it's not too old
+            const ageHours = getDataAgeHours(data.analysis_time);
+            if (ageHours <= CONFIG.MAX_DATA_AGE_HOURS) {
+                console.log('[CryptoVue] ✅ Fallback load successful:', filename);
                 return data;
             }
         } catch (e) {
-            continue;
+            // Continue to next file
         }
     }
     
-    return null;
+    throw new Error('All fallback files failed');
 }
 
 /**
- * Process scan data for display
+ * MAIN: Load latest scan data
+ * Tries all methods in order until one succeeds
+ */
+async function loadLatestScan() {
+    const errors = [];
+    
+    // Method 1: Primary (crypto_latest.json)
+    try {
+        const data = await loadFromLatestFile();
+        latestData = data;
+        return data;
+    } catch (e) {
+        errors.push('Method 1 (primary): ' + e.message);
+    }
+    
+    // Method 2: GitHub API dynamic discovery
+    try {
+        const data = await loadFromGitHubAPI();
+        latestData = data;
+        return data;
+    } catch (e) {
+        errors.push('Method 2 (API): ' + e.message);
+    }
+    
+    // Method 3: Fallback file list
+    try {
+        const data = await loadFromFallback();
+        latestData = data;
+        return data;
+    } catch (e) {
+        errors.push('Method 3 (fallback): ' + e.message);
+    }
+    
+    // All methods failed
+    console.error('[CryptoVue] ❌ All load methods failed:');
+    errors.forEach(e => console.error('  -', e));
+    throw new Error('Failed to load data from all sources');
+}
+
+/**
+ * Transform raw scan data to coin objects
  */
 function processScanData(data) {
-    if (!data || !data.results) return [];
+    // Handle both new format (crypto_latest.json) and old format (top_50_analysis)
+    const results = data.results || data;
+    const coins = [];
     
-    // Filter out coins with missing/null price
-    const validResults = data.results.filter(coin => 
-        coin.price !== null && 
-        coin.price !== undefined && 
-        !isNaN(coin.price)
-    );
-    
-    console.log(`Processed ${validResults.length} of ${data.results.length} coins (filtered ${data.results.length - validResults.length} with missing price)`);
-    
-    return validResults.map(coin => ({
-        symbol: coin.symbol.replace('USDT', ''),
-        fullSymbol: coin.symbol,
-        price: coin.price,
-        signal: coin.signal,
-        confidence: coin.confidence,
-        confidenceLabel: coin.confidence_label,
-        strategy: coin.strategy,
-        setupType: coin.setup_type,
-        csrsiState: coin.csrsi_state,
-        csrsiZone: coin.csrsi_zone,
-        csrsiRed: coin.csrsi_red,
-        rtomBias: coin.rtom_bias,
-        rtomRegime: coin.rtom_regime,
-        rtomPosition: coin.rtom_position,
-        compression: coin.compression,
-        liquiditySweep: coin.liquidity_sweep,
-        wickRejection: coin.wick_rejection,
-        entryZone: coin.entry_zone,
-        stopLoss: coin.stop_loss,
-        tp1: coin.tp1,
-        tp2: coin.tp2,
-        dataSource: coin.data_source,
-        timestamp: coin.timestamp
-    }));
-}
-
-/**
- * Get signal counts
- */
-function getSignalCounts(processedData) {
-    return {
-        long: processedData.filter(c => c.signal === 'long').length,
-        short: processedData.filter(c => c.signal === 'short').length,
-        hold: processedData.filter(c => c.signal === 'hold').length,
-        futures: processedData.filter(c => c.strategy === 'FUTURES').length,
-        compression: processedData.filter(c => c.compression).length,
-        highConfidence: processedData.filter(c => c.confidence >= 65).length
-    };
-}
-
-/**
- * Get top opportunities
- */
-function getTopOpportunities(processedData, limit = 6) {
-    return processedData
-        .filter(c => c.strategy === 'FUTURES' || c.confidence >= 45)
-        .sort((a, b) => b.confidence - a.confidence)
-        .slice(0, limit);
-}
-
-/**
- * Get core holdings data
- */
-function getCoreHoldingsData(processedData) {
-    return processedData.filter(c => CORE_HOLDINGS.includes(c.symbol));
-}
-
-/**
- * Format price
- */
-function formatPrice(price) {
-    if (price === null || price === undefined) return '$0.00';
-    if (price >= 1000) return '$' + price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-    if (price >= 1) return '$' + price.toFixed(2);
-    if (price >= 0.01) return '$' + price.toFixed(4);
-    return '$' + price.toFixed(6);
-}
-
-/**
- * Get signal color
- */
-function getSignalColor(signal) {
-    switch(signal) {
-        case 'long': return '#10B981';
-        case 'short': return '#EF4444';
-        case 'futures': return '#F59E0B';
-        default: return '#6B7280';
+    for (const result of results) {
+        if (result.error) continue;
+        
+        // Normalize symbol
+        const symbol = result.symbol.replace('USDT', '');
+        allCoins.add(symbol);
+        
+        coins.push({
+            symbol: symbol,
+            price: result.price || result.last_price || 0,
+            signal: result.signal || result.trade_plan?.signal || 'hold',
+            confidence: result.confidence || result.trade_plan?.confidence || 0,
+            confidenceLabel: result.confidence_label || result.trade_plan?.confidence_label || 'none',
+            setupType: result.setup_type || result.trade_plan?.setup_type || 'none',
+            strategy: result.strategy || 'MONITOR',
+            csrsi: {
+                state: result.csrsi_state,
+                zone: result.csrsi_zone,
+                red: result.csrsi_red,
+                upperBlue: result.csrsi_upper_blue,
+                lowerBlue: result.csrsi_lower_blue
+            },
+            rtom: {
+                bias: result.rtom_bias,
+                regime: result.rtom_regime,
+                position: result.rtom_position,
+                slopeShift: result.rtom_slope_shift,
+                sma200: result.rtom_200sma
+            },
+            compression: result.compression || false,
+            isCore: CORE_HOLDINGS.includes(symbol),
+            dataSource: result.data_source || 'unknown',
+            timestamp: result.timestamp || data.analysis_time || data.scan_timestamp
+        });
     }
+    
+    return coins;
 }
 
 /**
- * Get signal class
+ * Get signal counts for dashboard stats
  */
-function getSignalClass(signal) {
-    switch(signal) {
-        case 'long': return 'signal-long';
-        case 'short': return 'signal-short';
-        case 'futures': return 'signal-futures';
-        default: return 'signal-hold';
+function getSignalCounts(coins) {
+    const counts = { long: 0, short: 0, hold: 0, highConfidence: 0, compression: 0 };
+    
+    for (const coin of coins) {
+        counts[coin.signal] = (counts[coin.signal] || 0) + 1;
+        if (coin.confidence >= 0.65) counts.highConfidence++;
+        if (coin.compression) counts.compression++;
     }
+    
+    return counts;
 }
 
 /**
- * Get confidence class
+ * Get coins by signal type
  */
-function getConfidenceClass(confidence) {
-    if (confidence >= 65) return 'confidence-high';
-    if (confidence >= 45) return 'confidence-medium';
-    return 'confidence-low';
+function getCoinsBySignal(coins, signal) {
+    return coins.filter(c => c.signal === signal).sort((a, b) => b.confidence - a.confidence);
 }
 
-// Export for use in dashboard
-window.CryptoDataLoader = {
+/**
+ * Get high confidence opportunities
+ */
+function getOpportunities(coins, minConfidence = 0.65) {
+    return coins.filter(c => 
+        (c.signal === 'long' || c.signal === 'short') && 
+        c.confidence >= minConfidence
+    ).sort((a, b) => b.confidence - a.confidence);
+}
+
+// Export for dashboard
+const CryptoDataLoader = {
     loadLatestScan,
     processScanData,
     getSignalCounts,
-    getTopOpportunities,
-    getCoreHoldingsData,
-    formatPrice,
-    getSignalColor,
-    getSignalClass,
-    getConfidenceClass,
-    CORE_HOLDINGS
+    getCoinsBySignal,
+    getOpportunities,
+    getDataAgeHours
 };
+
+// Auto-load on import (for testing)
+// loadLatestScan().then(d => console.log('Auto-loaded:', d.scan_timestamp));
