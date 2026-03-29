@@ -63,7 +63,7 @@ export default function DashboardPage() {
           <p className="text-sm text-gray-500">Consulting, Smart Money & Idea Pipeline.</p>
         </a>
 
-        {/* 5. NeuroVue - MedTech (Last) */}
+        {/* 5. NeuroVue - MedTech */}
         <a href="/dashboard/neurovue" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <div className="p-3 bg-blue-100 rounded-lg">
@@ -75,6 +75,20 @@ export default function DashboardPage() {
           </div>
           <h3 className="text-lg font-medium text-gray-900 mb-2">NeuroVue</h3>
           <p className="text-sm text-gray-500">Neurovascular medtech intelligence.</p>
+        </a>
+
+        {/* 6. Crucix - External Intelligence Feed */}
+        <a href="https://www.crucix.live/" target="_blank" rel="noopener noreferrer" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-rose-100 rounded-lg">
+              <svg className="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-rose-600 bg-rose-50 px-2 py-1 rounded-full">EXTERNAL</span>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">Crucix</h3>
+          <p className="text-sm text-gray-500">27-source global intelligence feed.</p>
         </a>
       </div>
     </div>
