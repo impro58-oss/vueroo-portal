@@ -139,7 +139,7 @@ export default function AgentVuePage() {
                   </div>
                 </a>
                 <a 
-                  href="/crypto"
+                  href="/crypto/index.html"
                   className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
                 >
                   <i className="fas fa-chart-line text-cyan-400"></i>
