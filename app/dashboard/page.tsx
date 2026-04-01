@@ -49,6 +49,20 @@ export default function DashboardPage() {
           <p className="text-sm text-gray-500">Cryptocurrency market intelligence.</p>
         </a>
 
+        {/* AgentVue Swarm - Multi-Agent Trading */}
+        <a href="/agentvue" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border-2 border-pink-300">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-pink-100 rounded-lg">
+              <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-1 rounded-full">AGENTS</span>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">AgentVue Swarm</h3>
+          <p className="text-sm text-gray-500">5-agent consensus trading on 50 cryptos.</p>
+        </a>
+
         {/* 3. StockVue - US Stocks */}
         <a href="/stock/" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-200">
           <div className="flex items-center justify-between mb-4">
