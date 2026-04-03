@@ -7,94 +7,294 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .nav-item { transition: all 0.2s; cursor: pointer; }
-        .nav-item:hover { background: rgba(59, 130, 246, 0.2); }
-        .nav-item.active { background: rgba(59, 130, 246, 0.3); border-left: 3px solid #3B82F6; }
+        /* ============================================
+           IMPROVED UI STYLES - CryptoVue v2.0
+           Based on UI/UX Pro Max patterns
+           ============================================ */
+        
+        :root {
+            /* Background Layers */
+            --bg-primary: #0a0a0f;
+            --bg-surface: #15151f;
+            --bg-elevated: #1e1e2e;
+            --bg-card: #0f172a;
+            
+            /* Primary (Cyan) */
+            --color-primary: #00d4ff;
+            --color-primary-dark: #00a8cc;
+            --color-primary-glow: rgba(0, 212, 255, 0.3);
+            --color-primary-subtle: rgba(0, 212, 255, 0.1);
+            
+            /* Semantic Colors */
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            --color-info: #3b82f6;
+            
+            /* Text Colors (WCAG AA Compliant) */
+            --text-primary: #f8fafc;   /* slate-50 */
+            --text-secondary: #cbd5e1; /* slate-300 - 6.3:1 */
+            --text-tertiary: #94a3b8;  /* slate-400 */
+            --text-muted: #64748b;     /* slate-500 */
+        }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Monospace for data */
+        .font-mono-data {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-feature-settings: 'tnum' 1;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Navigation - Improved touch targets */
+        .nav-item { 
+            transition: all 0.2s cubic-bezier(0, 0, 0.2, 1); 
+            cursor: pointer;
+            min-height: 44px; /* Touch target */
+            display: flex;
+            align-items: center;
+        }
+        .nav-item:hover { 
+            background: var(--color-primary-subtle);
+            color: var(--color-primary);
+        }
+        .nav-item.active { 
+            background: var(--color-primary-subtle); 
+            border-left: 3px solid var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        /* Sections */
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .crypto-card { transition: all 0.3s ease; }
-        .crypto-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-        .signal-long { border-left: 3px solid #10B981; }
-        .signal-short { border-left: 3px solid #EF4444; }
-        .signal-hold { border-left: 3px solid #6B7280; }
+        
+        /* Cards with Cyan Glow */
+        .crypto-card { 
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: transform 0.15s cubic-bezier(0, 0, 0.2, 1),
+                        box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
+            will-change: transform, box-shadow;
+        }
+        .crypto-card:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.2);
+        }
+        .crypto-card:active { transform: scale(0.98); }
+        
+        /* Signal borders */
+        .signal-long { border-left: 3px solid var(--color-success); }
+        .signal-short { border-left: 3px solid var(--color-danger); }
+        .signal-hold { border-left: 3px solid var(--text-tertiary); }
+        
+        /* Heat map */
         .heat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 8px; }
-        .heat-cell { aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: all 0.2s; cursor: pointer; padding: 8px; }
+        .heat-cell { 
+            aspect-ratio: 1; 
+            border-radius: 8px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.2s; 
+            cursor: pointer; 
+            padding: 8px;
+            min-height: 44px; /* Touch target */
+        }
         .heat-cell:hover { transform: scale(1.05); }
-        .gradient-text { background: linear-gradient(135deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .loading-skeleton { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; background: rgba(148, 163, 184, 0.2); }
+        
+        /* Gradient text */
+        .gradient-text { 
+            background: linear-gradient(135deg, var(--color-primary), #8b5cf6); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        
+        /* Loading */
+        .loading-skeleton { 
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+            background: rgba(148, 163, 184, 0.2); 
+        }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        
+        /* Data status */
         .data-status { transition: all 0.3s ease; }
-        .data-status.loading { color: #FBBF24; }
-        .data-status.live { color: #10B981; }
-        .data-status.error { color: #EF4444; }
+        .data-status.loading { color: var(--color-warning); }
+        .data-status.live { color: var(--color-success); }
+        .data-status.error { color: var(--color-danger); }
+        
+        /* Improved buttons */
+        .btn-improved {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px; /* Touch target */
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+            will-change: transform;
+        }
+        .btn-improved:hover { transform: translateY(-1px); }
+        .btn-improved:active { transform: scale(0.95); }
+        .btn-improved:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--color-primary);
+        }
+        
+        .btn-primary-improved {
+            background: var(--color-primary);
+            color: var(--bg-primary);
+        }
+        .btn-primary-improved:hover {
+            background: var(--color-primary-dark);
+            box-shadow: 0 4px 12px var(--color-primary-glow);
+        }
+        
+        /* Signal badges */
+        .signal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .signal-badge.signal-long {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--color-success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .signal-badge.signal-short {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--color-danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .signal-badge.signal-hold {
+            background: rgba(148, 163, 184, 0.1);
+            color: var(--text-tertiary);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+        
+        /* Table improvements */
+        .table-header {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        /* Price display */
+        .price-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-feature-settings: 'tnum';
+            color: var(--text-primary);
+        }
+        
+        /* Secondary text */
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        /* Sidebar improvements */
+        .sidebar-container {
+            background: var(--bg-surface);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Back button styling */
+        .back-button {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+<body class="text-slate-100 min-h-screen">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+        <aside class="w-64 sidebar-container flex flex-col">
             <div class="p-6 border-b border-slate-800">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">
                         <i class="fas fa-chart-line text-white text-lg"></i>
                     </div>
                     <div>
                         <h1 class="text-lg font-bold text-white">CryptoVue</h1>
-                        <p class="text-xs text-slate-400">Intelligence</p>
+                        <p class="text-xs text-secondary">Intelligence</p>
                     </div>
                 </div>
             </div>
             
             <nav class="flex-1 py-4">
-                <div class="px-4 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Overview</div>
-                <button onclick="showSection('dashboard')" id="nav-dashboard" class="nav-item active w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                <div class="px-4 mb-2 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Overview</div>
+                <button onclick="showSection('dashboard')" id="nav-dashboard" class="nav-item active w-full text-left px-4 py-3 border-none bg-transparent text-secondary">
                     <i class="fas fa-globe w-5"></i><span>Market Pulse</span>
                 </button>
                 
-                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Analysis</div>
-                <button onclick="showSection('heatmap')" id="nav-heatmap" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Analysis</div>
+                <button onclick="showSection('heatmap')" id="nav-heatmap" class="nav-item w-full text-left px-4 py-3 border-none bg-transparent text-secondary">
                     <i class="fas fa-fire w-5"></i><span>Heat Map</span>
                 </button>
-                <button onclick="showSection('opportunities')" id="nav-opportunities" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                <button onclick="showSection('opportunities')" id="nav-opportunities" class="nav-item w-full text-left px-4 py-3 border-none bg-transparent text-secondary">
                     <i class="fas fa-bullseye w-5"></i><span>Opportunities</span>
                 </button>
                 
-                <div class="px-4 mt-6 mb-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Portfolio</div>
-                <button onclick="showSection('portfolio')" id="nav-portfolio" class="nav-item w-full text-left px-4 py-3 flex items-center gap-3 border-none bg-transparent text-slate-200">
+                <div class="px-4 mt-6 mb-2 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-muted);">Portfolio</div>
+                <button onclick="showSection('portfolio')" id="nav-portfolio" class="nav-item w-full text-left px-4 py-3 border-none bg-transparent text-secondary">
                     <i class="fas fa-wallet w-5"></i><span>My Holdings</span>
                 </button>
                 
                 <div class="px-4 mt-4 mb-2">
-                    <button onclick="refreshData()" class="w-full py-2 px-3 bg-blue-600/80 hover:bg-blue-600 rounded-lg text-xs font-medium text-white transition flex items-center justify-center gap-2">
+                    <button onclick="refreshData()" class="btn-improved btn-primary-improved w-full text-xs">
                         <i class="fas fa-sync-alt"></i> Refresh Data
                     </button>
-                    <div class="mt-2 text-[10px] text-slate-500 text-center">
+                    <div class="mt-2 text-[10px] text-center" style="color: var(--text-muted);">
                         Source: crypto_latest.json
                     </div>
                 </div>
             </nav>
             
             <div class="p-4 border-t border-slate-800">
-                <div class="text-xs text-slate-500">Data Status</div>
+                <div class="text-xs" style="color: var(--text-muted);">Data Status</div>
                 <div id="data-status" class="data-status loading text-sm font-medium">
                     <i class="fas fa-circle-notch fa-spin mr-1"></i> Loading...
                 </div>
-                <div class="text-xs text-slate-500 mt-2">Last Scan</div>
-                <div id="last-scan" class="text-sm text-slate-300">--</div>
-                <div class="text-xs text-slate-500 mt-2">Assets Scanned</div>
-                <div id="scans-tracked" class="text-sm text-emerald-400">200</div>
-                <button onclick="refreshData()" class="mt-3 w-full py-2 px-3 bg-blue-600 hover:bg-blue-700 rounded text-xs font-medium text-white transition">
+                <div class="text-xs mt-2" style="color: var(--text-muted);">Last Scan</div>
+                <div id="last-scan" class="text-sm text-secondary">--</div>
+                <div class="text-xs mt-2" style="color: var(--text-muted);">Assets Scanned</div>
+                <div id="scans-tracked" class="text-sm" style="color: var(--color-success);">200</div>
+                <button onclick="refreshData()" class="btn-improved btn-primary-improved mt-3 w-full text-xs">
                     <i class="fas fa-sync-alt mr-1"></i> Refresh
                 </button>
             </div>
             
             <!-- Back to Main Dashboard -->
-            <div class="p-4 border-t border-slate-800 bg-slate-800/50">
-                <a href="/dashboard" class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-lg text-sm font-medium text-white transition flex items-center justify-center gap-2 shadow-lg shadow-blue-900/20">
+            <div class="p-4 border-t border-slate-800" style="background: rgba(255,255,255,0.05);">
+                <a href="/dashboard" class="w-full py-3 px-4 rounded-lg text-sm font-medium text-white transition flex items-center justify-center gap-2" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">
                     <i class="fas fa-home"></i>
                     <span>Back to Dashboard</span>
                 </a>
@@ -102,85 +302,85 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto bg-slate-950">
+        <main class="flex-1 overflow-y-auto" style="background: var(--bg-primary);">
             
             <!-- DASHBOARD SECTION -->
             <div id="dashboard" class="section active">
-                <div class="bg-gradient-to-r from-slate-900 to-slate-800 border-b border-slate-800 p-8">
+                <div class="p-8 border-b border-slate-800" style="background: linear-gradient(to right, var(--bg-surface), #1e1e2e);">
                     <div class="max-w-7xl">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs font-medium rounded-full border border-blue-800">TrojanLogic4H</span>
-                            <span id="scan-count-badge" class="px-3 py-1 bg-emerald-900/50 text-emerald-400 text-xs font-medium rounded-full border border-emerald-800">Loading...</span>
-                            <a href="https://www.tradingview.com/chart/Tuhn6sKe/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-amber-900/50 text-amber-400 text-xs font-medium rounded-full border border-amber-800 hover:bg-amber-800/50 transition">
+                            <span class="px-3 py-1 text-xs font-medium rounded-full border" style="background: rgba(0, 212, 255, 0.1); color: var(--color-primary); border-color: rgba(0, 212, 255, 0.3);">TrojanLogic4H</span>
+                            <span id="scan-count-badge" class="px-3 py-1 text-xs font-medium rounded-full border" style="background: rgba(16, 185, 129, 0.1); color: var(--color-success); border-color: rgba(16, 185, 129, 0.3);">Loading...</span>
+                            <a href="https://www.tradingview.com/chart/Tuhn6sKe/" target="_blank" rel="noopener noreferrer" class="px-3 py-1 text-xs font-medium rounded-full border transition" style="background: rgba(245, 158, 11, 0.1); color: var(--color-warning); border-color: rgba(245, 158, 11, 0.3);">
                                 <i class="fas fa-external-link-alt mr-1"></i>My TradingView
                             </a>
                         </div>
                         <h2 class="text-4xl font-bold text-white mb-3">CryptoVue <span class="gradient-text">Intelligence</span></h2>
-                        <p class="text-xl text-slate-400 max-w-3xl">Real-time market pulse with CS RSI MTF + RtoM Channel analysis. Auto-updating every 4 hours.</p>
+                        <p class="text-xl text-secondary max-w-3xl">Real-time market pulse with CS RSI MTF + RtoM Channel analysis. Auto-updating every 4 hours.</p>
                     </div>
                 </div>
 
                 <div class="p-8">
                     <!-- Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="crypto-card p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">Active Longs</div>
-                                    <div id="stat-long" class="text-3xl font-bold text-emerald-400">--</div>
-                                    <div class="text-slate-500 text-xs mt-1">Bullish setups</div>
+                                    <div class="text-secondary text-sm mb-1">Active Longs</div>
+                                    <div id="stat-long" class="text-3xl font-bold" style="color: var(--color-success);">--</div>
+                                    <div class="text-xs mt-1" style="color: var(--text-muted);">Bullish setups</div>
                                 </div>
-                                <div class="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-arrow-trend-up text-emerald-400 text-xl"></i>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(16, 185, 129, 0.1);">
+                                    <i class="fas fa-arrow-trend-up text-xl" style="color: var(--color-success);"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="crypto-card p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">Active Shorts</div>
-                                    <div id="stat-short" class="text-3xl font-bold text-red-400">--</div>
-                                    <div class="text-slate-500 text-xs mt-1">Bearish setups</div>
+                                    <div class="text-secondary text-sm mb-1">Active Shorts</div>
+                                    <div id="stat-short" class="text-3xl font-bold" style="color: var(--color-danger);">--</div>
+                                    <div class="text-xs mt-1" style="color: var(--text-muted);">Bearish setups</div>
                                 </div>
-                                <div class="w-12 h-12 bg-red-900/30 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-arrow-trend-down text-red-400 text-xl"></i>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(239, 68, 68, 0.1);">
+                                    <i class="fas fa-arrow-trend-down text-xl" style="color: var(--color-danger);"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="crypto-card p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">High Confidence</div>
-                                    <div id="stat-high" class="text-3xl font-bold text-amber-400">--</div>
-                                    <div class="text-slate-500 text-xs mt-1">≥65% confidence</div>
+                                    <div class="text-secondary text-sm mb-1">High Confidence</div>
+                                    <div id="stat-high" class="text-3xl font-bold" style="color: var(--color-warning);">--</div>
+                                    <div class="text-xs mt-1" style="color: var(--text-muted);">≥65% confidence</div>
                                 </div>
-                                <div class="w-12 h-12 bg-amber-900/30 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-bullseye text-amber-400 text-xl"></i>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(245, 158, 11, 0.1);">
+                                    <i class="fas fa-bullseye text-xl" style="color: var(--color-warning);"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800">
+                        <div class="crypto-card p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-slate-400 text-sm mb-1">Compression</div>
-                                    <div id="stat-comp" class="text-3xl font-bold text-purple-400">--</div>
-                                    <div class="text-slate-500 text-xs mt-1">Ready to move</div>
+                                    <div class="text-secondary text-sm mb-1">Compression</div>
+                                    <div id="stat-comp" class="text-3xl font-bold" style="color: #a855f7;">--</div>
+                                    <div class="text-xs mt-1" style="color: var(--text-muted);">Ready to move</div>
                                 </div>
-                                <div class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-compress text-purple-400 text-xl"></i>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(168, 85, 247, 0.1);">
+                                    <i class="fas fa-compress text-xl" style="color: #a855f7;"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Core Holdings -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 p-6 mb-8">
+                    <div class="crypto-card p-6 mb-8">
                         <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-star text-amber-400"></i> Core Holdings
-                            <span class="text-xs text-slate-500 font-normal">BTC, ETH, SOL, XRP, DOGE, BNB, LINK</span>
+                            <i class="fas fa-star" style="color: var(--color-warning);"></i> Core Holdings
+                            <span class="text-xs font-normal" style="color: var(--text-muted);">BTC, ETH, SOL, XRP, DOGE, BNB, LINK</span>
                         </h3>
                         <div id="core-holdings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                             <div class="loading-skeleton rounded-xl p-6 h-32"></div>
@@ -191,24 +391,24 @@
                     </div>
 
                     <!-- Market Table -->
-                    <div class="bg-slate-900 rounded-xl border border-slate-800 overflow-hidden">
+                    <div class="crypto-card overflow-hidden">
                         <div class="p-4 border-b border-slate-800 flex items-center justify-between">
                             <h3 class="text-lg font-semibold text-white">Top 200 Market Overview</h3>
-                            <span id="coins-count" class="text-xs text-slate-500">-- coins tracked</span>
+                            <span id="coins-count" class="text-xs" style="color: var(--text-muted);">-- coins tracked</span>
                         </div>
                         <div class="overflow-x-auto">
                             <table class="w-full">
-                                <thead class="bg-slate-800/50">
+                                <thead style="background: rgba(255,255,255,0.05);">
                                     <tr>
-                                        <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">Asset</th>
-                                        <th class="text-right py-3 px-4 text-xs font-semibold text-slate-400">Price</th>
-                                        <th class="text-center py-3 px-4 text-xs font-semibold text-slate-400">Signal</th>
-                                        <th class="text-center py-3 px-4 text-xs font-semibold text-slate-400">Confidence</th>
-                                        <th class="text-right py-3 px-4 text-xs font-semibold text-slate-400">RSI State</th>
+                                        <th class="text-left py-3 px-4 text-xs font-semibold table-header">Asset</th>
+                                        <th class="text-right py-3 px-4 text-xs font-semibold table-header">Price</th>
+                                        <th class="text-center py-3 px-4 text-xs font-semibold table-header">Signal</th>
+                                        <th class="text-center py-3 px-4 text-xs font-semibold table-header">Confidence</th>
+                                        <th class="text-right py-3 px-4 text-xs font-semibold table-header">RSI State</th>
                                     </tr>
                                 </thead>
                                 <tbody id="coins-table" class="divide-y divide-slate-800">
-                                    <tr><td colspan="5" class="py-12 text-center text-slate-500">Loading market data...</td></tr>
+                                    <tr><td colspan="5" class="py-12 text-center" style="color: var(--text-muted);">Loading market data...</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -221,12 +421,12 @@
                 <div class="p-8">
                     <header class="mb-6">
                         <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
+                            <button onclick="showSection('dashboard')" class="back-button text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
                                 <i class="fas fa-arrow-left"></i>
                             </button>
                             <h2 class="text-2xl font-bold text-white">Market Heat Map</h2>
                         </div>
-                        <p class="text-slate-400">Visual snapshot of all tracked assets. Click to open TradingView.</p>
+                        <p class="text-secondary">Visual snapshot of all tracked assets. Click to open TradingView.</p>
                     </header>
                     <div id="heat-grid" class="heat-grid">
                         <div class="loading-skeleton rounded-xl h-24 col-span-full"></div>
@@ -239,12 +439,12 @@
                 <div class="p-8">
                     <header class="mb-6">
                         <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
+                            <button onclick="showSection('dashboard')" class="back-button text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
                                 <i class="fas fa-arrow-left"></i>
                             </button>
                             <h2 class="text-2xl font-bold text-white">Trading Opportunities</h2>
                         </div>
-                        <p class="text-slate-400">Current signals from latest scan. Auto-updating every 4 hours.</p>
+                        <p class="text-secondary">Current signals from latest scan. Auto-updating every 4 hours.</p>
                     </header>
                     <div id="opportunities-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="loading-skeleton rounded-xl p-6 h-48"></div>
@@ -259,12 +459,12 @@
                 <div class="p-8">
                     <header class="mb-6">
                         <div class="flex items-center gap-3 mb-2">
-                            <button onclick="showSection('dashboard')" class="text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
+                            <button onclick="showSection('dashboard')" class="back-button text-slate-400 hover:text-white cursor-pointer bg-transparent border-none">
                                 <i class="fas fa-arrow-left"></i>
                             </button>
                             <h2 class="text-2xl font-bold text-white">Portfolio Tracker</h2>
                         </div>
-                        <p class="text-slate-400">Core holdings: BTC, ETH, SOL, XRP, DOGE, BNB, LINK</p>
+                        <p class="text-secondary">Core holdings: BTC, ETH, SOL, XRP, DOGE, BNB, LINK</p>
                     </header>
                     <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="loading-skeleton rounded-xl p-6 h-56"></div>
@@ -278,7 +478,7 @@
     </div>
 
     <!-- DYNAMIC DATA LOADING -->
-    <script src="data-loader.js?v=4"></script>
+    <script src="data-loader.js?v=5"></script>
     <script>
         // State
         let coins = [];
@@ -357,8 +557,8 @@
 
         function showFallbackMessage() {
             document.getElementById('coins-table').innerHTML = `
-                <tr><td colspan="5" class="py-12 text-center text-slate-500">
-                    Unable to load live data. <button onclick="refreshData()" class="text-blue-400 hover:underline">Retry</button>
+                <tr><td colspan="5" class="py-12 text-center" style="color: var(--text-muted);">
+                    Unable to load live data. <button onclick="refreshData()" class="hover:underline" style="color: var(--color-primary);">Retry</button>
                 </td></tr>`;
         }
 
@@ -387,14 +587,14 @@
                 <tr class="hover:bg-slate-800/50">
                     <td class="py-3 px-4">
                         <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-slate-800 rounded-lg flex items-center justify-center text-xs font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
                             <span class="font-medium text-white">${c.symbol}</span>
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-right font-mono text-white">${CryptoDataLoader.formatPrice(c.price)}</td>
+                    <td class="py-3 px-4 text-right price-display">${CryptoDataLoader.formatPrice(c.price)}</td>
                     <td class="py-3 px-4 text-center">${getSignalBadge(c.signal)}</td>
                     <td class="py-3 px-4 text-center">${getConfidenceBadge(c.confidence)}</td>
-                    <td class="py-3 px-4 text-right text-xs text-slate-400">${c.csrsiState.replace(/_/g,' ')}</td>
+                    <td class="py-3 px-4 text-right text-xs" style="color: var(--text-muted);">${c.csrsiState.replace(/_/g,' ')}</td>
                 </tr>
             `).join('');
         }
@@ -404,21 +604,21 @@
             const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
             
             if (holdings.length === 0) {
-                container.innerHTML = '<div class="col-span-4 text-center py-8 text-slate-500">No core holdings data available</div>';
+                container.innerHTML = '<div class="col-span-4 text-center py-8" style="color: var(--text-muted);">No core holdings data available</div>';
                 return;
             }
             
             container.innerHTML = holdings.map(c => `
-                <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700 ${getSignalClass(c.signal)}">
+                <div class="crypto-card p-4 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-2">
                         <div class="flex items-center gap-2">
                             <span class="font-bold text-white">${c.symbol}</span>
-                            ${c.compression ? '<span class="text-[10px] px-1.5 py-0.5 bg-purple-900/50 text-purple-400 rounded">COMP</span>' : ''}
+                            ${c.compression ? '<span class="text-[10px] px-1.5 py-0.5 rounded" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">COMP</span>' : ''}
                         </div>
                         ${getSignalBadge(c.signal)}
                     </div>
-                    <div class="text-2xl font-bold text-white">${CryptoDataLoader.formatPrice(c.price)}</div>
-                    <div class="text-xs text-slate-400 mt-1">RSI: ${c.csrsiState.replace(/_/g,' ')}</div>
+                    <div class="text-2xl font-bold price-display">${CryptoDataLoader.formatPrice(c.price)}</div>
+                    <div class="text-xs mt-1" style="color: var(--text-muted);">RSI: ${c.csrsiState.replace(/_/g,' ')}</div>
                 </div>
             `).join('');
         }
@@ -428,7 +628,6 @@
             if (coins.length === 0) return;
             
             grid.innerHTML = coins.map(c => {
-                // Signal-based background colors
                 let bgClass;
                 if (c.signal === 'long') {
                     bgClass = 'bg-emerald-500/40 border-emerald-500/60';
@@ -440,17 +639,19 @@
                     bgClass = 'bg-slate-700/30 border-slate-600/30';
                 }
                 
-                const signalColor = c.signal === 'long' ? '#10B981' : c.signal === 'short' ? '#EF4444' : '#6B7280';
-                const borderClass = c.compression ? 'ring-2 ring-purple-500' : '';
+                const signalColor = c.signal === 'long' ? 'var(--color-success)' : c.signal === 'short' ? 'var(--color-danger)' : 'var(--text-tertiary)';
+                const borderClass = c.compression ? 'ring-2' : '';
+                const ringColor = c.compression ? 'rgba(168, 85, 247, 0.5)' : '';
                 
                 return `
                     <a href="https://www.tradingview.com/chart/?symbol=BINANCE:${c.symbol}USDT" target="_blank" rel="noopener noreferrer" 
                        class="heat-cell ${bgClass} ${borderClass} border hover:scale-105 transition-all" 
+                       style="${c.compression ? `box-shadow: 0 0 10px ${ringColor};` : ''}"
                        title="${c.symbol}/USDT - ${c.signal.toUpperCase()}">
                         <div class="text-xs font-bold text-white">${c.symbol}</div>
-                        <div class="text-xs text-slate-300">${CryptoDataLoader.formatPrice(c.price)}</div>
-                        <div class="text-xs mt-1 font-semibold" style="color:${signalColor}">${c.signal.toUpperCase()}</div>
-                        ${c.compression ? '<div class="text-[8px] text-purple-300 font-medium">COMP</div>' : ''}
+                        <div class="text-xs" style="color: var(--text-secondary);">${CryptoDataLoader.formatPrice(c.price)}</div>
+                        <div class="text-xs mt-1 font-semibold" style="color: ${signalColor};">${c.signal.toUpperCase()}</div>
+                        ${c.compression ? '<div class="text-[8px] font-medium" style="color: #c084fc;">COMP</div>' : ''}
                     </a>
                 `;
             }).join('');
@@ -461,27 +662,27 @@
             const opportunities = coins.filter(c => c.signal !== 'hold' || c.compression || c.confidence >= 45);
             
             if (opportunities.length === 0) {
-                container.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-400">No active opportunities. Market in consolidation.</div>';
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No active opportunities. Market in consolidation.</div>';
                 return;
             }
             
             container.innerHTML = opportunities.slice(0, 12).map(c => `
-                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
+                <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
                             <div>
                                 <div class="font-semibold text-white">${c.symbol}</div>
-                                <div class="text-xs text-slate-400">${c.strategy}</div>
+                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy}</div>
                             </div>
                         </div>
-                        ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium bg-purple-900/50 text-purple-400">Compression</span>' : getConfidenceBadge(c.confidence)}
+                        ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Compression</span>' : getConfidenceBadge(c.confidence)}
                     </div>
                     <div class="flex items-center justify-between mb-3">
-                        <div class="text-2xl font-bold text-white">${CryptoDataLoader.formatPrice(c.price)}</div>
+                        <div class="text-2xl font-bold price-display">${CryptoDataLoader.formatPrice(c.price)}</div>
                         ${getSignalBadge(c.signal)}
                     </div>
-                    <div class="text-xs text-slate-500">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
+                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
                 </div>
             `).join('');
         }
@@ -491,31 +692,31 @@
             const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
             
             if (holdings.length === 0) {
-                container.innerHTML = '<div class="col-span-3 text-center py-12 text-slate-400">No portfolio data available</div>';
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No portfolio data available</div>';
                 return;
             }
             
             container.innerHTML = holdings.map(c => `
-                <div class="crypto-card bg-slate-900 rounded-xl p-5 border border-slate-800 ${getSignalClass(c.signal)}">
+                <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center font-bold text-white">${c.symbol.substring(0,2)}</div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">${c.symbol.substring(0,2)}</div>
                             <div>
                                 <div class="font-semibold text-white text-lg">${c.symbol}</div>
-                                <div class="text-xs text-slate-400">Core Holding</div>
+                                <div class="text-xs" style="color: var(--text-muted);">Core Holding</div>
                             </div>
                         </div>
                         ${getSignalBadge(c.signal)}
                     </div>
-                    <div class="text-3xl font-bold text-white mb-2">${CryptoDataLoader.formatPrice(c.price)}</div>
+                    <div class="text-3xl font-bold price-display mb-2">${CryptoDataLoader.formatPrice(c.price)}</div>
                     <div class="flex items-center justify-between mb-4">
                         ${getConfidenceBadge(c.confidence)}
-                        <span class="text-xs text-slate-400">${c.strategy}</span>
+                        <span class="text-xs" style="color: var(--text-muted);">${c.strategy}</span>
                     </div>
                     <div class="space-y-2 text-xs">
-                        <div class="flex justify-between"><span class="text-slate-400">RSI State:</span><span class="text-slate-300">${c.csrsiState.replace(/_/g,' ')}</span></div>
-                        <div class="flex justify-between"><span class="text-slate-400">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
-                        ${c.compression ? '<div class="flex justify-between"><span class="text-slate-400">Status:</span><span class="text-purple-400 font-semibold">⚡ Compression</span></div>' : ''}
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RSI State:</span><span class="text-secondary">${c.csrsiState.replace(/_/g,' ')}</span></div>
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
+                        ${c.compression ? '<div class="flex justify-between"><span style="color: var(--text-muted);">Status:</span><span class="font-semibold" style="color: #a855f7;">⚡ Compression</span></div>' : ''}
                     </div>
                 </div>
             `).join('');
@@ -523,16 +724,15 @@
 
         // Helper functions
         function getSignalBadge(signal) {
-            const colors = {long:'bg-emerald-900/50 text-emerald-400',short:'bg-red-900/50 text-red-400',hold:'bg-slate-700/50 text-slate-400'};
             const labels = {long:'LONG',short:'SHORT',hold:'HOLD'};
-            return '<span class="px-2 py-1 rounded text-xs font-medium ' + (colors[signal]||colors.hold) + '">' + (labels[signal]||signal.toUpperCase()) + '</span>';
+            return '<span class="signal-badge signal-' + (signal || 'hold') + '">' + (labels[signal]||signal?.toUpperCase()||'HOLD') + '</span>';
         }
 
         function getConfidenceBadge(confidence) {
-            if (confidence >= 65) return '<span class="px-2 py-1 rounded text-xs font-medium bg-emerald-900/50 text-emerald-400">High</span>';
-            if (confidence >= 45) return '<span class="px-2 py-1 rounded text-xs font-medium bg-amber-900/50 text-amber-400">Medium</span>';
-            if (confidence > 0) return '<span class="px-2 py-1 rounded text-xs font-medium bg-slate-700/50 text-slate-400">Low</span>';
-            return '<span class="px-2 py-1 rounded text-xs font-medium bg-slate-700/50 text-slate-400">Watch</span>';
+            if (confidence >= 65) return '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(16, 185, 129, 0.1); color: var(--color-success);">High</span>';
+            if (confidence >= 45) return '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(245, 158, 11, 0.1); color: var(--color-warning);">Medium</span>';
+            if (confidence > 0) return '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(255, 255, 255, 0.1); color: var(--text-muted);">Low</span>';
+            return '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(255, 255, 255, 0.1); color: var(--text-muted);">Watch</span>';
         }
 
         function getSignalClass(signal) {
