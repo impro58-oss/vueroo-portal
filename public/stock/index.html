@@ -774,7 +774,7 @@
                         labels: Object.keys(categories).map(k => k === 'uncategorized' ? 'STANDARD' : k.replace(/_/g, ' ').toUpperCase()),
                         datasets: [{
                             data: Object.values(categories),
-                            backgroundColor: ['var(--color-primary)', 'var(--color-success)', 'var(--color-warning)', 'var(--color-danger)'],
+                            backgroundColor: ['#00d4ff', '#10b981', '#f59e0b', '#ef4444'],
                             borderWidth: 0
                         }]
                     },
@@ -782,7 +782,7 @@
                         responsive: true,
                         maintainAspectRatio: false,
                         plugins: {
-                            legend: { position: 'right', labels: { color: 'var(--text-secondary)', padding: 20 } }
+                            legend: { position: 'right', labels: { color: '#cbd5e1', padding: 20 } }
                         },
                         cutout: '70%'
                     }
@@ -802,7 +802,7 @@
                         labels: ['LONG', 'SHORT', 'HOLD'],
                         datasets: [{
                             data: [signals.long, signals.short, signals.hold],
-                            backgroundColor: ['var(--color-success)', 'var(--color-danger)', 'var(--text-tertiary)'],
+                            backgroundColor: ['#10b981', '#ef4444', '#64748b'],
                             borderRadius: 8
                         }]
                     },
@@ -811,8 +811,8 @@
                         maintainAspectRatio: false,
                         plugins: { legend: { display: false } },
                         scales: {
-                            y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: 'var(--text-secondary)' } },
-                            x: { grid: { display: false }, ticks: { color: 'var(--text-secondary)' } }
+                            y: { grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#cbd5e1' } },
+                            x: { grid: { display: false }, ticks: { color: '#cbd5e1' } }
                         }
                     }
                 });
