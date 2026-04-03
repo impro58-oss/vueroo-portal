@@ -1,11 +1,23 @@
 export default function AgentVuePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+    <div className="min-h-screen p-8" style={{ background: '#0a0a0f', color: '#f8fafc' }}>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+      `}</style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">🤖 AgentVue Swarm</h1>
-          <p className="text-slate-400">Multi-Agent Consensus Trading System</p>
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #00d4ff, #00a8cc)' }}>
+              <i className="fas fa-robot text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold" style={{ color: '#f8fafc' }}>AgentVue Swarm</h1>
+              <p style={{ color: '#94a3b8' }}>Multi-Agent Consensus Trading System</p>
+            </div>
+          </div>
         </div>
 
         {/* Status Cards */}
@@ -13,25 +25,25 @@ export default function AgentVuePage() {
           <StatusCard 
             title="Swarm Status" 
             value="Online" 
-            color="green"
+            color="cyan"
             icon="fa-circle"
           />
           <StatusCard 
             title="Symbols Monitored" 
             value="50" 
-            color="blue"
+            color="cyan"
             icon="fa-coins"
           />
           <StatusCard 
             title="Active Agents" 
             value="5" 
-            color="purple"
+            color="cyan"
             icon="fa-robot"
           />
           <StatusCard 
             title="Cycle Interval" 
             value="15 min" 
-            color="amber"
+            color="cyan"
             icon="fa-clock"
           />
         </div>
@@ -40,9 +52,12 @@ export default function AgentVuePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left: Agent Consensus */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <i className="fas fa-brain text-blue-400"></i>
+            <div className="rounded-xl p-6 border" style={{ 
+              background: '#15151f', 
+              borderColor: 'rgba(0, 212, 255, 0.1)'
+            }}>
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2" style={{ color: '#f8fafc' }}>
+                <i className="fas fa-brain" style={{ color: '#00d4ff' }}></i>
                 Agent Consensus
               </h2>
               
@@ -82,15 +97,18 @@ export default function AgentVuePage() {
             </div>
 
             {/* Recent Decisions */}
-            <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <i className="fas fa-history text-green-400"></i>
+            <div className="rounded-xl p-6 border" style={{ 
+              background: '#15151f', 
+              borderColor: 'rgba(0, 212, 255, 0.1)'
+            }}>
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2" style={{ color: '#f8fafc' }}>
+                <i className="fas fa-history" style={{ color: '#10b981' }}></i>
                 Recent Decisions
               </h2>
-              <div className="text-center text-slate-500 py-12">
-                <i className="fas fa-spinner fa-spin text-3xl mb-4"></i>
+              <div className="text-center py-12" style={{ color: '#64748b' }}>
+                <i className="fas fa-spinner fa-spin text-3xl mb-4" style={{ color: '#00d4ff' }}></i>
                 <p>Connect to local swarm to see decisions</p>
-                <p className="text-sm mt-2">Run <code className="bg-slate-800 px-2 py-1 rounded">start-swarm-monitor.bat</code></p>
+                <p className="text-sm mt-2">Run <code style={{ background: '#1e1e2e', padding: '4px 8px', borderRadius: '4px' }}>start-swarm-monitor.bat</code></p>
               </div>
             </div>
           </div>
@@ -98,54 +116,61 @@ export default function AgentVuePage() {
           {/* Right: Quick Info */}
           <div className="space-y-6">
             {/* Monitored Symbols */}
-            <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-              <h2 className="text-lg font-semibold mb-4">Top 50 Symbols</h2>
+            <div className="rounded-xl p-6 border" style={{ background: '#15151f', borderColor: 'rgba(0, 212, 255, 0.1)' }}>
+              <h2 className="text-lg font-semibold mb-4" style={{ color: '#f8fafc' }}>Top 50 Symbols</h2>
               <div className="flex flex-wrap gap-2">
                 {SYMBOLS.slice(0, 20).map((sym) => (
-                  <span key={sym} className="px-2 py-1 bg-slate-800 rounded text-xs">
+                  <span key={sym} className="px-2 py-1 rounded text-xs font-mono" 
+                    style={{ background: '#1e1e2e', color: '#00d4ff' }}>
                     {sym.replace('USDT', '')}
                   </span>
                 ))}
-                <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">+30 more</span>
+                <span className="px-2 py-1 rounded text-xs" style={{ background: '#1e1e2e', color: '#64748b' }}>+30 more</span>
               </div>
             </div>
 
             {/* Decision Threshold */}
-            <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-              <h2 className="text-lg font-semibold mb-4">Trade Threshold</h2>
+            <div className="rounded-xl p-6 border" style={{ background: '#15151f', borderColor: 'rgba(0, 212, 255, 0.1)' }}>
+              <h2 className="text-lg font-semibold mb-4" style={{ color: '#f8fafc' }}>Trade Threshold</h2>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-slate-400">Confidence Required</span>
-                <span className="text-xl font-bold text-green-400">75%</span>
+                <span style={{ color: '#94a3b8' }}>Confidence Required</span>
+                <span className="text-xl font-bold font-mono" style={{ color: '#00d4ff' }}>75%</span>
               </div>
-              <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-                <div className="h-full bg-green-500 rounded-full" style={{ width: '75%' }}></div>
+              <div className="h-2 rounded-full overflow-hidden" style={{ background: '#1e1e2e' }}>
+                <div className="h-full rounded-full" style={{ width: '75%', background: 'linear-gradient(90deg, #00d4ff, #00a8cc)' }}></div>
               </div>
-              <p className="text-sm text-slate-500 mt-2">Only execute if 4+ agents agree above threshold</p>
+              <p className="text-sm mt-2" style={{ color: '#64748b' }}>Only execute if 4+ agents agree above threshold</p>
             </div>
 
             {/* Links */}
-            <div className="bg-slate-900 rounded-xl p-6 border border-slate-800">
-              <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
+            <div className="rounded-xl p-6 border" style={{ background: '#15151f', borderColor: 'rgba(0, 212, 255, 0.1)' }}>
+              <h2 className="text-lg font-semibold mb-4" style={{ color: '#f8fafc' }}>Quick Links</h2>
               <div className="space-y-2">
                 <a 
                   href="http://localhost:8765" 
                   target="_blank"
-                  className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg transition-all"
+                  style={{ background: '#1e1e2e', minHeight: '44px' }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#252535'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = '#1e1e2e'}
                 >
-                  <i className="fas fa-external-link-alt text-blue-400"></i>
+                  <i className="fas fa-external-link-alt" style={{ color: '#00d4ff' }}></i>
                   <div>
-                    <div className="font-medium">Local Dashboard</div>
-                    <div className="text-xs text-slate-400">localhost:8765</div>
+                    <div className="font-medium" style={{ color: '#f8fafc' }}>Local Dashboard</div>
+                    <div className="text-xs" style={{ color: '#64748b' }}>localhost:8765</div>
                   </div>
                 </a>
                 <a 
                   href="/crypto/index.html"
-                  className="flex items-center gap-3 p-3 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg transition-all"
+                  style={{ background: '#1e1e2e', minHeight: '44px' }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#252535'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = '#1e1e2e'}
                 >
-                  <i className="fas fa-chart-line text-cyan-400"></i>
+                  <i className="fas fa-chart-line" style={{ color: '#00d4ff' }}></i>
                   <div>
-                    <div className="font-medium">CryptoVue</div>
-                    <div className="text-xs text-slate-400">194 assets</div>
+                    <div className="font-medium" style={{ color: '#f8fafc' }}>CryptoVue</div>
+                    <div className="text-xs" style={{ color: '#64748b' }}>194 assets</div>
                   </div>
                 </a>
               </div>
@@ -164,19 +189,20 @@ function StatusCard({ title, value, color, icon }: {
   icon: string;
 }) {
   const colors: Record<string, string> = {
-    green: 'bg-green-500/10 border-green-500/30 text-green-400',
-    blue: 'bg-blue-500/10 border-blue-500/30 text-blue-400',
-    purple: 'bg-purple-500/10 border-purple-500/30 text-purple-400',
-    amber: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
+    cyan: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
   };
 
   return (
-    <div className={`p-4 rounded-xl border ${colors[color]}`}>
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-sm opacity-80">{title}</span>
-        <i className={`fas ${icon}`}></i>
+    <div className={`p-4 rounded-xl border ${colors.cyan}`} style={{ 
+      background: 'rgba(0, 212, 255, 0.05)', 
+      borderColor: 'rgba(0, 212, 255, 0.2)',
+      minHeight: '100px'
+    }}>
+      <div className="flex items-center justify-between mb-2" style={{ color: '#94a3b8' }}>
+        <span className="text-sm">{title}</span>
+        <i className={`fas ${icon}`} style={{ color: '#00d4ff' }}></i>
       </div>
-      <div className="text-2xl font-bold">{value}</div>
+      <div className="text-2xl font-bold font-mono" style={{ color: '#00d4ff' }}>{value}</div>
     </div>
   );
 }
@@ -188,14 +214,18 @@ function AgentRow({ name, weight, role, status }: {
   status: string;
 }) {
   return (
-    <div className="flex items-center gap-4 p-3 bg-slate-800/50 rounded-lg">
-      <div className={`w-3 h-3 rounded-full ${status === 'active' ? 'bg-green-500 animate-pulse' : 'bg-slate-600'}`}></div>
+    <div className="flex items-center gap-4 p-3 rounded-lg" style={{ background: '#1e1e2e', minHeight: '60px' }}>
+      <div className="w-3 h-3 rounded-full" style={{ 
+        background: status === 'active' ? '#10b981' : '#64748b',
+        boxShadow: status === 'active' ? '0 0 8px #10b981' : 'none',
+        animation: status === 'active' ? 'pulse 2s infinite' : 'none'
+      }}></div>
       <div className="flex-1">
         <div className="flex items-center gap-2">
-          <span className="font-medium">{name}</span>
-          <span className="text-xs px-2 py-0.5 bg-slate-700 rounded-full text-slate-300">{weight}</span>
+          <span className="font-medium" style={{ color: '#f8fafc' }}>{name}</span>
+          <span className="text-xs px-2 py-0.5 rounded-full font-mono" style={{ background: '#252535', color: '#00d4ff' }}>{weight}</span>
         </div>
-        <div className="text-sm text-slate-400">{role}</div>
+        <div className="text-sm" style={{ color: '#94a3b8' }}>{role}</div>
       </div>
     </div>
   );
