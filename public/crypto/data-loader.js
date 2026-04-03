@@ -71,23 +71,39 @@ async function loadFromLatestFile() {
     const url = CONFIG.GITHUB_DATA_URL + 'crypto_latest.json?t=' + Date.now();
     console.log('[CryptoVue] Attempting primary load:', url);
     
-    const data = await fetchJsonSafe(url);
-    latestData = data;
-    
-    // Verify timestamp freshness
-    const scanDate = new Date(data.scan_timestamp);
-    const now = new Date();
-    const ageHours = (now - scanDate) / (1000 * 60 * 60);
-    
-    console.log('[CryptoVue] ✅ Loaded latest scan from GitHub:', data.scan_timestamp);
-    console.log('[CryptoVue] Data age:', ageHours.toFixed(1), 'hours');
-    console.log('[CryptoVue] Total symbols:', data.total_symbols);
-    
-    if (ageHours > 6) {
-        console.warn('[CryptoVue] ⚠️ Data is older than 6 hours');
+    try {
+        const data = await fetchJsonSafe(url);
+        latestData = data;
+        
+        // Use scan_timestamp OR analysis_time (handle both formats)
+        const timestamp = data.scan_timestamp || data.analysis_time;
+        if (!timestamp) {
+            throw new Error('No timestamp in data (scan_timestamp or analysis_time)');
+        }
+        
+        // Verify timestamp freshness
+        const scanDate = new Date(timestamp);
+        if (isNaN(scanDate.getTime())) {
+            throw new Error('Invalid timestamp: ' + timestamp);
+        }
+        
+        const now = new Date();
+        const ageHours = (now - scanDate) / (1000 * 60 * 60);
+        
+        console.log('[CryptoVue] ✅ Loaded latest scan from GitHub:', timestamp);
+        console.log('[CryptoVue] Data age:', ageHours.toFixed(1), 'hours');
+        console.log('[CryptoVue] Total symbols:', data.total_symbols || data.results?.length || '?');
+        
+        if (ageHours > 6) {
+            console.warn('[CryptoVue] ⚠️ Data is older than 6 hours, may use fallback');
+            // Still return the data, but warn
+        }
+        
+        return data;
+    } catch (e) {
+        console.error('[CryptoVue] ❌ Primary load failed:', e.message);
+        throw e;
     }
-    
-    return data;
 }
 
 /**
@@ -165,24 +181,41 @@ async function loadFromFallback() {
 
 /**
  * MAIN: Load latest scan data
- * Tries all methods in order until one succeeds
+ * Prioritizes crypto_latest.json, only falls back if it's stale (>24h)
  */
 async function loadLatestScan() {
     const errors = [];
     
-    // Method 1: Primary (crypto_latest.json)
+    // Method 1: Primary (crypto_latest.json) - ALWAYS try this first
     try {
         const data = await loadFromLatestFile();
-        latestData = data;
-        return data;
+        
+        // Check if data is fresh enough (< 24 hours old)
+        const timestamp = data.scan_timestamp || data.analysis_time;
+        const scanDate = new Date(timestamp);
+        const now = new Date();
+        const ageHours = (now - scanDate) / (1000 * 60 * 60);
+        
+        if (ageHours <= 24) {
+            // Data is fresh, use it
+            latestData = data;
+            console.log('[CryptoVue] ✅ Using crypto_latest.json (fresh)');
+            return data;
+        } else {
+            console.warn('[CryptoVue] ⚠️ crypto_latest.json is stale (' + ageHours.toFixed(1) + 'h old), trying fallback...');
+            errors.push('Primary data is ' + ageHours.toFixed(1) + 'h old');
+        }
     } catch (e) {
+        console.error('[CryptoVue] ❌ Primary load failed:', e.message);
         errors.push('Method 1 (primary): ' + e.message);
     }
     
-    // Method 2: GitHub API dynamic discovery
+    // Method 2: GitHub API dynamic discovery (only if primary is stale/missing)
     try {
+        console.log('[CryptoVue] Attempting GitHub API fallback...');
         const data = await loadFromGitHubAPI();
         latestData = data;
+        console.log('[CryptoVue] ✅ Using GitHub API data');
         return data;
     } catch (e) {
         errors.push('Method 2 (API): ' + e.message);
