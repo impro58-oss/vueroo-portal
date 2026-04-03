@@ -9,21 +9,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        
         :root {
             --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-tertiary: #1a1a25;
-            --accent-primary: #3b82f6;
-            --accent-secondary: #8b5cf6;
-            --accent-success: #10b981;
-            --accent-warning: #f59e0b;
-            --accent-danger: #ef4444;
+            --bg-secondary: #15151f;
+            --bg-tertiary: #1e1e2e;
+            --color-primary: #00d4ff;
+            --color-primary-dark: #00a8cc;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
             --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
             --text-muted: #64748b;
         }
         
         * { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         body { background: var(--bg-primary); color: var(--text-primary); }
         
         /* Custom Scrollbar */
@@ -32,16 +36,16 @@
         ::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
         
-        /* Glass Effect */
+        /* Glass Effect with Cyan Tint */
         .glass {
-            background: rgba(26, 26, 37, 0.8);
+            background: rgba(21, 21, 31, 0.9);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
         }
         
         /* Tab Active State */
         .tab-active {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
             color: white;
         }
         
@@ -52,8 +56,8 @@
         }
         .intel-card:hover {
             transform: translateY(-2px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
         }
         
         /* Signal Strength Stars */
@@ -70,18 +74,18 @@
         .badge-passed { background: rgba(100, 116, 139, 0.2); color: #64748b; }
         
         /* Markdown Content Styling */
-        .markdown-content h1 { font-size: 1.5rem; font-weight: 700; margin: 1.5rem 0 1rem; }
-        .markdown-content h2 { font-size: 1.25rem; font-weight: 600; margin: 1.25rem 0 0.75rem; }
-        .markdown-content h3 { font-size: 1.1rem; font-weight: 600; margin: 1rem 0 0.5rem; }
-        .markdown-content p { margin: 0.75rem 0; line-height: 1.7; }
-        .markdown-content ul { margin: 0.75rem 0; padding-left: 1.5rem; }
+        .markdown-content h1 { font-size: 1.5rem; font-weight: 700; margin: 1.5rem 0 1rem; color: var(--text-primary); }
+        .markdown-content h2 { font-size: 1.25rem; font-weight: 600; margin: 1.25rem 0 0.75rem; color: var(--text-primary); }
+        .markdown-content h3 { font-size: 1.1rem; font-weight: 600; margin: 1rem 0 0.5rem; color: var(--text-primary); }
+        .markdown-content p { margin: 0.75rem 0; line-height: 1.7; color: var(--text-secondary); }
+        .markdown-content ul { margin: 0.75rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
         .markdown-content li { margin: 0.25rem 0; }
-        .markdown-content code { background: rgba(255,255,255,0.1); padding: 0.2rem 0.4rem; border-radius: 4px; }
+        .markdown-content code { background: var(--bg-tertiary); color: var(--color-primary); padding: 0.2rem 0.4rem; border-radius: 4px; }
         .markdown-content pre { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; overflow-x: auto; }
-        .markdown-content blockquote { border-left: 3px solid var(--accent-primary); padding-left: 1rem; margin: 1rem 0; font-style: italic; }
+        .markdown-content blockquote { border-left: 3px solid var(--color-primary); padding-left: 1rem; margin: 1rem 0; font-style: italic; color: var(--text-tertiary); }
         .markdown-content table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
         .markdown-content th, .markdown-content td { padding: 0.5rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .markdown-content th { font-weight: 600; background: rgba(255,255,255,0.05); }
+        .markdown-content th { font-weight: 600; background: var(--bg-tertiary); color: var(--text-primary); }
     </style>
 </head>
 <body class="min-h-screen">
@@ -89,12 +93,12 @@
     <header class="glass fixed top-0 left-0 right-0 z-50 px-6 py-4">
         <div class="flex items-center justify-between max-w-[1920px] mx-auto">
             <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #00d4ff, #00a8cc);">
                     <i data-lucide="brain" class="w-5 h-5 text-white"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold">Research Intelligence</h1>
-                    <p class="text-sm text-gray-400">Billion-Dollar Insights • Smart Money Tracking • Idea Synthesis</p>
+                    <h1 class="text-xl font-bold" style="color: #f8fafc;">Research Intelligence</h1>
+                    <p class="text-sm" style="color: #94a3b8;">Billion-Dollar Insights • Smart Money Tracking • Idea Synthesis</p>
                 </div>
             </div>
             <div class="flex items-center gap-6">
