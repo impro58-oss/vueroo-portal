@@ -211,8 +211,14 @@ function processScanData(data) {
     const results = data.results || data;
     const coins = [];
     
+    // Ensure total_symbols exists for dashboard
+    if (!data.total_symbols && Array.isArray(results)) {
+        data.total_symbols = results.length;
+    }
+    
     for (const result of results) {
         if (result.error) continue;
+        if (!result.symbol) continue;  // Skip entries without symbol
         
         // Normalize symbol
         const symbol = result.symbol.replace('USDT', '');
@@ -221,10 +227,10 @@ function processScanData(data) {
         coins.push({
             symbol: symbol,
             price: result.price || result.last_price || 0,
-            signal: result.signal || result.trade_plan?.signal || 'hold',
-            confidence: result.confidence || result.trade_plan?.confidence || 0,
-            confidenceLabel: result.confidence_label || result.trade_plan?.confidence_label || 'none',
-            setupType: result.setup_type || result.trade_plan?.setup_type || 'none',
+            signal: result.signal || (result.trade_plan && result.trade_plan.signal) || 'hold',
+            confidence: result.confidence || (result.trade_plan && result.trade_plan.confidence) || 0,
+            confidenceLabel: result.confidence_label || (result.trade_plan && result.trade_plan.confidence_label) || 'none',
+            setupType: result.setup_type || (result.trade_plan && result.trade_plan.setup_type) || 'none',
             strategy: result.strategy || 'MONITOR',
             // Flattened CS RSI properties for dashboard compatibility
             csrsiState: result.csrsi_state || 'neutral',
