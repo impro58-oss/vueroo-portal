@@ -344,6 +344,39 @@
             {symbol:"NEAR",price:3.45,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true},
             {symbol:"ICP",price:9.87,signal:"hold",confidence:0,csrsiState:"neutral",rtomBias:"neutral",compression:true}
         ];
+        
+        // Load additional tokens from crypto_latest.json (200 total)
+        async function loadFullDataset() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/impro58-oss/vueroo-data/master/data/crypto/crypto_latest.json?t=' + Date.now());
+                if (response.ok) {
+                    const text = await response.text();
+                    const cleaned = text.replace(/: NaN/g, ': null').replace(/: -?Infinity/g, ': null');
+                    const data = JSON.parse(cleaned);
+                    if (data.results && data.results.length > 50) {
+                        // Replace with full dataset
+                        coins = data.results.map(r => ({
+                            symbol: r.symbol.replace('USDT', ''),
+                            price: r.price,
+                            signal: r.signal,
+                            confidence: r.confidence || 0,
+                            csrsiState: r.csrsi_state || 'neutral',
+                            rtomBias: r.rtom_bias || 'neutral',
+                            compression: r.compression || false
+                        }));
+                        console.log('[CryptoVue] Loaded', coins.length, 'tokens from JSON');
+                        
+                        // Update stat counts
+                        updateStatCounts();
+                        
+                        // Re-render table
+                        renderTable();
+                    }
+                }
+            } catch (e) {
+                console.warn('[CryptoVue] Using embedded 50 tokens:', e.message);
+            }
+        }
 
         const coreHoldings = ['BTC','ETH','SOL','XRP','DOGE','BNB','LINK'];
         
@@ -490,6 +523,18 @@
                 default:
                     return coins;
             }
+        }
+        
+        function updateStatCounts() {
+            const longCount = coins.filter(c => c.signal === 'long').length;
+            const shortCount = coins.filter(c => c.signal === 'short').length;
+            const highConfCount = coins.filter(c => c.confidence >= 65).length;
+            const compressionCount = coins.filter(c => c.compression === true).length;
+            
+            document.getElementById('stat-long').textContent = longCount;
+            document.getElementById('stat-short').textContent = shortCount;
+            document.getElementById('stat-futures').textContent = highConfCount;
+            document.getElementById('stat-compression').textContent = compressionCount;
         }
         
         function clearFilter() {
@@ -653,6 +698,8 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             renderTable();
+            // Load full 200 token dataset
+            loadFullDataset();
         });
     </script>
 </body>
