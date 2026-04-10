@@ -74,9 +74,14 @@
         }
         
         /* Sections */
-        .section { display: none; }
+        .section { display: none; min-height: 100%; }
         .section.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Ensure main content area scrolls properly */
+        main {
+            scroll-behavior: smooth;
+        }
         
         /* Cards with Cyan Glow */
         .crypto-card { 
@@ -303,7 +308,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto" style="background: var(--bg-primary);">
+        <main class="flex-1 overflow-y-auto relative" style="background: var(--bg-primary); scroll-behavior: smooth;">
             
             <!-- DASHBOARD SECTION -->
             <div id="dashboard" class="section active">
@@ -602,6 +607,9 @@
             document.getElementById(sectionId).classList.add('active');
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
             document.getElementById('nav-' + sectionId).classList.add('active');
+            
+            // Scroll to top of main content
+            document.querySelector('main').scrollTop = 0;
             
             if (sectionId === 'heatmap') renderHeatMap();
             if (sectionId === 'opportunities') renderOpportunities();
