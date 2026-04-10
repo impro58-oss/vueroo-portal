@@ -73,15 +73,19 @@
             color: var(--color-primary);
         }
         
-        /* Sections */
+        /* Sections - ensure proper hiding */
         .section { 
-            display: none; 
+            display: none !important; 
             min-height: 100%;
             position: relative;
         }
         .section.active { 
-            display: block; 
+            display: block !important; 
             animation: fadeIn 0.3s ease;
+        }
+        /* Hide all children of inactive sections */
+        .section:not(.active) * {
+            display: none !important;
         }
         @keyframes fadeIn { 
             from { opacity: 0; transform: translateY(10px); } 
