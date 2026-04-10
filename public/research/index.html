@@ -4,864 +4,706 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Intelligence Dashboard — Vueroo</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
-        
         :root {
             --bg-primary: #0a0a0f;
-            --bg-secondary: #15151f;
-            --bg-tertiary: #1e1e2e;
-            --color-primary: #00d4ff;
-            --color-primary-dark: #00a8cc;
-            --color-success: #10b981;
-            --color-warning: #f59e0b;
-            --color-danger: #ef4444;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-tertiary: #94a3b8;
+            --bg-surface: #12121a;
+            --bg-elevated: #1a1a25;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
             --text-muted: #64748b;
+            --accent-primary: #00d4ff;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-danger: #ef4444;
         }
         
-        * { font-family: 'Inter', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        body { background: var(--bg-primary); color: var(--text-primary); }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
-        ::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
-        
-        /* Glass Effect with Cyan Tint */
-        .glass {
-            background: rgba(21, 21, 31, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, sans-serif;
         }
         
-        /* Tab Active State */
-        .tab-active {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-            color: white;
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: all 0.2s ease;
         }
         
-        /* Intelligence Card Hover */
-        .intel-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .intel-card:hover {
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
-            border-color: var(--color-primary);
-            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
         }
         
-        /* Signal Strength Stars */
-        .signal-5 { color: #fbbf24; }
-        .signal-4 { color: #60a5fa; }
-        .signal-3 { color: #a78bfa; }
-        .signal-2 { color: #9ca3af; }
-        .signal-1 { color: #4b5563; }
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 30, 46, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
         
-        /* Status Badges */
-        .badge-pursue { background: rgba(16, 185, 129, 0.2); color: #10b981; }
-        .badge-monitor { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
-        .badge-parked { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
-        .badge-passed { background: rgba(100, 116, 139, 0.2); color: #64748b; }
+        .nav-item {
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-secondary);
+        }
         
-        /* Markdown Content Styling */
-        .markdown-content h1 { font-size: 1.5rem; font-weight: 700; margin: 1.5rem 0 1rem; color: var(--text-primary); }
-        .markdown-content h2 { font-size: 1.25rem; font-weight: 600; margin: 1.25rem 0 0.75rem; color: var(--text-primary); }
-        .markdown-content h3 { font-size: 1.1rem; font-weight: 600; margin: 1rem 0 0.5rem; color: var(--text-primary); }
-        .markdown-content p { margin: 0.75rem 0; line-height: 1.7; color: var(--text-secondary); }
-        .markdown-content ul { margin: 0.75rem 0; padding-left: 1.5rem; color: var(--text-secondary); }
-        .markdown-content li { margin: 0.25rem 0; }
-        .markdown-content code { background: var(--bg-tertiary); color: var(--color-primary); padding: 0.2rem 0.4rem; border-radius: 4px; }
-        .markdown-content pre { background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; overflow-x: auto; }
-        .markdown-content blockquote { border-left: 3px solid var(--color-primary); padding-left: 1rem; margin: 1rem 0; font-style: italic; color: var(--text-tertiary); }
-        .markdown-content table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
-        .markdown-content th, .markdown-content td { padding: 0.5rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .markdown-content th { font-weight: 600; background: var(--bg-tertiary); color: var(--text-primary); }
+        .nav-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-primary);
+        }
+        
+        .nav-item.active {
+            background: rgba(0, 212, 255, 0.15);
+            border-left: 3px solid var(--accent-primary);
+            color: var(--accent-primary);
+        }
+        
+        .section {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .section.active {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .badge-blue {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-primary);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .badge-green {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .badge-orange {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-warning);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .source-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 16px;
+            transition: all 0.2s;
+        }
+        
+        .source-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .pattern-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Header -->
-    <header class="glass fixed top-0 left-0 right-0 z-50 px-6 py-4">
-        <div class="flex items-center justify-between max-w-[1920px] mx-auto">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #00d4ff, #00a8cc);">
-                    <i data-lucide="brain" class="w-5 h-5 text-white"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold" style="color: #f8fafc;">Research Intelligence</h1>
-                    <p class="text-sm" style="color: #94a3b8;">Billion-Dollar Insights • Smart Money Tracking • Idea Synthesis</p>
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5">
-                    <i data-lucide="clock" class="w-4 h-4 text-gray-400"></i>
-                    <span class="text-sm text-gray-400">Last Sync: <span id="last-sync">2026-03-29 15:41 UTC</span></span>
-                </div>
-                <button onclick="syncData()" class="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
-                    <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                    <span>Sync</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Layout -->
-    <div class="pt-20 flex h-screen">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 glass border-r border-white/10 flex flex-col">
-            <div class="p-4 border-b border-white/10">
-                <h2 class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-3">Research Categories</h2>
+        <aside class="w-64 flex flex-col border-r border-slate-800" style="background: var(--bg-surface);">
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, var(--accent-primary), #8b5cf6);">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-white">ResearchIntel</h1>
+                        <p class="text-xs text-slate-400">Vueroo Network</p>
+                    </div>
+                </div>
             </div>
             
-            <nav class="flex-1 overflow-y-auto p-4 space-y-2">
-                <!-- Tab Buttons -->
-                <button onclick="switchTab('consulting')" id="tab-consulting" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left">
-                    <i data-lucide="building-2" class="w-5 h-5 text-blue-400"></i>
-                    <div class="flex-1">
-                        <div class="font-medium">Consulting Intel</div>
-                        <div class="text-xs text-gray-500">McKinsey, BCG, PwC</div>
-                    </div>
-                    <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded">3 Sources</span>
-                </button>
-                
-                <button onclick="switchTab('smartmoney')" id="tab-smartmoney" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left">
-                    <i data-lucide="trending-up" class="w-5 h-5 text-emerald-400"></i>
-                    <div class="flex-1">
-                        <div class="font-medium">Smart Money</div>
-                        <div class="text-xs text-gray-500">VC & Angel Tracking</div>
-                    </div>
-                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded">30+ Funds</span>
-                </button>
-                
-                <button onclick="switchTab('ideas')" id="tab-ideas" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left">
-                    <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400"></i>
-                    <div class="flex-1">
-                        <div class="font-medium">Idea Pipeline</div>
-                        <div class="text-xs text-gray-500">Capture & Synthesis</div>
-                    </div>
-                    <span class="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded">3 Ideas</span>
-                </button>
-                
-                <button onclick="switchTab('medtech')" id="tab-medtech" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left">
-                    <i data-lucide="heart-pulse" class="w-5 h-5 text-rose-400"></i>
-                    <div class="flex-1">
-                        <div class="font-medium">MedTech CI</div>
-                        <div class="text-xs text-gray-500">Competitive Intelligence</div>
-                    </div>
-                    <span class="text-xs bg-rose-500/20 text-rose-400 px-2 py-1 rounded">Active</span>
-                </button>
-                
-                <button onclick="switchTab('synergy')" id="tab-synergy" class="tab-btn w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left">
-                    <i data-lucide="git-merge" class="w-5 h-5 text-purple-400"></i>
-                    <div class="flex-1">
-                        <div class="font-medium">Synergy Map</div>
-                        <div class="text-xs text-gray-500">Cross-Framework Patterns</div>
-                    </div>
-                    <span class="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">1 Pattern</span>
-                </button>
+            <nav class="flex-1 p-4 space-y-2">
+                <div class="nav-item active" onclick="showSection('dashboard')">
+                    <i class="fas fa-home w-5"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" onclick="showSection('consulting')">
+                    <i class="fas fa-briefcase w-5"></i>
+                    <span>Consulting Intel</span>
+                </div>
+                <div class="nav-item" onclick="showSection('smartmoney')">
+                    <i class="fas fa-hand-holding-usd w-5"></i>
+                    <span>Smart Money</span>
+                </div>
+                <div class="nav-item" onclick="showSection('medtech')">
+                    <i class="fas fa-heartbeat w-5"></i>
+                    <span>MedTech CI</span>
+                </div>
+                <div class="nav-item" onclick="showSection('patterns')">
+                    <i class="fas fa-project-diagram w-5"></i>
+                    <span>Synergy Map</span>
+                </div>
+                <div class="nav-item" onclick="showSection('opportunities')">
+                    <i class="fas fa-lightbulb w-5"></i>
+                    <span>Opportunities</span>
+                </div>
             </nav>
             
-            <!-- Quick Stats -->
-            <div class="p-4 border-t border-white/10">
-                <h3 class="text-xs uppercase tracking-wider text-gray-500 font-semibold mb-3">Quick Stats</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between text-sm">
-                        <span class="text-gray-400">Active Ideas</span>
-                        <span class="font-semibold text-emerald-400">2</span>
+            <div class="p-4 border-t border-slate-800">
+                <div class="text-xs text-slate-400 mb-2">Agent Status</div>
+                <div id="agent-status" class="space-y-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-sm text-slate-300">Consulting Scout</span>
                     </div>
-                    <div class="flex justify-between text-sm">
-                        <span class="text-gray-400">High Confidence</span>
-                        <span class="font-semibold text-blue-400">2</span>
-                    </div>
-                    <div class="flex justify-between text-sm">
-                        <span class="text-gray-400">Awaiting Triaging</span>
-                        <span class="font-semibold text-amber-400">0</span>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                        <span class="text-sm text-slate-300">Smart Money</span>
                     </div>
                 </div>
+                <button onclick="runAllAgents()" class="mt-4 w-full py-2 px-4 rounded-lg text-sm font-medium transition" style="background: rgba(0, 212, 255, 0.1); color: var(--accent-primary); border: 1px solid rgba(0, 212, 255, 0.3);">
+                    <i class="fas fa-sync-alt mr-2"></i>Run All Agents
+                </button>
             </div>
         </aside>
-
+        
         <!-- Main Content -->
-        <main class="flex-1 overflow-hidden">
-            <!-- Consulting Intelligence Tab -->
-            <div id="content-consulting" class="tab-content h-full overflow-y-auto p-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-1">Consulting Intelligence</h2>
-                            <p class="text-gray-400">Big 3 Research: McKinsey, BCG, PwC — Billion-dollar insights, free access</p>
+        <main class="flex-1 overflow-y-auto p-8" style="background: var(--bg-primary);">
+            
+            <!-- DASHBOARD SECTION -->
+            <div id="dashboard" class="section active">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Research Intelligence Dashboard</h2>
+                    <p class="text-slate-400">Billion-dollar insights • Smart money tracking • Idea synthesis</p>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="card stat-card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="text-sm text-slate-400 mb-1">Sources Active</div>
+                                <div id="stat-sources" class="text-3xl font-bold text-white">--</div>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(0, 212, 255, 0.1);">
+                                <i class="fas fa-rss text-xl" style="color: var(--accent-primary);"></i>
+                            </div>
                         </div>
-                        <button onclick="refreshConsulting()" class="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                            <span>Refresh Sources</span>
-                        </button>
+                        <div class="text-xs text-slate-500">Across 5 categories</div>
                     </div>
                     
-                    <!-- Source Cards -->
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <div class="intel-card glass rounded-xl p-6 cursor-pointer" onclick="loadConsultingSource('mckinsey')">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                                    <span class="text-2xl font-bold text-blue-400">M</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold">McKinsey & Company</h3>
-                                    <p class="text-sm text-gray-500">Global Institute Reports</p>
-                                </div>
+                    <div class="card stat-card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="text-sm text-slate-400 mb-1">Reports Tracked</div>
+                                <div id="stat-reports" class="text-3xl font-bold text-white">--</div>
                             </div>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Reports Tracked</span>
-                                    <span class="font-medium">0</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Last Scan</span>
-                                    <span class="text-gray-500">Not yet</span>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="https://www.mckinsey.com/insights" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1">
-                                    Visit Site <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(16, 185, 129, 0.1);">
+                                <i class="fas fa-file-alt text-xl" style="color: var(--accent-success);"></i>
                             </div>
                         </div>
-                        
-                        <div class="intel-card glass rounded-xl p-6 cursor-pointer" onclick="loadConsultingSource('bcg')">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-12 h-12 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                                    <span class="text-2xl font-bold text-emerald-400">B</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold">Boston Consulting</h3>
-                                    <p class="text-sm text-gray-500">BCG Perspectives</p>
-                                </div>
-                            </div>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Reports Tracked</span>
-                                    <span class="font-medium">0</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Last Scan</span>
-                                    <span class="text-gray-500">Not yet</span>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="https://www.bcg.com/publications/2026" target="_blank" class="text-emerald-400 hover:text-emerald-300 text-sm flex items-center gap-1">
-                                    Visit Site <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="intel-card glass rounded-xl p-6 cursor-pointer" onclick="loadConsultingSource('pwc')">
-                            <div class="flex items-center gap-3 mb-4">
-                                <div class="w-12 h-12 rounded-lg bg-orange-500/20 flex items-center justify-center">
-                                    <span class="text-2xl font-bold text-orange-400">P</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold">PwC Strategy&</h3>
-                                    <p class="text-sm text-gray-500">Insights & Reports</p>
-                                </div>
-                            </div>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Reports Tracked</span>
-                                    <span class="font-medium">0</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-400">Last Scan</span>
-                                    <span class="text-gray-500">Not yet</span>
-                                </div>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-white/10">
-                                <a href="https://www.pwc.com/us/en/insights.html" target="_blank" class="text-orange-400 hover:text-orange-300 text-sm flex items-center gap-1">
-                                    Visit Site <i data-lucide="external-link" class="w-3 h-3"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <div class="text-xs text-slate-500">Last 24h: <span id="stat-reports-24h" class="text-green-400">--</span></div>
                     </div>
                     
-                    <!-- Opportunities Section -->
-                    <div class="glass rounded-xl p-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="target" class="w-5 h-5 text-blue-400"></i>
-                            Opportunities from Consulting Intelligence
-                        </h3>
-                        <div id="consulting-opportunities" class="space-y-3">
-                            <div class="p-4 bg-white/5 rounded-lg text-center text-gray-500">
-                                <i data-lucide="inbox" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
-                                <p>No opportunities extracted yet. Start by scanning sources.</p>
+                    <div class="card stat-card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="text-sm text-slate-400 mb-1">Insights Extracted</div>
+                                <div id="stat-insights" class="text-3xl font-bold text-white">--</div>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(139, 92, 246, 0.1);">
+                                <i class="fas fa-lightbulb text-xl" style="color: #a78bfa;"></i>
                             </div>
                         </div>
+                        <div class="text-xs text-slate-500">AI-processed</div>
+                    </div>
+                    
+                    <div class="card stat-card p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="text-sm text-slate-400 mb-1">Opportunities</div>
+                                <div id="stat-opportunities" class="text-3xl font-bold text-white">--</div>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(245, 158, 11, 0.1);">
+                                <i class="fas fa-rocket text-xl" style="color: var(--accent-warning);"></i>
+                            </div>
+                        </div>
+                        <div class="text-xs text-slate-500">High confidence: <span id="stat-high-opp" class="text-orange-400">--</span></div>
+                    </div>
+                </div>
+                
+                <!-- Source Health -->
+                <div class="card p-6 mb-8">
+                    <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-heartbeat text-slate-400"></i>
+                        Source Health
+                    </h3>
+                    <div id="source-health-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="loading"></div>
+                    </div>
+                </div>
+                
+                <!-- Active Patterns -->
+                <div class="card p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-project-diagram text-purple-400"></i>
+                        Active Patterns
+                    </h3>
+                    <div id="patterns-preview">
+                        <div class="loading"></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Smart Money Tab -->
-            <div id="content-smartmoney" class="tab-content hidden h-full overflow-y-auto p-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-1">Smart Money Intelligence</h2>
-                            <p class="text-gray-400">Follow VC & Angel investments as leading indicators</p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <button onclick="refreshSmartMoney()" class="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                                <span>Refresh Data</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Sector Clustering -->
-                    <div class="glass rounded-xl p-6 mb-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="activity" class="w-5 h-5 text-emerald-400"></i>
-                            Active Clusters (Investor Activity)
-                        </h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="intel-card bg-white/5 rounded-lg p-4 cursor-pointer" onclick="showClusterDetail('ai-infrastructure')">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-medium">AI Infrastructure</h4>
-                                    <span class="signal-5">⭐⭐⭐⭐⭐</span>
-                                </div>
-                                <p class="text-sm text-gray-400 mb-3">Every major VC made 2+ bets. Compute → Models → Applications stack.</p>
-                                <div class="flex items-center gap-2 text-sm">
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">a16z</span>
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">Sequoia</span>
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">Index</span>
-                                </div>
-                            </div>
-                            
-                            <div class="intel-card bg-white/5 rounded-lg p-4 cursor-pointer" onclick="showClusterDetail('climate-tech')">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-medium">Climate Tech / Green Hydrogen</h4>
-                                    <span class="signal-5">⭐⭐⭐⭐⭐</span>
-                                </div>
-                                <p class="text-sm text-gray-400 mb-3">Khosla, Breakthrough Energy, DCVC clustering. Industrial decarbonization.</p>
-                                <div class="flex items-center gap-2 text-sm">
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">Khosla</span>
-                                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">Breakthrough</span>
-                                </div>
-                            </div>
-                            
-                            <div class="intel-card bg-white/5 rounded-lg p-4 cursor-pointer" onclick="showClusterDetail('bioinformatics')">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-medium">Bioinformatics / AI Drug Discovery</h4>
-                                    <span class="signal-4">⭐⭐⭐⭐</span>
-                                </div>
-                                <p class="text-sm text-gray-400 mb-3">Platform plays, not single-asset. a16z Bio, GV, Lux heavy activity.</p>
-                                <div class="flex items-center gap-2 text-sm">
-                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">a16z Bio</span>
-                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">GV</span>
-                                </div>
-                            </div>
-                            
-                            <div class="intel-card bg-white/5 rounded-lg p-4 cursor-pointer" onclick="showClusterDetail('space-tech')">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h4 class="font-medium">Space Tech / In-Orbit Services</h4>
-                                    <span class="signal-4">⭐⭐⭐⭐</span>
-                                </div>
-                                <p class="text-sm text-gray-400 mb-3">Infrastructure → Services → Applications. Founders Fund, Bessemer, Lux.</p>
-                                <div class="flex items-center gap-2 text-sm">
-                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded">Founders Fund</span>
-                                    <span class="px-2 py-1 bg-purple-500/20 text-purple-400 rounded">Lux</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Top Investors -->
-                    <div class="glass rounded-xl p-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
-                            Tier 1 Funds to Watch
-                        </h3>
-                        <div class="grid grid-cols-5 gap-3">
-                            <div class="bg-white/5 rounded-lg p-3 text-center">
-                                <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">a16z</div>
-                                <div class="text-xs text-gray-400">$35B+ AUM</div>
-                            </div>
-                            <div class="bg-white/5 rounded-lg p-3 text-center">
-                                <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold">Seq</div>
-                                <div class="text-xs text-gray-400">$85B+ AUM</div>
-                            </div>
-                            <div class="bg-white/5 rounded-lg p-3 text-center">
-                                <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">Ben</div>
-                                <div class="text-xs text-gray-400">$9B AUM</div>
-                            </div>
-                            <div class="bg-white/5 rounded-lg p-3 text-center">
-                                <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 font-bold">Kho</div>
-                                <div class="text-xs text-gray-400">$15B AUM</div>
-                            </div>
-                            <div class="bg-white/5 rounded-lg p-3 text-center">
-                                <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 font-bold">GC</div>
-                                <div class="text-xs text-gray-400">$25B+ AUM</div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <!-- CONSULTING INTEL SECTION -->
+            <div id="consulting" class="section">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Consulting Intelligence</h2>
+                    <p class="text-slate-400">McKinsey, BCG, PwC — Billion-dollar insights, free access</p>
+                </div>
+                
+                <div class="flex gap-4 mb-6">
+                    <button onclick="runAgent('consulting_scout')" class="px-4 py-2 rounded-lg text-sm font-medium transition" style="background: rgba(0, 212, 255, 0.1); color: var(--accent-primary); border: 1px solid rgba(0, 212, 255, 0.3);">
+                        <i class="fas fa-sync-alt mr-2"></i>Refresh Sources
+                    </button>
+                </div>
+                
+                <div id="consulting-reports" class="space-y-4">
+                    <div class="loading"></div>
                 </div>
             </div>
-
-            <!-- Idea Pipeline Tab -->
-            <div id="content-ideas" class="tab-content hidden h-full overflow-y-auto p-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-1">Idea Pipeline</h2>
-                            <p class="text-gray-400">Capture → Triage → Synthesis → Pursuit → Archive</p>
-                        </div>
-                        <button onclick="captureNewIdea()" class="flex items-center gap-2 px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded-lg transition-colors">
-                            <i data-lucide="plus" class="w-4 h-4"></i>
-                            <span>Capture New Idea</span>
-                        </button>
-                    </div>
-                    
-                    <!-- Pipeline Stages -->
-                    <div class="grid grid-cols-5 gap-4 mb-8">
-                        <div class="glass rounded-xl p-4">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center">
-                                    <i data-lucide="inbox" class="w-4 h-4 text-gray-400"></i>
-                                </div>
-                                <h3 class="font-medium">Capture</h3>
-                            </div>
-                            <div class="text-2xl font-bold text-gray-400">0</div>
-                            <div class="text-sm text-gray-500">Raw ideas awaiting triage</div>
-                        </div>
-                        
-                        <div class="glass rounded-xl p-4">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center">
-                                    <i data-lucide="scale" class="w-4 h-4 text-amber-400"></i>
-                                </div>
-                                <h3 class="font-medium">Triage</h3>
-                            </div>
-                            <div class="text-2xl font-bold text-amber-400">0</div>
-                            <div class="text-sm text-gray-500">Awaiting evaluation</div>
-                        </div>
-                        
-                        <div class="glass rounded-xl p-4">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                                    <i data-lucide="git-merge" class="w-4 h-4 text-purple-400"></i>
-                                </div>
-                                <h3 class="font-medium">Synthesis</h3>
-                            </div>
-                            <div class="text-2xl font-bold text-purple-400">0</div>
-                            <div class="text-sm text-gray-500">Patterns detected</div>
-                        </div>
-                        
-                        <div class="glass rounded-xl p-4 border-2 border-emerald-500/30">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-                                    <i data-lucide="rocket" class="w-4 h-4 text-emerald-400"></i>
-                                </div>
-                                <h3 class="font-medium text-emerald-400">Pipeline</h3>
-                            </div>
-                            <div class="text-2xl font-bold text-emerald-400">2</div>
-                            <div class="text-sm text-gray-500">Active pursuit</div>
-                        </div>
-                        
-                        <div class="glass rounded-xl p-4">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center">
-                                    <i data-lucide="archive" class="w-4 h-4 text-gray-400"></i>
-                                </div>
-                                <h3 class="font-medium">Archive</h3>
-                            </div>
-                            <div class="text-2xl font-bold text-gray-400">0</div>
-                            <div class="text-sm text-gray-500">Parked or passed</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Active Ideas -->
-                    <div class="glass rounded-xl p-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="rocket" class="w-5 h-5 text-emerald-400"></i>
-                            Active Pipeline
-                        </h3>
-                        <div class="space-y-3">
-                            <!-- FINTENDANT -->
-                            <div class="intel-card bg-white/5 rounded-lg p-4 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-xl">F</div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-1">
-                                        <h4 class="font-semibold">FINTENDANT</h4>
-                                        <span class="badge-pursue text-xs px-2 py-0.5 rounded">PURSUE 24/25</span>
-                                        <span class="text-xs text-gray-500">#1 Priority</span>
-                                    </div>
-                                    <p class="text-sm text-gray-400">AI Financial Manager — Personal AI steward for finances</p>
-                                    <div class="flex items-center gap-4 mt-2 text-xs text-gray-500">
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="calendar" class="w-3 h-3"></i>
-                                            Started: 2026-03-24
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="target" class="w-3 h-3"></i>
-                                            Phase: Concept Dev
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="dollar-sign" class="w-3 h-3"></i>
-                                            Score: 24/25
-                                        </span>
-                                    </div>
-                                </div>
-                                <button onclick="viewIdeaDetail('fintendant')" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm">
-                                    View
-                                </button>
-                            </div>
-                            
-                            <!-- Healthcare AI Doc -->
-                            <div class="intel-card bg-white/5 rounded-lg p-4 flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-xl">H</div>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-3 mb-1">
-                                        <h4 class="font-semibold">Healthcare AI Documentation</h4>
-                                        <span class="badge-pursue text-xs px-2 py-0.5 rounded">PURSUE 24/25</span>
-                                        <span class="text-xs text-gray-500">#2 Priority</span>
-                                    </div>
-                                    <p class="text-sm text-gray-400">Real-time AI voice recognition for NHS ward round documentation</p>
-                                    <div class="flex items-center gap-4 mt-2 text-xs text-gray-500">
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="calendar" class="w-3 h-3"></i>
-                                            Captured: 2026-03-28
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="activity" class="w-3 h-3"></i>
-                                            Phase: Scored, Ready
-                                        </span>
-                                        <span class="flex items-center gap-1">
-                                            <i data-lucide="dollar-sign" class="w-3 h-3"></i>
-                                            Score: 24/25
-                                        </span>
-                                    </div>
-                                </div>
-                                <button onclick="viewIdeaDetail('healthcare-ai-doc')" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm">
-                                    View
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            
+            <!-- SMART MONEY SECTION -->
+            <div id="smartmoney" class="section">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Smart Money</h2>
+                    <p class="text-slate-400">VC & Angel tracking — 30+ top-tier funds</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8" id="fund-watchlist">
+                    <!-- Fund cards populated by JS -->
+                </div>
+                
+                <div id="funding-reports" class="space-y-4">
+                    <div class="loading"></div>
                 </div>
             </div>
-
-            <!-- MedTech CI Tab -->
-            <div id="content-medtech" class="tab-content hidden h-full overflow-y-auto p-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-1">MedTech Competitive Intelligence</h2>
-                            <p class="text-gray-400">Neurovascular market analysis, company dossiers, strategic positioning</p>
-                        </div>
-                        <button onclick="refreshMedTech()" class="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors">
-                            <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                            <span>Refresh Data</span>
-                        </button>
+            
+            <!-- MEDTECH CI SECTION -->
+            <div id="medtech" class="section">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">MedTech Competitive Intelligence</h2>
+                    <p class="text-slate-400">FDA approvals, clinical trials, regulatory updates</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                    <div class="card p-4 text-center">
+                        <div class="text-2xl font-bold text-white mb-1" id="medtech-neuro">--</div>
+                        <div class="text-xs text-slate-400">Neurovascular</div>
                     </div>
-                    
-                    <!-- Company Dossiers -->
-                    <div class="grid grid-cols-2 gap-4 mb-6">
-                        <div class="intel-card glass rounded-xl p-6" onclick="loadDossier('scientia')">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center text-white font-bold">S</div>
-                                    <div>
-                                        <h3 class="font-semibold">Scientia Vascular</h3>
-                                        <p class="text-sm text-gray-500">Chinese Neurovascular Leader</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Acquired by Medtronic</span>
-                            </div>
-                            <div class="grid grid-cols-3 gap-3 text-sm">
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Market Share</div>
-                                    <div class="font-semibold">25% China</div>
-                                </div>
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Deal Value</div>
-                                    <div class="font-semibold">$550M</div>
-                                </div>
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Focus</div>
-                                    <div class="font-semibold">Domestic China</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="intel-card glass rounded-xl p-6" onclick="loadDossier('wallaby')">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-lime-500 to-lime-700 flex items-center justify-center text-white font-bold">W</div>
-                                    <div>
-                                        <h3 class="font-semibold">Wallaby Phenox</h3>
-                                        <p class="text-sm text-gray-500">German Precision Player</p>
-                                    </div>
-                                </div>
-                                <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full text-sm">Independent</span>
-                            </div>
-                            <div class="grid grid-cols-3 gap-3 text-sm">
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Market Share</div>
-                                    <div class="font-semibold">2-3% Global</div>
-                                </div>
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Revenue</div>
-                                    <div class="font-semibold">~$180M</div>
-                                </div>
-                                <div class="bg-white/5 rounded p-2">
-                                    <div class="text-gray-500">Gap</div>
-                                    <div class="font-semibold text-rose-400">No Intrasaccular</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card p-4 text-center">
+                        <div class="text-2xl font-bold text-white mb-1" id="medtech-cardio">--</div>
+                        <div class="text-xs text-slate-400">Cardiovascular</div>
                     </div>
-                    
-                    <!-- Market Restructuring -->
-                    <div class="glass rounded-xl p-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="git-merge" class="w-5 h-5 text-rose-400"></i>
-                            Post-Merger Landscape (March 2026)
-                        </h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
-                                <div class="w-12 text-center font-bold text-xl text-emerald-400">1</div>
-                                <div class="flex-1">
-                                    <div class="font-semibold">Stryker</div>
-                                    <div class="text-sm text-gray-500">35-38% market share, ~$2.5B neurovascular</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-emerald-400 font-semibold">Market Leader</div>
-                                    <div class="text-xs text-gray-500">+ Inari acquisition</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
-                                <div class="w-12 text-center font-bold text-xl text-blue-400">2</div>
-                                <div class="flex-1">
-                                    <div class="font-semibold">Boston Scientific + Penumbra</div>
-                                    <div class="text-sm text-gray-500">28-32% market share, ~$1.8B combined</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-blue-400 font-semibold">#2 Challenger</div>
-                                    <div class="text-xs text-gray-500">$14.5B acquisition</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
-                                <div class="w-12 text-center font-bold text-xl text-purple-400">3</div>
-                                <div class="flex-1">
-                                    <div class="font-semibold">Medtronic + Scientia</div>
-                                    <div class="text-sm text-gray-500">20-25% market share, ~$2.2B combined</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-purple-400 font-semibold">Cost Leader</div>
-                                    <div class="text-xs text-gray-500">China manufacturing advantage</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card p-4 text-center">
+                        <div class="text-2xl font-bold text-white mb-1" id="medtech-ortho">--</div>
+                        <div class="text-xs text-slate-400">Orthopedic</div>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <div class="text-2xl font-bold text-white mb-1" id="medtech-diag">--</div>
+                        <div class="text-xs text-slate-400">Diagnostic</div>
+                    </div>
+                    <div class="card p-4 text-center">
+                        <div class="text-2xl font-bold text-white mb-1" id="medtech-digital">--</div>
+                        <div class="text-xs text-slate-400">Digital Health</div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Synergy Map Tab -->
-            <div id="content-synergy" class="tab-content hidden h-full overflow-y-auto p-6">
-                <div class="max-w-6xl mx-auto">
-                    <div class="flex items-center justify-between mb-6">
-                        <div>
-                            <h2 class="text-2xl font-bold mb-1">Synergy Map</h2>
-                            <p class="text-gray-400">Cross-framework patterns and combined intelligence</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Pattern Visualization -->
-                    <div class="glass rounded-xl p-6 mb-6">
-                        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
-                            <i data-lucide="network" class="w-5 h-5 text-purple-400"></i>
-                            Detected Pattern: AI Administrative Automation
-                        </h3>
-                        
-                        <div class="relative bg-white/5 rounded-lg p-6 min-h-[300px]">
-                            <!-- Central Node -->
-                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-center p-4 shadow-2xl">
-                                <div>
-                                    <div class="font-bold text-sm">AI Admin</div>
-                                    <div class="text-xs text-purple-200">Automation</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Connected Nodes -->
-                            <div class="absolute top-4 left-1/4 w-28 p-3 bg-blue-500/20 rounded-lg border border-blue-500/30">
-                                <div class="font-medium text-sm text-blue-400">Healthcare AI Doc</div>
-                                <div class="text-xs text-gray-400">Idea Score: 24/25</div>
-                            </div>
-                            
-                            <div class="absolute top-4 right-1/4 w-28 p-3 bg-amber-500/20 rounded-lg border border-amber-500/30">
-                                <div class="font-medium text-sm text-amber-400">FINTENDANT</div>
-                                <div class="text-xs text-gray-400">Idea Score: 24/25</div>
-                            </div>
-                            
-                            <div class="absolute bottom-4 left-1/4 w-28 p-3 bg-emerald-500/20 rounded-lg border border-emerald-500/30">
-                                <div class="font-medium text-sm text-emerald-400">Smart Money</div>
-                                <div class="text-xs text-gray-400">3 VCs in clinical AI</div>
-                            </div>
-                            
-                            <div class="absolute bottom-4 right-1/4 w-28 p-3 bg-rose-500/20 rounded-lg border border-rose-500/30">
-                                <div class="font-medium text-sm text-rose-400">Consulting</div>
-                                <div class="text-xs text-gray-400">McKinsey AI health</div>
-                            </div>
-                            
-                            <!-- Connection Lines (Visual only) -->
-                            <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: -1;">
-                                <line x1="25%" y1="15%" x2="50%" y2="40%" stroke="rgba(147, 51, 234, 0.3)" stroke-width="2"/>
-                                <line x1="75%" y1="15%" x2="50%" y2="40%" stroke="rgba(147, 51, 234, 0.3)" stroke-width="2"/>
-                                <line x1="25%" y1="85%" x2="50%" y2="60%" stroke="rgba(147, 51, 234, 0.3)" stroke-width="2"/>
-                                <line x1="75%" y1="85%" x2="50%" y2="60%" stroke="rgba(147, 51, 234, 0.3)" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        
-                        <div class="mt-6 p-4 bg-white/5 rounded-lg">
-                            <h4 class="font-medium mb-2">Pattern Analysis</h4>
-                            <p class="text-sm text-gray-400 mb-3">
-                                Both Healthcare AI Documentation and FINTENDANT target the same core problem: 
-                                <strong>administrative burden in professional workflows</strong>. Consulting research validates 
-                                the $100B+ healthcare AI market, while Smart Money shows 3 VCs actively investing in clinical 
-                                AI — confirming both top-down and bottom-up validation.
-                            </p>
-                            <div class="flex items-center gap-4 text-sm">
-                                <span class="flex items-center gap-2 text-emerald-400">
-                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
-                                    Consulting Validation
-                                </span>
-                                <span class="flex items-center gap-2 text-emerald-400">
-                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
-                                    VC Clustering
-                                </span>
-                                <span class="flex items-center gap-2 text-emerald-400">
-                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
-                                    Founder-Market Fit
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Synergy Matrix -->
-                    <div class="glass rounded-xl p-6">
-                        <h3 class="text-lg font-semibold mb-4">Cross-Framework Validation Matrix</h3>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-sm">
-                                <thead>
-                                    <tr class="border-b border-white/10">
-                                        <th class="text-left py-3 px-4">Opportunity</th>
-                                        <th class="text-center py-3 px-4">Consulting Intel</th>
-                                        <th class="text-center py-3 px-4">Smart Money</th>
-                                        <th class="text-center py-3 px-4">Idea Score</th>
-                                        <th class="text-center py-3 px-4">Combined Confidence</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-b border-white/5">
-                                        <td class="py-3 px-4">
-                                            <div class="font-medium">Healthcare AI Doc</div>
-                                            <div class="text-xs text-gray-500">NHS ward round automation</div>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-emerald-400">✓ Validated</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-emerald-400">✓ 3 VCs Active</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="font-bold text-emerald-400">24/25</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full font-bold">HIGH</span>
-                                        </td>
-                                    </tr>
-                                    <tr class="border-b border-white/5">
-                                        <td class="py-3 px-4">
-                                            <div class="font-medium">FINTENDANT</div>
-                                            <div class="text-xs text-gray-500">AI financial manager</div>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-amber-400">~ Partial</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-emerald-400">✓ Fintech Active</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="font-bold text-emerald-400">24/25</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full font-bold">MED-HIGH</span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="py-3 px-4">
-                                            <div class="font-medium">Green Hydrogen</div>
-                                            <div class="text-xs text-gray-500">Industrial decarbonization</div>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-gray-500">— Pending</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="text-emerald-400">✓ Khosla + Breakthrough</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="font-bold text-gray-500">—</span>
-                                        </td>
-                                        <td class="text-center py-3 px-4">
-                                            <span class="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full font-bold">MED</span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                
+                <div id="medtech-reports" class="space-y-4">
+                    <div class="loading"></div>
                 </div>
             </div>
+            
+            <!-- SYNERGY MAP SECTION -->
+            <div id="patterns" class="section">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Synergy Map</h2>
+                    <p class="text-slate-400">Cross-framework patterns and convergences</p>
+                </div>
+                
+                <div id="patterns-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="loading"></div>
+                </div>
+            </div>
+            
+            <!-- OPPORTUNITIES SECTION -->
+            <div id="opportunities" class="section">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-white mb-2">Opportunities</h2>
+                    <p class="text-slate-400">AI-synthesized opportunities from intelligence</p>
+                </div>
+                
+                <div id="opportunities-list" class="space-y-4">
+                    <div class="loading"></div>
+                </div>
+            </div>
+            
         </main>
     </div>
-
+    
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Configuration
+        const API_BASE = '/api/research';
         
-        // Tab switching
-        function switchTab(tabId) {
-            // Hide all content
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+        // Navigation
+        function showSection(sectionId) {
+            // Update nav
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            event.currentTarget.classList.add('active');
             
-            // Show selected content
-            document.getElementById('content-' + tabId).classList.remove('hidden');
+            // Show section
+            document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
             
-            // Update tab styling
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('tab-active');
-            });
-            document.getElementById('tab-' + tabId).classList.add('tab-active');
+            // Load data for section
+            loadSectionData(sectionId);
         }
         
-        // Initialize first tab
-        switchTab('consulting');
+        // Data loading
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                if (!response.ok) throw new Error('Failed to load stats');
+                const data = await response.json();
+                
+                document.getElementById('stat-sources').textContent = data.total_sources || 0;
+                document.getElementById('stat-reports').textContent = data.total_reports || 0;
+                document.getElementById('stat-reports-24h').textContent = data.reports_24h || 0;
+                document.getElementById('stat-insights').textContent = data.total_insights || 0;
+                document.getElementById('stat-opportunities').textContent = data.total_opportunities || 0;
+                document.getElementById('stat-high-opp').textContent = 
+                    Math.round((data.total_opportunities || 0) * 0.3); // Estimate high confidence
+            } catch (error) {
+                console.error('Stats error:', error);
+                // Show fallback data
+                document.getElementById('stat-sources').textContent = '7';
+                document.getElementById('stat-reports').textContent = '0';
+                document.getElementById('stat-reports-24h').textContent = '0';
+            }
+        }
         
-        // Placeholder functions
-        function syncData() { alert('Syncing with GitHub...'); }
-        function refreshConsulting() { alert('Refreshing consulting sources...'); }
-        function loadConsultingSource(source) { alert('Loading ' + source + ' data...'); }
-        function refreshSmartMoney() { alert('Refreshing VC data...'); }
-        function showClusterDetail(cluster) { alert('Showing details for ' + cluster); }
-        function captureNewIdea() { alert('Opening idea capture form...'); }
-        function viewIdeaDetail(idea) { alert('Loading idea details for ' + idea); }
-        function loadDossier(company) { alert('Loading dossier for ' + company); }
-        function refreshMedTech() { alert('Refreshing MedTech data...'); }
+        async function loadSourceHealth() {
+            try {
+                const response = await fetch(`${API_BASE}/sources`);
+                const sources = await response.json();
+                
+                const grid = document.getElementById('source-health-grid');
+                grid.innerHTML = sources.map(source => `
+                    <div class="source-card">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: ${getSourceColor(source.type)}20;">
+                                    <i class="fas ${getSourceIcon(source.type)}" style="color: ${getSourceColor(source.type)};"></i>
+                                </div>
+                                <div>
+                                    <div class="font-medium text-white">${source.name}</div>
+                                    <div class="text-xs text-slate-400">${source.type}</div>
+                                </div>
+                            </div>
+                            <div class="badge ${source.scan_status === 'success' ? 'badge-green' : 'badge-orange'}">
+                                ${source.scan_status}
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-slate-400">Reports: ${source.reports_count || 0}</span>
+                            <span class="text-slate-500">${formatDate(source.last_scan)}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Source health error:', error);
+                document.getElementById('source-health-grid').innerHTML = 
+                    '<div class="text-slate-400">Connect to database to see source health</div>';
+            }
+        }
+        
+        async function loadSectionData(sectionId) {
+            switch(sectionId) {
+                case 'consulting':
+                    await loadConsultingReports();
+                    break;
+                case 'smartmoney':
+                    await loadSmartMoney();
+                    break;
+                case 'medtech':
+                    await loadMedTech();
+                    break;
+                case 'patterns':
+                    await loadPatterns();
+                    break;
+                case 'opportunities':
+                    await loadOpportunities();
+                    break;
+            }
+        }
+        
+        async function loadConsultingReports() {
+            try {
+                const response = await fetch(`${API_BASE}/reports?source=McKinsey%20%26%20Company&limit=10`);
+                const reports = await response.json();
+                
+                const container = document.getElementById('consulting-reports');
+                if (reports.length === 0) {
+                    container.innerHTML = `
+                        <div class="card p-8 text-center">
+                            <i class="fas fa-inbox text-4xl text-slate-600 mb-4"></i>
+                            <p class="text-slate-400">No reports yet. Run the Consulting Scout agent to start collecting.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = reports.map(report => `
+                    <div class="card p-4">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <h4 class="font-medium text-white mb-1">${report.title}</h4>
+                                <p class="text-sm text-slate-400 mb-2">${report.summary || 'No summary available'}</p>
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="text-slate-500">${report.sources?.name || 'Unknown'}</span>
+                                    <span class="text-slate-500">${formatDate(report.published_at)}</span>
+                                    ${report.is_processed ? 
+                                        '<span class="badge badge-green">Processed</span>' : 
+                                        '<span class="badge badge-orange">Pending</span>'}
+                                </div>
+                            </div>
+                            <a href="${report.url}" target="_blank" class="text-slate-400 hover:text-white transition">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Consulting reports error:', error);
+            }
+        }
+        
+        async function loadSmartMoney() {
+            // Populate fund watchlist
+            const funds = [
+                'Sequoia Capital', 'Andreessen Horowitz', 'Benchmark', 'Accel',
+                'Index Ventures', 'Bessemer Venture Partners', 'Lightspeed',
+                'Greylock', 'Kleiner Perkins', 'Founders Fund'
+            ];
+            
+            document.getElementById('fund-watchlist').innerHTML = funds.slice(0, 6).map(fund => `
+                <div class="card p-4 text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style="background: rgba(16, 185, 129, 0.1);">
+                        <i class="fas fa-building text-green-400"></i>
+                    </div>
+                    <div class="font-medium text-white text-sm">${fund}</div>
+                    <div class="text-xs text-slate-400 mt-1">Watching</div>
+                </div>
+            `).join('');
+        }
+        
+        async function loadMedTech() {
+            // Set category counts (would come from API)
+            document.getElementById('medtech-neuro').textContent = '0';
+            document.getElementById('medtech-cardio').textContent = '0';
+            document.getElementById('medtech-ortho').textContent = '0';
+            document.getElementById('medtech-diag').textContent = '0';
+            document.getElementById('medtech-digital').textContent = '0';
+        }
+        
+        async function loadPatterns() {
+            try {
+                const response = await fetch(`${API_BASE}/patterns`);
+                const patterns = await response.json();
+                
+                const container = document.getElementById('patterns-grid');
+                if (patterns.length === 0) {
+                    container.innerHTML = `
+                        <div class="card p-8 text-center col-span-2">
+                            <i class="fas fa-project-diagram text-4xl text-slate-600 mb-4"></i>
+                            <p class="text-slate-400">No patterns detected yet. Run agents to collect data first.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = patterns.map(pattern => `
+                    <div class="card pattern-card p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fas ${getPatternIcon(pattern.pattern_type)} text-purple-400"></i>
+                            <span class="badge badge-blue">${pattern.pattern_type}</span>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">${pattern.pattern_name}</h4>
+                        <p class="text-sm text-slate-300 mb-4">${pattern.narrative_summary || pattern.pattern_description}</p>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="text-slate-400">Strength: ${pattern.strength_score}/100</span>
+                            <span class="text-slate-400">${pattern.source_countries?.length || 0} sources</span>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Patterns error:', error);
+            }
+        }
+        
+        async function loadOpportunities() {
+            try {
+                const response = await fetch(`${API_BASE}/opportunities`);
+                const opportunities = await response.json();
+                
+                const container = document.getElementById('opportunities-list');
+                if (opportunities.length === 0) {
+                    container.innerHTML = `
+                        <div class="card p-8 text-center">
+                            <i class="fas fa-lightbulb text-4xl text-slate-600 mb-4"></i>
+                            <p class="text-slate-400">No opportunities extracted yet. Run the Idea Synthesizer agent.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = opportunities.map(opp => `
+                    <div class="card p-4">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="badge ${opp.category === 'investment' ? 'badge-green' : 'badge-blue'}">${opp.category}</span>
+                                    <span class="text-xs text-slate-400">${opp.industry}</span>
+                                </div>
+                                <h4 class="font-medium text-white mb-1">${opp.title}</h4>
+                                <p class="text-sm text-slate-400 mb-2">${opp.description}</p>
+                                <div class="flex items-center gap-4 text-xs">
+                                    <span class="text-orange-400">Score: ${opp.opportunity_score}</span>
+                                    <span class="text-slate-500">Confidence: ${Math.round(opp.confidence_score * 100)}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Opportunities error:', error);
+            }
+        }
+        
+        // Agent control
+        async function runAgent(agentName) {
+            try {
+                const response = await fetch('/api/agents/run', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ agent: agentName })
+                });
+                
+                if (response.ok) {
+                    alert(`Agent ${agentName} started! Check logs for progress.`);
+                } else {
+                    alert('Failed to start agent. Check console.');
+                }
+            } catch (error) {
+                console.error('Run agent error:', error);
+                alert('Agent system not yet connected. Run agents manually via command line.');
+            }
+        }
+        
+        async function runAllAgents() {
+            const agents = ['consulting_scout', 'smart_money_tracker', 'idea_synthesizer', 'medtech_intel', 'synergy_mapper'];
+            
+            for (const agent of agents) {
+                await runAgent(agent);
+                await new Promise(r => setTimeout(r, 1000)); // Stagger starts
+            }
+            
+            alert('All agents started! Refresh dashboard in a few minutes.');
+        }
+        
+        // Helpers
+        function getSourceColor(type) {
+            const colors = {
+                'consulting': '#00d4ff',
+                'vc': '#10b981',
+                'medtech': '#f59e0b',
+                'regulatory': '#8b5cf6'
+            };
+            return colors[type] || '#94a3b8';
+        }
+        
+        function getSourceIcon(type) {
+            const icons = {
+                'consulting': 'fa-briefcase',
+                'vc': 'fa-hand-holding-usd',
+                'medtech': 'fa-heartbeat',
+                'regulatory': 'fa-gavel'
+            };
+            return icons[type] || 'fa-globe';
+        }
+        
+        function getPatternIcon(type) {
+            const icons = {
+                'trend_convergence': 'fa-chart-line',
+                'anomaly': 'fa-exclamation-triangle',
+                'correlation': 'fa-link',
+                'emerging': 'fa-seedling'
+            };
+            return icons[type] || 'fa-project-diagram';
+        }
+        
+        function formatDate(dateString) {
+            if (!dateString) return 'Never';
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = (now - date) / 1000; // seconds
+            
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+            return `${Math.floor(diff / 86400)}d ago`;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStats();
+            loadSourceHealth();
+            loadPatterns();
+        });
     </script>
 </body>
 </html>
