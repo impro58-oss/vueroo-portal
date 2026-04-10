@@ -74,13 +74,30 @@
         }
         
         /* Sections */
-        .section { display: none; min-height: 100%; }
-        .section.active { display: block; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .section { 
+            display: none; 
+            min-height: 100%;
+            position: relative;
+        }
+        .section.active { 
+            display: block; 
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
         
         /* Ensure main content area scrolls properly */
         main {
             scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Active section should be at top */
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
         }
         
         /* Cards with Cyan Glow */
@@ -603,14 +620,27 @@
 
         // Navigation
         function showSection(sectionId) {
+            // Hide all sections first
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
+            
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                // Scroll section to top of viewport
+                targetSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }
+            
+            // Update nav
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.getElementById('nav-' + sectionId).classList.add('active');
+            const navItem = document.getElementById('nav-' + sectionId);
+            if (navItem) navItem.classList.add('active');
             
-            // Scroll to top of main content
-            document.querySelector('main').scrollTop = 0;
+            // Scroll main to top
+            const main = document.querySelector('main');
+            if (main) main.scrollTop = 0;
             
+            // Render section content
             if (sectionId === 'heatmap') renderHeatMap();
             if (sectionId === 'opportunities') renderOpportunities();
             if (sectionId === 'portfolio') renderPortfolio();
