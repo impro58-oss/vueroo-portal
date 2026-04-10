@@ -694,7 +694,18 @@
 
         function renderOpportunities() {
             const container = document.getElementById('opportunities-grid');
+            if (!container) {
+                console.error('[renderOpportunities] Container not found!');
+                return;
+            }
+            if (coins.length === 0) {
+                console.log('[renderOpportunities] No coins data yet');
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">Loading data...</div>';
+                return;
+            }
+            
             const opportunities = coins.filter(c => c.signal !== 'hold' || c.compression || c.confidence >= 45);
+            console.log('[renderOpportunities] Found', opportunities.length, 'opportunities from', coins.length, 'coins');
             
             if (opportunities.length === 0) {
                 container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No active opportunities. Market in consolidation.</div>';
@@ -705,10 +716,10 @@
                 <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol?.substring(0,2) || '??'}</div>
                             <div>
-                                <div class="font-semibold text-white">${c.symbol}</div>
-                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy}</div>
+                                <div class="font-semibold text-white">${c.symbol || 'Unknown'}</div>
+                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy || 'Unknown'}</div>
                             </div>
                         </div>
                         ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Compression</span>' : getConfidenceBadge(c.confidence)}
@@ -717,14 +728,25 @@
                         <div class="text-2xl font-bold price-display">${CryptoDataLoader.formatPrice(c.price)}</div>
                         ${getSignalBadge(c.signal)}
                     </div>
-                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
+                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${(c.csrsiState || 'neutral').replace(/_/g,' ')} | ${c.rtomBias || 'neutral'}</div>
                 </div>
             `).join('');
         }
 
         function renderPortfolio() {
             const container = document.getElementById('portfolio-grid');
+            if (!container) {
+                console.error('[renderPortfolio] Container not found!');
+                return;
+            }
+            if (coins.length === 0) {
+                console.log('[renderPortfolio] No coins data yet');
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">Loading portfolio data...</div>';
+                return;
+            }
+            
             const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
+            console.log('[renderPortfolio] Found', holdings.length, 'holdings from', coins.length, 'coins');
             
             if (holdings.length === 0) {
                 container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No portfolio data available</div>';
@@ -735,9 +757,9 @@
                 <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">${c.symbol.substring(0,2)}</div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">${c.symbol?.substring(0,2) || '??'}</div>
                             <div>
-                                <div class="font-semibold text-white text-lg">${c.symbol}</div>
+                                <div class="font-semibold text-white text-lg">${c.symbol || 'Unknown'}</div>
                                 <div class="text-xs" style="color: var(--text-muted);">Core Holding</div>
                             </div>
                         </div>
@@ -746,11 +768,11 @@
                     <div class="text-3xl font-bold price-display mb-2">${CryptoDataLoader.formatPrice(c.price)}</div>
                     <div class="flex items-center justify-between mb-4">
                         ${getConfidenceBadge(c.confidence)}
-                        <span class="text-xs" style="color: var(--text-muted);">${c.strategy}</span>
+                        <span class="text-xs" style="color: var(--text-muted);">${c.strategy || 'Unknown'}</span>
                     </div>
                     <div class="space-y-2 text-xs">
-                        <div class="flex justify-between"><span style="color: var(--text-muted);">RSI State:</span><span class="text-secondary">${c.csrsiState.replace(/_/g,' ')}</span></div>
-                        <div class="flex justify-between"><span style="color: var(--text-muted);">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RSI State:</span><span class="text-secondary">${(c.csrsiState || 'neutral').replace(/_/g,' ')}</span></div>
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias || 'neutral'}</span></div>
                         ${c.compression ? '<div class="flex justify-between"><span style="color: var(--text-muted);">Status:</span><span class="font-semibold" style="color: #a855f7;">⚡ Compression</span></div>' : ''}
                     </div>
                 </div>
