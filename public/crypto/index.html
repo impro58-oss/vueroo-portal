@@ -708,7 +708,7 @@
             }
             if (coins.length === 0) {
                 console.log('[renderOpportunities] No coins data yet');
-                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">Loading data...</div>';
+                container.innerHTML = '<div class="text-center py-12" style="color: var(--text-muted); grid-column: 1 / -1;">Loading data...</div>';
                 return;
             }
             
@@ -716,7 +716,7 @@
             console.log('[renderOpportunities] Found', opportunities.length, 'opportunities from', coins.length, 'coins');
             
             if (opportunities.length === 0) {
-                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No active opportunities. Market in consolidation.</div>';
+                container.innerHTML = '<div class="text-center py-12" style="color: var(--text-muted); grid-column: 1 / -1;">No active opportunities. Market in consolidation.</div>';
                 return;
             }
             
