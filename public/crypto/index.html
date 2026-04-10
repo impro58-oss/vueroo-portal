@@ -75,17 +75,21 @@
         
         /* Sections - ensure proper hiding */
         .section { 
-            display: none !important; 
+            display: none; 
             min-height: 100%;
             position: relative;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
         }
         .section.active { 
-            display: block !important; 
+            display: block; 
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
             animation: fadeIn 0.3s ease;
-        }
-        /* Hide all children of inactive sections */
-        .section:not(.active) * {
-            display: none !important;
         }
         @keyframes fadeIn { 
             from { opacity: 0; transform: translateY(10px); } 
