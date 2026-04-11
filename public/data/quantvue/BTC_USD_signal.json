@@ -1,0 +1,33 @@
+{
+  "symbol": "BTC-USD",
+  "timestamp": "2026-04-11T12:08:49.518747",
+  "individual_signals": {
+    "linear_regression": {
+      "signal": "SELL",
+      "confidence": 0.002526284386962076,
+      "predicted_return": -0.0002526284386962076,
+      "weight": 0.25
+    },
+    "kalman_filter": {
+      "signal": "HOLD",
+      "confidence": 0.0,
+      "trend": 0.00018592477831694948,
+      "weight": 0.25
+    },
+    "garch_volatility": {
+      "signal": "PROCEED",
+      "confidence": 0.0528724816432108,
+      "regime": "NORMAL",
+      "annualized_vol": 5.28724816432108,
+      "var_1d": 54.789246403815696,
+      "weight": 0.2
+    }
+  },
+  "weighted_score": -0.0009022444239150272,
+  "consensus_signal": "SELL",
+  "confidence": 0.0009022444239150272,
+  "level": "NO_SIGNAL",
+  "risk_regime": "NORMAL",
+  "risk_note": null,
+  "recommended_action": "NO_TRADE"
+}

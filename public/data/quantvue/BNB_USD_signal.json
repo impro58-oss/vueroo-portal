@@ -1,0 +1,33 @@
+{
+  "symbol": "BNB-USD",
+  "timestamp": "2026-04-11T12:08:49.805943",
+  "individual_signals": {
+    "linear_regression": {
+      "signal": "BUY",
+      "confidence": 0.0007484704351668426,
+      "predicted_return": 7.484704351668426e-05,
+      "weight": 0.25
+    },
+    "kalman_filter": {
+      "signal": "HOLD",
+      "confidence": 0.0,
+      "trend": 0.00011168792586929366,
+      "weight": 0.25
+    },
+    "garch_volatility": {
+      "signal": "PROCEED",
+      "confidence": 0.04140107762454128,
+      "regime": "NORMAL",
+      "annualized_vol": 4.140107762454128,
+      "var_1d": 42.901974200141645,
+      "weight": 0.2
+    }
+  },
+  "weighted_score": 0.0002673108697024438,
+  "consensus_signal": "BUY",
+  "confidence": 0.0002673108697024438,
+  "level": "NO_SIGNAL",
+  "risk_regime": "NORMAL",
+  "risk_note": null,
+  "recommended_action": "NO_TRADE"
+}

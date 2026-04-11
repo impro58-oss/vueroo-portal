@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vueroo Dashboard</title>
+    <meta http-equiv="refresh" content="0; url=/stock/">
+    <style>
+        body {
+            background: #0a0a0f;
+            color: #f8fafc;
+            font-family: Inter, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .redirect-box {
+            text-align: center;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 212, 255, 0.3);
+            border-top-color: #00d4ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        a { color: #00d4ff; }
+    </style>
+</head>
+<body>
+    <div class="redirect-box">
+        <div class="spinner"></div>
+        <h2>Redirecting to StockVue...</h2>
+        <p>If not redirected, <a href="/stock/">click here</a></p>
+    </div>
+</body>
+</html>
