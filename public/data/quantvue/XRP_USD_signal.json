@@ -1,18 +1,31 @@
 {
   "symbol": "XRP-USD",
-  "timestamp": "2026-04-11T12:08:49.682339",
+  "timestamp": "2026-04-11T12:23:36.876048",
   "individual_signals": {
     "linear_regression": {
       "signal": "SELL",
       "confidence": 0.0019531687080052047,
       "predicted_return": -0.00019531687080052046,
-      "weight": 0.25
+      "weight": 0.2
     },
     "kalman_filter": {
       "signal": "HOLD",
       "confidence": 0.0,
       "trend": -3.991558511757672e-05,
-      "weight": 0.25
+      "weight": 0.2
+    },
+    "arima_forecast": {
+      "signal": "HOLD",
+      "confidence": 0.0,
+      "expected_return": -0.00024004417150833574,
+      "weight": 0.2
+    },
+    "hidden_markov": {
+      "signal": "HOLD",
+      "confidence": 1.0,
+      "regime": "NEUTRAL",
+      "regime_strength": "MEAN_REVERSION",
+      "weight": 0.2
     },
     "garch_volatility": {
       "signal": "PROCEED",
@@ -23,11 +36,12 @@
       "weight": 0.2
     }
   },
-  "weighted_score": -0.0006975602528590017,
+  "weighted_score": -0.000390633741601041,
   "consensus_signal": "SELL",
-  "confidence": 0.0006975602528590017,
+  "confidence": 0.000390633741601041,
   "level": "NO_SIGNAL",
   "risk_regime": "NORMAL",
+  "hmm_regime": "NEUTRAL",
   "risk_note": null,
   "recommended_action": "NO_TRADE"
 }

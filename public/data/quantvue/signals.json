@@ -1,19 +1,32 @@
 {
   "BTC-USD": {
     "symbol": "BTC-USD",
-    "timestamp": "2026-04-11T12:08:49.518747",
+    "timestamp": "2026-04-11T12:23:36.700304",
     "individual_signals": {
       "linear_regression": {
         "signal": "SELL",
         "confidence": 0.002526284386962076,
         "predicted_return": -0.0002526284386962076,
-        "weight": 0.25
+        "weight": 0.2
       },
       "kalman_filter": {
         "signal": "HOLD",
         "confidence": 0.0,
         "trend": 0.00018592477831694948,
-        "weight": 0.25
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": 1.5391394162935203e-06,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
       },
       "garch_volatility": {
         "signal": "PROCEED",
@@ -24,29 +37,43 @@
         "weight": 0.2
       }
     },
-    "weighted_score": -0.0009022444239150272,
+    "weighted_score": -0.0005052568773924152,
     "consensus_signal": "SELL",
-    "confidence": 0.0009022444239150272,
+    "confidence": 0.0005052568773924152,
     "level": "NO_SIGNAL",
     "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   },
   "ETH-USD": {
     "symbol": "ETH-USD",
-    "timestamp": "2026-04-11T12:08:49.602518",
+    "timestamp": "2026-04-11T12:23:36.787033",
     "individual_signals": {
       "linear_regression": {
         "signal": "SELL",
         "confidence": 0.002552724102995964,
         "predicted_return": -0.0002552724102995964,
-        "weight": 0.25
+        "weight": 0.2
       },
       "kalman_filter": {
         "signal": "HOLD",
         "confidence": 0.0,
         "trend": 0.0002835285527511449,
-        "weight": 0.25
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -3.7249088712791584e-05,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
       },
       "garch_volatility": {
         "signal": "PROCEED",
@@ -57,29 +84,43 @@
         "weight": 0.2
       }
     },
-    "weighted_score": -0.0009116871796414158,
+    "weighted_score": -0.0005105448205991928,
     "consensus_signal": "SELL",
-    "confidence": 0.0009116871796414158,
+    "confidence": 0.0005105448205991928,
     "level": "NO_SIGNAL",
     "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   },
   "XRP-USD": {
     "symbol": "XRP-USD",
-    "timestamp": "2026-04-11T12:08:49.682339",
+    "timestamp": "2026-04-11T12:23:36.876048",
     "individual_signals": {
       "linear_regression": {
         "signal": "SELL",
         "confidence": 0.0019531687080052047,
         "predicted_return": -0.00019531687080052046,
-        "weight": 0.25
+        "weight": 0.2
       },
       "kalman_filter": {
         "signal": "HOLD",
         "confidence": 0.0,
         "trend": -3.991558511757672e-05,
-        "weight": 0.25
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -0.00024004417150833574,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
       },
       "garch_volatility": {
         "signal": "PROCEED",
@@ -90,29 +131,43 @@
         "weight": 0.2
       }
     },
-    "weighted_score": -0.0006975602528590017,
+    "weighted_score": -0.000390633741601041,
     "consensus_signal": "SELL",
-    "confidence": 0.0006975602528590017,
+    "confidence": 0.000390633741601041,
     "level": "NO_SIGNAL",
     "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   },
   "SOL-USD": {
     "symbol": "SOL-USD",
-    "timestamp": "2026-04-11T12:08:49.747461",
+    "timestamp": "2026-04-11T12:23:36.947788",
     "individual_signals": {
       "linear_regression": {
         "signal": "SELL",
         "confidence": 0.0027271413155821114,
         "predicted_return": -0.0002727141315582111,
-        "weight": 0.25
+        "weight": 0.2
       },
       "kalman_filter": {
         "signal": "HOLD",
         "confidence": 0.0,
         "trend": -8.76645606940085e-05,
-        "weight": 0.25
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -0.0003520700210552415,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
       },
       "garch_volatility": {
         "signal": "PROCEED",
@@ -123,29 +178,43 @@
         "weight": 0.2
       }
     },
-    "weighted_score": -0.0009739790412793256,
+    "weighted_score": -0.0005454282631164224,
     "consensus_signal": "SELL",
-    "confidence": 0.0009739790412793256,
+    "confidence": 0.0005454282631164224,
     "level": "NO_SIGNAL",
     "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   },
   "BNB-USD": {
     "symbol": "BNB-USD",
-    "timestamp": "2026-04-11T12:08:49.805943",
+    "timestamp": "2026-04-11T12:23:37.016901",
     "individual_signals": {
       "linear_regression": {
         "signal": "BUY",
         "confidence": 0.0007484704351668426,
         "predicted_return": 7.484704351668426e-05,
-        "weight": 0.25
+        "weight": 0.2
       },
       "kalman_filter": {
         "signal": "HOLD",
         "confidence": 0.0,
         "trend": 0.00011168792586929366,
-        "weight": 0.25
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -1.811841371987188e-05,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
       },
       "garch_volatility": {
         "signal": "PROCEED",
@@ -156,11 +225,12 @@
         "weight": 0.2
       }
     },
-    "weighted_score": 0.0002673108697024438,
+    "weighted_score": 0.00014969408703336852,
     "consensus_signal": "BUY",
-    "confidence": 0.0002673108697024438,
+    "confidence": 0.00014969408703336852,
     "level": "NO_SIGNAL",
     "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   }

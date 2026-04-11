@@ -74,36 +74,31 @@
                 </svg>
                 Model Architecture
             </h2>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-5 gap-4">
                 <div class="model-active glass-panel p-4 bg-slate-800/50">
-                    <div class="font-semibold text-green-400">Linear Regression</div>
-                    <div class="text-sm text-slate-400 mt-1">Price prediction via feature relationships</div>
-                    <div class="text-xs text-slate-500 mt-2">Weight: 25%</div>
-                </div>
-                <div class="model-active glass-panel p-4 bg-slate-800/50">
-                    <div class="font-semibold text-green-400">GARCH Volatility</div>
-                    <div class="text-sm text-slate-400 mt-1">Risk forecasting & VaR calculation</div>
-                    <div class="text-xs text-slate-500 mt-2">Weight: 20%</div>
+                    <div class="font-semibold text-green-400 text-sm">Linear Regression</div>
+                    <div class="text-xs text-slate-400 mt-1">Price prediction</div>
+                    <div class="text-xs text-slate-500 mt-2">20%</div>
                 </div>
                 <div class="model-active glass-panel p-4 bg-slate-800/50">
-                    <div class="font-semibold text-green-400">Kalman Filter</div>
-                    <div class="text-sm text-slate-400 mt-1">Trend extraction from noise</div>
-                    <div class="text-xs text-slate-500 mt-2">Weight: 25%</div>
+                    <div class="font-semibold text-green-400 text-sm">Kalman Filter</div>
+                    <div class="text-xs text-slate-400 mt-1">Trend extraction</div>
+                    <div class="text-xs text-slate-500 mt-2">20%</div>
                 </div>
-                <div class="model-pending glass-panel p-4 bg-slate-800/50 opacity-50">
-                    <div class="font-semibold text-yellow-400">ARIMA</div>
-                    <div class="text-sm text-slate-400 mt-1">Time series forecasting</div>
-                    <div class="text-xs text-slate-500 mt-2">Phase 3</div>
+                <div class="model-active glass-panel p-4 bg-slate-800/50">
+                    <div class="font-semibold text-green-400 text-sm">ARIMA</div>
+                    <div class="text-xs text-slate-400 mt-1">Time series forecast</div>
+                    <div class="text-xs text-slate-500 mt-2">20%</div>
                 </div>
-                <div class="model-pending glass-panel p-4 bg-slate-800/50 opacity-50">
-                    <div class="font-semibold text-yellow-400">Hidden Markov</div>
-                    <div class="text-sm text-slate-400 mt-1">Regime detection</div>
-                    <div class="text-xs text-slate-500 mt-2">Phase 3</div>
+                <div class="model-active glass-panel p-4 bg-slate-800/50">
+                    <div class="font-semibold text-green-400 text-sm">Hidden Markov</div>
+                    <div class="text-xs text-slate-400 mt-1">Regime detection</div>
+                    <div class="text-xs text-slate-500 mt-2">20%</div>
                 </div>
-                <div class="model-pending glass-panel p-4 bg-slate-800/50 opacity-50">
-                    <div class="font-semibold text-yellow-400">Monte Carlo</div>
-                    <div class="text-sm text-slate-400 mt-1">Scenario simulation</div>
-                    <div class="text-xs text-slate-500 mt-2">Phase 3</div>
+                <div class="model-active glass-panel p-4 bg-slate-800/50">
+                    <div class="font-semibold text-green-400 text-sm">GARCH</div>
+                    <div class="text-xs text-slate-400 mt-1">Risk management</div>
+                    <div class="text-xs text-slate-500 mt-2">20%</div>
                 </div>
             </div>
         </div>
@@ -272,5 +267,10 @@
         // Refresh every 60 seconds
         setInterval(loadData, 60000);
     </script>
+    <footer class="mt-8 text-center text-slate-500 text-sm">
+        <p>QuantVue v2.0 | 5-Model Quantitative Ensemble</p>
+        <p class="mt-1">Linear Regression + Kalman Filter + ARIMA + Hidden Markov + GARCH</p>
+        <p class="mt-1">Weighted consensus with regime-aware risk management</p>
+    </footer>
 </body>
 </html>

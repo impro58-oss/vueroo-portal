@@ -1,18 +1,31 @@
 {
   "symbol": "ETH-USD",
-  "timestamp": "2026-04-11T12:08:49.602518",
+  "timestamp": "2026-04-11T12:23:36.787033",
   "individual_signals": {
     "linear_regression": {
       "signal": "SELL",
       "confidence": 0.002552724102995964,
       "predicted_return": -0.0002552724102995964,
-      "weight": 0.25
+      "weight": 0.2
     },
     "kalman_filter": {
       "signal": "HOLD",
       "confidence": 0.0,
       "trend": 0.0002835285527511449,
-      "weight": 0.25
+      "weight": 0.2
+    },
+    "arima_forecast": {
+      "signal": "HOLD",
+      "confidence": 0.0,
+      "expected_return": -3.7249088712791584e-05,
+      "weight": 0.2
+    },
+    "hidden_markov": {
+      "signal": "HOLD",
+      "confidence": 1.0,
+      "regime": "NEUTRAL",
+      "regime_strength": "MEAN_REVERSION",
+      "weight": 0.2
     },
     "garch_volatility": {
       "signal": "PROCEED",
@@ -23,11 +36,12 @@
       "weight": 0.2
     }
   },
-  "weighted_score": -0.0009116871796414158,
+  "weighted_score": -0.0005105448205991928,
   "consensus_signal": "SELL",
-  "confidence": 0.0009116871796414158,
+  "confidence": 0.0005105448205991928,
   "level": "NO_SIGNAL",
   "risk_regime": "NORMAL",
+  "hmm_regime": "NEUTRAL",
   "risk_note": null,
   "recommended_action": "NO_TRADE"
 }

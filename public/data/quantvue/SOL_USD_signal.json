@@ -1,18 +1,31 @@
 {
   "symbol": "SOL-USD",
-  "timestamp": "2026-04-11T12:08:49.747461",
+  "timestamp": "2026-04-11T12:23:36.947788",
   "individual_signals": {
     "linear_regression": {
       "signal": "SELL",
       "confidence": 0.0027271413155821114,
       "predicted_return": -0.0002727141315582111,
-      "weight": 0.25
+      "weight": 0.2
     },
     "kalman_filter": {
       "signal": "HOLD",
       "confidence": 0.0,
       "trend": -8.76645606940085e-05,
-      "weight": 0.25
+      "weight": 0.2
+    },
+    "arima_forecast": {
+      "signal": "HOLD",
+      "confidence": 0.0,
+      "expected_return": -0.0003520700210552415,
+      "weight": 0.2
+    },
+    "hidden_markov": {
+      "signal": "HOLD",
+      "confidence": 1.0,
+      "regime": "NEUTRAL",
+      "regime_strength": "MEAN_REVERSION",
+      "weight": 0.2
     },
     "garch_volatility": {
       "signal": "PROCEED",
@@ -23,11 +36,12 @@
       "weight": 0.2
     }
   },
-  "weighted_score": -0.0009739790412793256,
+  "weighted_score": -0.0005454282631164224,
   "consensus_signal": "SELL",
-  "confidence": 0.0009739790412793256,
+  "confidence": 0.0005454282631164224,
   "level": "NO_SIGNAL",
   "risk_regime": "NORMAL",
+  "hmm_regime": "NEUTRAL",
   "risk_note": null,
   "recommended_action": "NO_TRADE"
 }
