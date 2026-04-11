@@ -261,7 +261,7 @@ function processScanData(data) {
             symbol: symbol,
             price: result.price || result.last_price || 0,
             signal: result.signal || (result.trade_plan && result.trade_plan.signal) || 'hold',
-            confidence: result.confidence || (result.trade_plan && result.trade_plan.confidence) || 0,
+            confidence: (result.confidence || (result.trade_plan && result.trade_plan.confidence) || 0) * 100, // Convert decimal to percentage
             confidenceLabel: result.confidence_label || (result.trade_plan && result.trade_plan.confidence_label) || 'none',
             setupType: result.setup_type || (result.trade_plan && result.trade_plan.setup_type) || 'none',
             strategy: result.strategy || 'MONITOR',
@@ -296,7 +296,7 @@ function getSignalCounts(coins) {
     
     for (const coin of coins) {
         counts[coin.signal] = (counts[coin.signal] || 0) + 1;
-        if (coin.confidence >= 0.65) counts.highConfidence++;
+        if (coin.confidence >= 65) counts.highConfidence++;  // Now using 0-100 scale
         if (coin.compression) counts.compression++;
     }
     

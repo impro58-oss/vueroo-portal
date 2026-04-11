@@ -1,3 +1,7 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+
 export default function AgentVuePage() {
   return (
     <div className="min-h-screen p-8" style={{ background: '#0a0a0f', color: '#f8fafc' }}>

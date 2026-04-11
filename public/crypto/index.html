@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,10 +73,40 @@
             color: var(--color-primary);
         }
         
-        /* Sections */
-        .section { display: none; }
-        .section.active { display: block; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Sections - ensure proper hiding */
+        .section { 
+            display: none; 
+            min-height: 100%;
+            position: relative;
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        .section.active { 
+            display: block; 
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        /* Ensure main content area scrolls properly */
+        main {
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Active section should be at top */
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
         
         /* Cards with Cyan Glow */
         .crypto-card { 
@@ -302,7 +333,7 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto" style="background: var(--bg-primary);">
+        <main class="flex-1 overflow-y-auto relative" style="background: var(--bg-primary); scroll-behavior: smooth;">
             
             <!-- DASHBOARD SECTION -->
             <div id="dashboard" class="section active">
@@ -321,12 +352,25 @@
                 </div>
 
                 <div class="p-8">
+                    <!-- Filter Status Bar -->
+                    <div id="filter-status-bar" class="mb-6 p-4 rounded-xl border hidden" style="background: var(--bg-elevated); border-color: rgba(59, 130, 246, 0.3);">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-filter" style="color: var(--color-primary);"></i>
+                                <span id="filter-status-text" class="font-medium" style="color: var(--text-primary);">Filtered View</span>
+                            </div>
+                            <button onclick="clearFilter()" class="px-4 py-2 rounded-lg text-sm font-medium transition-colors" style="background: rgba(239, 68, 68, 0.1); color: var(--color-danger);">
+                                <i class="fas fa-times mr-2"></i>Clear Filter
+                            </button>
+                        </div>
+                    </div>
+                    
                     <!-- Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="crypto-card p-6">
+                        <div id="card-long" class="crypto-card p-6 cursor-pointer hover:ring-2 transition-all" style="--tw-ring-color: rgba(16, 185, 129, 0.5);" onclick="applyFilter('long')" title="Click to filter by LONG signals">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-secondary text-sm mb-1">Active Longs</div>
+                                    <div class="text-secondary text-sm mb-1">Active Longs <i class="fas fa-filter ml-1 text-xs opacity-50"></i></div>
                                     <div id="stat-long" class="text-3xl font-bold" style="color: var(--color-success);">--</div>
                                     <div class="text-xs mt-1" style="color: var(--text-muted);">Bullish setups</div>
                                 </div>
@@ -336,10 +380,10 @@
                             </div>
                         </div>
                         
-                        <div class="crypto-card p-6">
+                        <div id="card-short" class="crypto-card p-6 cursor-pointer hover:ring-2 transition-all" style="--tw-ring-color: rgba(239, 68, 68, 0.5);" onclick="applyFilter('short')" title="Click to filter by SHORT signals">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-secondary text-sm mb-1">Active Shorts</div>
+                                    <div class="text-secondary text-sm mb-1">Active Shorts <i class="fas fa-filter ml-1 text-xs opacity-50"></i></div>
                                     <div id="stat-short" class="text-3xl font-bold" style="color: var(--color-danger);">--</div>
                                     <div class="text-xs mt-1" style="color: var(--text-muted);">Bearish setups</div>
                                 </div>
@@ -349,10 +393,10 @@
                             </div>
                         </div>
                         
-                        <div class="crypto-card p-6">
+                        <div id="card-confidence" class="crypto-card p-6 cursor-pointer hover:ring-2 transition-all" style="--tw-ring-color: rgba(245, 158, 11, 0.5);" onclick="applyFilter('high-confidence')" title="Click to filter by high confidence">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-secondary text-sm mb-1">High Confidence</div>
+                                    <div class="text-secondary text-sm mb-1">High Confidence <i class="fas fa-filter ml-1 text-xs opacity-50"></i></div>
                                     <div id="stat-high" class="text-3xl font-bold" style="color: var(--color-warning);">--</div>
                                     <div class="text-xs mt-1" style="color: var(--text-muted);">≥65% confidence</div>
                                 </div>
@@ -362,31 +406,38 @@
                             </div>
                         </div>
                         
-                        <div class="crypto-card p-6">
+                        <div id="card-compression" class="crypto-card p-6 cursor-pointer hover:ring-2 transition-all" style="--tw-ring-color: rgba(139, 92, 246, 0.5);" onclick="applyFilter('compression')" title="Click to filter by compression">
                             <div class="flex items-center justify-between mb-4">
                                 <div>
-                                    <div class="text-secondary text-sm mb-1">Compression</div>
-                                    <div id="stat-comp" class="text-3xl font-bold" style="color: #a855f7;">--</div>
-                                    <div class="text-xs mt-1" style="color: var(--text-muted);">Ready to move</div>
+                                    <div class="text-secondary text-sm mb-1">Compression <i class="fas fa-filter ml-1 text-xs opacity-50"></i></div>
+                                    <div id="stat-comp" class="text-3xl font-bold" style="color: #a78bfa;">--</div>
+                                    <div class="text-xs mt-1" style="color: var(--text-muted);">Building energy</div>
                                 </div>
-                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(168, 85, 247, 0.1);">
-                                    <i class="fas fa-compress text-xl" style="color: #a855f7;"></i>
+                                <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: rgba(139, 92, 246, 0.1);">
+                                    <i class="fas fa-compress-arrows-alt text-xl" style="color: #a78bfa;"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Core Holdings -->
-                    <div class="crypto-card p-6 mb-8">
-                        <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-star" style="color: var(--color-warning);"></i> Core Holdings
-                            <span class="text-xs font-normal" style="color: var(--text-muted);">BTC, ETH, SOL, XRP, DOGE, BNB, LINK</span>
-                        </h3>
-                        <div id="core-holdings-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
-                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
-                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
-                            <div class="loading-skeleton rounded-xl p-6 h-32"></div>
+                    <div class="crypto-card p-5 mb-6" style="background: linear-gradient(135deg, rgba(30, 30, 46, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%); border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-base font-semibold text-white flex items-center gap-2">
+                                <i class="fas fa-star text-sm" style="color: var(--color-warning);"></i> 
+                                Core Holdings
+                                <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(245, 158, 11, 0.1); color: var(--color-warning);">7 Assets</span>
+                            </h3>
+                            <span class="text-xs" style="color: var(--text-muted);">BTC · ETH · SOL · XRP · DOGE · BNB · LINK</span>
+                        </div>
+                        <div id="core-holdings-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
+                            <div class="loading-skeleton rounded-lg p-4 h-24"></div>
                         </div>
                     </div>
 
@@ -478,7 +529,7 @@
     </div>
 
     <!-- DYNAMIC DATA LOADING -->
-    <script src="data-loader.js?v=5"></script>
+    <script src="data-loader.js?v=6"></script>
     <script>
         // State
         let coins = [];
@@ -568,11 +619,27 @@
 
         // Navigation
         function showSection(sectionId) {
+            // Hide all sections first
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            document.getElementById('nav-' + sectionId).classList.add('active');
             
+            // Show target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                // Scroll section to top of viewport
+                targetSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+            }
+            
+            // Update nav
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            const navItem = document.getElementById('nav-' + sectionId);
+            if (navItem) navItem.classList.add('active');
+            
+            // Scroll main to top
+            const main = document.querySelector('main');
+            if (main) main.scrollTop = 0;
+            
+            // Render section content
             if (sectionId === 'heatmap') renderHeatMap();
             if (sectionId === 'opportunities') renderOpportunities();
             if (sectionId === 'portfolio') renderPortfolio();
@@ -604,21 +671,26 @@
             const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
             
             if (holdings.length === 0) {
-                container.innerHTML = '<div class="col-span-4 text-center py-8" style="color: var(--text-muted);">No core holdings data available</div>';
+                container.innerHTML = '<div class="col-span-7 text-center py-6" style="color: var(--text-muted);">No core holdings data available</div>';
                 return;
             }
             
-            container.innerHTML = holdings.map(c => `
-                <div class="crypto-card p-4 ${getSignalClass(c.signal)}">
-                    <div class="flex items-center justify-between mb-2">
-                        <div class="flex items-center gap-2">
-                            <span class="font-bold text-white">${c.symbol}</span>
-                            ${c.compression ? '<span class="text-[10px] px-1.5 py-0.5 rounded" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">COMP</span>' : ''}
-                        </div>
-                        ${getSignalBadge(c.signal)}
+            // Sort to match coreHoldings order
+            const orderedHoldings = coreHoldings.map(symbol => 
+                holdings.find(h => h.symbol === symbol) || { symbol, price: 0, signal: 'hold', csrsiState: 'neutral', compression: false }
+            );
+            
+            container.innerHTML = orderedHoldings.map(c => `
+                <div class="crypto-card p-3 ${getSignalClass(c.signal)}" style="min-height: 80px;">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-bold text-sm text-white">${c.symbol}</span>
+                        ${c.compression ? '<span class="text-[9px] px-1 rounded" style="background: rgba(168, 85, 247, 0.2); color: #a855f7;">COMP</span>' : ''}
                     </div>
-                    <div class="text-2xl font-bold price-display">${CryptoDataLoader.formatPrice(c.price)}</div>
-                    <div class="text-xs mt-1" style="color: var(--text-muted);">RSI: ${c.csrsiState.replace(/_/g,' ')}</div>
+                    <div class="text-lg font-bold text-white font-mono-data mb-1">${c.price > 0 ? CryptoDataLoader.formatPrice(c.price) : '--'}</div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px]" style="color: var(--text-muted);">${c.csrsiState?.replace(/_/g,' ') || 'neutral'}</span>
+                        ${c.signal !== 'hold' ? getSignalBadge(c.signal) : ''}
+                    </div>
                 </div>
             `).join('');
         }
@@ -659,10 +731,21 @@
 
         function renderOpportunities() {
             const container = document.getElementById('opportunities-grid');
+            if (!container) {
+                console.error('[renderOpportunities] Container not found!');
+                return;
+            }
+            if (coins.length === 0) {
+                console.log('[renderOpportunities] No coins data yet');
+                container.innerHTML = '<div class="text-center py-12" style="color: var(--text-muted); grid-column: 1 / -1;">Loading data...</div>';
+                return;
+            }
+            
             const opportunities = coins.filter(c => c.signal !== 'hold' || c.compression || c.confidence >= 45);
+            console.log('[renderOpportunities] Found', opportunities.length, 'opportunities from', coins.length, 'coins');
             
             if (opportunities.length === 0) {
-                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No active opportunities. Market in consolidation.</div>';
+                container.innerHTML = '<div class="text-center py-12" style="color: var(--text-muted); grid-column: 1 / -1;">No active opportunities. Market in consolidation.</div>';
                 return;
             }
             
@@ -670,10 +753,10 @@
                 <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol?.substring(0,2) || '??'}</div>
                             <div>
-                                <div class="font-semibold text-white">${c.symbol}</div>
-                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy}</div>
+                                <div class="font-semibold text-white">${c.symbol || 'Unknown'}</div>
+                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy || 'Unknown'}</div>
                             </div>
                         </div>
                         ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Compression</span>' : getConfidenceBadge(c.confidence)}
@@ -682,14 +765,25 @@
                         <div class="text-2xl font-bold price-display">${CryptoDataLoader.formatPrice(c.price)}</div>
                         ${getSignalBadge(c.signal)}
                     </div>
-                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${c.csrsiState.replace(/_/g,' ')} | ${c.rtomBias}</div>
+                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${(c.csrsiState || 'neutral').replace(/_/g,' ')} | ${c.rtomBias || 'neutral'}</div>
                 </div>
             `).join('');
         }
 
         function renderPortfolio() {
             const container = document.getElementById('portfolio-grid');
+            if (!container) {
+                console.error('[renderPortfolio] Container not found!');
+                return;
+            }
+            if (coins.length === 0) {
+                console.log('[renderPortfolio] No coins data yet');
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">Loading portfolio data...</div>';
+                return;
+            }
+            
             const holdings = coins.filter(c => coreHoldings.includes(c.symbol));
+            console.log('[renderPortfolio] Found', holdings.length, 'holdings from', coins.length, 'coins');
             
             if (holdings.length === 0) {
                 container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No portfolio data available</div>';
@@ -700,9 +794,9 @@
                 <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">${c.symbol.substring(0,2)}</div>
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-white" style="background: linear-gradient(135deg, var(--color-primary), #8b5cf6);">${c.symbol?.substring(0,2) || '??'}</div>
                             <div>
-                                <div class="font-semibold text-white text-lg">${c.symbol}</div>
+                                <div class="font-semibold text-white text-lg">${c.symbol || 'Unknown'}</div>
                                 <div class="text-xs" style="color: var(--text-muted);">Core Holding</div>
                             </div>
                         </div>
@@ -711,11 +805,11 @@
                     <div class="text-3xl font-bold price-display mb-2">${CryptoDataLoader.formatPrice(c.price)}</div>
                     <div class="flex items-center justify-between mb-4">
                         ${getConfidenceBadge(c.confidence)}
-                        <span class="text-xs" style="color: var(--text-muted);">${c.strategy}</span>
+                        <span class="text-xs" style="color: var(--text-muted);">${c.strategy || 'Unknown'}</span>
                     </div>
                     <div class="space-y-2 text-xs">
-                        <div class="flex justify-between"><span style="color: var(--text-muted);">RSI State:</span><span class="text-secondary">${c.csrsiState.replace(/_/g,' ')}</span></div>
-                        <div class="flex justify-between"><span style="color: var(--text-muted);">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias}</span></div>
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RSI State:</span><span class="text-secondary">${(c.csrsiState || 'neutral').replace(/_/g,' ')}</span></div>
+                        <div class="flex justify-between"><span style="color: var(--text-muted);">RtoM Bias:</span><span class="${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-300'}">${c.rtomBias || 'neutral'}</span></div>
                         ${c.compression ? '<div class="flex justify-between"><span style="color: var(--text-muted);">Status:</span><span class="font-semibold" style="color: #a855f7;">⚡ Compression</span></div>' : ''}
                     </div>
                 </div>
@@ -739,6 +833,183 @@
             if (signal === 'long') return 'signal-long';
             if (signal === 'short') return 'signal-short';
             return 'signal-hold';
+        }
+
+        // ============================================
+        // FILTER FUNCTIONALITY
+        // ============================================
+        let currentFilter = null;
+
+        function applyFilter(filterType) {
+            console.log('[Filter] Applying:', filterType);
+            currentFilter = filterType;
+            
+            // Update card visual states
+            document.querySelectorAll('#card-long, #card-short, #card-confidence, #card-compression').forEach(card => {
+                card.classList.remove('ring-2');
+                card.style.boxShadow = '';
+            });
+            
+            // Highlight active card
+            const cardMap = {
+                'long': 'card-long',
+                'short': 'card-short',
+                'high-confidence': 'card-confidence',
+                'compression': 'card-compression'
+            };
+            const activeCard = document.getElementById(cardMap[filterType]);
+            if (activeCard) {
+                activeCard.classList.add('ring-2');
+                const colors = {
+                    'long': 'rgba(16, 185, 129, 0.3)',
+                    'short': 'rgba(239, 68, 68, 0.3)',
+                    'high-confidence': 'rgba(245, 158, 11, 0.3)',
+                    'compression': 'rgba(139, 92, 246, 0.3)'
+                };
+                activeCard.style.boxShadow = `0 0 20px ${colors[filterType]}`;
+            }
+            
+            // Get filtered data
+            const filteredData = getFilteredData(filterType);
+            const filteredSymbols = new Set(filteredData.map(c => c.symbol));
+            
+            // Show filter status bar
+            const statusBar = document.getElementById('filter-status-bar');
+            const statusText = document.getElementById('filter-status-text');
+            if (statusBar && statusText) {
+                const labels = {
+                    'long': `Active Longs (${filteredData.length})`,
+                    'short': `Active Shorts (${filteredData.length})`,
+                    'high-confidence': `High Confidence (${filteredData.length})`,
+                    'compression': `Compression (${filteredData.length})`
+                };
+                statusText.textContent = labels[filterType];
+                statusBar.classList.remove('hidden');
+            }
+            
+            // Apply visual filtering to heatmap
+            const heatCells = document.querySelectorAll('.heat-cell');
+            heatCells.forEach(cell => {
+                const symbol = cell.querySelector('.text-xs.font-bold')?.textContent;
+                if (filteredSymbols.has(symbol)) {
+                    cell.style.opacity = '1';
+                    cell.style.transform = 'scale(1.05)';
+                } else {
+                    cell.style.opacity = '0.15';
+                    cell.style.transform = 'scale(0.95)';
+                }
+            });
+            
+            // Re-render table with filter
+            renderTableFiltered(filteredData);
+            
+            // Re-render opportunities with filter
+            renderOpportunitiesFiltered(filteredData);
+        }
+        
+        function getFilteredData(filterType) {
+            switch(filterType) {
+                case 'long':
+                    return coins.filter(c => c.signal === 'long');
+                case 'short':
+                    return coins.filter(c => c.signal === 'short');
+                case 'high-confidence':
+                    return coins.filter(c => c.confidence >= 65);
+                case 'compression':
+                    return coins.filter(c => c.compression === true);
+                default:
+                    return coins;
+            }
+        }
+        
+        function clearFilter() {
+            console.log('[Filter] Clearing');
+            currentFilter = null;
+            
+            // Remove visual states from cards
+            document.querySelectorAll('#card-long, #card-short, #card-confidence, #card-compression').forEach(card => {
+                card.classList.remove('ring-2');
+                card.style.boxShadow = '';
+            });
+            
+            // Hide filter status bar
+            const statusBar = document.getElementById('filter-status-bar');
+            if (statusBar) {
+                statusBar.classList.add('hidden');
+            }
+            
+            // Reset heatmap
+            const heatCells = document.querySelectorAll('.heat-cell');
+            heatCells.forEach(cell => {
+                cell.style.opacity = '1';
+                cell.style.transform = '';
+            });
+            
+            // Re-render full data
+            renderTable();
+            renderHeatMap();
+            renderOpportunities();
+        }
+        
+        function renderTableFiltered(filteredData) {
+            const tbody = document.getElementById('coins-table');
+            if (!tbody) return;
+            
+            const filteredSymbols = new Set(filteredData.map(c => c.symbol));
+            
+            tbody.innerHTML = filteredData.map(c => `
+                <tr class="table-row hover:bg-slate-800/50 transition-colors">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
+                            <span class="font-medium text-white">${c.symbol}</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4 text-right font-mono-data text-white">${CryptoDataLoader.formatPrice(c.price)}</td>
+                    <td class="py-3 px-4 text-center">${getSignalBadge(c.signal)}</td>
+                    <td class="py-3 px-4 text-center">${getConfidenceBadge(c.confidence)}</td>
+                    <td class="py-3 px-4 text-left text-xs" style="color: var(--text-muted);">${c.csrsiState?.replace(/_/g,' ') || 'neutral'}</td>
+                    <td class="py-3 px-4 text-left">
+                        <span class="text-xs ${c.rtomBias==='bullish'?'text-emerald-400':c.rtomBias==='bearish'?'text-red-400':'text-slate-400'}">${c.rtomBias}</span>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        ${c.compression ? '<span class="text-xs font-medium" style="color: #a78bfa;">⚡</span>' : '-'}
+                    </td>
+                </tr>
+            `).join('');
+        }
+        
+        function renderOpportunitiesFiltered(filteredData) {
+            const container = document.getElementById('opportunities-grid');
+            if (!container) return;
+            
+            const filteredSymbols = new Set(filteredData.map(c => c.symbol));
+            const opportunities = coins.filter(c => filteredSymbols.has(c.symbol) && (c.signal !== 'hold' || c.compression || c.confidence >= 45));
+            
+            if (opportunities.length === 0) {
+                container.innerHTML = '<div class="col-span-3 text-center py-12" style="color: var(--text-muted);">No active opportunities matching filter.</div>';
+                return;
+            }
+            
+            container.innerHTML = opportunities.slice(0, 12).map(c => `
+                <div class="crypto-card p-5 ${getSignalClass(c.signal)}">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg flex items-center justify-center font-bold text-white" style="background: var(--bg-elevated);">${c.symbol.substring(0,2)}</div>
+                            <div>
+                                <div class="font-semibold text-white">${c.symbol}</div>
+                                <div class="text-xs" style="color: var(--text-muted);">${c.strategy}</div>
+                            </div>
+                        </div>
+                        ${c.compression ? '<span class="px-2 py-1 rounded text-xs font-medium" style="background: rgba(168, 85, 247, 0.2); color: #a78bfa;">Compression</span>' : getConfidenceBadge(c.confidence)}
+                    </div>
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="text-2xl font-bold text-white font-mono-data">${CryptoDataLoader.formatPrice(c.price)}</div>
+                        ${getSignalBadge(c.signal)}
+                    </div>
+                    <div class="text-xs" style="color: var(--text-muted);">RSI: ${c.csrsiState?.replace(/_/g,' ') || 'neutral'} | Bias: ${c.rtomBias}</div>
+                </div>
+            `).join('');
         }
 
         // Start
