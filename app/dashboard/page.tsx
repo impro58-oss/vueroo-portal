@@ -105,6 +105,20 @@ export default function DashboardPage() {
           <p className="text-sm text-gray-500">Neurovascular medtech intelligence.</p>
         </a>
 
+        {/* TrojanVue - Paper Trading */}
+        <a href="/trading/" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border-2 border-cyan-300">
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-3 bg-cyan-100 rounded-lg">
+              <svg className="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <span className="text-xs font-medium text-cyan-600 bg-cyan-50 px-2 py-1 rounded-full">PAPER</span>
+          </div>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">TrojanVue Paper Trading</h3>
+          <p className="text-sm text-gray-500">Donchian Channel trend following. V4.1 with BTC regime filter.</p>
+        </a>
+
         {/* QuantVue - Quantitative Research */}
         <a href="/dashboard/quantvue" className="block p-6 bg-white rounded-xl shadow-sm hover:shadow-md border-2 border-cyan-300">
           <div className="flex items-center justify-between mb-4">
