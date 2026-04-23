@@ -4,39 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vueroo Dashboard</title>
-    <meta http-equiv="refresh" content="0; url=/stock/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-surface: #15151f;
+            --bg-card: #0f172a;
+            --color-primary: #00d4ff;
+            --color-primary-glow: rgba(0, 212, 255, 0.3);
+            --color-primary-subtle: rgba(0, 212, 255, 0.1);
+        }
         body {
-            background: #0a0a0f;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
             color: #f8fafc;
-            font-family: Inter, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        .portal-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0,212,255,0.1);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .portal-card:hover {
+            border-color: rgba(0,212,255,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15);
+        }
+        .portal-card:hover::before {
+            opacity: 1;
+        }
+        .portal-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            font-size: 22px;
+            margin-bottom: 16px;
         }
-        .redirect-box {
-            text-align: center;
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(0, 212, 255, 0.3);
-            border-top-color: #00d4ff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        a { color: #00d4ff; }
+        .badge-live { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .badge-beta { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .badge-new { background: rgba(0, 212, 255, 0.15); color: #00d4ff; }
     </style>
 </head>
 <body>
-    <div class="redirect-box">
-        <div class="spinner"></div>
-        <h2>Redirecting to StockVue...</h2>
-        <p>If not redirected, <a href="/stock/">click here</a></p>
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="flex items-center gap-4 mb-12">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                <i class="fas fa-th-large text-white text-2xl"></i>
+            </div>
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">Vueroo Dashboard</h1>
+                <p class="text-slate-400 text-sm mt-1">Command center for all intelligence systems</p>
+            </div>
+        </div>
+
+        <!-- Portal Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- TrojanVue Paper Trading -->
+            <a href="/trading/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">TrojanVue</h2>
+                    <span class="badge badge-new">PAPER</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">Donchian Channel trend following system. V4.1 with 200 SMA, BTC regime filter, and time stops. Top 20 crypto, €1K per token.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>Daily signals</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-coins"></i>
+                    <span>20 tokens</span>
+                    <span class="mx-1">·</span>
+                    <span class="text-cyan-400 font-mono">V4.1</span>
+                </div>
+            </a>
+
+            <!-- CryptoVue -->
+            <a href="/crypto/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-blue-500 to-indigo-600 text-white">
+                    <i class="fas fa-bitcoin-sign"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">CryptoVue</h2>
+                    <span class="badge badge-live">LIVE</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">Top 200 crypto intelligence. Scanner signals, momentum analysis, and market-wide heat map.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>3h scans</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-coins"></i>
+                    <span>200 tokens</span>
+                </div>
+            </a>
+
+            <!-- StockVue -->
+            <a href="/stock/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-amber-500 to-orange-600 text-white">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">StockVue</h2>
+                    <span class="badge badge-live">LIVE</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">US equity tracking. Alpha Vantage data, momentum signals, and sector heat maps.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>4h scans</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-chart-line"></i>
+                    <span>12 stocks</span>
+                </div>
+            </a>
+
+            <!-- NeuroVue -->
+            <a href="/neuro/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-violet-500 to-purple-600 text-white">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">NeuroVue</h2>
+                    <span class="badge badge-live">LIVE</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">MedTech competitive intelligence. Stroke market data, revenue analysis, and competitor profiling.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>15m cycles</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-hospital"></i>
+                    <span>MedTech</span>
+                </div>
+            </a>
+
+            <!-- QuantVue -->
+            <a href="/quantvue/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-cyan-500 to-sky-600 text-white">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">QuantVue</h2>
+                    <span class="badge badge-beta">BETA</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">Quantitative analysis. Multi-model ensemble predictions and data synchronization.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>3h sync</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-robot"></i>
+                    <span>5 models</span>
+                </div>
+            </a>
+
+            <!-- LotteryVue -->
+            <a href="/research/" class="portal-card group">
+                <div class="portal-icon bg-gradient-to-br from-pink-500 to-rose-600 text-white">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <div class="flex items-center gap-2 mb-2">
+                    <h2 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">LotteryVue</h2>
+                    <span class="badge badge-live">LIVE</span>
+                </div>
+                <p class="text-sm text-slate-400 mb-3">Lottery intelligence. V3 signal-aware engine, E5 topological analysis, and superconductor cross-game resonance.</p>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                    <i class="fas fa-clock"></i>
+                    <span>Wed/Sat</span>
+                    <span class="mx-1">·</span>
+                    <i class="fas fa-star"></i>
+                    <span>Irish + Euro</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 pt-6 border-t border-cyan-900/30 text-center text-xs text-slate-600">
+            Vueroo Intelligence Platform · All systems running · <span class="font-mono">v2026.4</span>
+        </div>
     </div>
 </body>
 </html>
