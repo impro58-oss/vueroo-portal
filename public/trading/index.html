@@ -328,9 +328,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
     <script>
-        const DATA_URL = 'dashboard.json';
-        const TRADES_URL = 'trades.json';
-        const POSITIONS_URL = 'positions.json';
+        const GITHUB_BASE = 'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/trading/';
+        const DATA_URL = GITHUB_BASE + 'dashboard.json';
+        const TRADES_URL = GITHUB_BASE + 'trades.json';
+        const POSITIONS_URL = GITHUB_BASE + 'positions.json';
         let pnlChart = null;
 
         function formatEur(val) {
