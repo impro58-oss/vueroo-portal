@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-005-API-INTEGRATION Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-005 API Integration Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Integrate a new API properly: key management, rate limiting, error handling, retry logic, data validation. No hardcoded keys, no unhandled errors, no silent failures.</p><p><h2>Trigger</h2>
+<li>When adding a new data source that requires an API</li>
+<li>When an existing API integration needs updating</li>
+<li>When building a new agent that fetches external data</li></p><p><h2>Prerequisites</h2>
+<li>API endpoint documentation available</li>
+<li>API key obtained (or plan for obtaining)</li>
+<li>Understanding of rate limits and pricing</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Check for Existing Key</h3>
+1. Check <code>C:\Users\impro\Documents\RooQuest Data\API's\</code> for existing keys
+2. Check <code>config/api-keys.env</code> for keys already configured
+3. If no key exists, get one from the provider
+4. <strong>NEVER hardcode keys in source code</strong>
+5. <strong>NEVER commit keys to GitHub</strong></p><p><h3>Step 2: Store the Key</h3>
+Add to <code>config/api-keys.env</code>:
+<pre><code>
+[SERVICE]_API_KEY=sk-...
+[SERVICE]_API_URL=https://api.example.com/v1
+</code></pre></p><p><h3>Step 3: Build the Integration</h3>
+Standard pattern:
+<pre><code>python
+import os
+import time
+import json
+import requests
+from dotenv import load_dotenv</p><p>load_dotenv('config/api-keys.env')</p><p>class [Service]Client:
+    BASE_URL = os.getenv('[SERVICE]_API_URL', 'https://api.example.com/v1')
+    API_KEY = os.getenv('[SERVICE]_API_KEY')
+    RATE_LIMIT = 1.0  # seconds between requests
+    MAX_RETRIES = 3
+    TIMEOUT = 30
+    
+    def __init__(self):
+        if not self.API_KEY:
+            raise ValueError("[SERVICE]_API_KEY not set in config/api-keys.env")
+        self.session = requests.Session()
+        self.session.headers.update({
+            'Authorization': f'Bearer {self.API_KEY}',
+            'Content-Type': 'application/json'
+        })
+        self._last_request_time = 0
+    
+    def _rate_limit(self):
+        elapsed = time.time() - self._last_request_time
+        if elapsed < self.RATE_LIMIT:
+            time.sleep(self.RATE_LIMIT - elapsed)
+    
+    def _request(self, method, endpoint, **kwargs):
+        for attempt in range(self.MAX_RETRIES):
+            self._rate_limit()
+            try:
+                response = self.session.request(
+                    method, f'{self.BASE_URL}/{endpoint}',
+                    timeout=self.TIMEOUT, **kwargs
+                )
+                self._last_request_time = time.time()
+                
+                if response.status_code == 429:
+                    retry_after = int(response.headers.get('Retry-After', 60))
+                    time.sleep(retry_after)
+                    continue
+                
+                response.raise_for_status()
+                return response.json()
+                
+            except requests.exceptions.Timeout:
+                if attempt == self.MAX_RETRIES - 1:
+                    raise
+                time.sleep(2 ** attempt)
+                
+            except requests.exceptions.RequestException as e:
+                if attempt == self.MAX_RETRIES - 1:
+                    raise
+                time.sleep(2 ** attempt)
+        
+        return None
+</code></pre></p><p><h3>Step 4: Validate Response Data</h3>
+For every API response:
+<pre><code>python
+def validate_response(data, required_fields):
+    """Validate API response has expected structure."""
+    if data is None:
+        return None  # Don't crash, return None
+    
+    missing = [f for f in required_fields if f not in data]
+    if missing:
+        print(f"WARNING: API response missing fields: {missing}")
+    
+    # Sanitize NaN/undefined
+    return sanitize_data(data)</p><p>def sanitize_data(obj):
+    """Replace NaN, undefined, None with safe defaults."""
+    if obj is None or obj == 'undefined':
+        return None
+    if isinstance(obj, float) and (isNaN := obj != obj):  # NaN check
+        return 0
+    if isinstance(obj, dict):
+        return {k: sanitize_data(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_data(item) for item in obj]
+    return obj
+</code></pre></p><p><h3>Step 5: Test the Integration</h3>
+1. <strong>Unit test:</strong> Call the API with known parameters, verify response structure
+2. <strong>Error test:</strong> Call with invalid key, verify graceful failure
+3. <strong>Rate limit test:</strong> Call rapidly, verify backoff works
+4. <strong>Timeout test:</strong> Set timeout very low, verify retry logic
+5. <strong>Integration test:</strong> Run full pipeline, verify data flows to dashboard</p><p><h3>Step 6: Document</h3>
+Add to <code>TOOLS.md</code>:
+<pre><code>markdown
+<h2>[Service] API</h2>
+<li><strong>Endpoint:</strong> [base URL]</li>
+<li><strong>Key location:</strong> <code>config/api-keys.env</code> → [SERVICE]_API_KEY</li>
+<li><strong>Rate limit:</strong> [X requests/minute]</li>
+<li><strong>Used by:</strong> [which agents/scripts]</li>
+<li><strong>Last tested:</strong> YYYY-MM-DD</li>
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">No hardcoded keys in source code</div>
+<div class="checkitem">Key stored in config/api-keys.env</div>
+<div class="checkitem">Rate limiting implemented</div>
+<div class="checkitem">Retry logic with exponential backoff</div>
+<div class="checkitem">NaN/undefined sanitization on response data</div>
+<div class="checkitem">Error handling for all failure modes</div>
+<div class="checkitem">Integration test passed</div>
+<div class="checkitem">Documented in TOOLS.md</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| API key invalid/expired | Check key in api-keys.env, regenerate if needed |
+| Rate limited (429) | Respect Retry-After header, back off |
+| Timeout | Retry with exponential backoff (2s, 4s, 8s) |
+| Unexpected response format | Log warning, sanitize, continue with available data |
+| API down entirely | Log error, use cached data if available, alert via monitoring |</p><p><h2>References</h2>
+<li>DEV-002 Code Quality Gates Protocol</li>
+<li>HEARTBEAT.md — NaN sanitization requirement</li>
+<li>config/api-keys.env — Key storage</li>
+</body></html>

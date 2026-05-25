@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-003-COMPETITIVE-INTELLIGENCE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-003 Competitive Intelligence Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Research competitors systematically: identify targets, gather data from public sources, validate claims, track movements over time, create competitor profiles. Feed NeuroVue with verified intelligence.</p><p><h2>Trigger</h2>
+<li>When Roo asks "what are our competitors doing?"</li>
+<li>When updating NeuroVue competitive intelligence data</li>
+<li>When preparing a market brief or investor document</li>
+<li>When a competitor announces something newsworthy</li></p><p><h2>Prerequisites</h2>
+<li>Target competitors identified (or identify them in Step 1)</li>
+<li>RSC-001 and RSC-007 understood (multi-source research, AI interrogation)</li>
+<li>NeuroVue data structure understood: <code>medtech-intelligence/dashboard/data/</code></li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define the Competitive Landscape</h3>
+<pre><code>markdown
+<h2>Competitive Landscape Scan</h2>
+<strong>Market:</strong> [e.g., "neurovascular embolization devices"]
+<strong>Geography:</strong> [e.g., "global" or "US + Europe"]
+<strong>Date:</strong> YYYY-MM-DD</p><p><h3>Tier 1 Competitors (Direct)</h3>
+[Companies that compete head-to-head in the same segment]</p><p><h3>Tier 2 Competitors (Adjacent)</h3>
+[Companies in related segments that could expand]</p><p><h3>Tier 3 Competitors (Emerging)</h3>
+[Startups, new entrants, companies with pipeline products]
+</code></pre></p><p>Use Perplexity (via PACK) for initial landscape scan:
+"List all companies competing in [market segment]. Include company name, headquarters, key products, estimated revenue, and recent news."</p><p><h3>Step 2: Deep Dive on Each Competitor</h3>
+For each Tier 1 competitor, gather:</p><p><strong>Public financial data:</strong>
+<li>Annual/quarterly revenue (from SEC filings, annual reports)</li>
+<li>Revenue growth rate</li>
+<li>Market share estimates</li>
+<li>Tag: [VERIFIED] only if from official filing. [ESTIMATE] if derived. [UNVERIFIED] if from third party.</li></p><p><strong>Product portfolio:</strong>
+<li>Approved products (with FDA/CE clearance dates)</li>
+<li>Pipeline products (with clinical trial phase)</li>
+<li>Pricing (if publicly available)</li>
+<li>Tag each product status as [APPROVED], [INVESTIGATIONAL], or [MARKETED]</li></p><p><strong>Clinical evidence:</strong>
+<li>Key publications (search PubMed per RSC-002)</li>
+<li>Clinical trial registrations (ClinicalTrials.gov)</li>
+<li>FDA clearance/approval letters (FDA database)</li>
+<li>Tag: [VERIFIED] from official sources only</li></p><p><strong>Strategic moves:</strong>
+<li>Recent M&A activity</li>
+<li>Partnership announcements</li>
+<li>Executive changes</li>
+<li>Conference presentations</li>
+<li>Tag: [VERIFIED] from press releases, [UNVERIFIED] from rumors</li></p><p><h3>Step 3: Validate All Claims</h3>
+For every competitor claim:
+1. <strong>Financial claims</strong> → Cross-reference with SEC EDGAR filings (US) or company annual reports
+2. <strong>Clinical claims</strong> → Cross-reference with ClinicalTrials.gov and PubMed
+3. <strong>Product claims</strong> → Cross-reference with FDA 510(k) or PMA database
+4. <strong>Market share</strong> → Tag as [ESTIMATE] unless from a verified market research report with methodology</p><p><strong>Hard rules from RSC-002:</strong>
+<li>No verified data → use 0.1 as marker</li>
+<li>NEVER estimate financial data</li>
+<li>Every claim gets a tag: [VERIFIED], [ESTIMATE], [UNVERIFIED], or [0.1 MARKER]</li></p><p><h3>Step 4: Create Competitor Profile</h3>
+For each competitor, write a profile using this template:
+<pre><code>markdown
+<h1>[Company Name] — Competitive Profile</h1></p><p><strong>Updated:</strong> YYYY-MM-DD
+<strong>Tier:</strong> 1/2/3
+<strong>Data Quality:</strong> HIGH/MEDIUM/LOW</p><p><h2>Company Overview</h2>
+<li>HQ: [location]</li>
+<li>Founded: [year]</li>
+<li>Employees: [number] [VERIFIED/ESTIMATE]</li>
+<li>Public/Private: [status]</li></p><p><h2>Financial Summary</h2>
+<li>Revenue: $[X]M [VERIFIED: source, year]</li>
+<li>Growth Rate: [X]% [VERIFIED/ESTIMATE: source]</li>
+<li>Market Cap: $[X]B [VERIFIED: source, date]</li></p><p><h2>Product Portfolio</h2>
+| Product | Status | Indication | Clearance | Revenue Est. |
+|---------|--------|------------|-----------|---------------|
+| [name]  | [APPROVED/INVESTIGATIONAL] | [indication] | [FDA/CE date] | $[X]M [tag] |</p><p><h2>Pipeline</h2>
+| Product | Phase | Indication | Expected Launch |
+|---------|-------|------------|-----------------|
+| [name]  | [Phase I/II/III] | [indication] | [year] [tag] |</p><p><h2>Strategic Assessment</h2>
+<li>Strengths: [what they do well]</li>
+<li>Weaknesses: [what they struggle with]</li>
+<li>Threat Level: HIGH/MEDIUM/LOW</li>
+<li>Key Watch Items: [what to monitor]</li></p><p><h2>Sources</h2>
+[Citation list with tags]
+</code></pre></p><p><h3>Step 5: Update NeuroVue Data</h3>
+If the competitor is in the NeuroVue coverage area:
+1. Update <code>medtech-intelligence/dashboard/data/competitor-intelligence.json</code>
+2. Add source attribution to each data point
+3. Push to GitHub: <code>cd workspace && git add && git commit && git push</code>
+4. Verify live dashboard reflects changes at http://localhost:8766</p><p><h3>Step 6: Track and Monitor</h3>
+Set up ongoing monitoring:
+<li>Add competitor names to NeuroVue scan keywords</li>
+<li>Schedule quarterly deep dives via cron</li>
+<li>Flag any material changes (M&A, new product launch, clinical trial results) for immediate update</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Every competitor identified and tiered (1/2/3)</div>
+<div class="checkitem">Every financial claim tagged [VERIFIED/ESTIMATE/UNVERIFIED/0.1]</div>
+<div class="checkitem">Every product status confirmed via FDA/CE database</div>
+<div class="checkitem">No financial estimates without explicit ESTIMATE tag</div>
+<div class="checkitem">NeuroVue data updated (if applicable)</div>
+<div class="checkitem">Profile filed in Obsidian vault</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Competitor is private, no financial data | Mark all financials as [UNVERIFIED], note "Private company" |
+| FDA database returns no results | May be CE-mark only (Europe) or not yet cleared. Note status. |
+| Conflicting revenue figures | Use most recent official filing, note discrepancy |
+| Competitor website makes claims with no published evidence | Tag [UNVERIFIED: company website, no published data] |</p><p><h2>References</h2>
+<li>Biotech in the Balance (Levin) — Trust as strategic differentiator</li>
+<li>RSC-001 Multi-Source Research Protocol</li>
+<li>RSC-002 MedTech Literature Review Protocol</li>
+<li>NeuroVue data pipeline: <code>TOOLS.md</code></li>
+<li>Zero to One (Thiel) — Understanding competitive moats</li>
+</body></html>

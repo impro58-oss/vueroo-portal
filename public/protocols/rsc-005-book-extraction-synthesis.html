@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-005-BOOK-EXTRACTION-SYNTHESIS Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-005 Book Extraction & Synthesis Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE</p><p><h2>Purpose</h2>
+Extract full text from PDF/EPUB books, file them in the correct Obsidian vault folder with proper tags, and synthesize key knowledge. No shortcuts — full text extraction, proper filing, and meaningful synthesis.</p><p><h2>Trigger</h2>
+<li>When Roo adds books to <code>C:\Users\impro\Documents\Reading</code></li>
+<li>When a book is identified for knowledge base building</li>
+<li>After any bulk book download</li></p><p><h2>Prerequisites</h2>
+<li>PDF or EPUB files in <code>C:\Users\impro\Documents\Reading</code></li>
+<li>pdfplumber installed (<code>pip install pdfplumber</code>)</li>
+<li>ebooklib installed for EPUBs (<code>pip install ebooklib</code>)</li>
+<li>Obsidian vault path: <code>C:\Users\impro\Documents\quest vault</code></li></p><p><h2>Steps</h2></p><p><h3>Step 1: Scan Reading Folder</h3>
+<li>List all files in <code>C:\Users\impro\Documents\Reading</code></li>
+<li>Classify by type: PDF, EPUB, other</li>
+<li>Skip files already extracted (check <code>memory/book-extractions/</code> for existing output)</li>
+<li>Check file size — flag anything >100MB (may need special handling)</li></p><p><h3>Step 2: Extract Full Text</h3>
+<strong>For PDF files:</strong>
+<pre><code>python
+import pdfplumber
+with pdfplumber.open(filepath) as pdf:
+    for page in pdf.pages:
+        text = page.extract_text()
+        # Append to output
+</code></pre>
+<li>Extract ALL pages, no skipping</li>
+<li>If a page fails, log it but continue to next page</li>
+<li>If pdfplumber fails on a file, try PyPDF2 as fallback</li>
+<li>If both fail, mark as EXTRACTION FAILED and report to Roo</li></p><p><strong>For EPUB files:</strong>
+<pre><code>python
+import ebooklib
+from ebooklib import epub
+from bs4 import BeautifulSoup</p><p>book = epub.read_epub(filepath)
+for item in book.get_items_of_type(ebooklib.ITEM_DOCUMENT):
+    soup = BeautifulSoup(item.get_content(), 'html.parser')
+    text = soup.get_text()
+    # Append to output
+</code></pre></p><p><h3>Step 3: Create Markdown Output</h3>
+File naming: <code>YYYY-MM-DD-[BookTitle]-[Author].md</code></p><p>Standard structure:
+<pre><code>markdown
+---
+tags:
+  - book-extraction
+  - [domain tag: ai/medtech/quantum/business/etc]
+  - [topic tag: specific to content]
+---</p><p><h1>[Book Title]</h1>
+<strong>Author:</strong> [Author]
+<strong>Extracted:</strong> YYYY-MM-DD
+<strong>Source:</strong> [OceanofPDF / z-library / other]</p><p><h2>Full Text Extraction</h2></p><p>[ALL extracted text — every chapter, every section, no summarizing]</p><p><h2>Key Concepts</h2>
+<div class="checkitem">— [1-line description]</div>
+<div class="checkitem">— [1-line description]</div>
+<li>[Continue for all major concepts]</li></p><p><h2>Chapter Summaries</h2>
+<li>Ch 1: [1-line summary]</li>
+<li>Ch 2: [1-line summary]</li>
+<li>[Continue for all chapters]</li>
+</code></pre></p><p><h3>Step 4: Classify and File</h3>
+<strong>Domain classification → Obsidian folder mapping:</strong></p><p>| Domain | Tags | Vault Folder |
+|--------|------|-------------|
+| AI / Machine Learning / Agents | ai, book-extraction, [specific] | <code>30-Resources/Book-Extractions/AI-Architecture/</code> |
+| MedTech / Healthcare | medtech, book-extraction, [specific] | <code>30-Resources/Book-Extractions/MedTech/</code> |
+| Trading / Finance / Economics | trading, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Trading-Finance/</code> |
+| Business / Strategy / Startup | startup, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Business-Strategy/</code> |
+| Mathematics / Science | mathematics, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Mathematics-Science/</code> |
+| Quantum / Physics | quantum, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Quantum-Physics/</code> |
+| Consciousness / Ethics / Philosophy | consciousness, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Consciousness-Resonance/</code> |
+| Alchemy / Occult / Esoteric | alchemy, book-extraction, [specific] | <code>30-Resources/Book-Extractions/Alchemy-Occult/</code> |</p><p><h3>Step 5: Copy to Vault</h3>
+<li>Add frontmatter tags (from classification)</li>
+<li>Write to correct Obsidian vault folder</li>
+<li>Update <code>Book-Extractions-Index.md</code> with new entry</li></p><p><h3>Step 6: Clean Up Source Files</h3>
+<strong>After successful extraction AND filing in vault:</strong>
+<li>DELETE the original PDF/EPUB from <code>C:\Users\impro\Documents\Reading</code></li>
+<li>Do NOT ask Roo for permission (he already said clean up)</li>
+<li>Do NOT leave source files sitting around</li>
+<li>Log what was deleted</li></p><p><h3>Step 7: Synthesize (if batch)</h3>
+If multiple books were extracted:
+<li>Write synthesis to <code>memory/YYYY-MM-DD-book-synthesis.md</code></li>
+<li>Identify knowledge gaps filled</li>
+<li>Identify new ideas sparked</li>
+<li>Cross-reference with existing knowledge (memory_search)</li>
+<li>File synthesis in Obsidian <code>30-Resources/Book-Extractions/</code></li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">ALL pages extracted (check page count matches)</div>
+<div class="checkitem">Frontmatter tags present and correct</div>
+<div class="checkitem">Filed in correct vault folder</div>
+<div class="checkitem">Index updated</div>
+<div class="checkitem">Source PDF/EPUB deleted from Reading folder</div>
+<div class="checkitem">Key Concepts section has at least 5 entries</div>
+<div class="checkitem">Chapter Summaries covers all chapters</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| PDF won't open | Try PyPDF2 fallback, then report as FAILED |
+| EPUB parsing error | Try zipfile + BeautifulSoup fallback |
+| Garbled text (esoteric/symbol books) | Note in output, extract what's possible |
+| Can't classify domain | Use best guess, flag for Roo review |
+| Vault folder doesn't exist | Create it, add to classification table |</p><p><h2>References</h2>
+<li>Current extraction directory: <code>memory/book-extractions/</code></li>
+<li>Obsidian vault: <code>C:\Users\impro\Documents\quest vault\30-Resources\Book-Extractions\</code></li>
+<li>Previous extraction: May 25, 2026 — 23 books processed</li>
+</body></html>

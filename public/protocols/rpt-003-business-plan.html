@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-003-BUSINESS-PLAN Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-003 Business Plan Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Write a business plan that follows the Zero to One framework. Every business plan must answer: Is this 0→1 or 1→n? What's the secret? Where's the monopoly?</p><p><h2>Trigger</h2>
+<li>When starting a new venture (Repurpose.ai, Avaark, etc.)</li>
+<li>When preparing for investors or partners</li>
+<li>When evaluating whether to continue a project (STR-001 audit)</li></p><p><h2>Prerequisites</h2>
+<li>STR-003 Idea Development completed (idea validated)</li>
+<li>Market research completed (RSC-004) or at least scoped</li>
+<li>Clear understanding of the product and target customer</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Zero to One Classification</h3>
+Before writing ANYTHING, classify:
+<li><strong>0→1:</strong> Creating something entirely new. Nobody does this. Power-law returns.</li>
+<li><strong>1→n:</strong> Improving something that exists. Others compete. Linear returns.</li></p><p>This classification determines the ENTIRE plan's strategy.</p><p><h3>Step 2: The Seven Questions (from Thiel)</h3>
+Answer ALL seven. Each gets a strength rating 1-5:</p><p>1. <strong>Engineering:</strong> Can you create breakthrough technology instead of incremental improvements?
+2. <strong>Timing:</strong> Is now the right time? What changed recently?
+3. <strong>Monopoly:</strong> Are you starting with a big share of a small market?
+4. <strong>People:</strong> Do you have the right team?
+5. <strong>Distribution:</strong> Do you have a way to reach customers?
+6. <strong>Durability:</strong> Will this be defensible in 10-20 years?
+7. <strong>Secret:</strong> Have you identified a unique opportunity that others don't see?</p><p>Total score: /35. Below 20 = rethink. 20-25 = proceed with caution. 25+ = strong foundation.</p><p><h3>Step 3: Alchemical Stage</h3>
+Where is this venture in the transformation cycle?</p><p>| Stage | Meaning | What to Do |
+|-------|---------|-----------|
+| Nigredo | Breaking down the old | Research, validate, let old assumptions die |
+| Albedo | Purifying, separating | Test ruthlessly, kill weak parts, refine |
+| Citrinitas | Illumination, the insight | Document the secret, don't build yet |
+| Rubedo | Integration, bringing to form | Build, ship, operate |</p><p><h3>Step 4: Write the Plan</h3>
+Use this structure:</p><p><pre><code>markdown
+<h1>Business Plan: [Venture Name]</h1></p><p><strong>Date:</strong> YYYY-MM-DD
+<strong>Classification:</strong> 0→1 / 1→n
+<strong>Alchemical Stage:</strong> Nigredo / Albedo / Citrinitas / Rubedo
+<strong>Protocols Applied:</strong> STR-003, RSC-004, RPT-003</p><p><h2>The Secret</h2>
+[What truth do you see that others don't? 2-3 sentences.]</p><p><h2>Problem</h2>
+[Who has this problem and how painful is it? Be specific.]</p><p><h2>Solution</h2>
+[What you're building and why it's different. 2-3 sentences.]</p><p><h2>The Seven Questions</h2>
+| Question | Answer | Strength (1-5) |
+|----------|--------|----------------|
+| Engineering | | |
+| Timing | | |
+| Monopoly | | |
+| People | | |
+| Distribution | | |
+| Durability | | |
+| Secret | | |
+| <strong>Total</strong> | | <strong>/35</strong> |</p><p><h2>Market</h2>
+<li>TAM: $[X]B — [source, tag]</li>
+<li>SAM: $[X]B — [source, tag]</li>
+<li>SOM: $[X]M — [calculation, tag]</li>
+<li>Growth Rate: [X]% CAGR — [source, tag]</li></p><p><h2>Business Model</h2>
+<li>Revenue model: [subscription/SaaS/transaction/licensing]</li>
+<li>Pricing: [how much, for what]</li>
+<li>Unit economics: [LTV:CAC ratio if known]</li></p><p><h2>Competitive Landscape</h2>
+<li>Direct competitors: [list with market share if known]</li>
+<li>Your moat: [what makes you hard to copy]</li>
+<li>Last mover advantage: [how being last benefits you, or why being first does]</li></p><p><h2>Go-to-Market</h2>
+<li>Customer acquisition: [how you find customers]</li>
+<li>Distribution channel: [how you deliver to them]</li>
+<li>First 100 customers: [specific plan]</li></p><p><h2>Financial Projections</h2>
+| Year | Revenue | Costs | Net | Tag |
+|------|---------|-------|-----|-----|
+| Y1 | $[X] | $[X] | $[X] | [ESTIMATE] |
+| Y2 | $[X] | $[X] | $[X] | [ESTIMATE] |
+| Y3 | $[X] | $[X] | $[X] | [ESTIMATE] |</p><p><h2>Risks</h2>
+1. [Risk] — Mitigation: [how you address it]
+2. [Risk] — Mitigation: [how you address it]</p><p><h2>Next Steps</h2>
+<div class="checkitem">[Immediate action 1]</div>
+<div class="checkitem">[Immediate action 2]</div>
+<div class="checkitem">[30-day milestone]</div>
+</code></pre></p><p><h3>Step 5: Validate Assumptions</h3>
+For each key assumption in the plan:
+1. Is it based on verified data or guesswork?
+2. What's the cheapest way to test it?
+3. What would disprove it?</p><p><h3>Step 6: Review</h3>
+<li>Self-review using Recursive Excellence (score on accuracy, logic, clarity, depth, relevance, actionability)</li>
+<li>If score < 7/10, revise before presenting to Roo</li>
+<li>Multi-model review if HIGH-stakes (investor-facing)</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">0→1 or 1→n clearly classified</div>
+<div class="checkitem">Seven Questions answered with strength ratings</div>
+<div class="checkitem">Alchemical stage identified</div>
+<div class="checkitem">Market sizes tagged [VERIFIED/ESTIMATE]</div>
+<div class="checkitem">Financial projections tagged (no untagged projections)</div>
+<div class="checkitem">Key assumptions identified and testable</div>
+<div class="checkitem">Self-review score ≥ 7/10</div></p><p><h2>References</h2>
+<li>Zero to One (Thiel) — Seven questions, monopoly theory, secrets</li>
+<li>Lean Customer Development (Alvarez) — Validate before building</li>
+<li>Age of Alchemy (Chapman) — Transformation stages</li>
+</body></html>

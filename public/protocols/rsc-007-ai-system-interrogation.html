@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-007-AI-SYSTEM-INTERROGATION Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-007 AI System Interrogation Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Query external AI systems (Perplexity, Claude, ChatGPT, Gemini, Google AI) in a structured way that maximizes answer quality, captures citations, and enables proper synthesis. Each AI system has strengths — use them correctly.</p><p><h2>Trigger</h2>
+<li>When Roo wants to "ask Perplexity" or "ask Claude" about something</li>
+<li>When doing multi-source research (feeds into RSC-001)</li>
+<li>When a question needs a different perspective than Lumina can provide</li>
+<li>When adversarial review is needed (different model checking our work)</li></p><p><h2>Prerequisites</h2>
+<li>PACK Operation active (Roo's subscriptions available)</li>
+<li>Clear question framed</li>
+<li>Knowledge of which AI system is best for which type of query</li></p><p><h2>AI System Strengths & Best Use</h2></p><p>| System | Best For | Weakness | Prompt Style |
+|--------|----------|----------|--------------|
+| <strong>Perplexity</strong> | Real-time web-grounded research, citations, current events | Deep reasoning, complex analysis | "Search for [X]. Cite all sources." |
+| <strong>Claude</strong> | Deep reasoning, analysis, code review, synthesis, nuance | Real-time data, citations | "Think carefully about [X]. Show your reasoning step by step." |
+| <strong>ChatGPT</strong> | Breadth, creative ideation, diverse perspectives, quick answers | Factual accuracy, hallucination risk | "Give me all the different perspectives on [X]." |
+| <strong>Gemini</strong> | Factual grounding, multimodal, long context, speed | Depth, nuanced reasoning | "What are the established facts about [X]?" |
+| <strong>Google AI</strong> | Search integration, real-time data, broad coverage | Reasoning depth | "Find the latest information about [X]." |</p><p><h2>Steps</h2></p><p><h3>Step 1: Select the Right System</h3>
+Match question type to system:
+<li><strong>"What's the latest on X?"</strong> → Perplexity (web-grounded, citations)</li>
+<li><strong>"Analyze this deeply"</strong> → Claude (reasoning, nuance)</li>
+<li><strong>"Give me ideas/perspectives"</strong> → ChatGPT (breadth, creativity)</li>
+<li><strong>"What are the facts?"</strong> → Gemini (grounding, speed)</li>
+<li><strong>"Verify this claim"</strong> → Perplexity + Claude (citation + reasoning)</li></p><p><h3>Step 2: Frame the Prompt</h3>
+<strong>Rules for all prompts:</strong>
+1. Be specific, not vague ("What is the 5-year recurrence rate for basilar tip aneurysms treated with flow diverters?" not "Tell me about aneurysms")
+2. Request citations explicitly ("Cite your sources for every claim")
+3. Request confidence levels ("Rate your confidence in each claim as HIGH/MEDIUM/LOW")
+4. Request limitations ("What are you uncertain about?")
+5. Set the persona when helpful ("You are a MedTech analyst with 15 years of experience")</p><p><strong>Perplexity-specific:</strong>
+<li>Use "Focus" mode for academic research</li>
+<li>Use "Pro" mode for complex multi-step research</li>
+<li>Always request: "Include journal citations with year and DOI where possible"</li></p><p><strong>Claude-specific:</strong>
+<li>Use "Think step by step" for reasoning tasks</li>
+<li>Request: "Before answering, consider what you DON'T know about this topic"</li>
+<li>Request: "What assumptions are you making?"</li></p><p><strong>ChatGPT-specific:</strong>
+<li>Use "Browse with Bing" for real-time data</li>
+<li>Request: "What are the strongest arguments AGAINST your position?"</li>
+<li>Request: "What would a skeptical expert say about this?"</li></p><p><strong>Gemini-specific:</strong>
+<li>Use "Deep Research" mode when available</li>
+<li>Request: "Ground every claim in a specific source"</li>
+<li>Request: "Distinguish between established facts and emerging findings"</li></p><p><h3>Step 3: Capture the Response</h3>
+When Roo pastes back an AI response:
+1. <strong>Mark the source</strong> immediately (which system, what date)
+2. <strong>Extract claims</strong> as a numbered list
+3. <strong>Extract citations</strong> as a separate list
+4. <strong>Mark confidence</strong> based on source system + specificity of claim
+5. <strong>Flag anything that contradicts</strong> our existing knowledge</p><p><h3>Step 4: Validate Key Claims</h3>
+For any claim that will be used in a deliverable:
+1. Cross-reference with at least 1 other source (web search, another AI, existing knowledge)
+2. If VERIFIED by 2+ sources → tag [VERIFIED]
+3. If from 1 source only → tag [UNVERIFIED] until Roo can confirm
+4. If contradicted → flag for Roo's decision</p><p><h3>Step 5: File the Exchange</h3>
+Save to <code>memory/ai-interrogations/YYYY-MM-DD-[topic]-[system].md</code> with:
+<li>Original question sent</li>
+<li>System queried</li>
+<li>Full response received</li>
+<li>Extracted claims + citations</li>
+<li>Validation status</li>
+<li>Confidence levels</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Correct AI system selected for the question type</div>
+<div class="checkitem">Prompt includes citation request</div>
+<div class="checkitem">Prompt includes confidence level request</div>
+<div class="checkitem">Response claims extracted and numbered</div>
+<div class="checkitem">Key claims cross-referenced with at least 1 other source</div>
+<div class="checkitem">Results filed in memory/ai-interrogations/</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| AI gives no citations | Note "NO CITATIONS PROVIDED", treat all claims as UNVERIFIED |
+| AI contradicts itself | Note both positions, flag for Roo |
+| AI seems confident but wrong | Trust verification over confidence; cross-reference |
+| Roo can't access PACK right now | Use Brave web search + Gemini API as fallback |</p><p><h2>Output</h2>
+Structured interrogation record filed in <code>memory/ai-interrogations/</code> with full source, claims, citations, and validation status.</p><p><h2>References</h2>
+<li>PACK Operation (MEMORY.md)</li>
+<li>RSC-001 Multi-Source Research Protocol</li>
+<li>Inspired by: *Principles of Building AI Agents* (Bhagwat) — Provider/Model Selection, context engineering</li>
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-007-GIT-COMMIT-PUSH Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-007 Git Commit & Push Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Standard git workflow: meaningful commits, proper branch management, verified pushes. Never leak secrets. Never mix local-only and deployable code.</p><p><h2>Trigger</h2>
+<li>After completing any code change</li>
+<li>Before deploying to production</li>
+<li>After any data update</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Review Changes</h3>
+<pre><code>bash
+git status          # What changed?
+git diff            # What exactly changed?
+</code></pre>
+<li>Verify no secrets (API keys, passwords, tokens) in the diff</li>
+<li>Verify no Obsidian vault files (local-only) in the diff</li>
+<li>Verify changes make sense</li></p><p><h3>Step 2: Stage Intentionally</h3>
+<pre><code>bash
+git add [specific files]   # NOT git add . unless you reviewed everything
+</code></pre>
+<strong>Rules:</strong>
+<li>✅ <code>git add public/trading/dashboard.json</code> — specific, intentional</li>
+<li>✅ <code>git add scripts/trojanvue_paper_trader_v51.py</code> — specific, intentional</li>
+<li>❌ <code>git add .</code> — only if you reviewed every changed file</li>
+<li>❌ Never commit Obsidian vault files to GitHub (local-only)</li></p><p><h3>Step 3: Write a Meaningful Commit Message</h3>
+Format: <code>[scope]: [what changed]</code></p><p>Examples:
+<li><code>trading: V5.2 tuned parameters + BTC filter + trailing stop</code></li>
+<li><code>medtech: update competitor intelligence data</code></li>
+<li><code>protocols: add 16 new protocol files</code></li>
+<li><code>fix: LotteryVue scoring path mismatch</code></li>
+<li><code>docs: update HEARTBEAT.md with cron fix status</code></li></p><p><strong>Bad commit messages:</strong>
+<li>❌ <code>updates</code></li>
+<li>❌ <code>fix stuff</code></li>
+<li>❌ <code>wip</code></li>
+<li>❌ <code>asdf</code></li></p><p><h3>Step 4: Push to Correct Remote</h3>
+| Repo | Purpose | Remote | Branch |
+|------|---------|--------|--------|
+| vueroo-portal | Live dashboards | origin main | main |
+| workspace data | Data + scripts | origin master | master |</p><p><pre><code>bash
+git push origin main    # For vueroo-portal
+git push origin master  # For workspace
+</code></pre></p><p><h3>Step 5: Verify Push</h3>
+<li>Check GitHub Actions for build success (vueroo-portal)</li>
+<li>Check live URL to confirm deployment</li>
+<li>If push fails, diagnose before retrying</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">No secrets in diff</div>
+<div class="checkitem">No Obsidian vault files in diff</div>
+<div class="checkitem">Meaningful commit message</div>
+<div class="checkitem">Push succeeded</div>
+<div class="checkitem">Live URL verified (for dashboards)</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Push rejected (non-fast-forward) | Pull first, resolve conflicts, push again |
+| Secret detected in diff | Remove from file, use .gitignore, commit removal |
+| Obsidian files in diff | Unstage them, they're local-only |</p><p><h2>References</h2>
+<li>HEARTBEAT.md — GitHub = deployable code only, Obsidian = local only</li>
+</body></html>

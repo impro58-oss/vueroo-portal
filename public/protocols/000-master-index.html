@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>000-MASTER-INDEX Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>Protocol System — Master Index</h1></p><p><strong>Created:</strong> 2026-05-25
+<strong>Purpose:</strong> Standardized operating procedures for all Lumina operations. No shortcuts. No ambiguity. Same work = same way = fewer errors.</p><p><strong>Structure:</strong>
+<li><code>protocols/</code> directory contains all individual protocol files</li>
+<li>Each protocol is a standalone .md file with standard format</li>
+<li>Protocols are cross-referenced, not duplicated</li>
+<li>When in doubt, follow the protocol. When protocol is wrong, update the protocol THEN follow it.</li></p><p>---</p><p><h2>Departments (Buckets)</h2></p><p>| Department | Code | Purpose |
+|------------|------|---------|
+| <strong>Research</strong> | RSC | Gathering, validating, and synthesizing information |
+| <strong>Development</strong> | DEV | Building software, agents, systems |
+| <strong>Reporting</strong> | RPT | Creating documents, reports, presentations |
+| <strong>Design</strong> | DSN | Visual design, UI/UX, architecture design |
+| <strong>Operations</strong> | OPS | System maintenance, monitoring, deployment |
+| <strong>Strategy</strong> | STR | Business planning, competitive analysis, decision-making |</p><p>---</p><p><h2>Protocol Registry</h2></p><p><h3>Research (RSC)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| RSC-001 | Multi-Source Research | 🟡 DRAFT | [RSC-001-multi-source-research.md](RSC-001-multi-source-research.md) |
+| RSC-002 | MedTech Literature Review | 🟡 DRAFT | [RSC-002-medtech-literature-review.md](RSC-002-medtech-literature-review.md) |
+| RSC-003 | Competitive Intelligence | 🟡 DRAFT | [RSC-003-competitive-intelligence.md](RSC-003-competitive-intelligence.md) |
+| RSC-004 | Market Research | 🟡 DRAFT | [RSC-004-market-research.md](RSC-004-market-research.md) |
+| RSC-005 | Book Extraction & Synthesis | ✅ ACTIVE | [RSC-005-book-extraction-synthesis.md](RSC-005-book-extraction-synthesis.md) |
+| RSC-006 | Web Research & Fact Verification | 🟡 DRAFT | [RSC-006-web-research-verification.md](RSC-006-web-research-verification.md) |
+| RSC-007 | AI System Interrogation | 🟡 DRAFT | [RSC-007-ai-system-interrogation.md](RSC-007-ai-system-interrogation.md) |</p><p><h3>Development (DEV)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| DEV-001 | Agent Build Standard | 🟡 DRAFT | [DEV-001-agent-build-standard.md](DEV-001-agent-build-standard.md) |
+| DEV-002 | Code Quality Gates | 🟡 DRAFT | [DEV-002-code-quality-gates.md](DEV-002-code-quality-gates.md) |
+| DEV-003 | Cron Job Creation | 🟡 DRAFT | [DEV-003-cron-job-creation.md](DEV-003-cron-job-creation.md) |
+| DEV-004 | Dashboard Deployment | 🟡 DRAFT | [DEV-004-dashboard-deployment.md](DEV-004-dashboard-deployment.md) |
+| DEV-005 | API Integration | 🟡 DRAFT | [DEV-005-api-integration.md](DEV-005-api-integration.md) |
+| DEV-006 | Security Audit (Lethal Trifecta) | 🟡 DRAFT | [DEV-006-security-audit.md](DEV-006-security-audit.md) |
+| DEV-007 | Git Commit & Push | 🟡 DRAFT | [DEV-007-git-commit-push.md](DEV-007-git-commit-push.md) |</p><p><h3>Reporting (RPT)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| RPT-001 | MedTech Research Report | 🟡 DRAFT | [RPT-001-medtech-research-report.md](RPT-001-medtech-research-report.md) |
+| RPT-002 | Trading Analysis Report | 🟡 DRAFT | [RPT-002-trading-analysis-report.md](RPT-002-trading-analysis-report.md) |
+| RPT-003 | Business Plan | 🟡 DRAFT | [RPT-003-business-plan.md](RPT-003-business-plan.md) |
+| RPT-004 | Presentation (PPTX) | 🟡 DRAFT | [RPT-004-presentation-pptx.md](RPT-004-presentation-pptx.md) |
+| RPT-005 | Daily Brief | 🟡 DRAFT | [RPT-005-daily-brief.md](RPT-005-daily-brief.md) |
+| RPT-006 | Weekly Synthesis | 🟡 DRAFT | [RPT-006-weekly-synthesis.md](RPT-006-weekly-synthesis.md) |</p><p><h3>Design (DSN)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| DSN-001 | Website Build | 🟡 DRAFT | [DSN-001-website-build.md](DSN-001-website-build.md) |
+| DSN-002 | Dashboard Deployment | 🟡 DRAFT | [DSN-002-protocol-dashboard-deployment.md](DSN-002-protocol-dashboard-deployment.md) |
+| DSN-003 | Agent Architecture (Mesh) | 🟡 DRAFT | [DSN-003-agent-architecture.md](DSN-003-agent-architecture.md) |
+| DSN-004 | Knowledge Graph Design | 🟡 DRAFT | [DSN-004-knowledge-graph-design.md](DSN-004-knowledge-graph-design.md) |</p><p><h3>Operations (OPS)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| OPS-001 | System Health Check | 🟡 DRAFT | [OPS-001-system-health-check.md](OPS-001-system-health-check.md) |
+| OPS-002 | Incident Response | 🟡 DRAFT | [OPS-002-incident-response.md](OPS-002-incident-response.md) |
+| OPS-003 | Data Pipeline | 🟡 DRAFT | [OPS-003-data-pipeline.md](OPS-003-data-pipeline.md) |
+| OPS-004 | Backup & Recovery | 🟡 DRAFT | [OPS-004-backup-recovery.md](OPS-004-backup-recovery.md) |
+| OPS-005 | Cron Maintenance | 🟡 DRAFT | [OPS-005-cron-maintenance.md](OPS-005-cron-maintenance.md) |</p><p><h3>Strategy (STR)</h3></p><p>| ID | Protocol | Status | File |
+|----|----------|--------|------|
+| STR-001 | Zero to One Audit | 🟡 DRAFT | [STR-001-zero-to-one-audit.md](STR-001-zero-to-one-audit.md) |
+| STR-002 | Competitive Moat Analysis | 🟡 DRAFT | [STR-002-competitive-moat-analysis.md](STR-002-competitive-moat-analysis.md) |
+| STR-003 | Idea Development | 🟡 DRAFT | [STR-003-idea-development.md](STR-003-idea-development.md) |
+| STR-004 | Resonance Field Session | 🟡 DRAFT | [STR-004-resonance-field-session.md](STR-004-resonance-field-session.md) |</p><p>---</p><p><h2>End-to-End Process Flows</h2></p><p><h3>Flow 1: Research → Intelligence Report</h3>
+Idea/Question → RSC-001/007 (Multi-Source Research + AI Interrogation) → RSC-002 (Lit Review) → ⬡ Quality Gate (Verified? Tagged?) → RPT-001 (Write Report) → ⬡ Three Gates (Accuracy, Logic, Utility) → Deliver</p><p><h3>Flow 2: Agent Build → Deploy</h3>
+Requirements (DEV-001 S1) → Architecture (DSN-003) → Security Audit (DEV-006) → Implementation (DEV-001 S4) → ⬡ Quality Gates (DEV-002) → Cron + Deploy (DEV-003, DSN-002) → Live + Monitor (OPS-001)</p><p><h3>Flow 3: Book → Knowledge Base</h3>
+PDF/EPUB → Full Extraction (RSC-005 S2) → Classify + Tag (RSC-005 S4) → File in Vault (RSC-005 S5) → Synthesize (RSC-005 S7) → Clean Up (RSC-005 S6) → Knowledge Base</p><p><h3>Flow 4: Idea → Project</h3>
+Spark (STR-003 S1) → 0→1/1→n (STR-003 S2) → 7 Questions (STR-003 S3) → Resonance Check (STR-003 S4) → Lean Validate (STR-003 S5) → ⬡ Decide (Persevere/Pivot/Perish) → Build (DEV-001)</p><p><h3>Flow 5: Incident → Resolution</h3>
+🔴 Incident (OPS-002 S1) → Diagnose (OPS-002 S2) → Classify (OPS-002 S3) → Fix (OPS-002 S4) → ⬡ Verify (OPS-002 S5) → Document (OPS-002 S6) → 🟢 Prevention (OPS-002 S7)</p><p>---</p><p><h2>Cross-Cutting Rules (Apply to ALL Protocols)</h2></p><p>1. <strong>No fabrication.</strong> UNKNOWN > wrong. ESTIMATE > unverified.
+2. <strong>No declaration without measurement.</strong> "It works" = live URL + before/after scores.
+3. <strong>Multi-model verification.</strong> HIGH-stakes deliverables get a second model review.
+4. <strong>Protocol before memory.</strong> If memory says one thing and protocol says another, follow the protocol and flag the conflict.
+5. <strong>Update before override.</strong> If the protocol is wrong, update it first, then follow the updated version.
+6. <strong>Document deviation.</strong> If you deviate from a protocol, document WHY in the output.</p><p>---</p><p><h2>Agent Compliance</h2></p><p>Every agent built under this system MUST:
+1. Know which protocols apply to its operations
+2. Follow those protocols on every execution
+3. Report protocol violations in its output
+4. Never shortcut a quality gate</p><p>*Protocol system inspired by: Agentic Mesh (Broda), Patterns for Building AI Agents (Bhagwat), Biodesign (Stanford), Zero to One (Thiel), Recursive Excellence (Lumina)*
+</body></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-005-CRON-MAINTENANCE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-005 Cron Maintenance Protocol</h1></p><p><strong>Department:</strong> OPS (Operations)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Audit, maintain, and troubleshoot cron jobs. Prevent cascade failures and detect silent failures early.</p><p><h2>Trigger</h2>
+<li>Weekly scheduled maintenance (Sunday)</li>
+<li>After any cron-related incident</li>
+<li>When adding or modifying cron jobs</li></p><p><h2>Steps</h2></p><p><h3>Step 1: List All Jobs</h3>
+<pre><code>bash
+openclaw cron list
+</code></pre>
+Document: job name, schedule, delivery channel, last run status</p><p><h3>Step 2: Check for Issues</h3>
+For each job, check:
+<li><strong>Consecutive errors:</strong> Any job with 3+ consecutive errors → investigate immediately</li>
+<li><strong>Stale data:</strong> Any job whose output data hasn't been updated in 2x its schedule interval</li>
+<li><strong>Missing delivery:</strong> Any job that should announce to Telegram but isn't</li>
+<li><strong>Model field:</strong> Any job with <code>model</code> in payload → remove immediately (May 19 lesson)</li></p><p><h3>Step 3: Fix Issues</h3>
+For each issue found:
+1. Read the last error message
+2. Diagnose root cause (per OPS-002 Incident Response)
+3. Fix: either delete and recreate, or update the job
+4. Verify the fix by running the job manually
+5. Watch for 3 consecutive successful runs</p><p><h3>Step 4: Validate All Jobs</h3>
+For each active job, verify:
+<div class="checkitem">It runs on schedule</div>
+<div class="checkitem">It produces expected output</div>
+<div class="checkitem">It delivers to the right channel</div>
+<div class="checkitem">It has no <code>model</code> field in payload</div>
+<div class="checkitem">It has appropriate <code>timeoutSeconds</code></div>
+<div class="checkitem">It has <code>delivery.channel</code> set if announcing</div></p><p><h3>Step 5: Clean Up</h3>
+<li>Disable jobs that are no longer needed</li>
+<li>Delete jobs that have been replaced by newer versions</li>
+<li>Update HEARTBEAT.md with current job list</li>
+<li>Update AGENTS.md if agent status changed</li></p><p><h3>Step 6: Document</h3>
+Update the cron section of HEARTBEAT.md with:
+<pre><code>markdown
+| System | Schedule | Purpose | Status |
+|--------|----------|---------|--------|
+| [name] | [cron] | [what] | 🟢/🔴 |
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">All jobs listed and status checked</div>
+<div class="checkitem">No jobs with consecutive errors</div>
+<div class="checkitem">No jobs with <code>model</code> field in payload</div>
+<div class="checkitem">All announcing jobs have delivery channel set</div>
+<div class="checkitem">HEARTBEAT.md updated</div></p><p><h2>References</h2>
+<li>DEV-003 Cron Job Creation Protocol</li>
+<li>HEARTBEAT.md — Current cron status</li>
+<li>Lesson: May 19 cascade — 31/36 jobs failed due to model field</li>
+</body></html>

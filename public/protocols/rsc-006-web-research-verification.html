@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-006-WEB-RESEARCH-VERIFICATION Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-006 Web Research & Fact Verification Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Search the web, verify facts, and cite sources properly. Prevent hallucination by always grounding claims in verifiable sources.</p><p><h2>Trigger</h2>
+<li>Any claim that needs verification</li>
+<li>Any research that requires current information</li>
+<li>When cross-referencing information from other AI systems</li></p><p><h2>Prerequisites</h2>
+<li>Brave Web Search (built-in, unlimited)</li>
+<li>Clear research question defined</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Frame the Search</h3>
+Turn your question into a search query:
+<li><strong>Too broad:</strong> "neurovascular devices"</li>
+<li><strong>Good:</strong> "neurovascular flow diverter market size 2025 FDA clearance"</li>
+<li><strong>Best:</strong> "Pipeline embolization device FDA PMA approval rate 2024"</li></p><p>Rules:
+1. Be specific: include dates, names, specific terms
+2. Use quotes for exact phrases: <code>"flow diverter" FDA 2024</code>
+3. Use site: for authoritative sources: <code>site:fda.gov flow diverter</code>
+4. Add year for current data: <code>market size 2025</code></p><p><h3>Step 2: Search</h3>
+Use <code>web_search</code> with the refined query.</p><p>For each search:
+1. Start with the most specific query
+2. If no results, broaden incrementally
+3. If too many results, narrow with additional terms
+4. Use <code>freshness</code> parameter for recent information: <code>freshness: "month"</code> for last 30 days</p><p><h3>Step 3: Evaluate Sources</h3>
+<strong>Source reliability hierarchy:</strong>
+1. <strong>Government/regulatory</strong> (FDA, SEC, EMA, ClinicalTrials.gov) → Highest trust
+2. <strong>Peer-reviewed journals</strong> (PubMed, NEJM, Lancet) → High trust
+3. <strong>Industry analysts</strong> (Grand View, Markets and Markets) → Medium trust (often paywalled)
+4. <strong>Mainstream media</strong> (Reuters, Bloomberg, NYT) → Medium trust
+5. <strong>Company websites/press releases</strong> → Low trust (self-reported, verify independently)
+6. <strong>Blogs, forums, social media</strong> → Very low trust (verify everything)</p><p><h3>Step 4: Verify Claims</h3>
+For each important claim found:
+1. <strong>Primary source check:</strong> Can you find the original source?
+2. <strong>Corroboration check:</strong> Is the claim supported by at least 1 other independent source?
+3. <strong>Recency check:</strong> Is the information current enough for your purpose?
+4. <strong>Conflict check:</strong> Does any source contradict this claim?</p><p><strong>Tag each claim:</strong>
+<div class="checkitem">— Found in 2+ reliable sources, primary source exists</div>
+<div class="checkitem">— Found in 1 source only, or source is low-trust</div>
+<div class="checkitem">— Sources disagree (present both sides)</div>
+<div class="checkitem">— Information is more than 2 years old for rapidly changing fields</div></p><p><h3>Step 5: Fetch Deep Content</h3>
+For important results, use <code>web_fetch</code> to read the full page:
+<li>Extract key data points with exact quotes</li>
+<li>Note the author, date, publication</li>
+<li>Note any methodology limitations</li>
+<li>Check for updates or corrections</li></p><p><h3>Step 6: Cite Properly</h3>
+Every claim in the output must include:
+<pre><code>
+[Claim] — [Tag] — Source: [Author, "Title," Publication, Date, URL]
+</code></pre></p><p>Example:
+<pre><code>
+The neurovascular device market is valued at $3.2B — [ESTIMATE] — Source: Grand View Research, "Neurovascular Devices Market," 2024, grandviewresearch.com
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Search queries were specific and targeted</div>
+<div class="checkitem">Sources evaluated using reliability hierarchy</div>
+<div class="checkitem">Every important claim has a tag</div>
+<div class="checkitem">Every claim has a citation with URL</div>
+<div class="checkitem">Conflicting information identified and flagged</div>
+<div class="checkitem">No claims presented as fact without a source</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| No search results | Broaden query, try different terms, try different language |
+| Paywalled content | Note "PAYWALLED" and use abstract/summary only |
+| Conflicting sources | Present both, note conflict, flag for Roo's judgment |
+| Source is AI-generated | Verify with another source, tag as [UNVERIFIED] |</p><p><h2>References</h2>
+<li>RSC-001 Multi-Source Research Protocol</li>
+<li>RSC-007 AI System Interrogation Protocol</li>
+</body></html>

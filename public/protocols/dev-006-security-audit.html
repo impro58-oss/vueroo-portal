@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-006-SECURITY-AUDIT Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-006 Security Audit Protocol (Lethal Trifecta)</h1></p><p><strong>Department:</strong> DEV (Development)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Audit every agent and system for the Lethal Trifecta vulnerability: when an agent has access to private data, processes untrusted content, AND can make external calls. This is the #1 security risk for AI agents (from Patterns for Building AI Agents, Bhagwat/Gienow).</p><p><h2>Trigger</h2>
+<li>Before deploying any new agent (part of DEV-001 Step 3)</li>
+<li>Quarterly security review of all active agents</li>
+<li>When a security concern is raised</li></p><p><h2>Prerequisites</h2>
+<li>List of all active agents (from AGENTS.md)</li>
+<li>Understanding of each agent's data flows, inputs, and outputs</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Identify the Trifecta for Each Agent</h3>
+For each agent, answer these three questions:</p><p>| Question | YES means... |
+|----------|--------------|
+| <strong>Q1: Does it access private data?</strong> | API keys, user data, financial data, vault contents, personal information |
+| <strong>Q2: Does it process untrusted content?</strong> | Web-scraped data, user input, external API responses, AI-generated text |
+| <strong>Q3: Does it make external calls?</strong> | HTTP requests, API calls, sending messages, writing files outside sandbox |</p><p><h3>Step 2: Classify Risk Level</h3></p><p>| Trifecta Score | Risk Level | Required Safeguards |
+|---------------|------------|---------------------|
+| 0 YES | LOW | Standard error handling |
+| 1 YES | LOW | Standard error handling + input validation |
+| 2 YES | MEDIUM | Input validation + output filtering + logging |
+| <strong>3 YES (all three)</strong> | <strong>HIGH</strong> | <strong>All safeguards below</strong> |</p><p><h3>Step 3: Apply Required Safeguards by Risk Level</h3></p><p><strong>HIGH (3/3 trifecta) — ALL of these:</strong>
+1. <strong>Sandboxed execution</strong> — Agent runs in isolated environment
+2. <strong>Input validation and sanitization</strong> — Strip prompt injections, validate schemas
+3. <strong>Rate limiting</strong> — Cap external calls per minute
+4. <strong>Output filtering</strong> — Scan outputs for leaked private data before publishing
+5. <strong>Human approval for HIGH-impact actions</strong> — Financial transactions, external messages, deletions
+6. <strong>Comprehensive logging</strong> — Every input, output, and external call logged
+7. <strong>Guardrails</strong> — Content policy checks on inputs and outputs
+8. <strong>Principle of least privilege</strong> — Agent only has access to what it needs</p><p><strong>MEDIUM (2/3) — Items 2-6 above</strong></p><p><strong>LOW (0-1/3) — Items 2, 6 above</strong></p><p><h3>Step 4: Audit Existing Agents</h3>
+Run this audit for each active agent:</p><p><pre><code>markdown
+<h2>Security Audit: [Agent Name]</h2>
+<strong>Date:</strong> YYYY-MM-DD
+<strong>Auditor:</strong> Lumina</p><p><h3>Trifecta Assessment</h3>
+| Question | Answer | Details |
+|----------|--------|---------|
+| Accesses private data? | YES/NO | [what data] |
+| Processes untrusted content? | YES/NO | [what content] |
+| Makes external calls? | YES/NO | [what calls] |
+| <strong>Trifecta Score</strong> | <strong>0/1/2/3</strong> | <strong>Risk: LOW/MEDIUM/HIGH</strong> |</p><p><h3>Safeguards in Place</h3>
+<div class="checkitem">Input validation</div>
+<div class="checkitem">Output filtering</div>
+<div class="checkitem">Rate limiting</div>
+<div class="checkitem">Logging</div>
+<div class="checkitem">Human approval (HITL)</div>
+<div class="checkitem">Least privilege</div>
+<div class="checkitem">Guardrails</div></p><p><h3>Findings</h3>
+[Finding 1]
+[Finding 2]</p><p><h3>Remediation</h3>
+[Action 1]
+[Action 2]
+</code></pre></p><p><h3>Step 5: Fix Critical Issues</h3>
+Any HIGH-risk agent without proper safeguards MUST be remediated before continuing operation:
+1. Add missing safeguards immediately
+2. Add HITL approval for HIGH-impact actions
+3. Test the safeguards
+4. Re-audit after fixes</p><p><h2>Quality Gates</h2>
+<div class="checkitem">Every active agent has a trifecta assessment</div>
+<div class="checkitem">Risk level assigned (LOW/MEDIUM/HIGH)</div>
+<div class="checkitem">Safeguards match risk level</div>
+<div class="checkitem">No HIGH-risk agents operating without proper safeguards</div>
+<div class="checkitem">Audit documented in security/ directory</div></p><p><h2>References</h2>
+<li>Patterns for Building AI Agents (Bhagwat/Gienow) — Lethal Trifecta concept</li>
+<li>HEARTBEAT.md — HITL/HOTL action classification</li>
+<li>IDENTITY.md — Decision authority matrix</li>
+</body></html>

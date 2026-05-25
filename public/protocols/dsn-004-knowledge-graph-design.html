@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSN-004-KNOWLEDGE-GRAPH-DESIGN Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DSN-004 Knowledge Graph Design Protocol</h1></p><p><strong>Department:</strong> DSN (Design)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Design a knowledge graph for a domain — connecting concepts with typed relationships so that traversal produces better insights than flat-file search. Based on knowledge graph patterns from Building LLM Agents (Devlin).</p><p><h2>Trigger</h2>
+<li>When a domain has enough concepts to benefit from structured relationships (typically 50+ concepts)</li>
+<li>When flat-file search is returning poor results due to lack of context</li>
+<li>When building Avaark's knowledge layer</li></p><p><h2>Prerequisites</h2>
+<li>Domain clearly defined (e.g., "MedTech", "Trading", "Resonance")</li>
+<li>Key concepts identified</li>
+<li>Understanding of how concepts relate to each other</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Identify Entities</h3>
+List all entities (nodes) in the domain:
+<li><strong>Concrete entities:</strong> People, companies, products, devices, drugs, clinical trials</li>
+<li><strong>Abstract entities:</strong> Concepts, theories, frameworks, patterns, strategies</li>
+<li><strong>Process entities:</strong> Workflows, protocols, procedures</li></p><p>For each entity, define:
+<li><strong>Type:</strong> What kind of entity is this? (Company, Drug, ClinicalTrial, Strategy, etc.)</li>
+<li><strong>Key attributes:</strong> What properties does it have?</li>
+<li><strong>Unique identifier:</strong> How do we reference it unambiguously?</li></p><p><h3>Step 2: Define Relationships</h3>
+For each pair of entity types that connect, define:
+<li><strong>Relationship type:</strong> (competes_with, treats, developed_by, part_of, contradicts, supports, etc.)</li>
+<li><strong>Direction:</strong> Is it one-way or bidirectional?</li>
+<li><strong>Strength:</strong> How strong is the connection? (strong/medium/weak)</li>
+<li><strong>Temporal:</strong> Is this connection permanent or time-limited?</li></p><p>Example relationship types for MedTech:
+<pre><code>
+Company --develops--> Device
+Device --treats--> Condition
+Company --competes_with--> Company
+ClinicalTrial --tests--> Device
+ClinicalTrial --shows--> Outcome
+Condition --has_prevalence_of--> EpidemiologyData
+</code></pre></p><p><h3>Step 3: Choose Storage</h3>
+For our current setup, the simplest approach:
+<li><strong>Phase 1:</strong> JSON/Markdown files with explicit cross-references (what we have now, but structured)</li>
+<li><strong>Phase 2:</strong> Obsidian vault with wikilinks and graph view (leverages existing vault)</li>
+<li><strong>Phase 3:</strong> Graph database (Neo4j or similar) if scale demands it</li></p><p>Start with Phase 1. Don't over-engineer.</p><p><h3>Step 4: Build the Graph</h3>
+Create a schema document:
+<pre><code>markdown
+<h1>Knowledge Graph: [Domain]</h1></p><p><h2>Entity Types</h2>
+| Type | Attributes | Examples |
+|------|-----------|----------|
+| Company | name, hq, revenue, products | Stryker, Medtronic |
+| Device | name, type, clearance, indication | Pipeline Flex, Surpass |
+| Condition | name, prevalence, geography | Intracranial aneurysm |</p><p><h2>Relationship Types</h2>
+| From | Type | To | Strength | Example |
+|------|------|----|----------|---------|
+| Company | develops | Device | strong | Stryker develops Surpass |
+| Device | treats | Condition | strong | Pipeline treats aneurysms |
+| Company | competes_with | Company | medium | Stryker competes with Medtronic |</p><p><h2>Graph Statistics</h2>
+<li>Entities: [N]</li>
+<li>Relationships: [N]</li>
+<li>Relationship types: [N]</li>
+</code></pre></p><p><h3>Step 5: Populate</h3>
+For each entity in the domain:
+1. Create an Obsidian note with proper tags (per vault tagger)
+2. Add wikilinks <code>[[EntityName]]</code> to related entities
+3. Ensure every relationship has a bidirectional link
+4. Validate: every link resolves to an actual note</p><p><h3>Step 6: Query Patterns</h3>
+Define the questions the graph should answer:
+<li>"What devices compete with Pipeline Flex?" → Traverse: Device → competes_with → Device</li>
+<li>"What conditions does the neurovascular market address?" → Traverse: Condition → treated_by → Device → developed_by → Company</li>
+<li>"What clinical evidence supports flow diverters?" → Traverse: ClinicalTrial → tests → Device → treats → Condition</li></p><p><h3>Step 7: Maintain</h3>
+<li>Schedule regular graph consistency checks (orphan nodes, broken links)</li>
+<li>Update entities when new information arrives (per RSC-002, RSC-003)</li>
+<li>Archive outdated relationships rather than deleting</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Entity types defined with attributes</div>
+<div class="checkitem">Relationship types defined with direction and strength</div>
+<div class="checkitem">Storage approach chosen (Phase 1/2/3)</div>
+<div class="checkitem">Schema document created</div>
+<div class="checkitem">At least 20 entities populated with cross-links</div>
+<div class="checkitem">Query patterns defined and tested</div>
+<div class="checkitem">Maintenance schedule set</div></p><p><h2>References</h2>
+<li>Building LLM Agents (Devlin) — Knowledge Graphs chapter</li>
+<li>RSC-002 MedTech Literature Review — Entity creation</li>
+<li>RSC-003 Competitive Intelligence — Relationship creation</li>
+</body></html>

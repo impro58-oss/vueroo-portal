@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-003-CRON-JOB-CREATION Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-003 Cron Job Creation Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Create cron jobs that run reliably without causing cascading failures. This protocol exists because a cron cascade on May 19 took down 31/36 jobs — the root cause was a <code>model</code> field in payloads that shouldn't have been there.</p><p><h2>Trigger</h2>
+<li>When creating a new scheduled task</li>
+<li>When modifying an existing cron job</li>
+<li>When a cron job fails (use this protocol for the fix)</li></p><p><h2>Prerequisites</h2>
+<li>OpenClaw gateway running (<code>openclaw gateway status</code>)</li>
+<li>Clear understanding of what the job should do and when</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define the Job</h3>
+Write out BEFORE creating:
+<pre><code>markdown
+<strong>Job Name:</strong> [Descriptive name]
+<strong>Purpose:</strong> [What it does, in 1-2 sentences]
+<strong>Schedule:</strong> [How often — cron expression or every X ms]
+<strong>Payload kind:</strong> agentTurn (for AI tasks) or systemEvent (for system messages)
+<strong>Session Target:</strong> isolated (for AI tasks) or main (for system events)
+<strong>Delivery:</strong> announce (to Telegram/Discord) or none (internal only)
+<strong>Timeout:</strong> [How long before it should fail — default 300s]
+<strong>Channel:</strong> [telegram/discord] (required if delivery is announce)
+</code></pre></p><p><h3>Step 2: Build the Payload</h3>
+<strong>HARD RULES (learned from May 19 cascade):</strong></p><p>1. ❌ <strong>NEVER add a <code>model</code> field to the payload.</strong> The default model routing handles it. Adding <code>model: "glm-5.1:cloud"</code> causes <code>LiveSessionModelSwitchError</code>.
+2. ✅ <strong>Always set <code>delivery.mode: "announce"</code> for jobs that should notify Roo.</strong>
+3. ✅ <strong>Always set <code>delivery.channel</code> to <code>telegram</code> (or <code>discord</code>).</strong> Jobs without a channel fail with "channel required."
+4. ✅ <strong>Always set <code>timeoutSeconds</code> explicitly.</strong> Default is often too short. For data processing: 300s. For AI tasks: 600s.
+5. ✅ <strong>For <code>agentTurn</code> jobs, always use <code>sessionTarget: "isolated"</code></strong> unless you need state persistence.
+6. ✅ <strong>Keep the message clear and specific.</strong> The agent reading it should know exactly what to do in under 100 words.</p><p><h3>Step 3: Create the Job</h3>
+Use <code>cron add</code>:
+<pre><code>json
+{
+  "name": "Job Name — Schedule",
+  "schedule": { "kind": "every", "everyMs": 10800000 },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "Run [script name]: python [path]. Report: [what to report]. Keep under 100 words.",
+    "timeoutSeconds": 300
+  },
+  "delivery": { "mode": "announce", "channel": "telegram" },
+  "sessionTarget": "isolated",
+  "enabled": true
+}
+</code></pre></p><p><h3>Step 4: Verify the Job</h3>
+After creation:
+1. Check it appears in <code>cron list</code>
+2. Run it manually with <code>cron run</code> (job ID)
+3. Wait for completion — check the output
+4. Verify it delivers to the right channel
+5. Verify it doesn't have a <code>model</code> field in the payload</p><p><h3>Step 5: Monitor for 3 Cycles</h3>
+<li>Watch the job run 3 times on its schedule</li>
+<li>Check for errors in each run</li>
+<li>If any run fails, diagnose before the pattern becomes a cascade</li>
+<li>After 3 successful runs, consider it stable</li></p><p><h3>Step 6: Document</h3>
+Add the job to AGENTS.md or HEARTBEAT.md:
+<pre><code>markdown
+| System | Schedule | Purpose |
+|--------|----------|---------|
+| [Job Name] | Every [X] | [What it does] |
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">No <code>model</code> field in payload (CRITICAL — will cause cascade failure)</div>
+<div class="checkitem"><code>delivery.channel</code> set to telegram or discord</div>
+<div class="checkitem"><code>timeoutSeconds</code> set explicitly</div>
+<div class="checkitem">Job runs manually without error</div>
+<div class="checkitem">Job delivers to correct channel</div>
+<div class="checkitem">Job runs 3 consecutive cycles without error</div>
+<div class="checkitem">Job documented in HEARTBEAT.md</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| <code>LiveSessionModelSwitchError</code> | Remove <code>model</code> field from payload. Delete and recreate the job (API merges, can't remove fields). |
+| "channel required" | Add <code>delivery.channel</code> field |
+| Timeout (job execution timed out) | Increase <code>timeoutSeconds</code>. Default 60s is often too short. |
+| Consecutive errors (3+) | Disable job. Diagnose root cause. Fix. Re-enable. |
+| Delivery fails silently | Check <code>delivery.mode</code> is "announce" and <code>delivery.channel</code> is set |</p><p><h2>References</h2>
+<li>Lesson: May 19 cron cascade — 31/36 jobs failed due to <code>model</code> field in payload</li>
+<li>Lesson: LotteryVue scoring gap — job ran silently for 3 weeks without detecting failure</li>
+<li>Lesson: May 14 channel errors — jobs without explicit channel failed</li>
+<li>OpenClaw cron API documentation</li>
+</body></html>

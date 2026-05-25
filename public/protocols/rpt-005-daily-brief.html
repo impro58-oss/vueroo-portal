@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-005-DAILY-BRIEF Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-005 Daily Brief Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Compile and deliver the morning brief at 8:00 AM IST with priority actions, system health, and blockers.</p><p><h2>Trigger</h2>
+<li>Daily at 7:00 AM IST (cron job compiles, delivers at 8:00 AM)</li></p><p><h2>Prerequisites</h2>
+<li>All automated systems ran their overnight cycles</li>
+<li>Memory files are current</li>
+<li>Dashboard health check completed</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Gather Data (7:00 AM)</h3>
+Check each system:
+<li>AgentVue/TrojanVue: Latest P&L, open positions, any alerts</li>
+<li>NeuroVue: Latest competitive intelligence updates</li>
+<li>LotteryVue: Latest predictions, scoring results</li>
+<li>CryptoVue: Latest scan results</li>
+<li>Dashboard health: All endpoints responding?</li>
+<li>Cron jobs: Any failures overnight?</li></p><p><h3>Step 2: Compile Priority Actions</h3>
+List the top 3-5 things Roo needs to decide or act on:
+<pre><code>markdown
+<h2>🔴 Priority Actions</h2>
+1. [URGENT] [What needs attention]
+2. [IMPORTANT] [What needs a decision]
+3. [FYI] [What happened overnight]
+</code></pre></p><p><h3>Step 3: System Health Summary</h3>
+<pre><code>markdown
+<h2>🟢 System Health</h2>
+<li>Gateway: [running/down]</li>
+<li>Ollama: [running/down]</li>
+<li>AgentVue: [running/down]</li>
+<li>NeuroVue: [running/down]</li>
+<li>LotteryVue: [running/down]</li>
+<li>Cron: [X/Y jobs running]</li>
+</code></pre></p><p><h3>Step 4: Key Metrics</h3>
+<pre><code>markdown
+<h2>📊 Key Metrics</h2>
+<li>Trading P&L: EUR [X] ([+/-X]% today)</li>
+<li>Open positions: [N]</li>
+<li>Win rate: [X]%</li>
+<li>LotteryVue: [latest scoring]</li>
+</code></pre></p><p><h3>Step 5: Blockers</h3>
+<pre><code>markdown
+<h2>🚧 Blockers</h2>
+<li>[Blocker 1 — what's stuck and why]</li>
+<li>[Blocker 2 — what needs Roo's input]</li>
+</code></pre></p><p><h3>Step 6: Deliver</h3>
+<li>Send to Telegram at 8:00 AM IST</li>
+<li>Keep under 200 words</li>
+<li>Lead with priority actions, not system status</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Priority actions are specific and actionable</div>
+<div class="checkitem">System health is accurate (checked, not assumed)</div>
+<div class="checkitem">Brief is under 200 words</div>
+<div class="checkitem">Delivered on time</div></p><p><h2>References</h2>
+<li>HEARTBEAT.md — System status reference</li>
+<li>AGENTS.md — Agent registry</li>
+</body></html>

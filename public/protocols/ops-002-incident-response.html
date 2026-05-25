@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-002-INCIDENT-RESPONSE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-002 Incident Response Protocol</h1></p><p><strong>Department:</strong> OPS (Operations)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+When something breaks, follow this process. No panic, no guessing, no "just restart it and hope." Diagnose → fix → verify → document.</p><p><h2>Trigger</h2>
+<li>A system or agent fails</li>
+<li>A cron job reports errors</li>
+<li>A dashboard is down</li>
+<li>Data pipeline produces wrong output</li>
+<li>Roo reports something broken</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Don't Touch Anything Yet</h3>
+Before fixing, UNDERSTAND:
+1. What exactly is broken? (Be specific: "NeuroVue dashboard returns 404" not "NeuroVue is broken")
+2. When did it break? (Check last known good state)
+3. What changed? (Recent deployments, config changes, API changes)
+4. How bad is it? (1 user affected vs. all systems down)</p><p><h3>Step 2: Diagnose</h3>
+Run these checks IN ORDER:
+1. <strong>Is the service running?</strong> Check process/port
+2. <strong>Is the data present?</strong> Check file existence and size
+3. <strong>Is the data valid?</strong> Check for NaN, empty, corrupted
+4. <strong>Is the network working?</strong> Check connectivity, DNS, firewall
+5. <strong>Are dependencies up?</strong> Check APIs, databases, external services
+6. <strong>Check logs.</strong> What errors appear in the last hour?</p><p><h3>Step 3: Classify Severity</h3></p><p>| Severity | Definition | Response Time | Example |
+|----------|-----------|---------------|---------|
+| <strong>CRITICAL</strong> | Revenue-producing system down, data loss risk | Immediate | Trading system placing wrong orders |
+| <strong>HIGH</strong> | Key system down, no workaround | <30 min | Dashboard completely offline |
+| <strong>MEDIUM</strong> | Degraded but functional, workaround exists | <4 hours | Some data stale, dashboard partially broken |
+| <strong>LOW</strong> | Cosmetic, minor inconvenience | Next maintenance | Formatting issue, stale cache |</p><p><h3>Step 4: Fix</h3>
+<strong>Rules for fixing:</strong>
+1. <strong>Backup before changing</strong> (copy the current broken version somewhere)
+2. <strong>Fix the root cause, not the symptom</strong> (don't just restart — find WHY it crashed)
+3. <strong>Make the smallest change that fixes it</strong> (don't refactor while fixing)
+4. <strong>Test the fix before declaring it fixed</strong> (follow DEV-002 Code Quality Gates)
+5. <strong>If you can't fix in 30 minutes, escalate to Roo</strong> with a clear summary</p><p><h3>Step 5: Verify</h3>
+After applying fix:
+1. System is running? ✅/❌
+2. Data is correct? ✅/❌
+3. No new errors? ✅/❌
+4. Dashboard loads? ✅/❌
+5. Cron job runs on next cycle? ✅/❌</p><p><h3>Step 6: Document</h3>
+Write to <code>.learnings/</code> or incident log:
+<pre><code>markdown
+<h2>YYYY-MM-DD: [Incident Title]</h2>
+<li><strong>Severity:</strong> CRITICAL/HIGH/MEDIUM/LOW</li>
+<li><strong>Duration:</strong> [how long it was broken]</li>
+<li><strong>Root Cause:</strong> [the ACTUAL cause, not just "it crashed"]</li>
+<li><strong>Fix Applied:</strong> [what you did]</li>
+<li><strong>Verification:</strong> [how you confirmed it's fixed]</li>
+<li><strong>Prevention Rule:</strong> [what rule/protocol prevents this happening again]</li>
+</code></pre></p><p><h3>Step 7: Prevention</h3>
+<li>Add the prevention rule to the relevant protocol</li>
+<li>Add a check to health monitoring if applicable</li>
+<li>If this is a recurring pattern, flag for architectural fix</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Root cause identified (not just symptom)</div>
+<div class="checkitem">Fix applied and verified</div>
+<div class="checkitem">Incident documented in .learnings/</div>
+<div class="checkitem">Prevention rule added to protocol or monitoring</div></p><p><h2>Error Handling</h2>
+| Situation | Response |
+|-----------|----------|
+| Can't diagnose in 15 min | Escalate to Roo with what you know |
+| Fix makes it worse | ROLLBACK immediately, then diagnose |
+| Root cause unclear | Stabilize (restart/rollback), then investigate offline |
+| Multiple things broken | Fix CRITICAL first, then HIGH, etc. |</p><p><h2>References</h2>
+<li>Past incidents: LotteryVue scoring gap (3 weeks), Cron cascade (31 jobs), NaN in CryptoVue</li>
+<li>.learnings/ directory for incident records</li>
+</body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-001-SYSTEM-HEALTH-CHECK Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-001 System Health Check Protocol</h1></p><p><strong>Department:</strong> OPS (Operations)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Run a comprehensive health check on all systems and report only if issues are found. Silent success.</p><p><h2>Trigger</h2>
+<li>Every 6 hours via cron (automated)</li>
+<li>On demand when diagnosing issues</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Check Gateway</h3>
+<pre><code>bash
+openclaw gateway status
+</code></pre>
+<li>Expected: running on port 18001</li>
+<li>If down: restart with <code>openclaw gateway restart</code></li></p><p><h3>Step 2: Check Ollama</h3>
+<pre><code>bash
+curl -s http://localhost:11434/api/tags
+</code></pre>
+<li>Expected: JSON response with model list</li>
+<li>If down: restart Ollama service</li></p><p><h3>Step 3: Check Dashboards</h3>
+For each dashboard, fetch the live URL and verify 200 response:
+<li>http://localhost:8765 (AgentVue)</li>
+<li>http://localhost:8766 (NeuroVue)</li>
+<li>http://localhost:8878 (LotteryVue)</li>
+<li>https://vueroo.com/trading (TrojanVue)</li>
+<li>https://vueroo.com/research (Research APIs)</li></p><p><h3>Step 4: Check Data Freshness</h3>
+For each data file, verify it was updated within expected timeframe:
+<li>AgentVue data: within 15 min</li>
+<li>NeuroVue data: within 15 min</li>
+<li>LotteryVue data: within 24h (or after draw)</li>
+<li>CryptoVue data: within 3h</li></p><p><h3>Step 5: Check Cron Jobs</h3>
+<pre><code>bash
+openclaw cron list
+</code></pre>
+<li>Verify all expected jobs are present</li>
+<li>Check for consecutive errors</li>
+<li>Flag any jobs with >2 consecutive errors</li></p><p><h3>Step 6: Report</h3>
+<li>If ALL checks pass: report <code>HEARTBEAT_OK</code> (silent success)</li>
+<li>If ANY check fails: report the specific failure with remediation steps</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">All services checked</div>
+<div class="checkitem">Data freshness verified</div>
+<div class="checkitem">Cron jobs verified</div>
+<div class="checkitem">Report generated (silent if OK, detailed if not)</div></p><p><h2>References</h2>
+<li>HEARTBEAT.md — System status reference</li>
+<li>scripts/dashboard-health-check.py</li>
+</body></html>

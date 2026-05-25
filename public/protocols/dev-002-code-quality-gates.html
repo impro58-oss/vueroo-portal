@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-002-CODE-QUALITY-GATES Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-002 Code Quality Gates Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Every piece of code that gets deployed passes through these gates. No exceptions. This prevents the recurring pattern of "it works on my machine" → broken in production.</p><p><h2>Trigger</h2>
+<li>Before ANY code deployment</li>
+<li>Before ANY git push that affects live systems</li>
+<li>After ANY code change that could break existing functionality</li></p><p><h2>Steps</h2></p><p><h3>Gate 1: Syntax & Structure</h3>
+<div class="checkitem">Python: <code>python -c "import ast; ast.parse(open('file').read())"</code> — no SyntaxError</div>
+<div class="checkitem">JavaScript: <code>node --check file.js</code> — no SyntaxError</div>
+<div class="checkitem">No hardcoded secrets (API keys, passwords, tokens)</div>
+<div class="checkitem">All imports resolve (no missing dependencies)</div>
+<div class="checkitem">File encoding is UTF-8</div></p><p><h3>Gate 2: Functional Test</h3>
+<div class="checkitem">Dry run completes without error</div>
+<div class="checkitem">Small batch produces expected output</div>
+<div class="checkitem">Edge cases handled (empty input, missing data, timeout)</div>
+<div class="checkitem">Error handling covers main failure modes</div></p><p><h3>Gate 3: Live Verification</h3>
+<div class="checkitem">Output file exists and has content (not 0 bytes)</div>
+<div class="checkitem">Live URL returns data (fetch and check)</div>
+<div class="checkitem">Dashboard loads and displays data</div>
+<div class="checkitem">Cron job runs without error (if scheduled)</div></p><p><h3>Gate 4: No Regression</h3>
+<div class="checkitem">Existing features still work (spot-check)</div>
+<div class="checkitem">No new NaN/undefined/null in output data</div>
+<div class="checkitem">No new 404s or broken links</div>
+<div class="checkitem">Before/after comparison where applicable</div></p><p><h3>Gate 5: Documentation</h3>
+<div class="checkitem">Code has docstrings on all functions</div>
+<div class="checkitem">Parameters documented and match implementation</div>
+<div class="checkitem">AGENTS.md updated if agent changed</div>
+<div class="checkitem">HEARTBEAT.md updated if system status changed</div>
+<div class="checkitem">.learnings/ updated if bug was found and fixed</div></p><p><h2>Decision Rules</h2>
+| Gates Passed | Action |
+|--------------|--------|
+| All 5 | ✅ Deploy |
+| 4 of 5 | ⚠️ Deploy with note (document which gate failed and why it's acceptable) |
+| 3 or fewer | ❌ Do NOT deploy — fix first |</p><p><h2>Error Handling</h2>
+| Failure | Response |
+|---------|----------|
+| Syntax error | Fix immediately, re-test from Gate 1 |
+| Functional test fails | Debug, fix, re-test from Gate 2 |
+| Live verification fails | DO NOT DEPLOY. Investigate. Fix. Re-test. |
+| Regression detected | Rollback. Investigate. Fix. Full re-test. |</p><p><h2>References</h2>
+<li>Recursive Excellence Protocol — self-critique before shipping</li>
+<li>Lesson: LotteryVue scoring gap (3 weeks of silent failure) — Gate 3 would have caught it</li>
+<li>Lesson: Cron cascade (31 jobs failing) — Gate 5 (documentation) would have caught the model field pattern</li>
+</body></html>

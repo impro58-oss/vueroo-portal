@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-001-MULTI-SOURCE-RESEARCH Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-001 Multi-Source Research Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Query multiple AI systems (Perplexity, Claude, ChatGPT, Gemini, Google) on a research topic, then synthesize a unified answer with proper citations and source attribution.</p><p><h2>Trigger</h2>
+<li>When Roo asks for research that benefits from multiple perspectives</li>
+<li>When verifying a claim that could be wrong</li>
+<li>When preparing a high-stakes deliverable that needs adversarial review</li>
+<li>When a single-source answer has LOW confidence</li></p><p><h2>Prerequisites</h2>
+<li>Clear research question defined</li>
+<li>PACK Operation active (Roo has access to Perplexity Pro, Claude)</li>
+<li>Web search available (Brave built-in)</li>
+<li>Gemini API key available (if not exhausted)</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Frame the Question</h3>
+<li>Write the research question in precise, unambiguous terms</li>
+<li>Identify what type of answer is needed: factual, analytical, predictive, creative</li>
+<li>Set confidence threshold: what level of certainty is required?</li></p><p><h3>Step 2: Query Each Source</h3></p><p><strong>Perplexity (via Roo — PACK Operation):</strong>
+<li>Frame question with citation request: "Search for [X]. Provide sources for all claims."</li>
+<li>Request format: "Based on current research, [question]. Cite your sources."</li></p><p><strong>Claude (via Roo — PACK Operation):</strong>
+<li>Frame for deep reasoning: "Analyze [X] from first principles. What are the strongest arguments for and against?"</li>
+<li>Request format: "Think step by step about [question]. Show your reasoning."</li></p><p><strong>ChatGPT (via Roo — PACK Operation):</strong>
+<li>Frame for breadth: "What are the different perspectives on [X]?"</li>
+<li>Request format: "Give me a comprehensive overview of [X], including minority viewpoints."</li></p><p><strong>Gemini (via API — if available):</strong>
+<li>Use <code>scripts/lumina-research.py</code> with Gemini endpoint</li>
+<li>Frame for factual grounding: "What are the established facts about [X]?"</li></p><p><strong>Brave Web Search (built-in):</strong>
+<li>Search for recent developments: "[topic] 2026 latest research"</li>
+<li>Search for counterarguments: "[topic] criticism problems"</li>
+<li>Search for verification: "[specific claim] evidence proof"</li></p><p><h3>Step 3: Extract Claims and Citations</h3>
+For EACH source response:
+1. List every factual claim made
+2. List every citation/source provided
+3. Mark each claim as: VERIFIED | UNVERIFIED | CONTRADICTED
+4. Flag any claim that contradicts another source</p><p><h3>Step 4: Cross-Reference</h3>
+<li>Create a claim matrix: claim × source</li>
+<li>Claims agreed by 2+ sources → HIGH confidence</li>
+<li>Claims from 1 source only → MEDIUM confidence (mark as UNVERIFIED)</li>
+<li>Claims contradicted by another source → LOW confidence (flag for Roo)</li></p><p><h3>Step 5: Synthesize</h3>
+Write a unified synthesis with:
+<li><strong>Established findings</strong> (HIGH confidence, 2+ sources agree)</li>
+<li><strong>Probable findings</strong> (MEDIUM confidence, 1 strong source)</li>
+<li><strong>Disputed findings</strong> (LOW confidence, sources disagree)</li>
+<li><strong>Gaps</strong> (no source addressed this)</li>
+<li><strong>Recommendations</strong> (what to verify, what to accept)</li></p><p><h3>Step 6: Cite Properly</h3>
+Every claim in the final output must have:
+<li>Source system (Perplexity/Claude/ChatGPT/Gemini/Web)</li>
+<li>Original source if cited by the AI (journal, author, year, URL)</li>
+<li>Confidence level (HIGH/MEDIUM/LOW)</li></p><p><h3>Step 7: Deliver to Roo</h3>
+<li>Present synthesis in the format above</li>
+<li>Flag any disputed claims for Roo's decision</li>
+<li>Note what could NOT be verified and why</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">At least 2 sources queried</div>
+<div class="checkitem">Every factual claim has a source attribution</div>
+<div class="checkitem">Contradictions between sources identified and flagged</div>
+<div class="checkitem">No fabrication — gaps are labeled as gaps</div>
+<div class="checkitem">Confidence level assigned to every claim</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| API key exhausted (Gemini) | Skip Gemini, note in output, use other sources |
+| Roo unavailable for PACK | Use Brave web search + built-in knowledge only |
+| Sources completely disagree | Present both sides, flag for Roo, do NOT pick a side |
+| No sources have information | Report "NO INFORMATION FOUND" — do NOT infer |</p><p><h2>Output</h2>
+<pre><code>
+<h1>Research: [Question]</h1>
+<strong>Date:</strong> YYYY-MM-DD
+<strong>Sources Queried:</strong> [list]</p><p><h2>Established Findings (HIGH confidence)</h2>
+<div class="checkitem">— Source: [attribution]</div></p><p><h2>Probable Findings (MEDIUM confidence)  </h2>
+<div class="checkitem">⚠️ UNVERIFIED — Source: [attribution]</div></p><p><h2>Disputed Findings (LOW confidence)</h2>
+<div class="checkitem">— Source: [attribution]</div>
+<div class="checkitem">— Source: [attribution]</div></p><p><h2>Gaps</h2>
+<li>[what we don't know]</li></p><p><h2>Recommendations</h2>
+<li>[what to verify next]</li>
+</code></pre></p><p><h2>References</h2>
+<li>PACK Operation (MEMORY.md)</li>
+<li>API keys: <code>config/api-keys.env</code></li>
+<li>Research script: <code>scripts/lumina-research.py</code></li>
+<li>Inspired by: *Patterns for Building AI Agents* (Bhagwat) — Context Engineering, multi-source verification</li>
+<li>Inspired by: *Zero to One* (Thiel) — Secrets are found by asking different people different questions</li>
+</body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-003-DATA-PIPELINE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-003 Data Pipeline Protocol</h1></p><p><strong>Department:</strong> OPS (Operations)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Set up and verify a data pipeline: fetch → process → store → deploy. Every pipeline follows the same structure.</p><p><h2>Trigger</h2>
+<li>When creating a new data pipeline (e.g., CryptoVue, NeuroVue)</li>
+<li>When debugging a pipeline that's not producing data</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define the Pipeline</h3>
+<pre><code>markdown
+Pipeline: [Name]
+Source: [Where data comes from — API, web scrape, file]
+Fetch: [How often — cron schedule]
+Process: [What transformations are applied]
+Store: [Where processed data goes — JSON file, database, etc.]
+Deploy: [How data reaches consumers — dashboard, API, cron delivery]
+Verify: [How to check it's working]
+</code></pre></p><p><h3>Step 2: Build the Fetch Step</h3>
+<li>Use DEV-005 (API Integration) for API-based sources</li>
+<li>Implement rate limiting</li>
+<li>Add error handling for timeouts, 404s, rate limits</li>
+<li>Save raw data with timestamp: <code>data/raw/[source]_[YYYY-MM-DD_HH-MM].json</code></li></p><p><h3>Step 3: Build the Process Step</h3>
+<li>Validate input data (check required fields exist)</li>
+<li>Sanitize (replace NaN, undefined, null with safe defaults)</li>
+<li>Transform (calculate derived fields, aggregate, filter)</li>
+<li>Log what was processed and any anomalies</li></p><p><h3>Step 4: Build the Store Step</h3>
+<li>Write to JSON file: <code>data/[pipeline]/[data_file].json</code></li>
+<li>Include metadata: timestamp, source, record count</li>
+<li>Maintain previous version as backup: <code>[data_file].prev.json</code></li></p><p><h3>Step 5: Build the Deploy Step</h3>
+<li>Copy processed data to vueroo-portal: per DSN-002</li>
+<li>Git push to GitHub</li>
+<li>Verify live dashboard shows new data</li></p><p><h3>Step 6: Add Monitoring</h3>
+<li>Add data freshness check to health check script</li>
+<li>Add cron job for the pipeline (per DEV-003)</li>
+<li>Add delivery notification (Telegram)</li></p><p><h3>Step 7: Document</h3>
+Add to TOOLS.md:
+<pre><code>markdown
+<h2>[Pipeline Name]</h2>
+Source: [API/URL]
+Schedule: [cron expression]
+Output: [file path]
+Dashboard: [URL]
+Last verified: YYYY-MM-DD
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Pipeline fetches data without error</div>
+<div class="checkitem">Data is sanitized (no NaN, undefined)</div>
+<div class="checkitem">Data is stored in correct location</div>
+<div class="checkitem">Data is deployed to dashboard</div>
+<div class="checkitem">Live URL verified</div>
+<div class="checkitem">Monitoring configured</div>
+<div class="checkitem">Documented in TOOLS.md</div></p><p><h2>References</h2>
+<li>DSN-002 Dashboard Deployment Protocol</li>
+<li>DEV-003 Cron Job Creation Protocol</li>
+<li>DEV-005 API Integration Protocol</li>
+<li>HEARTBEAT.md — NaN sanitization rule</li>
+</body></html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-004-BACKUP-RECOVERY Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-004 Backup & Recovery Protocol</h1></p><p><strong>Department:</strong> OPS (Operations)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Ensure all critical data and configurations are backed up and recoverable.</p><p><h2>Trigger</h2>
+<li>Daily automated (Lumina Drive nightly 22:00 IST)</li>
+<li>Before any major change (system upgrade, migration, refactoring)</li>
+<li>After any data loss incident</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Identify Critical Assets</h3>
+| Asset | Location | Backup Method | Frequency |
+|-------|----------|---------------|-----------|
+| Obsidian Vault | <code>C:\Users\impro\Documents\quest vault</code> | OneDrive + Mega DR | Continuous |
+| Workspace | <code>C:\Users\impro\.openclaw\workspace</code> | Git (rooquest1) | Per commit |
+| Vueroo Portal | <code>vueroo-portal/</code> | Git (vueroo-portal) | Per commit |
+| API Keys | <code>C:\Users\impro\Documents\RooQuest Data\API's\</code> | Local only | Manual |
+| Memory | <code>workspace/memory/</code> | Git + Obsidian sync | Per commit |
+| Protocols | <code>workspace/protocols/</code> | Git | Per commit |
+| Cron Configs | OpenClaw gateway | Not backed up (recreate from docs) | N/A |
+| Dashboard Data | <code>workspace/data/</code> | Git (rooquest1) | Per commit |</p><p><h3>Step 2: Verify Backups</h3>
+Check each backup location:
+1. <strong>OneDrive:</strong> Obsidian vault synced within last 24h
+2. <strong>Mega DR:</strong> Secondary archive synced within last 48h
+3. <strong>GitHub rooquest1:</strong> Latest push within last 24h
+4. <strong>GitHub vueroo-portal:</strong> Latest push within last 24h</p><p><h3>Step 3: Recovery Procedure</h3>
+For each asset type, know how to recover:
+<li><strong>Obsidian Vault:</strong> Restore from OneDrive or Mega</li>
+<li><strong>Workspace:</strong> <code>git clone</code> from rooquest1</li>
+<li><strong>Vueroo Portal:</strong> <code>git clone</code> from vueroo-portal repo</li>
+<li><strong>API Keys:</strong> Re-obtain from providers (last resort)</li>
+<li><strong>Memory/Protocols:</strong> Restore from git history</li>
+<li><strong>Cron Jobs:</strong> Recreate from HEARTBEAT.md documentation</li></p><p><h3>Step 4: Test Recovery</h3>
+Quarterly (or after major changes):
+1. Pick a random backup
+2. Restore to a test location
+3. Verify the restored data is complete and usable
+4. Document any issues found</p><p><h2>Quality Gates</h2>
+<div class="checkitem">All critical assets identified</div>
+<div class="checkitem">Backup locations verified</div>
+<div class="checkitem">Recovery procedures documented</div>
+<div class="checkitem">Recovery tested quarterly</div></p><p><h2>References</h2>
+<li>HEARTBEAT.md — System reference</li>
+<li>MEMORY.md — Asset locations</li>
+</body></html>

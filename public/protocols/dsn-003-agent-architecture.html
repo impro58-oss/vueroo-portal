@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSN-003-AGENT-ARCHITECTURE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DSN-003 Agent Architecture Protocol</h1></p><p><strong>Department:</strong> DSN (Design)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Design an agent using the Agentic Mesh pattern. Every agent has identity, discovery, trust, transactions, and oversight. No agent is built without answering all five dimensions.</p><p><h2>Trigger</h2>
+<li>Before building a new agent (pairs with DEV-001)</li>
+<li>When redesigning an existing agent architecture</li>
+<li>When evaluating whether to add capabilities to an existing agent</li></p><p><h2>Prerequisites</h2>
+<li>Requirements document completed (DEV-001 Step 1)</li>
+<li>Lethal Trifecta audit completed (DEV-006 Step 3)</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define Agent Identity</h3>
+<pre><code>markdown
+<h2>Agent Identity</h2>
+<strong>Name:</strong> [unique agent name]
+<strong>Version:</strong> [semver]
+<strong>Purpose:</strong> [1-2 sentences — what it does]
+<strong>Capabilities:</strong> [what it can do, specifically]
+<strong>Limitations:</strong> [what it cannot do, specifically]
+<strong>Department:</strong> [RSC/DEV/RPT/DSN/OPS/STR]
+<strong>Protocols:</strong> [which protocols it follows]
+<strong>Security Level:</strong> [LOW/MEDIUM/HIGH from DEV-006]
+<strong>Human Oversight:</strong> [HITL — needs approval / HOTL — autonomous with monitoring]
+</code></pre></p><p><h3>Step 2: Define Discovery</h3>
+How does this agent find what it needs?
+<li><strong>Data sources:</strong> Where does it get input? (APIs, files, databases, web scraping)</li>
+<li><strong>Other agents:</strong> Does it need to coordinate with other agents? How?</li>
+<li><strong>Configuration:</strong> Where does it get its parameters? (config files, environment variables)</li>
+<li><strong>Scheduling:</strong> When does it run? (cron, on-demand, continuous)</li></p><p><h3>Step 3: Define Trust</h3>
+How does this agent validate what it receives?
+<li><strong>Input validation:</strong> What checks does it apply to incoming data?</li>
+<li><strong>Source verification:</strong> How does it know its data sources are trustworthy?</li>
+<li><strong>Error detection:</strong> How does it detect corrupted or wrong data?</li>
+<li><strong>Sanitization:</strong> Does it sanitize for NaN/undefined/missing values?</li></p><p><h3>Step 4: Define Transactions</h3>
+What does this agent exchange with other systems?
+<li><strong>Outputs:</strong> What does it produce? (JSON files, dashboards, messages, reports)</li>
+<li><strong>Consumers:</strong> Who uses its output? (Other agents, dashboards, Roo, external)</li>
+<li><strong>Format:</strong> What format are outputs in? (JSON, markdown, HTML, CSV)</li>
+<li><strong>Delivery:</strong> How does output reach consumers? (file system, HTTP, cron delivery, Telegram)</li>
+<li><strong>Frequency:</strong> How often does it produce output?</li></p><p><h3>Step 5: Define Oversight</h3>
+Where does the human-in-the-loop sit?
+<li><strong>HITL actions:</strong> What requires Roo's explicit approval? (external messages, financial transactions, deletions, security changes)</li>
+<li><strong>HOTL actions:</strong> What runs autonomously with monitoring? (data collection, memory consolidation, internal file management)</li>
+<li><strong>Escalation triggers:</strong> What automatically escalates to Roo? (high-confidence opportunities, critical errors, time-sensitive findings)</li>
+<li><strong>Logging:</strong> What gets logged? (All external calls, all financial decisions, all errors)</li>
+<li><strong>Health monitoring:</strong> How do we know it's working? (dashboard, health check, cron status)</li></p><p><h3>Step 6: Design the Architecture</h3>
+Draw the agent's data flow:
+<pre><code>
+[Input Sources] → [Agent Core] → [Outputs]
+                      ↕
+               [State/Config]
+                      ↕
+               [Error Handling]
+                      ↕
+               [Logging/Monitoring]
+</code></pre></p><p>Specify:
+<li>Input format and validation rules</li>
+<li>Core processing steps (numbered, like DEV-001)</li>
+<li>Output format and delivery mechanism</li>
+<li>State management (where does it save state between runs?)</li>
+<li>Error handling (what happens when each step fails?)</li>
+<li>Logging (what gets recorded and where?)</li></p><p><h3>Step 7: Document</h3>
+Create the agent record in AGENTS.md and create a design doc in <code>skills/[agent-name]/</code>.</p><p><h2>Quality Gates</h2>
+<div class="checkitem">Identity fully defined</div>
+<div class="checkitem">Discovery sources identified and accessible</div>
+<div class="checkitem">Trust validation rules specified</div>
+<div class="checkitem">Transactions clearly defined</div>
+<div class="checkitem">Oversight level set (HITL/HOTL)</div>
+<div class="checkitem">Architecture diagram drawn</div>
+<div class="checkitem">Agent registered in AGENTS.md</div></p><p><h2>References</h2>
+<li>Agentic Mesh (Broda) — Discovery, Identity, Trust, Transactions, Oversight</li>
+<li>Principles of Building AI Agents (Bhagwat) — Agent building blocks, middleware, dynamic agents</li>
+<li>Patterns for Building AI Agents (Bhagwat/Gienow) — Lethal Trifecta, context engineering</li>
+<li>DEV-001 Agent Build Standard — Implementation protocol</li>
+</body></html>

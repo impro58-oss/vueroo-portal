@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-001-MEDTECH-RESEARCH-REPORT Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-001 MedTech Research Report Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Write a MedTech intelligence report that is accurate, properly sourced, and clearly tagged. These reports feed NeuroVue, the 6B Doorway Platform, and investor/partner communications. Errors in MedTech reports are reputationally expensive — this protocol prevents them.</p><p><h2>Trigger</h2>
+<li>When writing any MedTech competitive intelligence document</li>
+<li>When preparing a white paper, market brief, or clinical summary</li>
+<li>When updating NeuroVue dashboard data</li></p><p><h2>Prerequisites</h2>
+<li>Research completed per RSC-002 (MedTech Literature Review)</li>
+<li>All data points tagged as VERIFIED/ESTIMATE/UNVERIFIED/0.1</li>
+<li>Target audience identified (internal, investor, regulatory, clinical)</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define Report Scope</h3>
+Fill in this template BEFORE writing:
+<pre><code>
+Report: [Title]
+Audience: [Internal / Investor / Regulatory / Clinical / Partner]
+Purpose: [What decision does this report support?]
+Date Range: [What period does the data cover?]
+Confidence Level Required: [HIGH = all claims verified / MEDIUM = some estimates OK]
+</code></pre></p><p><h3>Step 2: Structure the Report</h3>
+Use this standard structure:</p><p><pre><code>markdown
+<h1>[Report Title]</h1></p><p><strong>Date:</strong> YYYY-MM-DD
+<strong>Author:</strong> Lumina (with Roo oversight)
+<strong>Classification:</strong> [Internal / Confidential / Public]
+<strong>Version:</strong> 1.0</p><p><h2>Executive Summary</h2>
+[3-5 sentences. What is the key finding? What should the reader DO?]</p><p><h2>Key Findings</h2>
+1. [Finding 1] — [VERIFIED/ESTIMATE] — Source: [attribution]
+2. [Finding 2] — [VERIFIED/ESTIMATE] — Source: [attribution]
+3. [Finding 3] — [VERIFIED/ESTIMATE] — Source: [attribution]</p><p><h2>Market Context</h2>
+[Market size, growth rate, key players. All financial data tagged.]</p><p><h2>Clinical Evidence</h2>
+[Study results, complication rates, outcomes. All data tagged per RSC-002.]</p><p><h2>Competitive Landscape</h2>
+[Competitor profiles, product comparisons, strategic positions.]</p><p><h2>Strategic Implications</h2>
+[What this means for us. What actions to take.]</p><p><h2>Data Quality Notes</h2>
+[What is VERIFIED vs ESTIMATE vs UNVERIFIED. Gaps in knowledge.]</p><p><h2>Sources</h2>
+[Full citation list.]</p><p><h2>Appendix</h2>
+[Raw data tables, methodology notes.]
+</code></pre></p><p><h3>Step 3: Write Each Section</h3></p><p><strong>Market Context rules:</strong>
+<li>Revenue figures: ONLY use published financial data, tagged [VERIFIED]</li>
+<li>If revenue is estimated from multiple company reports: tag [ESTIMATE: derived from X, Y, Z sources]</li>
+<li>If no data exists: use 0.1 marker, NEVER fabricate a number</li>
+<li>Growth rates: cite source and time period</li>
+<li>Market share: cite source, note methodology</li></p><p><strong>Clinical Evidence rules:</strong>
+<li>Follow RSC-002 tagging exactly</li>
+<li>Include study type and sample size for every statistic</li>
+<li>Note limitations of the evidence</li>
+<li>Distinguish between "proven" and "promising"</li>
+<li>Never present company marketing claims as clinical evidence</li></p><p><strong>Competitive Landscape rules:</strong>
+<li>Distinguish between [VERIFIED] public filings and [UNVERIFIED] company claims</li>
+<li>Include regulatory status (FDA clearance, CE mark) with dates</li>
+<li>Note pipeline products separately from approved products</li>
+<li>Include pricing only if from verified source</li></p><p><h3>Step 4: Tag Review</h3>
+After writing, scan the ENTIRE report for:
+<div class="checkitem">Every numerical claim has a tag</div>
+<div class="checkitem">No tag is missing (if unsure, tag [ESTIMATE])</div>
+<div class="checkitem">No financial estimates without explicit ESTIMATE tag</div>
+<div class="checkitem">No clinical claims without study citation</div>
+<div class="checkitem">No company marketing claims presented as facts</div></p><p><h3>Step 5: Quality Gate — Three Gates Verification</h3></p><p><strong>Gate 1: Accuracy</strong>
+<li>Every fact traceable to a source?</li>
+<li>Every number matches its source?</li>
+<li>No fabricated data?</li></p><p><strong>Gate 2: Logic</strong>
+<li>Does the argument follow from the evidence?</li>
+<li>Are conclusions supported, not assumed?</li>
+<li>Are alternative explanations acknowledged?</li></p><p><strong>Gate 3: Utility</strong>
+<li>Does this answer the question that triggered the report?</li>
+<li>Can the reader take action based on this?</li>
+<li>Is the executive summary actionable?</li></p><p><h3>Step 6: Multi-Model Review (if HIGH-stakes)</h3>
+For reports going to investors, partners, or public:
+1. Run key findings through a second model (Claude or Perplexity)
+2. Ask: "What's wrong with this analysis? What am I missing?"
+3. Incorporate corrections, document the review</p><p><h3>Step 7: Deliver</h3>
+<li>Save to Obsidian: <code>20-Areas/MedTech-NeuroVue/Reports/</code></li>
+<li>If updating NeuroVue: update JSON data files, push to GitHub</li>
+<li>If for investor/partner: export as PDF, review with Roo before sending</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">All data points tagged [VERIFIED]/[ESTIMATE]/[UNVERIFIED]/[0.1]</div>
+<div class="checkitem">No financial estimates without ESTIMATE tag</div>
+<div class="checkitem">Three Gates passed (Accuracy, Logic, Utility)</div>
+<div class="checkitem">Multi-model review completed (if HIGH-stakes)</div>
+<div class="checkitem">Filed in correct Obsidian location</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Missing data for a section | Write "Data not available — [GAP]" not "approximately X" |
+| Conflicting sources | Present both, note conflict, flag for Roo |
+| Section doesn't apply | Write "Not applicable to this report" — don't skip silently |</p><p><h2>References</h2>
+<li>Biotech in the Balance (Levin) — Trust as strategic differentiator</li>
+<li>Biodesign (Stanford) — Rigor in medical technology innovation process</li>
+<li>HEARTBEAT.md — Hard rules on fabrication</li>
+<li>Recursive Excellence Protocol — Self-critique before shipping</li>
+</body></html>

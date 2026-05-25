@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STR-001-ZERO-TO-ONE-AUDIT Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>STR-001 Zero to One Audit Protocol</h1></p><p><strong>Department:</strong> STR (Strategy)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Classify every active project as 0→1 (creating something new) or 1→n (improving what exists). Allocate resources based on power-law returns. Kill projects that don't serve the mission.</p><p><h2>Trigger</h2>
+<li>When starting a new quarter or strategic review</li>
+<li>When feeling spread too thin across too many projects</li>
+<li>When deciding where to invest time and money</li></p><p><h2>Steps</h2></p><p><h3>Step 1: List All Active Projects</h3>
+Pull from MEMORY.md active projects table.</p><p><h3>Step 2: Classify Each Project</h3></p><p>| Classification | Definition | Return Profile | Examples |
+|---------------|-----------|---------------|----------|
+| <strong>0→1</strong> | Creates something entirely new. Nobody does this. | Power-law (massive or zero) | Avaark, LUXBRIDGE |
+| <strong>1→n Funding</strong> | Exists in market but generates revenue that funds 0→1 plays | Linear, reliable | NeuroVue, CryptoVue, AgentVue, TrojanVue |
+| <strong>1→n Strategic</strong> | Exists in market but builds strategic capability | Linear + optionality | LotteryVue (research), 6B Doorway (MedTech positioning) |
+| <strong>Dead/Zombie</strong> | Not generating value, not building capability | Negative (drains time) | ComplyKeep (killed), stalled projects |</p><p><h3>Step 3: Apply the Power Law Test</h3>
+For each 0→1 project:
+<li>If this works, does it generate 10x+ the value of all 1→n projects combined?</li>
+<li>If this fails, can we survive the loss?</li>
+<li>Are we giving it enough resources to actually win?</li></p><p>For each 1→n project:
+<li>Does it generate revenue? How much?</li>
+<li>Does it build capability we need for a 0→1 play?</li>
+<li>If we killed it tomorrow, would anything important break?</li></p><p><h3>Step 4: Resource Allocation</h3>
+<strong>Rule: 0→1 projects get disproportionate attention.</strong></p><p>Suggested allocation:
+<li><strong>60%</strong> of time → 0→1 plays (Avaark, LUXBRIDGE)</li>
+<li><strong>30%</strong> of time → 1→n Funding (systems that generate revenue)</li>
+<li><strong>10%</strong> of time → 1→n Strategic (capability builders)</li>
+<li><strong>0%</strong> of time → Dead/Zombie (kill them)</li></p><p><h3>Step 5: Kill List</h3>
+Projects that should be killed or mothballed:
+<li>Not generating revenue AND not building capability AND not a 0→1 play</li>
+<li>Consuming >10% of time with <1% of returns</li>
+<li>"We'll get to it someday" projects (they won't)</li></p><p><h3>Step 6: Write the Audit</h3>
+<pre><code>markdown
+<h1>Zero to One Audit — YYYY-MM-DD</h1></p><p><h2>0→1 Plays (60% resources)</h2>
+| Project | Secret | Monopoly Potential | Current Stage | Next Action |
+|---------|--------|--------------------|---------------|-------------|</p><p><h2>1→n Funding (30% resources)</h2>
+| Project | Monthly Revenue | Cost to Run | Net | Status |
+|---------|---------------|------------|-----|--------|</p><p><h2>1→n Strategic (10% resources)</h2>
+| Project | Capability Built | Feeds Which 0→1 | Status |
+|---------|------------------|------------------|--------|</p><p><h2>Kill List</h2>
+| Project | Why Kill | What We Lose | Decision |
+|---------|----------|-------------|----------|</p><p><h2>Resource Allocation Summary</h2>
+[Where time and money actually go vs. where they should go]
+</code></pre></p><p><h3>Step 7: Present to Roo</h3>
+<li>The audit is a RECOMMENDATION, not a decision</li>
+<li>Roo decides what to kill and what to keep</li>
+<li>Document his decision and the reasoning</li>
+<li>Update MEMORY.md and HEARTBEAT.md accordingly</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Every active project classified</div>
+<div class="checkitem">0→1 projects identified with their "secret"</div>
+<div class="checkitem">Resource allocation percentages calculated</div>
+<div class="checkitem">Kill list created with reasoning</div>
+<div class="checkitem">Roo has reviewed and decided</div></p><p><h2>References</h2>
+<li>Zero to One (Thiel) — Monopoly theory, secrets, power law, last mover advantage</li>
+<li>Book synthesis (May 25, 2026) — Initial classification</li>
+</body></html>

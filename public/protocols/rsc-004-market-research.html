@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-004-MARKET-RESEARCH Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-004 Market Research Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Research market size (TAM/SAM/SOM), growth rates, and trends with proper sourcing. No fabricated financial data — every number must be tagged and traceable.</p><p><h2>Trigger</h2>
+<li>When sizing a market for a business plan or investor deck</li>
+<li>When evaluating a new opportunity (STR-003 Idea Development)</li>
+<li>When updating competitive intelligence with market context</li></p><p><h2>Prerequisites</h2>
+<li>Clear definition of the market segment being researched</li>
+<li>Understanding of TAM/SAM/SOM framework</li>
+<li>RSC-001 (Multi-Source Research) available for queries</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define the Market</h3>
+Write a market definition statement:
+<pre><code>
+Market: [specific segment, e.g., "neurovascular flow diverters in Europe"]
+Geography: [global / regional / country-specific]
+Time Period: [current year + 5-year forecast]
+Customer: [who buys this — hospitals, clinics, patients, etc.]
+</code></pre></p><p><h3>Step 2: Sizing — TAM / SAM / SOM</h3></p><p><strong>TAM (Total Addressable Market):</strong> The total market demand if 100% of eligible customers bought.
+<strong>SAM (Serviceable Available Market):</strong> The segment TAM we can reach with our business model.
+<strong>SOM (Serviceable Obtainable Market):</strong> The portion of SAM we can realistically capture.</p><p>For each sizing level:
+1. Search for existing market research reports (Grand View Research, Markets and Markets, Allied Market Research)
+2. Cross-reference with public company revenue data (SEC filings for public companies in the space)
+3. Calculate bottom-up: # of potential customers × average revenue per customer
+4. Calculate top-down: total market × our segment percentage</p><p><strong>Tag every number:</strong>
+<li>From published report with methodology → [VERIFIED: Source, Year]</li>
+<li>Calculated from company revenues → [ESTIMATE: derived from X, Y, Z sources]</li>
+<li>No source available → [0.1 MARKER: no market data found]</li>
+<li><strong>NEVER fabricate a market size number</strong></li></p><p><h3>Step 3: Growth Rate</h3>
+<li>Find CAGR (Compound Annual Growth Rate) from at least 2 sources</li>
+<li>Note base year and forecast period</li>
+<li>Tag: [VERIFIED: Source, base year-forecast year] or [ESTIMATE: derived from X]</li>
+<li>Calculate yourself if needed: (end_value / start_value) ^ (1/years) - 1</li></p><p><h3>Step 4: Trends and Drivers</h3>
+Identify:
+1. <strong>Market drivers</strong> (what's pushing growth) — tag each
+2. <strong>Market restraints</strong> (what's holding it back) — tag each
+3. <strong>Technology trends</strong> (what's changing the landscape) — tag each
+4. <strong>Regulatory environment</strong> (FDA, CE, country-specific) — tag each
+5. <strong>Key events</strong> (M&A, new entrants, clinical trial results) — tag each</p><p><h3>Step 5: Synthesize</h3>
+Write the market brief:
+<pre><code>markdown
+<h1>Market Research: [Segment]</h1></p><p><strong>Date:</strong> YYYY-MM-DD
+<strong>Classification:</strong> [Internal/Confidential]</p><p><h2>Market Size</h2>
+| Level | Value | CAGR | Source | Tag |
+|-------|-------|------|--------|-----|
+| TAM | $[X]B | [X]% | [source] | [VERIFIED/ESTIMATE] |
+| SAM | $[X]B | [X]% | [source] | [VERIFIED/ESTIMATE] |
+| SOM | $[X]M | [X]% | [calculation] | [ESTIMATE: derived from] |</p><p><h2>Growth Drivers</h2>
+1. [Driver] — [tag]
+2. [Driver] — [tag]</p><p><h2>Market Restraints</h2>
+1. [Restraint] — [tag]</p><p><h2>Key Trends</h2>
+1. [Trend] — [tag]</p><p><h2>Data Quality Notes</h2>
+[What is VERIFIED vs ESTIMATE vs UNVERIFIED. Gaps in knowledge.]</p><p><h2>Sources</h2>
+[Full citation list]
+</code></pre></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Market definition clearly stated</div>
+<div class="checkitem">TAM/SAM/SOM all calculated with sources</div>
+<div class="checkitem">Every financial number has a tag</div>
+<div class="checkitem">No fabricated market sizes (use 0.1 marker if no data)</div>
+<div class="checkitem">CAGR calculated or cited with base year</div>
+<div class="checkitem">At least 2 sources consulted</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Market reports contradict each other | Present both, note methodology differences, flag for Roo |
+| No published market data exists | Build bottom-up estimate, tag as [ESTIMATE], note gap |
+| Company revenue data unavailable (private co) | Use [ESTIMATE: industry average margin × known employee count], note uncertainty |</p><p><h2>References</h2>
+<li>Zero to One (Thiel) — Market sizing for monopoly identification</li>
+<li>Lean Customer Development (Alvarez) — Validating market assumptions</li>
+</body></html>

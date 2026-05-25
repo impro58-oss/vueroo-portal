@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-004-PRESENTATION-PPTX Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-004 Presentation (PPTX) Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Create a slide deck that communicates clearly, looks professional, and follows a proven structure.</p><p><h2>Trigger</h2>
+<li>When Roo asks for a presentation or pitch deck</li>
+<li>When preparing for GEST, investor meetings, or partner calls</li></p><p><h2>Prerequisites</h2>
+<li>Clear purpose: what decision should the audience make?</li>
+<li>Key messages defined</li>
+<li>Data/visuals ready</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define the Deck</h3>
+<pre><code>
+Title: [Deck name]
+Audience: [Investors / Partners / Conference / Internal]
+Purpose: [What decision or action do you want?]
+Length: [Number of slides — typically 10-15 for investor, 5-7 for update]
+Tone: [Professional / Visionary / Technical]
+</code></pre></p><p><h3>Step 2: Structure the Deck</h3>
+Use the proven 7-slide structure (expandable):</p><p>| Slide | Content | Time |
+|-------|---------|------|
+| 1. Title | Company name, tagline, date | 10 sec |
+| 2. Problem | Who hurts and how much | 60 sec |
+| 3. Solution | What you build and why it's different | 90 sec |
+| 4. Market | TAM/SAM/SOM, growth rate | 60 sec |
+| 5. Traction | What you've achieved, metrics | 60 sec |
+| 6. Team | Who's building this | 30 sec |
+| 7. Ask | What you need and what you'll do with it | 60 sec |</p><p><h3>Step 3: Design Standards</h3>
+<li>Dark background (#0a0e17 or #111827) with light text (#e2e8f0)</li>
+<li>Accent color for emphasis (indigo #6366f1 or teal #14b8a6)</li>
+<li>Maximum 6 bullet points per slide</li>
+<li>Maximum 1 chart or visual per slide</li>
+<li>Font: system-ui or Inter, minimum 18pt</li>
+<li>No walls of text — if you can't say it in 6 lines, split it</li></p><p><h3>Step 4: Build with PPTX Skill</h3>
+Use the <code>create-pptx</code> or <code>pptx-generator</code> skill to generate the deck programmatically. This ensures consistency and repeatability.</p><p><h3>Step 5: Review</h3>
+<div class="checkitem">Every slide has a single clear message</div>
+<div class="checkitem">Data is labeled and sourced</div>
+<div class="checkitem">No more than 6 bullets per slide</div>
+<div class="checkitem">Charts are readable from 10 feet</div>
+<div class="checkitem">The ask is explicit and specific</div></p><p><h2>Quality Gates</h2>
+<div class="checkitem">Structure follows 7-slide format (or close)</div>
+<div class="checkitem">Every slide has one clear message</div>
+<div class="checkitem">Data is sourced and tagged</div>
+<div class="checkitem">Visual design is consistent</div>
+<div class="checkitem">Ask slide is explicit</div></p><p><h2>References</h2>
+<li>Zero to One (Thiel) — Start with the secret, not the market</li>
+<li>PPTX skills: <code>create-pptx</code>, <code>pptx-generator</code></li>
+</body></html>

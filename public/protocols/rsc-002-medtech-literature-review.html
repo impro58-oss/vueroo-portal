@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-002-MEDTECH-LITERATURE-REVIEW Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-002 MedTech Literature Review Protocol</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Find, extract, validate, and synthesize medical journal articles and clinical data for MedTech intelligence reports. Every fact must be tagged as VERIFIED or ESTIMATE. No fabrication of clinical data.</p><p><h2>Trigger</h2>
+<li>When researching a MedTech topic (device, therapy, clinical outcome)</li>
+<li>When preparing a competitive intelligence brief</li>
+<li>When writing a white paper that references clinical evidence</li>
+<li>When updating NeuroVue data</li></p><p><h2>Prerequisites</h2>
+<li>Research question clearly defined (e.g., "What is the recurrence rate for aneurysms treated with Pipeline embolization?")</li>
+<li>Access to PubMed, Google Scholar, or journal databases</li>
+<li>PACK Operation available for Perplexity deep research</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Define Search Parameters</h3>
+<li>Write the clinical question in PICO format:</li>
+  - <strong>P</strong>opulation: Who are the patients?
+  - <strong>I</strong>ntervention: What device/therapy?
+  - <strong>C</strong>omparison: Compared to what?
+  - <strong>O</strong>utcome: What outcome measure?
+<li>Define date range (prefer last 5 years, note if older)</li>
+<li>Define study types accepted (RCT > meta-analysis > cohort > case series > case report)</li></p><p><h3>Step 2: Search Literature</h3>
+<strong>Primary sources (in order of reliability):</strong>
+1. <strong>PubMed</strong> — <code>web_fetch</code> on <code>https://pubmed.ncbi.nlm.nih.gov/?term=[PICO+terms]</code>
+2. <strong>Google Scholar</strong> — <code>web_search</code> with <code>site:scholar.google.com [topic]</code>
+3. <strong>Perplexity Deep Research</strong> (via Roo) — "Find all published clinical studies on [PICO]. Include journal name, year, sample size, and key findings."
+4. <strong>Cochrane Library</strong> — <code>web_search</code> with <code>site:cochranelibrary.com [topic]</code>
+5. <strong>FDA databases</strong> — For device-specific data, search FDA 510(k) and PMA databases</p><p><strong>For each result found:</strong>
+<li>Record: Title, Authors, Journal, Year, DOI/URL</li>
+<li>Record: Study type, Sample size, Follow-up duration</li>
+<li>Record: Key finding (exact numbers, not paraphrased)</li></p><p><h3>Step 3: Extract and Validate</h3>
+For EACH paper selected for inclusion:</p><p>1. <strong>Fetch the full text</strong> (via <code>web_fetch</code> on DOI or PubMed Central)
+2. <strong>Extract key data points:</strong>
+   - Patient demographics (N=, age range, conditions)
+   - Primary endpoint results (with confidence intervals if available)
+   - Adverse events / complications
+   - Study limitations acknowledged by authors
+3. <strong>Validate claims:</strong>
+   - Cross-reference statistics against abstract numbers
+   - Check if findings are replicated in other studies
+   - Note industry funding or author conflicts of interest</p><p><h3>Step 4: Tag Everything</h3>
+<strong>CRITICAL RULE: Every data point gets a tag.</strong></p><p>| Tag | When to Use | Example |
+|-----|-------------|---------|
+| <code>[VERIFIED]</code> | Confirmed in peer-reviewed publication, numbers match | "Recurrence rate 5.2% at 3 years [VERIFIED: Mocco et al., J Neurosurg 2024]" |
+| <code>[ESTIMATE]</code> | Inferred, not directly stated, or from non-peer-reviewed source | "Market size ~$2.1B [ESTIMATE: derived from 3 company revenues]" |
+| <code>[UNVERIFIED]</code> | Claimed but cannot confirm from available sources | "Pipeline Flex 3-year durability rate 95% [UNVERIFIED: company website, no published data]" |
+| <code>[0.1 MARKER]</code> | No verified data available, using 0.1 as placeholder | "Complication rate [0.1 MARKER: no published data found]" |</p><p><strong>Hard rule from HEARTBEAT.md:</strong> No verified data → use 0.1 as marker. NEVER estimate financial data.</p><p><h3>Step 5: Synthesize</h3>
+Write the review using this structure:</p><p><pre><code>markdown
+<h1>Literature Review: [Topic]</h1></p><p><strong>Date:</strong> YYYY-MM-DD
+<strong>Question:</strong> [PICO question]
+<strong>Studies Found:</strong> [N]
+<strong>Studies Included:</strong> [N with inclusion reason]
+<strong>Date Range:</strong> [year range]</p><p><h2>Summary of Evidence</h2>
+[2-3 paragraph synthesis of what the evidence shows]</p><p><h2>Study Details</h2>
+| Study | Year | Type | N= | Finding | Confidence | Tag |
+|-------|------|------|----|---------|------------|-----|
+| [Author] | [Year] | [RCT/Cohort/etc] | [N] | [key finding] | [HIGH/MED/LOW] | [VERIFIED/ESTIMATE/UNVERIFIED] |</p><p><h2>Key Findings</h2>
+<div class="checkitem">— [tag] — Source: [attribution]</div>
+<div class="checkitem">— [tag] — Source: [attribution]</div></p><p><h2>Gaps in Evidence</h2>
+<li>[what we don't know]</li></p><p><h2>Recommendations for NeuroVue</h2>
+<li>[what to update in competitive intelligence data]</li>
+<li>[what needs further research]</li>
+</code></pre></p><p><h3>Step 6: Update NeuroVue Data</h3>
+If findings affect NeuroVue competitive intelligence:
+1. Update <code>medtech-intelligence/dashboard/data/</code> JSON files
+2. Add source attribution to each data point
+3. Push to GitHub: <code>rooquest1</code> repo
+4. Verify live dashboard reflects changes</p><p><h2>Quality Gates</h2>
+<div class="checkitem">Every numerical claim has a source</div>
+<div class="checkitem">Every claim has a VERIFIED/ESTIMATE/UNVERIFIED/0.1 tag</div>
+<div class="checkitem">No financial data estimated (use 0.1 marker)</div>
+<div class="checkitem">At least 3 sources consulted for any clinical claim</div>
+<div class="checkitem">Study limitations acknowledged</div>
+<div class="checkitem">Conflicts of interest noted</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Full text paywalled | Use abstract data only, tag as [UNVERIFIED] for any claim not in abstract |
+| Contradictory studies | Present both, note sample sizes, do NOT pick a winner |
+| No published data found | Use [0.1 MARKER], report gap to Roo |
+| Company claim without published evidence | Tag [UNVERIFIED], note company source, do NOT present as fact |</p><p><h2>References</h2>
+<li>Biodesign (Stanford) — Structured medical technology innovation process</li>
+<li>HEARTBEAT.md — Hard rule on fabrication and 0.1 markers</li>
+<li>NeuroVue data pipeline: <code>TOOLS.md</code></li>
+</body></html>

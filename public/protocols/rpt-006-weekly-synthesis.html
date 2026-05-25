@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-006-WEEKLY-SYNTHESIS Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-006 Weekly Synthesis Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Compile weekly learnings, identify patterns, flag risks, and celebrate wins. Delivered Sunday 20:00 UTC.</p><p><h2>Trigger</h2>
+<li>Weekly cron (Sunday 20:00 UTC)</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Review the Week</h3>
+<li>Read all <code>memory/</code> files created this week</li>
+<li>Read all <code>.learnings/</code> entries</li>
+<li>Check cron job execution logs for failures</li>
+<li>Review trading performance (RPT-002)</li>
+<li>Review any incident responses (OPS-002)</li></p><p><h3>Step 2: Identify Patterns</h3>
+<li>What themes emerged across multiple sessions?</li>
+<li>What problems recurred?</li>
+<li>What worked particularly well?</li>
+<li>What surprised us?</li></p><p><h3>Step 3: Compile the Synthesis</h3>
+<pre><code>markdown
+<h1>Weekly Synthesis — Week of [Date]</h1></p><p><h2>🏆 Wins</h2>
+<li>[What went well this week]</li></p><p><h2>📈 Progress</h2>
+<li>[Projects that advanced]</li></p><p><h2>🔻 Setbacks</h2>
+<li>[What didn't work]</li></p><p><h2>🧠 Learnings</h2>
+<li>[New knowledge gained]</li>
+<li>[Mistakes made and lessons from them]</li></p><p><h2>⚠️ Risks</h2>
+<li>[Emerging risks to watch]</li></p><p><h2>📋 Next Week Priorities</h2>
+1. [Priority 1]
+2. [Priority 2]
+3. [Priority 3]
+</code></pre></p><p><h3>Step 4: File and Deliver</h3>
+<li>Save to <code>memory/synaptic/weekly-reflection-YYYY-MM-DD.md</code></li>
+<li>Copy to Obsidian <code>50-Fireside-Chat-Repository/</code></li>
+<li>Deliver to Telegram</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">All major events of the week covered</div>
+<div class="checkitem">At least 1 learning captured</div>
+<div class="checkitem">At least 1 risk flagged</div>
+<div class="checkitem">Next week priorities are specific and actionable</div></p><p><h2>References</h2>
+<li>memory/synaptic/ — Weekly reflection files</li>
+<li>.learnings/ — Error and lesson logs</li>
+</body></html>

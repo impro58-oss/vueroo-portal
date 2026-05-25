@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-002-TRADING-ANALYSIS-REPORT Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-002 Trading Analysis Report Protocol</h1></p><p><strong>Department:</strong> RPT (Reporting)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Analyze and report on trading system performance with proper metrics, before/after comparisons, and actionable insights. No declaration without measurement.</p><p><h2>Trigger</h2>
+<li>After any trading system parameter change</li>
+<li>Weekly or monthly performance review</li>
+<li>When Roo asks "how is the trading doing?"</li>
+<li>After a significant drawdown or winning streak</li></p><p><h2>Prerequisites</h2>
+<li>Trading data available in <code>data/paper_trading/</code></li>
+<li>Performance data loaded and analyzed</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Load Data</h3>
+<pre><code>python
+import json
+with open('data/paper_trading/trades_v52.json') as f:
+    trades = json.load(f)
+with open('data/paper_trading/positions_v52.json') as f:
+    positions = json.load(f)
+</code></pre></p><p><h3>Step 2: Calculate Core Metrics</h3>
+<strong>Required metrics for every report:</strong></p><p>| Metric | Formula | Why It Matters |
+|--------|---------|---------------|
+| Total P&L | Sum of all trade pnl | Bottom line |
+| Win Rate | Wins / Total Trades | Reliability |
+| Avg Win | Mean of winning trades | Upside potential |
+| Avg Loss | Mean of losing trades | Downside risk |
+| Profit Factor | Gross Wins / Gross Losses | Edge strength (>1.5 is good) |
+| Max Drawdown | Peak-to-trough decline | Worst case |
+| Expectancy | Total P&L / Total Trades | Per-trade edge |
+| Sharpe Ratio | (Mean Return - Risk Free) / Std Dev | Risk-adjusted returns |</p><p><h3>Step 3: Segment Analysis</h3>
+Break down performance by:
+<li><strong>Direction</strong> (LONG vs SHORT): Which works better?</li>
+<li><strong>Exit reason</strong> (DONCHIAN, TIME_STOP, ATR_STOP, TRAILING_STOP): Which exits are effective?</li>
+<li><strong>Holding period</strong> (1 bar, 2-3 bars, 4-7 bars, 8+): Optimal holding time?</li>
+<li><strong>Symbol</strong> (BTC, ETH, etc.): Any token-specific patterns?</li>
+<li><strong>BTC regime</strong> (bullish/bearish): Performance in different market conditions?</li></p><p><h3>Step 4: Before/After Comparison</h3>
+When reporting on a parameter change (like V5.1 → V5.2):
+<pre><code>
+| Metric | V5.1 (Before) | V5.2 (After) | Change |
+|--------|---------------|-------------|--------|
+| Win Rate | 16% | [new]% | [delta] |
+| Profit Factor | 0.46 | [new] | [delta] |
+| Max Drawdown | -€482 | [new] | [delta] |
+</code></pre>
+<strong>Hard rule:</strong> Every parameter change MUST have before AND after scores. No exceptions.</p><p><h3>Step 5: Identify Patterns</h3>
+<li>What's working? (winning trades cluster by what attribute?)</li>
+<li>What's failing? (losing trades cluster by what attribute?)</li>
+<li>Is the system improving or degrading over time?</li>
+<li>Are there any systematic biases (always losing on shorts? specific tokens?)</li></p><p><h3>Step 6: Write the Report</h3>
+<pre><code>markdown
+<h1>Trading Analysis Report: [System Name] V[Version]</h1>
+<strong>Date:</strong> YYYY-MM-DD
+<strong>Period:</strong> [start date] to [end date]
+<strong>Total Trades:</strong> [N]</p><p><h2>Performance Summary</h2>
+| Metric | Value |
+|--------|-------|
+| Total P&L | EUR [X] |
+| Win Rate | [X]% |
+| Profit Factor | [X] |
+| Max Drawdown | EUR [X] |
+| Expectancy | EUR [X]/trade |</p><p><h2>Segment Analysis</h2>
+[Direction, exit reason, holding period, symbol breakdowns]</p><p><h2>Before/After Comparison (if applicable)</h2>
+[Table comparing old vs new parameters]</p><p><h2>Key Patterns</h2>
+[What's working, what's failing, systematic biases]</p><p><h2>Recommendations</h2>
+[Specific, actionable tuning suggestions with expected impact]
+</code></pre></p><p><h3>Step 7: Update Dashboard</h3>
+<li>Update <code>vueroo-portal/public/trading/</code> data files</li>
+<li>Push to GitHub</li>
+<li>Verify live dashboard reflects changes</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">All core metrics calculated</div>
+<div class="checkitem">Segment analysis completed</div>
+<div class="checkitem">Before/after comparison included (if parameter change)</div>
+<div class="checkitem">No declaration without measurement</div>
+<div class="checkitem">Dashboard updated and verified</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Not enough trades for analysis | Report "insufficient data" — do NOT draw conclusions from <10 trades |
+| NaN in calculations | Check data pipeline, sanitize, re-run |
+| Conflicting metrics (high P&L but low win rate) | Present both, let Roo decide |</p><p><h2>References</h2>
+<li>TrojanVue V5.1 analysis (May 25, 2026) — 94% shorts in bull market = -€482 DD</li>
+</body></html>

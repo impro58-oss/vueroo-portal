@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSN-001-WEBSITE-BUILD Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DSN-001 Website Build Protocol</h1></p><p><strong>Department:</strong> DSN (Design)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Build and deploy a website from concept to live URL. Every website follows the same process: design → build → test → deploy → verify.</p><p><h2>Trigger</h2>
+<li>When building a new website or web dashboard</li>
+<li>When significantly redesigning an existing site</li></p><p><h2>Prerequisites</h2>
+<li>Purpose defined (what is this site for?)</li>
+<li>Content/data source identified</li>
+<li>Hosting platform decided (GitHub Pages, local server, etc.)</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Requirements</h3>
+<pre><code>markdown
+Website: [Name]
+Purpose: [1-2 sentences]
+Target Users: [Who will use this?]
+Data Source: [Where does data come from? API endpoint, JSON file, etc.]
+Hosting: [GitHub Pages / localhost / other]
+Domain: [vueroo.com/[path] / localhost:[port] / other]
+</code></pre></p><p><h3>Step 2: Design the Layout</h3>
+Before coding:
+1. List all sections the page needs
+2. Sketch the layout (text description is fine)
+3. Define the data flow: which component shows which data
+4. Define responsive breakpoints (mobile, tablet, desktop)</p><p><h3>Step 3: Build Structure</h3>
+Use this standard file structure:
+<pre><code>
+[project-dir]/
+  index.html       — Main page
+  style.css        — Styles (or inline <style> for simple pages)
+  data/            — JSON data files
+  scripts/         — JavaScript (if needed)
+</code></pre></p><p><strong>HTML standards:</strong>
+<li>Semantic HTML5 (header, main, section, article, footer)</li>
+<li>Accessible (alt tags, ARIA labels, proper heading hierarchy)</li>
+<li>Meta tags for SEO (title, description, viewport)</li>
+<li>Favicon if available</li></p><p><strong>CSS standards:</strong>
+<li>Mobile-first responsive design</li>
+<li>CSS custom properties for theming</li>
+<li>No !important (restructure instead)</li>
+<li>Dark/light mode support where appropriate</li></p><p><strong>JavaScript standards:</strong>
+<li>Fetch data with error handling (try/catch, .catch())</li>
+<li>NaN/undefined/null sanitization on all data display</li>
+<li>Loading states while data fetches</li>
+<li>Error states when data fails to load</li>
+<li>Shared fetchJSON helper with sanitization (per HEARTBEAT.md verification)</li></p><p><h3>Step 4: Test Locally</h3>
+<div class="checkitem">Page loads without console errors</div>
+<div class="checkitem">All data displays correctly (no NaN, no undefined)</div>
+<div class="checkitem">Responsive: works on mobile, tablet, desktop</div>
+<div class="checkitem">All links work</div>
+<div class="checkitem">All images load</div>
+<div class="checkitem">Dark mode works (if supported)</div></p><p><h3>Step 5: Deploy</h3>
+<strong>GitHub Pages:</strong>
+1. Push to correct repo branch
+2. Wait for GitHub Actions build (if applicable)
+3. Check the live URL</p><p><strong>Local server:</strong>
+1. Start http.server on correct port
+2. Verify port is not already in use
+3. Check localhost:[port] loads</p><p><h3>Step 6: Live Verification</h3>
+<div class="checkitem">Live URL returns 200</div>
+<div class="checkitem">Data loads from API/JSON source</div>
+<div class="checkitem">No console errors in browser</div>
+<div class="checkitem">Page looks correct on mobile + desktop</div>
+<div class="checkitem">Favicon loads</div>
+<div class="checkitem">Performance: page loads in <5 seconds</div></p><p><h3>Step 7: Add to Dashboard Health Check</h3>
+If this is a recurring dashboard:
+1. Add URL to <code>scripts/dashboard-health-check.py</code>
+2. Verify health check passes
+3. Add cron schedule for health monitoring</p><p><h2>Quality Gates</h2>
+<div class="checkitem">Requirements documented before coding</div>
+<div class="checkitem">Layout designed before coding</div>
+<div class="checkitem">Local testing passed</div>
+<div class="checkitem">Live verification passed</div>
+<div class="checkitem">No NaN/undefined in displayed data</div>
+<div class="checkitem">Added to health check (if dashboard)</div></p><p><h2>References</h2>
+<li>HEARTBEAT.md — NaN sanitization requirement</li>
+<li>vueroo-portal deployment pattern</li>
+<li>Dashboard health check script</li>
+</body></html>

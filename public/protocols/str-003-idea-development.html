@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STR-003-IDEA-DEVELOPMENT Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>STR-003 Idea Development Protocol</h1></p><p><strong>Department:</strong> STR (Strategy)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-05-25
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> DRAFT</p><p><h2>Purpose</h2>
+Take an idea from initial spark to validated hypothesis. No idea gets built without going through this protocol. Prevents building things nobody wants, chasing ideas that don't have legs, or skipping validation because "it's obvious."</p><p><h2>Trigger</h2>
+<li>When Roo has a new idea ("What if we...?")</li>
+<li>When a book/extraction sparks a new possibility</li>
+<li>When a gap is identified that could become a project</li>
+<li>When we're about to start building something new</li></p><p><h2>Prerequisites</h2>
+<li>The idea exists (even as a rough sentence)</li>
+<li>Willingness to kill the idea if it doesn't pass validation</li></p><p><h2>Steps</h2></p><p><h3>Step 1: Capture the Spark</h3>
+Write the idea in ONE sentence. If you can't say it in one sentence, it's not clear enough.</p><p>Template:
+<pre><code>
+IDEA: [One sentence describing what you'd build/do]
+PROBLEM IT SOLVES: [Who has this problem and how painful is it?]
+WHY NOW: [Why is this possible now when it wasn't before?]
+WHY US: [What do we have that others don't?]
+</code></pre></p><p><h3>Step 2: Zero to One Classification</h3>
+Is this a <strong>0→1</strong> idea (creating something new) or a <strong>1→n</strong> idea (improving something that exists)?</p><p><li><strong>0→1:</strong> Nobody has done this before. If it works, it creates a new category. High risk, power-law returns.</li>
+<li><strong>1→n:</strong> Others do this already. We'd be competing. Lower risk, linear returns.</li></p><p><strong>Decision rule:</strong>
+<li>0→1 → Proceed to Step 3 (full validation)</li>
+<li>1→n → Only proceed if it funds a 0→1 play OR it's already generating revenue</li></p><p><h3>Step 3: Seven Questions (adapted from Thiel)</h3>
+Answer ALL seven. Any "no" is a problem to solve, not a reason to stop — but know where you're weak.</p><p>1. <strong>Engineering:</strong> Can you create breakthrough technology instead of incremental improvements?
+2. <strong>Timing:</strong> Is now the right time? What changed recently that makes this possible?
+3. <strong>Monopoly:</strong> Are you starting with a big share of a small market?
+4. <strong>People:</strong> Do you have the right team (or can you build it)?
+5. <strong>Distribution:</strong> Do you have a way to deliver this to customers?
+6. <strong>Durability:</strong> Will this be defensible in 10-20 years?
+7. <strong>Secret:</strong> Have you identified a unique opportunity that others don't see?</p><p><h3>Step 4: Resonance Check (Our Addition)</h3>
+Does this idea align with the field?</p><p><li>Does it serve the mission (LUXBRIDGE, Avaark, site activations)?</li>
+<li>Does it feel like a "yes" in the body, not just the mind?</li>
+<li>Is it coming from inspiration or from anxiety?</li>
+<li>Does it create MORE connection, not less?</li></p><p><h3>Step 5: Lean Validation (adapted from Alvarez)</h3>
+Before building, validate the core assumption:</p><p>1. <strong>Identify the riskiest assumption.</strong> What must be true for this to work that you're least sure about?
+2. <strong>Design a test.</strong> What's the cheapest way to check that assumption?
+3. <strong>Run the test.</strong> Get real data, not opinions.
+4. <strong>Decide.</strong> Pivot (change the idea), persevere (keep going), or perish (kill it).</p><p><strong>Test types by risk:</strong>
+<li>Technical risk → Build a prototype/demo</li>
+<li>Market risk → Talk to 5 potential users</li>
+<li>Revenue risk → Try to sell it before building it (landing page, pre-orders)</li>
+<li>Strategic risk → Ask Perplexity/Claude for adversarial analysis</li></p><p><h3>Step 6: Alchemical Stage Assessment</h3>
+Where is this idea in the transformation cycle?</p><p>| Stage | Meaning | Action |
+|-------|---------|--------|
+| <strong>Nigredo</strong> | Old form is breaking down | Let it break. Don't rescue. |
+| <strong>Albedo</strong> | Purification, separating what works from what doesn't | Test ruthlessly. Kill weak parts. |
+| <strong>Citrinitas</strong> | The insight/illumination | Capture it. Document it. Don't build yet. |
+| <strong>Rubedo</strong> | Integration, bringing it into form | Build. Ship. Operate. |</p><p>Ideas in Nigredo or Albedo should NOT be built yet. Ideas in Citrinitas need documentation. Ideas in Rubedo are ready for DEV-001.</p><p><h3>Step 7: Write the Idea Brief</h3>
+If the idea survives Steps 2-6, write a formal brief:</p><p><pre><code>markdown
+<h1>Idea Brief: [Title]</h1></p><p><strong>Date:</strong> YYYY-MM-DD
+<strong>Classification:</strong> 0→1 / 1→n
+<strong>Alchemical Stage:</strong> Nigredo / Albedo / Citrinitas / Rubedo
+<strong>Protocols Applied:</strong> STR-003</p><p><h2>The Idea</h2>
+[One sentence]</p><p><h2>Problem & Customer</h2>
+[Who hurts, how much, why now]</p><p><h2>Seven Questions Assessment</h2>
+| Question | Answer | Strength (1-5) |
+|----------|--------|----------------|
+| Engineering | | |
+| Timing | | |
+| Monopoly | | |
+| People | | |
+| Distribution | | |
+| Durability | | |
+| Secret | | |
+| <strong>Total</strong> | | <strong>/35</strong> |</p><p><h2>Resonance Check</h2>
+<li>Serves mission: Yes/No</li>
+<li>Body yes: Yes/No</li>
+<li>Source: Inspiration/Anxiety</li>
+<li>Creates connection: Yes/No</li></p><p><h2>Riskiest Assumption</h2>
+[What must be true that we're least sure about]</p><p><h2>Validation Test</h2>
+[What we'll do to test it]</p><p><h2>Decision</h2>
+<div class="checkitem">PERSEVERE — Build it (follow DEV-001)</div>
+<div class="checkitem">PIVOT — Change it (return to Step 1 with new direction)</div>
+<div class="checkitem">PERISH — Kill it (document why, move on)</div>
+</code></pre></p><p><h3>Step 8: File and Track</h3>
+<li>Save to: Obsidian <code>40-Projects/[Project-Name]/Idea-Brief.md</code></li>
+<li>Add to MEMORY.md active projects table</li>
+<li>Set next action date</li></p><p><h2>Quality Gates</h2>
+<div class="checkitem">One-sentence idea statement (if you can't, it's not clear)</div>
+<div class="checkitem">0→1 or 1→n classified</div>
+<div class="checkitem">Seven Questions answered with strength ratings</div>
+<div class="checkitem">Resonance check completed</div>
+<div class="checkitem">Riskiest assumption identified</div>
+<div class="checkitem">Validation test designed</div>
+<div class="checkitem">Decision made (persevere/pivot/perish)</div></p><p><h2>Error Handling</h2>
+| Error | Response |
+|-------|----------|
+| Can't say it in one sentence | Refine the idea, don't proceed yet |
+| Multiple 1→n ideas, no 0→1 | Prioritize — which 1→n funds the 0→1? |
+| Fails resonance check | Flag for Roo — this is his domain, not mine |
+| Riskiest assumption can't be tested cheaply | Redesign the test — what's cheaper? |</p><p><h2>References</h2>
+<li>Zero to One (Thiel) — Seven questions, secrets, monopoly theory</li>
+<li>Lean Customer Development (Alvarez) — Validate before building</li>
+<li>Age of Alchemy (Chapman) — Transformation stages</li>
+<li>Book of Pleasure (Spare) — Intention setting and release</li>
+</body></html>
