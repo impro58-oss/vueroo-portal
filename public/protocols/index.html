@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Protocol System — vueroo.com</title>
+    <style>
+        :root {
+            --bg: #0a0e17;
+            --surface: #111827;
+            --surface2: #1a2332;
+            --border: #1e2d3d;
+            --text: #e2e8f0;
+            --text2: #94a3b8;
+            --accent: #6366f1;
+            --accent2: #818cf8;
+            --green: #22c55e;
+            --yellow: #eab308;
+            --red: #ef4444;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+            --orange: #f97316;
+            --teal: #14b8a6;
+            --pink: #ec4899;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; }
+        
+        .header { padding: 2rem; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.05)); }
+        .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .header h1 span { color: var(--accent2); }
+        .header p { color: var(--text2); font-size: 0.9rem; }
+        .meta { display: flex; gap: 1.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+        .meta-item { font-size: 0.8rem; color: var(--text2); }
+        .meta-item strong { color: var(--text); }
+        
+        .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
+        
+        /* Flow Diagram Section */
+        .flow-section { margin-bottom: 2.5rem; }
+        .flow-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
+        .flow-diagram { 
+            display: flex; flex-direction: column; gap: 0; 
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            overflow: hidden;
+        }
+        .flow-stage { 
+            padding: 1rem 1.5rem; 
+            border-bottom: 1px solid var(--border);
+            display: grid; grid-template-columns: 200px 1fr; gap: 1rem;
+            align-items: start;
+        }
+        .flow-stage:last-child { border-bottom: none; }
+        .flow-stage-header { display: flex; align-items: center; gap: 0.75rem; }
+        .flow-stage-num {
+            width: 28px; height: 28px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700;
+            background: var(--accent); color: white;
+        }
+        .flow-stage-label { font-weight: 600; font-size: 0.95rem; }
+        .flow-stage-dept { font-size: 0.7rem; color: var(--text2); margin-top: 2px; }
+        .flow-protocols { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .flow-protocol {
+            padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.78rem;
+            background: var(--surface2); border: 1px solid var(--border);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .flow-protocol:hover { border-color: var(--accent); transform: translateY(-1px); }
+        .flow-protocol.active { border-color: var(--accent); background: rgba(99,102,241,0.15); }
+        .flow-arrow {
+            text-align: center; padding: 0.5rem; color: var(--accent); font-size: 1.2rem;
+            background: var(--surface); border: none;
+        }
+        
+        /* Department Cards */
+        .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .dept-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            overflow: hidden;
+        }
+        .dept-card-header {
+            padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .dept-card-header h3 { font-size: 1rem; font-weight: 600; }
+        .dept-code { font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
+        .dept-card-body { padding: 0; }
+        .protocol-row {
+            padding: 0.6rem 1.25rem; display: grid; grid-template-columns: 90px 1fr 80px 60px;
+            gap: 0.5rem; align-items: center; border-bottom: 1px solid rgba(30,45,61,0.5);
+            font-size: 0.82rem; transition: background 0.15s;
+        }
+        .protocol-row:hover { background: var(--surface2); }
+        .protocol-row:last-child { border-bottom: none; }
+        .protocol-id { font-family: monospace; color: var(--accent2); font-size: 0.75rem; }
+        .protocol-name { color: var(--text); }
+        .protocol-status { text-align: center; }
+        .protocol-dept { text-align: center; font-size: 0.7rem; }
+        .status-badge {
+            display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px;
+            font-size: 0.7rem; font-weight: 600;
+        }
+        .status-active { background: rgba(34,197,94,0.15); color: var(--green); }
+        .status-draft { background: rgba(234,179,8,0.15); color: var(--yellow); }
+        .status-todo { background: rgba(148,163,184,0.1); color: var(--text2); }
+        
+        /* Stats Bar */
+        .stats-bar { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+            padding: 1rem 1.25rem; text-align: center;
+        }
+        .stat-value { font-size: 2rem; font-weight: 700; }
+        .stat-label { font-size: 0.75rem; color: var(--text2); margin-top: 0.25rem; }
+        
+        /* Process Flow */
+        .process-section { margin-bottom: 2rem; }
+        .process-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
+        .process-flow {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            padding: 1.5rem; overflow-x: auto;
+        }
+        .process-steps {
+            display: flex; align-items: flex-start; gap: 0;
+            min-width: max-content;
+        }
+        .process-step {
+            display: flex; flex-direction: column; align-items: center; min-width: 140px;
+            text-align: center;
+        }
+        .process-step-box {
+            background: var(--surface2); border: 2px solid var(--border); border-radius: 10px;
+            padding: 0.75rem; width: 130px; transition: all 0.2s;
+        }
+        .process-step-box.start { border-color: var(--green); }
+        .process-step-box.end { border-color: var(--purple); }
+        .process-step-box.gate { border-color: var(--orange); }
+        .process-step-title { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .process-step-protocols { font-size: 0.65rem; color: var(--accent2); }
+        .process-connector {
+            display: flex; align-items: center; color: var(--text2); font-size: 1.2rem;
+            padding: 0 0.25rem; min-width: 30px; justify-content: center;
+        }
+        
+        /* Dept colors */
+        .dept-rsc { background: rgba(59,130,246,0.15); color: var(--blue); }
+        .dept-dev { background: rgba(34,197,94,0.15); color: var(--green); }
+        .dept-rpt { background: rgba(168,85,247,0.15); color: var(--purple); }
+        .dept-dsn { background: rgba(249,115,22,0.15); color: var(--orange); }
+        .dept-ops { background: rgba(236,72,153,0.15); color: var(--pink); }
+        .dept-str { background: rgba(20,184,166,0.15); color: var(--teal); }
+        
+        .footer { text-align: center; padding: 2rem; color: var(--text2); font-size: 0.75rem; border-top: 1px solid var(--border); }
+        
+        @media (max-width: 768px) {
+            .flow-stage { grid-template-columns: 1fr; }
+            .dept-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: repeat(3, 1fr); }
+            .protocol-row { grid-template-columns: 80px 1fr 70px; }
+            .protocol-dept { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Lumina <span>Protocol System</span></h1>
+    <p>Standardized operating procedures — same work, same way, fewer errors</p>
+    <div class="meta">
+        <div class="meta-item"><strong>6</strong> Departments</div>
+        <div class="meta-item"><strong>28</strong> Protocols Registered</div>
+        <div class="meta-item"><strong>12</strong> Protocols Written</div>
+        <div class="meta-item"><strong>16</strong> Remaining</div>
+        <div class="meta-item">Updated: <strong>2026-05-25</strong></div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--green)">12</div>
+            <div class="stat-label">Written</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--yellow)">16</div>
+            <div class="stat-label">To Write</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--accent2)">6</div>
+            <div class="stat-label">Departments</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--purple)">5</div>
+            <div class="stat-label">End-to-End Flows</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--orange)">3</div>
+            <div class="stat-label">Quality Gates</div>
+        </div>
+    </div>
+
+    <!-- End-to-End Process Flows -->
+    <div class="process-section">
+        <h2>🔄 End-to-End Process Flows</h2>
+        
+        <!-- Flow 1: Research to Report -->
+        <div class="process-flow" style="margin-bottom:1rem">
+            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 1: Research → Intelligence Report</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-box start">
+                        <div class="process-step-title">Idea / Question</div>
+                        <div class="process-step-protocols">STR-003</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Multi-Source Research</div>
+                        <div class="process-step-protocols">RSC-001, RSC-007</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Lit Review</div>
+                        <div class="process-step-protocols">RSC-002</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box gate">
+                        <div class="process-step-title">⬡ Quality Gate</div>
+                        <div class="process-step-protocols">Verified? Tagged?</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Write Report</div>
+                        <div class="process-step-protocols">RPT-001</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box gate">
+                        <div class="process-step-title">⬡ Three Gates</div>
+                        <div class="process-step-protocols">Acc+Logic+Util</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box end">
+                        <div class="process-step-title">Deliver</div>
+                        <div class="process-step-protocols">Obsidian + Dash</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow 2: Agent Build -->
+        <div class="process-flow" style="margin-bottom:1rem">
+            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 2: Agent Build → Deploy</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-box start">
+                        <div class="process-step-title">Requirements</div>
+                        <div class="process-step-protocols">DEV-001 S1</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Architecture</div>
+                        <div class="process-step-protocols">DSN-003</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Security Audit</div>
+                        <div class="process-step-protocols">DEV-006</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Implementation</div>
+                        <div class="process-step-protocols">DEV-001 S4</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box gate">
+                        <div class="process-step-title">⬡ Quality Gates</div>
+                        <div class="process-step-protocols">DEV-002</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Cron + Deploy</div>
+                        <div class="process-step-protocols">DEV-003, DSN-002</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box end">
+                        <div class="process-step-title">Live + Monitor</div>
+                        <div class="process-step-protocols">OPS-001</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow 3: Book to Knowledge -->
+        <div class="process-flow" style="margin-bottom:1rem">
+            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 3: Book → Knowledge Base</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-box start">
+                        <div class="process-step-title">PDF/EPUB</div>
+                        <div class="process-step-protocols">Reading/</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Full Extraction</div>
+                        <div class="process-step-protocols">RSC-005 S2</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Classify + Tag</div>
+                        <div class="process-step-protocols">RSC-005 S4</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">File in Vault</div>
+                        <div class="process-step-protocols">RSC-005 S5</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Synthesize</div>
+                        <div class="process-step-protocols">RSC-005 S7</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Clean Up</div>
+                        <div class="process-step-protocols">RSC-005 S6</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box end">
+                        <div class="process-step-title">Knowledge Base</div>
+                        <div class="process-step-protocols">Obsidian</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow 4: Idea to Project -->
+        <div class="process-flow" style="margin-bottom:1rem">
+            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 4: Idea → Project</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-box start">
+                        <div class="process-step-title">Spark</div>
+                        <div class="process-step-protocols">STR-003 S1</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">0→1 / 1→n?</div>
+                        <div class="process-step-protocols">STR-003 S2</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">7 Questions</div>
+                        <div class="process-step-protocols">STR-003 S3</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Resonance Check</div>
+                        <div class="process-step-protocols">STR-003 S4</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Lean Validate</div>
+                        <div class="process-step-protocols">STR-003 S5</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box gate">
+                        <div class="process-step-title">⬡ Decide</div>
+                        <div class="process-step-protocols">Persevere/Pivot/Perish</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box end">
+                        <div class="process-step-title">Build</div>
+                        <div class="process-step-protocols">DEV-001</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow 5: Incident Response -->
+        <div class="process-flow">
+            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 5: Incident → Resolution</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-step-box start" style="border-color:var(--red)">
+                        <div class="process-step-title">🔴 Incident</div>
+                        <div class="process-step-protocols">OPS-002 S1</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Diagnose</div>
+                        <div class="process-step-protocols">OPS-002 S2</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Classify</div>
+                        <div class="process-step-protocols">OPS-002 S3</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Fix</div>
+                        <div class="process-step-protocols">OPS-002 S4</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box gate">
+                        <div class="process-step-title">⬡ Verify</div>
+                        <div class="process-step-protocols">OPS-002 S5</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box">
+                        <div class="process-step-title">Document</div>
+                        <div class="process-step-protocols">OPS-002 S6</div>
+                    </div>
+                </div>
+                <div class="process-connector">→</div>
+                <div class="process-step">
+                    <div class="process-step-box end" style="border-color:var(--green)">
+                        <div class="process-step-title">🟢 Prevent</div>
+                        <div class="process-step-protocols">OPS-002 S7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Protocol Cards -->
+    <div class="dept-grid">
+        <!-- RSC -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Research</h3>
+                <span class="dept-code dept-rsc">RSC</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">RSC-001</span><span class="protocol-name">Multi-Source Research</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-002</span><span class="protocol-name">MedTech Literature Review</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-003</span><span class="protocol-name">Competitive Intelligence</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-004</span><span class="protocol-name">Market Research</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-005</span><span class="protocol-name">Book Extraction & Synthesis</span><span class="protocol-status"><span class="status-badge status-active">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-006</span><span class="protocol-name">Web Research & Verification</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+                <div class="protocol-row"><span class="protocol-id">RSC-007</span><span class="protocol-name">AI System Interrogation</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+            </div>
+        </div>
+
+        <!-- DEV -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Development</h3>
+                <span class="dept-code dept-dev">DEV</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">DEV-001</span><span class="protocol-name">Agent Build Standard</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-002</span><span class="protocol-name">Code Quality Gates</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-003</span><span class="protocol-name">Cron Job Creation</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-004</span><span class="protocol-name">Dashboard Deployment</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-005</span><span class="protocol-name">API Integration</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-006</span><span class="protocol-name">Security Audit (Lethal Trifecta)</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+                <div class="protocol-row"><span class="protocol-id">DEV-007</span><span class="protocol-name">Git Commit & Push</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+            </div>
+        </div>
+
+        <!-- RPT -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Reporting</h3>
+                <span class="dept-code dept-rpt">RPT</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">RPT-001</span><span class="protocol-name">MedTech Research Report</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+                <div class="protocol-row"><span class="protocol-id">RPT-002</span><span class="protocol-name">Trading Analysis Report</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+                <div class="protocol-row"><span class="protocol-id">RPT-003</span><span class="protocol-name">Business Plan</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+                <div class="protocol-row"><span class="protocol-id">RPT-004</span><span class="protocol-name">Presentation (PPTX)</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+                <div class="protocol-row"><span class="protocol-id">RPT-005</span><span class="protocol-name">Daily Brief</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+                <div class="protocol-row"><span class="protocol-id">RPT-006</span><span class="protocol-name">Weekly Synthesis</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+            </div>
+        </div>
+
+        <!-- DSN -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Design</h3>
+                <span class="dept-code dept-dsn">DSN</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">DSN-001</span><span class="protocol-name">Website Build</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
+                <div class="protocol-row"><span class="protocol-id">DSN-002</span><span class="protocol-name">Dashboard Deployment</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
+                <div class="protocol-row"><span class="protocol-id">DSN-003</span><span class="protocol-name">Agent Architecture (Mesh)</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
+                <div class="protocol-row"><span class="protocol-id">DSN-004</span><span class="protocol-name">Knowledge Graph Design</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
+            </div>
+        </div>
+
+        <!-- OPS -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Operations</h3>
+                <span class="dept-code dept-ops">OPS</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">OPS-001</span><span class="protocol-name">System Health Check</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+                <div class="protocol-row"><span class="protocol-id">OPS-002</span><span class="protocol-name">Incident Response</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+                <div class="protocol-row"><span class="protocol-id">OPS-003</span><span class="protocol-name">Data Pipeline</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+                <div class="protocol-row"><span class="protocol-id">OPS-004</span><span class="protocol-name">Backup & Recovery</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+                <div class="protocol-row"><span class="protocol-id">OPS-005</span><span class="protocol-name">Cron Maintenance</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+            </div>
+        </div>
+
+        <!-- STR -->
+        <div class="dept-card">
+            <div class="dept-card-header">
+                <h3>Strategy</h3>
+                <span class="dept-code dept-str">STR</span>
+            </div>
+            <div class="dept-card-body">
+                <div class="protocol-row"><span class="protocol-id">STR-001</span><span class="protocol-name">Zero to One Audit</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-str">STR</span></div>
+                <div class="protocol-row"><span class="protocol-id">STR-002</span><span class="protocol-name">Competitive Moat Analysis</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-str">STR</span></div>
+                <div class="protocol-row"><span class="protocol-id">STR-003</span><span class="protocol-name">Idea Development</span><span class="protocol-status"><span class="status-badge status-draft">DRAFT</span></span><span class="protocol-dept dept-str">STR</span></div>
+                <div class="protocol-row"><span class="protocol-id">STR-004</span><span class="protocol-name">Resonance Field Session</span><span class="protocol-status"><span class="status-badge status-todo">TODO</span></span><span class="protocol-dept dept-str">STR</span></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    Lumina Protocol System v1.0 — 6 departments · 28 protocols · 12 written · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a>
+</div>
+
+</body>
+</html>
