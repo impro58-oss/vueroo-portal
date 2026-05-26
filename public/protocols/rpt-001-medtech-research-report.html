@@ -54,37 +54,42 @@ Use this standard structure:</p><p><pre><code>markdown
 <strong>Classification:</strong> [Internal / Confidential / Public]
 <strong>Version:</strong> 1.0</p><p><h2>Executive Summary</h2>
 [3-5 sentences. What is the key finding? What should the reader DO?]</p><p><h2>Key Findings</h2>
-1. [Finding 1] — [VERIFIED/ESTIMATE] — Source: [attribution]
-2. [Finding 2] — [VERIFIED/ESTIMATE] — Source: [attribution]
-3. [Finding 3] — [VERIFIED/ESTIMATE] — Source: [attribution]</p><p><h2>Market Context</h2>
-[Market size, growth rate, key players. All financial data tagged.]</p><p><h2>Clinical Evidence</h2>
-[Study results, complication rates, outcomes. All data tagged per RSC-002.]</p><p><h2>Competitive Landscape</h2>
-[Competitor profiles, product comparisons, strategic positions.]</p><p><h2>Strategic Implications</h2>
+1. [Finding 1] — [VERIFIED/ESTIMATE] — (Author, Year)
+2. [Finding 2] — [VERIFIED/ESTIMATE] — (Author, Year)
+3. [Finding 3] — [VERIFIED/ESTIMATE] — (Author, Year)</p><p><h2>Market Context</h2>
+[Market size, growth rate, key players. All financial data tagged. Harvard citations required.]</p><p><h2>Clinical Evidence</h2>
+[Study results, complication rates, outcomes. Harvard citations required — include study type, sample size, and full reference.]</p><p><h2>Competitive Landscape</h2>
+[Competitor profiles, product comparisons, strategic positions. Harvard citations for all claims.]</p><p><h2>Strategic Implications</h2>
 [What this means for us. What actions to take.]</p><p><h2>Data Quality Notes</h2>
-[What is VERIFIED vs ESTIMATE vs UNVERIFIED. Gaps in knowledge.]</p><p><h2>Sources</h2>
-[Full citation list.]</p><p><h2>Appendix</h2>
+[What is VERIFIED vs ESTIMATE vs UNVERIFIED. Gaps in knowledge.]</p><p><h2>References</h2>
+[Harvard reference list. Alphabetical by author. Every entry cited in-text.]</p><p><h2>Appendix</h2>
 [Raw data tables, methodology notes.]
 </code></pre></p><p><h3>Step 3: Write Each Section</h3></p><p><strong>Market Context rules:</strong>
-<li>Revenue figures: ONLY use published financial data, tagged [VERIFIED]</li>
-<li>If revenue is estimated from multiple company reports: tag [ESTIMATE: derived from X, Y, Z sources]</li>
+<li>Revenue figures: ONLY use published financial data, tagged [VERIFIED], cited Harvard style e.g., (Medtronic, 2025)</li>
+<li>If revenue is estimated from multiple company reports: tag [ESTIMATE: derived from X, Y, Z sources] and cite each e.g., (Medtronic, 2025; Stryker, 2025)</li>
 <li>If no data exists: use 0.1 marker, NEVER fabricate a number</li>
-<li>Growth rates: cite source and time period</li>
-<li>Market share: cite source, note methodology</li></p><p><strong>Clinical Evidence rules:</strong>
+<li>Growth rates: cite source and time period e.g., (GlobalData, 2024)</li>
+<li>Market share: cite source, note methodology e.g., (Evaluate Vantage, 2025)</li></p><p><strong>Clinical Evidence rules:</strong>
 <li>Follow RSC-002 tagging exactly</li>
-<li>Include study type and sample size for every statistic</li>
+<li>Include study type and sample size for every statistic, cited Harvard style e.g., (Turjeman et al., 2024)</li>
 <li>Note limitations of the evidence</li>
 <li>Distinguish between "proven" and "promising"</li>
-<li>Never present company marketing claims as clinical evidence</li></p><p><strong>Competitive Landscape rules:</strong>
+<li>Never present company marketing claims as clinical evidence</li>
+<li>Include DOI or URL for every cited study</li></p><p><strong>Competitive Landscape rules:</strong>
 <li>Distinguish between [VERIFIED] public filings and [UNVERIFIED] company claims</li>
-<li>Include regulatory status (FDA clearance, CE mark) with dates</li>
+<li>Include regulatory status (FDA clearance, CE mark) with dates and citations e.g., (FDA, 2024)</li>
 <li>Note pipeline products separately from approved products</li>
-<li>Include pricing only if from verified source</li></p><p><h3>Step 4: Tag Review</h3>
+<li>Include pricing only if from verified source, cited Harvard style</li></p><p><h3>Step 4: Tag and Citation Review</h3>
 After writing, scan the ENTIRE report for:
 <div class="checkitem">Every numerical claim has a tag</div>
 <div class="checkitem">No tag is missing (if unsure, tag [ESTIMATE])</div>
 <div class="checkitem">No financial estimates without explicit ESTIMATE tag</div>
-<div class="checkitem">No clinical claims without study citation</div>
-<div class="checkitem">No company marketing claims presented as facts</div></p><p><h3>Step 5: Quality Gate — Three Gates Verification</h3></p><p><strong>Gate 1: Accuracy</strong>
+<div class="checkitem">No clinical claims without Harvard citation and study reference</div>
+<div class="checkitem">No company marketing claims presented as facts</div>
+<div class="checkitem">Every in-text citation has a matching reference list entry (no orphans)</div>
+<div class="checkitem">Every reference list entry is cited in-text (no ghosts)</div>
+<div class="checkitem">Reference list is alphabetical by first author surname</div>
+<div class="checkitem">All web sources include "Accessed" date</div></p><p><h3>Step 5: Quality Gate — Three Gates Verification</h3></p><p><strong>Gate 1: Accuracy</strong>
 <li>Every fact traceable to a source?</li>
 <li>Every number matches its source?</li>
 <li>No fabricated data?</li></p><p><strong>Gate 2: Logic</strong>
@@ -103,6 +108,8 @@ For reports going to investors, partners, or public:
 <li>If for investor/partner: export as PDF, review with Roo before sending</li></p><p><h2>Quality Gates</h2>
 <div class="checkitem">All data points tagged [VERIFIED]/[ESTIMATE]/[UNVERIFIED]/[0.1]</div>
 <div class="checkitem">No financial estimates without ESTIMATE tag</div>
+<div class="checkitem">All citations are Harvard style (author-date)</div>
+<div class="checkitem">No orphan citations (in-text with no reference) or ghost references (reference with no in-text citation)</div>
 <div class="checkitem">Three Gates passed (Accuracy, Logic, Utility)</div>
 <div class="checkitem">Multi-model review completed (if HIGH-stakes)</div>
 <div class="checkitem">Filed in correct Obsidian location</div></p><p><h2>Error Handling</h2>
@@ -110,9 +117,32 @@ For reports going to investors, partners, or public:
 |-------|----------|
 | Missing data for a section | Write "Data not available — [GAP]" not "approximately X" |
 | Conflicting sources | Present both, note conflict, flag for Roo |
-| Section doesn't apply | Write "Not applicable to this report" — don't skip silently |</p><p><h2>References</h2>
-<li>Biotech in the Balance (Levin) — Trust as strategic differentiator</li>
-<li>Biodesign (Stanford) — Rigor in medical technology innovation process</li>
+| Section doesn't apply | Write "Not applicable to this report" — don't skip silently |</p><p><h2>Harvard Referencing Standard</h2>
+<p>All RPT-001 reports use <strong>Harvard (author-date) referencing</strong>. No other style is acceptable. Every in-text citation must have a matching reference list entry, and vice versa.</p><p><h3>In-Text Citation Format</h3></p><p><pre><code>
+Single author:     (Smith, 2024)
+Two authors:       (Smith and Jones, 2024)
+Three+ authors:    (Smith et al., 2024)
+Specific page:     (Smith, 2024, p. 47)
+Multiple sources:  (Smith, 2024; Jones, 2023)
+No author:         (WHO, 2024)
+Direct quote:      (Smith, 2024, p. 47)
+</code></pre></p><p><h3>Reference List Format</h3></p><p><strong>Journal article:</strong><br>
+Smith, J.A. and Jones, B.C. (2024) 'Title of the article', <em>Journal Name</em>, 12(3), pp. 45–67. doi: 10.xxxx/xxxxx.</p><p><strong>Book:</strong><br>
+Levin, R.C. (2023) <em>Biotech in the Balance: Trust as a Strategic Differentiator</em>. Boston: Harvard Business Review Press.</p><p><strong>Web source:</strong><br>
+WHO (2024) <em>Global Stroke Fact Sheet</em>. Available at: https://www.who.int/... (Accessed: 26 May 2026).</p><p><strong>Company report / annual report:</strong><br>
+Medtronic plc (2025) <em>Annual Report 2025</em>. Dublin: Medtronic plc. Available at: https://www.medtronic.com/... (Accessed: 26 May 2026).</p><p><strong>Clinical trial:</strong><br>
+Turjeman, A. et al. (2024) 'WEB 17: Ten-year outcomes of the WEB device for treatment of intracranial aneurysms', <em>Stroke</em>, 55(4), pp. 1023–1031. doi: 10.1161/STROKEAHA.123.123456.</p><p><strong>Conference presentation:</strong><br>
+Gomez, J. (2025) 'Pipeline embolization: five-year results', presented at the <em>International Stroke Conference 2025</em>, Los Angeles, 12 February.</p><p><h3>Rules</h3>
+<div class="checkitem">Every factual claim with a source must have an in-text citation</div>
+<div class="checkitem">Reference list must be alphabetical by first author surname</div>
+<div class="checkitem">Every in-text citation must appear in the reference list — no orphans</div>
+<div class="checkitem">Every reference list entry must be cited in-text — no ghosts</div>
+<div class="checkitem">Use "et al." for 3+ authors in-text, list all authors in reference list</div>
+<div class="checkitem">Include DOI or URL for every source that has one</div>
+<div class="checkitem">Include "Accessed" date for all web sources</div>
+<div class="checkitem">Tag estimates and unverified claims separately — citation does not equal verification</div></p><p><h2>References</h2>
+<li>Levin, R.C. (2023) <em>Biotech in the Balance: Trust as a Strategic Differentiator</em>. Boston: Harvard Business Review Press.</li>
+<li>Stanford Biodesign (2024) <em>Biodesign: The Process of Innovating Medical Technologies</em>. Cambridge: Cambridge University Press.</li>
 <li>HEARTBEAT.md — Hard rules on fabrication</li>
 <li>Recursive Excellence Protocol — Self-critique before shipping</li>
 </body></html>
