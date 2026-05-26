@@ -51,7 +51,9 @@ python -m http.server 8080
 <div class="checkitem">Page loads without console errors</div>
 <div class="checkitem">All data displays (no NaN, no undefined)</div>
 <div class="checkitem">Responsive on mobile viewport</div>
-<div class="checkitem">Links work</div></p><p><h3>Step 3: Git Commit & Push</h3>
+<div class="checkitem">Links work</div>
+<div class="checkitem">All internal links use absolute paths (e.g., <code>/protocols/page.html</code>), never relative (Learning 019)</div>
+<div class="checkitem">Every link clicked in browser — no 404s, no console errors (Learning 015)</div></p><p><h3>Step 3: Git Commit & Push</h3>
 <pre><code>bash
 cd vueroo-portal
 git add public/[section]/
@@ -73,7 +75,10 @@ git push origin main
 <div class="checkitem">Local test passed</div>
 <div class="checkitem">Git push succeeded</div>
 <div class="checkitem">Live URL verified (200 response, data loads)</div>
-<div class="checkitem">No console errors on live page</div></p><p><h2>References</h2>
+<div class="checkitem">No console errors on live page</div>
+<div class="checkitem">Every navigation link clicked and verified on live site (not just server-side fetch)</div></p><p><h2>References</h2>
 <li>vueroo-portal: <code>C:\Users\impro\.openclaw\workspace\vueroo-portal</code></li>
 <li>Live URL: <code>https://vueroo.com/</code></li>
+<li>Learning 015: VERIFY THE END, NOT THE MIDDLE — browser is the test, not server-side fetch</li>
+<li>Learning 019: ALL INTERNAL LINKS MUST USE ABSOLUTE PATHS in Next.js-hosted sites</li>
 </body></html>
