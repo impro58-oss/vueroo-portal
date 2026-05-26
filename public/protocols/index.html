@@ -69,6 +69,10 @@
         }
         .flow-protocol:hover { border-color: var(--accent); transform: translateY(-1px); color: var(--accent2); }
         .flow-protocol.active { border-color: var(--accent); background: rgba(99,102,241,0.15); }
+        .process-step-protocols a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+        .process-step-protocols a:hover { color: var(--text); text-decoration: underline; }
+        .process-step-box { cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+        .process-step-box:hover { border-color: var(--accent2); box-shadow: 0 0 12px rgba(99,102,241,0.2); }
         .flow-arrow {
             text-align: center; padding: 0.5rem; color: var(--accent); font-size: 1.2rem;
             background: var(--surface); border: none;
@@ -95,7 +99,7 @@
         .protocol-row:hover { background: var(--surface2); }
         .protocol-row:last-child { border-bottom: none; }
         .protocol-id { font-family: monospace; color: var(--accent2); font-size: 0.75rem; }
-        .protocol-name { color: var(--text); }
+        .protocol-name { color: var(--text); text-decoration: none; }
         .protocol-name:hover { color: var(--accent2); }
         .protocol-status { text-align: center; }
         .protocol-dept { text-align: center; font-size: 0.7rem; }
@@ -217,43 +221,43 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-step-box start">
-                        <div class="process-step-title">Idea / Question</div>
-                        <div class="process-step-protocols">STR-003</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">Idea / Question</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Multi-Source Research</div>
-                        <div class="process-step-protocols">RSC-001, RSC-007</div>
+                        <div class="process-step-title"><a href="rsc-001-multi-source-research.html" style="text-decoration:none;color:inherit">Multi-Source Research</a></div>
+                        <div class="process-step-protocols"><a href="rsc-001-multi-source-research.html">RSC-001</a>, <a href="rsc-007-ai-system-interrogation.html">RSC-007</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Lit Review</div>
-                        <div class="process-step-protocols">RSC-002</div>
+                        <div class="process-step-title"><a href="rsc-002-medtech-literature-review.html" style="text-decoration:none;color:inherit">Lit Review</a></div>
+                        <div class="process-step-protocols"><a href="rsc-002-medtech-literature-review.html">RSC-002</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box gate">
-                        <div class="process-step-title">⬡ Quality Gate</div>
-                        <div class="process-step-protocols">Verified? Tagged?</div>
+                        <div class="process-step-title"><a href="dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Quality Gate</a></div>
+                        <div class="process-step-protocols"><a href="dev-002-code-quality-gates.html">Verified? Tagged?</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Write Report</div>
-                        <div class="process-step-protocols">RPT-001</div>
+                        <div class="process-step-title"><a href="rpt-001-medtech-research-report.html" style="text-decoration:none;color:inherit">Write Report</a></div>
+                        <div class="process-step-protocols"><a href="rpt-001-medtech-research-report.html">RPT-001</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box gate">
-                        <div class="process-step-title">⬡ Three Gates</div>
-                        <div class="process-step-protocols">Acc+Logic+Util</div>
+                        <div class="process-step-title"><a href="dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Three Gates</a></div>
+                        <div class="process-step-protocols"><a href="dev-002-code-quality-gates.html">Acc+Logic+Util</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
@@ -272,50 +276,50 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-step-box start">
-                        <div class="process-step-title">Requirements</div>
-                        <div class="process-step-protocols">DEV-001 S1</div>
+                        <div class="process-step-title"><a href="dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Requirements</a></div>
+                        <div class="process-step-protocols"><a href="dev-001-agent-build-standard.html">DEV-001 S1</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Architecture</div>
-                        <div class="process-step-protocols">DSN-003</div>
+                        <div class="process-step-title"><a href="dsn-003-agent-architecture.html" style="text-decoration:none;color:inherit">Architecture</a></div>
+                        <div class="process-step-protocols"><a href="dsn-003-agent-architecture.html">DSN-003</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Security Audit</div>
-                        <div class="process-step-protocols">DEV-006</div>
+                        <div class="process-step-title"><a href="dev-006-security-audit.html" style="text-decoration:none;color:inherit">Security Audit</a></div>
+                        <div class="process-step-protocols"><a href="dev-006-security-audit.html">DEV-006</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Implementation</div>
-                        <div class="process-step-protocols">DEV-001 S4</div>
+                        <div class="process-step-title"><a href="dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Implementation</a></div>
+                        <div class="process-step-protocols"><a href="dev-001-agent-build-standard.html">DEV-001 S4</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box gate">
-                        <div class="process-step-title">⬡ Quality Gates</div>
-                        <div class="process-step-protocols">DEV-002</div>
+                        <div class="process-step-title"><a href="dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Quality Gates</a></div>
+                        <div class="process-step-protocols"><a href="dev-002-code-quality-gates.html">DEV-002</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Cron + Deploy</div>
-                        <div class="process-step-protocols">DEV-003, DSN-002</div>
+                        <div class="process-step-title"><a href="dev-003-cron-job-creation.html" style="text-decoration:none;color:inherit">Cron + Deploy</a></div>
+                        <div class="process-step-protocols"><a href="dev-003-cron-job-creation.html">DEV-003</a>, <a href="dsn-002-protocol-dashboard-deployment.html">DSN-002</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box end">
-                        <div class="process-step-title">Live + Monitor</div>
-                        <div class="process-step-protocols">OPS-001</div>
+                        <div class="process-step-title"><a href="ops-001-system-health-check.html" style="text-decoration:none;color:inherit">Live + Monitor</a></div>
+                        <div class="process-step-protocols"><a href="ops-001-system-health-check.html">OPS-001</a></div>
                     </div>
                 </div>
             </div>
@@ -335,35 +339,35 @@
                 <div class="process-step">
                     <div class="process-step-box">
                         <div class="process-step-title">Full Extraction</div>
-                        <div class="process-step-protocols">RSC-005 S2</div>
+                        <div class="process-step-protocols"><a href="rsc-005-book-extraction-synthesis.html">RSC-005 S2</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
                         <div class="process-step-title">Classify + Tag</div>
-                        <div class="process-step-protocols">RSC-005 S4</div>
+                        <div class="process-step-protocols"><a href="rsc-005-book-extraction-synthesis.html">RSC-005 S4</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
                         <div class="process-step-title">File in Vault</div>
-                        <div class="process-step-protocols">RSC-005 S5</div>
+                        <div class="process-step-protocols"><a href="rsc-005-book-extraction-synthesis.html">RSC-005 S5</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
                         <div class="process-step-title">Synthesize</div>
-                        <div class="process-step-protocols">RSC-005 S7</div>
+                        <div class="process-step-protocols"><a href="rsc-005-book-extraction-synthesis.html">RSC-005 S7</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
                         <div class="process-step-title">Clean Up</div>
-                        <div class="process-step-protocols">RSC-005 S6</div>
+                        <div class="process-step-protocols"><a href="rsc-005-book-extraction-synthesis.html">RSC-005 S6</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
@@ -382,50 +386,50 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-step-box start">
-                        <div class="process-step-title">Spark</div>
-                        <div class="process-step-protocols">STR-003 S1</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">Spark</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003 S1</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">0→1 / 1→n?</div>
-                        <div class="process-step-protocols">STR-003 S2</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">0→1 / 1→n?</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003 S2</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">7 Questions</div>
-                        <div class="process-step-protocols">STR-003 S3</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">7 Questions</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003 S3</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Resonance Check</div>
-                        <div class="process-step-protocols">STR-003 S4</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">Resonance Check</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003 S4</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Lean Validate</div>
-                        <div class="process-step-protocols">STR-003 S5</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">Lean Validate</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">STR-003 S5</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box gate">
-                        <div class="process-step-title">⬡ Decide</div>
-                        <div class="process-step-protocols">Persevere/Pivot/Perish</div>
+                        <div class="process-step-title"><a href="str-003-idea-development.html" style="text-decoration:none;color:inherit">⬡ Decide</a></div>
+                        <div class="process-step-protocols"><a href="str-003-idea-development.html">Persevere/Pivot/Perish</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box end">
-                        <div class="process-step-title">Build</div>
-                        <div class="process-step-protocols">DEV-001</div>
+                        <div class="process-step-title"><a href="dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Build</a></div>
+                        <div class="process-step-protocols"><a href="dev-001-agent-build-standard.html">DEV-001</a></div>
                     </div>
                 </div>
             </div>
@@ -437,50 +441,50 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-step-box start" style="border-color:var(--red)">
-                        <div class="process-step-title">🔴 Incident</div>
-                        <div class="process-step-protocols">OPS-002 S1</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">🔴 Incident</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S1</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Diagnose</div>
-                        <div class="process-step-protocols">OPS-002 S2</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">Diagnose</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S2</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Classify</div>
-                        <div class="process-step-protocols">OPS-002 S3</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">Classify</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S3</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Fix</div>
-                        <div class="process-step-protocols">OPS-002 S4</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">Fix</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S4</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box gate">
-                        <div class="process-step-title">⬡ Verify</div>
-                        <div class="process-step-protocols">OPS-002 S5</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">⬡ Verify</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S5</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box">
-                        <div class="process-step-title">Document</div>
-                        <div class="process-step-protocols">OPS-002 S6</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">Document</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S6</a></div>
                     </div>
                 </div>
                 <div class="process-connector">→</div>
                 <div class="process-step">
                     <div class="process-step-box end" style="border-color:var(--green)">
-                        <div class="process-step-title">🟢 Prevent</div>
-                        <div class="process-step-protocols">OPS-002 S7</div>
+                        <div class="process-step-title"><a href="ops-002-incident-response.html" style="text-decoration:none;color:inherit">🟢 Prevent</a></div>
+                        <div class="process-step-protocols"><a href="ops-002-incident-response.html">OPS-002 S7</a></div>
                     </div>
                 </div>
             </div>
@@ -588,6 +592,35 @@
 <div class="footer">
     Lumina Protocol System v1.0 — 6 departments · 28 protocols · 12 written · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a>
 </div>
+
+<script>
+// Make protocol-name spans clickable by inheriting href from the preceding protocol-id link
+document.querySelectorAll('.protocol-row').forEach(row => {
+    const link = row.querySelector('.protocol-id');
+    const name = row.querySelector('.protocol-name');
+    if (link && name && name.tagName === 'SPAN') {
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.className = name.className;
+        a.style.textDecoration = 'none';
+        a.style.color = 'var(--text)';
+        a.innerHTML = name.innerHTML;
+        name.replaceWith(a);
+    }
+});
+// Make flow chart step boxes clickable (click anywhere in the box opens the link)
+document.querySelectorAll('.process-step-box').forEach(box => {
+    const links = box.querySelectorAll('a[href]');
+    if (links.length > 0) {
+        box.style.cursor = 'pointer';
+        box.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'A') {
+                links[0].click();
+            }
+        });
+    }
+});
+</script>
 
 </body>
 </html>
