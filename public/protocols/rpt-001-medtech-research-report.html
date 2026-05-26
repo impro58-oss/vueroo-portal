@@ -89,7 +89,52 @@ After writing, scan the ENTIRE report for:
 <div class="checkitem">Every in-text citation has a matching reference list entry (no orphans)</div>
 <div class="checkitem">Every reference list entry is cited in-text (no ghosts)</div>
 <div class="checkitem">Reference list is alphabetical by first author surname</div>
-<div class="checkitem">All web sources include "Accessed" date</div></p><p><h3>Step 5: Quality Gate — Three Gates Verification</h3></p><p><strong>Gate 1: Accuracy</strong>
+<div class="checkitem">All web sources include "Accessed" date</div></p><p><h3>Step 5: Source Archiving</h3>
+<p>Every source cited in the report must be archived locally. If a source cannot be downloaded automatically, it must be flagged for manual download by Roo.</p><p><strong>Archive location:</strong> <code>Documents/MedTech Intell/[Project]/References/</code></p><p><strong>Archive process:</strong></p><p><pre><code>
+For each reference in the reference list:
+
+1. Can the source be downloaded as PDF?
+   YES → Download and save to References/ folder
+         Filename format: AuthorYear_ShortTitle.pdf
+         e.g., Turjeman2024_WEB17_TenYearOutcomes.pdf
+
+2. Is it a web page (no PDF)?
+   YES → Save as PDF from browser (Ctrl+P → Save as PDF)
+         OR use web_fetch to extract text and save as .txt
+
+3. Is it behind a paywall or requires login?
+   YES → Add to MANUAL-DOWNLOAD.md with:
+         - Full Harvard reference
+         - URL
+         - Reason it can't be auto-downloaded
+         - Priority: URGENT / HIGH / NORMAL
+         - Note: "Download by Roo"
+
+4. Is it a company annual report?
+   YES → These are usually free. Download PDF from investor relations page.
+         Filename: CompanyName_AnnualReport_YYYY.pdf
+
+5. Is it a clinical trial (ClinicalTrials.gov)?
+   YES → Save the trial summary page as PDF or text.
+         Include NCT number in filename.
+         e.g., NCT01234567_WEB_IntracranialAneurysm.pdf
+</code></pre></p><p><strong>MANUAL-DOWNLOAD.md format:</strong></p><p><pre><code>
+# Sources Requiring Manual Download
+
+## URGENT
+- [ ] **Smith, J.A. (2024)** 'Neurovascular outcomes...' — Stroke.
+      URL: https://doi.org/10.xxxx/xxxxx
+      Reason: Paywall — requires institutional access
+      For: RPT-001 MedTech Competitive Intelligence Report
+
+## HIGH
+- [ ] **Medtronic plc (2025)** *Annual Report 2025*.
+      URL: https://www.medtronic.com/investors/...
+      Reason: Requires acceptance of terms to download
+
+## NORMAL
+(none currently)
+</code></pre></p><p><h3>Step 6: Quality Gate — Three Gates Verification</h3></p><p><strong>Gate 1: Accuracy</strong>
 <li>Every fact traceable to a source?</li>
 <li>Every number matches its source?</li>
 <li>No fabricated data?</li></p><p><strong>Gate 2: Logic</strong>
@@ -98,18 +143,22 @@ After writing, scan the ENTIRE report for:
 <li>Are alternative explanations acknowledged?</li></p><p><strong>Gate 3: Utility</strong>
 <li>Does this answer the question that triggered the report?</li>
 <li>Can the reader take action based on this?</li>
-<li>Is the executive summary actionable?</li></p><p><h3>Step 6: Multi-Model Review (if HIGH-stakes)</h3>
+<li>Is the executive summary actionable?</li></p><p><h3>Step 7: Multi-Model Review (if HIGH-stakes)</h3>
 For reports going to investors, partners, or public:
 1. Run key findings through a second model (Claude or Perplexity)
 2. Ask: "What's wrong with this analysis? What am I missing?"
-3. Incorporate corrections, document the review</p><p><h3>Step 7: Deliver</h3>
+3. Incorporate corrections, document the review</p><p><h3>Step 8: Deliver</h3>
 <li>Save to Obsidian: <code>20-Areas/MedTech-NeuroVue/Reports/</code></li>
+<li>Save source PDFs to: <code>Documents/MedTech Intell/[Project]/References/</code></li>
+<li>If any sources could not be auto-downloaded: create MANUAL-DOWNLOAD.md in References/ folder and flag for Roo</li>
 <li>If updating NeuroVue: update JSON data files, push to GitHub</li>
-<li>If for investor/partner: export as PDF, review with Roo before sending</li></p><p><h2>Quality Gates</h2>
+<li>If for investor/partner: export as PDF, review with Roo before sending</li></p></p><p><h2>Quality Gates</h2>
 <div class="checkitem">All data points tagged [VERIFIED]/[ESTIMATE]/[UNVERIFIED]/[0.1]</div>
 <div class="checkitem">No financial estimates without ESTIMATE tag</div>
 <div class="checkitem">All citations are Harvard style (author-date)</div>
 <div class="checkitem">No orphan citations (in-text with no reference) or ghost references (reference with no in-text citation)</div>
+<div class="checkitem">All cited sources archived in References/ folder (PDFs or text extracts)</div>
+<div class="checkitem">MANUAL-DOWNLOAD.md created if any sources require manual download</div>
 <div class="checkitem">Three Gates passed (Accuracy, Logic, Utility)</div>
 <div class="checkitem">Multi-model review completed (if HIGH-stakes)</div>
 <div class="checkitem">Filed in correct Obsidian location</div></p><p><h2>Error Handling</h2>
@@ -117,7 +166,9 @@ For reports going to investors, partners, or public:
 |-------|----------|
 | Missing data for a section | Write "Data not available — [GAP]" not "approximately X" |
 | Conflicting sources | Present both, note conflict, flag for Roo |
-| Section doesn't apply | Write "Not applicable to this report" — don't skip silently |</p><p><h2>Harvard Referencing Standard</h2>
+| Section doesn't apply | Write "Not applicable to this report" — don't skip silently |
+| Source cannot be downloaded | Add to MANUAL-DOWNLOAD.md with full Harvard reference, URL, and priority level |
+| Source URL is dead (404) | Search for archived version (Wayback Machine), note in Data Quality Notes if unavailable |</p><p><h2>Harvard Referencing Standard</h2>
 <p>All RPT-001 reports use <strong>Harvard (author-date) referencing</strong>. No other style is acceptable. Every in-text citation must have a matching reference list entry, and vice versa.</p><p><h3>In-Text Citation Format</h3></p><p><pre><code>
 Single author:     (Smith, 2024)
 Two authors:       (Smith and Jones, 2024)
