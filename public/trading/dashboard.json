@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T11:52:57.107929",
+  "timestamp": "2026-06-01T11:10:24.235412",
   "system": "V5.2 Donchian Binance + SMA50 + BTC Filter + Trailing Stop",
   "version": "5.2",
   "parameters": {
@@ -24,47 +24,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -83.77,
-    "unrealized_pnl_eur": 47.47,
-    "total_pnl_eur": -36.3,
-    "open_positions": 9,
-    "closed_trades": 50,
+    "realized_pnl_eur": 3605.9,
+    "unrealized_pnl_eur": 48.85,
+    "total_pnl_eur": 3654.75,
+    "open_positions": 6,
+    "closed_trades": 53,
     "wins": 17,
     "losses": 33,
     "win_rate": 34.0
   },
   "open_positions": {
-    "EOSUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-04-29T19:23:07.727238",
-      "entry_price": 0.09296955168247223,
-      "atr": 0.00466505012341908,
-      "stop": 0.08130692637392453,
-      "highest": 0.09296955168247223,
-      "lowest": 0.09296955168247223,
-      "bars_held": 0,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 500,
-      "original_capital": 500
-    },
-    "USD1USDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-05-27T10:12:26.775140",
-      "entry_price": 0.99963,
-      "atr": 0.0005778571428571062,
-      "stop": 1.0004967857142857,
-      "highest": 0.99963,
-      "lowest": 0.9992,
-      "bars_held": 13,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "BIOUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -125,21 +94,6 @@
       "timeframe": "DAILY",
       "capital": 250
     },
-    "DOGEUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-05-28T10:12:24.443346",
-      "entry_price": 0.09842,
-      "atr": 0.00464642857142857,
-      "stop": 0.10538964285714285,
-      "highest": 0.09842,
-      "lowest": 0.09646,
-      "bars_held": 5,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "SUIUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -172,45 +126,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "BCHUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-05-13T20:00:23.140346",
-      "exit_date": "2026-05-25T08:00:21.599509",
-      "entry_price": 434.2,
-      "exit_price": 350.8,
-      "pnl_pct": 19.21,
-      "pnl_eur": 96.04,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-05-19T20:00:48.809875",
-      "exit_date": "2026-05-25T17:43:29.954016",
-      "entry_price": 2116.87,
-      "exit_price": 2121.9425,
-      "pnl_pct": -0.58,
-      "pnl_eur": -1.46,
-      "reason": "TRAILING_STOP",
-      "bars_held": 12,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "EURUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-05-14T20:01:57.969554",
-      "exit_date": "2026-05-25T19:05:28.187652",
-      "entry_price": 1.168,
-      "exit_price": 1.1652,
-      "pnl_pct": 0.24,
-      "pnl_eur": 0.6,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "SPKUSDT",
       "direction": "SHORT",
@@ -430,6 +345,45 @@
       "pnl_eur": 8.55,
       "reason": "TIME_STOP",
       "bars_held": 15,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "EOSUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-04-29T19:23:07.727238",
+      "exit_date": "2026-06-01T11:10:24.235412",
+      "entry_price": 0.09296955168247223,
+      "exit_price": 0.7799,
+      "pnl_pct": 738.88,
+      "pnl_eur": 3694.38,
+      "reason": "MANUAL_CLOSE",
+      "bars_held": 0,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "USD1USDT",
+      "direction": "SHORT",
+      "entry_date": "2026-05-27T10:12:26.775140",
+      "exit_date": "2026-06-01T11:10:24.235412",
+      "entry_price": 0.99963,
+      "exit_price": 0.99949,
+      "pnl_pct": 0.01,
+      "pnl_eur": 0.04,
+      "reason": "MANUAL_CLOSE",
+      "bars_held": 13,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-05-28T10:12:24.443346",
+      "exit_date": "2026-06-01T11:10:24.235412",
+      "entry_price": 0.09842,
+      "exit_price": 0.10029,
+      "pnl_pct": -1.9,
+      "pnl_eur": -4.75,
+      "reason": "MANUAL_CLOSE",
+      "bars_held": 5,
       "timeframe": "DAILY"
     }
   ],
