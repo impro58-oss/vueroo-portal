@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPS-006 Anti-Sloppy-Work Protocol — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #ef4444; --accent-dim: #991b1b; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-critical { background: var(--accent); color: white; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        .core-rule { background: var(--accent-dim); border: 2px solid var(--accent); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; }
+        .core-rule strong { color: var(--accent); }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .anti-pattern { background: rgba(239,68,68,0.08); }
+        .decision-ok { background: rgba(34,197,94,0.08); }
+        .decision-warn { background: rgba(234,179,8,0.08); }
+        .decision-no { background: rgba(239,68,68,0.08); }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>OPS</strong> (Operations) — <em>Cross-Cutting</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-01 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-critical">CRITICAL</span></p>
+        </div>
+
+        <h1>OPS-006: Anti-Sloppy-Work Protocol</h1>
+
+        <div class="core-rule">
+            <strong>DONE = VERIFIED.</strong> Not "the script ran." Not "the file saved." Not "I think it's right." VERIFIED means I have read the output, compared it against the source, and confirmed accuracy. If I have not read the output, it is not done. Period.
+        </div>
+
+        <h2>Purpose</h2>
+        <p>This protocol exists because the same failure pattern recurred across every project: output produced quickly, declared done without verification, errors found by the user. The root cause was never capability — it was treating "done" as a declaration rather than a verified state.</p>
+        <p>This protocol makes verification a <strong>forced step</strong> in the execution path, not an aspiration in a reference document.</p>
+
+        <h2>Trigger</h2>
+        <ul>
+            <li>Before declaring any deliverable "done" or "complete"</li>
+            <li>Before presenting any output to the user</li>
+            <li>Before marking any task as finished</li>
+            <li>Before deploying any change</li>
+        </ul>
+
+        <h2>Steps</h2>
+
+        <h3>Step 1: Produce the Work</h3>
+        <ul>
+            <li>Execute the task</li>
+            <li>Generate the output</li>
+            <li>Make the changes</li>
+        </ul>
+
+        <h3>Step 2: READ THE OUTPUT IN FULL</h3>
+        <ul>
+            <li>Read every word of the produced output</li>
+            <li>Compare timestamps, names, numbers, and facts against the source material</li>
+            <li>Verify speech-to-text corrections are accurate</li>
+            <li>Check that no content from the source was dropped or truncated</li>
+            <li>If updating an existing document: verify all previous content is still present and unmodified (except where intentional)</li>
+        </ul>
+
+        <h3>Step 3: Cross-Reference</h3>
+        <ul>
+            <li>For HTML/text: render it in browser, click through, verify visually</li>
+            <li>For data: check that numbers match the source, no NaN/undefined</li>
+            <li>For code: run it, check the output, verify no errors</li>
+            <li>For dashboards: fetch the live URL, confirm data loads</li>
+        </ul>
+
+        <h3>Step 4: Verify Against Instructions</h3>
+        <ul>
+            <li>Re-read the user's original request</li>
+            <li>Confirm every requested item is present in the output</li>
+            <li>Confirm nothing was added that wasn't requested (unless explicitly helpful and noted)</li>
+            <li>Confirm the format matches expectations</li>
+        </ul>
+
+        <h3>Step 5: Declare Done (ONLY After Steps 2-4)</h3>
+        <ul>
+            <li>Now, and only now, can the deliverable be called "done"</li>
+            <li>If any step 2-4 fails, fix it and re-run from Step 2</li>
+        </ul>
+
+        <h2>Hard Rules</h2>
+        <ol>
+            <li><strong>No patch chains beyond 2.</strong> If a file needs more than 2 rounds of patches/edits, rebuild the section from scratch. Patching leads to silent failures.</li>
+            <li><strong>Read before declare.</strong> I must read the full output before saying "done." String searches are NOT reading.</li>
+            <li><strong>If I can't verify, say so.</strong> "I couldn't verify X" is honest. "It's done" when I haven't checked is a lie.</li>
+            <li><strong>No emotional language as accountability.</strong> Describe what went wrong mechanically. What's the fix. Not "I'm sorry" or "I was scared" — those are feelings, not process.</li>
+            <li><strong>Source material is sacred.</strong> When working with user-provided text (journals, reports, data), every word matters. Preserve the original language. Clean speech-to-text errors, but keep the meaning and vividness intact.</li>
+        </ol>
+
+        <h2>Anti-Patterns (What NOT To Do)</h2>
+        <table>
+            <thead><tr><th>Anti-Pattern</th><th>Why It Fails</th></tr></thead>
+            <tbody>
+                <tr class="anti-pattern"><td>Running a script and checking its exit code</td><td>The script can succeed and produce wrong output</td></tr>
+                <tr class="anti-pattern"><td>Searching for a few strings and declaring "verified"</td><td>Missing content doesn't show up in string searches</td></tr>
+                <tr class="anti-pattern"><td>Writing a rule in a document and calling it "fixed"</td><td>Rules I have to remember to follow, I don't follow</td></tr>
+                <tr class="anti-pattern"><td>Declaring "done" and then checking</td><td>The check becomes optional. Make it mandatory.</td></tr>
+                <tr class="anti-pattern"><td>Using emotional language to explain failures</td><td>"I was rushed" or "I was scared" are excuses, not root causes</td></tr>
+                <tr class="anti-pattern"><td>Patching 3+ times on the same file</td><td>Rebuild. Patches create silent string-match failures.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Decision Rules</h2>
+        <table>
+            <thead><tr><th>Verification Level</th><th>Declaration</th></tr></thead>
+            <tbody>
+                <tr class="decision-ok"><td>Full read-through + cross-reference</td><td>✅ Done</td></tr>
+                <tr class="decision-warn"><td>Partial read-through</td><td>⚠️ Done with unverified sections noted</td></tr>
+                <tr class="decision-no"><td>Script ran but output not read</td><td>❌ NOT DONE</td></tr>
+                <tr class="decision-no"><td>String search "verification"</td><td>❌ NOT DONE</td></tr>
+            </tbody>
+        </table>
+
+        <h2>References</h2>
+        <ul>
+            <li>5Y Root Cause Analysis (2026-06-01): <code>memory/2026-06-01-5y-root-cause-analysis.md</code></li>
+            <li>Learning 015: Declare Done ≠ Done (2026-05-02)</li>
+            <li>Learning 020: Autonomous systems need proactive monitoring (2026-05-26)</li>
+            <li>Learning 021: Monitor output, not just process (2026-05-26)</li>
+            <li>HEARTBEAT.md Hard Rules 8-15</li>
+        </ul>
+
+        <h2>Enforcement</h2>
+        <p>This protocol is enforced by the definition of "done." It is not a step I add to my process — it <strong>IS</strong> the process. The deliverable is not complete until Steps 2-4 are satisfied. There is no shortcut.</p>
+
+        <div class="ref">
+            <p><em>Created 2026-06-01 following second written warning. Root cause: output optimisation at every level, including meta-tasks (writing rules instead of changing behaviour). Enforcement: verification is a forced step, not an aspiration.</em></p>
+        </div>
+    </div>
+</body>
+</html>
