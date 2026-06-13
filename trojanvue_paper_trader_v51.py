@@ -52,7 +52,7 @@ import urllib.request
 import time
 
 # ====================================================================
-# PARAMETERS — V5.2 (TUNED)
+# PARAMETERS — V5.3 UPDATED (2026-06-12)
 # ====================================================================
 
 ENTRY_CHANNEL = 20
@@ -62,7 +62,7 @@ TIME_STOP = 15
 ATR_STOP_MULT = 1.5       # Was 2.5 — tightened to cap single-trade loss at ~5-8%
 TRAILING_ATR_MULT = 1.5   # NEW — trailing stop distance from best price
 MAX_POSITIONS = 10
-CAPITAL_PER_TOKEN = 250    # Was 500 — halved for diversification
+CAPITAL_PER_TOKEN = 500    # Increased from 250 (2026-06-12) after validation
 
 # ====================================================================
 # V5.3 FIXES (2026-06-01):
@@ -73,7 +73,7 @@ CAPITAL_PER_TOKEN = 250    # Was 500 — halved for diversification
 # ====================================================================
 
 # Known delisted/unavailable symbols on Binance
-BLACKLISTED_SYMBOLS = {'KASUSDT'}  # Delisted pairs that cause API errors
+BLACKLISTED_SYMBOLS = {'KASUSDT', 'ZECUSDT', 'USD1USDT'}  # Delisted + high-volatility/stablecoin wrappers
 
 # Load same symbol list as CryptoVue
 WORKSPACE = Path(r"C:\Users\impro\.openclaw\workspace")

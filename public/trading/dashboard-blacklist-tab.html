@@ -1,0 +1,233 @@
+<!-- 
+    TROJENVUE BLACKLIST TAB
+    Replace the "Today's Signals" and "Token Status" tabs with this implementation
+    
+    CHANGES:
+    1. Remove tab buttons for "Today's Signals" and "Token Status" 
+    2. Add new "Blacklist" tab button
+    3. Remove tab-signals and tab-tokens divs
+    4. Add tab-blacklist div below
+    5. Add renderBlacklist() function to load blacklist data
+-->
+
+<!-- TAB BUTTONS (Replace existing tabs section) -->
+<div class="max-w-7xl mx-auto px-4 mt-6">
+    <div class="flex gap-2 border-b border-cyan-900/30 pb-0">
+        <button onclick="showTab('positions')" class="tab-btn px-4 py-2 text-sm font-medium text-cyan-400 border-b-2 border-cyan-400" data-tab="positions">
+            <i class="fas fa-briefcase mr-1"></i> Open Positions
+        </button>
+        <button onclick="showTab('history')" class="tab-btn px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent hover:text-slate-200" data-tab="history">
+            <i class="fas fa-history mr-1"></i> Trade History
+        </button>
+        <button onclick="showTab('blacklist')" class="tab-btn px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent hover:text-slate-200" data-tab="blacklist">
+            <i class="fas fa-ban mr-1"></i> Blacklist Review
+        </button>
+    </div>
+</div>
+
+<!-- TAB CONTENT (Replace old tabs, keep positions and history, remove signals and tokens, add blacklist) -->
+<div class="max-w-7xl mx-auto px-4 mt-4 pb-8">
+    <!-- Open Positions (KEEP EXISTING) -->
+    <div id="tab-positions" class="tab-content">
+        <div class="card">
+            <div id="positions-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Direction</th>
+                            <th>Entry Price</th>
+                            <th>Current</th>
+                            <th>Unrealized P&L</th>
+                            <th>Held</th>
+                            <th>Signal</th>
+                            <th>Stop</th>
+                        </tr>
+                    </thead>
+                    <tbody id="positions-body">
+                        <tr><td colspan="8" class="text-center text-slate-500 py-8">No open positions</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trade History (KEEP EXISTING) -->
+    <div id="tab-history" class="tab-content" style="display:none">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Token</th>
+                        <th>Dir</th>
+                        <th>Entry</th>
+                        <th>Exit</th>
+                        <th>P&L %</th>
+                        <th>P&L €</th>
+                        <th>Reason</th>
+                        <th>Bars</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <tr><td colspan="9" class="text-center text-slate-500 py-8">No trades yet</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- BLACKLIST REVIEW (NEW) -->
+    <div id="tab-blacklist" class="tab-content" style="display:none">
+        <div class="space-y-4">
+            <!-- Static Blacklist -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Static Blacklist</h3>
+                        <p class="text-xs text-slate-400 mt-1">Permanent entries — require manual review to remove</p>
+                    </div>
+                    <div class="text-2xl font-bold text-red-400" id="static-count">3</div>
+                </div>
+                
+                <div id="static-blacklist-content" class="space-y-2">
+                    <!-- Populated by renderBlacklist() -->
+                </div>
+            </div>
+
+            <!-- Dynamic Blacklist -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-white">Dynamic Blacklist</h3>
+                        <p class="text-xs text-slate-400 mt-1">Auto-blacklisted by system — removed after 30 days if criteria met</p>
+                    </div>
+                    <div class="text-2xl font-bold text-yellow-400" id="dynamic-count">0</div>
+                </div>
+                
+                <div id="dynamic-blacklist-content">
+                    <div class="text-center text-slate-500 py-6">No symbols currently in dynamic blacklist</div>
+                </div>
+            </div>
+
+            <!-- Blacklist Criteria Reference -->
+            <div class="card border-slate-700/50">
+                <h3 class="text-sm font-semibold text-slate-300 mb-3">Blacklist Criteria</h3>
+                <div class="grid grid-cols-2 gap-4 text-xs font-mono">
+                    <div>
+                        <div class="text-slate-400">Single Trade Loss</div>
+                        <div class="text-slate-200">> -15%</div>
+                    </div>
+                    <div>
+                        <div class="text-slate-400">Consecutive Losses</div>
+                        <div class="text-slate-200">> 3 in a row</div>
+                    </div>
+                    <div>
+                        <div class="text-slate-400">Min Win Rate</div>
+                        <div class="text-slate-200">> 5% (on 5+ trades)</div>
+                    </div>
+                    <div>
+                        <div class="text-slate-400">Review Period</div>
+                        <div class="text-slate-200">30 days</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT FUNCTION (Add to existing script section) -->
+<script>
+async function renderBlacklist() {
+    try {
+        // Load blacklist status from generated JSON
+        const response = await fetch('/data/blacklist_status.json?t=' + Date.now());
+        if (!response.ok) throw new Error('Blacklist data not available');
+        
+        const data = await response.json();
+        
+        // Render static blacklist
+        const staticContent = document.getElementById('static-blacklist-content');
+        const staticReasons = {
+            'KASUSDT': 'Delisted on Binance — API returns errors',
+            'ZECUSDT': 'High volatility + manipulation-prone — caused 2 consecutive squeezes (-37%, -28%) June 5-9, 2026',
+            'USD1USDT': 'Stablecoin wrapper with insufficient volatility — clogs portfolio slots'
+        };
+        
+        if (data.static && data.static.length > 0) {
+            staticContent.innerHTML = data.static.map(symbol => `
+                <div class="bg-red-900/10 border border-red-500/20 rounded p-3">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="font-bold text-red-400">${symbol}</div>
+                            <div class="text-xs text-slate-400 mt-1">${staticReasons[symbol] || 'Permanent blacklist'}</div>
+                        </div>
+                        <span class="text-xs bg-red-900/30 text-red-300 px-2 py-1 rounded">STATIC</span>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('static-count').textContent = data.static.length;
+        }
+        
+        // Render dynamic blacklist
+        const dynamicContent = document.getElementById('dynamic-blacklist-content');
+        if (data.dynamic && data.dynamic.length > 0) {
+            dynamicContent.innerHTML = data.dynamic.map(symbol => `
+                <div class="bg-yellow-900/10 border border-yellow-500/20 rounded p-3 mb-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <div class="font-bold text-yellow-400">${symbol}</div>
+                            <div class="text-xs text-slate-400 mt-1">Auto-blacklisted by system — will be re-evaluated after 30 days</div>
+                        </div>
+                        <span class="text-xs bg-yellow-900/30 text-yellow-300 px-2 py-1 rounded">DYNAMIC</span>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('dynamic-count').textContent = data.dynamic.length;
+        } else {
+            dynamicContent.innerHTML = '<div class="text-center text-slate-500 py-6">No symbols currently in dynamic blacklist</div>';
+            document.getElementById('dynamic-count').textContent = '0';
+        }
+        
+    } catch (e) {
+        console.log('Blacklist data not ready:', e.message);
+        document.getElementById('static-blacklist-content').innerHTML = 
+            '<div class="text-slate-500 text-sm">Blacklist loading...</div>';
+    }
+}
+
+// Call renderBlacklist() from the main loadData() function after other data loads
+// Add this line near the end of loadData(), after renderSignals(dash):
+//   renderBlacklist();
+
+// Also call on initial load and refresh
+</script>
+
+<!-- 
+    INSTALLATION INSTRUCTIONS:
+    
+    1. In index.html, find the tab buttons section (around line 200)
+    2. Replace the tabs section with the TAB BUTTONS code above
+       (Keep "Open Positions" and "Trade History", add "Blacklist Review", REMOVE "Today's Signals" and "Token Status")
+    
+    3. Find the tab content section (around line 260)
+    4. KEEP the "Open Positions" tab content
+    5. KEEP the "Trade History" tab content
+    6. DELETE the "Today's Signals" tab content (tab-signals div)
+    7. DELETE the "Token Status" tab content (tab-tokens div)
+    8. ADD the new "Blacklist Review" tab content (BLACKLIST REVIEW section above)
+    
+    9. In the script section, find the loadData() function
+    10. After the line: renderSignals(dash);
+    11. Add: renderBlacklist();
+    
+    12. At the end of the script, add the renderBlacklist() function code above
+    
+    RESULT:
+    - "Today's Signals" tab removed (was not getting populated)
+    - "Token Status" tab removed (was not getting populated)
+    - New "Blacklist Review" tab with:
+      * Static blacklist (KASUSDT, ZECUSDT, USD1USDT)
+      * Dynamic blacklist (auto-generated, empty for now)
+      * Criteria reference card
+      * Live data from blacklist_status.json
+-->
