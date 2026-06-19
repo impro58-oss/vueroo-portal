@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,7 @@
             --border: #1e2d3d;
             --text: #e2e8f0;
             --text2: #94a3b8;
+            --text3: #64748b;
             --accent: #6366f1;
             --accent2: #818cf8;
             --green: #22c55e;
@@ -22,6 +23,8 @@
             --orange: #f97316;
             --teal: #14b8a6;
             --pink: #ec4899;
+            --cyan: #06b6d4;
+            --lime: #84cc16;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; }
@@ -36,121 +39,131 @@
         
         .container { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
         
-        /* Flow Diagram Section */
-        .flow-section { margin-bottom: 2.5rem; }
-        .flow-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
-        .flow-diagram { 
-            display: flex; flex-direction: column; gap: 0; 
-            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-            overflow: hidden;
-        }
-        .flow-stage { 
-            padding: 1rem 1.5rem; 
-            border-bottom: 1px solid var(--border);
-            display: grid; grid-template-columns: 200px 1fr; gap: 1rem;
-            align-items: start;
-        }
-        .flow-stage:last-child { border-bottom: none; }
-        .flow-stage-header { display: flex; align-items: center; gap: 0.75rem; }
-        .flow-stage-num {
-            width: 28px; height: 28px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.75rem; font-weight: 700;
-            background: var(--accent); color: white;
-        }
-        .flow-stage-label { font-weight: 600; font-size: 0.95rem; }
-        .flow-stage-dept { font-size: 0.7rem; color: var(--text2); margin-top: 2px; }
-        .flow-protocols { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .flow-protocol {
-            padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.78rem;
-            background: var(--surface2); border: 1px solid var(--border);
-            cursor: pointer; transition: all 0.2s; text-decoration: none; color: var(--text);
-            display: inline-block;
-        }
-        .flow-protocol:hover { border-color: var(--accent); transform: translateY(-1px); color: var(--accent2); }
-        .flow-protocol.active { border-color: var(--accent); background: rgba(99,102,241,0.15); }
-        .process-step-protocols a { color: var(--accent2); text-decoration: none; font-weight: 600; }
-        .process-step-protocols a:hover { color: var(--text); text-decoration: underline; }
-        .process-step-box { cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
-        .process-step-box:hover { border-color: var(--accent2); box-shadow: 0 0 12px rgba(99,102,241,0.2); }
-        .flow-arrow {
-            text-align: center; padding: 0.5rem; color: var(--accent); font-size: 1.2rem;
-            background: var(--surface); border: none;
-        }
-        
-        /* Department Cards */
-        .dept-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-        .dept-card {
-            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-            overflow: hidden;
-        }
-        .dept-card-header {
-            padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--border);
-        }
-        .dept-card-header h3 { font-size: 1rem; font-weight: 600; }
-        .dept-code { font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
-        .dept-card-body { padding: 0; }
-        .protocol-row {
-            padding: 0.6rem 1.25rem; display: grid; grid-template-columns: 90px 1fr 80px 60px;
-            gap: 0.5rem; align-items: center; border-bottom: 1px solid rgba(30,45,61,0.5);
-            font-size: 0.82rem; transition: background 0.15s; cursor: pointer; text-decoration: none; color: var(--text);
-        }
-        .protocol-row:hover { background: var(--surface2); }
-        .protocol-row:last-child { border-bottom: none; }
-        .protocol-id { font-family: monospace; color: var(--accent2); font-size: 0.75rem; }
-        .protocol-name { color: var(--text); text-decoration: none; }
-        .protocol-name:hover { color: var(--accent2); }
-        .protocol-status { text-align: center; }
-        .protocol-dept { text-align: center; font-size: 0.7rem; }
-        .status-badge {
-            display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px;
-            font-size: 0.7rem; font-weight: 600;
-        }
-        .status-active { background: rgba(34,197,94,0.15); color: var(--green); }
-        .status-ACTIVE { background: rgba(234,179,8,0.15); color: var(--yellow); }
-        .status-todo { background: rgba(148,163,184,0.1); color: var(--text2); }
-        
         /* Stats Bar */
         .stats-bar { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem;
             margin-bottom: 2rem;
         }
         .stat-card {
             background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-            padding: 1rem 1.25rem; text-align: center;
+            padding: 1rem; text-align: center;
         }
-        .stat-value { font-size: 2rem; font-weight: 700; }
-        .stat-label { font-size: 0.75rem; color: var(--text2); margin-top: 0.25rem; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; }
+        .stat-label { font-size: 0.7rem; color: var(--text2); margin-top: 0.15rem; }
         
-        /* Process Flow */
-        .process-section { margin-bottom: 2rem; }
-        .process-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
-        .process-flow {
+        /* Mind Map / Accordion Sections */
+        .mind-map { margin-bottom: 2rem; }
+        .mind-map h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); display: flex; align-items: center; gap: 0.5rem; }
+        .mind-map h2 .icon { font-size: 1.4rem; }
+        
+        .branch {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+            margin-bottom: 0.75rem; overflow: hidden;
+        }
+        .branch-header {
+            padding: 0.85rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; user-select: none; transition: background 0.2s;
+        }
+        .branch-header:hover { background: var(--surface2); }
+        .branch-header-left { display: flex; align-items: center; gap: 0.75rem; }
+        .branch-code {
+            font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;
+            min-width: 36px; text-align: center;
+        }
+        .branch-title { font-size: 0.95rem; font-weight: 600; }
+        .branch-count { font-size: 0.75rem; color: var(--text2); }
+        .branch-toggle {
+            font-size: 1.2rem; color: var(--text3); transition: transform 0.3s;
+            width: 24px; text-align: center;
+        }
+        .branch.open .branch-toggle { transform: rotate(90deg); }
+        .branch-body {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+            border-top: none;
+        }
+        .branch.open .branch-body { max-height: 2000px; border-top: 1px solid var(--border); }
+        
+        .protocol-item {
+            padding: 0.55rem 1.25rem; display: grid; grid-template-columns: 90px 1fr 80px 70px;
+            gap: 0.5rem; align-items: center; border-bottom: 1px solid rgba(30,45,61,0.5);
+            font-size: 0.82rem; transition: background 0.15s;
+        }
+        .protocol-item:hover { background: var(--surface2); }
+        .protocol-item:last-child { border-bottom: none; }
+        .protocol-item a { text-decoration: none; }
+        .pid { font-family: monospace; color: var(--accent2); font-size: 0.75rem; }
+        .pname { color: var(--text); }
+        .pname:hover { color: var(--accent2); }
+        .pstatus { text-align: center; }
+        .pdept { text-align: center; font-size: 0.7rem; }
+        .badge {
+            display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px;
+            font-size: 0.7rem; font-weight: 600;
+        }
+        .badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+        .badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+        .badge-pending { background: rgba(148,163,184,0.1); color: var(--text2); }
+        
+        /* Flow Diagrams */
+        .flow-section { margin-bottom: 2.5rem; }
+        .flow-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
+        .flow-diagram { 
             background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-            padding: 1.5rem; overflow-x: auto;
+            overflow: hidden; margin-bottom: 1rem;
         }
-        .process-steps {
+        .flow-header {
+            padding: 0.75rem 1.25rem; background: var(--surface2); 
+            border-bottom: 1px solid var(--border); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .flow-header h3 { font-size: 0.85rem; color: var(--text2); }
+        .flow-header .flow-toggle { font-size: 1.2rem; color: var(--text3); transition: transform 0.3s; }
+        .flow-diagram.collapsed .flow-body { display: none; }
+        .flow-diagram.collapsed .flow-toggle { transform: rotate(-90deg); }
+        .flow-body { padding: 1rem 1.25rem; }
+        
+        .flow-steps {
             display: flex; align-items: flex-start; gap: 0;
-            min-width: max-content;
+            min-width: max-content; overflow-x: auto; padding-bottom: 0.5rem;
         }
-        .process-step {
-            display: flex; flex-direction: column; align-items: center; min-width: 140px;
+        .flow-step {
+            display: flex; flex-direction: column; align-items: center; min-width: 130px;
             text-align: center;
         }
-        .process-step-box {
+        .flow-step-box {
             background: var(--surface2); border: 2px solid var(--border); border-radius: 10px;
-            padding: 0.75rem; width: 130px; transition: all 0.2s;
+            padding: 0.75rem 0.5rem; width: 120px; transition: all 0.2s; cursor: pointer;
         }
-        .process-step-box.start { border-color: var(--green); }
-        .process-step-box.end { border-color: var(--purple); }
-        .process-step-box.gate { border-color: var(--orange); }
-        .process-step-title { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.25rem; }
-        .process-step-protocols { font-size: 0.65rem; color: var(--accent2); }
-        .process-connector {
-            display: flex; align-items: center; color: var(--text2); font-size: 1.2rem;
-            padding: 0 0.25rem; min-width: 30px; justify-content: center;
+        .flow-step-box:hover { border-color: var(--accent2); box-shadow: 0 0 12px rgba(99,102,241,0.2); }
+        .flow-step-box.start { border-color: var(--green); }
+        .flow-step-box.end { border-color: var(--purple); }
+        .flow-step-box.gate { border-color: var(--orange); }
+        .flow-step-title { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .flow-step-title a { text-decoration: none; color: inherit; }
+        .flow-step-title a:hover { color: var(--accent2); }
+        .flow-step-protocols { font-size: 0.65rem; color: var(--accent2); }
+        .flow-step-protocols a { color: var(--accent2); text-decoration: none; }
+        .flow-step-protocols a:hover { text-decoration: underline; }
+        .flow-connector {
+            display: flex; align-items: center; color: var(--text3); font-size: 1.2rem;
+            padding: 0 0.25rem; min-width: 25px; justify-content: center;
         }
+        
+        /* System Architecture Mind Map */
+        .arch-section { margin-bottom: 2rem; }
+        .arch-section h2 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--accent2); }
+        .arch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .arch-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+            padding: 1rem; transition: border-color 0.2s;
+        }
+        .arch-card:hover { border-color: var(--accent); }
+        .arch-card h4 { font-size: 0.9rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .arch-card p { font-size: 0.78rem; color: var(--text2); margin-bottom: 0.5rem; }
+        .arch-card ul { font-size: 0.75rem; color: var(--text2); padding-left: 1rem; }
+        .arch-card li { margin-bottom: 0.2rem; }
+        .arch-card .count { font-size: 0.7rem; color: var(--accent2); font-weight: 600; }
         
         /* Dept colors */
         .dept-rsc { background: rgba(59,130,246,0.15); color: var(--blue); }
@@ -159,15 +172,17 @@
         .dept-dsn { background: rgba(249,115,22,0.15); color: var(--orange); }
         .dept-ops { background: rgba(236,72,153,0.15); color: var(--pink); }
         .dept-str { background: rgba(20,184,166,0.15); color: var(--teal); }
+        .dept-sys { background: rgba(6,182,212,0.15); color: var(--cyan); }
         
         .footer { text-align: center; padding: 2rem; color: var(--text2); font-size: 0.75rem; border-top: 1px solid var(--border); }
         
         @media (max-width: 768px) {
-            .flow-stage { grid-template-columns: 1fr; }
-            .dept-grid { grid-template-columns: 1fr; }
             .stats-bar { grid-template-columns: repeat(3, 1fr); }
-            .protocol-row { grid-template-columns: 80px 1fr 70px; }
-            .protocol-dept { display: none; }
+            .protocol-item { grid-template-columns: 80px 1fr 70px; }
+            .pdept { display: none; }
+            .flow-steps { min-width: 0; flex-wrap: wrap; }
+            .flow-connector { display: none; }
+            .arch-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -177,11 +192,12 @@
     <h1>Lumina <span>Protocol System</span></h1>
     <p>Standardized operating procedures — same work, same way, fewer errors</p>
     <div class="meta">
-        <div class="meta-item"><strong>6</strong> Departments</div>
-        <div class="meta-item"><strong>33</strong> Protocols</div>
-        <div class="meta-item"><strong>32</strong> Written</div>
-        <div class="meta-item"><strong>1</strong> Active</div>
-        <div class="meta-item">Updated: <strong>2026-05-25</strong></div>
+        <div class="meta-item"><strong>7</strong> Departments</div>
+        <div class="meta-item"><strong>40</strong> Protocols</div>
+        <div class="meta-item"><strong>39</strong> Written</div>
+        <div class="meta-item"><strong>6</strong> End-to-End Flows</div>
+        <div class="meta-item"><strong>3</strong> Quality Gates</div>
+        <div class="meta-item">Updated: <strong>2026-06-19</strong></div>
     </div>
 </div>
 
@@ -190,405 +206,391 @@
     <!-- Stats -->
     <div class="stats-bar">
         <div class="stat-card">
-            <div class="stat-value" style="color:var(--green)">32</div>
+            <div class="stat-value" style="color:var(--green)">39</div>
             <div class="stat-label">Written</div>
         </div>
         <div class="stat-card">
             <div class="stat-value" style="color:var(--accent2)">1</div>
-            <div class="stat-label">Active</div>
+            <div class="stat-label">Critical</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value" style="color:var(--accent2)">6</div>
+            <div class="stat-value" style="color:var(--cyan)">7</div>
             <div class="stat-label">Departments</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value" style="color:var(--purple)">5</div>
-            <div class="stat-label">End-to-End Flows</div>
+            <div class="stat-value" style="color:var(--purple)">6</div>
+            <div class="stat-label">Flows</div>
         </div>
         <div class="stat-card">
             <div class="stat-value" style="color:var(--orange)">3</div>
-            <div class="stat-label">Quality Gates</div>
+            <div class="stat-label">Gates</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" style="color:var(--teal)">6</div>
+            <div class="stat-label">Procedures</div>
+        </div>
+    </div>
+
+    <!-- System Architecture (NEW) -->
+    <div class="arch-section">
+        <h2>🧠 System Architecture</h2>
+        <div class="arch-grid">
+            <div class="arch-card">
+                <h4>📋 Procedural Memory</h4>
+                <p>Self-written procedures that encode what actually works, not what should work.</p>
+                <ul>
+                    <li>Daily Note Creation (conf: 9/10)</li>
+                    <li>Cron Path Verification (conf: 8/10)</li>
+                    <li>Verification Before Done (conf: 7/10)</li>
+                    <li>Self-Healing Escalation (conf: 6/10)</li>
+                    <li>Probation Points (conf: 10/10)</li>
+                    <li>Observability Metrics (conf: 8/10)</li>
+                </ul>
+                <span class="count">6 procedures · all verified today</span>
+            </div>
+            <div class="arch-card">
+                <h4>🔍 Self-Improvement Loop</h4>
+                <p>Nightly DeepSeek integrity scan + weekly learning extraction + self-audit.</p>
+                <ul>
+                    <li>DeepSeek Integrity Scan — 1 AM nightly</li>
+                    <li>Brain Feeding Protocol — 3 AM nightly</li>
+                    <li>Morning Brief — 8 AM daily</li>
+                    <li>Proactive Intelligence — 2 PM daily</li>
+                    <li>Synaptic Evening — 7:30 PM daily</li>
+                    <li>Evening Synthesis — 9:30 PM daily</li>
+                </ul>
+                <span class="count">6 cron jobs · DeepSeek-V4-Flash</span>
+            </div>
+            <div class="arch-card">
+                <h4>🛡️ Accountability Systems</h4>
+                <p>Point-based probation + known unknowns + output verification.</p>
+                <ul>
+                    <li>Probation: 60/100 points (fabrication: -40)</li>
+                    <li>Known Unknowns Register (3 tiers)</li>
+                    <li>Verification-before-done procedure</li>
+                    <li>Source-to-output audit rule</li>
+                    <li>Notification bridge for failures</li>
+                </ul>
+                <span class="count">5 enforcement mechanisms</span>
+            </div>
+            <div class="arch-card">
+                <h4>📊 Model Routing v3.1</h4>
+                <p>Mythos-Mode architecture with 10 model tiers.</p>
+                <ul>
+                    <li>T1: GLM-5.1 (orchestration, Roo-facing)</li>
+                    <li>T1f: Claude Sonnet (AP mode only)</li>
+                    <li>T2: DeepSeek-V4-Pro (Mythos Engine)</li>
+                    <li>T3: DeepSeek-V4-Flash (briefs, synthesis)</li>
+                    <li>T4: Kimi-K2.7-Code (heavy coding)</li>
+                    <li>T7: O3 (adversarial review)</li>
+                </ul>
+                <span class="count">10 tiers · see <a href="/protocols/model-routing-guide" style="color:var(--accent2)">full guide</a></span>
+            </div>
         </div>
     </div>
 
     <!-- End-to-End Process Flows -->
-    <div class="process-section">
+    <div class="flow-section">
         <h2>🔄 End-to-End Process Flows</h2>
         
         <!-- Flow 1: Research to Report -->
-        <div class="process-flow" style="margin-bottom:1rem">
-            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 1: Research → Intelligence Report</h3>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-step-box start">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">Idea / Question</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/rsc-001-multi-source-research.html" style="text-decoration:none;color:inherit">Multi-Source Research</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-001-multi-source-research.html">RSC-001</a>, <a href="/protocols/rsc-007-ai-system-interrogation.html">RSC-007</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/rsc-002-medtech-literature-review.html" style="text-decoration:none;color:inherit">Lit Review</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-002-medtech-literature-review.html">RSC-002</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box gate">
-                        <div class="process-step-title"><a href="/protocols/dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Quality Gate</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-002-code-quality-gates.html">Verified? Tagged?</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/rpt-001-medtech-research-report.html" style="text-decoration:none;color:inherit">Write Report</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/rpt-001-medtech-research-report.html">RPT-001</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box gate">
-                        <div class="process-step-title"><a href="/protocols/dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Three Gates</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-002-code-quality-gates.html">Acc+Logic+Util</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box end">
-                        <div class="process-step-title">Deliver</div>
-                        <div class="process-step-protocols">Obsidian + Dash</div>
-                    </div>
+        <div class="flow-diagram" id="flow1">
+            <div class="flow-header" onclick="toggleFlow('flow1')">
+                <h3>FLOW 1: Research → Intelligence Report</h3>
+                <span class="flow-toggle">▼</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start"><div class="flow-step-title"><a href="/protocols/str-003-idea-development.html">Idea / Question</a></div><div class="flow-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003</a></div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/rsc-001-multi-source-research.html">Multi-Source Research</a></div><div class="flow-step-protocols"><a href="/protocols/rsc-001-multi-source-research.html">RSC-001</a>, <a href="/protocols/rsc-007-ai-system-interrogation.html">RSC-007</a></div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/rsc-002-medtech-literature-review.html">Lit Review</a></div><div class="flow-step-protocols"><a href="/protocols/rsc-002-medtech-literature-review.html">RSC-002</a></div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title"><a href="/protocols/ops-006-anti-sloppy-work.html">⬡ Anti-Sloppy</a></div><div class="flow-step-protocols">Verified? Tagged?</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/rpt-001-medtech-research-report.html">Write Report</a></div><div class="flow-step-protocols"><a href="/protocols/rpt-001-medtech-research-report.html">RPT-001</a></div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title"><a href="/protocols/dev-002-code-quality-gates.html">⬡ Three Gates</a></div><div class="flow-step-protocols">Acc+Logic+Util</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end"><div class="flow-step-title">Deliver</div><div class="flow-step-protocols">Obsidian + Dash</div></div></div>
                 </div>
             </div>
         </div>
 
         <!-- Flow 2: Agent Build -->
-        <div class="process-flow" style="margin-bottom:1rem">
-            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 2: Agent Build → Deploy</h3>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-step-box start">
-                        <div class="process-step-title"><a href="/protocols/dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Requirements</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-001-agent-build-standard.html">DEV-001 S1</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/dsn-003-agent-architecture.html" style="text-decoration:none;color:inherit">Architecture</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dsn-003-agent-architecture.html">DSN-003</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/dev-006-security-audit.html" style="text-decoration:none;color:inherit">Security Audit</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-006-security-audit.html">DEV-006</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Implementation</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-001-agent-build-standard.html">DEV-001 S4</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box gate">
-                        <div class="process-step-title"><a href="/protocols/dev-002-code-quality-gates.html" style="text-decoration:none;color:inherit">⬡ Quality Gates</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-002-code-quality-gates.html">DEV-002</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/dev-003-cron-job-creation.html" style="text-decoration:none;color:inherit">Cron + Deploy</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-003-cron-job-creation.html">DEV-003</a>, <a href="/protocols/dsn-002-protocol-dashboard-deployment.html">DSN-002</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box end">
-                        <div class="process-step-title"><a href="/protocols/ops-001-system-health-check.html" style="text-decoration:none;color:inherit">Live + Monitor</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-001-system-health-check.html">OPS-001</a></div>
-                    </div>
+        <div class="flow-diagram collapsed" id="flow2">
+            <div class="flow-header" onclick="toggleFlow('flow2')">
+                <h3>FLOW 2: Agent Build → Deploy</h3>
+                <span class="flow-toggle">▶</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start"><div class="flow-step-title"><a href="/protocols/dev-001-agent-build-standard.html">Requirements</a></div><div class="flow-step-protocols">DEV-001 S1</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/dsn-003-agent-architecture.html">Architecture</a></div><div class="flow-step-protocols">DSN-003</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/dev-006-security-audit.html">Security Audit</a></div><div class="flow-step-protocols">DEV-006</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/dev-001-agent-build-standard.html">Implementation</a></div><div class="flow-step-protocols">DEV-001 S4</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title"><a href="/protocols/dev-002-code-quality-gates.html">⬡ Quality Gates</a></div><div class="flow-step-protocols">DEV-002</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title"><a href="/protocols/dev-003-cron-job-creation.html">Cron + Deploy</a></div><div class="flow-step-protocols">DEV-003, DSN-002</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end"><div class="flow-step-title"><a href="/protocols/ops-001-system-health-check.html">Live + Monitor</a></div><div class="flow-step-protocols">OPS-001</div></div></div>
                 </div>
             </div>
         </div>
 
         <!-- Flow 3: Book to Knowledge -->
-        <div class="process-flow" style="margin-bottom:1rem">
-            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 3: Book → Knowledge Base</h3>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-step-box start">
-                        <div class="process-step-title">PDF/EPUB</div>
-                        <div class="process-step-protocols">Reading/</div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title">Full Extraction</div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-005-book-extraction-synthesis.html">RSC-005 S2</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title">Classify + Tag</div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-005-book-extraction-synthesis.html">RSC-005 S4</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title">File in Vault</div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-005-book-extraction-synthesis.html">RSC-005 S5</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title">Synthesize</div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-005-book-extraction-synthesis.html">RSC-005 S7</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title">Clean Up</div>
-                        <div class="process-step-protocols"><a href="/protocols/rsc-005-book-extraction-synthesis.html">RSC-005 S6</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box end">
-                        <div class="process-step-title">Knowledge Base</div>
-                        <div class="process-step-protocols">Obsidian</div>
-                    </div>
+        <div class="flow-diagram collapsed" id="flow3">
+            <div class="flow-header" onclick="toggleFlow('flow3')">
+                <h3>FLOW 3: Book → Knowledge Base</h3>
+                <span class="flow-toggle">▶</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start"><div class="flow-step-title">PDF/EPUB</div><div class="flow-step-protocols">Reading/</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Full Extraction</div><div class="flow-step-protocols">RSC-005 S2</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Classify + Tag</div><div class="flow-step-protocols">RSC-005 S4</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">File in Vault</div><div class="flow-step-protocols">RSC-005 S5</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Synthesize</div><div class="flow-step-protocols">RSC-005 S7</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">→ Procedural Memory</div><div class="flow-step-protocols">NEW</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end"><div class="flow-step-title">Knowledge Base</div><div class="flow-step-protocols">Obsidian</div></div></div>
                 </div>
             </div>
         </div>
 
         <!-- Flow 4: Idea to Project -->
-        <div class="process-flow" style="margin-bottom:1rem">
-            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 4: Idea → Project</h3>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-step-box start">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">Spark</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003 S1</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">0→1 / 1→n?</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003 S2</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">7 Questions</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003 S3</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">Resonance Check</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003 S4</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">Lean Validate</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">STR-003 S5</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box gate">
-                        <div class="process-step-title"><a href="/protocols/str-003-idea-development.html" style="text-decoration:none;color:inherit">⬡ Decide</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/str-003-idea-development.html">Persevere/Pivot/Perish</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box end">
-                        <div class="process-step-title"><a href="/protocols/dev-001-agent-build-standard.html" style="text-decoration:none;color:inherit">Build</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/dev-001-agent-build-standard.html">DEV-001</a></div>
-                    </div>
+        <div class="flow-diagram collapsed" id="flow4">
+            <div class="flow-header" onclick="toggleFlow('flow4')">
+                <h3>FLOW 4: Idea → Project</h3>
+                <span class="flow-toggle">▶</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start"><div class="flow-step-title">Spark</div><div class="flow-step-protocols">STR-003 S1</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">0→1 / 1→n?</div><div class="flow-step-protocols">STR-003 S2</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">7 Questions</div><div class="flow-step-protocols">STR-003 S3</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Resonance Check</div><div class="flow-step-protocols">STR-003 S4</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Lean Validate</div><div class="flow-step-protocols">STR-003 S5</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title">⬡ Decide</div><div class="flow-step-protocols">Persevere/Pivot/Perish</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end"><div class="flow-step-title">Build</div><div class="flow-step-protocols">DEV-001</div></div></div>
                 </div>
             </div>
         </div>
 
         <!-- Flow 5: Incident Response -->
-        <div class="process-flow">
-            <h3 style="font-size:0.85rem;color:var(--text2);margin-bottom:1rem">FLOW 5: Incident → Resolution</h3>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="process-step-box start" style="border-color:var(--red)">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">🔴 Incident</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S1</a></div>
-                    </div>
+        <div class="flow-diagram collapsed" id="flow5">
+            <div class="flow-header" onclick="toggleFlow('flow5')">
+                <h3>FLOW 5: Incident → Resolution</h3>
+                <span class="flow-toggle">▶</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start" style="border-color:var(--red)"><div class="flow-step-title">🔴 Incident</div><div class="flow-step-protocols">OPS-002 S1</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Diagnose</div><div class="flow-step-protocols">OPS-002 S2</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Classify</div><div class="flow-step-protocols">OPS-002 S3</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Fix</div><div class="flow-step-protocols">OPS-002 S4</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title">⬡ Verify</div><div class="flow-step-protocols">OPS-002 S5</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Document</div><div class="flow-step-protocols">OPS-002 S6</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end" style="border-color:var(--green)"><div class="flow-step-title">🟢 Prevent</div><div class="flow-step-protocols">OPS-002 S7</div></div></div>
                 </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">Diagnose</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S2</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">Classify</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S3</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">Fix</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S4</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box gate">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">⬡ Verify</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S5</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">Document</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S6</a></div>
-                    </div>
-                </div>
-                <div class="process-connector">→</div>
-                <div class="process-step">
-                    <div class="process-step-box end" style="border-color:var(--green)">
-                        <div class="process-step-title"><a href="/protocols/ops-002-incident-response.html" style="text-decoration:none;color:inherit">🟢 Prevent</a></div>
-                        <div class="process-step-protocols"><a href="/protocols/ops-002-incident-response.html">OPS-002 S7</a></div>
-                    </div>
+            </div>
+        </div>
+
+        <!-- Flow 6: Self-Improvement Loop (NEW) -->
+        <div class="flow-diagram collapsed" id="flow6">
+            <div class="flow-header" onclick="toggleFlow('flow6')">
+                <h3>FLOW 6: Self-Improvement Loop ⚡ NEW</h3>
+                <span class="flow-toggle">▶</span>
+            </div>
+            <div class="flow-body">
+                <div class="flow-steps">
+                    <div class="flow-step"><div class="flow-step-box start" style="border-color:var(--cyan)"><div class="flow-step-title">🔄 Daily Cycle</div><div class="flow-step-protocols">6 crons</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Integrity Scan</div><div class="flow-step-protocols">1 AM DeepSeek</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Find Issues</div><div class="flow-step-protocols">Stale data? Broken?</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Self-Heal</div><div class="flow-step-protocols">Auto-fix</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box gate"><div class="flow-step-title">⬡ Verify Fix</div><div class="flow-step-protocols">Check output</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box"><div class="flow-step-title">Learn</div><div class="flow-step-protocols">→ Procedural Mem</div></div></div>
+                    <div class="flow-connector">→</div>
+                    <div class="flow-step"><div class="flow-step-box end" style="border-color:var(--cyan)"><div class="flow-step-title">🧠 Improved</div><div class="flow-step-protocols">Next cycle</div></div></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Department Protocol Cards -->
-    <div class="dept-grid">
+    <!-- Department Protocol Cards (Accordion) -->
+    <div class="mind-map">
+        <h2>📂 Protocol Departments <span style="font-size:0.8rem;color:var(--text3);font-weight:normal">(click to expand)</span></h2>
+        
         <!-- RSC -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Research</h3>
-                <span class="dept-code dept-rsc">RSC</span>
+        <div class="branch open">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-rsc">RSC</span>
+                    <span class="branch-title">Research</span>
+                    <span class="branch-count">8 protocols</span>
+                </div>
+                <span class="branch-toggle">▼</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/rsc-001-multi-source-research.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-001</a><span class="protocol-name">Multi-Source Research</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-002-medtech-literature-review.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-002</a><span class="protocol-name">MedTech Literature Review</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-003-competitive-intelligence.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-003</a><span class="protocol-name">Competitive Intelligence</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-004-market-research.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-004</a><span class="protocol-name">Market Research</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-005-book-extraction-synthesis.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-005</a><span class="protocol-name">Book Extraction & Synthesis</span><span class="protocol-status"><span class="status-badge status-active">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-006-web-research-verification.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-006</a><span class="protocol-name">Web Research & Verification</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
-                <div class="protocol-row"><a href="/protocols/rsc-007-ai-system-interrogation.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RSC-007</a><span class="protocol-name">AI System Interrogation</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rsc">RSC</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/rsc-001-multi-source-research.html" class="pid">RSC-001</a><a href="/protocols/rsc-001-multi-source-research.html" class="pname">Multi-Source Research</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-002-medtech-literature-review.html" class="pid">RSC-002</a><a href="/protocols/rsc-002-medtech-literature-review.html" class="pname">MedTech Literature Review</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-003-competitive-intelligence.html" class="pid">RSC-003</a><a href="/protocols/rsc-003-competitive-intelligence.html" class="pname">Competitive Intelligence</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-004-market-research.html" class="pid">RSC-004</a><a href="/protocols/rsc-004-market-research.html" class="pname">Market Research</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-005-book-extraction-synthesis.html" class="pid">RSC-005</a><a href="/protocols/rsc-005-book-extraction-synthesis.html" class="pname">Book Extraction & Synthesis</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-006-web-research-verification.html" class="pid">RSC-006</a><a href="/protocols/rsc-006-web-research-verification.html" class="pname">Web Research & Verification</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-007-ai-system-interrogation.html" class="pid">RSC-007</a><a href="/protocols/rsc-007-ai-system-interrogation.html" class="pname">AI System Interrogation</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rsc">RSC</span></div>
+                <div class="protocol-item"><a href="/protocols/rsc-008-global-deep-research.html" class="pid">RSC-008</a><a href="/protocols/rsc-008-global-deep-research.html" class="pname">Global Deep Research</a><span class="pstatus"><span class="badge badge-new">NEW</span></span><span class="pdept dept-rsc">RSC</span></div>
             </div>
         </div>
 
         <!-- DEV -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Development</h3>
-                <span class="dept-code dept-dev">DEV</span>
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-dev">DEV</span>
+                    <span class="branch-title">Development</span>
+                    <span class="branch-count">7 protocols</span>
+                </div>
+                <span class="branch-toggle">▶</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/dev-001-agent-build-standard.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-001</a><span class="protocol-name">Agent Build Standard</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-002-code-quality-gates.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-002</a><span class="protocol-name">Code Quality Gates</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-003-cron-job-creation.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-003</a><span class="protocol-name">Cron Job Creation</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-004-dashboard-deployment.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-004</a><span class="protocol-name">Dashboard Deployment</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-005-api-integration.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-005</a><span class="protocol-name">API Integration</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-006-security-audit.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-006</a><span class="protocol-name">Security Audit (Lethal Trifecta)</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
-                <div class="protocol-row"><a href="/protocols/dev-007-git-commit-push.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DEV-007</a><span class="protocol-name">Git Commit & Push</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dev">DEV</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/dev-001-agent-build-standard.html" class="pid">DEV-001</a><a href="/protocols/dev-001-agent-build-standard.html" class="pname">Agent Build Standard</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-002-code-quality-gates.html" class="pid">DEV-002</a><a href="/protocols/dev-002-code-quality-gates.html" class="pname">Code Quality Gates</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-003-cron-job-creation.html" class="pid">DEV-003</a><a href="/protocols/dev-003-cron-job-creation.html" class="pname">Cron Job Creation</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-004-dashboard-deployment.html" class="pid">DEV-004</a><a href="/protocols/dev-004-dashboard-deployment.html" class="pname">Dashboard Deployment</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-005-api-integration.html" class="pid">DEV-005</a><a href="/protocols/dev-005-api-integration.html" class="pname">API Integration</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-006-security-audit.html" class="pid">DEV-006</a><a href="/protocols/dev-006-security-audit.html" class="pname">Security Audit (Lethal Trifecta)</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
+                <div class="protocol-item"><a href="/protocols/dev-007-git-commit-push.html" class="pid">DEV-007</a><a href="/protocols/dev-007-git-commit-push.html" class="pname">Git Commit & Push</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dev">DEV</span></div>
             </div>
         </div>
 
         <!-- RPT -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Reporting</h3>
-                <span class="dept-code dept-rpt">RPT</span>
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-rpt">RPT</span>
+                    <span class="branch-title">Reporting</span>
+                    <span class="branch-count">9 protocols</span>
+                </div>
+                <span class="branch-toggle">▶</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/rpt-001-medtech-research-report.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-001</a><span class="protocol-name">MedTech Research Report</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
-                <div class="protocol-row"><a href="/protocols/rpt-002-trading-analysis-report.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-002</a><span class="protocol-name">Trading Analysis Report</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
-                <div class="protocol-row"><a href="/protocols/rpt-003-business-plan.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-003</a><span class="protocol-name">Business Plan</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
-                <div class="protocol-row"><a href="/protocols/rpt-004-presentation-pptx.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-004</a><span class="protocol-name">Presentation (PPTX)</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
-                <div class="protocol-row"><a href="/protocols/rpt-005-daily-brief.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-005</a><span class="protocol-name">Daily Brief</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
-                <div class="protocol-row"><a href="/protocols/rpt-006-weekly-synthesis.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">RPT-006</a><span class="protocol-name">Weekly Synthesis</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-rpt">RPT</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/rpt-001-medtech-research-report.html" class="pid">RPT-001</a><a href="/protocols/rpt-001-medtech-research-report.html" class="pname">MedTech Research Report</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-002-trading-analysis-report.html" class="pid">RPT-002</a><a href="/protocols/rpt-002-trading-analysis-report.html" class="pname">Trading Analysis Report</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-003-business-plan.html" class="pid">RPT-003</a><a href="/protocols/rpt-003-business-plan.html" class="pname">Business Plan</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-004-presentation-pptx.html" class="pid">RPT-004</a><a href="/protocols/rpt-004-presentation-pptx.html" class="pname">Presentation (PPTX)</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-005-daily-brief.html" class="pid">RPT-005</a><a href="/protocols/rpt-005-daily-brief.html" class="pname">Daily Brief</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-006-weekly-synthesis.html" class="pid">RPT-006</a><a href="/protocols/rpt-006-weekly-synthesis.html" class="pname">Weekly Synthesis</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><span class="pid">RPT-007</span><span class="pname">Professional Communications</span><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><span class="pid">RPT-008</span><span class="pname">Report Protocol</span><span class="pstatus"><span class="badge badge-new">NEW</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><span class="pid">RPT-009</span><span class="pname">VOC Call Notes</span><span class="pstatus"><span class="badge badge-new">NEW</span></span><span class="pdept dept-rpt">RPT</span></div>
             </div>
         </div>
 
         <!-- DSN -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Design</h3>
-                <span class="dept-code dept-dsn">DSN</span>
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-dsn">DSN</span>
+                    <span class="branch-title">Design</span>
+                    <span class="branch-count">4 protocols</span>
+                </div>
+                <span class="branch-toggle">▶</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/dsn-001-website-build.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DSN-001</a><span class="protocol-name">Website Build</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
-                <div class="protocol-row"><a href="/protocols/dsn-002-protocol-dashboard-deployment.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DSN-002</a><span class="protocol-name">Dashboard Deployment</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
-                <div class="protocol-row"><a href="/protocols/dsn-003-agent-architecture.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DSN-003</a><span class="protocol-name">Agent Architecture (Mesh)</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
-                <div class="protocol-row"><a href="/protocols/dsn-004-knowledge-graph-design.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">DSN-004</a><span class="protocol-name">Knowledge Graph Design</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-dsn">DSN</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/dsn-001-website-build.html" class="pid">DSN-001</a><a href="/protocols/dsn-001-website-build.html" class="pname">Website Build</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dsn">DSN</span></div>
+                <div class="protocol-item"><a href="/protocols/dsn-002-protocol-dashboard-deployment.html" class="pid">DSN-002</a><a href="/protocols/dsn-002-protocol-dashboard-deployment.html" class="pname">Dashboard Deployment</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dsn">DSN</span></div>
+                <div class="protocol-item"><a href="/protocols/dsn-003-agent-architecture.html" class="pid">DSN-003</a><a href="/protocols/dsn-003-agent-architecture.html" class="pname">Agent Architecture (Mesh)</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dsn">DSN</span></div>
+                <div class="protocol-item"><a href="/protocols/dsn-004-knowledge-graph-design.html" class="pid">DSN-004</a><a href="/protocols/dsn-004-knowledge-graph-design.html" class="pname">Knowledge Graph Design</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-dsn">DSN</span></div>
             </div>
         </div>
 
         <!-- OPS -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Operations</h3>
-                <span class="dept-code dept-ops">OPS</span>
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-ops">OPS</span>
+                    <span class="branch-title">Operations</span>
+                    <span class="branch-count">6 protocols</span>
+                </div>
+                <span class="branch-toggle">▶</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/ops-001-system-health-check.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">OPS-001</a><span class="protocol-name">System Health Check</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-ops">OPS</span></div>
-                <div class="protocol-row"><a href="/protocols/ops-002-incident-response.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">OPS-002</a><span class="protocol-name">Incident Response</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-ops">OPS</span></div>
-                <div class="protocol-row"><a href="/protocols/ops-003-data-pipeline.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">OPS-003</a><span class="protocol-name">Data Pipeline</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-ops">OPS</span></div>
-                <div class="protocol-row"><a href="/protocols/ops-004-backup-recovery.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">OPS-004</a><span class="protocol-name">Backup & Recovery</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-ops">OPS</span></div>
-                <div class="protocol-row"><a href="/protocols/ops-005-cron-maintenance.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">OPS-005</a>
-<a href="/protocols/ops-006-anti-sloppy-work.html" class="protocol-card critical">
-<span class="dept-badge ops">OPS</span>
-<div class="protocol-title">Anti-Sloppy-Work</div>
-<div class="protocol-desc">Forced verification before declaring done. No shortcuts. Read the output or it's not done.</div>
-<div class="protocol-meta"><span class="badge badge-critical">CRITICAL</span> <span class="dept-tag">OPS</span></div>
-</a><span class="protocol-name">Cron Maintenance</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-ops">OPS</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/ops-001-system-health-check.html" class="pid">OPS-001</a><a href="/protocols/ops-001-system-health-check.html" class="pname">System Health Check</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-ops">OPS</span></div>
+                <div class="protocol-item"><a href="/protocols/ops-002-incident-response.html" class="pid">OPS-002</a><a href="/protocols/ops-002-incident-response.html" class="pname">Incident Response</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-ops">OPS</span></div>
+                <div class="protocol-item"><a href="/protocols/ops-003-data-pipeline.html" class="pid">OPS-003</a><a href="/protocols/ops-003-data-pipeline.html" class="pname">Data Pipeline</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-ops">OPS</span></div>
+                <div class="protocol-item"><a href="/protocols/ops-004-backup-recovery.html" class="pid">OPS-004</a><a href="/protocols/ops-004-backup-recovery.html" class="pname">Backup & Recovery</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-ops">OPS</span></div>
+                <div class="protocol-item"><a href="/protocols/ops-005-cron-maintenance.html" class="pid">OPS-005</a><a href="/protocols/ops-005-cron-maintenance.html" class="pname">Cron Maintenance</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-ops">OPS</span></div>
+                <div class="protocol-item"><a href="/protocols/ops-006-anti-sloppy-work.html" class="pid">OPS-006</a><a href="/protocols/ops-006-anti-sloppy-work.html" class="pname">Anti-Sloppy-Work</a><span class="pstatus"><span class="badge badge-critical">CRITICAL</span></span><span class="pdept dept-ops">OPS</span></div>
             </div>
         </div>
 
         <!-- STR -->
-        <div class="dept-card">
-            <div class="dept-card-header">
-                <h3>Strategy</h3>
-                <span class="dept-code dept-str">STR</span>
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-str">STR</span>
+                    <span class="branch-title">Strategy</span>
+                    <span class="branch-count">4 protocols</span>
+                </div>
+                <span class="branch-toggle">▶</span>
             </div>
-            <div class="dept-card-body">
-                <div class="protocol-row"><a href="/protocols/str-001-zero-to-one-audit.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">STR-001</a><span class="protocol-name">Zero to One Audit</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-str">STR</span></div>
-                <div class="protocol-row"><a href="/protocols/str-002-competitive-moat-analysis.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">STR-002</a><span class="protocol-name">Competitive Moat Analysis</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-str">STR</span></div>
-                <div class="protocol-row"><a href="/protocols/str-003-idea-development.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">STR-003</a><span class="protocol-name">Idea Development</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-str">STR</span></div>
-                <div class="protocol-row"><a href="/protocols/str-004-resonance-field-session.html" class="protocol-id" style="text-decoration:none;color:var(--accent2)">STR-004</a><span class="protocol-name">Resonance Field Session</span><span class="protocol-status"><span class="status-badge status-ACTIVE">ACTIVE</span></span><span class="protocol-dept dept-str">STR</span></div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/str-001-zero-to-one-audit.html" class="pid">STR-001</a><a href="/protocols/str-001-zero-to-one-audit.html" class="pname">Zero to One Audit</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-str">STR</span></div>
+                <div class="protocol-item"><a href="/protocols/str-002-competitive-moat-analysis.html" class="pid">STR-002</a><a href="/protocols/str-002-competitive-moat-analysis.html" class="pname">Competitive Moat Analysis</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-str">STR</span></div>
+                <div class="protocol-item"><a href="/protocols/str-003-idea-development.html" class="pid">STR-003</a><a href="/protocols/str-003-idea-development.html" class="pname">Idea Development</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-str">STR</span></div>
+                <div class="protocol-item"><a href="/protocols/str-004-resonance-field-session.html" class="pid">STR-004</a><a href="/protocols/str-004-resonance-field-session.html" class="pname">Resonance Field Session</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-str">STR</span></div>
+            </div>
+        </div>
+
+        <!-- SYS (NEW) -->
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-sys">SYS</span>
+                    <span class="branch-title">System Self-Improvement ⚡ NEW</span>
+                    <span class="branch-count">2 protocols + 6 procedures</span>
+                </div>
+                <span class="branch-toggle">▶</span>
+            </div>
+            <div class="branch-body">
+                <div class="protocol-item"><span class="pid">OPS-006</span><span class="pname">Anti-Sloppy-Work (enforcement)</span><span class="pstatus"><span class="badge badge-critical">CRITICAL</span></span><span class="pdept dept-sys">SYS</span></div>
+                <div class="protocol-item"><span class="pid">Model</span><a href="/protocols/model-routing-guide.html" class="pname">Model Routing Guide v3.1</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-sys">SYS</span></div>
+                <div style="padding: 0.6rem 1.25rem; background: var(--surface2); border-bottom: 1px solid rgba(30,45,61,0.5);">
+                    <div style="font-size: 0.75rem; color: var(--text3); font-weight: 600; margin-bottom: 0.3rem;">📋 PROCEDURAL MEMORY</div>
+                    <div style="font-size: 0.78rem; color: var(--text2);">Daily Note Creation &nbsp;·&nbsp; Cron Path Verification &nbsp;·&nbsp; Verification Before Done &nbsp;·&nbsp; Self-Healing Escalation &nbsp;·&nbsp; Probation Points &nbsp;·&nbsp; Observability Metrics</div>
+                </div>
+                <div style="padding: 0.6rem 1.25rem; background: var(--surface2);">
+                    <div style="font-size: 0.75rem; color: var(--text3); font-weight: 600; margin-bottom: 0.3rem;">🔍 SELF-IMPROVEMENT SYSTEMS</div>
+                    <div style="font-size: 0.78rem; color: var(--text2);">DeepSeek Integrity Scan (nightly) &nbsp;·&nbsp; Known Unknowns Register &nbsp;·&nbsp; Probation Point System &nbsp;·&nbsp; Notification Bridge &nbsp;·&nbsp; Learning Capture (7 entries)</div>
+                </div>
             </div>
         </div>
     </div>
@@ -596,35 +598,28 @@
 </div>
 
 <div class="footer">
-    Lumina Protocol System v1.0 — 6 departments · 33 protocols · 32 written · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a>
+    Lumina Protocol System v2.0 — 7 departments · 40 protocols · 6 procedures · 6 flows · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a><br>
+    <span style="color:var(--text3)">Updated 2026-06-19 — Procedural memory + self-improvement loop + probation points</span>
 </div>
 
 <script>
-// Make protocol-name spans clickable by inheriting href from the preceding protocol-id link
-document.querySelectorAll('.protocol-row').forEach(row => {
-    const link = row.querySelector('.protocol-id');
-    const name = row.querySelector('.protocol-name');
-    if (link && name && name.tagName === 'SPAN') {
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.className = name.className;
-        a.style.textDecoration = 'none';
-        a.style.color = 'var(--text)';
-        a.innerHTML = name.innerHTML;
-        name.replaceWith(a);
+function toggleBranch(header) {
+    const branch = header.parentElement;
+    branch.classList.toggle('open');
+}
+function toggleFlow(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('collapsed');
+    const toggle = el.querySelector('.flow-toggle');
+    if (el.classList.contains('collapsed')) {
+        toggle.textContent = '▶';
+    } else {
+        toggle.textContent = '▼';
     }
-});
-// Make flow chart step boxes clickable (click anywhere in the box opens the link)
-document.querySelectorAll('.process-step-box').forEach(box => {
-    const links = box.querySelectorAll('a[href]');
-    if (links.length > 0) {
-        box.style.cursor = 'pointer';
-        box.addEventListener('click', (e) => {
-            if (e.target.tagName !== 'A') {
-                links[0].click();
-            }
-        });
-    }
+}
+// Open first branch by default, close others
+document.querySelectorAll('.branch').forEach((b, i) => {
+    if (i > 0) b.classList.remove('open');
 });
 </script>
 
