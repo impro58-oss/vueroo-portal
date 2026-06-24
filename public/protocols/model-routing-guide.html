@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Routing Guide v3.1 — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #8b5cf6; --accent-dim: #4c1d95; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tier-block { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+        .tier-t1 { border-left: 3px solid #3b82f6; }
+        .tier-t2 { border-left: 3px solid #ef4444; }
+        .tier-t3 { border-left: 3px solid #22c55e; }
+        .tier-t5 { border-left: 3px solid #eab308; }
+        .tier-t6 { border-left: 3px solid #f97316; }
+        code { background: var(--surface); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+        .core-rule { background: var(--accent-dim); border: 2px solid var(--accent); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; }
+        .core-rule strong { color: var(--accent); }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>SYS</strong> (System Self-Improvement)</p>
+            <p>Version: 3.1 &middot; Created: 2026-06-10 &middot; Updated: 2026-06-18</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>Model Routing Guide v3.1</h1>
+
+        <div class="core-rule">
+            <strong>Rule:</strong> NEVER add <code>model:</code> field to cron job payloads — causes <code>LiveSessionModelSwitchError</code>. Routing is via prompt <code>[ROUTING: ...]</code> hint only.
+        </div>
+
+        <h2>Model Tier Overview</h2>
+
+        <table>
+            <tr><th>Tier</th><th>Model</th><th>Type</th><th>Cost</th><th>Best For</th></tr>
+            <tr><td><strong>T1</strong></td><td><code>glm-5.1:cloud</code></td><td>Cloud</td><td>Low</td><td>Lumina primary — orchestration, Roo-facing output, decisions</td></tr>
+            <tr><td><strong>T1h</strong></td><td><code>claude-haiku-4-5</code></td><td>Cloud</td><td>Low-Med</td><td>Warm, fast, 200K context. Fallback for T1, coach mode</td></tr>
+            <tr><td><strong>T1f</strong></td><td><code>claude-sonnet-4-6</code></td><td>Cloud</td><td>Medium</td><td>AP mode / deep synthesis (Roo-triggered only)</td></tr>
+            <tr><td><strong>T2</strong></td><td><code>deepseek-v4-pro:cloud</code></td><td>Cloud</td><td>Low¹</td><td><strong>MYTHOS ENGINE</strong> — 1M context, deep research, multi-file analysis</td></tr>
+            <tr><td><strong>T3</strong></td><td><code>deepseek-v4-flash:cloud</code></td><td>Cloud</td><td>Very Low</td><td>Summaries, briefs, short outputs. 1M context, 384K output</td></tr>
+            <tr><td><strong>T3b</strong></td><td><code>gpt-4o-mini</code></td><td>Cloud</td><td>Low</td><td>Alternative T3 — cheap, structured output</td></tr>
+            <tr><td><strong>T4</strong></td><td><code>kimi-k2.5:cloud</code></td><td>Cloud</td><td>Low</td><td>Fallback / secondary verification</td></tr>
+            <tr><td><strong>T5</strong></td><td><code>llama3:latest</code></td><td>Local</td><td><strong>Free</strong></td><td>Script execution, file ops, simple tasks</td></tr>
+            <tr><td><strong>T6</strong></td><td><code>gpt-oss:20b</code></td><td>Local</td><td><strong>Free</strong></td><td>Overnight heavy batch — no time pressure</td></tr>
+            <tr><td><strong>T7</strong></td><td><code>o3</code></td><td>Cloud</td><td>High</td><td>Adversarial review, complex math/stats, pre-mortem</td></tr>
+            <tr><td><strong>T8</strong></td><td><code>gpt-4o</code></td><td>Cloud</td><td>Medium</td><td>Image generation, visual reports, multimodal</td></tr>
+            <tr><td><strong>T9</strong></td><td><code>gpt-4o-search-preview</code></td><td>Cloud</td><td>Medium</td><td>Web-grounded research, real-time data, cited answers</td></tr>
+            <tr><td><strong>T10</strong></td><td><code>whisper-1 / gpt-4o-transcribe</code></td><td>Cloud</td><td>Low</td><td>Audio → text, voice memo → Obsidian pipeline</td></tr>
+        </table>
+
+        <h2>Cron Job Routing Map</h2>
+
+        <div class="tier-block tier-t1">
+            <h3>🔵 T1 — glm-5.1:cloud (Lumina Direct)</h3>
+            <p>Direct session / systemEvent jobs — run in the main session.</p>
+            <ul>
+                <li>Self-Healing Monitor (every 2h)</li>
+                <li>Dashboard Health Check (every 6h)</li>
+            </ul>
+        </div>
+
+        <div class="tier-block tier-t3">
+            <h3>🟢 T3 — deepseek-v4-flash:cloud</h3>
+            <p>Fast summaries, briefs, short outputs — isolated agentTurn jobs.</p>
+            <ul>
+                <li>Morning Brief + Talk Points (8am daily)</li>
+                <li>Proactive Intelligence — Morning (8am daily)</li>
+                <li>Proactive Intelligence — Afternoon Check (2pm daily)</li>
+                <li>Synaptic Evening Check-in (7:30pm daily)</li>
+                <li>Evening Synthesis (9:30pm daily)</li>
+                <li>Obsidian Dashboard Daily Update (6am daily)</li>
+                <li>Polymarket Daily Scan (12pm daily)</li>
+            </ul>
+        </div>
+
+        <div class="tier-block tier-t2">
+            <h3>🔴 T2 — deepseek-v4-pro:cloud (MYTHOS ENGINE)</h3>
+            <p>1M context, 384K output, $0.435/$0.87 per M tokens. Mythos-class capability at 1/23rd the cost of Fable 5.</p>
+            <ul>
+                <li>Mythos Deep Research (on-demand)</li>
+                <li>MedTech VOC Deep Analysis (on-demand)</li>
+                <li>Multi-File Code Review (on-demand)</li>
+                <li>Synaptic Thinking Cycle (7am daily)</li>
+                <li>CryptoVue 4-batch scanner (every 6h)</li>
+                <li>TrojanVue Paper Trader (every 6h)</li>
+                <li>TradingView Scans (every 6h)</li>
+                <li>REG + Engine2 Tuning Research (Mon/Thu 10am)</li>
+                <li>LotteryVue Research + Pre-Draws (scheduled)</li>
+                <li>Weekly Vault Review (Sun 10am)</li>
+                <li>Continuous Learning Weekly Synthesis (Sun 8pm)</li>
+            </ul>
+        </div>
+
+        <div class="tier-block tier-t5">
+            <h3>🟡 T5 — llama3:latest (Local Free)</h3>
+            <p>Pure execution — file ops, script runs, zero reasoning required.</p>
+            <ul>
+                <li>Brain Feeding Protocol (3am daily)</li>
+                <li>System Backup (2am daily)</li>
+                <li>Skills Index Vault Sync (Sun midnight)</li>
+                <li>Weekly Chat Summarizer (Mon 9am)</li>
+                <li>LotteryVue Scoring + Scrapers (scheduled)</li>
+            </ul>
+        </div>
+
+        <div class="tier-block tier-t6">
+            <h3>🟠 T6 — gpt-oss:20b (Local Heavy, Overnight Only)</h3>
+            <p>13GB+ model, CPU-only (~90s/response) — overnight batch only.</p>
+            <ul>
+                <li>Graphify Quest Vault (Sun 3am)</li>
+                <li>Professional Intelligence Sync (11pm UTC)</li>
+            </ul>
+        </div>
+
+        <h2>Routing Decision Tree</h2>
+
+        <div class="tier-block">
+            <ol>
+                <li><strong>systemEvent (main session)?</strong> → Already T1 (glm-5.1). No change.</li>
+                <li><strong>Isolated agentTurn?</strong>
+                    <ul>
+                        <li>Need MYTHOS-ENGINE (>50K context, multi-file, autonomous)? → <strong>T2 (deepseek-v4-pro)</strong></li>
+                        <li>Deep reasoning needed? → <strong>T2 (deepseek-v4-pro)</strong></li>
+                        <li>Short summary/brief (<200 words)? → <strong>T3 (deepseek-v4-flash)</strong></li>
+                        <li>Pure script execution, minimal reasoning?
+                            <ul>
+                                <li>Time-sensitive → <strong>T5 (llama3)</strong></li>
+                                <li>Overnight/no rush → <strong>T6 (gpt-oss:20b)</strong></li>
+                            </ul>
+                        </li>
+                        <li>Fallback/verification? → <strong>T4 (kimi-k2.5)</strong></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h2>Mythos-Mode Architecture</h2>
+
+        <p>Mythos-Mode gives Lumina <strong>1M+ effective context</strong>, multi-day autonomous work, and self-validation without Fable 5's cost or availability restrictions.</p>
+
+        <ul>
+            <li><strong>COMPASS.md</strong> (5K) — Auto-generated session orientation. "Where am I, what happened, what's next."</li>
+            <li><strong>Context Rollover</strong> — When context fills past 80%, compress and archive to checkpoint, reload fresh.</li>
+            <li><strong>DeepSeek-V4-Pro as Mythos Engine</strong> — T2 for deep analysis (1M context, 384K output).</li>
+            <li><strong>Multi-Day Agent Protocol</strong> — Cron-spawned subagents: read checkpoint → work → write checkpoint → exit.</li>
+            <li><strong>Recursive Excellence</strong> — OPS-006 self-validation replaces Fable 5's built-in reflection.</li>
+        </ul>
+
+        <p><strong>Cost comparison:</strong></p>
+        <table>
+            <tr><th>System</th><th>Input/Output per M</th><th>Effective Cost</th></tr>
+            <tr><td>Fable 5</td><td>$10/$50</td><td>Benchmark</td></tr>
+            <tr><td>Mythos-Mode (DeepSeek-V4-Pro)</td><td>$0.435/$0.87</td><td><strong>1/23rd of Fable 5</strong></td></tr>
+        </table>
+
+        <h2>Cost Efficiency Summary</h2>
+        <table>
+            <tr><th>Before Routing</th><th>After Routing</th></tr>
+            <tr><td>All jobs default to main session model</td><td>Batch/execution jobs → local (free)</td></tr>
+            <tr><td>~200-300K tokens/day credit burn</td><td>Estimated saving: ~40-60% cloud tokens</td></tr>
+            <tr><td>Local models sitting idle</td><td>gpt-oss:20b + llama3 doing background work</td></tr>
+        </table>
+
+        <div class="ref">
+            <p>¹ DeepSeek-V4-Pro promotional pricing: $0.435/M input (cache miss), $0.003625/M cache hits, $0.87/M output. Subject to change.</p>
+            <p>Last updated: 2026-06-18 — Mythos-Mode architecture added</p>
+        </div>
+    </div>
+</body>
+</html>
