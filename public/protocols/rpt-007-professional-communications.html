@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPT-007 Professional Communications Protocol — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #3b82f6; --accent-dim: #1e3a5f; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        h4 { font-size: 0.95rem; margin: 1.25rem 0 0.4rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        .core-rule { background: var(--accent-dim); border: 2px solid var(--accent); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; }
+        .core-rule strong { color: var(--accent); }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .checklist { list-style: none; margin-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--accent); }
+        .template-box { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin: 0.75rem 0; font-size: 0.9rem; }
+        .template-box p { margin: 0.25rem 0; }
+        .anti-pattern { background: rgba(59,130,246,0.06); }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        .rev-table th, .rev-table td { font-size: 0.85rem; }
+        .path-model { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; margin: 0.5rem 0; font-family: 'Courier New', monospace; font-size: 0.9rem; text-align: center; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>RPT</strong> (Reporting) — <em>Professional Communications</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-16 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>RPT-007: Professional Communications Protocol</h1>
+
+        <div class="core-rule">
+            <strong>Seek first to understand, then to be understood.</strong> Speak persuasively, not abrasively. Make it safe.
+        </div>
+
+        <h2>Overview</h2>
+        <p>This protocol integrates two evidence-based communication frameworks:</p>
+        <ol>
+            <li><strong>Crucial Conversations</strong> — For high-stakes, emotionally charged discussions where opinions differ</li>
+            <li><strong>The 7 Habits of Highly Effective People</strong> — For principled, character-based communication</li>
+        </ol>
+
+        <h2>Use Case A: Team Jay (Legal Communications)</h2>
+
+        <h3>Context</h3>
+        <p>Communications with legal team in the United States regarding ongoing matters requiring coordination, updates, and strategic alignment.</p>
+
+        <h3>The STATE Path — Before Sending</h3>
+
+        <h4>S — Share Your Facts</h4>
+        <ul>
+            <li>Lead with observable data, not interpretations</li>
+            <li>Use specific dates, numbers, document references</li>
+            <li><strong>Template:</strong> "On [DATE], [EVENT OCCURRED]. The documents show..."</li>
+        </ul>
+
+        <h4>T — Tell Your Story</h4>
+        <ul>
+            <li>Explain your interpretation of the facts</li>
+            <li>Distinguish facts from inferences</li>
+            <li><strong>Template:</strong> "My understanding is..." or "I'm interpreting this as..."</li>
+        </ul>
+
+        <h4>A — Ask for Others' Paths</h4>
+        <ul>
+            <li>Invite their perspective before defending yours</li>
+            <li><strong>Template:</strong> "How do you see this?" or "What am I missing?"</li>
+        </ul>
+
+        <h4>T — Talk Tentatively</h4>
+        <ul>
+            <li>Use conditional language: "I could be wrong, but..."</li>
+            <li>Acknowledge uncertainty: "It appears that..."</li>
+        </ul>
+
+        <h4>E — Encourage Testing</h4>
+        <ul>
+            <li>Invite pushback: "What's the flaw in this reasoning?"</li>
+            <li>Make it safe to disagree</li>
+        </ul>
+
+        <h3>Safety Protocols for Legal Communications</h3>
+        <p>When emotions run high or stakes increase:</p>
+        <ol>
+            <li><strong>Step Out</strong> — Acknowledge when safety is at risk</li>
+            <li><strong>Make It Safe</strong> — Use one of:
+                <ul>
+                    <li><strong>Apologize:</strong> "I'm sorry I wasn't clear about..."</li>
+                    <li><strong>Contrast:</strong> "I don't mean X, I do mean Y..."</li>
+                    <li><strong>Find Mutual Purpose:</strong> "We both want to..."</li>
+                </ul>
+            </li>
+            <li><strong>Step Back In</strong> — Return to the issue only when safety is restored</li>
+        </ol>
+
+        <h3>Legal Communication Checklist</h3>
+        <p>Before sending any communication to Team Jay:</p>
+        <ul class="checklist">
+            <li>Have I stated the facts clearly, without embellishment?</li>
+            <li>Have I distinguished facts from my interpretations?</li>
+            <li>Have I invited their perspective?</li>
+            <li>Am I speaking tentatively where certainty doesn't exist?</li>
+            <li>Have I made it safe to disagree or provide critical feedback?</li>
+            <li>Is my tone respectful and professional?</li>
+            <li>Have I reviewed for any reactive/emotional language?</li>
+        </ul>
+
+        <h3>Legal Email Structure</h3>
+        <div class="template-box">
+            <p><strong>Subject:</strong> [Matter] — [Specific Action/Update] — [Date]</p>
+            <br>
+            <p><strong>1. CONTEXT (Facts)</strong></p>
+            <p>[2-3 sentences on what happened, when, and what documents apply]</p>
+            <br>
+            <p><strong>2. MY UNDERSTANDING/INTERPRETATION</strong></p>
+            <p>[How I'm reading this situation — tentative language]</p>
+            <br>
+            <p><strong>3. REQUEST FOR INPUT</strong></p>
+            <p>[Specific question or invitation for their perspective]</p>
+            <p>"How do you see this?"</p>
+            <p>"What am I missing?"</p>
+            <p>"Is there another way to interpret this?"</p>
+            <br>
+            <p><strong>4. PROPOSED PATH FORWARD</strong> (if applicable)</p>
+            <p>[Optional: suggestion with invitation for modification]</p>
+            <p>"I was thinking we might... but open to your guidance."</p>
+            <br>
+            <p><strong>5. CLOSING</strong></p>
+            <p>Professional acknowledgment of their expertise and time.</p>
+        </div>
+
+        <h2>Use Case B: Physician &amp; External Outreach</h2>
+
+        <h3>Context</h3>
+        <p>Communications to physicians and external stakeholders for professional relationship building, collaboration requests, and information exchange.</p>
+
+        <h3>The Emotional Bank Account (Covey)</h3>
+        <p>Every interaction either makes a deposit or withdrawal:</p>
+        <table>
+            <thead><tr><th>Deposits</th><th>Withdrawals</th></tr></thead>
+            <tbody>
+                <tr><td>Keeping commitments</td><td>Breaking promises</td></tr>
+                <tr><td>Clarifying expectations</td><td>Creating ambiguity</td></tr>
+                <tr><td>Attending to small things</td><td>Neglecting details</td></tr>
+                <tr><td>Showing personal integrity</td><td>Being duplicitous</td></tr>
+                <tr><td>Apologizing sincerely</td><td>Being defensive or prideful</td></tr>
+                <tr><td>Seeking first to understand</td><td>Seeking first to be understood</td></tr>
+                <tr><td>Being kind/courteous</td><td>Being harsh/discourteous</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Habit 5: Seek First to Understand, Then to Be Understood</h3>
+
+        <h4>Before Outreach — Research &amp; Preparation</h4>
+        <ul>
+            <li>What are their priorities?</li>
+            <li>What pressures do they face?</li>
+            <li>What value can you genuinely offer them?</li>
+            <li>What common ground exists?</li>
+        </ul>
+
+        <h4>Diagnose Before You Prescribe</h4>
+        <ol>
+            <li>Listen to understand, not to reply</li>
+            <li>Reflect back what you heard</li>
+            <li>Confirm understanding before sharing your view</li>
+        </ol>
+
+        <h3>Outreach Communication Structure</h3>
+        <div class="template-box">
+            <p><strong>Subject:</strong> [Specific, relevant subject line]</p>
+            <br>
+            <p><strong>1. CONNECTION POINT</strong></p>
+            <p>Brief acknowledgment of their work/expertise/commitment</p>
+            <p>"I recently read your paper on..."</p>
+            <p>"Your approach to [topic] resonates with..."</p>
+            <br>
+            <p><strong>2. MUTUAL PURPOSE FRAME</strong></p>
+            <p>Establish why this matters to both parties</p>
+            <p>"We share an interest in..."</p>
+            <p>"Given your work in X and my focus on Y, there may be..."</p>
+            <br>
+            <p><strong>3. SPECIFIC REQUEST</strong> (if any)</p>
+            <p>Clear, respectful, time-bounded</p>
+            <p>"Would you be open to a 15-minute conversation about...?"</p>
+            <p>"I'm curious about your perspective on..."</p>
+            <br>
+            <p><strong>4. VALUE EXCHANGE</strong></p>
+            <p>What do they gain? (Even if just intellectual interest)</p>
+            <br>
+            <p><strong>5. GRACEFUL EXIT</strong></p>
+            <p>Easy "out" that preserves relationship regardless of response</p>
+            <p>"No obligation — I know your time is valuable."</p>
+            <p>"If this isn't the right time, I completely understand."</p>
+        </div>
+
+        <h3>Anti-Patterns to Avoid</h3>
+        <table>
+            <thead><tr><th>Pattern</th><th>Why It Fails</th><th>Alternative</th></tr></thead>
+            <tbody>
+                <tr class="anti-pattern"><td>Long introductory paragraphs</td><td>Physicians are busy</td><td>Lead with the ask, then context</td></tr>
+                <tr class="anti-pattern"><td>Excessive flattery</td><td>Feels transactional</td><td>Genuine, specific acknowledgment</td></tr>
+                <tr class="anti-pattern"><td>Hidden agenda</td><td>Breaks trust</td><td>Be transparent about purpose</td></tr>
+                <tr class="anti-pattern"><td>No clear ask</td><td>Wastes their time</td><td>One specific, bounded request</td></tr>
+                <tr class="anti-pattern"><td>Pushy follow-up</td><td>Withdraws from bank account</td><td>Patient, value-first approach</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Universal Principles (Both Use Cases)</h2>
+
+        <h3>Start with Heart (Covey)</h3>
+        <p>Before communicating, ask:</p>
+        <ul>
+            <li>What do I really want for myself?</li>
+            <li>What do I really want for the other person?</li>
+            <li>What do I really want for the relationship?</li>
+            <li>How would I behave if I really wanted these results?</li>
+        </ul>
+
+        <h3>Learn to Look (Crucial Conversations)</h3>
+        <p>Watch for signs that safety is at risk:</p>
+        <ul>
+            <li><strong>Silence:</strong> Withholding, masking, avoiding</li>
+            <li><strong>Violence:</strong> Controlling, labeling, attacking</li>
+        </ul>
+        <p>When you see these, stop. Make it safe. Then continue.</p>
+
+        <h3>Master Your Stories</h3>
+        <p>Path to Action model:</p>
+        <div class="path-model">See/Hear → Tell Story → Feel → Act</div>
+        <p>When triggered, retrace your path:</p>
+        <ol>
+            <li>What am I doing? (silence or violence?)</li>
+            <li>What am I feeling?</li>
+            <li>What story am I telling?</li>
+            <li>What are the actual facts?</li>
+        </ol>
+        <p>Then tell a more complete, generous story.</p>
+
+        <h3>Move to Action</h3>
+        <p>All communications should end with clarity on:</p>
+        <ul>
+            <li>Who does what?</li>
+            <li>By when?</li>
+            <li>How will we follow up?</li>
+        </ul>
+
+        <h2>Pre-Send Checklist (Universal)</h2>
+        <ul class="checklist">
+            <li><strong>Purpose clear:</strong> Do I know what I really want?</li>
+            <li><strong>Safety check:</strong> Would they feel safe disagreeing?</li>
+            <li><strong>Facts separated from stories:</strong> Have I distinguished observation from interpretation?</li>
+            <li><strong>Invitation present:</strong> Have I asked for their view?</li>
+            <li><strong>Tentative tone:</strong> Am I speaking as if I could be wrong?</li>
+            <li><strong>Value clear:</strong> What's in this for them?</li>
+            <li><strong>Win-win possible:</strong> Is this about mutual benefit?</li>
+            <li><strong>Action defined:</strong> Is next step clear?</li>
+        </ul>
+
+        <h2>Emergency Protocol: When Conversations Go Wrong</h2>
+        <p>If a communication triggers defensiveness or conflict:</p>
+        <ol>
+            <li><strong>Stop</strong> — Don't escalate</li>
+            <li><strong>Apologize</strong> — For impact, not intent</li>
+            <li><strong>Contrast</strong> — Clarify what you don't/do mean</li>
+            <li><strong>Recommit</strong> — To mutual purpose</li>
+            <li><strong>Invite</strong> — Their perspective again</li>
+        </ol>
+
+        <h2>References</h2>
+        <ul>
+            <li>Patterson, K., Grenny, J., McMillan, R., &amp; Switzler, A. (2002). <em>Crucial Conversations: Tools for Talking When Stakes Are High</em>. McGraw-Hill.</li>
+            <li>Covey, S. R. (1989). <em>The 7 Habits of Highly Effective People</em>. Free Press.</li>
+        </ul>
+
+        <h2>Revision History</h2>
+        <table class="rev-table">
+            <thead><tr><th>Date</th><th>Version</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>2026-06-16</td><td>1.0</td><td>Initial protocol created from book synthesis</td></tr>
+            </tbody>
+        </table>
+
+        <div class="ref">
+            <p><em>Protocol status: ACTIVE — Apply to all professional communications</em></p>
+        </div>
+    </div>
+</body>
+</html>
