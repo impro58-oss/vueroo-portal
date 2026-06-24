@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythos-Mode Agent Chains — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #06b6d4; --accent-dim: #155e75; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>SYS</strong> (System) — <em>Agent Architecture</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-18 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>Mythos-Mode: Multi-Day Agent Protocol</h1>
+        <p>Chaining subagent runs across cron cycles to simulate multi-day autonomous work</p>
+
+        <h2>What This Is</h2>
+        <p>A system for chaining subagent runs across cron cycles to simulate multi-day autonomous work. Inspired by Fable 5's ability to run agents for days unattended using file-based memory.</p>
+
+        <h2>How It Works</h2>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+Cycle 1:
+  Cron triggers → Spawn DeepSeek-V4-Pro subagent
+  Subagent reads checkpoint_001.md → does work → writes checkpoint_002.md → exits
+
+Cycle 2:
+  Cron triggers → Spawn DeepSeek-V4-Pro subagent
+  Subagent reads checkpoint_002.md → continues work → writes checkpoint_003.md → exits
+
+Cycle N:
+  Continues until task is marked COMPLETE in checkpoint
+  Or: Lumina reviews checkpoints and decides to stop
+            </pre>
+        </div>
+        <p>Each cycle is a fresh subagent session with 1M context. The checkpoint file is the persistent memory between cycles.</p>
+
+        <h2>Checkpoint Format</h2>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+# Agent Checkpoint — [TASK_NAME]
+
+**Checkpoint #:** N
+**Task:** [description of the overall task]
+**Phase:** [research/analysis/synthesis/review/complete]
+**Status:** [in-progress/complete/blocked]
+**Previous checkpoint:** checkpoint_N-1.md (or "none" for first)
+**Next action:** [what the next cycle should do]
+**Context used:** ~X% (estimate)
+
+---
+
+## Work Completed This Cycle
+[Detailed description of what was accomplished]
+
+## Key Findings
+[Bullet points of findings]
+
+## Files Created/Modified
+- path/to/file1 — description
+
+## Decisions Made
+[Any decisions that affect future cycles]
+
+## Errors/Blockers
+[Anything that went wrong or needs human input]
+
+## Next Cycle Instructions
+[Explicit instructions for what the next subagent should do]
+            </pre>
+        </div>
+
+        <h2>Spawning a Mythos-Mode Agent Chain</h2>
+
+        <h3>Via Cron (Automated)</h3>
+        <p>Create a cron job with:</p>
+        <ul>
+            <li><code>sessionTarget</code>: "isolated"</li>
+            <li><code>model</code>: "deepseek-v4-pro:cloud" (NOT in payload — use routing hint)</li>
+            <li><code>payload.kind</code>: "agentTurn"</li>
+            <li><code>payload.message</code>: Start with <code>[ROUTING: MYTHOS-ENGINE]</code> then include task instructions + "Read the latest checkpoint from memory/session-logs/ before starting. If no checkpoint exists, create one."</li>
+        </ul>
+
+        <h3>Via Manual Spawn (Interactive)</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+sessions_spawn(
+  task: "[ROUTING: MYTHOS-ENGINE] [task instructions]. Read latest checkpoint from memory/session-logs/ before starting.",
+  model: "deepseek-v4-pro:cloud",
+  mode: "run"
+)
+            </pre>
+        </div>
+
+        <h3>Continuation Cycle</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+sessions_spawn(
+  task: "[ROUTING: MYTHOS-ENGINE] Continue [TASK_NAME]. Read the latest checkpoint from memory/session-logs/ and continue from where the previous cycle left off. Write a new checkpoint when done.",
+  model: "deepseek-v4-pro:cloud",
+  mode: "run"
+)
+            </pre>
+        </div>
+
+        <h2>Task Types Suitable for Mythos-Mode</h2>
+        <table>
+            <thead><tr><th>Task Type</th><th>Why Mythos-Mode</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>Deep research</td><td>Needs 1M context to load many sources</td><td>MedTech VOC cross-KOL synthesis</td></tr>
+                <tr><td>Multi-file analysis</td><td>Needs to hold entire codebase in context</td><td>Codebase-wide refactoring</td></tr>
+                <tr><td>Long autonomous work</td><td>Needs to persist state across cycles</td><td>Full system audit, multi-day research</td></tr>
+                <tr><td>Complex synthesis</td><td>Needs to reason across many documents</td><td>Annual report from 50+ sources</td></tr>
+                <tr><td>Adversarial review</td><td>Needs deep reasoning for pre-mortem</td><td>Pre-launch security audit</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Rules</h2>
+        <ol>
+            <li><strong>Always read checkpoint first.</strong> If a checkpoint exists, the agent MUST read it before starting work.</li>
+            <li><strong>Always write checkpoint when done.</strong> Even if the task is complete, write a final checkpoint with status: complete.</li>
+            <li><strong>Never lose progress.</strong> If the agent encounters an error, write the checkpoint with status: blocked and explain what happened.</li>
+            <li><strong>Keep checkpoints under 50K chars.</strong> Detailed work goes in separate files; checkpoints are summaries.</li>
+            <li><strong>Use the MYTHOS-ENGINE routing hint.</strong> This ensures the agent gets DeepSeek-V4-Pro with 1M context.</li>
+            <li><strong>Maximum 10 cycles per task.</strong> After 10 cycles, escalate to Roo for review.</li>
+        </ol>
+
+        <h2>Files</h2>
+        <ul>
+            <li><code>memory/session-logs/</code> — Checkpoint directory</li>
+            <li><code>memory/session-logs/agent_[task]_[N].md</code> — Agent chain checkpoints</li>
+            <li><code>scripts/context-rollover.py</code> — Manual checkpoint creation</li>
+            <li><code>scripts/compass-generator.py</code> — COMPASS.md regeneration</li>
+        </ul>
+
+        <div class="ref">
+            <p><em>Part of the Mythos-Mode Architecture. See also: memory/model-routing-guide.md (MYTHOS-ENGINE section)</em></p>
+        </div>
+    </div>
+</body>
+</html>

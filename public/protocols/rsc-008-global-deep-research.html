@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSC-008 Global Deep Research — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #3b82f6; --accent-dim: #1e3a5f; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>RSC</strong> (Research) — <em>Large-Scale Research</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-18 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>RSC-008: Global Deep Research Protocol</h1>
+        <p>Large-scale, multi-phase research projects producing foundational evidence bases for strategic decision-making</p>
+
+        <h2>Purpose</h2>
+        <p>This protocol governs large-scale, multi-phase research projects that produce foundational evidence bases for long-range strategic decisions. It is designed for projects that:</p>
+        <ul>
+            <li>Span multiple geographic regions</li>
+            <li>Require multiple depth levels simultaneously</li>
+            <li>Need a reusable, searchable evidence repository</li>
+            <li>Feed into future-state analysis (Phase 2)</li>
+            <li>Must be defensible, source-referenced, and commercially relevant</li>
+        </ul>
+        <p><strong>This is NOT for quick lookups, single-source answers, or brief summaries.</strong> Use RSC-001 for those.</p>
+
+        <h2>Internal Quality Rubric</h2>
+        <p>Every section of the research must score HIGH on all ten dimensions before the dossier is considered complete:</p>
+        <ol>
+            <li><strong>Source Quality</strong> — Tier 1 sources preferred. Every claim traced to its source.</li>
+            <li><strong>Evidence Hierarchy</strong> — Systematic reviews &gt; RCTs &gt; Cohort studies &gt; Case series &gt; Expert opinion &gt; Market reports.</li>
+            <li><strong>Data Validation</strong> — Cross-referenced across at least 2 sources. Conflicting evidence presented with both sides.</li>
+            <li><strong>Regional Completeness</strong> — Every required region covered at minimum Level 1-2. Gaps explicitly noted.</li>
+            <li><strong>Strategic Relevance</strong> — Every finding answers "What does this mean for device development?"</li>
+            <li><strong>Forecasting Rigor</strong> — Future signals labeled as WEAK SIGNAL, EARLY INDICATOR, or ESTABLISHED TREND.</li>
+            <li><strong>Clinical Accuracy</strong> — All clinical claims verified against guideline sources (AHA/ASA, ESO, WSO, JNIS).</li>
+            <li><strong>Engineering Applicability</strong> — Device landscape includes specific products, manufacturers, and technical specifications.</li>
+            <li><strong>Commercial Relevance</strong> — Market sizes tagged [VERIFIED] or [ESTIMATE]. Reimbursement codes included.</li>
+            <li><strong>Actionability</strong> — Every section ends with strategic implications. The dossier enables decision-making.</li>
+        </ol>
+
+        <h2>Research Depth Levels</h2>
+        <table>
+            <thead><tr><th>Level</th><th>Name</th><th>Focus</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Executive Landscape</td><td>Incidence, prevalence, mortality, disability, economic burden</td></tr>
+                <tr><td>2</td><td>Healthcare Systems</td><td>Infrastructure, centers, EMS, referral pathways, access</td></tr>
+                <tr><td>3</td><td>Treatment Landscape</td><td>Therapies, procedures, approaches, outcomes</td></tr>
+                <tr><td>4</td><td>Device Landscape</td><td>Products, manufacturers, market share, adoption, preferences</td></tr>
+                <tr><td>5</td><td>Clinical Trends</td><td>Guideline evolution, procedure growth, trial influence, training</td></tr>
+                <tr><td>6</td><td>Economic Trends</td><td>Reimbursement, funding, incentives, cost-effectiveness, barriers</td></tr>
+                <tr><td>7</td><td>Future Signals</td><td>Weak signals, early indicators, procedural shifts, tech, care models</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Source Tiers</h2>
+        <table>
+            <thead><tr><th>Tier</th><th>Sources</th><th>Use For</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>PubMed, JAMA, Stroke, Lancet, NEJM, AHA/ASA guidelines, ESO guidelines, WSO, SVIN, SNIS</td><td>Clinical evidence, epidemiology, outcomes data</td></tr>
+                <tr><td>2</td><td>National Stroke Registries, WHO, OECD, CDC, NHS, SSNAP, GWTG-Stroke, government health reports</td><td>Regional data, system performance, infrastructure</td></tr>
+                <tr><td>3</td><td>Investor presentations, market reports (Grand View, Markets and Markets), conference proceedings, white papers</td><td>Market sizing, device landscape, commercial context</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Rule:</strong> Every major claim must cite at least one Tier 1 or Tier 2 source. Tier 3 sources supplement but do not replace Tier 1/2.</p>
+
+        <h2>Literature Collection Standard</h2>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+## Source Entry
+
+**ID:** [unique identifier, e.g., SRC-001]
+**Category:** [Epidemiology / Treatment / Device / Economic / Guideline / Market / Future]
+**Region:** [Global / US / EU / Japan / China / APAC / etc.]
+**Tier:** [1 / 2 / 3]
+**Title:** [full title]
+**Authors:** [first author et al., year]
+**Publication:** [journal name]
+**Date:** [YYYY-MM-DD]
+**DOI:** [doi if available]
+**URL:** [link to source]
+**Access:** [Open Access / Paywall / Abstract Only / Full Text Available]
+**Evidence Strength:** [Systematic Review / RCT / Cohort / Case Series / Expert Opinion / Market Report]
+**Confidence:** [HIGH / MEDIUM / LOW]
+**Key Takeaway:** [1-2 sentences]
+**Strategic Relevance:** [1-2 sentences — what this means for device development]
+            </pre>
+        </div>
+        <p><strong>Minimum target:</strong> 50-100 high-quality sources for a full Phase 1 research project.</p>
+
+        <h2>Research Execution Phases</h2>
+        <h3>Phase 1: Global Landscape Research</h3>
+        <ol>
+            <li>Define scope — regions, depth levels, timeline, strategic lens</li>
+            <li>Build search framework — key terms, MeSH terms, search strings per region per level</li>
+            <li>Execute systematic search — query all tiers, collect and catalog sources</li>
+            <li>Extract and tag — pull claims, assign confidence, tag region/level/category</li>
+            <li>Cross-reference — validate claims across sources, flag conflicts</li>
+            <li>Regional analysis — write each region section with all 7 levels (where data exists)</li>
+            <li>Global synthesis — executive summary, device landscape, knowledge gaps</li>
+            <li>Phase 2 preparation — define key questions for future-state analysis</li>
+            <li>Quality review — score against rubric, refine until all sections score HIGH</li>
+        </ol>
+        <h3>Phase 2: Future State Analysis</h3>
+        <p>Phase 2 is ONLY informed by Phase 1 findings. It does NOT begin until Phase 1 is complete and reviewed by the stakeholder.</p>
+
+        <h2>Session Management</h2>
+        <ul>
+            <li>Create a project file — <code>memory/research/[project-name]/</code> directory</li>
+            <li>Checkpoint after every session — write progress to <code>memory/research/[project-name]/progress.md</code></li>
+            <li>Source database — maintain <code>memory/research/[project-name]/sources.md</code> as a growing evidence repository</li>
+            <li>Use context rollover — when context fills past 80%, create checkpoint via <code>scripts/context-rollover.py</code></li>
+            <li>Regenerate COMPASS — after significant progress, run <code>python scripts/compass-generator.py</code></li>
+        </ul>
+
+        <h2>Quality Gates</h2>
+        <ul class="checklist">
+            <li>Every claim has a source attribution (SRC-XXX format)</li>
+            <li>Every source has a complete entry in the literature database</li>
+            <li>Conflicting evidence is presented with both sides</li>
+            <li>No fabricated data — use UNKNOWN or [0.1 MARKER: no data found]</li>
+            <li>Confidence levels assigned to every major claim</li>
+            <li>Evidence, inference, and speculation are clearly separated</li>
+            <li>Strategic implications stated for every section</li>
+            <li>Regional gaps explicitly noted (not assumed)</li>
+            <li>All 7 depth levels addressed (or gaps noted)</li>
+            <li>Source count meets minimum (50-100)</li>
+        </ul>
+
+        <h2>Error Handling</h2>
+        <table>
+            <thead><tr><th>Error</th><th>Response</th></tr></thead>
+            <tbody>
+                <tr><td>Tier 1 source contradicts Tier 3</td><td>Present Tier 1 as primary, note Tier 3 contradiction</td></tr>
+                <tr><td>No data exists for a region</td><td>Write "NO DATA FOUND" — do NOT estimate from adjacent regions</td></tr>
+                <tr><td>Paywall blocks full text</td><td>Use abstract + existing summaries, note access limitation</td></tr>
+                <tr><td>Source provides conflicting numbers</td><td>Present both, note methodology differences, assign MEDIUM confidence</td></tr>
+                <tr><td>Clinical terminology uncertain</td><td>Use WHO/ICD terminology, cross-reference guideline sources</td></tr>
+                <tr><td>Market data only from company reports</td><td>Tag as [ESTIMATE: company-reported], note potential bias</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Output Format</h2>
+        <ul>
+            <li><strong>Section A:</strong> Global Executive Summary</li>
+            <li><strong>Section B:</strong> Regional Landscape Analysis (separate sections per region)</li>
+            <li><strong>Section C:</strong> Global Device Landscape</li>
+            <li><strong>Section D:</strong> Literature Database (structured evidence repository, min 50-100 sources)</li>
+            <li><strong>Section E:</strong> Knowledge Gaps</li>
+            <li><strong>Section F:</strong> Phase 2 Preparation (key questions only — do NOT perform Phase 2)</li>
+        </ul>
+
+        <h2>Deliverable Standard</h2>
+        <p>The final dossier must be: evidence-based, source-referenced, defensible, executive-ready, R&amp;D relevant, commercially relevant, clinically accurate, and globally informed.</p>
+
+        <h2>File Structure</h2>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+memory/research/[project-name]/
+├── progress.md          # Session progress, checkpoints
+├── sources.md           # Growing literature database
+├── search-strings.md    # Search queries used
+├── section-a-summary.md # Global executive summary
+├── section-b-regions/   # Regional analysis files
+├── section-c-devices.md # Global device landscape
+├── section-d-database.md # Literature database
+├── section-e-gaps.md    # Knowledge gaps
+├── section-f-phase2.md  # Phase 2 preparation questions
+└── rubric-scores.md     # Self-assessment against quality rubric
+            </pre>
+        </div>
+
+        <h2>References</h2>
+        <ul>
+            <li>RSC-001 Multi-Source Research Protocol</li>
+            <li>RSC-002 MedTech Literature Review Protocol</li>
+            <li>RSC-003 Competitive Intelligence Protocol</li>
+            <li>RSC-004 Market Research Protocol</li>
+            <li>RSC-006 Web Research Verification Protocol</li>
+            <li>OPS-006 Anti-Sloppy-Work Protocol</li>
+        </ul>
+
+        <div class="ref">
+            <p><em>Protocol Version 1.0 — Created for the Global Ischemic Stroke Landscape Research project. Next review: After Phase 1 completion.</em></p>
+        </div>
+    </div>
+</body>
+</html>

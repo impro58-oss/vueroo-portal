@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRB-001 Extended Problem Solving — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #14b8a6; --accent-dim: #0f766e; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(20,184,166,0.08); border: 1px solid rgba(20,184,166,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .core-rule { background: #0f766e; border: 2px solid #14b8a6; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; }
+        .core-rule strong { color: #14b8a6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>PRB</strong> (Problem Solving) — <em>Multi-Session Problem Management</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-23 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>PRB-001: Extended Problem Solving Protocol</h1>
+        <p>Gap analysis system for multi-session problems — track Start, Middle, and End</p>
+
+        <div class="core-rule">
+            <strong>Why This Exists:</strong> When you come back to the screen after a night's sleep and see 200 messages of heartbeats and error logs, the context of what we were working on is gone. This protocol ensures that never happens again. Every significant problem has a written Start, Middle, and End — so anyone (including future-you) can pick up exactly where things left off.
+        </div>
+
+        <h2>When to Apply</h2>
+        <p>Apply this protocol when:</p>
+        <ul>
+            <li>A problem will take <strong>more than one session</strong> to solve</li>
+            <li>A problem involves <strong>multiple iterations</strong> of research, testing, or refinement</li>
+            <li>The work involves <strong>routing to other models</strong> (DeepSeek, etc.) whose results need to be captured and tracked</li>
+            <li>The problem is <strong>complex enough</strong> that losing context would mean starting over</li>
+            <li>Roo says "this is a priority task" or "work on this over multiple sessions"</li>
+        </ul>
+        <p><strong>Do NOT apply for:</strong> Single-session tasks (quick fixes, simple queries, routine cron work).</p>
+
+        <h2>Stage 1: START — Define the Problem</h2>
+        <p><strong>Do this ONCE, at the beginning. Write it to Obsidian.</strong></p>
+        <p>Create a project document in the relevant project folder with this structure:</p>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+# [Project Name] — Gap Analysis &amp; Status
+
+**Created:** [date]
+**Last Updated:** [date]
+**Status:** ACTIVE / PAUSED / COMPLETE
+**Priority:** 🔴 CRITICAL / 🟡 HIGH / 🟢 NORMAL
+            </pre>
+        </div>
+        <h3>1.1 The Problem Statement</h3>
+        <ul>
+            <li>What exactly is the problem? (One clear sentence)</li>
+            <li>Why does it matter? (What does solving it unlock?)</li>
+            <li>What's the current baseline? (Numbers, not vibes)</li>
+        </ul>
+        <h3>1.2 Current State (START)</h3>
+        <ul>
+            <li>Where are we right now?</li>
+            <li>What's the metric we're measuring?</li>
+            <li>What's the random baseline / comparison point?</li>
+        </ul>
+        <h3>1.3 Target State (END)</h3>
+        <ul>
+            <li>What does success look like? (Specific, measurable)</li>
+            <li>What metric threshold means "done"?</li>
+            <li>What would regression look like? (What must NOT get worse)</li>
+        </ul>
+        <h3>1.4 Files &amp; Code</h3>
+        <ul>
+            <li>Where does the code live?</li>
+            <li>Where are the results tracked?</li>
+            <li>Where is this document saved?</li>
+        </ul>
+
+        <h2>Stage 2: MIDDLE — Track Progress</h2>
+        <p><strong>Update this EVERY SESSION where work happens on this problem.</strong></p>
+        <h3>2.1 Session Log</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+## Session — [date]
+
+**What was tried:** [approach name, one line]
+**What changed:** [metric before → metric after]
+**What was learned:** [insight, not just output]
+**What's next:** [concrete next step]
+            </pre>
+        </div>
+        <h3>2.2 Results Table</h3>
+        <p>Maintain a running results table with every approach tested:</p>
+        <table>
+            <thead><tr><th>Approach</th><th>Metric A</th><th>Metric B</th><th>Metric C</th><th>Status</th></tr></thead>
+            <tbody>
+                <tr><td>Random baseline</td><td>48.5%</td><td>8.3%</td><td>0.7%</td><td>✅</td></tr>
+                <tr><td>V11 baseline</td><td>...</td><td>...</td><td>...</td><td>✅</td></tr>
+                <tr><td>V11.1+Conc</td><td>59.3%</td><td>11.3%</td><td>1.0%</td><td>✅</td></tr>
+                <tr><td>[Next approach]</td><td>...</td><td>...</td><td>...</td><td>🔄</td></tr>
+            </tbody>
+        </table>
+        <h3>2.3 Decisions Log</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+### Decision — [date]
+**Decision:** [what was decided]
+**Rationale:** [why, based on what data]
+**Alternative considered:** [what else was on the table]
+**Trade-off:** [what we gave up]
+            </pre>
+        </div>
+
+        <h2>Stage 3: END — Close or Pivot</h2>
+        <h3>3.1 Closure</h3>
+        <ul>
+            <li>Did we hit the target? (Yes/No + numbers)</li>
+            <li>What was the final metric improvement?</li>
+            <li>What approach won?</li>
+            <li>What approaches failed and why?</li>
+        </ul>
+        <h3>3.2 Lessons Learned</h3>
+        <ul>
+            <li>What surprised us?</li>
+            <li>What did we waste time on?</li>
+            <li>What would we do differently?</li>
+        </ul>
+        <h3>3.3 Status Change</h3>
+        <ul>
+            <li>Change document status from ACTIVE → COMPLETE or ACTIVE → PAUSED</li>
+            <li>Update MEMORY.md to reflect the new status</li>
+            <li>If COMPLETE: archive learnings to memory/ and Obsidian</li>
+        </ul>
+
+        <h2>Route-to-Research Procedure</h2>
+        <ol>
+            <li><strong>Write the research brief IN the project document</strong> — don't rely on memory</li>
+            <li><strong>Include all current metrics</strong> in the brief — the model needs to know the baseline</li>
+            <li><strong>Specify the output file</strong> — where the research goes (always in <code>memory/</code> with date prefix)</li>
+            <li><strong>Specify the output format</strong> — what sections, what depth, what decisions the research should inform</li>
+            <li><strong>When results arrive:</strong> read them, evaluate them, add to the results table, update the project document</li>
+            <li><strong>Never assume the research will be in context</strong> — it won't be. The project document IS the context.</li>
+        </ol>
+
+        <h2>Route-to-Implementation Procedure</h2>
+        <ol>
+            <li><strong>Read the project document first</strong> — don't start coding from memory</li>
+            <li><strong>Read the research file</strong> — understand what was proposed and why</li>
+            <li><strong>Create a new file</strong> (e.g., <code>v11_2_pair_mining.py</code>) — don't modify working code</li>
+            <li><strong>Backtest before integrating</strong> — run the new approach against 300+ draws</li>
+            <li><strong>Add results to the results table</strong> — no result = no progress</li>
+            <li><strong>Update the project document</strong> — session log, results, decisions</li>
+            <li><strong>Copy to Obsidian</strong> — the project document, the research, the backtest results</li>
+        </ol>
+
+        <h2>Context Rollover Rule</h2>
+        <p>When context is getting full (past 80%):</p>
+        <ol>
+            <li>Run <code>scripts/context-rollover.py</code> to create a checkpoint</li>
+            <li>The checkpoint links to the project document in Obsidian</li>
+            <li>When resuming, read the project document FIRST — it has everything</li>
+            <li>The project document IS the context. Everything else is cache.</li>
+        </ol>
+
+        <h2>Anti-Patterns</h2>
+        <ul>
+            <li>❌ Don't start work without reading the project document. If one doesn't exist, create it first.</li>
+            <li>❌ Don't assume the research brief is in memory. It was written in a session that may be gone.</li>
+            <li>❌ Don't skip the results table. If you can't show before/after numbers, you can't show progress.</li>
+            <li>❌ Don't declare a problem solved without hitting the target metric. "Improved" ≠ "solved."</li>
+            <li>❌ Don't work on multiple approaches simultaneously. One at a time, test, record, decide.</li>
+            <li>❌ Don't lose the thread. Every session that touches this problem MUST update the project document.</li>
+        </ul>
+
+        <h2>Cross-References</h2>
+        <ul>
+            <li><strong>OPS-006</strong> (Anti-Sloppy-Work): Applies to every deliverable.</li>
+            <li><strong>RSC-001</strong> (Multi-Source Research): Use when the problem needs external research.</li>
+            <li><strong>DEV-001</strong> (Agent Build): If the solution requires building an agent.</li>
+            <li><strong>RPT-001</strong> (MedTech Research Report): If the output is a formal report.</li>
+            <li><strong>DEV-005</strong> (Pre-Execution Plan): Before executing complex work, plan first.</li>
+        </ul>
+
+        <div class="ref">
+            <p><em>Protocol created 2026-06-23 following context loss incident. The problem was clear when started, but 200 heartbeat messages cleared the context. The project document in Obsidian was the recovery point. This protocol makes that pattern systematic.</em></p>
+        </div>
+    </div>
+</body>
+</html>

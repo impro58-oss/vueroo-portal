@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Protocol v1 — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #06b6d4; --accent-dim: #155e75; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>SYS</strong> (System) — <em>Design Framework</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-24 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>Web Design Protocol — pARXYS Framework v1.0</h1>
+        <p>Standardized approach for building world-class websites, reusable for pARXYS and any future project</p>
+
+        <h2>1. The Law of Proximity</h2>
+        <blockquote style="border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1rem 0; color: var(--muted); font-style: italic;">
+            "If you want to be really good at something, you've got to get yourself exposed to other people or things that are really good in that area."
+        </blockquote>
+        <p><strong>Before starting ANY website build, spend 15-30 minutes browsing award-winning sites.</strong> Don't just look — analyze. Ask: Why those colors? Why that spacing? Why that font? Why that layout?</p>
+
+        <h3>Mandatory inspiration sources (check at least 3 before designing):</h3>
+        <ol>
+            <li><strong>Godly</strong> (godly.website) — Best for scroll animations, interaction design, premium feel</li>
+            <li><strong>Awwwards</strong> (awwwards.com) — Best for overall site excellence, judged by professionals</li>
+            <li><strong>CSS Design Awards</strong> (cssdesignawards.com) — Best for UI/UX/Innovation scoring</li>
+            <li><strong>Site of Sites</strong> (siteofsites.co) — Best for curated, detailed presentations with builder info</li>
+            <li><strong>Landbook</strong> (land-book.com) — Best for component-level search (testimonials, CTAs, etc.)</li>
+            <li><strong>Unsection</strong> (unsection.com) — Best for individual section layout inspiration</li>
+        </ol>
+        <p><strong>Category-specific sources:</strong> Commerce Cream (e-commerce), Killer Portfolio (portfolios), Minimal Gallery (minimal), Fonts in Use (typography), Hoverstates (interaction), Brutalist Websites (experimental).</p>
+
+        <h2>2. What to Look For (4 Pillars)</h2>
+
+        <h3>Pillar 1: Typography</h3>
+        <ul>
+            <li>What font for headers? What font for body?</li>
+            <li>Are they from the same family or contrasting?</li>
+            <li><strong>Rule:</strong> Maximum 2 typefaces. One for display/headlines, one for body</li>
+            <li><strong>Weight variation:</strong> Use 3-4 weights of the same font (Light, Regular, Medium, Bold) rather than mixing families</li>
+        </ul>
+
+        <h3>Pillar 2: Color Palette</h3>
+        <ul>
+            <li>Every site uses a <strong>60/30/10 color split</strong>: 60% dominant (background), 30% secondary (sections/cards), 10% accent (CTAs/highlights)</li>
+            <li>One color for ALL buttons — instant recognition</li>
+            <li>Dark mode is dominant in award-winning sites — premium feel</li>
+        </ul>
+
+        <h3>Pillar 3: Layout Design</h3>
+        <ul>
+            <li>Use consistent spacing system: <strong>8px base unit</strong> (8, 16, 24, 32, 48, 64, 80, 96, 120)</li>
+            <li>Generous whitespace = premium feel. Tight spacing = budget feel.</li>
+            <li>Section-by-section thinking: don't design the whole page at once</li>
+        </ul>
+
+        <h3>Pillar 4: Animation</h3>
+        <ul>
+            <li>Hover effects on buttons and links</li>
+            <li>Scroll-triggered animations (fade in, slide up)</li>
+            <li>Background animations (subtle gradients, particle effects)</li>
+            <li><strong>Rule:</strong> Animation should enhance, never distract.</li>
+        </ul>
+
+        <h2>3. Award-Winning Site Patterns</h2>
+        <h3>Hero Section</h3>
+        <ul>
+            <li>Full-viewport height (100vh) or near-full</li>
+            <li>Centered content with generous padding</li>
+            <li>One bold headline + one subline + one CTA</li>
+            <li>Background: dark gradient, video, or abstract visual</li>
+        </ul>
+        <h3>Feature Cards</h3>
+        <ul>
+            <li>2-3 column grid on desktop, single column on mobile</li>
+            <li>Cards with subtle border (1px rgba), not heavy boxes</li>
+            <li>Hover: translateY(-4px) + subtle shadow</li>
+        </ul>
+        <h3>How It Works</h3>
+        <ul>
+            <li>Numbered steps (1, 2, 3) in a circle/gradient badge</li>
+            <li>Step title + description + detail line</li>
+            <li>Vertical layout (not horizontal timeline)</li>
+        </ul>
+        <h3>Social Proof</h3>
+        <ul>
+            <li>Logo bar (brands that trust us)</li>
+            <li>Testimonial cards with photo + name + role</li>
+            <li>Stats counter (X users, Y countries, Z satisfaction %)</li>
+        </ul>
+        <h3>Waitlist/CTA</h3>
+        <ul>
+            <li>Dark background section (carbon/near-black)</li>
+            <li>Centered content with email input + button on same row</li>
+            <li>"Sold out" or "Limited" badge above headline</li>
+        </ul>
+        <h3>Footer</h3>
+        <ul>
+            <li>Minimal: copyright + one link</li>
+            <li>No heavy navigation footer for landing pages</li>
+        </ul>
+
+        <h2>4. Build Process (Step-by-Step)</h2>
+        <ol>
+            <li><strong>Inspiration Board (15 min)</strong> — Browse 3-5 sites, save 3-5 screenshots, note specific elements</li>
+            <li><strong>Brand Definition (5 min)</strong> — Primary color (60%), secondary (30%), accent (10%), display font, body font, background, feel</li>
+            <li><strong>Structure (5 min)</strong> — Hero, Features, How it works, Social proof, Principles, Waitlist, Footer</li>
+            <li><strong>Build (60 min)</strong> — Start with structure, then colors/fonts/spacing, then hover effects/animations, then responsive</li>
+            <li><strong>Quality Check (10 min)</strong> — Visual hierarchy, 60/30/10 rule, button consistency, spacing grid, premium feel</li>
+        </ol>
+
+        <h2>5. Technical Standards</h2>
+        <h3>Typography</h3>
+        <ul>
+            <li>Headlines: Display font, <code>clamp(32px, 5vw, 56px)</code>, weight 300-600</li>
+            <li>Subheadlines: Display font, <code>clamp(18px, 2.5vw, 22px)</code>, weight 400</li>
+            <li>Body: Body font, 15-17px, weight 400, line-height 1.6-1.7</li>
+            <li>Labels: Body font, 11-13px, weight 600, letter-spacing 1.5-3px, uppercase</li>
+        </ul>
+        <h3>Spacing</h3>
+        <ul>
+            <li>Base unit: 8px</li>
+            <li>Section padding: 80-120px vertical, 40-48px horizontal</li>
+            <li>Card padding: 32-40px</li>
+        </ul>
+        <h3>Responsive Breakpoints</h3>
+        <ul>
+            <li>Mobile: &lt; 768px (single column, stacked)</li>
+            <li>Tablet: 768-1024px (2 columns)</li>
+            <li>Desktop: &gt; 1024px (3 columns, full layout)</li>
+        </ul>
+        <h3>Animation</h3>
+        <ul>
+            <li>Hover transforms: translateY(-2px to -6px) + shadow</li>
+            <li>Scroll animations: Intersection Observer, fade-in-up</li>
+            <li>Transition timing: 0.3s ease for hovers, 0.6s ease for page transitions</li>
+        </ul>
+
+        <h2>6. Resource Library</h2>
+        <h3>Font Pairings</h3>
+        <table>
+            <thead><tr><th>Display</th><th>Body</th><th>Feel</th></tr></thead>
+            <tbody>
+                <tr><td>Sora</td><td>Inter</td><td>Technical, modern</td></tr>
+                <tr><td>DM Sans</td><td>Inter</td><td>Clean, minimal</td></tr>
+                <tr><td>Playfair Display</td><td>Inter</td><td>Premium, editorial</td></tr>
+                <tr><td>Space Grotesk</td><td>Inter</td><td>Geometric, tech</td></tr>
+                <tr><td>Cormorant Garamond</td><td>Inter</td><td>Elegant, spiritual</td></tr>
+                <tr><td>Syne</td><td>Inter</td><td>Bold, creative</td></tr>
+                <tr><td>Instrument Serif</td><td>Inter</td><td>Classic, refined</td></tr>
+            </tbody>
+        </table>
+        <h3>Color Palettes</h3>
+        <table>
+            <thead><tr><th>Theme</th><th>Primary (60%)</th><th>Secondary (30%)</th><th>Accent (10%)</th><th>Text</th></tr></thead>
+            <tbody>
+                <tr><td>Dark Tech</td><td>#0A0A1A</td><td>#1A1A2E</td><td>#6366F1</td><td>#FAF8F5</td></tr>
+                <tr><td>Warm Premium</td><td>#FAF8F5</td><td>#F5F0EB</td><td>#C87832</td><td>#1A1A2E</td></tr>
+                <tr><td>Deep Professional</td><td>#0F1B3D</td><td>#1A2A5E</td><td>#C87832</td><td>#FAF8F5</td></tr>
+                <tr><td>Spiritual</td><td>#1B1464</td><td>#2A1F8A</td><td>#D4A843</td><td>#FDF8F0</td></tr>
+                <tr><td>Minimal Light</td><td>#FFFFFF</td><td>#F5F3F0</td><td>#000000</td><td>#1A1A1A</td></tr>
+                <tr><td>Neon Dark</td><td>#0A0A0A</td><td>#141414</td><td>#00FF88</td><td>#E0E0E0</td></tr>
+            </tbody>
+        </table>
+
+        <h2>7. Self-Check Before Declaring Done</h2>
+        <ul class="checklist">
+            <li>Does every section have clear visual hierarchy?</li>
+            <li>Is the 60/30/10 color rule followed?</li>
+            <li>Are all buttons the same color and style?</li>
+            <li>Is spacing on the 8px grid?</li>
+            <li>Does it look premium? (Compare to 3 Awwwards winners)</li>
+            <li>Are hover effects consistent across all interactive elements?</li>
+            <li>Does it work on mobile? (Check at 375px, 768px, 1024px, 1440px)</li>
+            <li>Is the waitlist/CTA section visually distinct from the rest?</li>
+            <li>Would you submit this to Awwwards honestly?</li>
+            <li>Load time under 3 seconds on 4G?</li>
+        </ul>
+
+        <div class="ref">
+            <p><em>Protocol Version: 1.0 — Based on: Self-Made Web Designer 38 Resources + CSS Design Awards winners analysis. Reusable for pARXYS framework and all future projects.</em></p>
+        </div>
+    </div>
+</body>
+</html>

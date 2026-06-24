@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPT-009 VOC Call Notes — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #a855f7; --accent-dim: #581c87; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>RPT</strong> (Reporting) — <em>Voice of Customer</em></p>
+            <p>Version: 1.0 &middot; Created: 2026-06-18 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>RPT-009: VOC Call Notes Protocol</h1>
+        <p>Post-Interview Summary Document</p>
+
+        <h2>Purpose</h2>
+        <p>Transform raw VOC interview transcripts into structured, professional summary documents that capture key insights, quotes, and actionable intelligence for upstream marketing and R&amp;D teams.</p>
+
+        <h2>When to Use</h2>
+        <ul>
+            <li>After completing a physician VOC interview</li>
+            <li>Processing raw transcript text into usable intelligence</li>
+            <li>Creating deliverable summary for stakeholders</li>
+            <li>Documenting KOL feedback for competitive intelligence</li>
+        </ul>
+
+        <h2>Pre-Processing Requirements</h2>
+
+        <h3>Tone &amp; Formatting Standards (MANDATORY)</h3>
+        <p>Per SOUL.md v3.1:</p>
+        <ul>
+            <li>Write prose without bullets, numbered lists, or excessive bolding unless explicitly requested</li>
+            <li>Bullets (if used) should be 1-2 sentences minimum — not single words or fragments</li>
+            <li>Use the minimum formatting needed for clarity</li>
+            <li>Natural tone over structured formatting unless content is truly multifaceted</li>
+        </ul>
+
+        <h3>Device Name Normalization (MANDATORY)</h3>
+        <p><strong>Before processing any VOC transcript:</strong></p>
+        <ol>
+            <li>Load <code>memory/wp-product-names-reference.json</code></li>
+            <li>Run <code>wp_product_normalizer.py</code> to scan for device names</li>
+            <li>Apply all corrections to match official WP spelling</li>
+            <li>Document any corrections in the "Notes" section</li>
+        </ol>
+        <p><strong>Critical spellings:</strong></p>
+        <ul>
+            <li><strong>p48</strong>, <strong>p64</strong> (lowercase p, no hyphen)</li>
+            <li><strong>pNOVUS</strong>, <strong>pCONUS</strong>, <strong>pEGASUS</strong>, <strong>pRESET</strong>, <strong>pRELAX</strong>, <strong>pITA</strong>, <strong>pORTAL</strong> (lowercase p)</li>
+            <li><strong>Avenir</strong> (capitalized, no prefix)</li>
+            <li><strong>Esperance</strong> (capitalized, no prefix)</li>
+            <li><strong>phenox</strong> (lowercase, company name)</li>
+            <li><strong>HPC</strong>, <strong>ATUS</strong>, <strong>MW</strong>, <strong>LT</strong> (uppercase suffixes, space before)</li>
+        </ul>
+        <p>See: <code>memory/wp-product-names-reference.md</code> for full list.</p>
+
+        <h3>Input Files</h3>
+        <table>
+            <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td>Raw transcript (.txt)</td><td>Source conversation text</td></tr>
+                <tr><td>Physician profile</td><td>Context on who they are</td></tr>
+                <tr><td>Interview objectives</td><td>What we needed to learn</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Document Structure (MANDATORY)</h2>
+
+        <h3>Header Block</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+VOC Call Notes — [Physician Name]
+[Date]
+
+Attendees:
+&bull; [Interviewer 1], [Title], [Company]
+&bull; [Interviewer 2], [Title], [Company]
+&bull; [Physician Name], [Title], [Institution], [Location]
+
+Meeting Objective:
+[1-2 sentence summary of why this meeting occurred]
+            </pre>
+        </div>
+
+        <h3>Opening Paragraph</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+This report details an upstream marketing meeting between [Names] from
+[Company] and Dr. [Name], a highly respected Key Opinion Leader (KOL) in
+[Specialty] from [Institution] in [Location]. The primary objective was
+[to establish collaboration / gather feedback on X / understand Y].
+
+Here's a breakdown of the key discussion points:
+            </pre>
+        </div>
+
+        <h3>Numbered Sections</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+1. [Topic Name]:
+
+&bull; [Key point with attribution if relevant]
+&bull; [Key point with specific quote or detail]
+&bull; [Key point with numerical data if mentioned]
+            </pre>
+        </div>
+
+        <h3>Closing Section</h3>
+        <div class="highlight-box">
+            <pre style="font-size:0.8rem;color:var(--muted);white-space:pre-wrap;">
+Conclusion &amp; Next Steps:
+
+[Summary of what was achieved and what happens next]
+            </pre>
+        </div>
+
+        <h2>Content Standards</h2>
+        <h3>DO</h3>
+        <ul>
+            <li>Capture <strong>specific quotes</strong> where impactful</li>
+            <li>Include <strong>numerical data</strong> (percentages, volumes, counts)</li>
+            <li>Attribute <strong>specific device names</strong> and <strong>competitor mentions</strong></li>
+            <li>Note <strong>pain points</strong> and <strong>unmet needs</strong></li>
+            <li>Document <strong>collaboration opportunities</strong></li>
+            <li>Include <strong>next steps</strong> or <strong>action items</strong></li>
+            <li>Use <strong>professional, summary language</strong> (not raw transcript)</li>
+        </ul>
+        <h3>DO NOT</h3>
+        <ul>
+            <li>Copy-paste raw transcript</li>
+            <li>Include small talk, technical difficulties, or tangents</li>
+            <li>Leave ambiguous statements without clarification</li>
+            <li>Omit negative feedback or criticisms</li>
+            <li>Use informal language or slang from conversation</li>
+        </ul>
+
+        <h2>Section Organization (Standard Order)</h2>
+        <table>
+            <thead><tr><th>Order</th><th>Section</th><th>When to Include</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Meeting Purpose &amp; Collaboration</td><td>Always</td></tr>
+                <tr><td>2</td><td>Device/Topic A</td><td>Based on conversation flow</td></tr>
+                <tr><td>3</td><td>Device/Topic B</td><td>Based on conversation flow</td></tr>
+                <tr><td>4</td><td>Device/Topic C</td><td>Based on conversation flow</td></tr>
+                <tr><td>5</td><td>Emerging Therapies/Future Interest</td><td>If discussed</td></tr>
+                <tr><td>6</td><td>Competitive Intelligence</td><td>If mentioned</td></tr>
+                <tr><td>7</td><td>Conclusion &amp; Next Steps</td><td>Always</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Style Guide</h2>
+        <h3>Font</h3>
+        <ul>
+            <li><strong>Default:</strong> Aptos (Microsoft's modern sans-serif, replaces Calibri)</li>
+            <li><strong>Size:</strong> 11pt for body text</li>
+            <li><strong>Backup:</strong> Calibri if Aptos unavailable</li>
+        </ul>
+        <h3>Paragraph Styles</h3>
+        <table>
+            <thead><tr><th>Element</th><th>Style</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>Opening paragraph</td><td>First Paragraph</td><td>"This report details..."</td></tr>
+                <tr><td>Section headers</td><td>Body Text (bold)</td><td>"<strong>1. Flow Diverters:</strong>"</td></tr>
+                <tr><td>Bullet points</td><td>Compact</td><td>"• Key point"</td></tr>
+                <tr><td>Sub-bullets</td><td>Compact (indented)</td><td>"– Supporting detail"</td></tr>
+                <tr><td>Conclusion</td><td>First Paragraph</td><td>"Conclusion &amp; Next Steps:"</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Quality Gates</h2>
+        <h3>Gate 1: Completeness</h3>
+        <ul class="checklist">
+            <li>All major topics from conversation captured?</li>
+            <li>Specific devices/competitors named?</li>
+            <li>Numerical data included where mentioned?</li>
+            <li>Quotes captured for key insights?</li>
+        </ul>
+        <h3>Gate 2: Accuracy</h3>
+        <ul class="checklist">
+            <li>Physician name and institution correct?</li>
+            <li>Attendees listed correctly?</li>
+            <li>No misattributed statements?</li>
+            <li>Technical details accurate?</li>
+        </ul>
+        <h3>Gate 3: Professionalism</h3>
+        <ul class="checklist">
+            <li>Raw transcript converted to professional summary?</li>
+            <li>Informal language removed?</li>
+            <li>Tangents and small talk excluded?</li>
+            <li>Document formatted correctly?</li>
+        </ul>
+        <h3>Gate 4: Actionability</h3>
+        <ul class="checklist">
+            <li>Next steps documented?</li>
+            <li>Collaboration opportunities noted?</li>
+            <li>Pain points clearly identified?</li>
+            <li>Competitive intelligence captured?</li>
+        </ul>
+
+        <h2>File Naming Convention</h2>
+        <table>
+            <thead><tr><th>Type</th><th>Pattern</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td>Raw transcript</td><td><code>VOC - [LastName].txt</code></td><td><code>VOC - Dr Lamin.txt</code></td></tr>
+                <tr><td>Call notes (Word)</td><td><code>VOC - [LastName] Call Notes YYYY-MM-DD.docx</code></td><td><code>VOC - Dr Lamin Call Notes 2026-05-27.docx</code></td></tr>
+                <tr><td>Call notes (PDF)</td><td><code>VOC - [LastName] Call Notes YYYY-MM-DD.pdf</code></td><td><code>VOC - Dr Lamin Call Notes 2026-05-27.pdf</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Delivery Requirements</h2>
+        <h3>Output Files</h3>
+        <ol>
+            <li><strong>Word document (.docx)</strong> — editable version</li>
+            <li><strong>PDF (.pdf)</strong> — distribution version</li>
+        </ol>
+        <h3>Storage Locations</h3>
+        <ul>
+            <li>Primary: <code>F:/1- Upstream Marketing (USB)/2 - Work Started/1 - Weekly Layouts/WK[XX]/[Physician Name] VOC/</code></li>
+            <li>Backup: Obsidian vault <code>20-Areas/MedTech-NeuroVue/VOC-Intelligence/</code></li>
+        </ul>
+
+        <h2>Revision History</h2>
+        <table>
+            <thead><tr><th>Date</th><th>Version</th><th>Changes</th></tr></thead>
+            <tbody>
+                <tr><td>2026-06-18</td><td>1.0</td><td>Initial protocol based on Dr Lamin example analysis</td></tr>
+            </tbody>
+        </table>
+
+        <div class="ref">
+            <p><em>Protocol Status: ACTIVE — Apply to all VOC call notes preparation</em></p>
+        </div>
+    </div>
+</body>
+</html>

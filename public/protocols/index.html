@@ -173,6 +173,7 @@
         .dept-ops { background: rgba(236,72,153,0.15); color: var(--pink); }
         .dept-str { background: rgba(20,184,166,0.15); color: var(--teal); }
         .dept-sys { background: rgba(6,182,212,0.15); color: var(--cyan); }
+        .dept-prb { background: rgba(20,184,166,0.15); color: var(--teal); }
         
         .footer { text-align: center; padding: 2rem; color: var(--text2); font-size: 0.75rem; border-top: 1px solid var(--border); }
         
@@ -192,9 +193,9 @@
     <h1>Lumina <span>Protocol System</span></h1>
     <p>Standardized operating procedures — same work, same way, fewer errors</p>
     <div class="meta">
-        <div class="meta-item"><strong>7</strong> Departments</div>
-        <div class="meta-item"><strong>40</strong> Protocols</div>
-        <div class="meta-item"><strong>39</strong> Written</div>
+        <div class="meta-item"><strong>8</strong> Departments</div>
+        <div class="meta-item"><strong>48</strong> Protocols</div>
+        <div class="meta-item"><strong>47</strong> Written</div>
         <div class="meta-item"><strong>6</strong> End-to-End Flows</div>
         <div class="meta-item"><strong>3</strong> Quality Gates</div>
         <div class="meta-item">Updated: <strong>2026-06-19</strong></div>
@@ -206,7 +207,7 @@
     <!-- Stats -->
     <div class="stats-bar">
         <div class="stat-card">
-            <div class="stat-value" style="color:var(--green)">39</div>
+            <div class="stat-value" style="color:var(--green)">47</div>
             <div class="stat-label">Written</div>
         </div>
         <div class="stat-card">
@@ -214,7 +215,7 @@
             <div class="stat-label">Critical</div>
         </div>
         <div class="stat-card">
-            <div class="stat-value" style="color:var(--cyan)">7</div>
+            <div class="stat-value" style="color:var(--cyan)">8</div>
             <div class="stat-label">Departments</div>
         </div>
         <div class="stat-card">
@@ -497,7 +498,7 @@
                 <div class="branch-header-left">
                     <span class="branch-code dept-rpt">RPT</span>
                     <span class="branch-title">Reporting</span>
-                    <span class="branch-count">9 protocols</span>
+                    <span class="branch-count">10 protocols</span>
                 </div>
                 <span class="branch-toggle">▶</span>
             </div>
@@ -509,8 +510,9 @@
                 <div class="protocol-item"><a href="/protocols/rpt-005-daily-brief.html" class="pid">RPT-005</a><a href="/protocols/rpt-005-daily-brief.html" class="pname">Daily Brief</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
                 <div class="protocol-item"><a href="/protocols/rpt-006-weekly-synthesis.html" class="pid">RPT-006</a><a href="/protocols/rpt-006-weekly-synthesis.html" class="pname">Weekly Synthesis</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
                 <div class="protocol-item"><span class="pid">RPT-007</span><span class="pname">Professional Communications</span><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
-                <div class="protocol-item"><span class="pid">RPT-008</span><span class="pname">Report Protocol</span><span class="pstatus"><span class="badge badge-new">NEW</span></span><span class="pdept dept-rpt">RPT</span></div>
-                <div class="protocol-item"><span class="pid">RPT-009</span><span class="pname">VOC Call Notes</span><span class="pstatus"><span class="badge badge-new">NEW</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-008-voc-interview-prep.html" class="pid">RPT-008</a><a href="/protocols/rpt-008-voc-interview-prep.html" class="pname">VOC Interview Preparation</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-009-voc-call-notes.html" class="pid">RPT-009</a><a href="/protocols/rpt-009-voc-call-notes.html" class="pname">VOC Call Notes</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
+                <div class="protocol-item"><a href="/protocols/rpt-010-injury-journal-report.html" class="pid">RPT-010</a><a href="/protocols/rpt-010-injury-journal-report.html" class="pname">Injury Journal Report</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-rpt">RPT</span></div>
             </div>
         </div>
 
@@ -570,19 +572,37 @@
             </div>
         </div>
 
+        <!-- PRB (NEW) -->
+        <div class="branch">
+            <div class="branch-header" onclick="toggleBranch(this)">
+                <div class="branch-header-left">
+                    <span class="branch-code dept-prb">PRB</span>
+                    <span class="branch-title">Problem Solving</span>
+                    <span class="branch-count">1 protocol</span>
+                </div>
+                <span class="branch-toggle">▶</span>
+            </div>
+            <div class="branch-body">
+                <div class="protocol-item"><a href="/protocols/prb-001-extended-problem-solving.html" class="pid">PRB-001</a><a href="/protocols/prb-001-extended-problem-solving.html" class="pname">Extended Problem Solving</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-prb">PRB</span></div>
+            </div>
+        </div>
+
         <!-- SYS (NEW) -->
         <div class="branch">
             <div class="branch-header" onclick="toggleBranch(this)">
                 <div class="branch-header-left">
                     <span class="branch-code dept-sys">SYS</span>
-                    <span class="branch-title">System Self-Improvement ⚡ NEW</span>
-                    <span class="branch-count">2 protocols + 6 procedures</span>
+                    <span class="branch-title">System + Special Protocols</span>
+                    <span class="branch-count">5 protocols + 6 procedures</span>
                 </div>
                 <span class="branch-toggle">▶</span>
             </div>
             <div class="branch-body">
                 <div class="protocol-item"><span class="pid">OPS-006</span><span class="pname">Anti-Sloppy-Work (enforcement)</span><span class="pstatus"><span class="badge badge-critical">CRITICAL</span></span><span class="pdept dept-sys">SYS</span></div>
                 <div class="protocol-item"><span class="pid">Model</span><a href="/protocols/model-routing-guide.html" class="pname">Model Routing Guide v3.1</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-sys">SYS</span></div>
+                <div class="protocol-item"><a href="/protocols/protocol-mythos-mode-agent-chains.html" class="pid">SYS-01</a><a href="/protocols/protocol-mythos-mode-agent-chains.html" class="pname">Mythos-Mode Agent Chains</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-sys">SYS</span></div>
+                <div class="protocol-item"><a href="/protocols/protocol-image-generation-api.html" class="pid">SYS-02</a><a href="/protocols/protocol-image-generation-api.html" class="pname">Image Generation API</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-sys">SYS</span></div>
+                <div class="protocol-item"><a href="/protocols/protocol-web-design-v1.html" class="pid">SYS-03</a><a href="/protocols/protocol-web-design-v1.html" class="pname">Web Design Framework v1</a><span class="pstatus"><span class="badge badge-active">ACTIVE</span></span><span class="pdept dept-sys">SYS</span></div>
                 <div style="padding: 0.6rem 1.25rem; background: var(--surface2); border-bottom: 1px solid rgba(30,45,61,0.5);">
                     <div style="font-size: 0.75rem; color: var(--text3); font-weight: 600; margin-bottom: 0.3rem;">📋 PROCEDURAL MEMORY</div>
                     <div style="font-size: 0.78rem; color: var(--text2);">Daily Note Creation &nbsp;·&nbsp; Cron Path Verification &nbsp;·&nbsp; Verification Before Done &nbsp;·&nbsp; Self-Healing Escalation &nbsp;·&nbsp; Probation Points &nbsp;·&nbsp; Observability Metrics</div>
@@ -598,8 +618,8 @@
 </div>
 
 <div class="footer">
-    Lumina Protocol System v2.0 — 7 departments · 40 protocols · 6 procedures · 6 flows · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a><br>
-    <span style="color:var(--text3)">Updated 2026-06-19 — Procedural memory + self-improvement loop + probation points</span>
+    Lumina Protocol System v2.0 — 8 departments · 48 protocols · 6 procedures · 6 flows · <a href="https://vueroo.com" style="color:var(--accent2)">vueroo.com</a><br>
+    <span style="color:var(--text3)">Updated 2026-06-24 — Added RPT-008/009/010, RSC-008, PRB-001, Mythos-Mode, Image Gen, Web Design</span>
 </div>
 
 <script>

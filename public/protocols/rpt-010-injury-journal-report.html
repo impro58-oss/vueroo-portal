@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPT-010 Injury Journal Report — vueroo.com</title>
+    <style>
+        :root { --bg: #0a0a0a; --surface: #141414; --border: #262626; --accent: #a855f7; --accent-dim: #581c87; --text: #e5e5e5; --muted: #737373; --green: #22c55e; --yellow: #eab308; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-active { background: var(--green); color: #0a0a0a; }
+        .badge-critical { background: #ef4444; color: white; }
+        .meta { color: var(--muted); font-size: 0.85rem; margin: 1rem 0; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--text); }
+        h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; color: var(--text); }
+        p { margin: 0.5rem 0; }
+        ul, ol { margin: 0.5rem 0 0.5rem 1.5rem; }
+        li { margin: 0.3rem 0; }
+        li::marker { color: var(--muted); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .ref { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+        code { background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.85rem; }
+        .highlight-box { background: rgba(168,85,247,0.08); border: 1px solid rgba(168,85,247,0.3); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "☐ "; color: var(--muted); }
+        .core-rule { background: #581c87; border: 2px solid #a855f7; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; font-size: 1.05rem; line-height: 1.6; }
+        .core-rule strong { color: #a855f7; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/protocols/">&larr; Back to Protocol Dashboard</a>
+
+        <div class="meta">
+            <p>Department: <strong>RPT</strong> (Reporting) — <em>Legal Documentation</em></p>
+            <p>Version: 4.0 &middot; Created: 2026-06-19 &middot; Last Updated: 2026-06-19 &middot; Owner: Lumina</p>
+            <p>Status: <span class="badge badge-active">ACTIVE</span></p>
+        </div>
+
+        <h1>RPT-010: Injury Journal Report Protocol</h1>
+        <p>Standardized protocol for creating and updating injury journal reports for legal documentation</p>
+
+        <div class="core-rule">
+            <strong>PRE-FLIGHT CHECK:</strong> Before creating or updating ANY injury journal report — read the previous version first. The previous report IS the ground truth. Check it first, then update.
+        </div>
+
+        <h2>0. Pre-Flight Check (MANDATORY)</h2>
+        <p><strong>Before creating or updating ANY injury journal report:</strong></p>
+        <ol>
+            <li><strong>Read the previous version of the report.</strong> Open the most recent <code>.docx</code> file in <code>C:\Users\impro\Documents\NYC accident information\</code>. Read its full structure, sections, and content. The previous report is the canonical baseline — all updates build from it.</li>
+            <li><strong>Read the Costs &amp; Payments Ledger.</strong> Open <code>NYC Accident Costs &amp; Payments Ledger.xlsx</code>. Every row must appear in the medical care log.</li>
+            <li><strong>Read all source journal files</strong> for the weeks being added or updated.</li>
+            <li><strong>Do NOT start from scratch.</strong> The previous report contains verified content, correct formatting, and cross-referenced data. Copy its structure and extend it.</li>
+        </ol>
+
+        <h2>1. Trigger</h2>
+        <p>When Roo provides new week(s) of injury journal entries, or requests an update to the existing injury journal report.</p>
+
+        <h2>2. Source Material Rules</h2>
+        <ul>
+            <li><strong>ONLY use what Roo provides and what exists in the NYC accident information folder</strong></li>
+            <li>Raw journal text is the ONLY truth</li>
+            <li>NEVER add symptoms, dates, or descriptions that aren't in the source</li>
+            <li>If a day has no entry, mark it as "No entry" — do not infer</li>
+            <li>If a symptom description is unclear, preserve it verbatim rather than interpreting</li>
+            <li><strong>MANDATORY:</strong> Before marking any day as "NO ENTRY", check ALL available sources (weekly journal text files, legal documentation, week folders, doctor visit notes, medical records, memory logs)</li>
+            <li><strong>Color scheme:</strong> Dark blue (#1E3A5F) for emphasis, headings, and important notes. No red text anywhere. Yellow backgrounds for present symptoms in tables. Grey backgrounds for absent symptoms. Neutral, factual language at all times.</li>
+        </ul>
+
+        <h2>3. Report Structure (CANONICAL FORMAT)</h2>
+        <ol>
+            <li><strong>Title Page</strong> — R. WARD / INJURY JOURNAL / Contemporaneous Record for Jacobson Law Legal Counsel. Patient details: Robert Ward, Incident 13 May 2026, Times Square NYC, struck by bus. Journal period, last updated date, classification: PRIVILEGED. "ORIGINAL CONTEMPORANEOUS RECORD — VERBATIM ENTRIES PRESERVED". NOTE: Do NOT include Date of Birth on the title page or in the report.</li>
+            <li><strong>Table of Contents</strong> — Numbered section list</li>
+            <li><strong>Section 1: Executive Summary</strong> — Paragraph overview of incident and key findings. Include total medical costs. Neutral MRI language.</li>
+            <li><strong>Section 2: Physiotherapy Report — Clinical Findings (Rep_RW260526)</strong> — Patient details, subjective findings, objective findings, assessment, treatment note.</li>
+            <li><strong>Section 3: Week 1 — Raw Journal (Days 1-7)</strong> — Verbatim entries with day numbers and dates.</li>
+            <li><strong>Section 4: Week 2 — Raw Journal (Days 8-15)</strong> — Same format.</li>
+            <li><strong>Section 5: Week 3 — Raw Journal (Days 16-24)</strong> — Same format.</li>
+            <li><strong>Section 6: Week 4 — Raw Journal (Days 25-34)</strong> — Same format. Add week pattern summary at end.</li>
+            <li><strong>Section 7: Symptom Progression Timeline</strong> — LANDSCAPE orientation. Symptoms across top (columns), dates down side (rows). Standard 12 columns.</li>
+            <li><strong>Section 8: Medical Care Received</strong> — Table with 5 columns: Date, Provider, Type, Findings/Treatment, Cost|Paid|Receipt. Cross-referenced against the Costs &amp; Payments Ledger.</li>
+            <li><strong>Section 9: Payments &amp; Expenses</strong> — Leave blank for spreadsheet image. Add summary line.</li>
+            <li><strong>Section 10: Key Symptoms for Legal Emphasis</strong> — 10 key symptoms with full detail.</li>
+            <li><strong>Section 11: Red Flag Symptoms</strong> — Bullet list of escalating/worsening symptoms.</li>
+            <li><strong>Section 12: Documentation Checklist</strong> — 3-column table: Document, Description, Obtained (YES/PENDING).</li>
+        </ol>
+
+        <h2>4. Symptom Table Design</h2>
+        <p><strong>MANDATORY format:</strong> Symptoms across top, dates down side.</p>
+        <table>
+            <thead><tr><th>Date</th><th>Day</th><th>Body Pain</th><th>Tinnitus</th><th>Eye Pain</th><th>Neck</th><th>Sleep</th><th>Cognitive</th><th>Balance</th><th>Heart</th><th>Numbness</th><th>Capacity</th></tr></thead>
+            <tbody>
+                <tr><td>May 13</td><td>1</td><td>8/10 all over</td><td>—</td><td>Present</td><td>Clicks</td><td>None</td><td>Confused</td><td>—</td><td>—</td><td>—</td><td>~10%</td></tr>
+                <tr><td>May 14</td><td>2</td><td>Full body</td><td>—</td><td>—</td><td>—</td><td>None</td><td>—</td><td>—</td><td>—</td><td>—</td><td>~15%</td></tr>
+            </tbody>
+        </table>
+        <p><strong>Standard columns (in order):</strong> Date, Day, Body Pain, Tinnitus, Eye Pain/Pressure, Neck/Cervical, Sleep, Cognitive, Balance/Vestibular, Heart/Palpitations, Numbness/Paresthesia, Functional Capacity.</p>
+        <p><strong>Cell rules:</strong> Use severity scores when provided (e.g., "6/10"). Use "—" for absent symptoms. Keep cell content under 40 characters for PDF fitting. Use footnotes for detail.</p>
+
+        <h2>5. Output Formats</h2>
+        <ul>
+            <li><strong>DOCX</strong> — Primary format (legal documentation for attorneys)</li>
+            <li><strong>PDF</strong> — Final format for filing (generated from DOCX)</li>
+            <li>Build script: <code>scripts/build-injury-journal-v5.py</code> (current version)</li>
+        </ul>
+
+        <h2>5b. pARXYS Branding (MANDATORY — All Reports)</h2>
+        <p>All reports generated by pARXYS MUST include:</p>
+        <ol>
+            <li><strong>Title Page:</strong> "Prepared by: pARXYS — parxys.com" (replaces "Lumina for R. Ward")</li>
+            <li><strong>Title Page Footer:</strong> "Generated by pARXYS — parxys.com" in italic medium blue below the source line</li>
+            <li><strong>Final Section — "About This Document":</strong> Full pARXYS branding page with heading, body, tagline, description, link, and closing</li>
+        </ol>
+
+        <h2>6. Verification</h2>
+        <ul class="checklist">
+            <li>Every symptom in the table MUST trace to a verbatim quote in the raw journal</li>
+            <li>Every date MUST match the raw journal</li>
+            <li>If a date has no journal entry, mark "No entry provided"</li>
+            <li>Cross-reference medical care log against doctor/physio visit dates in the journal</li>
+            <li>Cross-reference medical care log against the Costs &amp; Payments Ledger</li>
+            <li>Verify PDF renders correctly with table fitting on page (landscape for symptom table)</li>
+            <li>Read the previous report before updating — verify no content was lost</li>
+        </ul>
+
+        <h2>7. File Naming</h2>
+        <p><code>R.Ward-Injury-Journal-WK[n]-WK[m]-v[X].docx</code> (e.g., WK1-WK4-v4). Increment version number when updating. Keep previous versions — do not delete them.</p>
+
+        <h2>8. Source Material Location</h2>
+        <p><code>C:\Users\impro\Documents\NYC accident information\</code></p>
+        <ul>
+            <li>Week 1: <code>R.Ward Weekly Journal 1.txt</code></li>
+            <li>Week 2: <code>R.Ward Weekly Journal 2 FULL.txt</code> (in "Week 2 (25-05 to 31-05)" folder)</li>
+            <li>Week 3: <code>Week 3\R.Ward week 3 journal.txt</code></li>
+            <li>Week 4: <code>Week 4\R.Ward Week 4 Journal.txt</code></li>
+            <li>Week 5: <code>Week 5\R.Ward Journal WK5.txt</code></li>
+            <li>Previous report (canonical baseline): <code>R.Ward-Injury-Journal Fixed.docx</code></li>
+            <li>Legal documentation: <code>R.Ward-Injury-Journal-Legal.md</code></li>
+            <li>Costs and payments: <code>NYC Accident Costs &amp; Payments Ledger.xlsx</code></li>
+        </ul>
+
+        <h2>9. Medical Care Log — Cross-Reference Rule (MANDATORY)</h2>
+        <p>The medical care log MUST be cross-referenced against the Costs &amp; Payments Ledger to ensure:</p>
+        <ul>
+            <li>All medical visits listed in the ledger appear in the care log</li>
+            <li>All costs are tracked (both $ and EUR)</li>
+            <li>Payment status is recorded (Paid/Not yet)</li>
+            <li>Receipt status is recorded (YES/NO)</li>
+            <li>Bellevue Hospital visits (from NYC) are included</li>
+        </ul>
+        <p><strong>MANDATORY VERIFICATION STEP:</strong> Before finalizing ANY version, compare EVERY row in the ledger against the medical care log and vice versa. If any row appears in the ledger but NOT in the document, ADD IT. If any row appears in the document but NOT in the ledger, FLAG IT.</p>
+
+        <div class="ref">
+            <p><em>Protocol created 2026-06-19. v5: Added pARXYS branding section (5b), updated Week 5 source path, updated build script to v5, removed DOB from title page and patient details.</em></p>
+        </div>
+    </div>
+</body>
+</html>
