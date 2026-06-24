@@ -183,9 +183,26 @@
             <tr><td>Local models sitting idle</td><td>gpt-oss:20b + llama3 doing background work</td></tr>
         </table>
 
+        
+        <h2>Model Refusal Documentation</h2>
+        <p>When a model in our routing stack refuses a legitimate request, document it here so we can build workarounds.</p>
+
+        <div class='tier-block' style='border-left: 3px solid #ef4444;'>
+            <h3>⚠️ How to Handle Refusals</h3>
+            <ol>
+                <li><strong>Document the exact prompt</strong> that triggered the refusal</li>
+                <li><strong>Try a different model tier</strong> — if T1 refuses, try T3 or T2</li>
+                <li><strong>Restructure the prompt</strong> — reframe the request in different language</li>
+                <li><strong>Split the task</strong> — break into smaller, less triggerable subtasks</li>
+                <li><strong>Never fight the model</strong> — if it refuses 3 times, change approach entirely</li>
+            </ol>
+        </div>
+
+        <p><strong>Why this matters:</strong> Commercial models have geometrically localised refusal directions in their activation space. Refusals follow patterns, not randomness. Different model families have different blind spots (Anthropic: 10 categories, OpenAI: 2, Gemini/GLM: 1-2). Cross-vendor boundaries have the richest inconsistencies. Source: OBLITERATUS/GLOSSOPETRAE alignment research.</p>
+
         <div class="ref">
             <p>¹ DeepSeek-V4-Pro promotional pricing: $0.435/M input (cache miss), $0.003625/M cache hits, $0.87/M output. Subject to change.</p>
-            <p>Last updated: 2026-06-18 — Mythos-Mode architecture added</p>
+            <p>Last updated: 2026-06-24 — Mythos-Mode architecture added</p>
         </div>
     </div>
 </body>

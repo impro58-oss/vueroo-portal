@@ -144,7 +144,44 @@ sessions_spawn(
             </tbody>
         </table>
 
-        <h2>Rules</h2>
+        
+        <h2>Subagent Prompt Quality Standards</h2>
+
+        <div class='core-rule'>
+            <strong>Never delegate understanding.</strong> The single biggest cause of subagent failure is vague delegation. A subagent has no context from the parent session — it starts fresh. Every prompt must be self-contained and specific.
+        </div>
+
+        <h3>Bad vs Good Subagent Prompts</h3>
+
+        <p><strong>Bad:</strong> <em>'Research MedTech competitors and write a report.'</em><br>
+        No sources, no format, no scope, no verification criteria.</p>
+
+        <p><strong>Good:</strong> <em>'Read the 3 files in memory/research/competitors/. For each competitor, extract: company name, neuroendovascular product line, 2025 revenue estimate, key differentiator. Output a markdown table to memory/research/competitor-summary.md. If any data is missing, write UNKNOWN — never fabricate. Under 500 words total.'</em></p>
+
+        <h3>Prompt Template for Every Subagent Spawn</h3>
+
+        <p>Every sessions_spawn task should include 5 elements:</p>
+        <ol>
+            <li><strong>What:</strong> Specific task description with deliverable</li>
+            <li><strong>Where:</strong> Exact file paths for input and output</li>
+            <li><strong>How:</strong> Method, format, constraints</li>
+            <li><strong>Not:</strong> What NOT to do (negative examples prevent common failures)</li>
+            <li><strong>Verify:</strong> How the parent will check the result</li>
+        </ol>
+
+        <h3>Trust But Verify</h3>
+
+        <p>An agent's summary describes what it <strong>intended</strong> to do, not necessarily what it <strong>did</strong>. Always:</p>
+        <ol>
+            <li>Read the output file yourself after the subagent completes</li>
+            <li>Spot-check specific data points against source material</li>
+            <li>Never declare 'done' based on the subagent's summary alone — verify the actual output</li>
+        </ol>
+
+        <h3>Parallel Execution</h3>
+
+        <p>When spawning multiple independent subagents, send them all in a single message so they run concurrently. Do NOT spawn sequentially when there are no dependencies between tasks.</p>
+<h2>Rules</h2>
         <ol>
             <li><strong>Always read checkpoint first.</strong> If a checkpoint exists, the agent MUST read it before starting work.</li>
             <li><strong>Always write checkpoint when done.</strong> Even if the task is complete, write a final checkpoint with status: complete.</li>
