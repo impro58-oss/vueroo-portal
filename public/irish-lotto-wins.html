@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irish Lotto Jackpot Wins 2011–2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f; --bg-surface: #15151f; --bg-elevated: #1e1e2e;
+            --color-primary: #00d4ff; --color-success: #10b981;
+            --color-gold: #fbbf24;
+            --text-primary: #f8fafc; --text-secondary: #cbd5e1; --text-muted: #64748b;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); }
+        .font-mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+        .card { background: var(--bg-surface); border: 1px solid rgba(0,212,255,0.1); border-radius: 12px; }
+        .ball {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 34px; height: 34px; border-radius: 50%;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white; font-weight: 700; font-size: 13px;
+            margin: 0 1px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .ball-bonus { background: linear-gradient(135deg, #b45309, #f59e0b); }
+        .jackpot-badge {
+            background: rgba(251,191,36,0.15); color: #fbbf24;
+            padding: 2px 8px; border-radius: 4px; font-size: 13px; font-weight: 600;
+        }
+        .jackpot-big { background: rgba(16,185,129,0.15); color: #10b981; }
+        .week-badge {
+            background: rgba(0,212,255,0.1); color: #00d4ff;
+            padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 600;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th {
+            text-align: left; color: var(--text-muted);
+            font-size: 11px; text-transform: uppercase;
+            letter-spacing: 0.05em; padding: 10px 12px;
+            border-bottom: 1px solid rgba(0,212,255,0.15);
+            position: sticky; top: 0; background: var(--bg-surface); z-index: 10;
+        }
+        td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 13px; }
+        tr:hover td { background: rgba(0,212,255,0.03); }
+        .year-tab {
+            cursor: pointer; padding: 8px 16px; border-radius: 8px 8px 0 0;
+            font-weight: 600; font-size: 14px; transition: all 0.2s;
+            border: 1px solid transparent; border-bottom: none; white-space: nowrap;
+        }
+        .year-tab.active { background: var(--bg-surface); color: var(--color-primary); border-color: rgba(0,212,255,0.2); }
+        .year-tab:not(.active) { background: rgba(255,255,255,0.03); color: var(--text-muted); }
+        .year-tab:not(.active):hover { background: rgba(0,212,255,0.05); color: var(--text-secondary); }
+        .stat-card {
+            background: var(--bg-surface); border: 1px solid rgba(0,212,255,0.1);
+            border-radius: 12px; padding: 16px; text-align: center;
+        }
+        .stat-value { font-size: 24px; font-weight: 700; }
+        .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+        .highlight-row { background: rgba(251,191,36,0.05) !important; }
+        .search-input {
+            background: var(--bg-elevated); border: 1px solid rgba(0,212,255,0.2);
+            border-radius: 8px; padding: 8px 16px; color: var(--text-primary);
+            font-size: 14px; width: 100%; max-width: 300px;
+        }
+        .search-input:focus { outline: none; border-color: var(--color-primary); }
+        .tabs-container { display: flex; gap: 2px; overflow-x: auto; padding-bottom: 4px; flex-wrap: wrap; }
+        .tabs-container::-webkit-scrollbar { height: 4px; }
+        .tabs-container::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
+        .summary-table th, .summary-table td { padding: 6px 10px; font-size: 12px; }
+        @media (max-width: 768px) {
+            .ball { width: 28px; height: 28px; font-size: 11px; }
+            th, td { padding: 6px 8px; font-size: 11px; }
+            .stat-value { font-size: 18px; }
+            .year-tab { padding: 6px 10px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <div class="mb-6">
+            <h1 class="text-3xl font-bold mb-1"><span class="text-cyan-400">Irish Lotto</span> Jackpot Wins</h1>
+            <p class="text-slate-400 text-sm">Every draw where the jackpot was won, 2011–2026 · 192 wins · Source: irish.national-lottery.com</p>
+        </div>
+
+        <div class="stats-grid grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+        <div class="stat-card"><div class="stat-value text-cyan-400">192</div><div class="stat-label">Total Wins (16yr)</div></div>
+        <div class="stat-card"><div class="stat-value text-amber-400">€5,577,330</div><div class="stat-label">Avg Jackpot</div></div>
+        <div class="stat-card"><div class="stat-value text-green-400">€19,060,800</div><div class="stat-label">Biggest · 2022-01-15</div></div>
+        <div class="stat-card"><div class="stat-value text-slate-300">€2,000,000</div><div class="stat-label">Smallest · 2011-06-15</div></div>
+        <div class="stat-card"><div class="stat-value text-purple-400">€1,070,847,547</div><div class="stat-label">Total Won</div></div>
+</div>
+
+        <div class="tabs-container mb-0" id="year-tabs">
+            <div class="year-tab" onclick="switchYear('2026')">2026*  (3)</div>
+            <div class="year-tab" onclick="switchYear('2025')">2025 (9)</div>
+            <div class="year-tab" onclick="switchYear('2024')">2024 (10)</div>
+            <div class="year-tab" onclick="switchYear('2023')">2023 (11)</div>
+            <div class="year-tab" onclick="switchYear('2022')">2022 (11)</div>
+            <div class="year-tab" onclick="switchYear('2021')">2021 (5)</div>
+            <div class="year-tab" onclick="switchYear('2020')">2020 (10)</div>
+            <div class="year-tab" onclick="switchYear('2019')">2019 (9)</div>
+            <div class="year-tab" onclick="switchYear('2018')">2018 (13)</div>
+            <div class="year-tab" onclick="switchYear('2017')">2017 (11)</div>
+            <div class="year-tab" onclick="switchYear('2016')">2016 (11)</div>
+            <div class="year-tab" onclick="switchYear('2015')">2015 (14)</div>
+            <div class="year-tab" onclick="switchYear('2014')">2014 (15)</div>
+            <div class="year-tab" onclick="switchYear('2013')">2013 (18)</div>
+            <div class="year-tab" onclick="switchYear('2012')">2012 (17)</div>
+            <div class="year-tab" onclick="switchYear('2011')">2011 (25)</div>
+            <div class="year-tab" onclick="switchYear('all')" style="background:rgba(251,191,36,0.1);color:#fbbf24;">All (192)</div>
+        </div>
+
+        <div class="card overflow-hidden">
+            <div class="p-4 border-b border-cyan-900/20 flex justify-between items-center flex-wrap gap-2">
+                <div class="text-sm text-slate-400"><span id="win-count"></span> jackpot wins</div>
+                <div><input type="text" id="search-input" class="search-input" placeholder="Search numbers..." oninput="filterTable()"></div>
+            </div>
+            <div class="overflow-x-auto" style="max-height: 65vh; overflow-y: auto;">
+                <table>
+                    <thead><tr><th>Date</th><th>Week</th><th>Numbers</th><th>Jackpot</th><th>Day</th></tr></thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card mt-4 p-4">
+            <h3 class="text-lg font-semibold text-cyan-400 mb-3">📊 Year-by-Year Summary</h3>
+            <table class="summary-table w-full">
+                <thead><tr><th>Year</th><th>Wins</th><th>Avg Jackpot</th><th>Biggest</th><th>Smallest</th><th>Biggest Date</th></tr></thead>
+                <tbody>        <tr><td class="font-mono font-medium">2011</td><td>25</td><td>€4,240,104</td><td class="text-green-400">€14,037,236</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2011-03-26</td></tr>        <tr><td class="font-mono font-medium">2012</td><td>17</td><td>€5,136,544</td><td class="text-green-400">€11,526,001</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2012-03-31</td></tr>        <tr><td class="font-mono font-medium">2013</td><td>18</td><td>€4,710,218</td><td class="text-green-400">€10,613,747</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2013-01-30</td></tr>        <tr><td class="font-mono font-medium">2014</td><td>15</td><td>€5,338,167</td><td class="text-green-400">€12,155,282</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2014-06-04</td></tr>        <tr><td class="font-mono font-medium">2015</td><td>14</td><td>€4,996,576</td><td class="text-green-400">€10,650,121</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2015-04-04</td></tr>        <tr><td class="font-mono font-medium">2016</td><td>11</td><td>€7,292,169</td><td class="text-green-400">€13,793,435</td><td>€2,578,134</td><td class="text-slate-400 text-xs">2016-01-23</td></tr>        <tr><td class="font-mono font-medium">2017</td><td>11</td><td>€6,529,076</td><td class="text-green-400">€12,849,224</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2017-03-01</td></tr>        <tr><td class="font-mono font-medium">2018</td><td>13</td><td>€5,213,412</td><td class="text-green-400">€8,549,067</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2018-05-12</td></tr>        <tr><td class="font-mono font-medium">2019</td><td>9</td><td>€6,458,175</td><td class="text-green-400">€11,225,280</td><td>€2,497,727</td><td class="text-slate-400 text-xs">2019-08-21</td></tr>        <tr><td class="font-mono font-medium">2020</td><td>10</td><td>€5,622,892</td><td class="text-green-400">€10,780,193</td><td>€2,482,715</td><td class="text-slate-400 text-xs">2020-12-02</td></tr>        <tr><td class="font-mono font-medium">2021</td><td>5</td><td>€6,541,053</td><td class="text-green-400">€12,740,043</td><td>€2,469,871</td><td class="text-slate-400 text-xs">2021-04-14</td></tr>        <tr><td class="font-mono font-medium">2022</td><td>11</td><td>€6,237,663</td><td class="text-green-400">€19,060,800</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2022-01-15</td></tr>        <tr><td class="font-mono font-medium">2023</td><td>11</td><td>€6,207,656</td><td class="text-green-400">€12,747,756</td><td>€2,294,855</td><td class="text-slate-400 text-xs">2023-06-17</td></tr>        <tr><td class="font-mono font-medium">2024</td><td>10</td><td>€6,445,940</td><td class="text-green-400">€14,674,966</td><td>€2,000,000</td><td class="text-slate-400 text-xs">2024-01-27</td></tr>        <tr><td class="font-mono font-medium">2025</td><td>9</td><td>€5,659,079</td><td class="text-green-400">€17,008,295</td><td>€2,274,988</td><td class="text-slate-400 text-xs">2025-08-27</td></tr>        <tr><td class="font-mono font-medium">2026*</td><td>3</td><td>€7,853,233</td><td class="text-green-400">€11,101,286</td><td>€3,731,996</td><td class="text-slate-400 text-xs">2026-02-25</td></tr></tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 text-xs text-slate-500">
+            <p>Source: <a href="https://irish.national-lottery.com/irish-lotto/results-archive-2026" class="text-cyan-500 hover:underline">irish.national-lottery.com</a></p>
+            <p class="mt-1">Bonus in <span class="text-amber-400 font-bold">amber</span> · <span class="text-green-400">Green</span> = jackpot ≥ €8M · *2026 through June 29</p>
+            <p class="mt-1">2011–2014: draws marked "–" (ambiguous outcome) excluded. 2021 had only 5 wins due to COVID rollover patterns.</p>
+        </div>
+    </div>
+
+    <script>
+const WINS_DATA = {
+    "2026": [
+        {"date":"2026-02-25","week":9,"nums":[19, 20, 22, 25, 28, 43],"bonus":1,"jackpot":11101286,"day":"Wed","big":true},
+        {"date":"2026-05-02","week":18,"nums":[1, 7, 27, 28, 34, 42],"bonus":26,"jackpot":8726418,"day":"Sat","big":true},
+        {"date":"2026-05-23","week":21,"nums":[8, 12, 24, 25, 33, 45],"bonus":41,"jackpot":3731996,"day":"Sat","big":false}
+    ],
+    "2025": [
+        {"date":"2025-01-29","week":5,"nums":[5, 12, 14, 27, 34, 42],"bonus":25,"jackpot":4642646,"day":"Wed","big":false},
+        {"date":"2025-02-12","week":7,"nums":[5, 11, 26, 37, 46, 47],"bonus":35,"jackpot":2935144,"day":"Wed","big":false},
+        {"date":"2025-02-19","week":8,"nums":[2, 27, 28, 29, 38, 44],"bonus":20,"jackpot":2274988,"day":"Wed","big":false},
+        {"date":"2025-03-01","week":9,"nums":[2, 6, 7, 10, 28, 32],"bonus":19,"jackpot":2655366,"day":"Sat","big":false},
+        {"date":"2025-03-26","week":13,"nums":[3, 8, 18, 20, 30, 43],"bonus":46,"jackpot":4005581,"day":"Wed","big":false},
+        {"date":"2025-04-19","week":16,"nums":[6, 18, 25, 26, 36, 43],"bonus":44,"jackpot":4038682,"day":"Sat","big":false},
+        {"date":"2025-08-27","week":35,"nums":[2, 6, 20, 22, 26, 39],"bonus":5,"jackpot":17008295,"day":"Wed","big":true},
+        {"date":"2025-10-18","week":42,"nums":[6, 13, 14, 27, 35, 44],"bonus":47,"jackpot":7129505,"day":"Sat","big":false},
+        {"date":"2025-12-03","week":49,"nums":[4, 21, 23, 27, 34, 38],"bonus":37,"jackpot":6241505,"day":"Wed","big":false}
+    ],
+    "2024": [
+        {"date":"2024-01-27","week":4,"nums":[3, 8, 10, 24, 32, 41],"bonus":30,"jackpot":14674966,"day":"Sat","big":true},
+        {"date":"2024-02-14","week":7,"nums":[1, 5, 10, 15, 44, 47],"bonus":45,"jackpot":3523021,"day":"Wed","big":false},
+        {"date":"2024-04-20","week":16,"nums":[1, 9, 10, 14, 26, 40],"bonus":4,"jackpot":8970934,"day":"Sat","big":true},
+        {"date":"2024-05-11","week":19,"nums":[8, 16, 24, 27, 28, 42],"bonus":30,"jackpot":3796062,"day":"Sat","big":false},
+        {"date":"2024-06-29","week":26,"nums":[1, 4, 8, 21, 27, 28],"bonus":34,"jackpot":6788177,"day":"Sat","big":false},
+        {"date":"2024-08-17","week":33,"nums":[8, 9, 14, 30, 42, 47],"bonus":16,"jackpot":6756855,"day":"Sat","big":false},
+        {"date":"2024-09-25","week":39,"nums":[1, 7, 17, 20, 22, 31],"bonus":35,"jackpot":5501086,"day":"Wed","big":false},
+        {"date":"2024-09-28","week":39,"nums":[4, 6, 13, 27, 29, 32],"bonus":47,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2024-11-20","week":47,"nums":[7, 10, 12, 19, 21, 32],"bonus":9,"jackpot":7028440,"day":"Wed","big":false},
+        {"date":"2024-12-28","week":52,"nums":[2, 4, 5, 10, 16, 17],"bonus":23,"jackpot":5419866,"day":"Sat","big":false}
+    ],
+    "2023": [
+        {"date":"2023-01-04","week":1,"nums":[18, 29, 36, 38, 40, 43],"bonus":30,"jackpot":11106438,"day":"Wed","big":true},
+        {"date":"2023-01-21","week":3,"nums":[7, 29, 32, 33, 44, 46],"bonus":38,"jackpot":3519138,"day":"Sat","big":false},
+        {"date":"2023-02-25","week":8,"nums":[4, 6, 14, 20, 22, 33],"bonus":45,"jackpot":5604203,"day":"Sat","big":false},
+        {"date":"2023-03-18","week":11,"nums":[5, 9, 11, 13, 24, 47],"bonus":41,"jackpot":3987540,"day":"Sat","big":false},
+        {"date":"2023-06-17","week":24,"nums":[2, 3, 21, 43, 44, 46],"bonus":7,"jackpot":12747756,"day":"Sat","big":true},
+        {"date":"2023-07-08","week":27,"nums":[5, 16, 17, 18, 22, 28],"bonus":2,"jackpot":3931066,"day":"Sat","big":false},
+        {"date":"2023-07-15","week":28,"nums":[12, 26, 28, 34, 42, 45],"bonus":14,"jackpot":2418002,"day":"Sat","big":false},
+        {"date":"2023-08-09","week":32,"nums":[4, 11, 17, 18, 25, 32],"bonus":9,"jackpot":4257050,"day":"Wed","big":false},
+        {"date":"2023-10-04","week":40,"nums":[1, 6, 8, 12, 13, 16],"bonus":35,"jackpot":7734054,"day":"Wed","big":false},
+        {"date":"2023-10-11","week":41,"nums":[2, 12, 16, 24, 39, 40],"bonus":25,"jackpot":2294855,"day":"Wed","big":false},
+        {"date":"2023-12-30","week":52,"nums":[13, 21, 27, 34, 36, 43],"bonus":35,"jackpot":10684117,"day":"Sat","big":true}
+    ],
+    "2022": [
+        {"date":"2022-01-15","week":2,"nums":[2, 9, 16, 30, 37, 40],"bonus":23,"jackpot":19060800,"day":"Sat","big":true},
+        {"date":"2022-02-09","week":6,"nums":[3, 23, 27, 32, 35, 37],"bonus":7,"jackpot":4687612,"day":"Wed","big":false},
+        {"date":"2022-03-12","week":10,"nums":[13, 21, 28, 37, 45, 46],"bonus":33,"jackpot":5365262,"day":"Sat","big":false},
+        {"date":"2022-05-07","week":18,"nums":[1, 31, 35, 39, 42, 46],"bonus":45,"jackpot":8508720,"day":"Sat","big":true},
+        {"date":"2022-05-25","week":21,"nums":[9, 13, 15, 18, 21, 27],"bonus":11,"jackpot":3612485,"day":"Wed","big":false},
+        {"date":"2022-06-29","week":26,"nums":[1, 9, 17, 25, 30, 31],"bonus":39,"jackpot":5612385,"day":"Wed","big":false},
+        {"date":"2022-08-03","week":31,"nums":[9, 10, 17, 32, 33, 39],"bonus":47,"jackpot":5541001,"day":"Wed","big":false},
+        {"date":"2022-10-05","week":40,"nums":[3, 8, 20, 24, 28, 29],"bonus":40,"jackpot":8915056,"day":"Wed","big":true},
+        {"date":"2022-10-12","week":41,"nums":[1, 11, 14, 19, 27, 39],"bonus":44,"jackpot":2310972,"day":"Wed","big":false},
+        {"date":"2022-10-15","week":41,"nums":[7, 19, 24, 30, 36, 44],"bonus":41,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2022-12-24","week":51,"nums":[4, 18, 21, 30, 41, 45],"bonus":44,"jackpot":3000000,"day":"Sat","big":false}
+    ],
+    "2021": [
+        {"date":"2021-01-27","week":4,"nums":[7, 24, 27, 33, 34, 40],"bonus":30,"jackpot":8530884,"day":"Wed","big":true},
+        {"date":"2021-04-14","week":15,"nums":[4, 14, 20, 23, 27, 37],"bonus":39,"jackpot":12740043,"day":"Wed","big":true},
+        {"date":"2021-05-22","week":20,"nums":[1, 5, 12, 23, 45, 46],"bonus":41,"jackpot":6489165,"day":"Sat","big":false},
+        {"date":"2021-05-29","week":21,"nums":[9, 15, 28, 34, 39, 46],"bonus":26,"jackpot":2469871,"day":"Sat","big":false},
+        {"date":"2021-06-05","week":22,"nums":[10, 16, 17, 24, 26, 42],"bonus":35,"jackpot":2475303,"day":"Sat","big":false}
+    ],
+    "2020": [
+        {"date":"2020-01-29","week":5,"nums":[1, 3, 20, 22, 39, 44],"bonus":16,"jackpot":3886999,"day":"Wed","big":false},
+        {"date":"2020-02-08","week":6,"nums":[14, 20, 24, 38, 41, 45],"bonus":3,"jackpot":2773649,"day":"Sat","big":false},
+        {"date":"2020-04-18","week":16,"nums":[4, 9, 15, 27, 29, 34],"bonus":17,"jackpot":9772175,"day":"Sat","big":true},
+        {"date":"2020-05-09","week":19,"nums":[13, 18, 30, 41, 42, 44],"bonus":37,"jackpot":4041306,"day":"Sat","big":false},
+        {"date":"2020-06-20","week":25,"nums":[5, 8, 19, 40, 41, 44],"bonus":17,"jackpot":6933904,"day":"Sat","big":false},
+        {"date":"2020-07-01","week":27,"nums":[3, 8, 21, 34, 37, 47],"bonus":16,"jackpot":2824437,"day":"Wed","big":false},
+        {"date":"2020-08-15","week":33,"nums":[3, 7, 18, 36, 40, 42],"bonus":16,"jackpot":7337744,"day":"Sat","big":false},
+        {"date":"2020-08-22","week":34,"nums":[4, 5, 12, 15, 16, 31],"bonus":23,"jackpot":2482715,"day":"Sat","big":false},
+        {"date":"2020-09-23","week":39,"nums":[2, 5, 7, 29, 38, 42],"bonus":27,"jackpot":5395798,"day":"Wed","big":false},
+        {"date":"2020-12-02","week":49,"nums":[9, 12, 22, 28, 35, 47],"bonus":37,"jackpot":10780193,"day":"Wed","big":true}
+    ],
+    "2019": [
+        {"date":"2019-02-23","week":8,"nums":[3, 19, 21, 29, 31, 35],"bonus":22,"jackpot":10288699,"day":"Sat","big":true},
+        {"date":"2019-03-02","week":9,"nums":[1, 3, 7, 27, 31, 44],"bonus":19,"jackpot":2497727,"day":"Sat","big":false},
+        {"date":"2019-04-10","week":15,"nums":[3, 9, 17, 29, 42, 43],"bonus":16,"jackpot":6442934,"day":"Wed","big":false},
+        {"date":"2019-05-18","week":20,"nums":[1, 7, 9, 18, 22, 33],"bonus":17,"jackpot":6197310,"day":"Sat","big":false},
+        {"date":"2019-06-08","week":23,"nums":[9, 10, 34, 37, 40, 47],"bonus":7,"jackpot":4051610,"day":"Sat","big":false},
+        {"date":"2019-08-21","week":34,"nums":[10, 13, 23, 24, 25, 44],"bonus":12,"jackpot":11225280,"day":"Wed","big":true},
+        {"date":"2019-09-21","week":38,"nums":[6, 8, 13, 15, 21, 30],"bonus":17,"jackpot":5325592,"day":"Sat","big":false},
+        {"date":"2019-10-23","week":43,"nums":[13, 27, 32, 36, 38, 39],"bonus":43,"jackpot":5260021,"day":"Wed","big":false},
+        {"date":"2019-12-07","week":49,"nums":[13, 16, 18, 25, 38, 41],"bonus":1,"jackpot":6834410,"day":"Sat","big":false}
+    ],
+    "2018": [
+        {"date":"2018-01-13","week":2,"nums":[1, 2, 7, 33, 34, 40],"bonus":6,"jackpot":4434994,"day":"Sat","big":false},
+        {"date":"2018-02-21","week":8,"nums":[9, 26, 27, 29, 31, 47],"bonus":30,"jackpot":7179959,"day":"Wed","big":false},
+        {"date":"2018-03-24","week":12,"nums":[2, 17, 24, 25, 35, 40],"bonus":36,"jackpot":5685384,"day":"Sat","big":false},
+        {"date":"2018-05-12","week":19,"nums":[5, 6, 14, 19, 22, 30],"bonus":24,"jackpot":8549067,"day":"Sat","big":true},
+        {"date":"2018-06-02","week":22,"nums":[1, 7, 10, 17, 35, 37],"bonus":43,"jackpot":4325656,"day":"Sat","big":false},
+        {"date":"2018-06-13","week":24,"nums":[5, 21, 25, 29, 41, 43],"bonus":31,"jackpot":2895277,"day":"Wed","big":false},
+        {"date":"2018-06-16","week":24,"nums":[6, 26, 27, 32, 45, 47],"bonus":9,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2018-08-04","week":31,"nums":[3, 4, 5, 19, 26, 43],"bonus":24,"jackpot":8347497,"day":"Sat","big":true},
+        {"date":"2018-08-29","week":35,"nums":[26, 27, 35, 40, 41, 42],"bonus":7,"jackpot":4770304,"day":"Wed","big":false},
+        {"date":"2018-10-03","week":40,"nums":[1, 15, 22, 27, 31, 34],"bonus":42,"jackpot":5781232,"day":"Wed","big":false},
+        {"date":"2018-10-27","week":43,"nums":[14, 24, 30, 38, 40, 45],"bonus":36,"jackpot":4439459,"day":"Sat","big":false},
+        {"date":"2018-12-08","week":49,"nums":[9, 15, 17, 24, 41, 43],"bonus":37,"jackpot":6589886,"day":"Sat","big":false},
+        {"date":"2018-12-19","week":51,"nums":[1, 5, 19, 24, 27, 42],"bonus":44,"jackpot":2775644,"day":"Wed","big":false}
+    ],
+    "2017": [
+        {"date":"2017-03-01","week":9,"nums":[2, 15, 19, 26, 37, 38],"bonus":39,"jackpot":12849224,"day":"Wed","big":true},
+        {"date":"2017-05-06","week":18,"nums":[3, 7, 17, 21, 22, 28],"bonus":2,"jackpot":12344808,"day":"Sat","big":true},
+        {"date":"2017-05-27","week":21,"nums":[2, 5, 12, 34, 41, 47],"bonus":29,"jackpot":4541179,"day":"Sat","big":false},
+        {"date":"2017-05-31","week":22,"nums":[15, 31, 33, 34, 36, 43],"bonus":39,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2017-07-05","week":27,"nums":[7, 16, 18, 20, 24, 37],"bonus":13,"jackpot":6409326,"day":"Wed","big":false},
+        {"date":"2017-08-26","week":34,"nums":[1, 16, 17, 32, 34, 35],"bonus":5,"jackpot":9485078,"day":"Sat","big":true},
+        {"date":"2017-09-06","week":36,"nums":[1, 4, 5, 6, 18, 47],"bonus":35,"jackpot":2951364,"day":"Wed","big":false},
+        {"date":"2017-09-13","week":37,"nums":[7, 19, 20, 32, 34, 43],"bonus":45,"jackpot":2387835,"day":"Wed","big":false},
+        {"date":"2017-10-25","week":43,"nums":[8, 10, 11, 25, 28, 32],"bonus":35,"jackpot":7545870,"day":"Wed","big":false},
+        {"date":"2017-11-25","week":47,"nums":[4, 16, 18, 24, 32, 35],"bonus":46,"jackpot":5868553,"day":"Sat","big":false},
+        {"date":"2017-12-23","week":51,"nums":[5, 14, 28, 29, 32, 38],"bonus":31,"jackpot":5436602,"day":"Sat","big":false}
+    ],
+    "2016": [
+        {"date":"2016-01-23","week":3,"nums":[10, 12, 13, 19, 43, 45],"bonus":5,"jackpot":13793435,"day":"Sat","big":true},
+        {"date":"2016-03-05","week":9,"nums":[2, 8, 16, 24, 33, 42],"bonus":47,"jackpot":8244502,"day":"Sat","big":true},
+        {"date":"2016-03-12","week":10,"nums":[9, 18, 23, 27, 31, 38],"bonus":30,"jackpot":2578134,"day":"Sat","big":false},
+        {"date":"2016-04-23","week":16,"nums":[1, 9, 15, 23, 33, 38],"bonus":29,"jackpot":7902685,"day":"Sat","big":false},
+        {"date":"2016-05-21","week":20,"nums":[8, 15, 17, 22, 34, 38],"bonus":10,"jackpot":5544864,"day":"Sat","big":false},
+        {"date":"2016-06-22","week":25,"nums":[6, 16, 23, 28, 32, 35],"bonus":4,"jackpot":5899439,"day":"Wed","big":false},
+        {"date":"2016-08-20","week":33,"nums":[10, 11, 12, 15, 18, 19],"bonus":35,"jackpot":11179621,"day":"Sat","big":true},
+        {"date":"2016-09-10","week":36,"nums":[5, 6, 14, 24, 26, 29],"bonus":20,"jackpot":4615874,"day":"Sat","big":false},
+        {"date":"2016-10-01","week":39,"nums":[2, 5, 8, 14, 40, 42],"bonus":7,"jackpot":4532646,"day":"Sat","big":false},
+        {"date":"2016-12-03","week":48,"nums":[2, 6, 21, 23, 29, 44],"bonus":41,"jackpot":11345002,"day":"Sat","big":true},
+        {"date":"2016-12-24","week":51,"nums":[8, 10, 11, 16, 40, 42],"bonus":38,"jackpot":4577663,"day":"Sat","big":false}
+    ],
+    "2015": [
+        {"date":"2015-02-05","week":6,"nums":[9, 10, 18, 20, 24, 26],"bonus":35,"jackpot":10230559,"day":"Thu","big":true},
+        {"date":"2015-04-04","week":14,"nums":[30, 31, 32, 35, 37, 40],"bonus":44,"jackpot":10650121,"day":"Sat","big":true},
+        {"date":"2015-04-08","week":15,"nums":[2, 4, 22, 26, 30, 36],"bonus":7,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2015-05-09","week":19,"nums":[2, 5, 13, 17, 32, 34],"bonus":45,"jackpot":5900958,"day":"Sat","big":false},
+        {"date":"2015-06-10","week":24,"nums":[11, 16, 21, 27, 29, 35],"bonus":43,"jackpot":5811172,"day":"Wed","big":false},
+        {"date":"2015-06-13","week":24,"nums":[10, 17, 20, 31, 33, 38],"bonus":27,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2015-06-24","week":26,"nums":[7, 14, 22, 30, 35, 41],"bonus":5,"jackpot":2917462,"day":"Wed","big":false},
+        {"date":"2015-06-27","week":26,"nums":[1, 2, 7, 22, 35, 45],"bonus":4,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2015-08-01","week":31,"nums":[3, 7, 11, 33, 37, 42],"bonus":39,"jackpot":6384673,"day":"Sat","big":false},
+        {"date":"2015-08-08","week":32,"nums":[9, 26, 33, 37, 40, 44],"bonus":42,"jackpot":2501742,"day":"Sat","big":false},
+        {"date":"2015-09-19","week":38,"nums":[7, 26, 34, 39, 41, 42],"bonus":31,"jackpot":7384790,"day":"Sat","big":false},
+        {"date":"2015-09-30","week":40,"nums":[4, 9, 27, 31, 38, 39],"bonus":10,"jackpot":2968171,"day":"Wed","big":false},
+        {"date":"2015-10-28","week":44,"nums":[5, 7, 10, 18, 41, 47],"bonus":44,"jackpot":5318670,"day":"Wed","big":false},
+        {"date":"2015-11-14","week":46,"nums":[12, 16, 22, 36, 40, 43],"bonus":4,"jackpot":3883756,"day":"Sat","big":false}
+    ],
+    "2014": [
+        {"date":"2014-01-04","week":1,"nums":[4, 25, 35, 38, 42, 43],"bonus":28,"jackpot":8188679,"day":"Sat","big":true},
+        {"date":"2014-01-18","week":3,"nums":[4, 5, 13, 21, 29, 37],"bonus":22,"jackpot":3528865,"day":"Sat","big":false},
+        {"date":"2014-03-05","week":10,"nums":[4, 19, 24, 25, 27, 43],"bonus":26,"jackpot":8302204,"day":"Wed","big":true},
+        {"date":"2014-04-09","week":15,"nums":[8, 9, 14, 15, 42, 44],"bonus":36,"jackpot":6496218,"day":"Wed","big":false},
+        {"date":"2014-06-04","week":23,"nums":[13, 14, 24, 31, 35, 43],"bonus":21,"jackpot":12155282,"day":"Wed","big":true},
+        {"date":"2014-06-11","week":24,"nums":[9, 19, 22, 27, 30, 38],"bonus":16,"jackpot":2405235,"day":"Wed","big":false},
+        {"date":"2014-06-14","week":24,"nums":[4, 8, 15, 18, 19, 22],"bonus":1,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2014-07-05","week":27,"nums":[10, 18, 23, 26, 42, 45],"bonus":13,"jackpot":4433754,"day":"Sat","big":false},
+        {"date":"2014-08-06","week":32,"nums":[7, 11, 24, 32, 33, 40],"bonus":38,"jackpot":5935632,"day":"Wed","big":false},
+        {"date":"2014-08-23","week":34,"nums":[3, 9, 18, 28, 32, 43],"bonus":44,"jackpot":3919939,"day":"Sat","big":false},
+        {"date":"2014-09-17","week":38,"nums":[19, 25, 26, 27, 39, 45],"bonus":42,"jackpot":4871046,"day":"Wed","big":false},
+        {"date":"2014-10-25","week":43,"nums":[3, 5, 8, 15, 16, 23],"bonus":43,"jackpot":7120595,"day":"Sat","big":false},
+        {"date":"2014-11-19","week":47,"nums":[9, 11, 12, 29, 31, 35],"bonus":1,"jackpot":4904904,"day":"Wed","big":false},
+        {"date":"2014-11-29","week":48,"nums":[7, 8, 18, 28, 35, 39],"bonus":37,"jackpot":2913455,"day":"Sat","big":false},
+        {"date":"2014-12-10","week":50,"nums":[2, 15, 18, 21, 35, 39],"bonus":33,"jackpot":2896698,"day":"Wed","big":false}
+    ],
+    "2013": [
+        {"date":"2013-01-30","week":5,"nums":[3, 8, 11, 23, 27, 33],"bonus":36,"jackpot":10613747,"day":"Wed","big":true},
+        {"date":"2013-03-02","week":9,"nums":[5, 8, 9, 30, 33, 45],"bonus":10,"jackpot":6437577,"day":"Sat","big":false},
+        {"date":"2013-03-13","week":11,"nums":[2, 11, 14, 25, 30, 34],"bonus":27,"jackpot":3016645,"day":"Wed","big":false},
+        {"date":"2013-04-06","week":14,"nums":[1, 12, 16, 26, 27, 29],"bonus":41,"jackpot":5146800,"day":"Sat","big":false},
+        {"date":"2013-04-13","week":15,"nums":[1, 15, 20, 27, 41, 42],"bonus":44,"jackpot":2584457,"day":"Sat","big":false},
+        {"date":"2013-04-27","week":17,"nums":[18, 22, 23, 26, 32, 42],"bonus":35,"jackpot":3595558,"day":"Sat","big":false},
+        {"date":"2013-05-29","week":22,"nums":[6, 12, 14, 16, 33, 43],"bonus":2,"jackpot":10565261,"day":"Wed","big":true},
+        {"date":"2013-06-15","week":24,"nums":[1, 6, 8, 15, 26, 28],"bonus":29,"jackpot":4045514,"day":"Sat","big":false},
+        {"date":"2013-07-17","week":29,"nums":[2, 3, 4, 19, 33, 38],"bonus":16,"jackpot":6185074,"day":"Wed","big":false},
+        {"date":"2013-08-17","week":33,"nums":[4, 11, 16, 33, 43, 45],"bonus":10,"jackpot":6158375,"day":"Sat","big":false},
+        {"date":"2013-09-04","week":36,"nums":[2, 4, 9, 12, 28, 31],"bonus":35,"jackpot":3984812,"day":"Wed","big":false},
+        {"date":"2013-09-14","week":37,"nums":[5, 9, 15, 31, 35, 43],"bonus":23,"jackpot":2984327,"day":"Sat","big":false},
+        {"date":"2013-10-02","week":40,"nums":[9, 15, 18, 21, 34, 35],"bonus":42,"jackpot":3961390,"day":"Wed","big":false},
+        {"date":"2013-10-05","week":40,"nums":[6, 14, 22, 28, 37, 44],"bonus":2,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2013-10-23","week":43,"nums":[14, 31, 32, 34, 35, 40],"bonus":20,"jackpot":3950985,"day":"Wed","big":false},
+        {"date":"2013-10-26","week":43,"nums":[9, 12, 18, 19, 31, 44],"bonus":1,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2013-11-23","week":47,"nums":[1, 3, 8, 11, 14, 34],"bonus":40,"jackpot":5553404,"day":"Sat","big":false},
+        {"date":"2013-11-27","week":48,"nums":[1, 14, 15, 23, 27, 44],"bonus":12,"jackpot":2000000,"day":"Wed","big":false}
+    ],
+    "2012": [
+        {"date":"2012-01-25","week":4,"nums":[1, 11, 13, 14, 15, 37],"bonus":30,"jackpot":5482894,"day":"Wed","big":false},
+        {"date":"2012-02-15","week":7,"nums":[1, 6, 8, 10, 13, 14],"bonus":20,"jackpot":4865953,"day":"Wed","big":false},
+        {"date":"2012-03-31","week":13,"nums":[6, 11, 19, 23, 32, 41],"bonus":16,"jackpot":11526001,"day":"Sat","big":true},
+        {"date":"2012-04-18","week":16,"nums":[2, 14, 15, 19, 27, 31],"bonus":7,"jackpot":4411240,"day":"Wed","big":false},
+        {"date":"2012-05-05","week":18,"nums":[6, 9, 21, 31, 33, 42],"bonus":11,"jackpot":5377964,"day":"Sat","big":false},
+        {"date":"2012-05-09","week":19,"nums":[3, 21, 28, 38, 39, 41],"bonus":27,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2012-06-20","week":25,"nums":[15, 31, 35, 38, 40, 45],"bonus":11,"jackpot":8749912,"day":"Wed","big":true},
+        {"date":"2012-06-23","week":25,"nums":[19, 22, 27, 33, 40, 44],"bonus":43,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2012-07-04","week":27,"nums":[7, 13, 21, 31, 36, 42],"bonus":15,"jackpot":3088033,"day":"Wed","big":false},
+        {"date":"2012-07-14","week":28,"nums":[13, 25, 26, 41, 42, 43],"bonus":8,"jackpot":3084281,"day":"Sat","big":false},
+        {"date":"2012-07-25","week":30,"nums":[31, 34, 39, 42, 44, 45],"bonus":32,"jackpot":3063028,"day":"Wed","big":false},
+        {"date":"2012-08-29","week":35,"nums":[12, 24, 26, 34, 35, 42],"bonus":44,"jackpot":8638029,"day":"Wed","big":true},
+        {"date":"2012-09-26","week":39,"nums":[2, 7, 12, 15, 26, 28],"bonus":45,"jackpot":5771163,"day":"Wed","big":false},
+        {"date":"2012-10-27","week":43,"nums":[4, 9, 24, 25, 29, 44],"bonus":39,"jackpot":7373469,"day":"Sat","big":false},
+        {"date":"2012-11-10","week":45,"nums":[8, 12, 19, 24, 28, 42],"bonus":18,"jackpot":3643184,"day":"Sat","big":false},
+        {"date":"2012-11-24","week":47,"nums":[7, 11, 25, 28, 30, 40],"bonus":19,"jackpot":3595140,"day":"Sat","big":false},
+        {"date":"2012-12-15","week":50,"nums":[3, 13, 15, 22, 26, 30],"bonus":9,"jackpot":4650968,"day":"Sat","big":false}
+    ],
+    "2011": [
+        {"date":"2011-01-22","week":3,"nums":[2, 7, 12, 14, 23, 35],"bonus":27,"jackpot":3389794,"day":"Sat","big":false},
+        {"date":"2011-02-05","week":5,"nums":[4, 5, 6, 15, 20, 25],"bonus":19,"jackpot":4018495,"day":"Sat","big":false},
+        {"date":"2011-03-26","week":12,"nums":[15, 21, 23, 25, 44, 45],"bonus":10,"jackpot":14037236,"day":"Sat","big":true},
+        {"date":"2011-04-13","week":15,"nums":[2, 11, 12, 16, 22, 27],"bonus":33,"jackpot":4712488,"day":"Wed","big":false},
+        {"date":"2011-04-23","week":16,"nums":[7, 10, 11, 15, 37, 40],"bonus":42,"jackpot":3315499,"day":"Sat","big":false},
+        {"date":"2011-05-07","week":18,"nums":[7, 12, 24, 36, 43, 45],"bonus":34,"jackpot":5076220,"day":"Sat","big":false},
+        {"date":"2011-05-21","week":20,"nums":[25, 26, 28, 35, 36, 40],"bonus":39,"jackpot":3911401,"day":"Sat","big":false},
+        {"date":"2011-06-11","week":23,"nums":[2, 11, 13, 18, 20, 30],"bonus":6,"jackpot":5155806,"day":"Sat","big":false},
+        {"date":"2011-06-15","week":24,"nums":[7, 8, 11, 12, 42, 44],"bonus":3,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2011-06-18","week":24,"nums":[8, 26, 27, 28, 32, 37],"bonus":25,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2011-06-25","week":25,"nums":[3, 11, 23, 24, 27, 38],"bonus":16,"jackpot":2669367,"day":"Sat","big":false},
+        {"date":"2011-07-09","week":27,"nums":[2, 9, 11, 20, 33, 36],"bonus":14,"jackpot":3879142,"day":"Sat","big":false},
+        {"date":"2011-07-27","week":30,"nums":[6, 10, 12, 26, 28, 30],"bonus":8,"jackpot":4407601,"day":"Wed","big":false},
+        {"date":"2011-07-30","week":30,"nums":[3, 7, 9, 12, 24, 28],"bonus":20,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2011-08-06","week":31,"nums":[9, 21, 26, 31, 39, 42],"bonus":5,"jackpot":2652957,"day":"Sat","big":false},
+        {"date":"2011-09-24","week":38,"nums":[2, 7, 19, 23, 33, 43],"bonus":28,"jackpot":11033593,"day":"Sat","big":true},
+        {"date":"2011-10-15","week":41,"nums":[4, 9, 16, 28, 32, 38],"bonus":1,"jackpot":5178377,"day":"Sat","big":false},
+        {"date":"2011-10-22","week":42,"nums":[4, 10, 21, 32, 43, 44],"bonus":11,"jackpot":2664608,"day":"Sat","big":false},
+        {"date":"2011-11-05","week":44,"nums":[1, 4, 15, 16, 29, 33],"bonus":8,"jackpot":3814651,"day":"Sat","big":false},
+        {"date":"2011-11-19","week":46,"nums":[3, 10, 24, 30, 31, 39],"bonus":28,"jackpot":3808075,"day":"Sat","big":false},
+        {"date":"2011-11-26","week":47,"nums":[6, 8, 22, 24, 34, 38],"bonus":21,"jackpot":2652968,"day":"Sat","big":false},
+        {"date":"2011-12-03","week":48,"nums":[4, 12, 14, 16, 21, 34],"bonus":22,"jackpot":2642046,"day":"Sat","big":false},
+        {"date":"2011-12-17","week":50,"nums":[3, 10, 24, 26, 32, 44],"bonus":6,"jackpot":4817816,"day":"Sat","big":false},
+        {"date":"2011-12-21","week":51,"nums":[2, 14, 22, 24, 29, 41],"bonus":44,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2011-12-31","week":52,"nums":[4, 11, 23, 30, 37, 44],"bonus":32,"jackpot":4164479,"day":"Sat","big":false}
+    ],
+    "all": [
+        {"date":"2026-05-23","week":21,"nums":[8, 12, 24, 25, 33, 45],"bonus":41,"jackpot":3731996,"day":"Sat","big":false},
+        {"date":"2026-05-02","week":18,"nums":[1, 7, 27, 28, 34, 42],"bonus":26,"jackpot":8726418,"day":"Sat","big":true},
+        {"date":"2026-02-25","week":9,"nums":[19, 20, 22, 25, 28, 43],"bonus":1,"jackpot":11101286,"day":"Wed","big":true},
+        {"date":"2025-12-03","week":49,"nums":[4, 21, 23, 27, 34, 38],"bonus":37,"jackpot":6241505,"day":"Wed","big":false},
+        {"date":"2025-10-18","week":42,"nums":[6, 13, 14, 27, 35, 44],"bonus":47,"jackpot":7129505,"day":"Sat","big":false},
+        {"date":"2025-08-27","week":35,"nums":[2, 6, 20, 22, 26, 39],"bonus":5,"jackpot":17008295,"day":"Wed","big":true},
+        {"date":"2025-04-19","week":16,"nums":[6, 18, 25, 26, 36, 43],"bonus":44,"jackpot":4038682,"day":"Sat","big":false},
+        {"date":"2025-03-26","week":13,"nums":[3, 8, 18, 20, 30, 43],"bonus":46,"jackpot":4005581,"day":"Wed","big":false},
+        {"date":"2025-03-01","week":9,"nums":[2, 6, 7, 10, 28, 32],"bonus":19,"jackpot":2655366,"day":"Sat","big":false},
+        {"date":"2025-02-19","week":8,"nums":[2, 27, 28, 29, 38, 44],"bonus":20,"jackpot":2274988,"day":"Wed","big":false},
+        {"date":"2025-02-12","week":7,"nums":[5, 11, 26, 37, 46, 47],"bonus":35,"jackpot":2935144,"day":"Wed","big":false},
+        {"date":"2025-01-29","week":5,"nums":[5, 12, 14, 27, 34, 42],"bonus":25,"jackpot":4642646,"day":"Wed","big":false},
+        {"date":"2024-12-28","week":52,"nums":[2, 4, 5, 10, 16, 17],"bonus":23,"jackpot":5419866,"day":"Sat","big":false},
+        {"date":"2024-11-20","week":47,"nums":[7, 10, 12, 19, 21, 32],"bonus":9,"jackpot":7028440,"day":"Wed","big":false},
+        {"date":"2024-09-28","week":39,"nums":[4, 6, 13, 27, 29, 32],"bonus":47,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2024-09-25","week":39,"nums":[1, 7, 17, 20, 22, 31],"bonus":35,"jackpot":5501086,"day":"Wed","big":false},
+        {"date":"2024-08-17","week":33,"nums":[8, 9, 14, 30, 42, 47],"bonus":16,"jackpot":6756855,"day":"Sat","big":false},
+        {"date":"2024-06-29","week":26,"nums":[1, 4, 8, 21, 27, 28],"bonus":34,"jackpot":6788177,"day":"Sat","big":false},
+        {"date":"2024-05-11","week":19,"nums":[8, 16, 24, 27, 28, 42],"bonus":30,"jackpot":3796062,"day":"Sat","big":false},
+        {"date":"2024-04-20","week":16,"nums":[1, 9, 10, 14, 26, 40],"bonus":4,"jackpot":8970934,"day":"Sat","big":true},
+        {"date":"2024-02-14","week":7,"nums":[1, 5, 10, 15, 44, 47],"bonus":45,"jackpot":3523021,"day":"Wed","big":false},
+        {"date":"2024-01-27","week":4,"nums":[3, 8, 10, 24, 32, 41],"bonus":30,"jackpot":14674966,"day":"Sat","big":true},
+        {"date":"2023-12-30","week":52,"nums":[13, 21, 27, 34, 36, 43],"bonus":35,"jackpot":10684117,"day":"Sat","big":true},
+        {"date":"2023-10-11","week":41,"nums":[2, 12, 16, 24, 39, 40],"bonus":25,"jackpot":2294855,"day":"Wed","big":false},
+        {"date":"2023-10-04","week":40,"nums":[1, 6, 8, 12, 13, 16],"bonus":35,"jackpot":7734054,"day":"Wed","big":false},
+        {"date":"2023-08-09","week":32,"nums":[4, 11, 17, 18, 25, 32],"bonus":9,"jackpot":4257050,"day":"Wed","big":false},
+        {"date":"2023-07-15","week":28,"nums":[12, 26, 28, 34, 42, 45],"bonus":14,"jackpot":2418002,"day":"Sat","big":false},
+        {"date":"2023-07-08","week":27,"nums":[5, 16, 17, 18, 22, 28],"bonus":2,"jackpot":3931066,"day":"Sat","big":false},
+        {"date":"2023-06-17","week":24,"nums":[2, 3, 21, 43, 44, 46],"bonus":7,"jackpot":12747756,"day":"Sat","big":true},
+        {"date":"2023-03-18","week":11,"nums":[5, 9, 11, 13, 24, 47],"bonus":41,"jackpot":3987540,"day":"Sat","big":false},
+        {"date":"2023-02-25","week":8,"nums":[4, 6, 14, 20, 22, 33],"bonus":45,"jackpot":5604203,"day":"Sat","big":false},
+        {"date":"2023-01-21","week":3,"nums":[7, 29, 32, 33, 44, 46],"bonus":38,"jackpot":3519138,"day":"Sat","big":false},
+        {"date":"2023-01-04","week":1,"nums":[18, 29, 36, 38, 40, 43],"bonus":30,"jackpot":11106438,"day":"Wed","big":true},
+        {"date":"2022-12-24","week":51,"nums":[4, 18, 21, 30, 41, 45],"bonus":44,"jackpot":3000000,"day":"Sat","big":false},
+        {"date":"2022-10-15","week":41,"nums":[7, 19, 24, 30, 36, 44],"bonus":41,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2022-10-12","week":41,"nums":[1, 11, 14, 19, 27, 39],"bonus":44,"jackpot":2310972,"day":"Wed","big":false},
+        {"date":"2022-10-05","week":40,"nums":[3, 8, 20, 24, 28, 29],"bonus":40,"jackpot":8915056,"day":"Wed","big":true},
+        {"date":"2022-08-03","week":31,"nums":[9, 10, 17, 32, 33, 39],"bonus":47,"jackpot":5541001,"day":"Wed","big":false},
+        {"date":"2022-06-29","week":26,"nums":[1, 9, 17, 25, 30, 31],"bonus":39,"jackpot":5612385,"day":"Wed","big":false},
+        {"date":"2022-05-25","week":21,"nums":[9, 13, 15, 18, 21, 27],"bonus":11,"jackpot":3612485,"day":"Wed","big":false},
+        {"date":"2022-05-07","week":18,"nums":[1, 31, 35, 39, 42, 46],"bonus":45,"jackpot":8508720,"day":"Sat","big":true},
+        {"date":"2022-03-12","week":10,"nums":[13, 21, 28, 37, 45, 46],"bonus":33,"jackpot":5365262,"day":"Sat","big":false},
+        {"date":"2022-02-09","week":6,"nums":[3, 23, 27, 32, 35, 37],"bonus":7,"jackpot":4687612,"day":"Wed","big":false},
+        {"date":"2022-01-15","week":2,"nums":[2, 9, 16, 30, 37, 40],"bonus":23,"jackpot":19060800,"day":"Sat","big":true},
+        {"date":"2021-06-05","week":22,"nums":[10, 16, 17, 24, 26, 42],"bonus":35,"jackpot":2475303,"day":"Sat","big":false},
+        {"date":"2021-05-29","week":21,"nums":[9, 15, 28, 34, 39, 46],"bonus":26,"jackpot":2469871,"day":"Sat","big":false},
+        {"date":"2021-05-22","week":20,"nums":[1, 5, 12, 23, 45, 46],"bonus":41,"jackpot":6489165,"day":"Sat","big":false},
+        {"date":"2021-04-14","week":15,"nums":[4, 14, 20, 23, 27, 37],"bonus":39,"jackpot":12740043,"day":"Wed","big":true},
+        {"date":"2021-01-27","week":4,"nums":[7, 24, 27, 33, 34, 40],"bonus":30,"jackpot":8530884,"day":"Wed","big":true},
+        {"date":"2020-12-02","week":49,"nums":[9, 12, 22, 28, 35, 47],"bonus":37,"jackpot":10780193,"day":"Wed","big":true},
+        {"date":"2020-09-23","week":39,"nums":[2, 5, 7, 29, 38, 42],"bonus":27,"jackpot":5395798,"day":"Wed","big":false},
+        {"date":"2020-08-22","week":34,"nums":[4, 5, 12, 15, 16, 31],"bonus":23,"jackpot":2482715,"day":"Sat","big":false},
+        {"date":"2020-08-15","week":33,"nums":[3, 7, 18, 36, 40, 42],"bonus":16,"jackpot":7337744,"day":"Sat","big":false},
+        {"date":"2020-07-01","week":27,"nums":[3, 8, 21, 34, 37, 47],"bonus":16,"jackpot":2824437,"day":"Wed","big":false},
+        {"date":"2020-06-20","week":25,"nums":[5, 8, 19, 40, 41, 44],"bonus":17,"jackpot":6933904,"day":"Sat","big":false},
+        {"date":"2020-05-09","week":19,"nums":[13, 18, 30, 41, 42, 44],"bonus":37,"jackpot":4041306,"day":"Sat","big":false},
+        {"date":"2020-04-18","week":16,"nums":[4, 9, 15, 27, 29, 34],"bonus":17,"jackpot":9772175,"day":"Sat","big":true},
+        {"date":"2020-02-08","week":6,"nums":[14, 20, 24, 38, 41, 45],"bonus":3,"jackpot":2773649,"day":"Sat","big":false},
+        {"date":"2020-01-29","week":5,"nums":[1, 3, 20, 22, 39, 44],"bonus":16,"jackpot":3886999,"day":"Wed","big":false},
+        {"date":"2019-12-07","week":49,"nums":[13, 16, 18, 25, 38, 41],"bonus":1,"jackpot":6834410,"day":"Sat","big":false},
+        {"date":"2019-10-23","week":43,"nums":[13, 27, 32, 36, 38, 39],"bonus":43,"jackpot":5260021,"day":"Wed","big":false},
+        {"date":"2019-09-21","week":38,"nums":[6, 8, 13, 15, 21, 30],"bonus":17,"jackpot":5325592,"day":"Sat","big":false},
+        {"date":"2019-08-21","week":34,"nums":[10, 13, 23, 24, 25, 44],"bonus":12,"jackpot":11225280,"day":"Wed","big":true},
+        {"date":"2019-06-08","week":23,"nums":[9, 10, 34, 37, 40, 47],"bonus":7,"jackpot":4051610,"day":"Sat","big":false},
+        {"date":"2019-05-18","week":20,"nums":[1, 7, 9, 18, 22, 33],"bonus":17,"jackpot":6197310,"day":"Sat","big":false},
+        {"date":"2019-04-10","week":15,"nums":[3, 9, 17, 29, 42, 43],"bonus":16,"jackpot":6442934,"day":"Wed","big":false},
+        {"date":"2019-03-02","week":9,"nums":[1, 3, 7, 27, 31, 44],"bonus":19,"jackpot":2497727,"day":"Sat","big":false},
+        {"date":"2019-02-23","week":8,"nums":[3, 19, 21, 29, 31, 35],"bonus":22,"jackpot":10288699,"day":"Sat","big":true},
+        {"date":"2018-12-19","week":51,"nums":[1, 5, 19, 24, 27, 42],"bonus":44,"jackpot":2775644,"day":"Wed","big":false},
+        {"date":"2018-12-08","week":49,"nums":[9, 15, 17, 24, 41, 43],"bonus":37,"jackpot":6589886,"day":"Sat","big":false},
+        {"date":"2018-10-27","week":43,"nums":[14, 24, 30, 38, 40, 45],"bonus":36,"jackpot":4439459,"day":"Sat","big":false},
+        {"date":"2018-10-03","week":40,"nums":[1, 15, 22, 27, 31, 34],"bonus":42,"jackpot":5781232,"day":"Wed","big":false},
+        {"date":"2018-08-29","week":35,"nums":[26, 27, 35, 40, 41, 42],"bonus":7,"jackpot":4770304,"day":"Wed","big":false},
+        {"date":"2018-08-04","week":31,"nums":[3, 4, 5, 19, 26, 43],"bonus":24,"jackpot":8347497,"day":"Sat","big":true},
+        {"date":"2018-06-16","week":24,"nums":[6, 26, 27, 32, 45, 47],"bonus":9,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2018-06-13","week":24,"nums":[5, 21, 25, 29, 41, 43],"bonus":31,"jackpot":2895277,"day":"Wed","big":false},
+        {"date":"2018-06-02","week":22,"nums":[1, 7, 10, 17, 35, 37],"bonus":43,"jackpot":4325656,"day":"Sat","big":false},
+        {"date":"2018-05-12","week":19,"nums":[5, 6, 14, 19, 22, 30],"bonus":24,"jackpot":8549067,"day":"Sat","big":true},
+        {"date":"2018-03-24","week":12,"nums":[2, 17, 24, 25, 35, 40],"bonus":36,"jackpot":5685384,"day":"Sat","big":false},
+        {"date":"2018-02-21","week":8,"nums":[9, 26, 27, 29, 31, 47],"bonus":30,"jackpot":7179959,"day":"Wed","big":false},
+        {"date":"2018-01-13","week":2,"nums":[1, 2, 7, 33, 34, 40],"bonus":6,"jackpot":4434994,"day":"Sat","big":false},
+        {"date":"2017-12-23","week":51,"nums":[5, 14, 28, 29, 32, 38],"bonus":31,"jackpot":5436602,"day":"Sat","big":false},
+        {"date":"2017-11-25","week":47,"nums":[4, 16, 18, 24, 32, 35],"bonus":46,"jackpot":5868553,"day":"Sat","big":false},
+        {"date":"2017-10-25","week":43,"nums":[8, 10, 11, 25, 28, 32],"bonus":35,"jackpot":7545870,"day":"Wed","big":false},
+        {"date":"2017-09-13","week":37,"nums":[7, 19, 20, 32, 34, 43],"bonus":45,"jackpot":2387835,"day":"Wed","big":false},
+        {"date":"2017-09-06","week":36,"nums":[1, 4, 5, 6, 18, 47],"bonus":35,"jackpot":2951364,"day":"Wed","big":false},
+        {"date":"2017-08-26","week":34,"nums":[1, 16, 17, 32, 34, 35],"bonus":5,"jackpot":9485078,"day":"Sat","big":true},
+        {"date":"2017-07-05","week":27,"nums":[7, 16, 18, 20, 24, 37],"bonus":13,"jackpot":6409326,"day":"Wed","big":false},
+        {"date":"2017-05-31","week":22,"nums":[15, 31, 33, 34, 36, 43],"bonus":39,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2017-05-27","week":21,"nums":[2, 5, 12, 34, 41, 47],"bonus":29,"jackpot":4541179,"day":"Sat","big":false},
+        {"date":"2017-05-06","week":18,"nums":[3, 7, 17, 21, 22, 28],"bonus":2,"jackpot":12344808,"day":"Sat","big":true},
+        {"date":"2017-03-01","week":9,"nums":[2, 15, 19, 26, 37, 38],"bonus":39,"jackpot":12849224,"day":"Wed","big":true},
+        {"date":"2016-12-24","week":51,"nums":[8, 10, 11, 16, 40, 42],"bonus":38,"jackpot":4577663,"day":"Sat","big":false},
+        {"date":"2016-12-03","week":48,"nums":[2, 6, 21, 23, 29, 44],"bonus":41,"jackpot":11345002,"day":"Sat","big":true},
+        {"date":"2016-10-01","week":39,"nums":[2, 5, 8, 14, 40, 42],"bonus":7,"jackpot":4532646,"day":"Sat","big":false},
+        {"date":"2016-09-10","week":36,"nums":[5, 6, 14, 24, 26, 29],"bonus":20,"jackpot":4615874,"day":"Sat","big":false},
+        {"date":"2016-08-20","week":33,"nums":[10, 11, 12, 15, 18, 19],"bonus":35,"jackpot":11179621,"day":"Sat","big":true},
+        {"date":"2016-06-22","week":25,"nums":[6, 16, 23, 28, 32, 35],"bonus":4,"jackpot":5899439,"day":"Wed","big":false},
+        {"date":"2016-05-21","week":20,"nums":[8, 15, 17, 22, 34, 38],"bonus":10,"jackpot":5544864,"day":"Sat","big":false},
+        {"date":"2016-04-23","week":16,"nums":[1, 9, 15, 23, 33, 38],"bonus":29,"jackpot":7902685,"day":"Sat","big":false},
+        {"date":"2016-03-12","week":10,"nums":[9, 18, 23, 27, 31, 38],"bonus":30,"jackpot":2578134,"day":"Sat","big":false},
+        {"date":"2016-03-05","week":9,"nums":[2, 8, 16, 24, 33, 42],"bonus":47,"jackpot":8244502,"day":"Sat","big":true},
+        {"date":"2016-01-23","week":3,"nums":[10, 12, 13, 19, 43, 45],"bonus":5,"jackpot":13793435,"day":"Sat","big":true},
+        {"date":"2015-11-14","week":46,"nums":[12, 16, 22, 36, 40, 43],"bonus":4,"jackpot":3883756,"day":"Sat","big":false},
+        {"date":"2015-10-28","week":44,"nums":[5, 7, 10, 18, 41, 47],"bonus":44,"jackpot":5318670,"day":"Wed","big":false},
+        {"date":"2015-09-30","week":40,"nums":[4, 9, 27, 31, 38, 39],"bonus":10,"jackpot":2968171,"day":"Wed","big":false},
+        {"date":"2015-09-19","week":38,"nums":[7, 26, 34, 39, 41, 42],"bonus":31,"jackpot":7384790,"day":"Sat","big":false},
+        {"date":"2015-08-08","week":32,"nums":[9, 26, 33, 37, 40, 44],"bonus":42,"jackpot":2501742,"day":"Sat","big":false},
+        {"date":"2015-08-01","week":31,"nums":[3, 7, 11, 33, 37, 42],"bonus":39,"jackpot":6384673,"day":"Sat","big":false},
+        {"date":"2015-06-27","week":26,"nums":[1, 2, 7, 22, 35, 45],"bonus":4,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2015-06-24","week":26,"nums":[7, 14, 22, 30, 35, 41],"bonus":5,"jackpot":2917462,"day":"Wed","big":false},
+        {"date":"2015-06-13","week":24,"nums":[10, 17, 20, 31, 33, 38],"bonus":27,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2015-06-10","week":24,"nums":[11, 16, 21, 27, 29, 35],"bonus":43,"jackpot":5811172,"day":"Wed","big":false},
+        {"date":"2015-05-09","week":19,"nums":[2, 5, 13, 17, 32, 34],"bonus":45,"jackpot":5900958,"day":"Sat","big":false},
+        {"date":"2015-04-08","week":15,"nums":[2, 4, 22, 26, 30, 36],"bonus":7,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2015-04-04","week":14,"nums":[30, 31, 32, 35, 37, 40],"bonus":44,"jackpot":10650121,"day":"Sat","big":true},
+        {"date":"2015-02-05","week":6,"nums":[9, 10, 18, 20, 24, 26],"bonus":35,"jackpot":10230559,"day":"Thu","big":true},
+        {"date":"2014-12-10","week":50,"nums":[2, 15, 18, 21, 35, 39],"bonus":33,"jackpot":2896698,"day":"Wed","big":false},
+        {"date":"2014-11-29","week":48,"nums":[7, 8, 18, 28, 35, 39],"bonus":37,"jackpot":2913455,"day":"Sat","big":false},
+        {"date":"2014-11-19","week":47,"nums":[9, 11, 12, 29, 31, 35],"bonus":1,"jackpot":4904904,"day":"Wed","big":false},
+        {"date":"2014-10-25","week":43,"nums":[3, 5, 8, 15, 16, 23],"bonus":43,"jackpot":7120595,"day":"Sat","big":false},
+        {"date":"2014-09-17","week":38,"nums":[19, 25, 26, 27, 39, 45],"bonus":42,"jackpot":4871046,"day":"Wed","big":false},
+        {"date":"2014-08-23","week":34,"nums":[3, 9, 18, 28, 32, 43],"bonus":44,"jackpot":3919939,"day":"Sat","big":false},
+        {"date":"2014-08-06","week":32,"nums":[7, 11, 24, 32, 33, 40],"bonus":38,"jackpot":5935632,"day":"Wed","big":false},
+        {"date":"2014-07-05","week":27,"nums":[10, 18, 23, 26, 42, 45],"bonus":13,"jackpot":4433754,"day":"Sat","big":false},
+        {"date":"2014-06-14","week":24,"nums":[4, 8, 15, 18, 19, 22],"bonus":1,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2014-06-11","week":24,"nums":[9, 19, 22, 27, 30, 38],"bonus":16,"jackpot":2405235,"day":"Wed","big":false},
+        {"date":"2014-06-04","week":23,"nums":[13, 14, 24, 31, 35, 43],"bonus":21,"jackpot":12155282,"day":"Wed","big":true},
+        {"date":"2014-04-09","week":15,"nums":[8, 9, 14, 15, 42, 44],"bonus":36,"jackpot":6496218,"day":"Wed","big":false},
+        {"date":"2014-03-05","week":10,"nums":[4, 19, 24, 25, 27, 43],"bonus":26,"jackpot":8302204,"day":"Wed","big":true},
+        {"date":"2014-01-18","week":3,"nums":[4, 5, 13, 21, 29, 37],"bonus":22,"jackpot":3528865,"day":"Sat","big":false},
+        {"date":"2014-01-04","week":1,"nums":[4, 25, 35, 38, 42, 43],"bonus":28,"jackpot":8188679,"day":"Sat","big":true},
+        {"date":"2013-11-27","week":48,"nums":[1, 14, 15, 23, 27, 44],"bonus":12,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2013-11-23","week":47,"nums":[1, 3, 8, 11, 14, 34],"bonus":40,"jackpot":5553404,"day":"Sat","big":false},
+        {"date":"2013-10-26","week":43,"nums":[9, 12, 18, 19, 31, 44],"bonus":1,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2013-10-23","week":43,"nums":[14, 31, 32, 34, 35, 40],"bonus":20,"jackpot":3950985,"day":"Wed","big":false},
+        {"date":"2013-10-05","week":40,"nums":[6, 14, 22, 28, 37, 44],"bonus":2,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2013-10-02","week":40,"nums":[9, 15, 18, 21, 34, 35],"bonus":42,"jackpot":3961390,"day":"Wed","big":false},
+        {"date":"2013-09-14","week":37,"nums":[5, 9, 15, 31, 35, 43],"bonus":23,"jackpot":2984327,"day":"Sat","big":false},
+        {"date":"2013-09-04","week":36,"nums":[2, 4, 9, 12, 28, 31],"bonus":35,"jackpot":3984812,"day":"Wed","big":false},
+        {"date":"2013-08-17","week":33,"nums":[4, 11, 16, 33, 43, 45],"bonus":10,"jackpot":6158375,"day":"Sat","big":false},
+        {"date":"2013-07-17","week":29,"nums":[2, 3, 4, 19, 33, 38],"bonus":16,"jackpot":6185074,"day":"Wed","big":false},
+        {"date":"2013-06-15","week":24,"nums":[1, 6, 8, 15, 26, 28],"bonus":29,"jackpot":4045514,"day":"Sat","big":false},
+        {"date":"2013-05-29","week":22,"nums":[6, 12, 14, 16, 33, 43],"bonus":2,"jackpot":10565261,"day":"Wed","big":true},
+        {"date":"2013-04-27","week":17,"nums":[18, 22, 23, 26, 32, 42],"bonus":35,"jackpot":3595558,"day":"Sat","big":false},
+        {"date":"2013-04-13","week":15,"nums":[1, 15, 20, 27, 41, 42],"bonus":44,"jackpot":2584457,"day":"Sat","big":false},
+        {"date":"2013-04-06","week":14,"nums":[1, 12, 16, 26, 27, 29],"bonus":41,"jackpot":5146800,"day":"Sat","big":false},
+        {"date":"2013-03-13","week":11,"nums":[2, 11, 14, 25, 30, 34],"bonus":27,"jackpot":3016645,"day":"Wed","big":false},
+        {"date":"2013-03-02","week":9,"nums":[5, 8, 9, 30, 33, 45],"bonus":10,"jackpot":6437577,"day":"Sat","big":false},
+        {"date":"2013-01-30","week":5,"nums":[3, 8, 11, 23, 27, 33],"bonus":36,"jackpot":10613747,"day":"Wed","big":true},
+        {"date":"2012-12-15","week":50,"nums":[3, 13, 15, 22, 26, 30],"bonus":9,"jackpot":4650968,"day":"Sat","big":false},
+        {"date":"2012-11-24","week":47,"nums":[7, 11, 25, 28, 30, 40],"bonus":19,"jackpot":3595140,"day":"Sat","big":false},
+        {"date":"2012-11-10","week":45,"nums":[8, 12, 19, 24, 28, 42],"bonus":18,"jackpot":3643184,"day":"Sat","big":false},
+        {"date":"2012-10-27","week":43,"nums":[4, 9, 24, 25, 29, 44],"bonus":39,"jackpot":7373469,"day":"Sat","big":false},
+        {"date":"2012-09-26","week":39,"nums":[2, 7, 12, 15, 26, 28],"bonus":45,"jackpot":5771163,"day":"Wed","big":false},
+        {"date":"2012-08-29","week":35,"nums":[12, 24, 26, 34, 35, 42],"bonus":44,"jackpot":8638029,"day":"Wed","big":true},
+        {"date":"2012-07-25","week":30,"nums":[31, 34, 39, 42, 44, 45],"bonus":32,"jackpot":3063028,"day":"Wed","big":false},
+        {"date":"2012-07-14","week":28,"nums":[13, 25, 26, 41, 42, 43],"bonus":8,"jackpot":3084281,"day":"Sat","big":false},
+        {"date":"2012-07-04","week":27,"nums":[7, 13, 21, 31, 36, 42],"bonus":15,"jackpot":3088033,"day":"Wed","big":false},
+        {"date":"2012-06-23","week":25,"nums":[19, 22, 27, 33, 40, 44],"bonus":43,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2012-06-20","week":25,"nums":[15, 31, 35, 38, 40, 45],"bonus":11,"jackpot":8749912,"day":"Wed","big":true},
+        {"date":"2012-05-09","week":19,"nums":[3, 21, 28, 38, 39, 41],"bonus":27,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2012-05-05","week":18,"nums":[6, 9, 21, 31, 33, 42],"bonus":11,"jackpot":5377964,"day":"Sat","big":false},
+        {"date":"2012-04-18","week":16,"nums":[2, 14, 15, 19, 27, 31],"bonus":7,"jackpot":4411240,"day":"Wed","big":false},
+        {"date":"2012-03-31","week":13,"nums":[6, 11, 19, 23, 32, 41],"bonus":16,"jackpot":11526001,"day":"Sat","big":true},
+        {"date":"2012-02-15","week":7,"nums":[1, 6, 8, 10, 13, 14],"bonus":20,"jackpot":4865953,"day":"Wed","big":false},
+        {"date":"2012-01-25","week":4,"nums":[1, 11, 13, 14, 15, 37],"bonus":30,"jackpot":5482894,"day":"Wed","big":false},
+        {"date":"2011-12-31","week":52,"nums":[4, 11, 23, 30, 37, 44],"bonus":32,"jackpot":4164479,"day":"Sat","big":false},
+        {"date":"2011-12-21","week":51,"nums":[2, 14, 22, 24, 29, 41],"bonus":44,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2011-12-17","week":50,"nums":[3, 10, 24, 26, 32, 44],"bonus":6,"jackpot":4817816,"day":"Sat","big":false},
+        {"date":"2011-12-03","week":48,"nums":[4, 12, 14, 16, 21, 34],"bonus":22,"jackpot":2642046,"day":"Sat","big":false},
+        {"date":"2011-11-26","week":47,"nums":[6, 8, 22, 24, 34, 38],"bonus":21,"jackpot":2652968,"day":"Sat","big":false},
+        {"date":"2011-11-19","week":46,"nums":[3, 10, 24, 30, 31, 39],"bonus":28,"jackpot":3808075,"day":"Sat","big":false},
+        {"date":"2011-11-05","week":44,"nums":[1, 4, 15, 16, 29, 33],"bonus":8,"jackpot":3814651,"day":"Sat","big":false},
+        {"date":"2011-10-22","week":42,"nums":[4, 10, 21, 32, 43, 44],"bonus":11,"jackpot":2664608,"day":"Sat","big":false},
+        {"date":"2011-10-15","week":41,"nums":[4, 9, 16, 28, 32, 38],"bonus":1,"jackpot":5178377,"day":"Sat","big":false},
+        {"date":"2011-09-24","week":38,"nums":[2, 7, 19, 23, 33, 43],"bonus":28,"jackpot":11033593,"day":"Sat","big":true},
+        {"date":"2011-08-06","week":31,"nums":[9, 21, 26, 31, 39, 42],"bonus":5,"jackpot":2652957,"day":"Sat","big":false},
+        {"date":"2011-07-30","week":30,"nums":[3, 7, 9, 12, 24, 28],"bonus":20,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2011-07-27","week":30,"nums":[6, 10, 12, 26, 28, 30],"bonus":8,"jackpot":4407601,"day":"Wed","big":false},
+        {"date":"2011-07-09","week":27,"nums":[2, 9, 11, 20, 33, 36],"bonus":14,"jackpot":3879142,"day":"Sat","big":false},
+        {"date":"2011-06-25","week":25,"nums":[3, 11, 23, 24, 27, 38],"bonus":16,"jackpot":2669367,"day":"Sat","big":false},
+        {"date":"2011-06-18","week":24,"nums":[8, 26, 27, 28, 32, 37],"bonus":25,"jackpot":2000000,"day":"Sat","big":false},
+        {"date":"2011-06-15","week":24,"nums":[7, 8, 11, 12, 42, 44],"bonus":3,"jackpot":2000000,"day":"Wed","big":false},
+        {"date":"2011-06-11","week":23,"nums":[2, 11, 13, 18, 20, 30],"bonus":6,"jackpot":5155806,"day":"Sat","big":false},
+        {"date":"2011-05-21","week":20,"nums":[25, 26, 28, 35, 36, 40],"bonus":39,"jackpot":3911401,"day":"Sat","big":false},
+        {"date":"2011-05-07","week":18,"nums":[7, 12, 24, 36, 43, 45],"bonus":34,"jackpot":5076220,"day":"Sat","big":false},
+        {"date":"2011-04-23","week":16,"nums":[7, 10, 11, 15, 37, 40],"bonus":42,"jackpot":3315499,"day":"Sat","big":false},
+        {"date":"2011-04-13","week":15,"nums":[2, 11, 12, 16, 22, 27],"bonus":33,"jackpot":4712488,"day":"Wed","big":false},
+        {"date":"2011-03-26","week":12,"nums":[15, 21, 23, 25, 44, 45],"bonus":10,"jackpot":14037236,"day":"Sat","big":true},
+        {"date":"2011-02-05","week":5,"nums":[4, 5, 6, 15, 20, 25],"bonus":19,"jackpot":4018495,"day":"Sat","big":false},
+        {"date":"2011-01-22","week":3,"nums":[2, 7, 12, 14, 23, 35],"bonus":27,"jackpot":3389794,"day":"Sat","big":false}
+    ]
+};
+
+let currentYear = "2026";
+const BIG_THRESHOLD = 8000000;
+
+function formatEuro(amount) {
+    return '€' + amount.toLocaleString('en-IE');
+}
+
+function renderStats() {
+    const allWins = WINS_DATA["all"];
+    const totalWins = allWins.length;
+    const avgJackpot = Math.round(allWins.reduce((s, w) => s + w.jackpot, 0) / totalWins);
+    const biggest = allWins.reduce((a, b) => a.jackpot > b.jackpot ? a : b);
+    const smallest = allWins.reduce((a, b) => a.jackpot < b.jackpot ? a : b);
+    const totalWon = allWins.reduce((s, w) => s + w.jackpot, 0);
+    // Already in HTML
+}
+
+function renderTabs() {
+    // Tabs are static HTML, just update active state
+    document.querySelectorAll('.year-tab').forEach(tab => {
+        const yr = tab.getAttribute('onclick').match(/'([^']+)'/)[1];
+        if (yr === currentYear) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+}
+
+function switchYear(year) {
+    currentYear = year;
+    renderTabs();
+    renderTable();
+}
+
+function renderTable() {
+    const wins = (WINS_DATA[currentYear] || []).slice();
+    document.getElementById('win-count').textContent = wins.length;
+
+    const tbody = document.getElementById('table-body');
+    tbody.innerHTML = wins.map(w => {
+        const isBig = w.jackpot >= BIG_THRESHOLD;
+        const badgeClass = isBig ? 'jackpot-badge jackpot-big' : 'jackpot-badge';
+        const balls = w.nums.map(n => `<span class="ball">${n}</span>`).join('');
+        const bonusBall = `<span class="ball ball-bonus">${w.bonus}</span>`;
+        return `<tr class="${isBig ? 'highlight-row' : ''}">
+            <td class="font-mono font-medium">${w.date}</td>
+            <td><span class="week-badge">W${w.week}</span></td>
+            <td>${balls} ${bonusBall}</td>
+            <td><span class="${badgeClass}">${formatEuro(w.jackpot)}</span></td>
+            <td class="text-slate-400">${w.day}</td>
+        </tr>`;
+    }).join('');
+}
+
+function filterTable() {
+    const query = document.getElementById('search-input').value.trim();
+    const wins = (WINS_DATA[currentYear] || []).slice();
+
+    const filtered = query === '' ? wins : wins.filter(w => {
+        const numStr = [...w.nums, w.bonus].join(' ');
+        return numStr.includes(query) || w.date.includes(query) || formatEuro(w.jackpot).includes(query);
+    });
+
+    document.getElementById('win-count').textContent = filtered.length + ' of ' + wins.length;
+    const tbody = document.getElementById('table-body');
+    tbody.innerHTML = filtered.map(w => {
+        const isBig = w.jackpot >= BIG_THRESHOLD;
+        const badgeClass = isBig ? 'jackpot-badge jackpot-big' : 'jackpot-badge';
+        const balls = w.nums.map(n => `<span class="ball">${n}</span>`).join('');
+        const bonusBall = `<span class="ball ball-bonus">${w.bonus}</span>`;
+        return `<tr class="${isBig ? 'highlight-row' : ''}">
+            <td class="font-mono font-medium">${w.date}</td>
+            <td><span class="week-badge">W${w.week}</span></td>
+            <td>${balls} ${bonusBall}</td>
+            <td><span class="${badgeClass}">${formatEuro(w.jackpot)}</span></td>
+            <td class="text-slate-400">${w.day}</td>
+        </tr>`;
+    }).join('');
+}
+
+renderTabs();
+renderTable();
+    </script>
+</body>
+</html>
