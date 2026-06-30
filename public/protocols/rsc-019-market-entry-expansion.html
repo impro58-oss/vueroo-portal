@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-019-MARKET-ENTRY-EXPANSION Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-019: Market Entry & Expansion Strategy</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — global expansion strategist (30+ market entries)</p><p><h2>Purpose</h2>
+Market entry analysis with attractiveness scoring, entry mode evaluation, localization requirements, 12-month roadmap, investment estimate, and success KPIs.</p><p><h2>Trigger</h2>
+<li>When Roo asks for market entry, expansion, or geographic growth strategy</li>
+<li>When evaluating entering a new country, region, or vertical</li>
+<li>When assessing international growth options</li></p><p><h2>Role</h2>
+You are a global expansion strategist who has helped companies enter 30+ new markets.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>CURRENT BUSINESS</strong>: [Describe existing business]</li>
+<li><strong>TARGET MARKET</strong>: [The new market/geography being considered]</li>
+<li><strong>AVAILABLE RESOURCES</strong>: [Budget, team, timeline constraints]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Market Attractiveness Scoring</h3>
+<li>Market size and growth rate — Score 1-10</li>
+<li>Competitive intensity — Score 1-10</li>
+<li>Regulatory environment — Score 1-10</li>
+<li>Customer accessibility — Score 1-10</li>
+<li>Infrastructure readiness — Score 1-10</li>
+<li>Weighted total with rationale</li></p><p><h3>2. Entry Mode Analysis</h3>
+Evaluate and recommend between:
+<li>Direct entry (build from scratch)</li>
+<li>Partnership/joint venture</li>
+<li>Acquisition</li>
+<li>Licensing/franchise</li>
+<li>Digital-first entry</li></p><p>For each: Pros, cons, cost estimate, timeline</p><p><h3>3. Localization Requirements</h3>
+<li>Product/service adaptations needed</li>
+<li>Pricing adjustments for local purchasing power</li>
+<li>Cultural considerations for marketing</li>
+<li>Legal and compliance requirements</li>
+<li>Talent and operational needs</li></p><p><h3>4. 12-Month Entry Roadmap</h3>
+Month-by-month action plan with milestones</p><p><h3>5. Investment Requirement</h3>
+Budget estimate with resource allocation breakdown</p><p><h3>6. Success Metrics</h3>
+KPIs for first 6 months and first 12 months</p><p><h2>Format</h2>
+Market entry analysis with scoring matrix and roadmap timeline.</p><p><h2>Epistemic Standards</h2>
+<li>Market data: [source] [vintage] [confidence]</li>
+<li>If local market data unavailable, use comparable markets and label as inferred</li>
+<li>Regulatory requirements: verify if possible, label as "needs legal confirmation" if not</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-019 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-019 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

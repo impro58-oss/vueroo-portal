@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-016-CUSTOMER-JOURNEY-MAPPING Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-016: Customer Journey Mapping</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — customer experience strategist at top consulting firm</p><p><h2>Purpose</h2>
+Complete customer journey map covering every stage from awareness to churn, with actions, emotions, touchpoints, pain points, opportunities, and metrics per stage.</p><p><h2>Trigger</h2>
+<li>When Roo asks for customer journey, experience mapping, or lifecycle analysis</li>
+<li>When optimizing conversion funnel or reducing churn</li>
+<li>When designing onboarding or retention strategy</li></p><p><h2>Role</h2>
+You are a customer experience strategist at a top consulting firm.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>PRODUCT/SERVICE</strong>: [What is being mapped]</li>
+<li><strong>CUSTOMER TYPE</strong>: [Which customer segment]</li>
+<li><strong>CURRENT CONVERSION RATE</strong>: [If known]</li></p><p><h2>Output Structure</h2></p><p><h3>Journey Stages (7)</h3></p><p>For each stage provide: Customer actions, thoughts, emotions, touchpoints, pain points, opportunities, metrics, and recommended tactics.</p><p><strong>1. Awareness:</strong> How do they first discover us? What triggers the search?
+<strong>2. Consideration:</strong> What do they compare? What information do they need?
+<strong>3. Decision:</strong> What makes them convert? What almost stops them?
+<strong>4. Onboarding:</strong> First 7 days experience that builds or kills retention
+<strong>5. Engagement:</strong> What keeps them coming back? Key activation moments?
+<strong>6. Loyalty:</strong> What turns users into advocates? Referral triggers?
+<strong>7. Churn:</strong> Why do they leave? Early warning signals?</p><p><h3>Emotional Curve</h3>
+<li>Text-described emotional trajectory across all stages</li>
+<li>Highs and lows identified</li>
+<li>Friction points where emotion drops</li></p><p><h3>Summary Table</h3>
+| Stage | Key Metric | Current Performance | Target | Priority |</p><p><h2>Format</h2>
+Detailed journey map with emotional curve described in text.</p><p><h2>Epistemic Standards</h2>
+<li>Journey stages based on: customer research, analytics data, or industry frameworks</li>
+<li>Label data source for each stage insight</li>
+<li>If no primary research, use industry-standard journey frameworks and label as inferred</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-016 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-016 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

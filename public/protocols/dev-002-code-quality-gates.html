@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@ li { margin: 0.25rem 0; margin-left: 1.5rem; }
 </head>
 <body>
 <a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
-<h1>DEV-002 Code Quality Gates Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+﻿# DEV-002 Code Quality Gates Protocol</p><p><strong>Department:</strong> DEV (Development)
 <strong>Version:</strong> 1.0
 <strong>Created:</strong> 2026-05-25
 <strong>Owner:</strong> Lumina
@@ -53,8 +53,6 @@ Every piece of code that gets deployed passes through these gates. No exceptions
 <div class="checkitem">Existing features still work (spot-check)</div>
 <div class="checkitem">No new NaN/undefined/null in output data</div>
 <div class="checkitem">No new 404s or broken links</div>
-<div class="checkitem">All internal links use absolute paths (<code>/protocols/page.html</code>), never relative (<code>page.html</code>)</div>
-<div class="checkitem">Navigation tested in browser: click every link, check console for errors (Learning 015, 019)</div>
 <div class="checkitem">Before/after comparison where applicable</div></p><p><h3>Gate 5: Documentation</h3>
 <div class="checkitem">Code has docstrings on all functions</div>
 <div class="checkitem">Parameters documented and match implementation</div>
@@ -75,5 +73,4 @@ Every piece of code that gets deployed passes through these gates. No exceptions
 <li>Recursive Excellence Protocol — self-critique before shipping</li>
 <li>Lesson: LotteryVue scoring gap (3 weeks of silent failure) — Gate 3 would have caught it</li>
 <li>Lesson: Cron cascade (31 jobs failing) — Gate 5 (documentation) would have caught the model field pattern</li>
-<li>Lesson: Protocol dashboard 404s (Learning 019) — relative links break in Next.js, absolute paths required</li>
 </body></html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-013-SWOT-PORTERS-FIVE-FORCES Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-013: SWOT + Porter's Five Forces</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — Harvard Business School strategy professor</p><p><h2>Purpose</h2>
+Combined SWOT and Porter's Five Forces analysis with cross-matching (SO strategy, WT risks) and overall industry attractiveness scoring.</p><p><h2>Trigger</h2>
+<li>When Roo asks for SWOT, Five Forces, or strategic position analysis</li>
+<li>When evaluating overall competitive position and industry structure</li>
+<li>When preparing strategic planning inputs</li></p><p><h2>Role</h2>
+You are a Harvard Business School strategy professor.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>COMPANY/PRODUCT</strong>: [Describe the business, product, industry, and stage]</li>
+<li><strong>SPECIFIC FOCUS</strong>: [Any particular aspect to emphasize]</li></p><p><h2>Output Structure</h2></p><p><h3>Part 1: SWOT Analysis</h3></p><p><strong>Strengths (7):</strong> Internal advantages with evidence
+<strong>Weaknesses (7):</strong> Internal limitations with honest assessment
+<strong>Opportunities (7):</strong> External factors to exploit
+<strong>Threats (7):</strong> External factors that could harm</p><p><strong>Cross-Analysis:</strong>
+<li>SO Strategy: Match strengths to opportunities (growth options)</li>
+<li>WO Strategy: Match weaknesses to opportunities (improvement areas)</li>
+<li>ST Strategy: Match strengths to threats (defense options)</li>
+<li>WT Strategy: Match weaknesses to threats (risk areas)</li></p><p><h3>Part 2: Porter's Five Forces</h3></p><p><strong>1. Supplier Power:</strong> Key suppliers, leverage, switching costs — Rate 1-10
+<strong>2. Buyer Power:</strong> Customer negotiating power, concentration, alternatives — Rate 1-10
+<strong>3. Competitive Rivalry:</strong> Intensity, number of competitors, growth rate — Rate 1-10
+<strong>4. Threat of Substitution:</strong> Alternatives beyond direct competitors — Rate 1-10
+<strong>5. Threat of New Entry:</strong> Barriers to entry, capital requirements, regulation — Rate 1-10</p><p><strong>Overall Industry Attractiveness Score:</strong> Weighted average with rationale</p><p><h2>Format</h2>
+Structured strategic analysis with ratings and cross-matching tables.</p><p><h2>Epistemic Standards</h2>
+<li>Each strength/weakness must have evidence or example</li>
+<li>Force ratings justified with 2-3 sentences of reasoning</li>
+<li>If data is unavailable for a force, assess qualitatively and label as such</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-013 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-013 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

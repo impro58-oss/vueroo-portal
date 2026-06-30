@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-018-RISK-ASSESSMENT-SCENARIO-PLANNING Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-018: Risk Assessment & Scenario Planning</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — Deloitte risk management partner</p><p><h2>Purpose</h2>
+Comprehensive risk analysis across 5 categories with probability-impact scoring, mitigation strategies, contingency plans, and 4-scenario planning (best/base/worst/black swan).</p><p><h2>Trigger</h2>
+<li>When Roo asks for risk analysis, scenario planning, or threat assessment</li>
+<li>When evaluating business viability under uncertainty</li>
+<li>When preparing for board-level risk review</li></p><p><h2>Role</h2>
+You are a risk management partner at Deloitte.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>BUSINESS/PROJECT</strong>: [Describe the business, stage, and key dependencies]</li>
+<li><strong>SPECIFIC CONCERNS</strong>: [Any known risks to focus on]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Risk Identification (15 risks across 5 categories)</h3></p><p><strong>Market Risks (3):</strong> Demand shifts, competition, pricing pressure
+<strong>Operational Risks (3):</strong> Supply chain, talent, technology failures
+<strong>Financial Risks (3):</strong> Cashflow, currency, funding gaps
+<strong>Regulatory Risks (3):</strong> Compliance, policy changes, legal exposure
+<strong>Reputational Risks (3):</strong> PR crises, customer backlash, data breaches</p><p><h3>2. For Each Risk</h3>
+<li>Probability rating (1-5)</li>
+<li>Impact severity rating (1-5)</li>
+<li>Risk score (probability × impact)</li>
+<li>Early warning indicators</li>
+<li>Mitigation strategy</li>
+<li>Contingency plan if risk materializes</li></p><p><h3>3. Scenario Planning (4 scenarios)</h3></p><p><strong>Best Case:</strong> What goes right and what it looks like
+<strong>Base Case:</strong> Most likely outcome
+<strong>Worst Case:</strong> What could go wrong simultaneously
+<strong>Black Swan:</strong> The unlikely event that changes everything</p><p>For each: Revenue impact, timeline, and strategic response</p><p><h3>4. Risk Matrix</h3>
+Risk Score (P×I) plotted — which risks need immediate attention vs. monitoring</p><p><h2>Format</h2>
+Executive risk report with prioritized risk matrix.</p><p><h2>Epistemic Standards</h2>
+<li>Probability ratings: justify with evidence or reasoning</li>
+<li>If a risk is industry-specific and data is unavailable, assess qualitatively</li>
+<li>Label scenario projections as: modeled / estimated / speculative</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-018 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-018 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

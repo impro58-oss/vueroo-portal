@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-020-EXECUTIVE-STRATEGY-SYNTHESIS Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-020: Executive Strategy Synthesis</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — McKinsey senior partner presenting to CEO</p><p><h2>Purpose</h2>
+Synthesize everything about a business into one strategic recommendation with 3 distinct strategic paths, 90-day priority initiatives, resource requirements, and a decision framework for next moves.</p><p><h2>Trigger</h2>
+<li>When Roo asks for executive summary, strategic synthesis, or "the master prompt"</li>
+<li>When needing a top-level strategic recommendation that synthesizes multiple analyses</li>
+<li>When preparing a CEO-level strategy document</li></p><p><h2>Role</h2>
+You are the senior partner at McKinsey & Company presenting to a CEO.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>FULL CONTEXT</strong>: Product, market, stage, team size, revenue, goals, biggest challenge</li>
+<li><strong>PRIOR ANALYSES</strong>: [Any completed research from RSC-009 through RSC-019 to synthesize]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Executive Summary</h3>
+3-paragraph strategic overview a CEO can read in 2 minutes</p><p><h3>2. Current State Assessment</h3>
+Where the business stands today — brutally honest</p><p><h3>3. Strategic Options (3 paths)</h3></p><p><strong>Option A: Conservative / Low-Risk</strong>
+<li>Expected outcome</li>
+<li>Investment required</li>
+<li>Timeline</li>
+<li>Key risks</li></p><p><strong>Option B: Balanced Growth</strong>
+<li>Expected outcome</li>
+<li>Investment required</li>
+<li>Timeline</li>
+<li>Key risks</li></p><p><strong>Option C: Aggressive / High-Risk</strong>
+<li>Expected outcome</li>
+<li>Investment required</li>
+<li>Timeline</li>
+<li>Key risks</li></p><p><h3>4. Recommended Strategy</h3>
+Top pick with clear reasoning — why this option over the others</p><p><h3>5. Priority Initiatives (90 Days)</h3>
+5 highest-impact actions, ranked:
+1. [Initiative] — Why first, expected impact, owner
+2. [Initiative] — Why second, expected impact, owner
+3-5. Same structure</p><p><h3>6. Resource Requirements</h3>
+<li>People needed (roles, not names)</li>
+<li>Money needed (range with confidence level)</li>
+<li>Tools/infrastructure needed</li></p><p><h3>7. Decision Framework</h3>
+Simple matrix for making the next 10 strategic decisions — not a complex model, a practical tool</p><p><h3>8. "If I Only Had 1 Hour" Brief</h3>
+The single most important insight and action — if the CEO only reads one paragraph, this is it</p><p><h2>Format</h2>
+McKinsey-style strategy deck summary with clear recommendations and next steps.</p><p><h2>Epistemic Standards</h2>
+<li>Every claim: [source] [vintage] [confidence]</li>
+<li>Strategic recommendations must be grounded in prior analyses, not aspiration</li>
+<li>"Brutally honest" means honest — not harsh for the sake of appearing rigorous</li>
+<li>If prior analyses are insufficient, say what's missing and what's needed before a recommendation can be made</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-020 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-020 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

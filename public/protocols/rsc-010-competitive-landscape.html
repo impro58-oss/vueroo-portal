@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-010-COMPETITIVE-LANDSCAPE Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-010: Competitive Landscape Deep Dive</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — Bain & Company senior strategy consultant</p><p><h2>Purpose</h2>
+Produce a complete competitive landscape analysis with direct and indirect competitors, positioning maps, moat assessment, white space analysis, and threat ratings.</p><p><h2>Trigger</h2>
+<li>When Roo asks for competitive analysis, landscape mapping, or competitor intelligence</li>
+<li>When entering a new market and needing to understand the playing field</li>
+<li>When evaluating competitive positioning or differentiation</li></p><p><h2>Role</h2>
+You are a senior strategy consultant at Bain & Company.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>INDUSTRY</strong>: [The industry/market being analyzed]</li>
+<li><strong>YOUR COMPANY</strong>: [Describe your business and positioning]</li>
+<li><strong>GEOGRAPHY</strong>: [Relevant markets]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Direct Competitors (Top 10)</h3>
+For each: company name, market share, revenue, funding, pricing model, key features, target audience, strengths, weaknesses, recent strategic moves
+<li>Ranked by market share</li></p><p><h3>2. Indirect Competitors (5)</h3>
+Adjacent companies that could enter this market
+<li>For each: why they're a threat, what would entry look like, probability of entry</li></p><p><h3>3. Market Positioning Map</h3>
+<li>Price vs. Value matrix (text-described, can be rendered as table)</li>
+<li>X-axis: Price (low to high)</li>
+<li>Y-axis: Value/Features (basic to premium)</li>
+<li>Each competitor plotted</li></p><p><h3>4. Competitive Moats</h3>
+<li>What makes each player defensible</li>
+<li>Moat type: network effects, brand, switching costs, scale, IP, regulatory</li></p><p><h3>5. White Space Analysis</h3>
+<li>Gaps no competitor is filling</li>
+<li>Segment underserved by current players</li>
+<li>Feature gaps across the landscape</li></p><p><h3>6. Threat Assessment</h3>
+Each competitor rated: Low / Medium / High
+<li>With reasoning for the rating</li>
+<li>Direction of threat (expanding, stable, declining)</li></p><p><h2>Format</h2>
+Structured competitive intelligence report with comparison tables.</p><p><h2>Epistemic Standards</h2>
+<li>Market share figures: [source] [vintage] [confidence]</li>
+<li>Revenue figures: note if estimated vs. reported</li>
+<li>If competitor data is unavailable, say so — do not fabricate</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-010 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-010 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

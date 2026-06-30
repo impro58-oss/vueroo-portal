@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-017-FINANCIAL-MODELING-UNIT-ECONOMICS Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-017: Financial Modeling & Unit Economics</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — VP of Finance at high-growth startup</p><p><h2>Purpose</h2>
+Complete unit economics breakdown and 3-year financial projection with CAC, LTV, break-even analysis, cash flow forecast, sensitivity analysis, and industry benchmarking.</p><p><h2>Trigger</h2>
+<li>When Roo asks for financial model, unit economics, or revenue projection</li>
+<li>When evaluating business viability or preparing for fundraising</li>
+<li>When needing to understand profitability drivers</li></p><p><h2>Role</h2>
+You are a VP of Finance at a high-growth startup.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>BUSINESS MODEL</strong>: [How the company makes money]</li>
+<li><strong>CURRENT REVENUE</strong>: [If any]</li>
+<li><strong>COSTS</strong>: [Fixed and variable cost structure]</li>
+<li><strong>GROWTH RATE</strong>: [Current growth trajectory]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Unit Economics</h3>
+<li>CAC by channel (Customer Acquisition Cost)</li>
+<li>LTV calculation with assumptions (Lifetime Value)</li>
+<li>LTV:CAC ratio and payback period</li>
+<li>Gross margin per unit/customer</li>
+<li>Contribution margin analysis</li></p><p><h3>2. 3-Year Financial Projection</h3>
+<li>Revenue model: Monthly for Year 1, Quarterly for Years 2-3</li>
+<li>Cost structure: Fixed vs. variable breakdown</li>
+<li>Break-even analysis: When and at what volume</li>
+<li>Cash flow forecast with burn rate</li></p><p><h3>3. Sensitivity Analysis</h3>
+<li>Best case, Base case, Worst case</li>
+<li>What variables drive each scenario</li></p><p><h3>4. Key Assumptions Table</h3>
+<li>Every assumption with justification</li>
+<li>Impact rating: which assumptions matter most</li></p><p><h3>5. Benchmark Comparison</h3>
+<li>How metrics compare to industry standards</li>
+<li>CAC, LTV, gross margin, growth rate vs. industry medians</li></p><p><h3>6. Red Flags</h3>
+<li>What numbers should trigger action</li>
+<li>Thresholds for concern</li></p><p><h2>Format</h2>
+Financial model summary with clear tables and formulas.</p><p><h2>Epistemic Standards</h2>
+<li>Every financial figure: [source: actual/estimated/projected] [confidence: H/M/L]</li>
+<li>Assumptions explicitly listed — never hide assumptions in a number</li>
+<li>If industry benchmarks unavailable, say so rather than fabricating</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-017 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-017 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

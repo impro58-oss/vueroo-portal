@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-015-GO-TO-MARKET-STRATEGY Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-015: Go-To-Market Strategy</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — Chief Strategy Officer with 20+ product launches</p><p><h2>Purpose</h2>
+Complete go-to-market plan covering launch phasing, channel strategy, messaging framework, content strategy, partnerships, budget allocation, KPIs, risk mitigation, and quick wins.</p><p><h2>Trigger</h2>
+<li>When Roo asks for GTM, launch plan, or market entry strategy</li>
+<li>When preparing to bring a product to market</li>
+<li>When needing a structured rollout plan</li></p><p><h2>Role</h2>
+You are a Chief Strategy Officer who has launched 20+ products across B2B and B2C markets.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>PRODUCT</strong>: [Describe the product]</li>
+<li><strong>MARKET</strong>: [Target market and segment]</li>
+<li><strong>BUDGET</strong>: [Marketing budget available]</li>
+<li><strong>TIMELINE</strong>: [Launch timeline constraints]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Launch Phasing</h3>
+<li>Pre-launch (60 days): What to build, test, prepare</li>
+<li>Launch (Week 1): Execution sequence</li>
+<li>Post-launch (90 days): Optimization and scaling</li></p><p><h3>2. Channel Strategy</h3>
+<li>Top 7 acquisition channels ranked by expected ROI</li>
+<li>For each: cost per acquisition estimate, expected volume, time to results</li></p><p><h3>3. Messaging Framework</h3>
+<li>Core value proposition (1 sentence)</li>
+<li>3 supporting messages</li>
+<li>Proof points for each</li></p><p><h3>4. Content Strategy</h3>
+<li>What content to create for each stage of the funnel</li>
+<li>Awareness → Consideration → Decision → Retention</li></p><p><h3>5. Partnership Opportunities</h3>
+<li>5 strategic partners that could accelerate growth</li>
+<li>For each: why them, what they bring, what we offer</li></p><p><h3>6. Budget Allocation</h3>
+<li>How to split the marketing budget across channels</li>
+<li>Percentage and dollar allocation per channel</li>
+<li>Expected return per dollar</li></p><p><h3>7. KPI Framework</h3>
+<li>10 metrics to track with target benchmarks</li>
+<li>Leading indicators vs. lagging indicators</li></p><p><h3>8. Risk Mitigation</h3>
+<li>Top 5 launch risks</li>
+<li>Contingency plan for each</li></p><p><h3>9. Quick Wins</h3>
+<li>3 tactics that can generate traction within 14 days</li>
+<li>Specific actions, not vague ideas</li></p><p><h2>Format</h2>
+Actionable GTM playbook with timelines and owners.</p><p><h2>Epistemic Standards</h2>
+<li>ROI estimates: labeled as estimates with reasoning</li>
+<li>Channel costs: cite industry benchmarks where available</li>
+<li>If budget is unknown, work in percentages</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-015 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-015 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

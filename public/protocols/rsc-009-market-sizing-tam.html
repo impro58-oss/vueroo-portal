@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-009-MARKET-SIZING-TAM Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-009: Market Sizing & TAM Analysis</h1></p><p><strong>Department:</strong> RSC (Research)
+<strong>Version:</strong> 1.0
+<strong>Created:</strong> 2026-06-30
+<strong>Owner:</strong> Lumina
+<strong>Status:</strong> ACTIVE
+<strong>Source:</strong> Roo research prompt library — McKinsey-level market analyst</p><p><h2>Purpose</h2>
+Produce an investor-ready Total Addressable Market (TAM) analysis using both top-down and bottom-up approaches, with CAGR projections, assumption transparency, and cross-validation against published analyst reports.</p><p><h2>Trigger</h2>
+<li>When Roo asks for market sizing, TAM analysis, or addressable market assessment</li>
+<li>When evaluating a new market opportunity that requires quantification</li>
+<li>When preparing investor materials that need market size justification</li></p><p><h2>Role</h2>
+You are a McKinsey-level market analyst.</p><p><h2>Inputs Required (fill at activation)</h2>
+<li><strong>PRODUCT</strong>: [Describe the product/service]</li>
+<li><strong>TARGET CUSTOMER</strong>: [Who is the customer]</li>
+<li><strong>GEOGRAPHY</strong>: [Which markets/regions]</li>
+<li><strong>INDUSTRY</strong>: [The broader industry category]</li></p><p><h2>Output Structure</h2></p><p><h3>1. Top-Down Approach</h3>
+<li>Start from global market size</li>
+<li>Narrow to relevant segment step by step</li>
+<li>Show each filter and its rationale</li></p><p><h3>2. Bottom-Up Approach</h3>
+<li>Calculate from unit economics × potential customers</li>
+<li>Show the formula: [price per unit] × [number of potential customers] × [purchase frequency]</li>
+<li>List all variables and their sources</li></p><p><h3>3. TAM / SAM / SOM Breakdown</h3>
+<li><strong>TAM</strong> (Total Addressable Market): The entire market if everyone who could buy did</li>
+<li><strong>SAM</strong> (Serviceable Available Market): The segment we can realistically reach</li>
+<li><strong>SOM</strong> (Serviceable Obtainable Market): What we can realistically capture in 3-5 years</li>
+<li>Dollar figures for each, with year-over-year growth</li></p><p><h3>4. Growth Rate Projections (5-Year CAGR)</h3>
+<li>Year-by-year projection</li>
+<li>CAGR calculation with methodology</li>
+<li>Key growth drivers and headwinds</li></p><p><h3>5. Key Assumptions</h3>
+<li>Every assumption listed with rationale</li>
+<li>Sensitivity: what changes the number most</li></p><p><h3>6. Cross-Validation</h3>
+<li>Compare against 3 analyst reports or market research firms</li>
+<li>Note where estimates diverge and why</li>
+<li>Confidence rating: H/M/L on each source</li></p><p><h2>Format</h2>
+Investor-ready market sizing slide structure with clear methodology. Every dollar figure tagged with source and confidence level.</p><p><h2>Epistemic Standards</h2>
+<li>Every claim: [source: training/live/verified] [vintage: MM/YYYY] [confidence: H/M/L]</li>
+<li>No fabricated numbers. If a figure is estimated, label it ESTIMATE.</li>
+<li>If market data is unavailable, say so explicitly rather than guessing.</li></p><p><h2>Scaffold Evolution (Added 2026-06-30)</h2>
+This protocol is a learnable object. Log scaffold reviews after each use.
+<li>Same failure pattern 3+ times = protocol revision required</li>
+<li>Run <code>scripts/scaffold-review-logger.py log --protocol RSC-009 --task "<task>" ...</code> after every task</li>
+<li>Run <code>scripts/scaffold-benchmark.py log --task "<task>" --protocol RSC-009 ...</code> to track outcomes</li></p><p><h3>Change History</h3>
+<li>v1.0 (2026-06-30): Initial protocol from Roo research prompt library</li>
+</body></html>

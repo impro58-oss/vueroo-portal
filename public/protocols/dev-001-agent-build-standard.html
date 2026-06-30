@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@ li { margin: 0.25rem 0; margin-left: 1.5rem; }
 </head>
 <body>
 <a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
-<h1>DEV-001 Agent Build Standard Protocol</h1></p><p><strong>Department:</strong> DEV (Development)
+﻿# DEV-001 Agent Build Standard Protocol</p><p><strong>Department:</strong> DEV (Development)
 <strong>Version:</strong> 1.0
 <strong>Created:</strong> 2026-05-25
 <strong>Owner:</strong> Lumina
@@ -124,31 +124,7 @@ After deployment:
 <div class="checkitem">No hardcoded secrets</div>
 <div class="checkitem">No model fields in cron payload</div>
 <div class="checkitem">Agent registered in AGENTS.md</div>
-<div class="checkitem">Live verification completed</div></p><p>
-        <h2>Subagent Prompt Quality</h2>
-
-        <p>When spawning subagents via sessions_spawn, the task prompt is the only context the subagent receives. <strong>Vague delegation is the #1 cause of subagent failure.</strong></p>
-
-        <h3>The 'Never Delegate Understanding' Rule</h3>
-
-        <p>Include in every subagent prompt:</p>
-        <ol>
-            <li><strong>What:</strong> Specific task with clear deliverable</li>
-            <li><strong>Where:</strong> Exact file paths for input AND output</li>
-            <li><strong>How:</strong> Method, format, length constraints</li>
-            <li><strong>Not:</strong> Explicit negative examples ('never fabricate data', 'don't add external research')</li>
-            <li><strong>Verify:</strong> How the parent will check the result</li>
-        </ol>
-
-        <p><strong>Bad:</strong> <em>'Build the dashboard page and deploy it.'</em><br>
-        <strong>Good:</strong> <em>'Read C:&#92;path&#92;to&#92;data.json. Create an HTML file at C:&#92;path&#92;to&#92;output&#92;index.html following the exact style of C:&#92;path&#92;to&#92;template.html. Include all 5 data points in a table. Save the file, then git add, commit, and push. I will verify by checking the live URL returns 200.'</em></p>
-
-        <h3>Parallel Execution</h3>
-        <p>When spawning multiple independent subagents, send them all in a single message so they run concurrently. Do NOT spawn sequentially when there are no dependencies between tasks.</p>
-
-        <h3>Trust But Verify</h3>
-        <p>An agent's summary describes what it <strong>intended</strong> to do, not what it <strong>did</strong>. After any subagent completes: (1) Read the output file yourself, (2) Spot-check specific data points against source, (3) Never declare 'done' based on the subagent's summary alone.</p>
-<h2>Error Handling</h2>
+<div class="checkitem">Live verification completed</div></p><p><h2>Error Handling</h2>
 | Error | Response |
 |-------|----------|
 | Agent fails on first run | Check logs, fix, re-test from Step 5 |
