@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
   "BTC-USD": {
     "symbol": "BTC-USD",
@@ -234,4 +235,242 @@
     "risk_note": null,
     "recommended_action": "NO_TRADE"
   }
+=======
+{
+  "BTC-USD": {
+    "symbol": "BTC-USD",
+    "timestamp": "2026-07-02T13:14:49.173427",
+    "individual_signals": {
+      "linear_regression": {
+        "signal": "BUY",
+        "confidence": 0.00326475124279446,
+        "predicted_return": 0.000326475124279446,
+        "weight": 0.2
+      },
+      "kalman_filter": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "trend": 0.00018592477831694948,
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": 1.5391394162935203e-06,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
+      },
+      "garch_volatility": {
+        "signal": "PROCEED",
+        "confidence": 0.0528724816432108,
+        "regime": "NORMAL",
+        "annualized_vol": 5.28724816432108,
+        "var_1d": 54.789246403815696,
+        "weight": 0.2
+      }
+    },
+    "weighted_score": 0.000652950248558892,
+    "consensus_signal": "BUY",
+    "confidence": 0.000652950248558892,
+    "level": "NO_SIGNAL",
+    "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
+    "risk_note": null,
+    "recommended_action": "NO_TRADE"
+  },
+  "ETH-USD": {
+    "symbol": "ETH-USD",
+    "timestamp": "2026-07-02T13:14:49.363486",
+    "individual_signals": {
+      "linear_regression": {
+        "signal": "BUY",
+        "confidence": 0.00033960314624239434,
+        "predicted_return": 3.3960314624239435e-05,
+        "weight": 0.2
+      },
+      "kalman_filter": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "trend": 0.0002835285527511449,
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -3.7249088712791584e-05,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
+      },
+      "garch_volatility": {
+        "signal": "PROCEED",
+        "confidence": 0.0710035388860347,
+        "regime": "NORMAL",
+        "annualized_vol": 7.10035388860347,
+        "var_1d": 73.57760155503117,
+        "weight": 0.2
+      }
+    },
+    "weighted_score": 6.792062924847887e-05,
+    "consensus_signal": "BUY",
+    "confidence": 6.792062924847887e-05,
+    "level": "NO_SIGNAL",
+    "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
+    "risk_note": null,
+    "recommended_action": "NO_TRADE"
+  },
+  "XRP-USD": {
+    "symbol": "XRP-USD",
+    "timestamp": "2026-07-02T13:14:49.563944",
+    "individual_signals": {
+      "linear_regression": {
+        "signal": "BUY",
+        "confidence": 0.0013706175316196174,
+        "predicted_return": 0.00013706175316196173,
+        "weight": 0.2
+      },
+      "kalman_filter": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "trend": -3.991558511757672e-05,
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -0.00024004417150833574,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
+      },
+      "garch_volatility": {
+        "signal": "PROCEED",
+        "confidence": 0.04686321092718214,
+        "regime": "NORMAL",
+        "annualized_vol": 4.686321092718214,
+        "var_1d": 48.562124019254696,
+        "weight": 0.2
+      }
+    },
+    "weighted_score": 0.0002741235063239235,
+    "consensus_signal": "BUY",
+    "confidence": 0.0002741235063239235,
+    "level": "NO_SIGNAL",
+    "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
+    "risk_note": null,
+    "recommended_action": "NO_TRADE"
+  },
+  "SOL-USD": {
+    "symbol": "SOL-USD",
+    "timestamp": "2026-07-02T13:14:49.757978",
+    "individual_signals": {
+      "linear_regression": {
+        "signal": "SELL",
+        "confidence": 0.0008468419209886847,
+        "predicted_return": -8.468419209886847e-05,
+        "weight": 0.2
+      },
+      "kalman_filter": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "trend": -8.76645606940085e-05,
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -0.0003520700210552415,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
+      },
+      "garch_volatility": {
+        "signal": "PROCEED",
+        "confidence": 0.06828333588554492,
+        "regime": "NORMAL",
+        "annualized_vol": 6.828333588554491,
+        "var_1d": 70.758784131859,
+        "weight": 0.2
+      }
+    },
+    "weighted_score": -0.00016936838419773695,
+    "consensus_signal": "SELL",
+    "confidence": 0.00016936838419773695,
+    "level": "NO_SIGNAL",
+    "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
+    "risk_note": null,
+    "recommended_action": "NO_TRADE"
+  },
+  "BNB-USD": {
+    "symbol": "BNB-USD",
+    "timestamp": "2026-07-02T13:14:49.960078",
+    "individual_signals": {
+      "linear_regression": {
+        "signal": "BUY",
+        "confidence": 0.004814990375811399,
+        "predicted_return": 0.00048149903758113995,
+        "weight": 0.2
+      },
+      "kalman_filter": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "trend": 0.00011168792586929366,
+        "weight": 0.2
+      },
+      "arima_forecast": {
+        "signal": "HOLD",
+        "confidence": 0.0,
+        "expected_return": -1.811841371987188e-05,
+        "weight": 0.2
+      },
+      "hidden_markov": {
+        "signal": "HOLD",
+        "confidence": 1.0,
+        "regime": "NEUTRAL",
+        "regime_strength": "MEAN_REVERSION",
+        "weight": 0.2
+      },
+      "garch_volatility": {
+        "signal": "PROCEED",
+        "confidence": 0.04140107762454128,
+        "regime": "NORMAL",
+        "annualized_vol": 4.140107762454128,
+        "var_1d": 42.901974200141645,
+        "weight": 0.2
+      }
+    },
+    "weighted_score": 0.0009629980751622799,
+    "consensus_signal": "BUY",
+    "confidence": 0.0009629980751622799,
+    "level": "NO_SIGNAL",
+    "risk_regime": "NORMAL",
+    "hmm_regime": "NEUTRAL",
+    "risk_note": null,
+    "recommended_action": "NO_TRADE"
+  }
+>>>>>>> Stashed changes
 }
