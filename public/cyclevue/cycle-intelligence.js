@@ -7,13 +7,13 @@
 const CycleIntelligence = {
     // Current assessment based on knowledge base
     currentAssessment: {
-        date: '2026-03-29',
+        date: '2026-07-14',
         debtCycle: { stage: 'Late', yearsToPeak: 3, status: 'danger' },
         bigDebtCycle: { stage: 'Deleveraging Beginning', progress: 15, status: 'warning' },
         empireCycle: { stage: 'Stage 3-4 Transition', currentStage: 3.5, status: 'danger' },
         geopoliticalCycle: { stage: 'Conflict Intensifying', yearsToResolution: 20, status: 'warning' },
-        overallRisk: 'HIGH',
-        overallRiskScore: 78 // 0-100
+        overallRisk: 'CRISIS',
+        overallRiskScore: 19 // 0-100 — synced with live FRED data 2026-07-14
     },
     
     // 18 Key Indicators from knowledge base

@@ -312,9 +312,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <div class="text-center mb-4">
-                        <div class="text-5xl font-bold text-rose-400">HIGH</div>
-                        <div class="text-slate-400 mt-2">Multiple Cycles Converging</div>
-                        <div class="text-3xl font-bold text-amber-400 mt-2">78/100</div>
+                        <div class="text-5xl font-bold text-red-400">CRISIS</div>
+                        <div class="text-slate-400 mt-2">Live FRED data loading...</div>
+                        <div class="text-3xl font-bold text-red-400 mt-2">--/100</div>
                         <div class="text-sm text-slate-500">Risk Score</div>
                     </div>
                     <div class="space-y-3">
@@ -546,8 +546,8 @@
                         <i class="fas fa-euro-sign"></i> Eurozone
                     </h4>
                     <div class="text-center mb-4">
-                        <div class="text-3xl font-bold text-amber-400" id="eu-risk-level">HIGH</div>
-                        <div class="text-2xl font-bold text-amber-400 mt-1" id="eu-risk-score">72/100</div>
+                        <div class="text-3xl font-bold text-red-400" id="eu-risk-level">CRISIS</div>
+                        <div class="text-2xl font-bold text-red-400 mt-1" id="eu-risk-score">--/100</div>
                         <div class="text-xs text-slate-500">Risk Score</div>
                     </div>
                     <div class="space-y-2" id="eu-cycle-position">
@@ -1013,9 +1013,9 @@
             alert(ind.name + '\\nCurrent: ' + ind.value + ind.unit + '\\nAs of: ' + (ind.last_date || '?') + '\\nStatus: ' + ind.status.toUpperCase() + '\\n\\nRecent history:\\n' + history);
         }
 
-        // Load live data after initial render
-        setTimeout(loadLiveData, 500);
-        setTimeout(loadEuropeLiveData, 800);
+        // Load live data immediately — no delay, no stale hardcoded values visible
+        setTimeout(loadLiveData, 50);
+        setTimeout(loadEuropeLiveData, 100);
         // Auto-refresh every 15 minutes
         setInterval(loadLiveData, 15 * 60 * 1000);
         setInterval(loadEuropeLiveData, 15 * 60 * 1000);

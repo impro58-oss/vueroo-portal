@@ -74,8 +74,8 @@ const EuropeImpact = {
             politicalIntegration: { stage: 'Fragmentation Risk', status: 'danger' },
             energySecurity: { stage: 'Transition Critical', status: 'danger' },
             demographics: { stage: 'Declining', status: 'danger' },
-            overallRisk: 'HIGH',
-            overallRiskScore: 72
+            overallRisk: 'CRISIS',
+            overallRiskScore: 16 // synced with live FRED data 2026-07-14
         },
         ireland: {
             sovereignDebt: { stage: 'Manageable', value: 60, status: 'good' },
