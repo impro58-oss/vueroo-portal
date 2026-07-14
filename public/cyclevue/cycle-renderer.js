@@ -45,8 +45,8 @@ function renderCycleChart(data) {
 
     // Clear previous chart
     container.innerHTML = '';
-    const width = container.clientWidth || (container.parentElement ? container.parentElement.clientWidth : 0) || 800;
-    const height = container.clientHeight || 500;
+    // Reuse width/height from the zero-size check above (already declared)
+    // width and height are already in scope from the initial declaration
     const margin = { top: 40, right: 60, bottom: 60, left: 60 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
