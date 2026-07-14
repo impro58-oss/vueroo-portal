@@ -206,15 +206,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": null,
-      "status": "unavailable",
-      "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
-      "unit": "$/oz",
-      "description": "Gold Fixing Price (London)",
-      "last_date": null,
-      "timestamp": "2026-07-14T20:54:13.769106+00:00"
+      "value": 4088.33,
+      "unit": "USD/oz",
+      "status": "red",
+      "trend": "improving",
+      "confidence": 8,
+      "change_from_last": 2.28,
+      "description": "Gold spot price near record highs",
+      "series_id": "Web search (Forbes/JM Bullion)",
+      "last_date": "2026-07-14",
+      "note": "FRED gold series discontinued. Price fetched via web search during cron refresh.",
+      "timestamp": "2026-07-14T20:55:00Z"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -311,10 +313,10 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 500,
-    "red_count": 7,
+    "red_count": 8,
     "amber_count": 6,
     "green_count": 5,
-    "manual_count": 2,
+    "manual_count": 0,
     "timestamp": "2026-07-14T20:54:15.937618+00:00"
   },
   "convergence": {
