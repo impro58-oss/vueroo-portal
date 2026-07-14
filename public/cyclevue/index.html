@@ -634,6 +634,110 @@
             const crisis = window.ifNotPrepared.join('\n• ');
             alert(`${window.event} - ${window.yearsOut} years\n\nPREPARATION:\n• ${prep}\n\nIF NOT PREPARED:\n• ${crisis}`);
         }
+
+        // ===== LIVE FRED DATA =====
+        let liveData = null;
+
+        async function loadLiveData() {
+            const urls = [
+                '/data/cyclevue-live.json',
+                '/cyclevue-pro/cyclevue-live.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/cyclevue-live.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) {
+                        liveData = await res.json();
+                        console.log('[CycleVue] Live data loaded from', url);
+                        renderLiveDashboard();
+                        return;
+                    }
+                } catch(e) { console.log('[CycleVue] Failed:', url); }
+            }
+            console.warn('[CycleVue] No live data - showing theoretical data only');
+        }
+
+        function renderLiveDashboard() {
+            if (!liveData) return;
+            const scores = liveData.scores;
+            const phaseColors = { expansion: 'emerald', late_cycle: 'amber', risk_zone: 'rose', crisis: 'red' };
+            const phaseColor = phaseColors[scores.phase] || 'slate';
+            const phaseTitles = { expansion: 'EXPANSION', late_cycle: 'LATE CYCLE', risk_zone: 'RISK ZONE', crisis: 'CRISIS' };
+
+            // Replace risk assessment section
+            const riskSection = document.querySelector('.glass.rounded-2xl.p-6.border-2.border-rose-500\/30');
+            if (riskSection) {
+                const alertsHtml = scores.alerts.map(a => {
+                    const bg = a.level === 'danger' ? 'bg-rose-500/10 border-rose-500/30' : 'bg-amber-500/10 border-amber-500/30';
+                    const icon = a.level === 'danger' ? 'text-rose-400' : 'text-amber-400';
+                    return '<div class="mt-2 p-3 ' + bg + ' border rounded-lg"><span class="' + icon + ' font-semibold text-sm">' + a.level.toUpperCase() + '</span> <span class="text-slate-300 text-sm">' + a.message + '</span></div>';
+                }).join('');
+                riskSection.innerHTML = '\
+                <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2"><i class="fas fa-exclamation-triangle text-' + phaseColor + '-400"></i> Live Risk Assessment — FRED Data</h2>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <div class="text-center mb-4"><div class="text-5xl font-bold text-' + phaseColor + '-400">' + phaseTitles[scores.phase] + '</div><div class="text-slate-400 mt-2">' + (scores.phase_info.description || '') + '</div><div class="text-3xl font-bold text-' + phaseColor + '-400 mt-2">' + scores.total + '/100</div><div class="text-sm text-slate-500">Live Cycle Score</div></div>\
+                        <div class="space-y-3">\
+                            <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3"><span class="text-blue-400 font-medium">Liquidity</span><span class="text-white">' + scores.components.liquidity + '/25</span><span class="text-slate-400 text-xs">30% weight</span></div>\
+                            <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3"><span class="text-emerald-400 font-medium">Credit</span><span class="text-white">' + scores.components.credit + '/25</span><span class="text-slate-400 text-xs">30% weight</span></div>\
+                            <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3"><span class="text-purple-400 font-medium">Rates</span><span class="text-white">' + scores.components.rates + '/25</span><span class="text-slate-400 text-xs">20% weight</span></div>\
+                            <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3"><span class="text-amber-400 font-medium">Market</span><span class="text-white">' + scores.components.market + '/25</span><span class="text-slate-400 text-xs">20% weight</span></div>\
+                        </div>' + alertsHtml + '\
+                    </div>\
+                    <div class="bg-slate-800/50 rounded-xl p-4">\
+                        <h3 class="text-lg font-semibold text-white mb-3">Live Market Snapshot</h3>\
+                        <div class="grid grid-cols-2 gap-3">\
+                            ' + renderLiveMarketCard('S&P 500', liveData.markets.spx) + '\
+                            ' + renderLiveMarketCard('VIX', liveData.markets.vix) + '\
+                            ' + renderLiveMarketCard('10Y Treasury', liveData.markets.treasury_10y) + '\
+                            ' + renderLiveMarketCard('Yield Curve', liveData.markets.yield_curve) + '\
+                            ' + renderLiveMarketCard('Fed Funds', liveData.markets.fed_funds) + '\
+                            ' + renderLiveMarketCard('Credit Spread', liveData.markets.credit_spread) + '\
+                            ' + renderLiveMarketCard('CPI YoY', liveData.markets.cpi) + '\
+                            ' + renderLiveMarketCard('Unemployment', liveData.markets.unemployment) + '\
+                            ' + renderLiveMarketCard('Consumer Sentiment', liveData.markets.consumer_sentiment) + '\
+                            ' + renderLiveMarketCard('M2 Growth', liveData.markets.m2_growth) + '\
+                            ' + renderLiveMarketCard('Mortgage Rate', liveData.markets.mortgage_rate) + '\
+                            ' + renderLiveMarketCard('Breakeven Infl.', liveData.markets.breakeven_inflation) + '\
+                        </div>\
+                        <div class="mt-3 text-xs text-slate-500">Source: FRED API (St. Louis Fed) | Updated: ' + new Date(liveData.metadata.last_update).toLocaleString() + '</div>\
+                    </div>\
+                </div>';
+            }
+
+            // Replace indicators grid with live data
+            const indicatorsGrid = document.getElementById('indicators-grid');
+            if (indicatorsGrid && liveData.indicators) {
+                indicatorsGrid.innerHTML = '';
+                for (const [key, ind] of Object.entries(liveData.indicators)) {
+                    if (ind.value === null) continue;
+                    const colorClass = ind.status === 'danger' ? 'bg-rose-500' : ind.status === 'warning' ? 'bg-amber-500' : ind.status === 'good' ? 'bg-emerald-500' : 'bg-slate-500';
+                    const tile = document.createElement('div');
+                    tile.className = colorClass + ' rounded-lg p-3 cursor-pointer hover:opacity-80 transition';
+                    const valDisplay = ind.value > 1000 ? ind.value.toLocaleString() : ind.value;
+                    tile.innerHTML = '<div class="text-white font-semibold text-sm truncate" title="' + ind.name + '">' + ind.name + '</div><div class="text-white text-2xl font-bold mt-1">' + valDisplay + (ind.unit === '%' ? '%' : '') + '</div><div class="text-white/70 text-xs">as of ' + (ind.last_date || '?') + '</div>';
+                    tile.onclick = () => showLiveIndicatorDetail(key, ind);
+                    indicatorsGrid.appendChild(tile);
+                }
+            }
+        }
+
+        function renderLiveMarketCard(label, value) {
+            if (value === null || value === undefined) return '<div class="bg-slate-900/50 rounded-lg p-3"><div class="text-xs text-slate-400">' + label + '</div><div class="text-lg font-mono text-slate-500">—</div></div>';
+            const valDisplay = value > 1000 ? value.toLocaleString() : value;
+            return '<div class="bg-slate-900/50 rounded-lg p-3"><div class="text-xs text-slate-400 mb-1">' + label + '</div><div class="text-lg font-mono text-white">' + valDisplay + '</div></div>';
+        }
+
+        function showLiveIndicatorDetail(key, ind) {
+            const history = (ind.history || []).map(h => h.date + ': ' + h.value).join('\\n');
+            alert(ind.name + '\\nCurrent: ' + ind.value + ind.unit + '\\nAs of: ' + (ind.last_date || '?') + '\\nStatus: ' + ind.status.toUpperCase() + '\\n\\nRecent history:\\n' + history);
+        }
+
+        // Load live data after initial render
+        setTimeout(loadLiveData, 500);
+        // Auto-refresh every 15 minutes
+        setInterval(loadLiveData, 15 * 60 * 1000);
     </script>
 </body>
 </html>
