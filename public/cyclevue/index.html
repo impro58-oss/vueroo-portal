@@ -1015,8 +1015,71 @@
 
         // Load live data after initial render
         setTimeout(loadLiveData, 500);
+        setTimeout(loadEuropeLiveData, 800);
         // Auto-refresh every 15 minutes
         setInterval(loadLiveData, 15 * 60 * 1000);
+        setInterval(loadEuropeLiveData, 15 * 60 * 1000);
+
+        // ===== EUROPE LIVE FRED DATA =====
+        let europeLiveData = null;
+
+        async function loadEuropeLiveData() {
+            const urls = [
+                '/data/cyclevue-europe-live.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/cyclevue-europe-live.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) {
+                        europeLiveData = await res.json();
+                        console.log('[CycleVue] Europe live data loaded from', url);
+                        renderEuropeLiveData();
+                        return;
+                    }
+                } catch(e) { console.log('[CycleVue] Europe data failed:', url); }
+            }
+            console.warn('[CycleVue] No Europe live data - showing theoretical data only');
+        }
+
+        function renderEuropeLiveData() {
+            if (!europeLiveData || !europeLiveData.indicators) return;
+            const grid = document.getElementById('eu-indicators-grid');
+            if (grid && europeLiveData.indicators) {
+                grid.innerHTML = '';
+                for (const [key, ind] of Object.entries(europeLiveData.indicators)) {
+                    if (ind.value === null || ind.value === undefined) continue;
+                    const colorClass = ind.status === 'danger' ? 'bg-rose-500' : ind.status === 'warning' ? 'bg-amber-500' : ind.status === 'good' ? 'bg-emerald-500' : 'bg-slate-500';
+                    const tile = document.createElement('div');
+                    tile.className = colorClass + ' rounded-lg p-3 cursor-pointer hover:opacity-80 transition';
+                    const valDisplay = ind.value > 1000 ? ind.value.toLocaleString() : ind.value;
+                    const unitDisplay = ind.unit === '%' ? '%' : (ind.unit ? ' ' + ind.unit : '');
+                    const regionTag = ind.region ? ' - ' + ind.region : '';
+                    tile.innerHTML = '<div class="text-white font-semibold text-sm truncate" title="' + ind.name + '">' + ind.name + '</div><div class="text-white text-2xl font-bold mt-1">' + valDisplay + unitDisplay + '</div><div class="text-white/70 text-xs">as of ' + (ind.last_date || '?') + regionTag + '</div>';
+                    tile.onclick = () => showEuropeLiveIndicatorDetail(key, ind);
+                    grid.appendChild(tile);
+                }
+            }
+            if (europeLiveData.scores) {
+                const euScore = document.getElementById('eu-risk-score');
+                if (euScore) euScore.textContent = europeLiveData.scores.total + '/100';
+                const phaseColors = { expansion: 'text-emerald-400', late_cycle: 'text-amber-400', risk_zone: 'text-rose-400', crisis: 'text-red-400' };
+                const phaseTitles = { expansion: 'EXPANSION', late_cycle: 'LATE CYCLE', risk_zone: 'RISK ZONE', crisis: 'CRISIS' };
+                const euLevel = document.getElementById('eu-risk-level');
+                if (euLevel) {
+                    euLevel.textContent = phaseTitles[europeLiveData.scores.phase] || europeLiveData.scores.phase.toUpperCase();
+                    euLevel.className = 'text-3xl font-bold ' + (phaseColors[europeLiveData.scores.phase] || 'text-slate-400');
+                }
+                if (euScore) {
+                    euScore.className = 'text-2xl font-bold mt-1 ' + (phaseColors[europeLiveData.scores.phase] || 'text-slate-400');
+                }
+            }
+        }
+
+        function showEuropeLiveIndicatorDetail(key, ind) {
+            const history = (ind.history || []).map(h => h.date + ': ' + h.value).join('\n');
+            alert(ind.name + '\nRegion: ' + (ind.region || '?') + '\nValue: ' + ind.value + ind.unit + '\nAs of: ' + (ind.last_date || '?') + '\nStatus: ' + ind.status.toUpperCase() + '\nFRED Series: ' + (ind.series_id || '?') + '\n\nRecent history:\n' + history);
+        }
     </script>
 </body>
 </html>
