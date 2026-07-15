@@ -6,602 +6,594 @@
     <title>CycleVue Pro — Macro Cycle Intelligence</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         * { font-family: 'Inter', sans-serif; }
-        
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            min-height: 100vh;
-            color: #e2e8f0;
-        }
-        
-        .glass {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .glass-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .glass-card:hover {
-            background: rgba(30, 41, 59, 0.8);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .score-indicator {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .score-indicator::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .indicator-tile {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .indicator-tile:hover {
-            transform: scale(1.02);
-        }
-        
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; color: #e2e8f0; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .glass-card:hover { background: rgba(30, 41, 59, 0.8); border-color: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+        .score-indicator { position: relative; overflow: hidden; }
+        .score-indicator::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: shimmer 2s infinite; }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        .indicator-tile { transition: all 0.3s ease; cursor: pointer; }
+        .indicator-tile:hover { transform: scale(1.02); }
         .status-good { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1)); border-color: rgba(16, 185, 129, 0.3); }
         .status-warning { background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.1)); border-color: rgba(245, 158, 11, 0.3); }
         .status-danger { background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.1)); border-color: rgba(239, 68, 68, 0.3); }
-        
-        .chart-container {
-            position: relative;
-            height: 250px;
-        }
-        
-        .data-feed-status {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        .status-info { background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05)); border-color: rgba(59, 130, 246, 0.2); }
+        .data-feed-status { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .refresh-spin { animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body class="p-6">
-    <!-- Header -->
+
+    <!-- HEADER -->
     <div class="max-w-7xl mx-auto mb-8">
         <div class="flex items-center justify-between">
             <div>
                 <div class="flex items-center gap-3">
-                    <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">
-                        CycleVue Pro
-                    </h1>
+                    <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text text-transparent">CycleVue Pro</h1>
                     <span class="px-2 py-1 bg-rose-500/20 text-rose-400 text-xs rounded border border-rose-500/30">LIVE</span>
                 </div>
-                <p class="text-slate-400 mt-2 text-lg">
-                    Macro Cycle Intelligence — Real-Time Data & Scoring Engine
-                </p>
+                <p class="text-slate-400 mt-2 text-lg">Macro Cycle Intelligence — Real-Time FRED Data & Scoring Engine</p>
             </div>
             <div class="flex items-center gap-6">
                 <div class="text-right">
                     <div class="text-sm text-slate-400">Last Update</div>
                     <div class="text-xl font-bold text-white" id="last-update">--:--</div>
-                    <div class="text-xs text-emerald-400 data-feed-status">● Live Feed</div>
+                    <div class="text-xs text-emerald-400 data-feed-status" id="feed-status">● Live Feed</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-slate-400">Next Refresh</div>
+                    <div class="text-sm font-mono text-slate-300" id="next-refresh">5:00</div>
                 </div>
                 <a href="/dashboard" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-lg text-sm font-medium text-white transition flex items-center gap-2 shadow-lg shadow-blue-900/20">
-                    <i class="fas fa-home"></i>
-                    <span>Dashboard</span>
+                    <i class="fas fa-home"></i><span>Dashboard</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Main Dashboard -->
     <div class="max-w-7xl mx-auto space-y-6">
-        
-        <!-- OVERALL SCORE -->
+
+        <!-- CYCLE POSITION SCORE -->
         <div class="glass rounded-2xl p-6 border-2 border-amber-500/30">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-semibold text-white flex items-center gap-2">
-                    <i class="fas fa-chart-pie text-amber-400"></i>
-                    Cycle Position Score
+                    <i class="fas fa-chart-pie text-amber-400"></i> Cycle Position Score
                 </h2>
                 <div class="flex items-center gap-2 text-sm">
                     <span class="text-slate-400">Data Sources:</span>
-                    <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">FRED</span>
-                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">TradingView</span>
-                    <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded">Yahoo Finance</span>
+                    <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">FRED API</span>
+                    <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">18 Indicators</span>
+                    <button onclick="refreshNow()" id="refresh-btn" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-slate-300 transition">
+                        <i class="fas fa-sync-alt" id="refresh-icon"></i> Refresh
+                    </button>
                 </div>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="text-center">
                     <div class="text-6xl font-bold text-amber-400 score-indicator" id="total-score">--</div>
                     <div class="text-slate-400 mt-2">Total Score / 100</div>
-                    <div class="text-2xl font-bold text-white mt-2" id="cycle-phase">Calculating...</div>
+                    <div class="text-2xl font-bold text-white mt-2" id="cycle-phase">Loading...</div>
+                    <div class="text-sm text-slate-500 mt-1" id="risk-grade">--</div>
                 </div>
-                
                 <div class="space-y-3">
                     <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
-                        <span class="text-slate-300">Liquidity</span>
+                        <span class="text-slate-300">Liquidity <span class="text-xs text-slate-500">(30%)</span></span>
                         <div class="flex items-center gap-3">
                             <span class="text-white font-mono" id="liquidity-score">--</span>
-                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-blue-500 rounded-full transition-all" id="liquidity-bar" style="width: 0%"></div>
-                            </div>
+                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-blue-500 rounded-full transition-all" id="liquidity-bar" style="width: 0%"></div></div>
                         </div>
                     </div>
-                    
                     <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
-                        <span class="text-slate-300">Credit</span>
+                        <span class="text-slate-300">Credit <span class="text-xs text-slate-500">(30%)</span></span>
                         <div class="flex items-center gap-3">
                             <span class="text-white font-mono" id="credit-score">--</span>
-                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-emerald-500 rounded-full transition-all" id="credit-bar" style="width: 0%"></div>
-                            </div>
+                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-emerald-500 rounded-full transition-all" id="credit-bar" style="width: 0%"></div></div>
                         </div>
                     </div>
-                    
                     <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
-                        <span class="text-slate-300">Rates</span>
+                        <span class="text-slate-300">Rates <span class="text-xs text-slate-500">(20%)</span></span>
                         <div class="flex items-center gap-3">
                             <span class="text-white font-mono" id="rates-score">--</span>
-                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-amber-500 rounded-full transition-all" id="rates-bar" style="width: 0%"></div>
-                            </div>
+                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full transition-all" id="rates-bar" style="width: 0%"></div></div>
                         </div>
                     </div>
-                    
                     <div class="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
-                        <span class="text-slate-300">Market</span>
+                        <span class="text-slate-300">Market <span class="text-xs text-slate-500">(20%)</span></span>
                         <div class="flex items-center gap-3">
                             <span class="text-white font-mono" id="market-score">--</span>
-                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-rose-500 rounded-full transition-all" id="market-bar" style="width: 0%"></div>
-                            </div>
+                            <div class="w-20 h-2 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-rose-500 rounded-full transition-all" id="market-bar" style="width: 0%"></div></div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="bg-slate-800/50 rounded-xl p-4">
                     <h3 class="text-lg font-semibold text-white mb-3">Interpretation</h3>
                     <div class="space-y-2 text-sm">
-                        <div class="flex items-center gap-2">
-                            <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                            <span class="text-slate-300">80-100: Expansion</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                            <span class="text-slate-300">60-79: Late Cycle</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-                            <span class="text-slate-300"><60: Risk Zone</span>
-                        </div>
+                        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-emerald-500"></div><span class="text-slate-300">80-100: Expansion</span></div>
+                        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-amber-500"></div><span class="text-slate-300">60-79: Late Cycle</span></div>
+                        <div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-rose-500"></div><span class="text-slate-300">&lt;60: Risk Zone</span></div>
                     </div>
-                    
                     <div class="mt-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
                         <div class="text-amber-400 font-semibold text-xs mb-1">⚠️ Current Assessment</div>
-                        <p class="text-slate-300 text-xs" id="assessment-text">Loading data...</p>
+                        <p class="text-slate-300 text-xs" id="assessment-text">Loading live data...</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- KEY INDICATORS GRID -->
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            
-            <!-- Yield Curve -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-chart-line text-blue-400"></i>
-                    <span class="text-xs text-slate-400">Yield Curve (10Y-2Y)</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="yield-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">FRED T10Y2Y</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="yield-signal">--</span>
+        <!-- 18 INDICATOR GRID -->
+        <div class="glass rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-white flex items-center gap-2">
+                    <i class="fas fa-th-large text-purple-400"></i> All 18 Indicators — Live FRED Data
+                </h2>
+                <div class="flex items-center gap-3 text-xs">
+                    <div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-emerald-500 rounded"></div><span class="text-slate-400" id="good-count">0</span></div>
+                    <div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-amber-500 rounded"></div><span class="text-slate-400" id="warning-count">0</span></div>
+                    <div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-rose-500 rounded"></div><span class="text-slate-400" id="danger-count">0</span></div>
+                    <div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-blue-500 rounded"></div><span class="text-slate-400" id="info-count">0</span></div>
                 </div>
             </div>
-
-            <!-- Fed Funds -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-percentage text-amber-400"></i>
-                    <span class="text-xs text-slate-400">Fed Funds Rate</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="rates-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">FRED FEDFUNDS</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="rates-signal">--</span>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3" id="all-indicators">
+                <div class="col-span-6 text-center text-slate-500 py-8"><i class="fas fa-spinner fa-spin text-2xl"></i><div class="mt-2 text-sm">Loading 18 indicators from FRED...</div></div>
             </div>
-
-            <!-- M2 Growth -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-money-bill-wave text-emerald-400"></i>
-                    <span class="text-xs text-slate-400">M2 Growth YoY</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="m2-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">FRED M2SL</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="m2-signal">--</span>
-                </div>
-            </div>
-
-            <!-- Credit Spread -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-university text-purple-400"></i>
-                    <span class="text-xs text-slate-400">Credit Spread (BAA-10Y)</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="credit-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">FRED BAA10Y</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="credit-signal">--</span>
-                </div>
-            </div>
-
-            <!-- VIX -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-bolt text-rose-400"></i>
-                    <span class="text-xs text-slate-400">VIX Volatility</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="vix-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">Yahoo Finance</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="vix-signal">--</span>
-                </div>
-            </div>
-
-            <!-- S&P 500 -->
-            <div class="glass-card rounded-xl p-4">
-                <div class="flex items-center gap-2 mb-2">
-                    <i class="fas fa-chart-bar text-indigo-400"></i>
-                    <span class="text-xs text-slate-400">S&P 500</span>
-                </div>
-                <div class="text-xl font-bold text-white" id="spx-value">--</div>
-                <div class="mt-1 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">Yahoo Finance</span>
-                    <span class="text-xs px-2 py-0.5 rounded" id="spx-signal">--</span>
-                </div>
-            </div>
-
         </div>
 
-        <!-- DETAILED INDICATORS -->
+        <!-- CYCLE INTELLIGENCE LAYER -->
         <div class="glass rounded-2xl p-6">
             <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <i class="fas fa-th-large text-purple-400"></i>
-                All Indicators — Detailed View
+                <i class="fas fa-brain text-blue-400"></i> Cycle Intelligence Assessment
             </h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3" id="all-indicators">
-                <!-- Populated by JS -->
+            <div id="intel-section">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading cycle intelligence...</div>
+            </div>
+        </div>
+
+        <!-- EUROPE IMPACT -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-globe-europe text-emerald-400"></i> Europe Impact — Transmission Matrix & Ireland Assessment
+            </h2>
+            <div id="europe-section">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading Europe impact data...</div>
+            </div>
+        </div>
+
+        <!-- EUROPE INDICATORS -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-flag-europe text-blue-400"></i> Europe-Specific Indicators — Live FRED Data
+            </h2>
+            <div id="europe-indicators">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading Europe indicators...</div>
+            </div>
+        </div>
+
+        <!-- IRELAND RISK ASSESSMENT -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-map-marker-alt text-rose-400"></i> Ireland-Specific Risk Assessment
+            </h2>
+            <div id="ireland-risks">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading Ireland risks...</div>
             </div>
         </div>
 
         <!-- METHODOLOGY -->
         <div class="glass rounded-2xl p-6">
             <h2 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                <i class="fas fa-book text-slate-400"></i>
-                Scoring Methodology
+                <i class="fas fa-book text-slate-400"></i> Scoring Methodology
             </h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
                 <div>
                     <h3 class="text-white font-semibold mb-2">Yield Curve (T10Y2Y)</h3>
-                    <ul class="space-y-1">
-                        <li>> 1.0% = Score 25</li>
-                        <li>0% to 1.0% = Score 20</li>
-                        <li>-0.5% to 0% = Score 15</li>
-                        <li>-1.0% to -0.5% = Score 10</li>
-                        <li>< -1.0% = Score 5</li>
-                    </ul>
+                    <ul class="space-y-1"><li>&gt; 1.0% = Score 25</li><li>0% to 1.0% = Score 20</li><li>-0.5% to 0% = Score 15</li><li>-1.0% to -0.5% = Score 10</li><li>&lt; -1.0% = Score 5</li></ul>
                 </div>
-                
                 <div>
                     <h3 class="text-white font-semibold mb-2">Fed Funds Rate</h3>
-                    <ul class="space-y-1">
-                        <li>< 2% = Score 25</li>
-                        <li>2-4% = Score 20</li>
-                        <li>4-6% = Score 15</li>
-                        <li>6-8% = Score 10</li>
-                        <li>> 8% = Score 5</li>
-                    </ul>
+                    <ul class="space-y-1"><li>&lt; 2% = Score 25</li><li>2-4% = Score 20</li><li>4-6% = Score 15</li><li>6-8% = Score 10</li><li>&gt; 8% = Score 5</li></ul>
                 </div>
-                
                 <div>
                     <h3 class="text-white font-semibold mb-2">M2 Growth (YoY)</h3>
-                    <ul class="space-y-1">
-                        <li>> 8% = Score 25</li>
-                        <li>4-8% = Score 20</li>
-                        <li>0-4% = Score 15</li>
-                        <li>-2-0% = Score 10</li>
-                        <li>< -2% = Score 5</li>
-                    </ul>
+                    <ul class="space-y-1"><li>&gt; 8% = Score 25</li><li>4-8% = Score 20</li><li>0-4% = Score 15</li><li>-2-0% = Score 10</li><li>&lt; -2% = Score 5</li></ul>
                 </div>
-                
                 <div>
                     <h3 class="text-white font-semibold mb-2">Credit Spread (BAA10Y)</h3>
-                    <ul class="space-y-1">
-                        <li>< 1% = Score 25</li>
-                        <li>1-2% = Score 20</li>
-                        <li>2-3% = Score 15</li>
-                        <li>3-5% = Score 10</li>
-                        <li>> 5% = Score 5</li>
-                    </ul>
+                    <ul class="space-y-1"><li>&lt; 1% = Score 25</li><li>1-2% = Score 20</li><li>2-3% = Score 15</li><li>3-5% = Score 10</li><li>&gt; 5% = Score 5</li></ul>
                 </div>
             </div>
-            
-            
             <div class="mt-6 p-4 bg-slate-800/50 rounded-xl">
-                <p class="text-slate-300 text-sm">
-                    <strong class="text-white">Interpretation:</strong> Scores are weighted by importance. 
-                    Liquidity and Credit each contribute 30% of total score. Rates and Market contribute 20% each.
-                    A score below 60 indicates elevated risk. Historical crisis periods typically score 40-55.
-                </p>
+                <p class="text-slate-300 text-sm"><strong class="text-white">Interpretation:</strong> Scores are weighted by importance. Liquidity and Credit each contribute 30% of total score. Rates and Market contribute 20% each. A score below 60 indicates elevated risk. Historical crisis periods typically score 40-55.</p>
             </div>
         </div>
 
-        <!-- CRUCIX INTELLIGENCE FEED -->
-        <div class="mt-6" id="crucix-container">
-            <!-- Populated by crucix-feed.js -->
-            <div class="glass rounded-xl p-6 border border-rose-500/20">
-                <div class="flex items-center justify-between mb-4">
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></div>
-                        <h3 class="text-lg font-semibold text-white">Crucix Intelligence</h3>
-                    </div>
-                    <span class="text-xs text-slate-400">27/29 sources</span>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">BTC</div>
-                        <div class="text-lg font-mono text-white">$66,561</div>
-                    </div>
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">ETH</div>
-                        <div class="text-lg font-mono text-white">$1,999</div>
-                    </div>
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">VIX</div>
-                        <div class="text-lg font-mono text-red-400">31.05</div>
-                    </div>
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">SPY</div>
-                        <div class="text-lg font-mono text-white">$634</div>
-                    </div>
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">Gold</div>
-                        <div class="text-lg font-mono text-white">$4,524</div>
-                    </div>
-                    <div class="bg-slate-900/50 rounded-lg p-3">
-                        <div class="text-xs text-slate-400 mb-1">WTI Oil</div>
-                        <div class="text-lg font-mono text-white">$99.64</div>
-                    </div>
-                </div>
-                
-                <div class="mt-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-bold text-red-400 uppercase">HIGH</span>
-                        <span class="text-sm text-slate-300">25 new KEV entries in last 30 days — elevated exploit activity</span>
-                    </div>
-                </div>
-                
-                <div class="mt-4 pt-3 border-t border-slate-700 flex items-center justify-between text-xs text-slate-500">
-                    <span>Last update: 2026-03-29 16:30</span>
-                    <a href="https://www.crucix.live/" target="_blank" rel="noopener" class="text-rose-400 hover:text-rose-300">
-                        Open Crucix →
-                    </a>
-                </div>
+        <!-- FOOTER -->
+        <div class="text-center text-slate-600 text-xs pb-6">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <i class="fas fa-chart-line text-slate-700"></i>
+                <span>CycleVue Pro — Live FRED Data | 18 US + 12 Europe Indicators | Auto-refresh: 5 minutes</span>
             </div>
+            <div>Data fetched from St. Louis Fed API every 6 hours | Dashboard refreshes every 5 minutes</div>
         </div>
-
     </div>
 
     <!-- Scripts -->
-    <script src="/cyclevue-pro/crucix-feed.js"></script>
-    <script src="/cyclevue-pro/cycle-pro-data.js"></script>
+    <script src="/cyclevue-pro/europe-impact.js"></script>
+    <script src="/cyclevue-pro/cycle-intelligence.js"></script>
     <script>
-        // Initialize dashboard when page loads
-        window.onload = function() {
-            console.log('CycleVue Pro: Initializing...');
-            updateDashboard();
-            setInterval(updateDashboard, 300000);
-        };
-        
-        function updateDashboard() {
+        let liveData = null;
+        let europeData = null;
+        let countdown = 300;
+
+        // === DATA LOADING ===
+        async function loadAllData() {
+            await Promise.all([loadLiveData(), loadEuropeData()]);
+            renderAll();
+        }
+
+        async function loadLiveData() {
+            const urls = [
+                '/cyclevue-pro/cyclevue-live.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/cyclevue-pro/cyclevue-live.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { liveData = await res.json(); console.log('[CycleVue Pro] Live data loaded from', url); return; }
+                } catch(e) { console.log('[CycleVue Pro] Failed:', url); }
+            }
+            console.warn('[CycleVue Pro] No live data available');
+        }
+
+        async function loadEuropeData() {
+            const urls = [
+                '/cyclevue-pro/europe-live.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/cyclevue-pro/europe-live.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { europeData = await res.json(); console.log('[CycleVue Pro] Europe data loaded from', url); return; }
+                } catch(e) { console.log('[CycleVue Pro] Europe failed:', url); }
+            }
+            console.warn('[CycleVue Pro] No Europe data available');
+        }
+
+        // === RENDER ORCHESTRATION ===
+        function renderAll() {
+            updateTimestamp();
+            if (liveData) { renderScore(); renderIndicators(); }
+            if (typeof CycleIntelligence !== 'undefined') renderIntel();
+            if (typeof EuropeImpact !== 'undefined') renderEurope();
+            if (europeData) renderEuropeIndicators();
+        }
+
+        function updateTimestamp() {
             const now = new Date();
             document.getElementById('last-update').textContent = now.toLocaleTimeString();
-            
-            // Real data from Crucix + simulated macro indicators
-            const data = {
-                yield: { value: -0.35, history: [1.2, 0.8, 0.3, -0.1, -0.35] },
-                rates: { value: 5.50, history: [0.25, 1.5, 3.0, 5.25, 5.50] },
-                m2: { value: -1.2, history: [8.5, 6.2, 3.1, 0.5, -1.2] },
-                credit: { value: 2.8, history: [1.5, 1.8, 2.1, 2.5, 2.8] },
-                vix: { value: 31.05, history: [18, 20, 22, 25, 31.05] },  // From Crucix
-                spx: { value: 5200, history: [5800, 5600, 5400, 5300, 5200] }
-            };
-            
-            calculateScores(data);
+            const meta = liveData ? liveData.metadata : null;
+            if (meta && meta.last_update) {
+                const age = Math.round((Date.now() - new Date(meta.last_update).getTime()) / 60000);
+                document.getElementById('feed-status').textContent = age < 60 ? '● Live (' + age + 'm ago)' : '● Updated ' + Math.round(age/60) + 'h ago';
+            }
         }
-        
-        function calculateScores(data) {
+
+        // === SCORE CALCULATION (from live data) ===
+        function renderScore() {
+            const ind = liveData.indicators;
+            const yieldVal = ind.yield_curve ? ind.yield_curve.value : 0;
+            const ratesVal = ind.fed_funds ? ind.fed_funds.value : 0;
+            const m2Val = ind.m2_growth ? ind.m2_growth.value : 0;
+            const creditVal = ind.credit_spread ? ind.credit_spread.value : 0;
+            const vixVal = ind.vix ? ind.vix.value : 20;
+
             const scores = {
-                liquidity: calculateLiquidityScore(data.yield.value, data.m2.value),
-                credit: calculateCreditScore(data.credit.value),
-                rates: calculateRatesScore(data.rates.value),
-                market: calculateMarketScore(data.vix.value, data.spx.value)
+                liquidity: calcLiquidity(yieldVal, m2Val),
+                credit: calcCredit(creditVal),
+                rates: calcRates(ratesVal),
+                market: calcMarket(vixVal)
             };
-            
-            const total = Math.round((scores.liquidity * 0.3 + scores.credit * 0.3 + 
-                                     scores.rates * 0.2 + scores.market * 0.2));
-            
-            updateScoreDisplay(scores, total);
-            updateIndicatorValues(data, scores);
-        }
-        
-        function updateIndicatorValues(data, scores) {
-            // Yield Curve
-            const yieldEl = document.getElementById('yield-value');
-            const yieldSignal = document.getElementById('yield-signal');
-            if (yieldEl) yieldEl.textContent = data.yield.value.toFixed(2) + '%';
-            if (yieldSignal) {
-                const val = data.yield.value;
-                yieldSignal.textContent = val > 0 ? 'Normal' : val > -0.5 ? 'Flattening' : 'Inverted';
-                yieldSignal.className = 'px-2 py-1 rounded text-xs ' + 
-                    (val > 0 ? 'bg-emerald-500/20 text-emerald-400' : 
-                     val > -0.5 ? 'bg-amber-500/20 text-amber-400' : 
-                     'bg-rose-500/20 text-rose-400');
-            }
-            
-            // Fed Funds
-            const ratesEl = document.getElementById('rates-value');
-            const ratesSignal = document.getElementById('rates-signal');
-            if (ratesEl) ratesEl.textContent = data.rates.value.toFixed(2) + '%';
-            if (ratesSignal) {
-                const val = data.rates.value;
-                ratesSignal.textContent = val < 2 ? 'Low' : val < 4 ? 'Neutral' : 'Restrictive';
-                ratesSignal.className = 'px-2 py-1 rounded text-xs ' + 
-                    (val < 2 ? 'bg-emerald-500/20 text-emerald-400' : 
-                     val < 4 ? 'bg-blue-500/20 text-blue-400' : 
-                     'bg-rose-500/20 text-rose-400');
-            }
-            
-            // M2
-            const m2El = document.getElementById('m2-value');
-            const m2Signal = document.getElementById('m2-signal');
-            if (m2El) m2El.textContent = data.m2.value.toFixed(1) + '%';
-            if (m2Signal) {
-                const val = data.m2.value;
-                m2Signal.textContent = val > 4 ? 'Expanding' : val > 0 ? 'Slowing' : 'Contracting';
-                m2Signal.className = 'px-2 py-1 rounded text-xs ' + 
-                    (val > 4 ? 'bg-emerald-500/20 text-emerald-400' : 
-                     val > 0 ? 'bg-amber-500/20 text-amber-400' : 
-                     'bg-rose-500/20 text-rose-400');
-            }
-            
-            // Credit
-            const creditEl = document.getElementById('credit-value');
-            const creditSignal = document.getElementById('credit-signal');
-            if (creditEl) creditEl.textContent = data.credit.value.toFixed(2) + '%';
-            if (creditSignal) {
-                const val = data.credit.value;
-                creditSignal.textContent = val < 2 ? 'Tight' : val < 3 ? 'Normal' : 'Wide';
-                creditSignal.className = 'px-2 py-1 rounded text-xs ' + 
-                    (val < 2 ? 'bg-emerald-500/20 text-emerald-400' : 
-                     val < 3 ? 'bg-amber-500/20 text-amber-400' : 
-                     'bg-rose-500/20 text-rose-400');
-            }
-            
-            // VIX
-            const vixEl = document.getElementById('vix-value');
-            const vixSignal = document.getElementById('vix-signal');
-            if (vixEl) vixEl.textContent = data.vix.value.toFixed(2);
-            if (vixSignal) {
-                const val = data.vix.value;
-                vixSignal.textContent = val < 20 ? 'Low' : val < 25 ? 'Elevated' : 'High';
-                vixSignal.className = 'px-2 py-1 rounded text-xs ' + 
-                    (val < 20 ? 'bg-emerald-500/20 text-emerald-400' : 
-                     val < 25 ? 'bg-amber-500/20 text-amber-400' : 
-                     'bg-rose-500/20 text-rose-400');
-            }
-            
-            // S&P 500
-            const spxEl = document.getElementById('spx-value');
-            const spxSignal = document.getElementById('spx-signal');
-            if (spxEl) spxEl.textContent = data.spx.value.toLocaleString();
-            if (spxSignal) {
-                spxSignal.textContent = 'Live';
-                spxSignal.className = 'px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-400';
-            }
-        }
-        
-        function calculateLiquidityScore(yield, m2) {
-            let yieldScore = yield > 1 ? 25 : yield > 0 ? 20 : yield > -0.5 ? 15 : yield > -1 ? 10 : 5;
-            let m2Score = m2 > 8 ? 25 : m2 > 4 ? 20 : m2 > 0 ? 15 : m2 > -2 ? 10 : 5;
-            return Math.round((yieldScore + m2Score) / 2);
-        }
-        
-        function calculateCreditScore(spread) {
-            return spread < 1 ? 25 : spread < 2 ? 20 : spread < 3 ? 15 : spread < 5 ? 10 : 5;
-        }
-        
-        function calculateRatesScore(rate) {
-            return rate < 2 ? 25 : rate < 4 ? 20 : rate < 6 ? 15 : rate < 8 ? 10 : 5;
-        }
-        
-        function calculateMarketScore(vix, spx) {
-            return vix < 15 ? 20 : vix < 20 ? 18 : vix < 25 ? 14 : vix < 30 ? 10 : 6;
-        }
-        
-        function updateScoreDisplay(scores, total) {
-            const totalEl = document.getElementById('total-score');
-            const liquidityEl = document.getElementById('liquidity-score');
-            const creditEl = document.getElementById('credit-score');
-            const ratesEl = document.getElementById('rates-score');
-            const marketEl = document.getElementById('market-score');
-            
-            if (totalEl) totalEl.textContent = total;
-            if (liquidityEl) liquidityEl.textContent = scores.liquidity;
-            if (creditEl) creditEl.textContent = scores.credit;
-            if (ratesEl) ratesEl.textContent = scores.rates;
-            if (marketEl) marketEl.textContent = scores.market;
-            
-            // Update bars
-            const liquidityBar = document.getElementById('liquidity-bar');
-            const creditBar = document.getElementById('credit-bar');
-            const ratesBar = document.getElementById('rates-bar');
-            const marketBar = document.getElementById('market-bar');
-            
-            if (liquidityBar) liquidityBar.style.width = scores.liquidity + '%';
-            if (creditBar) creditBar.style.width = scores.credit + '%';
-            if (ratesBar) ratesBar.style.width = scores.rates + '%';
-            if (marketBar) marketBar.style.width = scores.market + '%';
-            
-            // Phase
+            const total = Math.round(scores.liquidity * 0.3 + scores.credit * 0.3 + scores.rates * 0.2 + scores.market * 0.2);
+
+            document.getElementById('total-score').textContent = total;
+            document.getElementById('liquidity-score').textContent = scores.liquidity;
+            document.getElementById('credit-score').textContent = scores.credit;
+            document.getElementById('rates-score').textContent = scores.rates;
+            document.getElementById('market-score').textContent = scores.market;
+            document.getElementById('liquidity-bar').style.width = scores.liquidity + '%';
+            document.getElementById('credit-bar').style.width = scores.credit + '%';
+            document.getElementById('rates-bar').style.width = scores.rates + '%';
+            document.getElementById('market-bar').style.width = scores.market + '%';
+
             const phase = total >= 80 ? 'EXPANSION' : total >= 60 ? 'LATE CYCLE' : 'RISK ZONE';
             const phaseColor = total >= 80 ? 'text-emerald-400' : total >= 60 ? 'text-amber-400' : 'text-rose-400';
-            
             const phaseEl = document.getElementById('cycle-phase');
-            if (phaseEl) {
-                phaseEl.textContent = phase;
-                phaseEl.className = 'text-2xl font-bold ' + phaseColor;
-            }
-            
-            // Assessment
-            const assessment = total >= 80 ? 'Favorable conditions for growth.' :
-                              total >= 60 ? 'Late cycle conditions. Risk building.' :
-                              'Elevated risk. Defensive positioning recommended.';
-            const assessmentEl = document.getElementById('assessment-text');
-            if (assessmentEl) assessmentEl.textContent = assessment;
+            phaseEl.textContent = phase;
+            phaseEl.className = 'text-2xl font-bold ' + phaseColor;
+            document.getElementById('risk-grade').textContent = total >= 80 ? 'Low Risk' : total >= 60 ? 'Moderate Risk' : 'High Risk';
+
+            const assessment = total >= 80 ? 'Favorable conditions for growth. Risk assets supported.' :
+                              total >= 60 ? 'Late cycle conditions. Risk building. Reduce leverage, build cash.' :
+                              'Elevated risk. Defensive positioning recommended. Hold gold and cash.';
+            document.getElementById('assessment-text').textContent = assessment;
         }
+
+        function calcLiquidity(yield, m2) {
+            let ys = yield > 1 ? 25 : yield > 0 ? 20 : yield > -0.5 ? 15 : yield > -1 ? 10 : 5;
+            let ms = m2 > 8 ? 25 : m2 > 4 ? 20 : m2 > 0 ? 15 : m2 > -2 ? 10 : 5;
+            return Math.round((ys + ms) / 2);
+        }
+        function calcCredit(spread) { return spread < 1 ? 25 : spread < 2 ? 20 : spread < 3 ? 15 : spread < 5 ? 10 : 5; }
+        function calcRates(rate) { return rate < 2 ? 25 : rate < 4 ? 20 : rate < 6 ? 15 : rate < 8 ? 10 : 5; }
+        function calcMarket(vix) { return vix < 15 ? 20 : vix < 20 ? 18 : vix < 25 ? 14 : vix < 30 ? 10 : 6; }
+
+        // === 18 INDICATOR GRID ===
+        function renderIndicators() {
+            const grid = document.getElementById('all-indicators');
+            const ind = liveData.indicators;
+            const statusColors = { good: 'status-good', warning: 'status-warning', danger: 'status-danger', info: 'status-info' };
+            const statusText = { good: 'GOOD', warning: 'WARN', danger: 'DANGER', info: 'INFO' };
+            const statusBadge = { good: 'bg-emerald-500/20 text-emerald-400', warning: 'bg-amber-500/20 text-amber-400', danger: 'bg-rose-500/20 text-rose-400', info: 'bg-blue-500/20 text-blue-400' };
+
+            let counts = { good: 0, warning: 0, danger: 0, info: 0 };
+            let html = '';
+
+            for (const [key, ind_data] of Object.entries(ind)) {
+                counts[ind_data.status] = (counts[ind_data.status] || 0) + 1;
+                const val = ind_data.value;
+                const unit = ind_data.unit || '';
+                const valDisplay = val > 10000 ? val.toLocaleString() : (typeof val === 'number' ? val.toLocaleString() : val);
+                const borderClass = statusColors[ind_data.status] || 'status-info';
+                const badgeClass = statusBadge[ind_data.status] || statusBadge.info;
+
+                html += '<div class="indicator-tile glass-card rounded-lg p-3 border ' + borderClass + '" onclick="showIndicatorDetail(\'' + key + '\')">';
+                html += '<div class="flex items-center justify-between mb-1">';
+                html += '<span class="text-xs text-slate-400 font-medium truncate" title="' + ind_data.name + '">' + ind_data.name + '</span>';
+                html += '<span class="text-xs px-1.5 py-0.5 rounded ' + badgeClass + '">' + statusText[ind_data.status] + '</span>';
+                html += '</div>';
+                html += '<div class="text-white text-lg font-bold">' + valDisplay + '<span class="text-xs text-slate-500 ml-0.5">' + unit + '</span></div>';
+                html += '<div class="flex items-center justify-between mt-1">';
+                html += '<span class="text-xs text-slate-500 font-mono">' + ind_data.series_id + '</span>';
+                html += '<span class="text-xs text-slate-600">' + ind_data.last_date + '</span>';
+                html += '</div>';
+                html += '</div>';
+            }
+            grid.innerHTML = html;
+            document.getElementById('good-count').textContent = counts.good || 0;
+            document.getElementById('warning-count').textContent = counts.warning || 0;
+            document.getElementById('danger-count').textContent = counts.danger || 0;
+            document.getElementById('info-count').textContent = counts.info || 0;
+        }
+
+        function showIndicatorDetail(key) {
+            const ind = liveData.indicators[key];
+            if (!ind) return;
+            let detail = ind.name + '\n\nValue: ' + ind.value + ind.unit + '\nStatus: ' + ind.status.toUpperCase() + '\nSeries: ' + ind.series_id + '\nLast Date: ' + ind.last_date + '\nFrequency: ' + ind.frequency;
+            if (ind.threshold) detail += '\nThreshold: ' + ind.threshold;
+            if (ind.history && ind.history.length > 0) {
+                detail += '\n\nRecent History:';
+                ind.history.slice(-5).forEach(h => { detail += '\n  ' + h.date + ': ' + h.value; });
+            }
+            alert(detail);
+        }
+
+        // === CYCLE INTELLIGENCE ===
+        function renderIntel() {
+            const ci = CycleIntelligence.currentAssessment;
+            const container = document.getElementById('intel-section');
+            const riskColors = { danger: 'text-rose-400', warning: 'text-amber-400', good: 'text-emerald-400' };
+            const riskBg = { danger: 'bg-rose-500/10 border-rose-500/30', warning: 'bg-amber-500/10 border-amber-500/30', good: 'bg-emerald-500/10 border-emerald-500/30' };
+
+            let html = '<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">';
+            const cycles = [
+                { label: 'Debt Cycle', data: ci.debtCycle },
+                { label: 'Big Debt Cycle', data: ci.bigDebtCycle },
+                { label: 'Empire Cycle', data: ci.empireCycle },
+                { label: 'Geopolitical', data: ci.geopoliticalCycle }
+            ];
+            cycles.forEach(c => {
+                const color = riskColors[c.data.status] || 'text-slate-400';
+                const bg = riskBg[c.data.status] || 'bg-slate-800/50';
+                html += '<div class="rounded-lg p-3 border ' + bg + '">';
+                html += '<div class="text-xs text-slate-400 mb-1">' + c.label + '</div>';
+                html += '<div class="text-sm font-semibold ' + color + '">' + c.data.stage + '</div>';
+                if (c.data.yearsToPeak) html += '<div class="text-xs text-slate-500 mt-1">' + c.data.yearsToPeak + ' years to peak</div>';
+                if (c.data.progress) html += '<div class="text-xs text-slate-500 mt-1">' + c.data.progress + '% progress</div>';
+                if (c.data.yearsToResolution) html += '<div class="text-xs text-slate-500 mt-1">' + c.data.yearsToResolution + ' years to resolution</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            // Overall risk
+            html += '<div class="rounded-lg p-4 bg-slate-800/50 border border-white/5">';
+            html += '<div class="flex items-center justify-between mb-2"><span class="text-sm text-slate-400">Overall Risk</span>';
+            html += '<span class="text-2xl font-bold ' + (ci.overallRisk === 'CRISIS' ? 'text-rose-400' : 'text-amber-400') + '">' + ci.overallRisk + '</span></div>';
+            html += '<div class="text-sm text-slate-300">Risk Score: <span class="font-mono font-bold text-white">' + ci.overallRiskScore + '/100</span></div>';
+            html += '<div class="text-xs text-slate-500 mt-1">Synced with live FRED data ' + ci.date + '</div>';
+            html += '</div>';
+
+            // 18 indicators summary
+            const dangerCount = CycleIntelligence.indicators.filter(i => i.status === 'danger').length;
+            const warningCount = CycleIntelligence.indicators.filter(i => i.status === 'warning').length;
+            const goodCount = CycleIntelligence.indicators.filter(i => i.status === 'good').length;
+            html += '<div class="rounded-lg p-4 bg-slate-800/50 border border-white/5">';
+            html += '<div class="text-sm text-slate-400 mb-2">18 Key Indicators Summary</div>';
+            html += '<div class="flex items-center gap-4">';
+            html += '<span class="text-rose-400 font-bold">' + dangerCount + ' Danger</span>';
+            html += '<span class="text-amber-400 font-bold">' + warningCount + ' Warning</span>';
+            html += '<span class="text-emerald-400 font-bold">' + goodCount + ' Good</span>';
+            html += '</div>';
+            html += '<div class="mt-3 space-y-1">';
+            CycleIntelligence.indicators.filter(i => i.status === 'danger').forEach(i => {
+                html += '<div class="text-xs text-slate-300 flex justify-between"><span>' + i.name + '</span><span class="text-rose-400 font-mono">' + i.value + i.unit + '</span></div>';
+            });
+            html += '</div></div>';
+            html += '</div>';
+
+            // Historical analogues
+            html += '<div class="mt-4"><div class="text-sm text-slate-400 mb-2">Historical Analogues</div>';
+            html += '<div class="grid grid-cols-2 md:grid-cols-4 gap-3">';
+            CycleIntelligence.historicalAnalogues.forEach(a => {
+                html += '<div class="rounded-lg p-3 bg-slate-800/30 border border-white/5">';
+                html += '<div class="text-xs text-slate-500">' + a.year + '</div>';
+                html += '<div class="text-sm text-slate-200 font-medium">' + a.name + '</div>';
+                html += '<div class="text-xs text-amber-400 mt-1">Similarity: ' + a.similarity + '%</div>';
+                html += '<div class="text-xs text-slate-500 mt-1">' + a.lessons + '</div>';
+                html += '</div>';
+            });
+            html += '</div></div>';
+
+            container.innerHTML = html;
+        }
+
+        // === EUROPE IMPACT ===
+        function renderEurope() {
+            const container = document.getElementById('europe-section');
+
+            // Transmission matrix
+            let html = '<div class="mb-4"><div class="text-sm text-slate-400 mb-2">US → Europe Transmission Matrix</div>';
+            html += '<div class="space-y-2">';
+            EuropeImpact.transmissionMatrix.forEach(t => {
+                const impactColor = t.impact === 'high' ? 'border-rose-500/30 bg-rose-500/5' : t.impact === 'medium' ? 'border-amber-500/30 bg-amber-500/5' : 'border-blue-500/30 bg-blue-500/5';
+                const impactBadge = t.impact === 'high' ? 'bg-rose-500/20 text-rose-400' : t.impact === 'medium' ? 'bg-amber-500/20 text-amber-400' : 'bg-blue-500/20 text-blue-400';
+                html += '<div class="rounded-lg p-3 border ' + impactColor + '">';
+                html += '<div class="flex items-center justify-between mb-1">';
+                html += '<span class="text-sm text-slate-200 font-medium">' + t.usEvent + '</span>';
+                html += '<div class="flex items-center gap-2"><span class="text-xs px-2 py-0.5 rounded ' + impactBadge + '">' + t.impact.toUpperCase() + '</span><span class="text-xs text-slate-500">Lag: ' + t.lagDays + 'd</span></div>';
+                html += '</div>';
+                html += '<div class="text-xs text-slate-400">' + t.europeImpact + '</div>';
+                if (t.irelandNote) html += '<div class="text-xs text-emerald-400/70 mt-1"><i class="fas fa-map-marker-alt mr-1"></i>' + t.irelandNote + '</div>';
+                html += '</div>';
+            });
+            html += '</div></div>';
+
+            // Europe cycle position
+            const eu = EuropeImpact.europeCyclePosition.eurozone;
+            const ie = EuropeImpact.europeCyclePosition.ireland;
+            html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+            html += '<div class="rounded-lg p-4 bg-slate-800/50 border border-white/5">';
+            html += '<div class="text-sm text-slate-400 mb-2">Eurozone Cycle Position</div>';
+            html += '<div class="text-lg font-bold ' + (eu.overallRisk === 'CRISIS' ? 'text-rose-400' : 'text-amber-400') + '">' + eu.overallRisk + ' (' + eu.overallRiskScore + '/100)</div>';
+            html += '<div class="mt-2 space-y-1 text-xs">';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Debt Cycle</span><span class="text-amber-400">' + eu.debtCycle.stage + '</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Economic Cycle</span><span class="text-amber-400">' + eu.economicCycle.stage + '</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Political Integration</span><span class="text-rose-400">' + eu.politicalIntegration.stage + '</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Energy Security</span><span class="text-rose-400">' + eu.energySecurity.stage + '</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Demographics</span><span class="text-rose-400">' + eu.demographics.stage + '</span></div>';
+            html += '</div></div>';
+
+            html += '<div class="rounded-lg p-4 bg-slate-800/50 border border-white/5">';
+            html += '<div class="text-sm text-slate-400 mb-2">Ireland Cycle Position</div>';
+            html += '<div class="text-lg font-bold ' + (ie.overallRiskScore < 50 ? 'text-rose-400' : 'text-amber-400') + '">' + ie.overallRisk + ' (' + ie.overallRiskScore + '/100)</div>';
+            html += '<div class="mt-2 space-y-1 text-xs">';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Sovereign Debt</span><span class="text-emerald-400">' + ie.sovereignDebt.stage + ' (' + ie.sovereignDebt.value + '%)</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Housing Market</span><span class="text-rose-400">' + ie.housingMarket.stage + ' (' + ie.housingMarket.value + '/100)</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">FDI Dependency</span><span class="text-rose-400">' + ie.fdiDependency.stage + ' (' + ie.fdiDependency.value + '/100)</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Energy Import</span><span class="text-rose-400">' + ie.energyImport.stage + ' (' + ie.energyImport.value + '%)</span></div>';
+            html += '<div class="flex justify-between"><span class="text-slate-400">Demographics</span><span class="text-emerald-400">' + ie.demographics.stage + '</span></div>';
+            html += '</div></div>';
+            html += '</div>';
+
+            container.innerHTML = html;
+        }
+
+        // === EUROPE INDICATORS (live FRED) ===
+        function renderEuropeIndicators() {
+            const container = document.getElementById('europe-indicators');
+            if (!europeData || !europeData.indicators) { container.innerHTML = '<div class="text-slate-500 text-sm text-center py-4">No Europe data available</div>'; return; }
+
+            const statusColors = { good: 'status-good', warning: 'status-warning', danger: 'status-danger', info: 'status-info' };
+            const statusBadge = { good: 'bg-emerald-500/20 text-emerald-400', warning: 'bg-amber-500/20 text-amber-400', danger: 'bg-rose-500/20 text-rose-400', info: 'bg-blue-500/20 text-blue-400' };
+            const statusText = { good: 'GOOD', warning: 'WARN', danger: 'DANGER', info: 'INFO' };
+
+            let html = '<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">';
+            for (const [key, ind] of Object.entries(europeData.indicators)) {
+                const val = ind.value;
+                const unit = ind.unit || '';
+                const valDisplay = val > 100000 ? val.toLocaleString() : (typeof val === 'number' ? val.toLocaleString() : val);
+                const borderClass = statusColors[ind.status] || 'status-info';
+                const badgeClass = statusBadge[ind.status] || statusBadge.info;
+
+                html += '<div class="indicator-tile glass-card rounded-lg p-3 border ' + borderClass + '">';
+                html += '<div class="flex items-center justify-between mb-1">';
+                html += '<span class="text-xs text-slate-400 font-medium truncate" title="' + ind.name + '">' + ind.name + '</span>';
+                html += '<span class="text-xs px-1.5 py-0.5 rounded ' + badgeClass + '">' + statusText[ind.status] + '</span>';
+                html += '</div>';
+                html += '<div class="text-white text-lg font-bold">' + valDisplay + '<span class="text-xs text-slate-500 ml-0.5">' + unit + '</span></div>';
+                html += '<div class="flex items-center justify-between mt-1">';
+                html += '<span class="text-xs text-slate-500 font-mono">' + (ind.series_id || '--') + '</span>';
+                html += '<span class="text-xs text-slate-600">' + (ind.last_date || '--') + '</span>';
+                html += '</div></div>';
+            }
+            html += '</div>';
+            if (europeData.metadata) {
+                html += '<div class="text-xs text-slate-500 mt-3 text-center">Last FRED update: ' + europeData.metadata.last_update + ' | ' + europeData.metadata.indicators_fetched + ' indicators fetched</div>';
+            }
+            container.innerHTML = html;
+        }
+
+        // === IRELAND RISKS (from EuropeImpact static data) ===
+        function renderIrelandRisks() {
+            const container = document.getElementById('ireland-risks');
+            if (typeof EuropeImpact === 'undefined' || !EuropeImpact.irelandRisks) { container.innerHTML = '<div class="text-slate-500 text-sm">No Ireland risk data</div>'; return; }
+
+            const sevColors = { high: 'border-rose-500/30 bg-rose-500/5', medium: 'border-amber-500/30 bg-amber-500/5', low: 'border-blue-500/30 bg-blue-500/5' };
+            const sevBadge = { high: 'bg-rose-500/20 text-rose-400', medium: 'bg-amber-500/20 text-amber-400', low: 'bg-blue-500/20 text-blue-400' };
+
+            let html = '<div class="space-y-2">';
+            EuropeImpact.irelandRisks.forEach(r => {
+                html += '<div class="rounded-lg p-3 border ' + (sevColors[r.severity] || sevColors.medium) + '">';
+                html += '<div class="flex items-center justify-between mb-1">';
+                html += '<span class="text-sm text-slate-200 font-medium">' + r.risk + '</span>';
+                html += '<span class="text-xs px-2 py-0.5 rounded ' + (sevBadge[r.severity] || sevBadge.medium) + '">' + r.severity.toUpperCase() + '</span>';
+                html += '</div>';
+                html += '<div class="text-xs text-slate-400">' + r.detail + '</div>';
+                if (r.indicator) html += '<div class="text-xs text-slate-500 mt-1 font-mono">📊 ' + r.indicator + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        // === REFRESH ===
+        function refreshNow() {
+            const icon = document.getElementById('refresh-icon');
+            icon.classList.add('refresh-spin');
+            loadAllData().then(() => {
+                setTimeout(() => icon.classList.remove('refresh-spin'), 500);
+            });
+        }
+
+        function startCountdown() {
+            countdown = 300;
+            setInterval(() => {
+                countdown--;
+                if (countdown <= 0) {
+                    countdown = 300;
+                    loadAllData();
+                }
+                const m = Math.floor(countdown / 60);
+                const s = String(countdown % 60).padStart(2, '0');
+                document.getElementById('next-refresh').textContent = m + ':' + s;
+            }, 1000);
+        }
+
+        // === INITIALIZE ===
+        window.onload = function() {
+            console.log('[CycleVue Pro] Initializing with live FRED data...');
+            loadAllData().then(() => {
+                renderIrelandRisks();
+            });
+            startCountdown();
+        };
     </script>
 </body>
 </html>
