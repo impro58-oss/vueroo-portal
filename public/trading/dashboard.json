@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T21:00:12.798704",
+  "timestamp": "2026-07-16T00:00:17.143616",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,46 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 184.0,
-    "unrealized_pnl_eur": 22.97,
-    "total_pnl_eur": 206.97,
-    "open_positions": 8,
-    "closed_trades": 119,
-    "wins": 49,
-    "losses": 70,
-    "win_rate": 41.2
+    "realized_pnl_eur": 182.17,
+    "unrealized_pnl_eur": 17.83,
+    "total_pnl_eur": 200.0,
+    "open_positions": 6,
+    "closed_trades": 121,
+    "wins": 50,
+    "losses": 71,
+    "win_rate": 41.3
   },
   "open_positions": {
-    "KATUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-06-30T06:02:02.394050",
-      "entry_price": 0.00477,
-      "atr": 0.0004735714285714288,
-      "stop": 0.005480357142857143,
-      "highest": 0.00477,
-      "lowest": 0.00464,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "BIOUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-06-30T06:02:02.394050",
-      "entry_price": 0.02796,
-      "atr": 0.0029471428571428574,
-      "stop": 0.032380714285714284,
-      "highest": 0.02796,
-      "lowest": 0.02676,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "USD1USDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -92,7 +62,7 @@
       "stop": 0.05607142857142858,
       "highest": 0.034,
       "lowest": 0.034,
-      "bars_held": 9,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
@@ -107,7 +77,7 @@
       "stop": 0.08112142857142857,
       "highest": 0.0715,
       "lowest": 0.065,
-      "bars_held": 9,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
@@ -122,7 +92,7 @@
       "stop": 0.003928571428571429,
       "highest": 0.0023,
       "lowest": 0.0022,
-      "bars_held": 9,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
@@ -160,32 +130,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "SPKUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-06-24T18:03:52.770706",
-      "exit_date": "2026-06-25T18:54:13.495962",
-      "entry_price": 0.016235,
-      "exit_price": 0.018075785714285714,
-      "pnl_pct": -17.61,
-      "pnl_eur": -44.03,
-      "reason": "TRAILING_STOP",
-      "bars_held": 3,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "EURUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-06-19T00:05:09.281468",
-      "exit_date": "2026-06-25T18:54:13.495962",
-      "entry_price": 1.1472,
-      "exit_price": 1.139,
-      "pnl_pct": 0.71,
-      "pnl_eur": 1.79,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "AVAXUSDT",
       "direction": "SHORT",
@@ -403,22 +347,48 @@
       "reason": "TRAILING_STOP",
       "bars_held": 7,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "KATUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-06-30T06:02:02.394050",
+      "exit_date": "2026-07-16T00:00:17.143616",
+      "entry_price": 0.00477,
+      "exit_price": 0.00481,
+      "pnl_pct": -0.84,
+      "pnl_eur": -2.1,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "BIOUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-06-30T06:02:02.394050",
+      "exit_date": "2026-07-16T00:00:17.143616",
+      "entry_price": 0.02796,
+      "exit_price": 0.02793,
+      "pnl_pct": 0.11,
+      "pnl_eur": 0.27,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
-  "daily_tokens_scanned": 196,
+  "daily_tokens_scanned": 188,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "USDEUSDT",
+    "ZECUSDT",
     "XAUTUSDT",
+    "USD1USDT",
+    "UUSDT",
+    "RLUSDUSDT",
+    "XUSDUSDT",
     "BFUSDUSDT",
     "PAXGUSDT",
-    "XUSDUSDT",
-    "USDEUSDT",
-    "UUSDT",
     "KASUSDT",
-    "USD1USDT",
-    "EURUSDT",
-    "ZECUSDT",
-    "RLUSDUSDT"
+    "EURUSDT"
   ]
 }
