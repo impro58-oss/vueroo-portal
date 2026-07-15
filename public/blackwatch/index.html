@@ -87,8 +87,8 @@
             <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <i class="fas fa-clipboard-list text-emerald-400"></i> Current State Summary
             </h2>
-            <div id="current-state" class="space-y-2">
-                <div class="text-center text-slate-500 py-4 text-sm">Generated during daily echo scan (06:30 IST) — first scan pending</div>
+            <div id="current-state" class="space-y-4">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading scan data...</div>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
                 <i class="fas fa-code-branch text-purple-400"></i> Scenario Panel
             </h2>
             <div id="scenario-panel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="text-center text-slate-500 py-4 col-span-3 text-sm">Scenarios generated during echo and deep scans — first scan pending</div>
+                <div class="text-center text-slate-500 py-4 col-span-3 text-sm">Loading scenarios...</div>
             </div>
         </div>
 
@@ -108,7 +108,7 @@
                 <i class="fas fa-lightbulb text-yellow-400"></i> Opportunity Panel
             </h2>
             <div id="opportunity-panel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="text-center text-slate-500 py-4 col-span-3 text-sm">Opportunity assessment generated during scans — first scan pending</div>
+                <div class="text-center text-slate-500 py-4 col-span-3 text-sm">Loading opportunities...</div>
             </div>
         </div>
 
@@ -117,8 +117,8 @@
             <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <i class="fas fa-chart-line text-rose-400"></i> Risk Timeline
             </h2>
-            <div id="risk-timeline" class="text-center text-slate-500 py-4 text-sm">
-                Risk history will appear here as scans accumulate over time
+            <div id="risk-timeline" class="space-y-2">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading risk ranking...</div>
             </div>
         </div>
 
@@ -128,7 +128,37 @@
                 <i class="fas fa-brain text-blue-400"></i> Recursive Intelligence Score
             </h2>
             <div id="ris-section" class="text-center text-slate-500 py-4 text-sm">
-                Scan quality metrics will appear here after first echo scan
+                Loading scan quality metrics...
+            </div>
+        </div>
+
+        <!-- ADVERSARIAL CHALLENGE -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-shield-alt text-orange-400"></i> Adversarial Challenge — What Could Make This Wrong
+            </h2>
+            <div id="adversarial-section" class="space-y-2">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading adversarial analysis...</div>
+            </div>
+        </div>
+
+        <!-- ACTION DASHBOARD -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-tasks text-emerald-400"></i> Action Dashboard — Ireland-Based Preparations
+            </h2>
+            <div id="action-dashboard" class="space-y-4">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading preparations...</div>
+            </div>
+        </div>
+
+        <!-- WEAK SIGNALS -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-satellite-dish text-cyan-400"></i> Emerging Weak Signals
+            </h2>
+            <div id="weak-signals" class="space-y-2">
+                <div class="text-center text-slate-500 py-4 text-sm">Loading weak signals...</div>
             </div>
         </div>
 
@@ -139,18 +169,6 @@
             </h2>
             <div id="memory-log" class="text-center text-slate-500 py-4 text-sm">
                 Prediction accuracy tracking will appear here after first monthly retrospective
-            </div>
-        </div>
-
-        <!-- ACTION DASHBOARD -->
-        <div class="glass rounded-2xl p-6">
-            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <i class="fas fa-tasks text-emerald-400"></i> Action Dashboard
-            </h2>
-            <div id="action-dashboard" class="space-y-2">
-                <div class="text-center text-slate-500 py-4 text-sm">
-                    Recommended preparations generated during scans — first scan pending
-                </div>
             </div>
         </div>
 
@@ -168,6 +186,7 @@
 
     <script>
         let bwData = null;
+        let bwScan = null;
 
         async function loadData() {
             const urls = [
@@ -179,14 +198,37 @@
                     const res = await fetch(url + '?t=' + Date.now());
                     if (res.ok) {
                         bwData = await res.json();
-                        console.log('[BlackWatch] Data loaded from', url);
+                        console.log('[BlackWatch] Signal data loaded from', url);
                         render();
-                        return;
+                        break;
                     }
                 } catch(e) { console.log('[BlackWatch] Failed:', url); }
             }
-            console.warn('[BlackWatch] No data available');
-            document.getElementById('signal-board').innerHTML = '<div class="col-span-5 text-center text-rose-400 py-8"><i class="fas fa-exclamation-triangle text-2xl"></i><div class="mt-2 text-sm">Signal data unavailable. Check back shortly.</div></div>';
+            if (!bwData) {
+                console.warn('[BlackWatch] No signal data available');
+                document.getElementById('signal-board').innerHTML = '<div class="col-span-5 text-center text-rose-400 py-8"><i class="fas fa-exclamation-triangle text-2xl"></i><div class="mt-2 text-sm">Signal data unavailable. Check back shortly.</div></div>';
+            }
+            // Load scan data
+            await loadScanData();
+        }
+
+        async function loadScanData() {
+            const scanUrls = [
+                '/data/blackwatch-scans/2026-07-15-echo.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/blackwatch-scans/2026-07-15-echo.json'
+            ];
+            for (const url of scanUrls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) {
+                        bwScan = await res.json();
+                        console.log('[BlackWatch] Scan data loaded from', url);
+                        renderScanPanels();
+                        return;
+                    }
+                } catch(e) { console.log('[BlackWatch] Scan fetch failed:', url); }
+            }
+            console.warn('[BlackWatch] No scan data available yet');
         }
 
         function render() {
@@ -194,6 +236,34 @@
             renderHeader();
             renderSignalBoard();
             renderConvergence();
+        }
+
+        function renderScanPanels() {
+            if (!bwScan) return;
+            renderCurrentState();
+            renderScenarios();
+            renderOpportunities();
+            renderRiskTimeline();
+            renderRIS();
+            renderAdversarial();
+            renderActions();
+            renderWeakSignals();
+            updateScanHeader();
+        }
+
+        function updateScanHeader() {
+            const scanNum = bwScan.scan_number || 1;
+            const risk = bwScan.overall_risk;
+            if (risk) {
+                const riskColors = { GREEN: 'text-emerald-400', AMBER: 'text-amber-400', RED: 'text-rose-400 pulse-red', CRITICAL: 'text-red-400 pulse-red' };
+                const el = document.getElementById('bw-risk-level');
+                el.textContent = risk.level;
+                el.className = 'text-2xl font-bold ' + (riskColors[risk.level] || 'text-slate-400');
+            }
+            if (bwScan.ris_score) {
+                document.getElementById('bw-confidence').textContent = bwScan.ris_score.composite + '/10';
+            }
+            document.getElementById('bw-scan-num').textContent = 'Scan #' + scanNum;
         }
 
         function renderHeader() {
@@ -281,6 +351,274 @@
                 conv.stressed_domains.forEach(d => {
                     const color = d.red > 0 ? 'border-rose-500 bg-rose-500/5' : 'border-amber-500 bg-amber-500/5';
                     html += '<div class="px-3 py-1 rounded-full border text-xs ' + color + '">' + d.domain + ' <span class="text-slate-400">(' + d.stress_level + ')</span></div>';
+                });
+                html += '</div></div>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderCurrentState() {
+            const container = document.getElementById('current-state');
+            const cs = bwScan.current_state;
+            if (!cs) { container.innerHTML = '<div class="text-slate-500 text-sm">No current state data</div>'; return; }
+
+            const sections = [
+                { key: 'observable', label: 'Observable', icon: 'fa-eye', color: 'text-blue-400', border: 'border-blue-500/30' },
+                { key: 'strong_inference', label: 'Strong Inference', icon: 'fa-brain', color: 'text-purple-400', border: 'border-purple-500/30' },
+                { key: 'weak_signals', label: 'Weak Signals', icon: 'fa-satellite-dish', color: 'text-cyan-400', border: 'border-cyan-500/30' },
+                { key: 'symbolic', label: 'Symbolic', icon: 'fa-eye', color: 'text-amber-400', border: 'border-amber-500/30' },
+                { key: 'unknown', label: 'Unknown', icon: 'fa-question-circle', color: 'text-rose-400', border: 'border-rose-500/30' }
+            ];
+
+            let html = '';
+            for (const sec of sections) {
+                if (!cs[sec.key] || cs[sec.key].length === 0) continue;
+                html += '<div class="rounded-lg p-4 bg-slate-800/30 border ' + sec.border + '">';
+                html += '<div class="flex items-center gap-2 mb-3"><i class="fas ' + sec.icon + ' ' + sec.color + '"></i><span class="font-semibold text-sm ' + sec.color + '">' + sec.label + '</span><span class="text-xs text-slate-500">(' + cs[sec.key].length + ')</span></div>';
+                html += '<div class="space-y-2">';
+                cs[sec.key].forEach(item => {
+                    html += '<div class="text-sm">';
+                    html += '<div class="text-slate-200 font-medium">' + item.item + '</div>';
+                    html += '<div class="text-xs text-slate-400 mt-0.5">' + item.detail + '</div>';
+                    if (item.source) html += '<div class="text-xs text-slate-600 mt-0.5 italic">Source: ' + item.source + '</div>';
+                    if (item.confidence) html += '<div class="text-xs text-slate-500 mt-0.5">Confidence: ' + item.confidence + '/10</div>';
+                    html += '</div>';
+                });
+                html += '</div></div>';
+            }
+
+            // Primary drivers
+            if (bwScan.primary_drivers && bwScan.primary_drivers.length > 0) {
+                html += '<div class="rounded-lg p-4 bg-rose-500/10 border border-rose-500/30">';
+                html += '<div class="flex items-center gap-2 mb-3"><i class="fas fa-fire text-rose-400"></i><span class="font-semibold text-sm text-rose-400">Primary Drivers (Top 5)</span></div>';
+                html += '<div class="space-y-2">';
+                bwScan.primary_drivers.forEach(d => {
+                    html += '<div class="flex gap-3 text-sm">';
+                    html += '<span class="text-rose-400 font-bold text-lg flex-shrink-0">#' + d.rank + '</span>';
+                    html += '<div><div class="text-slate-200 font-medium">' + d.name + '</div><div class="text-xs text-slate-400 mt-0.5">' + d.detail + '</div></div>';
+                    html += '</div>';
+                });
+                html += '</div></div>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderScenarios() {
+            const container = document.getElementById('scenario-panel');
+            const scenarios = bwScan.scenarios;
+            if (!scenarios || scenarios.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm col-span-3 text-center py-4">No scenarios in current scan</div>'; return; }
+
+            const impactColors = { Critical: 'border-rose-500 bg-rose-500/5', High: 'border-orange-500 bg-orange-500/5', 'Medium-High': 'border-amber-500 bg-amber-500/5', Medium: 'border-yellow-500 bg-yellow-500/5' };
+            const probBar = p => {
+                const w = Math.min(p * 2, 100);
+                return '<div class="w-full bg-slate-700 rounded-full h-2 mt-1"><div class="bg-gradient-to-r from-amber-500 to-rose-500 h-2 rounded-full" style="width:' + w + '%"></div></div>';
+            };
+
+            let html = '';
+            scenarios.forEach(s => {
+                const borderClass = impactColors[s.impact] || 'border-slate-600 bg-slate-800/30';
+                html += '<div class="scan-card rounded-lg p-4 border ' + borderClass + '">';
+                html += '<div class="flex items-start justify-between mb-2">';
+                html += '<h3 class="text-sm font-semibold text-white">' + s.name + '</h3>';
+                html += '<span class="text-xs px-2 py-0.5 rounded-full ' + (s.impact === 'Critical' ? 'bg-rose-600 text-white' : s.impact === 'High' ? 'bg-orange-600 text-white' : 'bg-amber-600 text-white') + '">' + s.impact + '</span>';
+                html += '</div>';
+                html += '<div class="flex items-center gap-3 mb-2">';
+                html += '<span class="text-xs text-slate-400">Probability: </span><span class="text-lg font-bold text-amber-400">' + s.probability + '%</span>';
+                html += '<span class="text-xs text-slate-400 ml-2">Confidence: </span><span class="text-sm font-mono text-slate-300">' + s.confidence + '/10</span>';
+                html += '<span class="text-xs text-slate-500 ml-auto">' + s.time_horizon + '</span>';
+                html += '</div>';
+                html += probBar(s.probability);
+                html += '<p class="text-xs text-slate-400 mt-2">' + s.description + '</p>';
+                if (s.triggers && s.triggers.length > 0) {
+                    html += '<div class="mt-2"><span class="text-xs text-slate-500">Triggers:</span><ul class="text-xs text-slate-400 ml-4 mt-0.5 list-disc">';
+                    s.triggers.forEach(t => html += '<li>' + t + '</li>');
+                    html += '</ul></div>';
+                }
+                if (s.inverse) {
+                    html += '<div class="mt-2 text-xs text-emerald-400/70"><i class="fas fa-arrow-undo mr-1"></i>Inverse: ' + s.inverse + '</div>';
+                }
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderOpportunities() {
+            const container = document.getElementById('opportunity-panel');
+            const opps = bwScan.opportunities;
+            if (!opps || opps.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm col-span-3 text-center py-4">No opportunities in current scan</div>'; return; }
+
+            let html = '';
+            opps.forEach(o => {
+                html += '<div class="scan-card rounded-lg p-4 border border-emerald-500/20 bg-emerald-500/5">';
+                html += '<div class="text-sm font-medium text-emerald-300 mb-1">' + o.risk + '</div>';
+                html += '<div class="text-xs text-slate-300 mt-1"><span class="text-slate-500">Benefits:</span> ' + o.beneficiary + '</div>';
+                html += '<div class="text-xs text-slate-400 mt-1"><span class="text-slate-500">Mechanism:</span> ' + o.mechanism + '</div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderRiskTimeline() {
+            const container = document.getElementById('risk-timeline');
+            const risks = bwScan.risk_ranking;
+            if (!risks || risks.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm text-center py-4">No risk ranking in current scan</div>'; return; }
+
+            const impactColors = { Critical: 'text-rose-400', High: 'text-orange-400', 'Medium-High': 'text-amber-400', Medium: 'text-yellow-400' };
+            const confBar = c => {
+                const w = c * 10;
+                return '<div class="w-16 bg-slate-700 rounded-full h-1.5 inline-block align-middle ml-1"><div class="bg-blue-500 h-1.5 rounded-full" style="width:' + w + '%"></div></div>';
+            };
+
+            let html = '';
+            risks.forEach(r => {
+                html += '<div class="flex items-center gap-3 py-1.5 border-b border-white/5">';
+                html += '<span class="text-slate-600 font-mono text-xs w-6">#' + r.rank + '</span>';
+                html += '<span class="text-sm text-slate-200 flex-1">' + r.risk + '</span>';
+                html += '<span class="text-xs text-slate-500 w-20">' + r.domain + '</span>';
+                html += '<span class="text-xs ' + (impactColors[r.impact] || 'text-slate-400') + ' w-24">' + r.impact + '</span>';
+                html += '<span class="text-xs text-slate-500 w-20">' + r.time_horizon + '</span>';
+                html += '<span class="text-xs text-slate-400 w-8 text-right">' + r.confidence + '/10</span>';
+                html += confBar(r.confidence);
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderRIS() {
+            const container = document.getElementById('ris-section');
+            const ris = bwScan.ris_score;
+            if (!ris) { container.innerHTML = '<div class="text-slate-500 text-sm">No RIS data</div>'; return; }
+
+            const dims = [
+                { key: 'evidence_quality', label: 'Evidence Quality', icon: 'fa-database' },
+                { key: 'logic_coherence', label: 'Logic Coherence', icon: 'fa-project-diagram' },
+                { key: 'blind_spots', label: 'Blind Spots', icon: 'fa-eye-slash' },
+                { key: 'alternative_analysis', label: 'Alternative Analysis', icon: 'fa-random' },
+                { key: 'usefulness', label: 'Usefulness', icon: 'fa-check-circle' },
+                { key: 'actionability', label: 'Actionability', icon: 'fa-bolt' }
+            ];
+
+            let html = '<div class="text-center mb-4">';
+            html += '<div class="text-4xl font-bold ' + (ris.composite >= 7 ? 'text-emerald-400' : ris.composite >= 5 ? 'text-amber-400' : 'text-rose-400') + '">' + ris.composite + '<span class="text-lg text-slate-500">/10</span></div>';
+            html += '<div class="text-xs text-slate-500 mt-1">Composite Recursive Intelligence Score</div></div>';
+            html += '<div class="grid grid-cols-2 md:grid-cols-3 gap-3">';
+            dims.forEach(d => {
+                const val = ris[d.key];
+                const barW = val * 10;
+                const color = val >= 7 ? 'bg-emerald-500' : val >= 5 ? 'bg-amber-500' : 'bg-rose-500';
+                html += '<div class="text-center">';
+                html += '<div class="text-xs text-slate-400 mb-1"><i class="fas ' + d.icon + ' mr-1"></i>' + d.label + '</div>';
+                html += '<div class="text-xl font-bold text-white">' + val + '<span class="text-xs text-slate-500">/10</span></div>';
+                html += '<div class="w-full bg-slate-700 rounded-full h-1.5 mt-1"><div class="' + color + ' h-1.5 rounded-full" style="width:' + barW + '%"></div></div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function renderAdversarial() {
+            const container = document.getElementById('adversarial-section');
+            const challenges = bwScan.adversarial_challenge;
+            if (!challenges || challenges.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm">No adversarial challenge data</div>'; return; }
+
+            let html = '';
+            challenges.forEach((c, i) => {
+                html += '<div class="flex gap-3 py-2 border-b border-white/5">';
+                html += '<span class="text-orange-400 font-bold text-sm flex-shrink-0">#' + (i+1) + '</span>';
+                html += '<div><div class="text-sm text-slate-200 font-medium">' + c.challenge + '</div>';
+                html += '<div class="text-xs text-slate-400 mt-0.5">' + c.detail + '</div></div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderActions() {
+            const container = document.getElementById('action-dashboard');
+            const preps = bwScan.preparations;
+            if (!preps || preps.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm text-center py-4">No preparations in current scan</div>'; return; }
+
+            const priorityColors = { Immediate: 'border-rose-500/30 bg-rose-500/5', 'Short-Term': 'border-amber-500/30 bg-amber-500/5', 'Medium-Term': 'border-blue-500/30 bg-blue-500/5', Ongoing: 'border-emerald-500/30 bg-emerald-500/5' };
+            const priorityIcons = { Immediate: 'fa-exclamation-circle text-rose-400', 'Short-Term': 'fa-clock text-amber-400', 'Medium-Term': 'fa-calendar-alt text-blue-400', Ongoing: 'fa-infinity text-emerald-400' };
+
+            let html = '';
+            preps.forEach(p => {
+                const borderClass = priorityColors[p.priority] || 'border-slate-600 bg-slate-800/30';
+                const iconClass = priorityIcons[p.priority] || 'fa-tasks text-slate-400';
+                html += '<div class="rounded-lg p-4 border ' + borderClass + '">';
+                html += '<div class="flex items-center gap-2 mb-2">';
+                html += '<i class="fas ' + iconClass + '"></i>';
+                html += '<span class="font-semibold text-sm text-white">' + p.priority + '</span>';
+                html += '<span class="text-xs text-slate-500">(' + p.timeframe + ')</span>';
+                html += '</div>';
+                html += '<ul class="space-y-1.5">';
+                p.items.forEach(item => {
+                    html += '<li class="text-xs text-slate-300 flex gap-2"><span class="text-slate-600 flex-shrink-0">•</span><span>' + item + '</span></li>';
+                });
+                html += '</ul></div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderWeakSignals() {
+            const container = document.getElementById('weak-signals');
+            const signals = bwScan.emerging_weak_signals;
+            if (!signals || signals.length === 0) { container.innerHTML = '<div class="text-slate-500 text-sm text-center py-4">No weak signals in current scan</div>'; return; }
+
+            let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-2">';
+            signals.forEach(s => {
+                const confColor = s.confidence >= 5 ? 'text-amber-400' : 'text-slate-500';
+                html += '<div class="flex items-start gap-2 p-2 rounded bg-slate-800/30 border border-white/5">';
+                html += '<div class="flex-1">';
+                html += '<div class="text-xs text-slate-200 font-medium">' + s.signal + '</div>';
+                html += '<div class="text-xs text-slate-500 mt-0.5">' + s.impact + '</div>';
+                html += '<div class="text-xs text-slate-600 mt-0.5 italic">' + s.source + '</div>';
+                html += '</div>';
+                html += '<span class="text-xs ' + confColor + ' font-mono flex-shrink-0">' + s.confidence + '/10</span>';
+                html += '</div>';
+            });
+            html += '</div>';
+
+            // Monitoring thresholds
+            if (bwScan.monitoring_thresholds) {
+                const t = bwScan.monitoring_thresholds;
+                html += '<div class="mt-4 rounded-lg p-3 bg-slate-800/30 border border-white/5">';
+                html += '<div class="text-xs text-slate-400 font-medium mb-2"><i class="fas fa-bell mr-1"></i>Monitoring Thresholds</div>';
+                html += '<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">';
+                html += '<div class="text-slate-300">Gold Panic: <span class="text-rose-400">$' + t.gold_panic + '</span></div>';
+                html += '<div class="text-slate-300">Gold De-escalation: <span class="text-emerald-400">$' + t.gold_deescalation + '</span></div>';
+                html += '<div class="text-slate-300">VIX Risk-Off: <span class="text-rose-400">' + t.vix_risk_off + '+</span></div>';
+                html += '<div class="text-slate-300">VIX Complacency: <span class="text-emerald-400">' + t.vix_complacency + '-</span></div>';
+                html += '<div class="text-slate-300">Hormuz Critical: <span class="text-rose-400"><' + t.hormuz_critical_bbl_m + 'M bbl/d</span></div>';
+                html += '<div class="text-slate-300">Hormuz Recovery: <span class="text-emerald-400">' + t.hormuz_recovery_bbl_m + 'M+ bbl/d</span></div>';
+                html += '</div></div>';
+            }
+
+            // Key metrics snapshot
+            if (bwScan.key_metrics) {
+                const m = bwScan.key_metrics;
+                html += '<div class="mt-3 rounded-lg p-3 bg-slate-800/30 border border-white/5">';
+                html += '<div class="text-xs text-slate-400 font-medium mb-2"><i class="fas fa-chart-bar mr-1"></i>Key Metrics Snapshot</div>';
+                html += '<div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 text-xs">';
+                const metrics = [
+                    { label: 'Gold', value: '$' + m.gold_price_usd.toLocaleString(), color: 'text-amber-400' },
+                    { label: 'Brent', value: '$' + m.oil_brent_usd, color: 'text-slate-300' },
+                    { label: 'S&P 500', value: m.sp500.toLocaleString(), color: 'text-slate-300' },
+                    { label: 'VIX', value: m.vix, color: 'text-slate-300' },
+                    { label: 'BTC', value: '$' + m.btc_usd.toLocaleString(), color: 'text-emerald-400' },
+                    { label: 'China GDP', value: m.china_gdp_q2 + '%', color: 'text-rose-400' },
+                    { label: 'ECB Rate', value: m.ecb_rate + '%', color: 'text-amber-400' },
+                    { label: 'Yield Curve', value: m.us_yield_curve_10y2y + '%', color: 'text-amber-400' },
+                    { label: 'HY OAS', value: m.hy_oas_spread + '%', color: 'text-emerald-400' },
+                    { label: 'Food Index', value: m.food_price_index, color: 'text-rose-400' },
+                    { label: 'Climate', value: m.climate_anomaly_c + '°C', color: 'text-rose-400' },
+                    { label: 'Sentiment', value: m.consumer_sentiment, color: 'text-rose-400' },
+                    { label: 'Inst. Trust', value: m.institutional_trust_pct + '%', color: 'text-rose-400' },
+                    { label: 'USD Index', value: m.usd_index, color: 'text-slate-300' }
+                ];
+                metrics.forEach(mt => {
+                    html += '<div class="text-center"><div class="text-slate-500">' + mt.label + '</div><div class="font-mono font-bold ' + mt.color + '">' + mt.value + '</div></div>';
                 });
                 html += '</div></div>';
             }
