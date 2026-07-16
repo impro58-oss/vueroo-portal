@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-16T12:00:21.756201",
+  "timestamp": "2026-07-16T15:00:19.725833",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,14 +28,14 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 182.17,
-    "unrealized_pnl_eur": 24.13,
-    "total_pnl_eur": 206.3,
-    "open_positions": 6,
-    "closed_trades": 121,
-    "wins": 50,
-    "losses": 71,
-    "win_rate": 41.3
+    "realized_pnl_eur": 207.69,
+    "unrealized_pnl_eur": 0,
+    "total_pnl_eur": 207.69,
+    "open_positions": 3,
+    "closed_trades": 124,
+    "wins": 51,
+    "losses": 73,
+    "win_rate": 41.1
   },
   "open_positions": {
     "USD1USDT": {
@@ -48,51 +48,6 @@
       "highest": 0.99979,
       "lowest": 0.99933,
       "bars_held": 6,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "HIGHUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-07-02T14:41:52.268879",
-      "entry_price": 0.034,
-      "atr": 0.014714285714285716,
-      "stop": 0.05607142857142858,
-      "highest": 0.034,
-      "lowest": 0.034,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "CUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-07-02T14:41:52.268879",
-      "entry_price": 0.0715,
-      "atr": 0.0064142857142857135,
-      "stop": 0.08112142857142857,
-      "highest": 0.0715,
-      "lowest": 0.0646,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "TRUUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-07-02T14:41:52.268879",
-      "entry_price": 0.0023,
-      "atr": 0.0010857142857142856,
-      "stop": 0.003928571428571429,
-      "highest": 0.0023,
-      "lowest": 0.0022,
-      "bars_held": 14,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
@@ -130,45 +85,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "AVAXUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-06-19T00:05:09.281468",
-      "exit_date": "2026-06-25T18:54:13.495962",
-      "entry_price": 6.291,
-      "exit_price": 6.243,
-      "pnl_pct": 0.76,
-      "pnl_eur": 1.91,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-06-23T12:02:52.575925",
-      "exit_date": "2026-06-30T00:02:17.230891",
-      "entry_price": 0.07916,
-      "exit_price": 0.07349,
-      "pnl_pct": 7.16,
-      "pnl_eur": 17.91,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-06-23T12:02:52.575925",
-      "exit_date": "2026-06-30T00:02:17.230891",
-      "entry_price": 572.25,
-      "exit_price": 560.36,
-      "pnl_pct": 2.08,
-      "pnl_eur": 5.19,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "BCHUSDT",
       "direction": "SHORT",
@@ -373,22 +289,61 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "HIGHUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-07-02T14:41:52.268879",
+      "exit_date": "2026-07-16T15:00:19.725833",
+      "entry_price": 0.034,
+      "exit_price": 0.034,
+      "pnl_pct": 0.0,
+      "pnl_eur": 0.0,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "CUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-07-02T14:41:52.268879",
+      "exit_date": "2026-07-16T15:00:19.725833",
+      "entry_price": 0.0715,
+      "exit_price": 0.0642,
+      "pnl_pct": 10.21,
+      "pnl_eur": 25.52,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "TRUUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-07-02T14:41:52.268879",
+      "exit_date": "2026-07-16T15:00:19.725833",
+      "entry_price": 0.0023,
+      "exit_price": 0.0023,
+      "pnl_pct": 0.0,
+      "pnl_eur": 0.0,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
   "daily_tokens_scanned": 188,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
-    "XUSDUSDT",
-    "XAUTUSDT",
-    "KASUSDT",
-    "BFUSDUSDT",
-    "RLUSDUSDT",
-    "ZECUSDT",
-    "EURUSDT",
     "USDEUSDT",
+    "ZECUSDT",
+    "KASUSDT",
+    "RLUSDUSDT",
+    "XAUTUSDT",
+    "PAXGUSDT",
+    "XUSDUSDT",
+    "EURUSDT",
+    "USD1USDT",
     "UUSDT",
-    "PAXGUSDT"
+    "BFUSDUSDT"
   ]
 }
