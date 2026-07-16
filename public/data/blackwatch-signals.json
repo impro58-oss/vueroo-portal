@@ -2,9 +2,9 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-07-15T23:09:55.274053+00:00",
-    "signals_auto": 16,
-    "signals_manual": 4,
+    "last_update": "2026-07-16T05:03:08.604542+00:00",
+    "signals_auto": 19,
+    "signals_manual": 1,
     "signals_total": 20
   },
   "signals": {
@@ -21,7 +21,7 @@
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-07-14",
       "note": "",
-      "timestamp": "2026-07-15T23:08:33.266479+00:00"
+      "timestamp": "2026-07-16T05:03:03.783980+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -36,46 +36,52 @@
       "series_id": "WM2NS",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-07-15T23:08:33.725737+00:00"
+      "timestamp": "2026-07-16T05:03:04.209401+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
       "domain": "Financial",
-      "value": null,
-      "status": "unavailable",
+      "value": 122.59,
+      "status": "red",
       "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
+      "confidence": 3,
+      "change_from_last": 0.03,
       "unit": "%",
       "description": "US Total Debt / GDP",
-      "last_date": null,
-      "timestamp": "2026-07-15T23:08:34.311981+00:00"
+      "series_id": "GFDEGDQ188S",
+      "last_date": "2026-01-01",
+      "note": "",
+      "timestamp": "2026-07-16T05:03:04.589940+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": null,
-      "status": "unavailable",
-      "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
+      "value": 81.62,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 7.28,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
-      "last_date": null,
-      "timestamp": "2026-07-15T23:08:49.390390+00:00"
+      "series_id": "DCOILBRENTEU",
+      "last_date": "2026-07-13",
+      "note": "",
+      "timestamp": "2026-07-16T05:03:04.927018+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
-      "value": null,
-      "status": "unavailable",
-      "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
+      "value": 16.5,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.66,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
-      "last_date": null,
-      "timestamp": "2026-07-15T23:09:04.466291+00:00"
+      "series_id": "VIXCLS",
+      "last_date": "2026-07-14",
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-07-16T05:03:05.287120+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -88,9 +94,9 @@
       "change_from_last": 0,
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
-      "last_date": "2026-07-15",
+      "last_date": "2026-07-16",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-07-15T23:08:43.642106+00:00"
+      "timestamp": "2026-07-16T05:03:06.023526+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
@@ -105,7 +111,7 @@
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-07-13",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-07-15T23:08:43.642106+00:00"
+      "timestamp": "2026-07-16T05:03:06.023526+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -120,7 +126,7 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-07-15T23:09:23.224574+00:00"
+      "timestamp": "2026-07-16T05:03:05.953590+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -135,7 +141,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-07-15T23:08:38.098845+00:00"
+      "timestamp": "2026-07-16T05:03:05.366455+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -150,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-05-01",
       "note": "",
-      "timestamp": "2026-07-15T23:09:25.890320+00:00"
+      "timestamp": "2026-07-16T05:03:06.272903+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -165,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-07-15T23:08:43.642106+00:00"
+      "timestamp": "2026-07-16T05:03:06.023526+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -178,9 +184,9 @@
       "change_from_last": 0,
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
       "series_id": null,
-      "last_date": "2026-07-15",
+      "last_date": "2026-07-16",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-07-15T23:08:43.642106+00:00"
+      "timestamp": "2026-07-16T05:03:06.023526+00:00"
     },
     "currency": {
       "name": "Currency Stability",
@@ -195,35 +201,35 @@
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-10",
       "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-07-15T23:09:29.047476+00:00"
+      "timestamp": "2026-07-16T05:03:06.646526+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4060.19,
-      "status": "amber",
-      "trend": "stable",
+      "value": 4034.87,
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0,
       "unit": "$/oz",
       "description": "Gold spot price (BullionVault live)",
-      "last_date": "2026-07-15",
-      "timestamp": "2026-07-15T23:09:32.875360+00:00"
+      "last_date": "2026-07-16",
+      "timestamp": "2026-07-16T05:03:06.947377+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 64866,
+      "value": 64568,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.0,
-      "description": "BTC $64,866 (-0.0% 24h), Dominance: 75.7%",
+      "change_from_last": -0.2,
+      "description": "BTC $64,568 (-0.2% 24h), Dominance: 75.7%",
       "series_id": "CoinGecko API",
-      "last_date": "2026-07-15",
+      "last_date": "2026-07-16",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-07-15T23:08:37.450531+00:00"
+      "timestamp": "2026-07-16T05:03:04.701577+00:00"
     },
     "china": {
       "name": "China Health",
@@ -238,7 +244,7 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-07-15T23:08:37.221136+00:00"
+      "timestamp": "2026-07-16T05:03:04.464651+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -253,7 +259,7 @@
       "series_id": "ECBDFR",
       "last_date": "2026-07-15",
       "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-07-15T23:09:37.419831+00:00"
+      "timestamp": "2026-07-16T05:03:07.588577+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -268,7 +274,7 @@
       "series_id": "T10Y2Y",
       "last_date": "2026-07-15",
       "note": "",
-      "timestamp": "2026-07-15T23:09:39.160856+00:00"
+      "timestamp": "2026-07-16T05:03:07.953663+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -283,7 +289,7 @@
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-13",
       "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-07-15T23:09:50.599499+00:00"
+      "timestamp": "2026-07-16T05:03:08.261064+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -298,18 +304,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-05-01",
       "note": "",
-      "timestamp": "2026-07-15T23:09:55.257985+00:00"
+      "timestamp": "2026-07-16T05:03:08.590731+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
     "score": 556,
-    "red_count": 6,
-    "amber_count": 7,
+    "red_count": 7,
+    "amber_count": 9,
     "green_count": 2,
-    "manual_count": 5,
-    "timestamp": "2026-07-15T23:09:55.274053+00:00"
+    "manual_count": 2,
+    "timestamp": "2026-07-16T05:03:08.604542+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -318,6 +324,12 @@
         "red": 3,
         "amber": 0,
         "stress_level": 6
+      },
+      {
+        "domain": "Financial",
+        "red": 1,
+        "amber": 1,
+        "stress_level": 3
       },
       {
         "domain": "Food",
@@ -338,7 +350,13 @@
         "stress_level": 2
       },
       {
-        "domain": "Financial",
+        "domain": "Energy",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Geopolitics",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -389,6 +407,12 @@
         "stress_level": 6
       },
       {
+        "domain": "Financial",
+        "red": 1,
+        "amber": 1,
+        "stress_level": 3
+      },
+      {
         "domain": "Food",
         "red": 1,
         "amber": 0,
@@ -407,6 +431,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-07-15T23:09:55.274053+00:00"
+    "timestamp": "2026-07-16T05:03:08.604542+00:00"
   }
 }
