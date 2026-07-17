@@ -1,12 +1,4 @@
 {
-  "version": 2,
-  "routes": [
-    { "src": "/research", "status": 301, "headers": { "Location": "/dashboard" } },
-    { "src": "/research/(.*)", "status": 301, "headers": { "Location": "/dashboard" } },
-    { "src": "/quantvue", "status": 301, "headers": { "Location": "/dashboard" } },
-    { "src": "/quantvue/(.*)", "status": 301, "headers": { "Location": "/dashboard" } },
-    { "src": "/medtech/(.*)", "dest": "/medtech/$1" }
-  ],
   "headers": [
     {
       "source": "/medtech/(.*)",
