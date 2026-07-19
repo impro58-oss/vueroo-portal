@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbault Cyclic Index — Vueroo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #f8fafc; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .card { background: #0f172a; border: 1px solid rgba(0,212,255,0.1); border-radius: 16px; }
+  .badge-live { background: rgba(16,185,129,0.15); color: #10b981; }
+  .badge-new { background: rgba(0,212,255,0.15); color: #00d4ff; }
+  .phase-launch { border-left: 4px solid #10b981; }
+  .phase-consolidate { border-left: 4px solid #f59e0b; }
+  .phase-harvest { border-left: 4px solid #3b82f6; }
+  .phase-defend { border-left: 4px solid #ef4444; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<div class="max-w-6xl mx-auto px-6 py-12">
+  
+  <!-- Back link -->
+  <a href="/" class="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition mb-8 text-sm">
+    <i class="fas fa-arrow-left"></i> Back to Dashboard
+  </a>
+
+  <!-- Header -->
+  <div class="flex items-center gap-4 mb-8">
+    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/20">
+      <i class="fas fa-globe text-white text-2xl"></i>
+    </div>
+    <div class="flex-1">
+      <div class="flex items-center gap-3">
+        <h1 class="text-3xl font-bold text-white tracking-tight">Barbault Cyclic Index</h1>
+        <span class="badge badge-new px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider">LIVE</span>
+      </div>
+      <p class="text-slate-400 text-sm mt-1">Global field-condition monitor — planetary cycles &amp; historical patterns</p>
+    </div>
+  </div>
+
+  <!-- Current Reading + 30yr Chart -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+    
+    <!-- Current Reading -->
+    <div class="card p-6" id="readingCard">
+      <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Current Reading</h3>
+      <div class="text-center py-4">
+        <div class="text-5xl font-bold text-emerald-400 mono" id="indexValue">—</div>
+        <div class="text-sm text-slate-500 mt-2" id="indexZone">Loading...</div>
+      </div>
+      <div class="mt-4 pt-4 border-t border-slate-800">
+        <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Barbault Basket</div>
+        <div class="text-center">
+          <span class="text-2xl font-bold text-emerald-400" id="basketScore">—/5</span>
+          <div class="text-xs text-slate-500 mt-1" id="basketStatus">Checking...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 30yr Chart -->
+    <div class="card p-6 lg:col-span-2">
+      <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">30-Year Forecast — 2026 to 2056</h3>
+      <div style="position:relative; height:300px;">
+        <canvas id="forecastChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Historical Chart -->
+  <div class="card p-6 mb-6">
+    <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Historical Index 1900-2031 — Crisis &amp; Stability Cycles</h3>
+    <div style="position:relative; height:280px;">
+      <canvas id="historicalChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Phase Cards -->
+  <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">The 6 Phases — What to Do When</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+    
+    <div class="card phase-launch p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2026-2031</span>
+        <span class="text-xs px-2 py-1 rounded bg-emerald-500/15 text-emerald-400 font-semibold uppercase">Launch</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Peak: 975° · Avg: 910°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">The Basket Window. Build, invest, expand. Most favorable launch window of the decade.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1948-53 post-WWII reconstruction</div>
+    </div>
+
+    <div class="card phase-consolidate p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2031-2036</span>
+        <span class="text-xs px-2 py-1 rounded bg-amber-500/15 text-amber-400 font-semibold uppercase">Consolidate</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Trough: 759° · Avg: 851°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">Peak breaks. Lock in gains. Defensive dip 2031-2033, recovery by 2036.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1956-61 post-boom cooling</div>
+    </div>
+
+    <div class="card phase-launch p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2036-2041</span>
+        <span class="text-xs px-2 py-1 rounded bg-emerald-500/15 text-emerald-400 font-semibold uppercase">2nd Launch</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Peak: 1063° · Avg: 960°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">Strong recovery. New ventures bear fruit. Field opens again for expansion.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1961-66 Sixties expansion</div>
+    </div>
+
+    <div class="card phase-harvest p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2041-2046</span>
+        <span class="text-xs px-2 py-1 rounded bg-blue-500/15 text-blue-400 font-semibold uppercase">Harvest</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Peak: 1080° · Avg: 1056°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">Sustained high. Index above 1000° entire period. Maximum expansion, harvest rewards.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1925-29 Roaring Twenties</div>
+    </div>
+
+    <div class="card phase-harvest p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2046-2051</span>
+        <span class="text-xs px-2 py-1 rounded bg-blue-500/15 text-blue-400 font-semibold uppercase">Extended</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Peak: 1080° · Avg: 1023°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">Plateau continues. Sustained prosperity for those who positioned well.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1948-53 post-war boom peak</div>
+    </div>
+
+    <div class="card phase-defend p-5">
+      <div class="flex justify-between items-baseline mb-3">
+        <span class="text-lg font-bold">2051-2056</span>
+        <span class="text-xs px-2 py-1 rounded bg-red-500/15 text-red-400 font-semibold uppercase">Descent</span>
+      </div>
+      <div class="text-xs text-slate-500 mb-3 mono">Peak: 1080° · Avg: 1047°</div>
+      <p class="text-sm text-slate-300 leading-relaxed">Still high but trend turns down. Begin defensive positioning. Next trough likely 2060s.</p>
+      <div class="text-xs text-slate-600 italic mt-3 pt-3 border-t border-slate-800">Parallel: 1953-58 boom cooling</div>
+    </div>
+
+  </div>
+
+  <!-- Key Events Table -->
+  <div class="card p-6 mb-6">
+    <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Historical Correlations</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-xs text-slate-500 uppercase tracking-wider border-b border-slate-800">
+            <th class="text-left py-3 px-2">Date</th>
+            <th class="text-left py-3 px-2">Index</th>
+            <th class="text-left py-3 px-2">Type</th>
+            <th class="text-left py-3 px-2">Event</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800/50">
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">1347</td><td class="py-2 px-2 mono text-red-400">~300°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-purple-500/15 text-purple-400">Pandemic</span></td><td class="py-2 px-2 text-slate-300">Black Death — 75-200M deaths</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">1914-18</td><td class="py-2 px-2 mono text-red-400">768°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-red-500/15 text-red-400">War</span></td><td class="py-2 px-2 text-slate-300">World War I — 21.5M deaths</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">1939-45</td><td class="py-2 px-2 mono text-red-400">560°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-red-500/15 text-red-400">War</span></td><td class="py-2 px-2 text-slate-300">World War II — 52M deaths</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">1982-83</td><td class="py-2 px-2 mono text-red-400">292°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-amber-500/15 text-amber-400">Crisis</span></td><td class="py-2 px-2 text-slate-300">Cold War peak — lowest index of 20th century</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">1989</td><td class="py-2 px-2 mono text-emerald-400">754°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400">Stability</span></td><td class="py-2 px-2 text-slate-300">Berlin Wall falls — predicted 34 years ahead by Barbault</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">2020-22</td><td class="py-2 px-2 mono text-red-400">477°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-purple-500/15 text-purple-400">Pandemic</span></td><td class="py-2 px-2 text-slate-300">COVID-19 — predicted 9 years ahead by Barbault (2011)</td></tr>
+          <tr class="hover:bg-slate-800/30"><td class="py-2 px-2 mono text-slate-500">2026-07</td><td class="py-2 px-2 mono text-blue-400">831°</td><td class="py-2 px-2"><span class="text-xs px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-400">Basket</span></td><td class="py-2 px-2 text-slate-300">Barbault's Basket — 5/5 active. "Splendid relaunch" prediction</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="text-center text-xs text-slate-600 pt-6 border-t border-cyan-900/30">
+    <p>André Barbault (1921-2019) · Cyclic Index = sum of angular distances between 10 pairs of 5 outer planets</p>
+    <p class="mt-1">Geocentric positions · NASA JPL DE440 ephemeris · Skyfield · Computed July 19, 2026</p>
+    <p class="mt-2 text-slate-700">Field-condition reader, not a crystal ball. Shows WHEN, not WHAT.</p>
+  </div>
+
+</div>
+
+<script>
+async function init() {
+  // Load both datasets
+  const [forecastRes, historicalRes] = await Promise.all([
+    fetch('data/forecast-30yr.json'),
+    fetch('data/cyclic-index-data.json')
+  ]);
+  const forecast = await forecastRes.json();
+  const historical = await historicalRes.json();
+  
+  // Find today in historical data
+  const todayStr = '2026-07-19';
+  const current = historical.reduce((closest, d) => {
+    const diff = Math.abs(new Date(d.date) - new Date(todayStr));
+    const closestDiff = Math.abs(new Date(closest.date) - new Date(todayStr));
+    return diff < closestDiff ? d : closest;
+  }, historical[0]);
+
+  // Render current reading
+  const idx = current.cyclic_index;
+  let zone = '', zoneColor = '';
+  if (idx < 600) { zone = 'CRISIS ZONE'; zoneColor = 'text-red-400'; }
+  else if (idx < 750) { zone = 'TRANSITION'; zoneColor = 'text-amber-400'; }
+  else if (idx < 900) { zone = 'STABILITY'; zoneColor = 'text-emerald-400'; }
+  else { zone = 'FLOURISHING'; zoneColor = 'text-blue-400'; }
+  
+  document.getElementById('indexValue').textContent = idx.toFixed(0) + '\u00b0';
+  document.getElementById('indexValue').className = 'text-5xl font-bold mono ' + zoneColor;
+  document.getElementById('indexZone').textContent = zone + ' — ' + current.date;
+  
+  // Basket check
+  const pairs = current.pair_distances;
+  const checks = [
+    { pair: 'Jupiter-Pluto', min: 150, max: 210 },
+    { pair: 'Jupiter-Neptune', min: 100, max: 140 },
+    { pair: 'Uranus-Pluto', min: 100, max: 140 },
+    { pair: 'Jupiter-Uranus', min: 40, max: 80 },
+    { pair: 'Neptune-Pluto', min: 40, max: 80 }
+  ];
+  let passCount = 0;
+  checks.forEach(c => {
+    const val = pairs[c.pair] || 0;
+    if (val >= c.min && val <= c.max) passCount++;
+  });
+  document.getElementById('basketScore').textContent = passCount + '/5';
+  document.getElementById('basketStatus').textContent = passCount >= 4 ? 'BASKET ACTIVE' : passCount >= 3 ? 'PARTIAL' : 'INACTIVE';
+  
+  // 30yr forecast chart
+  const fctx = document.getElementById('forecastChart').getContext('2d');
+  new Chart(fctx, {
+    type: 'line',
+    data: {
+      labels: forecast.map(d => d.date.substring(0,7)),
+      datasets: [{
+        label: 'Cyclic Index',
+        data: forecast.map(d => d.index),
+        borderColor: '#f59e0b', borderWidth: 2.5,
+        backgroundColor: 'rgba(245,158,11,0.08)', fill: true,
+        pointRadius: 0, pointHoverRadius: 5, tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: 'rgba(30,45,74,0.2)' }, ticks: { color: '#475569', maxTicksLimit: 10, font: { size: 10 } } },
+        y: { grid: { color: 'rgba(30,45,74,0.2)' }, ticks: { color: '#475569', font: { size: 10 } }, min: 700, max: 1120 }
+      }
+    }
+  });
+  
+  // Historical chart
+  const hctx = document.getElementById('historicalChart').getContext('2d');
+  new Chart(hctx, {
+    type: 'line',
+    data: {
+      labels: historical.map(d => d.date.substring(0,4)),
+      datasets: [{
+        label: 'Cyclic Index',
+        data: historical.map(d => d.cyclic_index),
+        borderColor: '#00d4ff', borderWidth: 1.5,
+        backgroundColor: 'rgba(0,212,255,0.05)', fill: true,
+        pointRadius: 0, pointHoverRadius: 4, tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: 'rgba(30,45,74,0.2)' }, ticks: { color: '#475569', maxTicksLimit: 12, font: { size: 10 } } },
+        y: { grid: { color: 'rgba(30,45,74,0.2)' }, ticks: { color: '#475569', font: { size: 10 } }, min: 250, max: 1100 }
+      }
+    }
+  });
+}
+init();
+</script>
+</body>
+</html>
