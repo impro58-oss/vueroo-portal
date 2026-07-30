@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-30T18:00:16.327815",
+  "timestamp": "2026-07-30T21:00:18.537013",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,14 +28,14 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 225.37,
-    "unrealized_pnl_eur": -51.95,
-    "total_pnl_eur": 173.42,
-    "open_positions": 6,
-    "closed_trades": 143,
+    "realized_pnl_eur": 182.56,
+    "unrealized_pnl_eur": -4.14,
+    "total_pnl_eur": 178.42,
+    "open_positions": 5,
+    "closed_trades": 144,
     "wins": 60,
-    "losses": 83,
-    "win_rate": 42.0
+    "losses": 84,
+    "win_rate": 41.7
   },
   "open_positions": {
     "BIOUSDT": {
@@ -47,7 +47,7 @@
       "stop": 0.026507857142857142,
       "highest": 0.02259,
       "lowest": 0.02239,
-      "bars_held": 10,
+      "bars_held": 11,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -62,23 +62,8 @@
       "stop": 0.6275357142857144,
       "highest": 0.557,
       "lowest": 0.551,
-      "bars_held": 8,
+      "bars_held": 9,
       "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "HOLOUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-07-30T03:06:44.103573",
-      "entry_price": 0.0826,
-      "atr": 0.005657142857142854,
-      "stop": 0.06845714285714287,
-      "highest": 0.0855,
-      "lowest": 0.0826,
-      "bars_held": 5,
-      "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
@@ -90,9 +75,9 @@
       "entry_price": 1.1461,
       "atr": 0.0040142857142857,
       "stop": 1.1360642857142857,
-      "highest": 1.1533,
+      "highest": 1.1539,
       "lowest": 1.1461,
-      "bars_held": 5,
+      "bars_held": 6,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -106,8 +91,8 @@
       "atr": 0.2274285714285714,
       "stop": 3.7665714285714285,
       "highest": 3.198,
-      "lowest": 3.172,
-      "bars_held": 3,
+      "lowest": 3.123,
+      "bars_held": 4,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -120,9 +105,9 @@
       "entry_price": 4.307,
       "atr": 0.22407142857142848,
       "stop": 3.746821428571429,
-      "highest": 4.309,
+      "highest": 4.477,
       "lowest": 4.307,
-      "bars_held": 1,
+      "bars_held": 2,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -130,19 +115,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "TRUUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-07-02T14:41:52.268879",
-      "exit_date": "2026-07-16T15:00:19.725833",
-      "entry_price": 0.0023,
-      "exit_price": 0.0023,
-      "pnl_pct": 0.0,
-      "pnl_eur": 0.0,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "USD1USDT",
       "direction": "SHORT",
@@ -389,22 +361,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "HOLOUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-07-30T03:06:44.103573",
+      "exit_date": "2026-07-30T21:00:18.537013",
+      "entry_price": 0.0826,
+      "exit_price": 0.06845714285714287,
+      "pnl_pct": -17.12,
+      "pnl_eur": -42.81,
+      "reason": "ATR_STOP",
+      "bars_held": 6,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "USDEUSDT",
+    "KASUSDT",
+    "ZECUSDT",
+    "EURUSDT",
+    "PAXGUSDT",
     "BFUSDUSDT",
     "XAUTUSDT",
-    "KASUSDT",
     "RLUSDUSDT",
-    "EURUSDT",
-    "USDEUSDT",
-    "UUSDT",
-    "PAXGUSDT",
     "USD1USDT",
     "XUSDUSDT",
-    "ZECUSDT"
+    "UUSDT"
   ]
 }
