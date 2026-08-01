@@ -433,6 +433,43 @@
     "china_gdp_critical": 4.0,
     "china_gdp_recovery": 5.0
   },
+  "retrospective": {
+    "period": "2026-07-14 to 2026-07-31",
+    "generated": "2026-08-01T20:00:00+01:00",
+    "scans_analyzed": 18,
+    "scenario_accuracy_pct": 62,
+    "signal_trend_accuracy_pct": 78,
+    "risk_ranking_accuracy_pct": 70,
+    "overall_calibration_score": 6.4,
+    "key_findings": [
+      "Systematic overconfidence in escalation scenarios — base rate of de-escalation underestimated",
+      "Grinding Stalemate was the best single prediction — identified early, probability held steady",
+      "Diplomatic breakthrough probability was consistently too low (8% should have been 15-20%)",
+      "Proxy indicator over-reliance: Brent oil used for 3 signals amplified single-source movements",
+      "Markets decoupled from geopolitical risk — S&P 500 stayed resilient despite active war",
+      "Regulatory shifts happened during crisis coverage (Gold Eagle, pharma tariffs, AI Kill Switch Act)",
+      "Deep scans significantly outperformed echo scans (7.8-8.2 vs 7.2 average RIS)",
+      "Internal political dynamics (Vance/Caine opposition) were completely off the radar but proved decisive"
+    ],
+    "calibration_adjustments": {
+      "escalation_scenarios": "Reduce probability by 5-10pp — base rate of restraint higher than modeled",
+      "deescalation_scenarios": "Increase probability by 5-10pp — mutual exhaustion creates pause windows",
+      "ai_regulatory": "Increase by 5-10pp — regulatory pace accelerating faster than modeled",
+      "stagflation": "Hold — well calibrated",
+      "china_hard_landing": "Hold — correctly assessed",
+      "cyber_event": "Hold — no cascade but elevated baseline"
+    },
+    "august_priorities": [
+      "Implement GDELT integration for direct geopolitical tracking",
+      "Add live oil price as primary energy source (replace stale FRED)",
+      "Add direct China PMI data (replace 2024-vintage OECD CLI)",
+      "Track US domestic politics as explicit variable",
+      "Model pause as distinct scenario type (not just inverse of escalation)",
+      "Audit proxy indicators — validate or replace oil→supply chain, VIX→geopolitics",
+      "Calibrate escalation probabilities down by 5-10pp based on July base rate"
+    ],
+    "file": "data/blackwatch-scans/2026-07-retrospective.md"
+  },
   "next_scan": "2026-07-27T06:30:00+01:00",
   "next_deep_scan": "2026-08-02T10:00:00+01:00"
 }
