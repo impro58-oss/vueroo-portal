@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-01T00:00:11.319365",
+  "timestamp": "2026-08-01T03:05:54.737530",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,31 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 177.48,
-    "unrealized_pnl_eur": -8.89,
-    "total_pnl_eur": 168.59,
+    "realized_pnl_eur": 133.03,
+    "unrealized_pnl_eur": 20.51,
+    "total_pnl_eur": 153.54,
     "open_positions": 4,
-    "closed_trades": 147,
+    "closed_trades": 148,
     "wins": 61,
-    "losses": 86,
-    "win_rate": 41.5
+    "losses": 87,
+    "win_rate": 41.2
   },
   "open_positions": {
-    "ORDIUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-07-30T09:00:59.338411",
-      "entry_price": 3.198,
-      "atr": 0.2274285714285714,
-      "stop": 3.7665714285714285,
-      "highest": 3.198,
-      "lowest": 3.123,
-      "bars_held": 13,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "UNIUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -62,7 +47,7 @@
       "stop": 3.746821428571429,
       "highest": 4.577,
       "lowest": 4.307,
-      "bars_held": 11,
+      "bars_held": 12,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -77,7 +62,7 @@
       "stop": 1.245857142857143,
       "highest": 1.008,
       "lowest": 0.871,
-      "bars_held": 7,
+      "bars_held": 8,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -92,27 +77,29 @@
       "stop": 0.008923214285714286,
       "highest": 0.0079,
       "lowest": 0.00778,
-      "bars_held": 3,
+      "bars_held": 4,
       "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-01T03:05:54.737530",
+      "entry_price": 1.1531,
+      "atr": 0.005007142857142829,
+      "stop": 1.140582142857143,
+      "highest": 1.1531,
+      "lowest": 1.1531,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
     }
   },
   "recent_trades": [
-    {
-      "symbol": "FETUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-07-25T11:04:19.155241",
-      "exit_date": "2026-07-27T06:00:31.908538",
-      "entry_price": 0.1504,
-      "exit_price": 0.1599,
-      "pnl_pct": -6.32,
-      "pnl_eur": -15.79,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "CUSDT",
       "direction": "SHORT",
@@ -359,22 +346,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "ORDIUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-07-30T09:00:59.338411",
+      "exit_date": "2026-08-01T03:05:54.737530",
+      "entry_price": 3.198,
+      "exit_price": 3.7665714285714285,
+      "pnl_pct": -17.78,
+      "pnl_eur": -44.45,
+      "reason": "ATR_STOP",
+      "bars_held": 14,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "NEUTRAL",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "EURUSDT",
-    "XUSDUSDT",
-    "KASUSDT",
-    "UUSDT",
-    "BFUSDUSDT",
-    "XAUTUSDT",
     "USDEUSDT",
-    "PAXGUSDT",
     "RLUSDUSDT",
     "USD1USDT",
+    "BFUSDUSDT",
+    "XAUTUSDT",
+    "KASUSDT",
+    "XUSDUSDT",
+    "EURUSDT",
+    "UUSDT",
+    "PAXGUSDT",
     "ZECUSDT"
   ]
 }
