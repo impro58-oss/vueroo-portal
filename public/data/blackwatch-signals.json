@@ -1,438 +1,438 @@
-﻿{
-    "metadata":  {
-                     "source":  "FRED API + manual assessment",
-                     "system":  "BlackWatch Signal Board",
-                     "last_update":  "2026-08-01T11:04:12.283638+00:00",
-                     "signals_auto":  20,
-                     "signals_manual":  0,
-                     "signals_total":  20
-                 },
-    "signals":  {
-                    "fin_stability":  {
-                                          "name":  "Financial Stability",
-                                          "domain":  "Financial",
-                                          "value":  2.84,
-                                          "status":  "green",
-                                          "trend":  "deteriorating",
-                                          "confidence":  9,
-                                          "change_from_last":  -0.03,
-                                          "unit":  "%",
-                                          "description":  "US High Yield OAS Spread",
-                                          "series_id":  "BAMLH0A0HYM2",
-                                          "last_date":  "2026-07-30",
-                                          "note":  "",
-                                          "timestamp":  "2026-08-01T11:04:03.876278+00:00"
-                                      },
-                    "liquidity":  {
-                                      "name":  "Liquidity Conditions",
-                                      "domain":  "Financial",
-                                      "value":  0.88,
-                                      "status":  "amber",
-                                      "trend":  "stable",
-                                      "confidence":  5,
-                                      "change_from_last":  0,
-                                      "unit":  "%",
-                                      "description":  "M2 Money Supply YoY growth",
-                                      "series_id":  "WM2NS",
-                                      "last_date":  "2026-07-06",
-                                      "note":  "",
-                                      "timestamp":  "2026-08-01T11:04:04.700828+00:00"
-                                  },
-                    "sov_debt":  {
-                                     "name":  "Sovereign Debt Stress",
-                                     "domain":  "Financial",
-                                     "value":  122.59,
-                                     "status":  "red",
-                                     "trend":  "stable",
-                                     "confidence":  3,
-                                     "change_from_last":  0.03,
-                                     "unit":  "%",
-                                     "description":  "US Total Debt / GDP",
-                                     "series_id":  "GFDEGDQ188S",
-                                     "last_date":  "2026-01-01",
-                                     "note":  "",
-                                     "timestamp":  "2026-08-01T11:04:05.352560+00:00"
-                                 },
-                    "energy":  {
-                                   "name":  "Energy Security",
-                                   "domain":  "Energy",
-                                   "value":  91.82,
-                                   "status":  "amber",
-                                   "trend":  "improving",
-                                   "confidence":  7,
-                                   "change_from_last":  -8.49,
-                                   "unit":  "$/bbl",
-                                   "description":  "Brent Crude Oil Price",
-                                   "series_id":  "DCOILBRENTEU",
-                                   "last_date":  "2026-07-27",
-                                   "note":  "",
-                                   "timestamp":  "2026-08-01T11:04:06.244571+00:00"
-                               },
-                    "geopolitical":  {
-                                         "name":  "Geopolitical Conflict",
-                                         "domain":  "Geopolitics",
-                                         "value":  17.09,
-                                         "status":  "amber",
-                                         "trend":  "improving",
-                                         "confidence":  9,
-                                         "change_from_last":  -3.57,
-                                         "unit":  "index",
-                                         "description":  "VIX as market fear proxy (GDELT integration planned)",
-                                         "series_id":  "VIXCLS",
-                                         "last_date":  "2026-07-30",
-                                         "note":  "Proxy indicator — GDELT API integration in Phase 2",
-                                         "timestamp":  "2026-08-01T11:04:06.875710+00:00"
-                                     },
-                    "cyber":  {
-                                  "name":  "Cyber Threat Level",
-                                  "domain":  "Cyber",
-                                  "value":  "Elevated",
-                                  "unit":  "",
-                                  "status":  "amber",
-                                  "trend":  "stable",
-                                  "confidence":  4,
-                                  "change_from_last":  0,
-                                  "description":  "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
-                                  "series_id":  null,
-                                  "last_date":  "2026-08-01",
-                                  "note":  "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-                                  "timestamp":  "2026-08-01T11:04:07.255622+00:00"
-                              },
-                    "supply_chain":  {
-                                         "name":  "Supply Chain Health",
-                                         "domain":  "Supply Chain",
-                                         "value":  91.82,
-                                         "unit":  "$/bbl (proxy)",
-                                         "status":  "amber",
-                                         "trend":  "stable",
-                                         "confidence":  5,
-                                         "change_from_last":  0,
-                                         "description":  "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
-                                         "series_id":  "DCOILBRENTEU (proxy)",
-                                         "last_date":  "2026-07-27",
-                                         "note":  "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-                                         "timestamp":  "2026-08-01T11:04:07.255622+00:00"
-                                     },
-                    "food_security":  {
-                                          "name":  "Food Security",
-                                          "domain":  "Food",
-                                          "value":  131.17,
-                                          "status":  "red",
-                                          "trend":  "improving",
-                                          "confidence":  3,
-                                          "change_from_last":  -4.92,
-                                          "unit":  "index",
-                                          "description":  "IMF Food Price Index",
-                                          "series_id":  "PFOODINDEXM",
-                                          "last_date":  "2026-06-01",
-                                          "note":  "",
-                                          "timestamp":  "2026-08-01T11:04:07.952410+00:00"
-                                      },
-                    "climate":  {
-                                    "name":  "Climate Stress",
-                                    "domain":  "Climate",
-                                    "value":  1.11,
-                                    "unit":  "°C",
-                                    "status":  "red",
-                                    "trend":  "improving",
-                                    "confidence":  9,
-                                    "change_from_last":  -0.15,
-                                    "description":  "Global temp anomaly: 1.11°C above 20th century avg (2026)",
-                                    "series_id":  "NOAA NCEI",
-                                    "last_date":  "2026",
-                                    "note":  "Live from NOAA climate API",
-                                    "timestamp":  "2026-08-01T11:04:05.772673+00:00"
-                                },
-                    "social_cohesion":  {
-                                            "name":  "Social Cohesion",
-                                            "domain":  "Social",
-                                            "value":  49.5,
-                                            "status":  "red",
-                                            "trend":  "deteriorating",
-                                            "confidence":  3,
-                                            "change_from_last":  4.7,
-                                            "unit":  "index",
-                                            "description":  "Consumer Sentiment as social mood proxy",
-                                            "series_id":  "UMCSENT",
-                                            "last_date":  "2026-06-01",
-                                            "note":  "",
-                                            "timestamp":  "2026-08-01T11:04:08.488976+00:00"
-                                        },
-                    "inst_trust":  {
-                                       "name":  "Institutional Trust",
-                                       "domain":  "Social",
-                                       "value":  30,
-                                       "unit":  "%",
-                                       "status":  "red",
-                                       "trend":  "deteriorating",
-                                       "confidence":  5,
-                                       "change_from_last":  0,
-                                       "description":  "Baseline: ~30% trust in government (Edelman 2025). Assessed quarterly + during deep scans.",
-                                       "series_id":  null,
-                                       "last_date":  "2025-Q1",
-                                       "note":  "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-                                       "timestamp":  "2026-08-01T11:04:07.255622+00:00"
-                                   },
-                    "ai_acceleration":  {
-                                            "name":  "AI Acceleration",
-                                            "domain":  "Technology",
-                                            "value":  "Rapid",
-                                            "unit":  "",
-                                            "status":  "amber",
-                                            "trend":  "improving",
-                                            "confidence":  5,
-                                            "change_from_last":  0,
-                                            "description":  "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
-                                            "series_id":  null,
-                                            "last_date":  "2026-08-01",
-                                            "note":  "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-                                            "timestamp":  "2026-08-01T11:04:07.255622+00:00"
-                                        },
-                    "currency":  {
-                                     "name":  "Currency Stability",
-                                     "domain":  "Currency",
-                                     "value":  120.71,
-                                     "status":  "info",
-                                     "trend":  "stable",
-                                     "confidence":  5,
-                                     "change_from_last":  -0.2,
-                                     "unit":  "index",
-                                     "description":  "Trade-Weighted Dollar Index (broad)",
-                                     "series_id":  "DTWEXBGS",
-                                     "last_date":  "2026-07-24",
-                                     "note":  "Stability = low volatility. Track change rate.",
-                                     "timestamp":  "2026-08-01T11:04:09.042697+00:00"
-                                 },
-                    "gold":  {
-                                 "name":  "Gold / Precious Metals",
-                                 "domain":  "Currency",
-                                 "value":  4043.7,
-                                 "unit":  "$/oz",
-                                 "status":  "green",
-                                 "trend":  "stable",
-                                 "confidence":  9,
-                                 "change_from_last":  -31,
-                                 "description":  "Gold spot price: $4,043.70 (-0.75%)",
-                                 "series_id":  "gold-api.com XAU",
-                                 "last_date":  "2026-08-01",
-                                 "note":  "Live from gold-api.com spot price",
-                                 "timestamp":  "2026-08-01T11:04:03.656462+00:00"
-                             },
-                    "crypto":  {
-                                   "name":  "Crypto Markets",
-                                   "domain":  "Currency",
-                                   "value":  62993,
-                                   "unit":  "$",
-                                   "status":  "green",
-                                   "trend":  "stable",
-                                   "confidence":  9,
-                                   "change_from_last":  -1.4,
-                                   "description":  "BTC $62,993 (-1.4% 24h), Dominance: 75.6%",
-                                   "series_id":  "CoinGecko API",
-                                   "last_date":  "2026-08-01",
-                                   "note":  "Live from CoinGecko API",
-                                   "timestamp":  "2026-08-01T11:04:04.619687+00:00"
-                               },
-                    "china":  {
-                                  "name":  "China Health",
-                                  "domain":  "China",
-                                  "value":  97.69,
-                                  "unit":  "CLI index",
-                                  "status":  "red",
-                                  "trend":  "stable",
-                                  "confidence":  7,
-                                  "change_from_last":  -0.09,
-                                  "description":  "OECD Composite Leading Indicator for China (PMI proxy)",
-                                  "series_id":  "BSCICP03CNM665S",
-                                  "last_date":  "2024-01-01",
-                                  "note":  "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-                                  "timestamp":  "2026-08-01T11:04:04.212250+00:00"
-                              },
-                    "europe":  {
-                                   "name":  "Europe Stability",
-                                   "domain":  "Europe",
-                                   "value":  2.25,
-                                   "status":  "amber",
-                                   "trend":  "stable",
-                                   "confidence":  9,
-                                   "change_from_last":  0.0,
-                                   "unit":  "%",
-                                   "description":  "ECB Deposit Rate (proxy for EU stability)",
-                                   "series_id":  "ECBDFR",
-                                   "last_date":  "2026-07-31",
-                                   "note":  "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-                                   "timestamp":  "2026-08-01T11:04:10.755457+00:00"
-                               },
-                    "us_cycle":  {
-                                     "name":  "US Cycle Position",
-                                     "domain":  "United States",
-                                     "value":  0.47,
-                                     "status":  "amber",
-                                     "trend":  "deteriorating",
-                                     "confidence":  9,
-                                     "change_from_last":  0.02,
-                                     "unit":  "%",
-                                     "description":  "Yield Curve (10Y-2Y) — recession signal",
-                                     "series_id":  "T10Y2Y",
-                                     "last_date":  "2026-07-31",
-                                     "note":  "",
-                                     "timestamp":  "2026-08-01T11:04:11.265798+00:00"
-                                 },
-                    "middle_east":  {
-                                        "name":  "Middle East Tension",
-                                        "domain":  "Middle East",
-                                        "value":  91.82,
-                                        "status":  "amber",
-                                        "trend":  "improving",
-                                        "confidence":  7,
-                                        "change_from_last":  -8.49,
-                                        "unit":  "$/bbl",
-                                        "description":  "Brent Oil as ME tension proxy",
-                                        "series_id":  "DCOILBRENTEU",
-                                        "last_date":  "2026-07-27",
-                                        "note":  "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
-                                        "timestamp":  "2026-08-01T11:04:11.769636+00:00"
-                                    },
-                    "public_sentiment":  {
-                                             "name":  "Public Sentiment",
-                                             "domain":  "Social",
-                                             "value":  49.5,
-                                             "status":  "red",
-                                             "trend":  "deteriorating",
-                                             "confidence":  3,
-                                             "change_from_last":  4.7,
-                                             "unit":  "index",
-                                             "description":  "Consumer Sentiment Index",
-                                             "series_id":  "UMCSENT",
-                                             "last_date":  "2026-06-01",
-                                             "note":  "",
-                                             "timestamp":  "2026-08-01T11:04:12.263511+00:00"
-                                         }
-                },
-    "overall_risk":  {
-                         "level":  "CRITICAL",
-                         "color":  "red",
-                         "score":  526,
-                         "red_count":  7,
-                         "amber_count":  9,
-                         "green_count":  3,
-                         "manual_count":  1,
-                         "timestamp":  "2026-08-01T11:04:12.283638+00:00"
-                     },
-    "convergence":  {
-                        "stressed_domains":  [
-                                                 {
-                                                     "domain":  "Social",
-                                                     "red":  3,
-                                                     "amber":  0,
-                                                     "stress_level":  6
-                                                 },
-                                                 {
-                                                     "domain":  "Financial",
-                                                     "red":  1,
-                                                     "amber":  1,
-                                                     "stress_level":  3
-                                                 },
-                                                 {
-                                                     "domain":  "Food",
-                                                     "red":  1,
-                                                     "amber":  0,
-                                                     "stress_level":  2
-                                                 },
-                                                 {
-                                                     "domain":  "Climate",
-                                                     "red":  1,
-                                                     "amber":  0,
-                                                     "stress_level":  2
-                                                 },
-                                                 {
-                                                     "domain":  "China",
-                                                     "red":  1,
-                                                     "amber":  0,
-                                                     "stress_level":  2
-                                                 },
-                                                 {
-                                                     "domain":  "Energy",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Geopolitics",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Cyber",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Supply Chain",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Technology",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Europe",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "United States",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 },
-                                                 {
-                                                     "domain":  "Middle East",
-                                                     "red":  0,
-                                                     "amber":  1,
-                                                     "stress_level":  1
-                                                 }
-                                             ],
-                        "convergence_active":  true,
-                        "convergence_domains":  [
-                                                    {
-                                                        "domain":  "Social",
-                                                        "red":  3,
-                                                        "amber":  0,
-                                                        "stress_level":  6
-                                                    },
-                                                    {
-                                                        "domain":  "Financial",
-                                                        "red":  1,
-                                                        "amber":  1,
-                                                        "stress_level":  3
-                                                    },
-                                                    {
-                                                        "domain":  "Food",
-                                                        "red":  1,
-                                                        "amber":  0,
-                                                        "stress_level":  2
-                                                    },
-                                                    {
-                                                        "domain":  "Climate",
-                                                        "red":  1,
-                                                        "amber":  0,
-                                                        "stress_level":  2
-                                                    },
-                                                    {
-                                                        "domain":  "China",
-                                                        "red":  1,
-                                                        "amber":  0,
-                                                        "stress_level":  2
-                                                    }
-                                                ],
-                        "timestamp":  "2026-08-01T11:04:12.283638+00:00"
-                    }
+{
+  "metadata": {
+    "source": "FRED API + manual assessment",
+    "system": "BlackWatch Signal Board",
+    "last_update": "2026-08-01T17:08:40.049051+00:00",
+    "signals_auto": 20,
+    "signals_manual": 0,
+    "signals_total": 20
+  },
+  "signals": {
+    "fin_stability": {
+      "name": "Financial Stability",
+      "domain": "Financial",
+      "value": 2.84,
+      "status": "green",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": -0.03,
+      "unit": "%",
+      "description": "US High Yield OAS Spread",
+      "series_id": "BAMLH0A0HYM2",
+      "last_date": "2026-07-30",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:34.578489+00:00"
+    },
+    "liquidity": {
+      "name": "Liquidity Conditions",
+      "domain": "Financial",
+      "value": 0.88,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 5,
+      "change_from_last": 0,
+      "unit": "%",
+      "description": "M2 Money Supply YoY growth",
+      "series_id": "WM2NS",
+      "last_date": "2026-07-06",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:34.917865+00:00"
+    },
+    "sov_debt": {
+      "name": "Sovereign Debt Stress",
+      "domain": "Financial",
+      "value": 122.59,
+      "status": "red",
+      "trend": "stable",
+      "confidence": 3,
+      "change_from_last": 0.03,
+      "unit": "%",
+      "description": "US Total Debt / GDP",
+      "series_id": "GFDEGDQ188S",
+      "last_date": "2026-01-01",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:35.253816+00:00"
+    },
+    "energy": {
+      "name": "Energy Security",
+      "domain": "Energy",
+      "value": 91.82,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
+      "change_from_last": -8.49,
+      "unit": "$/bbl",
+      "description": "Brent Crude Oil Price",
+      "series_id": "DCOILBRENTEU",
+      "last_date": "2026-07-27",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:35.598876+00:00"
+    },
+    "geopolitical": {
+      "name": "Geopolitical Conflict",
+      "domain": "Geopolitics",
+      "value": 17.09,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -3.57,
+      "unit": "index",
+      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "series_id": "VIXCLS",
+      "last_date": "2026-07-30",
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-01T17:08:36.127241+00:00"
+    },
+    "cyber": {
+      "name": "Cyber Threat Level",
+      "domain": "Cyber",
+      "value": "Elevated",
+      "unit": "",
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 4,
+      "change_from_last": 0,
+      "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
+      "series_id": null,
+      "last_date": "2026-08-01",
+      "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
+      "timestamp": "2026-08-01T17:08:36.387539+00:00"
+    },
+    "supply_chain": {
+      "name": "Supply Chain Health",
+      "domain": "Supply Chain",
+      "value": 91.82,
+      "unit": "$/bbl (proxy)",
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 5,
+      "change_from_last": 0,
+      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "series_id": "DCOILBRENTEU (proxy)",
+      "last_date": "2026-07-27",
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-01T17:08:36.387539+00:00"
+    },
+    "food_security": {
+      "name": "Food Security",
+      "domain": "Food",
+      "value": 131.17,
+      "status": "red",
+      "trend": "improving",
+      "confidence": 3,
+      "change_from_last": -4.92,
+      "unit": "index",
+      "description": "IMF Food Price Index",
+      "series_id": "PFOODINDEXM",
+      "last_date": "2026-06-01",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:36.920638+00:00"
+    },
+    "climate": {
+      "name": "Climate Stress",
+      "domain": "Climate",
+      "value": 1.11,
+      "unit": "\u00b0C",
+      "status": "red",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.15,
+      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "series_id": "NOAA NCEI",
+      "last_date": "2026",
+      "note": "Live from NOAA climate API",
+      "timestamp": "2026-08-01T17:08:35.672415+00:00"
+    },
+    "social_cohesion": {
+      "name": "Social Cohesion",
+      "domain": "Social",
+      "value": 49.5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 3,
+      "change_from_last": 4.7,
+      "unit": "index",
+      "description": "Consumer Sentiment as social mood proxy",
+      "series_id": "UMCSENT",
+      "last_date": "2026-06-01",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:37.349394+00:00"
+    },
+    "inst_trust": {
+      "name": "Institutional Trust",
+      "domain": "Social",
+      "value": 30,
+      "unit": "%",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 5,
+      "change_from_last": 0,
+      "description": "Baseline: ~30% trust in government (Edelman 2025). Assessed quarterly + during deep scans.",
+      "series_id": null,
+      "last_date": "2025-Q1",
+      "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
+      "timestamp": "2026-08-01T17:08:36.387539+00:00"
+    },
+    "ai_acceleration": {
+      "name": "AI Acceleration",
+      "domain": "Technology",
+      "value": "Rapid",
+      "unit": "",
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 5,
+      "change_from_last": 0,
+      "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
+      "series_id": null,
+      "last_date": "2026-08-01",
+      "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
+      "timestamp": "2026-08-01T17:08:36.387539+00:00"
+    },
+    "currency": {
+      "name": "Currency Stability",
+      "domain": "Currency",
+      "value": 120.71,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 5,
+      "change_from_last": -0.2,
+      "unit": "index",
+      "description": "Trade-Weighted Dollar Index (broad)",
+      "series_id": "DTWEXBGS",
+      "last_date": "2026-07-24",
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-01T17:08:37.699919+00:00"
+    },
+    "gold": {
+      "name": "Gold / Precious Metals",
+      "domain": "Currency",
+      "value": 4042.21,
+      "unit": "$/oz",
+      "status": "green",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": -64.79,
+      "description": "Gold Spot: ,042.21/oz (BullionVault, 31 Jul 2026)",
+      "series_id": "BullionVault Spot",
+      "last_date": "2026-07-31",
+      "note": "Live spot from BullionVault - verified via web fetch",
+      "timestamp": "2026-08-01T17:08:34.314826+00:00"
+    },
+    "crypto": {
+      "name": "Crypto Markets",
+      "domain": "Currency",
+      "value": 62921,
+      "unit": "$",
+      "status": "green",
+      "trend": "stable",
+      "confidence": 9,
+      "change_from_last": 0.3,
+      "description": "BTC $62,921 (+0.3% 24h), Dominance: 75.5%",
+      "series_id": "CoinGecko API",
+      "last_date": "2026-08-01",
+      "note": "Live from CoinGecko API",
+      "timestamp": "2026-08-01T17:08:35.269571+00:00"
+    },
+    "china": {
+      "name": "China Health",
+      "domain": "China",
+      "value": 97.69,
+      "unit": "CLI index",
+      "status": "red",
+      "trend": "stable",
+      "confidence": 7,
+      "change_from_last": -0.09,
+      "description": "OECD Composite Leading Indicator for China (PMI proxy)",
+      "series_id": "BSCICP03CNM665S",
+      "last_date": "2024-01-01",
+      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
+      "timestamp": "2026-08-01T17:08:35.042550+00:00"
+    },
+    "europe": {
+      "name": "Europe Stability",
+      "domain": "Europe",
+      "value": 2.25,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 9,
+      "change_from_last": 0.0,
+      "unit": "%",
+      "description": "ECB Deposit Rate (proxy for EU stability)",
+      "series_id": "ECBDFR",
+      "last_date": "2026-07-31",
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-01T17:08:38.777507+00:00"
+    },
+    "us_cycle": {
+      "name": "US Cycle Position",
+      "domain": "United States",
+      "value": 0.47,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0.02,
+      "unit": "%",
+      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "series_id": "T10Y2Y",
+      "last_date": "2026-07-31",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:39.195171+00:00"
+    },
+    "middle_east": {
+      "name": "Middle East Tension",
+      "domain": "Middle East",
+      "value": 91.82,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
+      "change_from_last": -8.49,
+      "unit": "$/bbl",
+      "description": "Brent Oil as ME tension proxy",
+      "series_id": "DCOILBRENTEU",
+      "last_date": "2026-07-27",
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-01T17:08:39.646830+00:00"
+    },
+    "public_sentiment": {
+      "name": "Public Sentiment",
+      "domain": "Social",
+      "value": 49.5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 3,
+      "change_from_last": 4.7,
+      "unit": "index",
+      "description": "Consumer Sentiment Index",
+      "series_id": "UMCSENT",
+      "last_date": "2026-06-01",
+      "note": "",
+      "timestamp": "2026-08-01T17:08:40.031074+00:00"
+    }
+  },
+  "overall_risk": {
+    "level": "CRITICAL",
+    "color": "red",
+    "score": 526,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 3,
+    "manual_count": 1,
+    "timestamp": "2026-08-01T17:08:40.049051+00:00"
+  },
+  "convergence": {
+    "stressed_domains": [
+      {
+        "domain": "Social",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 6
+      },
+      {
+        "domain": "Financial",
+        "red": 1,
+        "amber": 1,
+        "stress_level": 3
+      },
+      {
+        "domain": "Food",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Climate",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "China",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Energy",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Cyber",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Technology",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Europe",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "United States",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Middle East",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      }
+    ],
+    "convergence_active": true,
+    "convergence_domains": [
+      {
+        "domain": "Social",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 6
+      },
+      {
+        "domain": "Financial",
+        "red": 1,
+        "amber": 1,
+        "stress_level": 3
+      },
+      {
+        "domain": "Food",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Climate",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "China",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      }
+    ],
+    "timestamp": "2026-08-01T17:08:40.049051+00:00"
+  }
 }
