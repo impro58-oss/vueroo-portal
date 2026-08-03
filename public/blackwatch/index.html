@@ -57,7 +57,7 @@
         <div class="glass rounded-2xl p-6">
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-lg font-semibold text-white flex items-center gap-2">
-                    <i class="fas fa-th text-blue-400"></i> Signal Board — 22 Indicators
+                    <i class="fas fa-th text-blue-400"></i> Signal Board — 22 Indicators + Live Intelligence
                 </h2>
                 <div class="flex items-center gap-4 text-xs">
                     <div class="flex items-center gap-1.5"><div class="w-3 h-3 bg-emerald-500 rounded"></div><span class="text-slate-400" id="bw-green-count">0</span></div>
@@ -162,6 +162,49 @@
             </div>
         </div>
 
+        <!-- MARKET THRESHOLD PANEL -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-chart-bar text-yellow-400"></i> Market Thresholds — Tripwire Dashboard
+                <span class="text-xs text-slate-500 ml-2" id="mt-scan-time">Loading...</span>
+            </h2>
+            <div id="market-thresholds" class="space-y-3">
+                <div class="text-center text-slate-500 py-4 text-sm"><i class="fas fa-spinner fa-spin"></i> Loading market data...</div>
+            </div>
+        </div>
+
+        <!-- SCANNER STATUS PANEL -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-satellite text-green-400"></i> Scanner Status — Live Intelligence Feed
+            </h2>
+            <div id="scanner-status" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                <div class="text-center text-slate-500 py-4 text-sm col-span-5"><i class="fas fa-spinner fa-spin"></i> Loading scanner status...</div>
+            </div>
+        </div>
+
+        <!-- BREAKING EVENTS FEED -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-bolt text-rose-400"></i> Breaking Events — Category 5 Detection
+                <span class="text-xs text-slate-500 ml-2" id="be-scan-time">Loading...</span>
+            </h2>
+            <div id="breaking-events" class="space-y-2">
+                <div class="text-center text-slate-500 py-4 text-sm"><i class="fas fa-spinner fa-spin"></i> Loading events...</div>
+            </div>
+        </div>
+
+        <!-- CONVERGENCE RADAR -->
+        <div class="glass rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fas fa-radar text-purple-400"></i> Lead Indicator Radar — Convergence Threads
+                <span class="text-xs text-slate-500 ml-2" id="li-scan-time">Loading...</span>
+            </h2>
+            <div id="convergence-radar" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="text-center text-slate-500 py-4 text-sm col-span-4"><i class="fas fa-spinner fa-spin"></i> Loading convergence data...</div>
+            </div>
+        </div>
+
         <!-- MEMORY EVOLUTION LOG -->
         <div class="glass rounded-2xl p-6">
             <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
@@ -178,7 +221,7 @@
                 <i class="fas fa-eye text-slate-700"></i>
                 <span>BlackWatch Protocol v1.0 — Continuous Global Intelligence</span>
             </div>
-            <div>"Watch intersections, not isolated events." — Data refreshes every 6 hours via FRED API</div>
+            <div>"Watch intersections, not isolated events." — 5 live scanners: Breaking Events (4h), Lead Indicators (daily), Market Thresholds (4h), Whale Positions (4h), Morning Briefing (07:30 IST)</div>
             <div class="mt-1">Auto-refresh: every 15 minutes | Last data fetch: <span id="bw-footer-time">--</span></div>
         </div>
 
@@ -628,12 +671,258 @@
 
         function refreshData() {
             loadData();
+            loadMarketThresholds();
+            loadBreakingEvents();
+            loadLeadIndicators();
+            loadScannerStatus();
+        }
+
+        // ===== MARKET THRESHOLDS =====
+        let mtData = null;
+        async function loadMarketThresholds() {
+            const urls = [
+                '/data/blackwatch-scans/market-thresholds-latest.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/blackwatch-scans/market-thresholds-latest.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { mtData = await res.json(); renderMarketThresholds(); return; }
+                } catch(e) {}
+            }
+            document.getElementById('market-thresholds').innerHTML = '<div class="text-slate-500 text-sm text-center py-4">Market threshold data not yet available. Scanner runs every 4h.</div>';
+        }
+
+        function renderMarketThresholds() {
+            if (!mtData) return;
+            const container = document.getElementById('market-thresholds');
+            document.getElementById('mt-scan-time').textContent = '— ' + new Date(mtData.scan_time_utc).toLocaleString();
+            const values = mtData.current_values || {};
+            const breaches = mtData.breaches || [];
+
+            // Group by category
+            const categories = {};
+            for (const [key, config] of Object.entries(values)) {
+                const cat = config.category || 'other';
+                if (!categories[cat]) categories[cat] = [];
+                categories[cat].push({key, ...config});
+            }
+
+            const catNames = {currency: '💱 Currencies', equity: '📈 Equities', volatility: '🌊 Volatility', commodity: '🛢️ Commodities', rates: '📉 Rates', spread: '📊 Spreads', crypto: '₿ Crypto', other: '🔍 Other'};
+            const catOrder = ['currency', 'equity', 'volatility', 'commodity', 'rates', 'spread', 'crypto', 'other'];
+
+            let html = '';
+
+            // Breaches first if any
+            if (breaches.length > 0) {
+                html += '<div class="bg-rose-500/10 border border-rose-500/30 rounded-lg p-4 mb-4">';
+                html += '<div class="flex items-center gap-2 text-rose-400 font-semibold mb-2"><i class="fas fa-exclamation-triangle"></i> ' + breaches.length + ' THRESHOLD BREACH' + (breaches.length > 1 ? 'ES' : '') + '</div>';
+                breaches.forEach(b => {
+                    const emoji = {CRITICAL: '🔴', RED: '🔴', AMBER: '🟡', YELLOW: '🟢'}[b.severity] || '⚪';
+                    html += '<div class="flex items-center gap-2 py-1 text-sm">';
+                    html += '<span>' + emoji + '</span>';
+                    html += '<span class="text-white font-medium">' + b.name + '</span>';
+                    html += '<span class="text-slate-400">' + b.current + ' ' + b.direction + ' ' + b.threshold + '</span>';
+                    html += '<span class="text-xs text-rose-300 ml-2">' + b.meaning + '</span>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            } else {
+                html += '<div class="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3 mb-4 text-center">';
+                html += '<i class="fas fa-check-circle text-emerald-400 mr-2"></i><span class="text-emerald-300 text-sm">All thresholds within bounds — no regime changes detected</span>';
+                html += '</div>';
+            }
+
+            // Price grid by category
+            for (const cat of catOrder) {
+                if (!categories[cat]) continue;
+                html += '<div class="mb-3">';
+                html += '<div class="text-xs text-slate-500 mb-1">' + (catNames[cat] || cat) + '</div>';
+                html += '<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">';
+                for (const item of categories[cat]) {
+                    const price = item.price || '--';
+                    const change = item.change_1d_pct;
+                    const isBreach = breaches.some(b => b.key === item.key);
+                    const borderColor = isBreach ? 'border-rose-500' : 'border-white/5';
+                    const bgColor = isBreach ? 'bg-rose-500/5' : 'bg-slate-800/30';
+                    const changeColor = change > 0 ? 'text-emerald-400' : change < 0 ? 'text-rose-400' : 'text-slate-400';
+                    const changeStr = change !== undefined ? (change > 0 ? '+' : '') + change + '%' : '';
+
+                    html += '<div class="rounded-lg p-2 border ' + borderColor + ' ' + bgColor + '">';
+                    html += '<div class="text-xs text-slate-400 truncate">' + (item.name || item.key) + '</div>';
+                    html += '<div class="text-white font-bold">' + (typeof price === 'number' ? (price > 1000 ? price.toLocaleString(undefined, {maximumFractionDigits: 0}) : price.toFixed(price < 10 ? 4 : 2)) : price) + '</div>';
+                    if (changeStr) html += '<div class="text-xs ' + changeColor + '">' + changeStr + '</div>';
+                    if (item.error) html += '<div class="text-xs text-rose-400">⚠ ' + item.error.substring(0, 30) + '</div>';
+                    html += '</div>';
+                }
+                html += '</div></div>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        // ===== BREAKING EVENTS =====
+        let beData = null;
+        async function loadBreakingEvents() {
+            const urls = [
+                '/data/blackwatch-scans/breaking-events-latest.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/blackwatch-scans/breaking-events-latest.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { beData = await res.json(); renderBreakingEvents(); return; }
+                } catch(e) {}
+            }
+            document.getElementById('breaking-events').innerHTML = '<div class="text-slate-500 text-sm text-center py-4">No breaking events detected yet. Scanner runs every 4h.</div>';
+        }
+
+        function renderBreakingEvents() {
+            if (!beData) return;
+            const container = document.getElementById('breaking-events');
+            const events = beData.events || [];
+            document.getElementById('be-scan-time').textContent = '— ' + new Date(beData.scan_time).toLocaleString();
+
+            if (events.length === 0) {
+                container.innerHTML = '<div class="text-center text-emerald-300 py-4"><i class="fas fa-check-circle text-2xl"></i><div class="mt-2 text-sm">No category-5 events detected in latest scan</div><div class="text-xs text-slate-500 mt-1">12 domains monitored every 4 hours</div></div>';
+                return;
+            }
+
+            let html = '';
+            events.forEach(e => {
+                const sev = e.severity || 'AMBER';
+                const sevColor = {CRITICAL: 'border-rose-500 bg-rose-500/5', RED: 'border-rose-500 bg-rose-500/5', AMBER: 'border-amber-500 bg-amber-500/5', YELLOW: 'border-yellow-500 bg-yellow-500/5'}[sev] || 'border-slate-600 bg-slate-800/30';
+                html += '<div class="rounded-lg p-3 border ' + sevColor + '">';
+                html += '<div class="flex items-center gap-2 mb-1">';
+                html += '<span class="text-xs px-2 py-0.5 rounded-full ' + (sev === 'CRITICAL' || sev === 'RED' ? 'bg-rose-600 text-white' : 'bg-amber-600 text-white') + '">' + sev + '</span>';
+                html += '<span class="text-sm font-medium text-white">' + (e.title || e.domain || 'Event') + '</span>';
+                html += '</div>';
+                if (e.description) html += '<div class="text-xs text-slate-400">' + e.description + '</div>';
+                if (e.escalate_to && e.escalate_to.length > 0) html += '<div class="text-xs text-slate-500 mt-1">Signals: ' + e.escalate_to.join(', ') + '</div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        // ===== LEAD INDICATORS / CONVERGENCE RADAR =====
+        let liData = null;
+        async function loadLeadIndicators() {
+            const urls = [
+                '/data/blackwatch-lead-indicators.json',
+                'https://raw.githubusercontent.com/impro58-oss/vueroo-portal/main/public/data/blackwatch-lead-indicators.json'
+            ];
+            for (const url of urls) {
+                try {
+                    const res = await fetch(url + '?t=' + Date.now());
+                    if (res.ok) { liData = await res.json(); renderConvergenceRadar(); return; }
+                } catch(e) {}
+            }
+            document.getElementById('convergence-radar').innerHTML = '<div class="text-slate-500 text-sm text-center py-4 col-span-4">Lead indicator data not yet available. Scanner runs daily at 07:00 IST.</div>';
+        }
+
+        function renderConvergenceRadar() {
+            if (!liData) return;
+            const container = document.getElementById('convergence-radar');
+            document.getElementById('li-scan-time').textContent = '— ' + new Date(liData.scan_time).toLocaleString();
+
+            // Convergence threads
+            const threads = liData.convergence_threads || [
+                {key: 'japan_yen', name: '🇯🇵 Japan Yen Crisis', desc: 'BOJ/MOF intervention, JGB spiral, yen collapse'},
+                {key: 'us_recession', name: '🇺🇸 US Recession', desc: 'Yield curve, consumer sentiment, unemployment'},
+                {key: 'middle_east_war', name: '🌍 Middle East War', desc: 'Iran, Israel, Hormuz, oil disruption'},
+                {key: 'china_collapse', name: '🇨🇳 China Hard Landing', desc: 'PBOC, property, capital flight'},
+                {key: 'euro_crisis', name: '🇪🇺 Euro Sovereign Crisis', desc: 'ECB, spread, PIIGS'},
+                {key: 'asian_contagion', name: '🌏 Asian Contagion', desc: 'Won, baht, rupiah, peso'},
+                {key: 'crypto_collapse', name: '₿ Crypto Collapse', desc: 'Exchange hack, stablecoin, ban'},
+                {key: 'global_pandemic', name: '🦠 Global Pandemic', desc: 'WHO, outbreak, quarantine'}
+            ];
+
+            const findings = liData.findings || [];
+            const convergence = liData.convergence || [];
+
+            // Map findings to threads
+            const threadFindings = {};
+            threads.forEach(t => { threadFindings[t.key] = []; });
+            findings.forEach(f => {
+                const text = (f.title || '' + ' ' + f.description || '').toLowerCase();
+                threads.forEach(t => {
+                    const keywords = {
+                        japan_yen: ['japan', 'yen', 'boj', 'mof', 'jgb', 'intervention'],
+                        us_recession: ['recession', 'fed', 'yield curve', 'consumer sentiment', 'unemployment'],
+                        middle_east_war: ['iran', 'israel', 'hormuz', 'oil', 'gaza'],
+                        china_collapse: ['china', 'pboe', 'property', 'yuan', 'capital flight'],
+                        euro_crisis: ['ecb', 'euro', 'spread', 'italy', 'germany'],
+                        asian_contagion: ['won', 'baht', 'rupiah', 'peso', 'asian'],
+                        crypto_collapse: ['crypto', 'bitcoin', 'exchange', 'hack', 'stablecoin'],
+                        global_pandemic: ['pandemic', 'who', 'outbreak', 'virus', 'quarantine']
+                    }[t.key] || []);
+                    if (keywords.some(k => text.includes(k))) {
+                        threadFindings[t.key].push(f);
+                    }
+                });
+            });
+
+            let html = '';
+            threads.forEach(t => {
+                const count = threadFindings[t.key] ? threadFindings[t.key].length : 0;
+                const isConverging = convergence.find(c => c.thread === t.key);
+                const borderColor = isConverging ? 'border-rose-500' : count > 0 ? 'border-amber-500/50' : 'border-white/5';
+                const bgColor = isConverging ? 'bg-rose-500/5' : count > 0 ? 'bg-amber-500/5' : 'bg-slate-800/30';
+                const statusBadge = isConverging ? '<span class="text-xs px-2 py-0.5 rounded-full bg-rose-600 text-white ml-2">CONVERGENCE</span>' : count > 0 ? '<span class="text-xs px-2 py-0.5 rounded-full bg-amber-600 text-white ml-2">' + count + ' FINDING' + (count > 1 ? 'S' : '') + '</span>' : '<span class="text-xs px-2 py-0.5 rounded-full bg-slate-700 text-slate-400 ml-2">CLEAR</span>';
+
+                html += '<div class="rounded-lg p-3 border ' + borderColor + ' ' + bgColor + '">';
+                html += '<div class="text-sm font-medium text-white">' + t.name + statusBadge + '</div>';
+                html += '<div class="text-xs text-slate-400 mt-1">' + t.desc + '</div>';
+                if (isConverging) {
+                    html += '<div class="text-xs text-rose-300 mt-1">Score: ' + isConverging.total_score + ' | ' + isConverging.findings_count + ' findings across ' + (isConverging.categories ? isConverging.categories.length : '?') + ' categories</div>';
+                }
+                html += '</div>';
+            });
+
+            container.innerHTML = html;
+        }
+
+        // ===== SCANNER STATUS =====
+        let scannerStatus = null;
+        async function loadScannerStatus() {
+            const now = new Date();
+            // Hard-coded scanner info — matches cron jobs
+            scannerStatus = [
+                {name: 'Breaking Events', icon: 'fa-bolt', cadence: '4h', id: '85bd4029', lastRun: '—', nextRun: '—', color: 'text-rose-400'},
+                {name: 'Lead Indicators', icon: 'fa-satellite-dish', cadence: 'Daily 07:00', id: '0ad3dc61', lastRun: '—', nextRun: '—', color: 'text-purple-400'},
+                {name: 'Market Thresholds', icon: 'fa-chart-bar', cadence: '4h', id: 'c24ecd7b', lastRun: '—', nextRun: '—', color: 'text-yellow-400'},
+                {name: 'Whale Scanner', icon: 'fa-fish', cadence: '4h', id: '472b30a9', lastRun: '—', nextRun: '—', color: 'text-blue-400'},
+                {name: 'Morning Briefing', icon: 'fa-sun', cadence: 'Daily 07:30', id: 'a901c310', lastRun: '—', nextRun: '—', color: 'text-emerald-400'}
+            ];
+            renderScannerStatus();
+        }
+
+        function renderScannerStatus() {
+            if (!scannerStatus) return;
+            const container = document.getElementById('scanner-status');
+            let html = '';
+            scannerStatus.forEach(s => {
+                html += '<div class="rounded-lg p-3 bg-slate-800/30 border border-white/5">';
+                html += '<div class="flex items-center gap-2 mb-2">';
+                html += '<i class="fas ' + s.icon + ' ' + s.color + '"></i>';
+                html += '<span class="text-sm font-medium text-white">' + s.name + '</span>';
+                html += '</div>';
+                html += '<div class="text-xs text-slate-400">Cadence: ' + s.cadence + '</div>';
+                html += '<div class="text-xs text-slate-500 mt-1">ID: ' + s.id.substring(0, 8) + '</div>';
+                html += '<div class="flex items-center gap-1 mt-2"><div class="w-2 h-2 bg-emerald-500 rounded-full"></div><span class="text-xs text-emerald-400">Active</span></div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
         }
 
         // Initial load
         loadData();
+        loadMarketThresholds();
+        loadBreakingEvents();
+        loadLeadIndicators();
+        loadScannerStatus();
         // Auto-refresh every 15 minutes
-        setInterval(loadData, 15 * 60 * 1000);
+        setInterval(() => { loadData(); loadMarketThresholds(); loadBreakingEvents(); loadLeadIndicators(); }, 15 * 60 * 1000);
     </script>
 </body>
 </html>
