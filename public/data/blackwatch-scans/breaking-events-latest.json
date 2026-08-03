@@ -1,94 +1,123 @@
 {
-  "scan_time": "2026-08-03T19:03:00.000000+00:00",
+  "scan_time": "2026-08-03T23:04:50.682641",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner",
+  "scan_date": "2026-08-03",
   "domains_scanned": 12,
-  "events_detected": 6,
-  "category_5_events": 5,
+  "events_detected": 5,
   "events": [
     {
-      "id": "EVT-001-JPNYEN-INT",
-      "title": "US-Japan Coordinated Yen Intervention — First in Over a Decade",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "confidence": 10,
-      "sources": ["Reuters", "CNBC", "New York Times", "Al Jazeera", "Financial Times"],
-      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention on Friday July 31. US sold euros to buy yen — first joint US-Japan currency intervention in over 10 years. Yen at 40-year lows. Trump confirmed intervention. Tokyo signals readiness for further action.",
-      "impact_regions": ["Japan", "United States", "Europe", "Global FX markets"],
-      "escalate_to": ["fin_stability", "currency", "liquidity"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
-    },
-    {
-      "id": "EVT-002-IRAN-WAR-HORMUZ",
-      "title": "2026 Iran War — Strait of Hormuz Crisis Active, Oil Supply Disrupted",
       "domain": "middle_east",
-      "category": "war_military",
+      "title": "2026 Iran War \u2014 Strait of Hormuz Crisis (Ongoing, Escalating)",
       "severity": 5,
-      "confidence": 10,
-      "sources": ["Wikipedia", "India Today", "Britannica", "EIA", "ECB"],
-      "summary": "Active US-Iran military conflict with retaliatory missile/drone strikes on US embassies, military installations, and oil infrastructure. Strait of Hormuz partially blocked — 20% of global oil/LNG traffic affected. Brent crude jumped 10-13%, potentially heading to $100+/bbl. Houthi threats to join war. Kuwait and UK reporting attacks on shipping.",
-      "impact_regions": ["Middle East", "Global", "Asia", "Europe"],
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+      "category": "war_military",
+      "description": "Strait of Hormuz largely blocked since Feb 28, 2026. US-Israel air war against Iran. IRGC attacking merchant ships, sea mines deployed. ~20,000 mariners stranded. Brent peaked at /bbl. Renewed hostilities in late July shattered June MOU ceasefire. Houthi threats to join conflict. Kuwait under drone attack. Tanker struck in strait.",
+      "source": "Wikipedia, India Today, Reuters, Britannica",
+      "impact_regions": [
+        "Middle East",
+        "Global Energy",
+        "Global Shipping"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ],
+      "first_detected": "2026-02-28",
+      "status": "ESCALATING"
     },
     {
-      "id": "EVT-003-EBOLA-PHEIC",
-      "title": "WHO Declares Ebola Outbreak (Bundibugyo strain) Public Health Emergency of International Concern",
       "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic \u2014 DRC, WHO Global Health Emergency",
+      "severity": 4,
       "category": "pandemic",
-      "severity": 4,
-      "confidence": 10,
-      "sources": ["WHO", "ECDC", "European Commission Health", "Wikipedia"],
-      "summary": "WHO declared the 2026 Ebola outbreak in DRC and Uganda a Public Health Emergency of International Concern (PHEIC) on May 17, 2026. Bundibugyo ebolavirus — no existing vaccines or treatments available. Fastest-growing Ebola outbreak on record as of late July 2026.",
-      "impact_regions": ["Central Africa", "East Africa", "Global"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+      "description": "Fastest-growing Ebola outbreak on record. Bundibugyo ebolavirus (no approved vaccine/treatment). Spread to 4+ provinces in DRC. WHO declared global health emergency. US citizen infected. UN opening largest treatment centre. Outbreak intensifying at exceptional pace.",
+      "source": "WHO, UN News, Wikipedia, EU Health Commission",
+      "impact_regions": [
+        "Central Africa",
+        "Global Health"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "first_detected": "2026-06",
+      "status": "INTENSIFYING"
     },
     {
-      "id": "EVT-004-RUSSIA-BANKING",
-      "title": "Russia Systemic Banking Crisis Risk — Sberbank Warns of Rising Bad Loans",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 4,
-      "confidence": 8,
-      "sources": ["Moscow Times", "Riddle Russia"],
-      "summary": "Kremlin-linked think tank CMASF warns Russia could face systemic banking crisis by October 2026. Sberbank warns of rising corporate credit risks — 11.7% of corporate loans problematic. Wildberries collapse dragging down VTB and Sberbank. Bankruptcies up 13.7% YoY.",
-      "impact_regions": ["Russia", "Eastern Europe", "Central Asia"],
-      "escalate_to": ["fin_stability", "geopolitical"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
-    },
-    {
-      "id": "EVT-005-FED-DISSENT",
-      "title": "Fed Holds Rates in Divided 9-3 Vote — Three Dissents Signal Deep Policy Conflict",
-      "domain": "us_fed",
-      "category": "emergency_rate",
-      "severity": 3,
-      "confidence": 10,
-      "sources": ["CNN", "NPR", "New York Times", "Federal Reserve"],
-      "summary": "Fed kept rates at 3.5-3.75% in a 9-3 vote on July 29. New Chairman Kevin Warsh vowed to fight persistent inflation. Three officials dissented. Market uncertainty high.",
-      "impact_regions": ["United States", "Global"],
-      "escalate_to": ["us_cycle", "fin_stability"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
-    },
-    {
-      "id": "EVT-006-JP-SK-FX-COORD",
-      "title": "Japan-South Korea Rare Joint FX Intervention — First in 15 Years",
       "domain": "em_asia",
-      "category": "sovereign_intervention",
+      "title": "Rare Joint Japan-South Korea-US FX Intervention",
       "severity": 4,
-      "confidence": 9,
-      "sources": ["FXStreet", "Chosun", "Reuters"],
-      "summary": "Japan and South Korea conducted unprecedented coordinated FX intervention — first joint action in 15 years. US possibly participated. Raises yen carry trade volatility. Asian currency markets under stress.",
-      "impact_regions": ["Japan", "South Korea", "Asia", "Global FX markets"],
-      "escalate_to": ["currency", "fin_stability", "liquidity"],
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+      "category": "sovereign_intervention",
+      "description": "Unprecedented coordinated FX intervention by Japan, South Korea, and US to prop up yen and won. First joint action in 15 years. Won hit 9-month high. Yen carry trade volatility rising. Signals deep concern about currency stability.",
+      "source": "Chosun, Al Jazeera, FXStreet, Reuters",
+      "impact_regions": [
+        "Asia-Pacific",
+        "Global Currency Markets"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "first_detected": "2026-07-31",
+      "status": "ACTIVE"
+    },
+    {
+      "domain": "japan",
+      "title": "BOJ Holds Rates at 1%, Warns of Rapid Rate Hikes",
+      "severity": 3,
+      "category": "emergency_rate",
+      "description": "BOJ held rates at 1% (8-1 vote, Takata dissented calling for 1.25%). Governor Ueda warned of rapid rate hikes if inflation target fails. Japan intervened to prop up yen ahead of BOJ decision. Core inflation exceeding 2% target.",
+      "source": "CNBC, Axios, Investing.com, Trading Economics",
+      "impact_regions": [
+        "Japan",
+        "Global Bond Markets"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ],
+      "first_detected": "2026-07-31",
+      "status": "ACTIVE"
+    },
+    {
+      "domain": "commodities",
+      "title": "Oil Supply Disruption \u2014 Largest in History of Global Oil Market (IEA)",
+      "severity": 5,
+      "category": "energy_shock",
+      "description": "IEA characterizes Iran war/Strait of Hormuz closure as largest supply disruption in history of global oil market. Brent at .92 (fell 5.69% in 24h but was at  peak). Oil +23% in July after renewed hostilities shattered June ceasefire. OPEC+ increasing quotas. Houthi Red Sea disruption adding 5-6 mb/d at risk.",
+      "source": "Wikipedia, Forbes, Trading Economics, EIA",
+      "impact_regions": [
+        "Global Energy",
+        "Global Economy"
+      ],
+      "escalate_to": [
+        "energy",
+        "supply_chain",
+        "food_security",
+        "geopolitical"
+      ],
+      "first_detected": "2026-02-28",
+      "status": "ONGOING"
     }
   ],
-  "scan_summary": {
-    "total_events": 6,
-    "category_5_count": 5,
-    "highest_severity": 5,
-    "escalation_required": true
+  "no_event_domains": [
+    "us_fed",
+    "latam",
+    "eu_ecb",
+    "uk",
+    "china",
+    "africa",
+    "financial_system"
+  ],
+  "domain_notes": {
+    "us_fed": "Fed held rates at 3.6% on July 29 (9-3 vote, 3 dissents). New Chair Warsh. No emergency action. Fifth straight hold.",
+    "latam": "Argentina debt tensions with Brazil (R default to Casa da Moeda). IMF praises Argentina reforms. 2027 debt hurdle looming. Not category-5.",
+    "eu_ecb": "ECB rates unchanged at 2.25%. No emergency action. Governing Council meeting in Berlin.",
+    "uk": "BoE in wait-and-see mode. Gilts rundown may slow to \u00a350bn. No emergency. Sterling soft but stable.",
+    "china": "PBOC pledging timely policy adjustment, appropriately loose monetary policy. Undervalued currency (>20%). No emergency.",
+    "africa": "Sudan civil war ongoing. Sahel jihadist insurgency. Debt crises across multiple nations. Chronic but not category-5 breaking.",
+    "financial_system": "Russia warned of potential systemic banking crisis by Oct 2026. ECB research on interbank lending contraction. Not acute this week."
   }
 }
