@@ -844,7 +844,7 @@
             const threadFindings = {};
             threads.forEach(t => { threadFindings[t.key] = []; });
             findings.forEach(f => {
-                const text = (f.title || '' + ' ' + f.description || '').toLowerCase();
+                const text = ((f.title || '') + ' ' + (f.description || '')).toLowerCase();
                 threads.forEach(t => {
                     const keywords = {
                         japan_yen: ['japan', 'yen', 'boj', 'mof', 'jgb', 'intervention'],
@@ -855,7 +855,7 @@
                         asian_contagion: ['won', 'baht', 'rupiah', 'peso', 'asian'],
                         crypto_collapse: ['crypto', 'bitcoin', 'exchange', 'hack', 'stablecoin'],
                         global_pandemic: ['pandemic', 'who', 'outbreak', 'virus', 'quarantine']
-                    }[t.key] || []);
+                    }[t.key] || [];
                     if (keywords.some(k => text.includes(k))) {
                         threadFindings[t.key].push(f);
                     }
