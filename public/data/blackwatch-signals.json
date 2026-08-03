@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-03T19:03:00.000000+00:00",
+    "last_update": "2026-08-03T19:34:04.000000+00:00",
     "signals_auto": 19,
     "signals_manual": 2,
     "signals_total": 21,
-    "breaking_event": "Breaking event scanner: 6 events detected, 5 category-5. Iran war, US-Japan yen intervention, Ebola PHEIC, Russia banking crisis, JP-SK FX coordination."
+    "breaking_event": "Breaking event scanner: 6 events detected, 5 category-5. Iran war, US-Japan yen intervention, Ebola PHEIC, Russia banking crisis, JP-SK FX coordination.",
+    "threshold_breach": "5 thresholds breached (2 RED, 3 AMBER): Gold >3500, JGB10Y >1.5, Gold >3000, EUR/USD >1.15, DE10Y >3.0"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-07-30",
-      "note": "ESCALATED by breaking event scanner: US-Japan coordinated yen intervention (first in decade) + Russia systemic banking crisis risk + JP-SK joint FX intervention. Multiple financial system stressors converging.",
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+      "note": "ESCALATED by breaking event scanner: US-Japan coordinated yen intervention (first in decade) + Russia systemic banking crisis risk + JP-SK joint FX intervention. Multiple financial system stressors converging. | THRESHOLD BREACH: Gold $4107 (>3500 RED, >3000 AMBER), JGB10Y 2.8% (>1.5 RED), DE10Y 3.14% (>3.0 AMBER). Multiple rate/spread breaches confirm financial stress.",
+      "timestamp": "2026-08-03T19:34:04.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -63,7 +64,7 @@
       "confidence": 10,
       "change_from_last": -8.49,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price — Hormuz disruption active",
+      "description": "Brent Crude Oil Price \u00e2\u20ac\u201d Hormuz disruption active",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-27",
       "note": "ESCALATED by breaking event scanner: Strait of Hormuz crisis active. 20% of global oil/LNG traffic affected. Brent up 10-13%, potentially heading to $100+/bbl. US-Iran war disrupting supply.",
@@ -81,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED by breaking event scanner: 2026 Iran war active — US-Iran military conflict, retaliatory strikes on embassies and oil infrastructure. Houthi threats to join. Kuwait and UK reporting attacks on shipping.",
-      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+      "note": "ESCALATED by breaking event scanner: 2026 Iran war active \u00e2\u20ac\u201d US-Iran military conflict, retaliatory strikes on embassies and oil infrastructure. Houthi threats to join. Kuwait and UK reporting attacks on shipping. | THRESHOLD BREACH: Gold $4107 >3500 (RED) - war premium confirmed.",
+      "timestamp": "2026-08-03T19:34:04.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -108,7 +109,7 @@
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-07-27",
       "note": "ESCALATED by breaking event scanner: Strait of Hormuz disruption affecting 20% of global oil/LNG traffic. Shipping attacks reported. Energy supply chain severely impacted.",
@@ -138,8 +139,8 @@
       "confidence": 0,
       "change_from_last": 0,
       "unit": "anomaly",
-      "description": "No FRED feed — NOAA/Copernicus manual assessment",
-      "note": "Manual assessment — NOAA integration in Phase 2",
+      "description": "No FRED feed \u00e2\u20ac\u201d NOAA/Copernicus manual assessment",
+      "note": "Manual assessment \u00e2\u20ac\u201d NOAA integration in Phase 2",
       "last_date": null,
       "timestamp": "2026-08-03T17:03:16.762232+00:00"
     },
@@ -197,7 +198,7 @@
       "confidence": 10,
       "change_from_last": -0.2,
       "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad) — multiple FX interventions active",
+      "description": "Trade-Weighted Dollar Index (broad) \u00e2\u20ac\u201d multiple FX interventions active",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-24",
       "note": "ESCALATED by breaking event scanner: US-Japan coordinated yen intervention (first in 10+ years). Japan-South Korea joint FX intervention (first in 15 years). Yen at 40-year lows. Multiple sovereign FX interventions indicate severe currency instability.",
@@ -206,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4036.55,
+      "value": 4107.2,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 68.9,
-      "description": "Gold Futures (GC=F): $4,103.60 (+1.71%)",
+      "description": "Gold Futures (GC=F): $4,107.20 (+1.80%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-03",
-      "note": "Live from Yahoo Finance — COMEX Gold Futures",
-      "timestamp": "2026-08-03T11:03:06.824568+00:00",
+      "note": "THRESHOLD BREACH: Gold >$3500 (RED) and >$3000 (AMBER). Gold mania - currency crisis or war premium. Safe haven demand extreme.",
+      "timestamp": "2026-08-03T19:34:04.000000+00:00",
       "source": "BullionVault live spot"
     },
     "crypto": {
@@ -254,15 +255,15 @@
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-03",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-03T17:03:19.724038+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2) | THRESHOLD BREACH: German 10Y Bund 3.14% >3.0 (AMBER) - European fiscal stress, periphery spreads widening.",
+      "timestamp": "2026-08-03T19:34:04.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -273,11 +274,11 @@
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
+      "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-07-31",
-      "note": "",
-      "timestamp": "2026-08-03T17:03:20.144204+00:00"
+      "note": " | THRESHOLD BREACH: EUR/USD 1.1515 >1.15 (AMBER) - dollar weakness, possible Fed pivot.",
+      "timestamp": "2026-08-03T19:34:04.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -288,7 +289,7 @@
       "confidence": 10,
       "change_from_last": -8.49,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy — ACTIVE WAR",
+      "description": "Brent Oil as ME tension proxy \u00e2\u20ac\u201d ACTIVE WAR",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-27",
       "note": "ESCALATED by breaking event scanner: 2026 Iran war active. US-Iran military conflict with missile/drone strikes. Strait of Hormuz crisis. Houthi involvement threatened. Regional escalation risk HIGH.",
