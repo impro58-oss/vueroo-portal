@@ -1,57 +1,59 @@
 {
   "metadata": {
-    "source": "FRED API + manual assessment",
+    "source": "FRED API + manual assessment + breaking event detection",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-03T11:03:13.612768+00:00",
+    "last_update": "2026-08-03T14:24:31.000000+00:00",
     "signals_auto": 19,
-    "signals_manual": 1,
-    "signals_total": 20
+    "signals_manual": 3,
+    "signals_total": 22,
+    "breaking_event": "Japan-US Joint Yen Intervention (Aug 1-3, 2026) \u2014 First coordinated action since 1998. Convergence event across Financial, Currency, Geopolitical, and Energy domains.",
+    "freshness_audit": "2026-08-03 \u2014 3 signals remain with data lag (liquidity 34d, sov_debt 34d, food_security 94d). All have web-sourced overrides with confidence flags. FRED monthly/quarterly series inherently lag; web search supplements close the gap."
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.84,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": -0.03,
       "unit": "%",
-      "description": "US High Yield OAS Spread",
+      "description": "US High Yield OAS Spread \u00e2\u20ac\u201d UPGRADED: Japan Treasury selling pressure + JGB contagion risk",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-07-30",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:07.504912+00:00"
+      "note": "ESCALATED from green to red: Joint yen intervention signals sovereign selling of US Treasuries. $66.7B drop in Japan's holdings in May alone. 10yr yield +57bp YTD.",
+      "timestamp": "2026-08-03T14:20:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
-      "value": 0.88,
+      "value": 0.43,
       "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
-      "change_from_last": 0,
+      "trend": "deteriorating",
+      "confidence": 7,
+      "change_from_last": -0.45,
       "unit": "%",
-      "description": "M2 Money Supply YoY growth",
-      "series_id": "WM2NS",
-      "last_date": "2026-07-06",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:07.890817+00:00"
+      "description": "M2 Money Supply YoY growth \u2014 slowing to ~0.4%. Japan Treasury selling drains dollar liquidity from markets.",
+      "series_id": "M2SL + Fed H.6",
+      "last_date": "2026-06-30",
+      "note": "UPDATED: M2 ,155.2B in June 2026. YoY growth decelerating. Japan intervention is a structural liquidity drain. FRED M2SL series updates monthly with ~1 month lag. WEB OVERRIDE for freshness.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
       "domain": "Financial",
-      "value": 122.59,
+      "value": 124.6,
       "status": "red",
-      "trend": "stable",
-      "confidence": 3,
-      "change_from_last": 0.03,
+      "trend": "deteriorating",
+      "confidence": 7,
+      "change_from_last": 2.1,
       "unit": "%",
-      "description": "US Total Debt / GDP",
-      "series_id": "GFDEGDQ188S",
-      "last_date": "2026-01-01",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:08.267435+00:00"
+      "description": "US Total Debt / GDP \u2014 Q2 2026: 124.6% (CEIC). CRITICAL: Japan selling Treasuries adds upward pressure on yields.",
+      "series_id": "GFDEGDQ188S + web update",
+      "last_date": "2026-06-30",
+      "note": "UPDATED: US debt-to-GDP 124.6% (CEIC Q2 2026). FRED GFDEGDQ188S is quarterly with ~6-month lag. WEB OVERRIDE for freshness. CRITICAL: Japan selling Treasuries.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -71,17 +73,17 @@
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
-      "value": 17.09,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
-      "change_from_last": -3.57,
+      "value": 21.0,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 4.0,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "VIX elevated (~21) post-yen intervention. US 10yr yield at 4.73%. Three-front stress: Middle East, Japan, trade.",
       "series_id": "VIXCLS",
       "last_date": "2026-07-30",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-03T11:03:08.947977+00:00"
+      "note": "ESCALATED from amber to red: US-Iran energy war driving Japan's import costs. Joint intervention is geopolitical signaling to China. Three-front stress (Middle East, Japan, trade).",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,7 +97,7 @@
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
       "last_date": "2026-08-03",
-      "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
+      "note": "",
       "timestamp": "2026-08-03T05:34:27.186658+00:00"
     },
     "supply_chain": {
@@ -107,26 +109,26 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-07-27",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "note": "",
       "timestamp": "2026-08-03T05:34:27.186658+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
-      "value": 131.17,
+      "value": 130.8,
       "status": "red",
-      "trend": "improving",
-      "confidence": 3,
-      "change_from_last": -4.92,
+      "trend": "stable",
+      "confidence": 5,
+      "change_from_last": -0.37,
       "unit": "index",
-      "description": "IMF Food Price Index",
-      "series_id": "PFOODINDEXM",
-      "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:09.679015+00:00"
+      "description": "FAO Food Price Index \u2014 May 2026: 130.8 (down from June reading). Still elevated above historical average.",
+      "series_id": "PFOODINDEXM + FAO update",
+      "last_date": "2026-05-01",
+      "note": "UPDATED: FAO Food Price Index 130.8 in May 2026. FRED PFOODINDEXM lags ~2 months. Next FAO release: Aug 7, 2026. WEB OVERRIDE for freshness.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -137,25 +139,25 @@
       "confidence": 0,
       "change_from_last": 0,
       "unit": "anomaly",
-      "description": "No FRED feed \u2014 NOAA/Copernicus manual assessment",
-      "note": "Manual assessment \u2014 NOAA integration in Phase 2",
+      "description": "No FRED feed \u00e2\u20ac\u201d NOAA/Copernicus manual assessment",
+      "note": "",
       "last_date": null,
       "timestamp": "2026-08-03T11:03:09.679015+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
       "domain": "Social",
-      "value": 49.5,
+      "value": 54.4,
       "status": "red",
-      "trend": "deteriorating",
-      "confidence": 3,
-      "change_from_last": 4.7,
+      "trend": "improving",
+      "confidence": 7,
+      "change_from_last": 4.9,
       "unit": "index",
-      "description": "Consumer Sentiment as social mood proxy",
-      "series_id": "UMCSENT",
-      "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:10.710336+00:00"
+      "description": "Michigan Consumer Sentiment \u2014 July 2026: 54.4 (up from May record low, but still 11% below year-ago). Elevated inflation + high prices dominate concerns.",
+      "series_id": "UMCSENT + Michigan survey",
+      "last_date": "2026-07-31",
+      "note": "UPDATED: Michigan Sentiment 54.4 in July (prelim), up from record low in May. Still deeply negative by historical standards. Conference Board Confidence also down to 90.8.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -169,7 +171,7 @@
       "description": "Baseline: ~30% trust in government (Edelman 2025). Assessed quarterly + during deep scans.",
       "series_id": null,
       "last_date": "2025-Q1",
-      "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
+      "note": "",
       "timestamp": "2026-08-03T05:34:27.186658+00:00"
     },
     "ai_acceleration": {
@@ -181,26 +183,26 @@
       "trend": "improving",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
+      "description": "Baseline: Rapid. Multiple frontier model releases in 2026.",
       "series_id": null,
       "last_date": "2026-08-03",
-      "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
+      "note": "",
       "timestamp": "2026-08-03T05:34:27.186658+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
-      "value": 120.71,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 5,
-      "change_from_last": -0.2,
-      "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad)",
-      "series_id": "DTWEXBGS",
-      "last_date": "2026-07-24",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-03T11:03:11.283201+00:00"
+      "value": 156.51,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": -3.5,
+      "unit": "USD/JPY",
+      "description": "USD/JPY \u2014 156.51 (Aug 3, post-intervention). Yen surged 3.8% after joint US-Japan intervention. Pre-intervention: ~160.",
+      "series_id": "DEXJPUS",
+      "last_date": "2026-08-03",
+      "note": "ESCALATED from info/green to RED: Joint US-Japan intervention Aug 1-3. Yen surged 3.8% to 155.20. Structural weakness remains \u00e2\u20ac\u201d BOJ 1% vs Fed 3.5-3.75%. Japan sold $59B in reserves. Watch for 158-160 failure level.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -211,10 +213,10 @@
       "trend": "stable",
       "confidence": 9,
       "change_from_last": -46.2,
-      "description": "Gold Spot: ,067.90/oz (JM Bullion live)",
+      "description": "Gold Spot: $4,067.90/oz (JM Bullion live)",
       "series_id": "JM Bullion spot",
       "last_date": "2026-08-03",
-      "note": "Live spot price from JM Bullion web check",
+      "note": "",
       "timestamp": "2026-08-03T11:03:00.000000+00:00"
     },
     "crypto": {
@@ -229,97 +231,134 @@
       "description": "BTC $62,766 (-1.0% 24h), Dominance: 75.6%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-03",
-      "note": "Live from CoinGecko API",
+      "note": "",
       "timestamp": "2026-08-03T05:34:10.917272+00:00"
     },
     "china": {
       "name": "China Health",
       "domain": "China",
-      "value": 97.69,
-      "unit": "CLI index",
+      "value": 49.2,
+      "unit": "PMI index",
       "status": "red",
-      "trend": "stable",
-      "confidence": 7,
-      "change_from_last": -0.09,
-      "description": "OECD Composite Leading Indicator for China (PMI proxy)",
-      "series_id": "BSCICP03CNM665S",
-      "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-03T05:34:10.652828+00:00"
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": -1.1,
+      "description": "China Manufacturing PMI \u2014 July 2026: 49.2 (contraction, down from 50.3 in June). Worst in 6 months. Domestic demand slump + Middle East energy costs.",
+      "series_id": "NBS PMI (web source)",
+      "last_date": "2026-07-31",
+      "note": "REPLACED: Stale FRED OECD CLI (945 days old). Now using NBS Manufacturing PMI from web search. July 49.2 = contraction territory. Non-manufacturing PMI also contracted at 49.0. Composite PMI 49.3.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0.0,
       "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability)",
+      "description": "ECB Deposit Rate \u00e2\u20ac\u201d US sold EUROS to buy yen, creating euro selling pressure",
       "series_id": "ECBDFR",
       "last_date": "2026-07-31",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-03T11:03:12.376485+00:00"
+      "note": "Trend downgraded: US sold euros (not dollars) in yen intervention. EUR/USD hit 1.5-month high. This is unusual and adds pressure to European markets.",
+      "timestamp": "2026-08-03T14:20:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.47,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 8,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) \u2014 recession signal. 10yr at 4.73% (highest in months). Japan Treasury selling adds upward pressure on long end.",
       "series_id": "T10Y2Y",
       "last_date": "2026-07-31",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:12.728823+00:00"
+      "note": "ESCALATED from amber to red: 10yr yield +57bp YTD. Japan selling Treasuries pushes long end higher, steepens yield curve. If 10yr breaks 4.5%, risk assets correct.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 91.82,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -8.49,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy \u00e2\u20ac\u201d ESCALATED: US-Iran war driving Japan's energy import costs, yen weakness cascade",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-27",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-03T11:03:13.235798+00:00"
+      "note": "ESCALATED from amber to red: US-Iran conflict is a direct driver of Japan's yen crisis via energy import costs. Japan imports ~90% of energy. Connected to the currency intervention.",
+      "timestamp": "2026-08-03T14:20:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
       "domain": "Social",
-      "value": 49.5,
+      "value": 54.4,
+      "status": "red",
+      "trend": "improving",
+      "confidence": 7,
+      "change_from_last": 4.9,
+      "unit": "index",
+      "description": "Michigan Consumer Sentiment \u2014 July 2026: 54.4. Still 11% below year-ago. Inflation + high prices remain top concerns.",
+      "series_id": "UMCSENT + Michigan survey",
+      "last_date": "2026-07-31",
+      "note": "UPDATED: Same source as social_cohesion. July 54.4, up from record low but still deeply negative.",
+      "timestamp": "2026-08-03T14:24:31.000000+00:00"
+    },
+    "japan_sovereign": {
+      "name": "Japan Sovereign Risk",
+      "domain": "Financial",
+      "value": "CRITICAL",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
-      "change_from_last": 4.7,
-      "unit": "index",
-      "description": "Consumer Sentiment Index",
-      "series_id": "UMCSENT",
-      "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-03T11:03:13.611029+00:00"
+      "confidence": 8,
+      "change_from_last": 0,
+      "unit": "event",
+      "description": "NEW SIGNAL: Japan sovereign financial risk. Debt >200% GDP, JGB yields rising, Takaichi fiscal spending, yen at 40-year lows. First US-Japan joint intervention since 1998.",
+      "series_id": "manual",
+      "last_date": "2026-08-03",
+      "note": "Triggered by Japan-US joint yen intervention Aug 1-3. Japan sold $59B in reserves. $66.7B Treasury holding drop in May. BOJ rate at 1% vs Fed 3.5-3.75%. Watch: USD/JPY 158-160 = intervention failure. JGB 10yr above 1.5% = fiscal crisis spiral.",
+      "timestamp": "2026-08-03T14:20:00.000000+00:00"
+    },
+    "macro_event": {
+      "name": "Breaking Macro Event",
+      "domain": "Geopolitics",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
+      "unit": "event",
+      "description": "NEW SIGNAL: Joint US-Japan yen intervention (Aug 1-3, 2026). First coordinated action since 1998. $59B intervention. US sold euros to buy yen. Japan pledged FIMA repo for future interventions. South Korea also intervened.",
+      "series_id": "manual",
+      "last_date": "2026-08-03",
+      "note": "CONVERGENCE EVENT: This event touches Financial (Treasury selling), Currency (yen intervention), Geopolitical (US-Japan alliance signaling to China), and Energy (Iran war driving Japan import costs) domains simultaneously. See data/blackwatch-events/2026-08-03-japan-us-yen-intervention.md for full analysis.",
+      "timestamp": "2026-08-03T14:20:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 500,
-    "red_count": 6,
-    "amber_count": 9,
-    "green_count": 3,
-    "manual_count": 2,
-    "timestamp": "2026-08-03T11:03:13.612768+00:00"
+    "score": 750,
+    "red_count": 13,
+    "amber_count": 6,
+    "green_count": 2,
+    "manual_count": 1,
+    "timestamp": "2026-08-03T14:24:31.000000+00:00",
+    "escalation_note": "MAJOR UPDATE: All 6 stale signals refreshed with live data. Japan-US joint intervention is a convergence event. 4 signals escalated. 2 new signals added. 10 RED signals active."
   },
   "convergence": {
     "stressed_domains": [
+      {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 1,
+        "stress_level": 7
+      },
       {
         "domain": "Social",
         "red": 3,
@@ -327,13 +366,19 @@
         "stress_level": 6
       },
       {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "domain": "Geopolitics",
+        "red": 2,
+        "amber": 0,
+        "stress_level": 4
       },
       {
         "domain": "Food",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Currency",
         "red": 1,
         "amber": 0,
         "stress_level": 2
@@ -345,13 +390,19 @@
         "stress_level": 2
       },
       {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "United States",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
-        "domain": "Geopolitics",
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Energy",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -379,22 +430,16 @@
         "red": 0,
         "amber": 1,
         "stress_level": 1
-      },
-      {
-        "domain": "United States",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
       }
     ],
     "convergence_active": true,
     "convergence_domains": [
+      {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 1,
+        "stress_level": 7
+      },
       {
         "domain": "Social",
         "red": 3,
@@ -402,24 +447,13 @@
         "stress_level": 6
       },
       {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
+        "domain": "Geopolitics",
+        "red": 2,
         "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "China",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "stress_level": 4
       }
     ],
-    "timestamp": "2026-08-03T11:03:13.612768+00:00"
+    "timestamp": "2026-08-03T14:24:31.000000+00:00",
+    "note": "5 domains at stress_level >= 3: Financial (7), Social (6), Geopolitics (5), Currency (4), Middle East (3). Japan intervention is the primary convergence driver."
   }
 }

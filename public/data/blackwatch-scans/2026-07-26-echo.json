@@ -1,0 +1,128 @@
+{
+  "scan_date": "2026-07-26",
+  "scan_time_utc": "2026-07-26T05:34:00Z",
+  "scan_time_ist": "2026-07-26T06:34:00+01:00",
+  "scan_type": "daily_echo",
+  "overall_risk": {
+    "level": "CRITICAL",
+    "score": 556,
+    "red_count": 8,
+    "amber_count": 9,
+    "green_count": 2,
+    "info_count": 1
+  },
+  "convergence": {
+    "active": true,
+    "domains": ["Social", "Financial", "Food", "Climate", "China"],
+    "alert_count": 4
+  },
+  "signal_count": 20,
+  "top_drivers": [
+    {
+      "rank": 1,
+      "driver": "US-Iran / Strait of Hormuz Crisis",
+      "detail": "Oil at $90+, Houthis attacking Saudi Arabia, blockade in effect, ECB September hike priced 70%"
+    },
+    {
+      "rank": 2,
+      "driver": "Gold at $4,066 - Institutional Safe-Haven Flight",
+      "detail": "Record territory, range $4,021-$4,082, institutional hedging accelerating"
+    },
+    {
+      "rank": 3,
+      "driver": "China Economic Slowdown",
+      "detail": "Q2 GDP 4.3% (down from 5%), retail declining, property downturn, local gov stress"
+    },
+    {
+      "rank": 4,
+      "driver": "Social Cohesion Erosion",
+      "detail": "Three social signals red, Gen Z protests, Berlin parade attack, 120+ global protests"
+    },
+    {
+      "rank": 5,
+      "driver": "Credit Market Stress Building",
+      "detail": "Tech IG spreads 89bps (from 76bps), Big Tech debt flooding, credit derivatives volume up"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "Hormuz Pause Holds - Managed Deterrence",
+      "probability": 25,
+      "confidence": 5,
+      "inverse": "Hormuz Pause Breaks - Full Escalation"
+    },
+    {
+      "name": "Oil Spike Triggers VIX Catch-Up",
+      "probability": 30,
+      "confidence": 7,
+      "inverse": "Oil vol normalizes without equity transmission"
+    },
+    {
+      "name": "China Hard Landing",
+      "probability": 15,
+      "confidence": 5,
+      "inverse": "China stimulus pivot"
+    },
+    {
+      "name": "Credit Event - Big Tech AI Capex Reckoning",
+      "probability": 12,
+      "confidence": 4,
+      "inverse": "AI revenue materializes, spreads compress"
+    },
+    {
+      "name": "Social Fracture Event - Multi-Domain Unrest",
+      "probability": 18,
+      "confidence": 5,
+      "inverse": "Social cohesion stabilizes"
+    }
+  ],
+  "risk_ranked": [
+    {"rank": 1, "risk": "Hormuz escalation to oil $100+", "impact": "CRITICAL", "confidence": 8, "score": 8.0},
+    {"rank": 2, "risk": "VIX catch-up to equity correction", "impact": "HIGH", "confidence": 7, "score": 7.0},
+    {"rank": 3, "risk": "Social unrest multi-domain", "impact": "HIGH", "confidence": 5, "score": 5.0},
+    {"rank": 4, "risk": "China hard landing H2", "impact": "HIGH", "confidence": 5, "score": 5.0},
+    {"rank": 5, "risk": "Credit event Big Tech", "impact": "HIGH", "confidence": 4, "score": 4.0},
+    {"rank": 6, "risk": "Cyber escalation state-level", "impact": "HIGH", "confidence": 4, "score": 4.0},
+    {"rank": 7, "risk": "ECB rate hike to EU recession", "impact": "MEDIUM", "confidence": 6, "score": 4.8},
+    {"rank": 8, "risk": "Food price re-acceleration", "impact": "MEDIUM", "confidence": 5, "score": 4.0},
+    {"rank": 9, "risk": "AI regulatory crackdown", "impact": "MEDIUM", "confidence": 4, "score": 3.2},
+    {"rank": 10, "risk": "RMB devaluation cascade", "impact": "MEDIUM", "confidence": 3, "score": 2.4}
+  ],
+  "recursive_intelligence_score": {
+    "evidence": 7,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 7,
+    "overall": 7.2
+  },
+  "key_data_points": {
+    "gold_usd": 4066.38,
+    "brent_oil_usd": 90.47,
+    "btc_usd": 64378,
+    "vix": 18.7,
+    "oil_vol": 60.02,
+    "move_index": 70.88,
+    "ecb_rate": 2.25,
+    "us_yield_curve_10y2y": 0.36,
+    "china_q2_gdp": 4.3,
+    "us_hy_oas": 2.77,
+    "tech_ig_spreads_bps": 89,
+    "food_price_index": 131.17,
+    "consumer_sentiment": 44.8,
+    "institutional_trust_pct": 30,
+    "us_debt_gdp_pct": 122.59
+  },
+  "ireland_specific": {
+    "energy_import_dependency_pct": 70,
+    "grid_vulnerability": "HIGH (data center load + gas dependency)",
+    "ecb_rate_impact": "Direct - mortgage rates, property market",
+    "social_lag_weeks": "4-8 (behind UK/France trends)"
+  },
+  "files": {
+    "markdown": "data/blackwatch-scans/2026-07-26-echo.md",
+    "json": "data/blackwatch-scans/2026-07-26-echo.json",
+    "signals": "data/blackwatch-signals.json"
+  }
+}

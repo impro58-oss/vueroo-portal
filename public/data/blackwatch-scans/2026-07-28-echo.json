@@ -1,0 +1,113 @@
+{
+  "scan_date": "2026-07-28",
+  "scan_time": "06:45 IST / 05:45 UTC",
+  "scan_type": "daily_echo",
+  "analyst": "Lumina",
+  "overall_risk": {
+    "level": "CRITICAL",
+    "score": 556,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 2,
+    "info_count": 2
+  },
+  "signal_count": 20,
+  "convergence_alerts": [
+    {
+      "name": "Social Fracture Convergence",
+      "severity": "HIGH",
+      "domains": ["Social Cohesion", "Institutional Trust", "Public Sentiment"],
+      "description": "Three social-domain indicators in red. Global protests spreading. Trust at 30% and deteriorating."
+    },
+    {
+      "name": "Stagflation Supply Chain Convergence",
+      "severity": "MEDIUM-HIGH",
+      "domains": ["Energy", "Food Security", "Supply Chain", "Middle East Tension"],
+      "description": "Oil at $87, food index at 131, Hormuz crisis ongoing. US-Iran pause reduced oil 10% but $100 expectations remain."
+    },
+    {
+      "name": "Safe Haven Flight Convergence",
+      "severity": "MEDIUM",
+      "domains": ["Gold", "Sovereign Debt", "Crypto"],
+      "description": "Gold at $4,079/oz (+23% YoY), sovereign debt at 122.59% GDP, BTC at $63,475. Capital hedging systemic risk."
+    },
+    {
+      "name": "China Contraction Convergence",
+      "severity": "MEDIUM",
+      "domains": ["China Health", "Energy", "Supply Chain"],
+      "description": "China losing momentum: car sales -23%, property downturn, exports moderating. Beijing avoiding broad stimulus."
+    }
+  ],
+  "primary_drivers": [
+    "US-Iran Conflict Pause / Hormuz Crisis",
+    "Trump Fresh Tariff Blitz (60 countries)",
+    "Gold at $4,079 — Safe Haven Flight",
+    "China Contraction",
+    "AI Regulatory and Capex Inflection"
+  ],
+  "scenarios": [
+    {
+      "name": "De-escalation Window",
+      "probability": "20%",
+      "confidence": "MEDIUM",
+      "inverse": "Full escalation resumption"
+    },
+    {
+      "name": "Tariff Escalation Cascade",
+      "probability": "35%",
+      "confidence": "MEDIUM-HIGH",
+      "inverse": "Tariffs prove to be negotiation leverage"
+    },
+    {
+      "name": "Hormuz Resumption + Stagflation",
+      "probability": "15%",
+      "confidence": "MEDIUM",
+      "inverse": "Diplomatic breakthrough and lasting ceasefire"
+    },
+    {
+      "name": "AI Capex Repricing",
+      "probability": "15%",
+      "confidence": "LOW-MEDIUM",
+      "inverse": "AI earnings exceed expectations"
+    },
+    {
+      "name": "China Hard Landing",
+      "probability": "15%",
+      "confidence": "MEDIUM",
+      "inverse": "Comprehensive stimulus package announced"
+    }
+  ],
+  "top_risks": [
+    {"rank": 1, "risk": "Trump tariff escalation → trade war", "probability": "65%", "impact": "HIGH", "time_horizon": "1-3 months"},
+    {"rank": 2, "risk": "Hormuz resumption → oil spike", "probability": "30%", "impact": "CRITICAL", "time_horizon": "0-3 months"},
+    {"rank": 3, "risk": "China hard landing → global demand shock", "probability": "25%", "impact": "HIGH", "time_horizon": "3-6 months"},
+    {"rank": 4, "risk": "AI capex repricing → tech correction", "probability": "20%", "impact": "MEDIUM-HIGH", "time_horizon": "1-6 months"},
+    {"rank": 5, "risk": "ECB overtightening → EU recession", "probability": "35%", "impact": "MEDIUM", "time_horizon": "3-9 months"}
+  ],
+  "recommended_preparations": [
+    "Review gold allocation (5-10% if not holding)",
+    "Monitor Trump EU tariff implementation timeline",
+    "Consider fixing energy rates (Ireland 85% energy import dependent)",
+    "Diversify cash holdings across EUR/USD/GBP",
+    "Review investment portfolio for US-EU trade exposure",
+    "Consider trimming tech exposure (credit spreads widening)",
+    "Review supply chain single-source dependencies on Hormuz routes",
+    "Consider fixing mortgage rates if variable (ECB Sept hike 70% priced)"
+  ],
+  "recursive_intelligence_score": {
+    "evidence": 7,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 7,
+    "composite": 7.2
+  },
+  "data_sources": {
+    "fred_api": "19 auto signals (3 failures: gold, Baltic Dry, China PMI)",
+    "manual_signals": "8/9 fetched via multi-source connector",
+    "web_searches": 12,
+    "gold_price": "$4,079.06/oz (web-sourced from goldpricez.com)"
+  },
+  "next_scan": "2026-07-29 06:30 IST"
+}

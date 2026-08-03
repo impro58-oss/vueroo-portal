@@ -1,0 +1,88 @@
+{
+  "scan_id": "2026-07-18-echo",
+  "scan_type": "daily_echo",
+  "scan_time": "2026-07-18T06:34:00+01:00",
+  "scan_time_utc": "2026-07-18T05:34:00Z",
+  "operator": "Lumina",
+  "signal_board": {
+    "overall_risk": "CRITICAL",
+    "score": 556,
+    "red_count": 8,
+    "amber_count": 9,
+    "green_count": 2,
+    "info_count": 1,
+    "convergence_active": true,
+    "convergence_domains": ["Social", "Financial", "Food", "Climate", "China", "Energy", "Geopolitics"]
+  },
+  "key_findings": {
+    "primary_driver": "US-Iran War: 7th consecutive night of strikes, Hormuz near-halt",
+    "secondary_driver": "China Q2 GDP 4.3% — weakest in 3+ years, below target",
+    "tertiary_driver": "Safe haven rotation: Gold $4,017, Treasuries rallying, VIX +11%",
+    "market_state": "S&P -0.6%, Nasdaq -1.5%, VIX +11%, Brent $82.47, Gold $4,017, 10Y 4.545%",
+    "geopolitical_state": "Active conflict: US-Iran, Hormuz blockade, Kuwait infrastructure targeting",
+    "cyber_state": "Elevated — DHS breach, ShinyHunters active, SAP CVSS 9.9 vulnerability",
+    "social_state": "Red across all 3 social indicators (cohesion, trust, sentiment)",
+    "economic_state": "ECB at 2.25%, China slowing, US yield curve slightly positive (0.37%)"
+  },
+  "scenarios": [
+    {
+      "name": "Hormuz Full Closure — Escalation",
+      "probability": 0.15,
+      "confidence": 0.6,
+      "severity": "CRITICAL",
+      "triggers": ["Iran sinking US naval vessel", "Iran mining Hormuz", "Khamenei order for full closure"]
+    },
+    {
+      "name": "Grinding Stalemate — New Normal",
+      "probability": 0.45,
+      "confidence": 0.7,
+      "severity": "MEDIUM",
+      "triggers": ["Pattern persistence >2 weeks", "no new escalation", "markets stabilize"]
+    },
+    {
+      "name": "Credit Market Event",
+      "probability": 0.12,
+      "confidence": 0.5,
+      "severity": "HIGH",
+      "triggers": ["CCC OAS >15%", "private credit fund redemption gating", "BBB spread >200bp"]
+    },
+    {
+      "name": "China Hard Landing",
+      "probability": 0.10,
+      "confidence": 0.5,
+      "severity": "HIGH",
+      "triggers": ["Home prices >10% decline MoM", "RMB >7.50", "major developer default"]
+    },
+    {
+      "name": "Diplomatic Breakthrough",
+      "probability": 0.18,
+      "confidence": 0.5,
+      "severity": "POSITIVE",
+      "triggers": ["Iran signals via intermediary", "US pauses strikes 48h", "UNSC resolution"]
+    }
+  ],
+  "top_risks": [
+    {"rank": 1, "name": "Hormuz Complete Closure", "severity": "CRITICAL", "probability": 0.15, "confidence": 0.6},
+    {"rank": 2, "name": "Credit Market Event", "severity": "HIGH", "probability": 0.12, "confidence": 0.5},
+    {"rank": 3, "name": "Iran Proxy Activation", "severity": "HIGH", "probability": 0.20, "confidence": 0.5},
+    {"rank": 4, "name": "China Hard Landing", "severity": "HIGH", "probability": 0.10, "confidence": 0.5},
+    {"rank": 5, "name": "Social Unrest Cascade", "severity": "MEDIUM", "probability": 0.25, "confidence": 0.4}
+  ],
+  "recommended_actions": {
+    "immediate": ["Top up vehicle fuel", "Review investment portfolio for energy/China exposure", "Consider EUR/USD hedging if USD expenses planned"],
+    "short_term": ["Budget for 10-15% energy bill increase", "Expect Asia shipping delays", "Stock non-perishables gradually", "Update passwords and enable 2FA"],
+    "medium_term": ["Monitor ECB July 23 meeting", "Review business interruption insurance", "Wait for gold pullback to $3,700-3,800 for entry"],
+    "strategic": ["Accelerate solar/heat pump installation", "Map Iran war supply chain exposure", "Invest in cybersecurity/AI skills"]
+  },
+  "recursive_intelligence_score": {
+    "evidence": 7,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 8,
+    "overall": 7.3
+  },
+  "data_sources": ["FRED API", "CoinGecko API", "Trading Economics", "NYT", "AP", "ISW", "CNBC", "Bloomberg", "Guardian", "CSIS", "Haaretz", "CNN", "Reuters", "Wikipedia"],
+  "next_scan": "2026-07-19T06:30:00+01:00"
+}

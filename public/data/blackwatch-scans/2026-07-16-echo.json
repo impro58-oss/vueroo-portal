@@ -1,0 +1,115 @@
+{
+  "scan_metadata": {
+    "date": "2026-07-16",
+    "scan_time": "06:34 IST / 05:34 UTC",
+    "scan_type": "Daily Echo Scan",
+    "analyst": "Lumina",
+    "protocol": "BlackWatch Echo Scan v2.0"
+  },
+  "overall_risk": {
+    "level": "CRITICAL",
+    "score": 556,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 2,
+    "info_count": 1,
+    "unavailable_count": 1
+  },
+  "signal_count": 20,
+  "convergence_alerts": [
+    {
+      "name": "Social Fragmentation Cascade",
+      "domains": ["Social Cohesion", "Institutional Trust", "Public Sentiment"],
+      "stress_level": 6,
+      "confidence": 8,
+      "description": "Three social-domain RED indicators. 120+ global protests. Albania Flamingo Revolution, PoK unrest, Tibetan protests."
+    },
+    {
+      "name": "Sovereign + Climate + Food Triple Stress",
+      "domains": ["Sovereign Debt", "Climate Stress", "Food Security"],
+      "stress_level": 7,
+      "confidence": 8,
+      "description": "High debt limits climate adaptation. Climate drives food inflation (131.17). Food inflation feeds social unrest."
+    },
+    {
+      "name": "Energy-Geopolitics-Supply Chain Triad",
+      "domains": ["Energy Security", "Middle East Tension", "Supply Chain", "Geopolitical"],
+      "stress_level": 3,
+      "confidence": 9,
+      "description": "US-Iran war active. Hormuz Day 137. US naval blockade. Oil $81.62/bbl and rising."
+    }
+  ],
+  "primary_drivers": [
+    {"rank": 1, "driver": "US-Iran Active War & Hormuz Crisis", "confidence": 10},
+    {"rank": 2, "driver": "China Economic Deceleration (Q2 GDP 4.3%)", "confidence": 9},
+    {"rank": 3, "driver": "Social Cohesion Erosion (3 RED social indicators)", "confidence": 7},
+    {"rank": 4, "driver": "Sovereign Debt Constraint (122.59% GDP)", "confidence": 8},
+    {"rank": 5, "driver": "Credit Market Pricing Disconnect (HY OAS 269bps)", "confidence": 7}
+  ],
+  "scenarios": [
+    {
+      "name": "Hormuz Escalation - Oil Crisis 2.0",
+      "probability": 20,
+      "confidence": 6,
+      "triggers": ["IRGC mining operations", "Major vessel sinking", "US strikes Bandar Abbas", "Iran closes strait formally"]
+    },
+    {
+      "name": "Market Repricing - Credit Shock",
+      "probability": 15,
+      "confidence": 7,
+      "triggers": ["HY OAS breaks 350bps", "PE portfolio collapse", "US sovereign downgrade", "Iran escalation", "China yuan devaluation"]
+    },
+    {
+      "name": "De-escalation & Deal - Iran Ceasefire 2.0",
+      "probability": 25,
+      "confidence": 5,
+      "triggers": ["Iran diplomatic signal intensifies", "US domestic pressure", "China mediates", "Russia offers off-ramp"]
+    },
+    {
+      "name": "China Hard Landing",
+      "probability": 15,
+      "confidence": 5,
+      "triggers": ["Q3 GDP below 3.5%", "Property defaults accelerate", "Yuan breaks 7.50/USD", "PBOC emergency easing"]
+    },
+    {
+      "name": "Social Contagion - Multi-State Crisis",
+      "probability": 10,
+      "confidence": 4,
+      "triggers": ["Albanian government falls", "PoK unrest spreads", "3+ simultaneous crises", "Social media coordination"]
+    }
+  ],
+  "key_observations": {
+    "gold_price_usd": 4063,
+    "oil_brent_usd": 81.62,
+    "sp500": 7574,
+    "vix": 16.5,
+    "btc_usd": 64878,
+    "china_q2_gdp": 4.3,
+    "us_iran_war_status": "Active - second wave of strikes, naval blockade, IRGC counterstrikes",
+    "hormuz_status": "Day 137 of crisis, US blockade in effect, UN warning ships",
+    "nato_summit": "Ankara July 7-8, kicked the can, no strategic realignment",
+    "uk_india_fta": "In force July 15, 2026 - 99% Indian goods duty-free to UK",
+    "albania_protests": "Flamingo Revolution Week 8, threatens PM Rama government"
+  },
+  "recursive_intelligence_score": {
+    "evidence": 8,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 8,
+    "overall": 7.5
+  },
+  "fred_api_failures": [
+    "GOLDAMGBD228NLBM",
+    "GOLDPMGBD228NLBM", 
+    "CASSFREIGHTINDEX",
+    "CHNPMIINDXM"
+  ],
+  "files_written": [
+    "data/blackwatch-scans/2026-07-16-echo.md",
+    "data/blackwatch-scans/2026-07-16-echo.json",
+    "data/blackwatch-signals.json",
+    "vueroo-portal/public/data/blackwatch-signals.json"
+  ]
+}

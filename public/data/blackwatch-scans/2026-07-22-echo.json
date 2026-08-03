@@ -1,0 +1,106 @@
+{
+  "scan_id": "2026-07-22-echo",
+  "scan_type": "daily_echo",
+  "generated_at": "2026-07-22T05:34:00Z",
+  "generated_at_local": "2026-07-22T06:34:00+01:00",
+  "overall_risk": "CRITICAL",
+  "risk_score": 556,
+  "signal_counts": {
+    "red": 7,
+    "amber": 9,
+    "green": 2,
+    "manual": 2,
+    "total": 20
+  },
+  "convergence": {
+    "active": true,
+    "domains": ["Social", "Financial", "Food", "Climate", "China"],
+    "alerts": [
+      {
+        "name": "Social Fragmentation Cascade",
+        "stress_level": 6,
+        "domains": ["Social Cohesion", "Institutional Trust", "Public Sentiment"]
+      },
+      {
+        "name": "Energy-Geopolitical Feedback Loop",
+        "stress_level": 3,
+        "domains": ["Energy", "Middle East", "Supply Chain", "Geopolitics"]
+      },
+      {
+        "name": "Financial-Climate-Food Triangle",
+        "stress_level": 6,
+        "domains": ["Sovereign Debt", "Food Security", "Climate"]
+      }
+    ]
+  },
+  "primary_drivers": [
+    "US-Iran War Escalation (11 nights of strikes)",
+    "Houthi Saudi Blockade (tankers reversing)",
+    "Global Social Erosion (3 social signals RED)",
+    "China Economic Deceleration (Q2 GDP 4.3%)",
+    "Fiscal Space Exhaustion (US Debt 122.59% GDP)"
+  ],
+  "scenarios": [
+    {
+      "name": "Controlled Escalation",
+      "probability": 0.45,
+      "confidence": 0.6
+    },
+    {
+      "name": "Horizontal Escalation - Hormuz Closure",
+      "probability": 0.20,
+      "confidence": 0.5
+    },
+    {
+      "name": "Social Chain Reaction",
+      "probability": 0.15,
+      "confidence": 0.4
+    },
+    {
+      "name": "Cyber Crisis Catalyst",
+      "probability": 0.12,
+      "confidence": 0.5
+    },
+    {
+      "name": "De-escalation Breakthrough",
+      "probability": 0.08,
+      "confidence": 0.3
+    }
+  ],
+  "top_risks": [
+    {"rank": 1, "risk": "Oil price spike to $100+", "confidence": 7, "probability": "25-30%", "timeframe": "2-6 weeks"},
+    {"rank": 2, "risk": "Iran war expansion", "confidence": 6, "probability": "15-20%", "timeframe": "1-4 weeks"},
+    {"rank": 3, "risk": "Global recession from energy shock", "confidence": 5, "probability": "20%", "timeframe": "3-6 months"},
+    {"rank": 4, "risk": "Cyber attack on critical infrastructure", "confidence": 5, "probability": "12-15%", "timeframe": "Ongoing"},
+    {"rank": 5, "risk": "Social unrest cascade", "confidence": 4, "probability": "15%", "timeframe": "2-6 months"}
+  ],
+  "key_metrics": {
+    "gold_usd_oz": 4076.75,
+    "brent_usd_bbl": 84.29,
+    "sp500": 7505,
+    "btc_usd": 66039,
+    "ecb_rate": 2.25,
+    "us_10y_2y_spread": 0.37,
+    "china_q2_gdp": 4.3,
+    "eurozone_inflation": 2.8,
+    "us_hy_oas": 2.69,
+    "us_debt_gdp": 122.59,
+    "food_price_index": 131.17,
+    "climate_anomaly_c": 1.11,
+    "consumer_sentiment": 44.8,
+    "institutional_trust_pct": 30
+  },
+  "recursive_intelligence_score": {
+    "evidence": 8,
+    "logic": 7,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 8,
+    "overall": 7.3
+  },
+  "files": {
+    "markdown": "data/blackwatch-scans/2026-07-22-echo.md",
+    "json": "data/blackwatch-scans/2026-07-22-echo.json"
+  }
+}

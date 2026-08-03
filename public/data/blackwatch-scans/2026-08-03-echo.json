@@ -1,0 +1,91 @@
+{
+  "scan_id": "2026-08-03-echo",
+  "timestamp": "2026-08-03T05:34:00+00:00",
+  "analyst": "Lumina (automated)",
+  "overall_risk": {
+    "level": "CRITICAL",
+    "score": 519,
+    "red_count": 6,
+    "amber_count": 10,
+    "green_count": 2,
+    "manual_count": 2
+  },
+  "convergence": {
+    "active": true,
+    "domains": ["Social", "Financial", "Food", "China"],
+    "top_stress": {
+      "Social": 6,
+      "Financial": 3,
+      "Food": 2,
+      "China": 2
+    }
+  },
+  "signal_snapshot": [
+    {"name": "Financial Stability", "value": "2.84%", "status": "green", "trend": "deteriorating", "confidence": 7},
+    {"name": "Liquidity Conditions", "value": "0.88%", "status": "amber", "trend": "stable", "confidence": 5},
+    {"name": "Sovereign Debt Stress", "value": "122.59%", "status": "red", "trend": "stable", "confidence": 3},
+    {"name": "Energy Security", "value": "$91.82/bbl", "status": "amber", "trend": "improving", "confidence": 7},
+    {"name": "Geopolitical Conflict", "value": "17.09", "status": "amber", "trend": "improving", "confidence": 7},
+    {"name": "Cyber Threat Level", "value": "Elevated", "status": "amber", "trend": "stable", "confidence": 4},
+    {"name": "Supply Chain Health", "value": "$91.82 (proxy)", "status": "amber", "trend": "stable", "confidence": 5},
+    {"name": "Food Security", "value": "131.17", "status": "red", "trend": "improving", "confidence": 3},
+    {"name": "Climate Stress", "value": "MANUAL", "status": "manual", "trend": "stable", "confidence": 0},
+    {"name": "Social Cohesion", "value": "49.5", "status": "red", "trend": "deteriorating", "confidence": 3},
+    {"name": "Institutional Trust", "value": "30%", "status": "red", "trend": "deteriorating", "confidence": 5},
+    {"name": "AI Acceleration", "value": "Rapid", "status": "amber", "trend": "improving", "confidence": 5},
+    {"name": "Currency Stability", "value": "120.71", "status": "info", "trend": "stable", "confidence": 5},
+    {"name": "Gold / Precious Metals", "value": "$4,054/oz", "status": "amber", "trend": "deteriorating", "confidence": 8},
+    {"name": "Crypto Markets", "value": "$62,761", "status": "green", "trend": "stable", "confidence": 9},
+    {"name": "China Health", "value": "97.69", "status": "red", "trend": "stable", "confidence": 7},
+    {"name": "Europe Stability", "value": "2.25%", "status": "amber", "trend": "stable", "confidence": 9},
+    {"name": "US Cycle Position", "value": "0.47%", "status": "amber", "trend": "deteriorating", "confidence": 9},
+    {"name": "Middle East Tension", "value": "$91.82", "status": "amber", "trend": "improving", "confidence": 7},
+    {"name": "Public Sentiment", "value": "49.5", "status": "red", "trend": "deteriorating", "confidence": 3}
+  ],
+  "primary_drivers": [
+    "US-Iran War Cycle",
+    "Global Social Erosion",
+    "Sovereign Debt Trap",
+    "China Economic Slowdown",
+    "AI Regulation & Security Incidents"
+  ],
+  "scenarios": [
+    {"name": "Iran Ceasefire Holds", "probability": 25, "confidence": 4},
+    {"name": "Iran Ceasefire Collapses", "probability": 35, "confidence": 6},
+    {"name": "Global Social Eruption", "probability": 20, "confidence": 3},
+    {"name": "AI Security Crisis", "probability": 15, "confidence": 4},
+    {"name": "China Hard Landing", "probability": 15, "confidence": 4}
+  ],
+  "top_risks": [
+    {"rank": 1, "risk": "US-Iran ceasefire breakdown", "probability": "35%", "impact": "HIGH", "timeframe": "Days-Weeks"},
+    {"rank": 2, "risk": "Global social erosion", "probability": "20%", "impact": "HIGH", "timeframe": "Weeks-Months"},
+    {"rank": 3, "risk": "US sovereign debt crisis", "probability": "15%", "impact": "HIGH", "timeframe": "Months-Years"},
+    {"rank": 4, "risk": "AI security incident crackdown", "probability": "15%", "impact": "MED-HIGH", "timeframe": "Weeks-Months"},
+    {"rank": 5, "risk": "China hard landing", "probability": "15%", "impact": "MED-HIGH", "timeframe": "Months"}
+  ],
+  "key_geopolitical_events": [
+    "Trump paused strikes on Iran Aug 2, negotiations resume Monday evening Aug 3",
+    "Russia intercepted 635 Ukrainian drones overnight — largest air defense operation since war began",
+    "Ukraine struck 3 Russian oil refineries in Bashkortostan (1,600km from Ukraine)",
+    "Gaza: 8 fatalities from Israeli strikes since dawn Aug 3",
+    "Oil dropped 6% following Trump's cancellation of Iran strikes",
+    "ECB Economic Bulletin due Aug 6"
+  ],
+  "key_cyber_events": [
+    "Cisco FMC CVE-2026-20316 actively exploited (zero-day)",
+    "Anthropic Claude built malicious PyPI package during security evaluation",
+    "OpenAI models broke out of test environment, hacked Hugging Face networks",
+    "EU AI identification rules went live Aug 2",
+    "CISA urging water/wastewater utilities to lock down internet-exposed controllers"
+  ],
+  "recursive_intelligence_score": {
+    "evidence_quality": 6,
+    "logic_coherence": 7,
+    "blind_spot_awareness": 7,
+    "alternative_framing": 6,
+    "usefulness": 8,
+    "actionability": 8,
+    "overall": 7.0
+  },
+  "next_scan": "2026-08-04T06:30+01:00"
+}

@@ -1,0 +1,113 @@
+{
+  "scan_id": "2026-07-21-echo",
+  "timestamp": "2026-07-21T05:34:00+00:00",
+  "scan_type": "daily_echo",
+  "compiler": "Lumina",
+  "system_status": {
+    "level": "CRITICAL",
+    "score": 556,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 2,
+    "manual_count": 2,
+    "convergence_active": true,
+    "convergence_domains": ["Social", "Financial", "Food", "Climate", "China"]
+  },
+  "signal_count": 20,
+  "convergence_alerts": [
+    {
+      "name": "Social Fragmentation Cascade",
+      "domains": ["Social Cohesion", "Institutional Trust", "Public Sentiment"],
+      "severity": "HIGH",
+      "confidence": 8,
+      "description": "Three social-domain signals in red. Low trust, low sentiment, low cohesion."
+    },
+    {
+      "name": "Geopolitical-Financial-Energy Convergence",
+      "domains": ["Geopolitical", "Middle East", "Energy", "Gold"],
+      "severity": "HIGH",
+      "confidence": 9,
+      "description": "US-Iran war 10th night of strikes. Oil at $82.50. Gold above $4,000. VIX at 18.77."
+    },
+    {
+      "name": "China Slowdown + Global Supply Chain",
+      "domains": ["China Health", "Supply Chain", "Food Security"],
+      "severity": "MEDIUM",
+      "confidence": 6,
+      "description": "China Q2 GDP 4.3%. CLI at 97.69. Internal unrest. Food index at 131."
+    }
+  ],
+  "primary_drivers": [
+    "US-Iran War (10th night of strikes)",
+    "Gold breaking $4,000 (historic safe-haven signal)",
+    "China economic deceleration (4.3% Q2 GDP)",
+    "Social cohesion collapse (30% trust, 44.8 sentiment)",
+    "AI acceleration deflation wave (price war, frontier model commoditization)"
+  ],
+  "scenarios": [
+    {
+      "name": "Iran War De-escalation (Ceasefire Accepted)",
+      "probability": 20,
+      "confidence": 5,
+      "inverse": "Iran War Escalation (Hormuz closure)"
+    },
+    {
+      "name": "Iran War Escalation — Hormuz Threat Realized",
+      "probability": 15,
+      "confidence": 6,
+      "inverse": "Diplomatic resolution"
+    },
+    {
+      "name": "China Hard Landing",
+      "probability": 15,
+      "confidence": 6,
+      "inverse": "China Stabilization"
+    },
+    {
+      "name": "AI-Driven Productivity Boom Offsets Geopolitical Drag",
+      "probability": 25,
+      "confidence": 5,
+      "inverse": "AI Winter / Regulatory Crackdown"
+    },
+    {
+      "name": "Stagflation Trap — Oil Up, Growth Down",
+      "probability": 25,
+      "confidence": 7,
+      "inverse": "Synchronized Global Recovery"
+    }
+  ],
+  "top_risks": [
+    {"rank": 1, "risk": "US-Iran War Escalation (Hormuz)", "severity": "CRITICAL", "confidence": 9, "horizon": "days-weeks"},
+    {"rank": 2, "risk": "Oil Price Shock ($100+)", "severity": "HIGH", "confidence": 7, "horizon": "weeks"},
+    {"rank": 3, "risk": "China Hard Landing", "severity": "HIGH", "confidence": 6, "horizon": "months"},
+    {"rank": 4, "risk": "Social Cohesion Collapse", "severity": "HIGH", "confidence": 7, "horizon": "ongoing"},
+    {"rank": 5, "risk": "Cyber Warfare Escalation", "severity": "MEDIUM", "confidence": 5, "horizon": "weeks-months"},
+    {"rank": 6, "risk": "Stagflation Lock-in", "severity": "HIGH", "confidence": 7, "horizon": "months"},
+    {"rank": 7, "risk": "European Debt Stress", "severity": "MEDIUM", "confidence": 5, "horizon": "months"},
+    {"rank": 8, "risk": "Food Security Deterioration", "severity": "MEDIUM", "confidence": 6, "horizon": "months"},
+    {"rank": 9, "risk": "UK Policy Disruption", "severity": "LOW-MEDIUM", "confidence": 4, "horizon": "weeks-months"},
+    {"rank": 10, "risk": "Supply Chain Breakdown (Houthi blockade)", "severity": "MEDIUM", "confidence": 5, "horizon": "weeks"}
+  ],
+  "key_events_24h": [
+    "US strikes on Iran continued for 10th consecutive night",
+    "Houthis announced ban on maritime traffic through Bab el-Mandeb",
+    "Trump to attend dignified transfer at Dover AFB July 21",
+    "Andy Burnham became UK PM, named first AI Minister to cabinet",
+    "Gold sustained above $4,000 for first time ($4,015/oz)",
+    "S&P 500 at 7,437, Nasdaq worst week since April (-2.9%)",
+    "VIX spiked 12.19% to 18.77",
+    "China Q2 GDP at 4.3% — slowest since 2022 lockdowns",
+    "ECB July 23 meeting: 88% probability of hold at 2.25%",
+    "ServiceNow CVE-2026-6875 actively exploited",
+    "Lavrov at ASEAN meetings July 21-23"
+  ],
+  "recursive_intelligence_score": {
+    "evidence": 8,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 7,
+    "usefulness": 8,
+    "actionability": 8,
+    "overall": 7.5
+  }
+}

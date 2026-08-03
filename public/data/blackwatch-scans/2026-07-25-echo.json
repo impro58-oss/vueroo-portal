@@ -1,0 +1,112 @@
+{
+  "scan_date": "2026-07-25",
+  "scan_time": "06:34 IST / 05:34 UTC",
+  "scan_type": "daily_echo",
+  "conducted_by": "Lumina",
+  "overall_risk": {
+    "level": "CRITICAL",
+    "score": 556,
+    "red_count": 8,
+    "amber_count": 9,
+    "green_count": 2,
+    "info_count": 1
+  },
+  "signal_count": 20,
+  "convergence_alerts": [
+    {
+      "name": "Social Fragmentation Cascade",
+      "severity": "HIGH",
+      "domains": ["Social Cohesion", "Institutional Trust", "Public Sentiment", "Food Security"],
+      "description": "Three social-domain signals red, food insecurity as multiplier. Political instability risk elevated globally."
+    },
+    {
+      "name": "Currency Debasement Hedge Signal",
+      "severity": "HIGH",
+      "domains": ["Gold", "Sovereign Debt", "US Cycle Position", "Middle East Tension"],
+      "description": "Gold at $4,055/oz + 122.59% debt/GDP + yield curve flattening = structural debasement concern."
+    },
+    {
+      "name": "Energy-Geopolitical Feedback Loop",
+      "severity": "MEDIUM-HIGH",
+      "domains": ["Middle East Tension", "Energy Security", "Geopolitical Conflict", "Europe Stability"],
+      "description": "Iran rejected ceasefire. Oil at $87.88. ECB may hike September. Conflict-inflation cycle active."
+    }
+  ],
+  "primary_drivers": [
+    "US-Iran War Stalemate",
+    "Global Sovereign Debt Trajectory (122.59% GDP)",
+    "Social Cohesion Erosion (3 red signals)",
+    "China Economic Deceleration (Q2 GDP 4.3%)",
+    "AI Acceleration + Cyber Threat Escalation"
+  ],
+  "scenarios": [
+    {
+      "name": "Iran Ceasefire Breakthrough",
+      "probability": 0.20,
+      "confidence": 5,
+      "timeframe": "2-4 weeks"
+    },
+    {
+      "name": "European Stagflation Crystallizes",
+      "probability": 0.35,
+      "confidence": 6,
+      "timeframe": "3-6 months"
+    },
+    {
+      "name": "US Recession Signal Confirms",
+      "probability": 0.30,
+      "confidence": 5,
+      "timeframe": "6-12 months"
+    },
+    {
+      "name": "Multi-Front Middle East War Expansion",
+      "probability": 0.15,
+      "confidence": 5,
+      "timeframe": "1-4 weeks"
+    },
+    {
+      "name": "AI Security Crisis",
+      "probability": 0.10,
+      "confidence": 3,
+      "timeframe": "1-12 months"
+    }
+  ],
+  "top_risks": [
+    {"rank": 1, "risk": "Iran war escalation / oil supply disruption", "probability": "15-25%", "impact": "HIGH", "confidence": 6, "timeframe": "1-4 weeks"},
+    {"rank": 2, "risk": "European stagflation crystallizes", "probability": "35%", "impact": "HIGH", "confidence": 7, "timeframe": "3-6 months"},
+    {"rank": 3, "risk": "US recession signal confirms", "probability": "30%", "impact": "HIGH", "confidence": 5, "timeframe": "6-12 months"},
+    {"rank": 4, "risk": "Social unrest spreads (multi-country)", "probability": "20%", "impact": "MEDIUM", "confidence": 4, "timeframe": "1-6 months"},
+    {"rank": 5, "risk": "Sovereign debt crisis", "probability": "10%", "impact": "CRITICAL", "confidence": 3, "timeframe": "12-24 months"}
+  ],
+  "key_metrics": {
+    "gold_usd_oz": 4055.49,
+    "brent_oil_usd_bbl": 87.88,
+    "sp500": 7412,
+    "vix": 18.58,
+    "btc_usd": 64093,
+    "dxy": 101.35,
+    "ecb_rate": 2.25,
+    "us_yield_curve_10y2y": 0.36,
+    "us_hy_oas": 2.77,
+    "us_debt_gdp": 122.59,
+    "china_q2_gdp_yoy": 4.3,
+    "food_price_index": 131.17,
+    "consumer_sentiment": 44.8,
+    "institutional_trust_pct": 30,
+    "climate_anomaly_c": 1.11
+  },
+  "recursive_intelligence_score": {
+    "evidence": 7,
+    "logic": 8,
+    "blind_spots": 5,
+    "alternatives": 8,
+    "usefulness": 8,
+    "actionability": 7,
+    "overall": 7.2
+  },
+  "files": {
+    "markdown": "data/blackwatch-scans/2026-07-25-echo.md",
+    "json": "data/blackwatch-scans/2026-07-25-echo.json",
+    "signals": "data/blackwatch-signals.json"
+  }
+}
