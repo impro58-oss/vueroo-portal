@@ -67,8 +67,11 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 77,
+      "change_1d_pct": -3.75,
+      "data_points": 1,
+      "source": "web_search (Nuveen weekly commentary, ~Aug 1)",
+      "note": "MOVE Index fell 3 points to 77 per Nuveen fixed income commentary"
     },
     "GOLD": {
       "price": 4109.1,
@@ -92,16 +95,25 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.815,
+      "change_1d_pct": 0.71,
+      "data_points": 1,
+      "source": "web_search (Bangkok Post, Aug 3)",
+      "note": "10-year JGB yield at 2.815% after joint US-Japan yen intervention"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.15,
+      "change_1d_pct": -1.56,
+      "data_points": 1,
+      "source": "web_search (TradingEconomics, Aug 3)",
+      "note": "German 10Y bund yield eased to 3.15% as oil fell, ECB hike bets trim"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.63,
+      "change_1d_pct": 0,
+      "data_points": 1,
+      "source": "web_search (FRED DBAA 6.32% minus US10Y 4.69%, Jul 30)",
+      "note": "BAA corporate spread calculated from Moody's Baa yield minus 10Y Treasury"
     },
     "BTC": {
       "price": 63465.39,
@@ -155,9 +167,56 @@
         "fin_stability"
       ],
       "distance_pct": 36.97
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.815,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 87.67,
+      "source": "web_search"
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.815,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 181.5,
+      "source": "web_search"
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.15,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 5.0,
+      "source": "web_search"
     }
   ],
-  "breach_count": 3,
+  "breach_count": 6,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
