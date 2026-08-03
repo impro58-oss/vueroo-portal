@@ -1,0 +1,164 @@
+{
+  "scan_date": "2026-08-03",
+  "scan_time_utc": "2026-08-03T19:32:35.853632+00:00",
+  "scanner_version": "1.0.0",
+  "current_values": {
+    "USDJPY": {
+      "price": 156.899,
+      "prev_close": 163.771,
+      "change_1d_pct": -4.2,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "EURUSD": {
+      "price": 1.1515,
+      "prev_close": 1.1369,
+      "change_1d_pct": 1.28,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "GBPUSD": {
+      "price": 1.3433,
+      "prev_close": 1.329,
+      "change_1d_pct": 1.08,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDCNY": {
+      "price": 6.7464,
+      "prev_close": 6.7657,
+      "change_1d_pct": -0.29,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDKRW": {
+      "price": 1429.34,
+      "prev_close": 1464.44,
+      "change_1d_pct": -2.4,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "SPX": {
+      "price": 7608.04,
+      "prev_close": 7413.18,
+      "change_1d_pct": 2.63,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "NKX": {
+      "price": 63754.9,
+      "prev_close": 62364.92,
+      "change_1d_pct": 2.23,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "HSI": {
+      "price": 26009.4,
+      "prev_close": 25207.18,
+      "change_1d_pct": 3.18,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "VIX": {
+      "price": 15.78,
+      "prev_close": 18.21,
+      "change_1d_pct": -13.34,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "MOVE": {
+      "error": "Requires web search fallback",
+      "source": "manual"
+    },
+    "GOLD": {
+      "price": 4107.2,
+      "prev_close": 4034.7,
+      "change_1d_pct": 1.8,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "OIL": {
+      "price": 83.8,
+      "prev_close": 90.74,
+      "change_1d_pct": -7.65,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "US10Y": {
+      "price": 4.686,
+      "prev_close": 4.604,
+      "change_1d_pct": 1.78,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "JGB10Y": {
+      "error": "Requires web search fallback",
+      "source": "manual"
+    },
+    "DE10Y": {
+      "error": "Requires web search fallback",
+      "source": "manual"
+    },
+    "BAA10Y": {
+      "error": "Requires web search fallback",
+      "source": "manual"
+    },
+    "BTC": {
+      "price": 63944.65,
+      "prev_close": 64725.31,
+      "change_1d_pct": -1.21,
+      "data_points": 5,
+      "source": "yahoo"
+    }
+  },
+  "breaches": [
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4107.2,
+      "threshold": 3500,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 17.35
+    },
+    {
+      "key": "EURUSD",
+      "name": "EUR/USD",
+      "category": "currency",
+      "current": 1.1515,
+      "threshold": 1.15,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "escalate": [
+        "us_cycle",
+        "currency"
+      ],
+      "distance_pct": 0.13
+    },
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4107.2,
+      "threshold": 3000,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 36.91
+    }
+  ],
+  "breach_count": 3,
+  "thresholds_monitored": 31,
+  "markets_monitored": 17,
+  "max_severity": "RED"
+}
