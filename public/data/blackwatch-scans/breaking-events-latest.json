@@ -1,0 +1,94 @@
+{
+  "scan_time": "2026-08-03T19:03:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner",
+  "domains_scanned": 12,
+  "events_detected": 6,
+  "category_5_events": 5,
+  "events": [
+    {
+      "id": "EVT-001-JPNYEN-INT",
+      "title": "US-Japan Coordinated Yen Intervention — First in Over a Decade",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "confidence": 10,
+      "sources": ["Reuters", "CNBC", "New York Times", "Al Jazeera", "Financial Times"],
+      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention on Friday July 31. US sold euros to buy yen — first joint US-Japan currency intervention in over 10 years. Yen at 40-year lows. Trump confirmed intervention. Tokyo signals readiness for further action.",
+      "impact_regions": ["Japan", "United States", "Europe", "Global FX markets"],
+      "escalate_to": ["fin_stability", "currency", "liquidity"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    },
+    {
+      "id": "EVT-002-IRAN-WAR-HORMUZ",
+      "title": "2026 Iran War — Strait of Hormuz Crisis Active, Oil Supply Disrupted",
+      "domain": "middle_east",
+      "category": "war_military",
+      "severity": 5,
+      "confidence": 10,
+      "sources": ["Wikipedia", "India Today", "Britannica", "EIA", "ECB"],
+      "summary": "Active US-Iran military conflict with retaliatory missile/drone strikes on US embassies, military installations, and oil infrastructure. Strait of Hormuz partially blocked — 20% of global oil/LNG traffic affected. Brent crude jumped 10-13%, potentially heading to $100+/bbl. Houthi threats to join war. Kuwait and UK reporting attacks on shipping.",
+      "impact_regions": ["Middle East", "Global", "Asia", "Europe"],
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    },
+    {
+      "id": "EVT-003-EBOLA-PHEIC",
+      "title": "WHO Declares Ebola Outbreak (Bundibugyo strain) Public Health Emergency of International Concern",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 4,
+      "confidence": 10,
+      "sources": ["WHO", "ECDC", "European Commission Health", "Wikipedia"],
+      "summary": "WHO declared the 2026 Ebola outbreak in DRC and Uganda a Public Health Emergency of International Concern (PHEIC) on May 17, 2026. Bundibugyo ebolavirus — no existing vaccines or treatments available. Fastest-growing Ebola outbreak on record as of late July 2026.",
+      "impact_regions": ["Central Africa", "East Africa", "Global"],
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    },
+    {
+      "id": "EVT-004-RUSSIA-BANKING",
+      "title": "Russia Systemic Banking Crisis Risk — Sberbank Warns of Rising Bad Loans",
+      "domain": "financial_system",
+      "category": "market_dislocation",
+      "severity": 4,
+      "confidence": 8,
+      "sources": ["Moscow Times", "Riddle Russia"],
+      "summary": "Kremlin-linked think tank CMASF warns Russia could face systemic banking crisis by October 2026. Sberbank warns of rising corporate credit risks — 11.7% of corporate loans problematic. Wildberries collapse dragging down VTB and Sberbank. Bankruptcies up 13.7% YoY.",
+      "impact_regions": ["Russia", "Eastern Europe", "Central Asia"],
+      "escalate_to": ["fin_stability", "geopolitical"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    },
+    {
+      "id": "EVT-005-FED-DISSENT",
+      "title": "Fed Holds Rates in Divided 9-3 Vote — Three Dissents Signal Deep Policy Conflict",
+      "domain": "us_fed",
+      "category": "emergency_rate",
+      "severity": 3,
+      "confidence": 10,
+      "sources": ["CNN", "NPR", "New York Times", "Federal Reserve"],
+      "summary": "Fed kept rates at 3.5-3.75% in a 9-3 vote on July 29. New Chairman Kevin Warsh vowed to fight persistent inflation. Three officials dissented. Market uncertainty high.",
+      "impact_regions": ["United States", "Global"],
+      "escalate_to": ["us_cycle", "fin_stability"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    },
+    {
+      "id": "EVT-006-JP-SK-FX-COORD",
+      "title": "Japan-South Korea Rare Joint FX Intervention — First in 15 Years",
+      "domain": "em_asia",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "confidence": 9,
+      "sources": ["FXStreet", "Chosun", "Reuters"],
+      "summary": "Japan and South Korea conducted unprecedented coordinated FX intervention — first joint action in 15 years. US possibly participated. Raises yen carry trade volatility. Asian currency markets under stress.",
+      "impact_regions": ["Japan", "South Korea", "Asia", "Global FX markets"],
+      "escalate_to": ["currency", "fin_stability", "liquidity"],
+      "timestamp": "2026-08-03T19:03:00.000000+00:00"
+    }
+  ],
+  "scan_summary": {
+    "total_events": 6,
+    "category_5_count": 5,
+    "highest_severity": 5,
+    "escalation_required": true
+  }
+}
