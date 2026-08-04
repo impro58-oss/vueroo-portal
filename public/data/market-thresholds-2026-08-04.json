@@ -1,48 +1,48 @@
 {
   "scan_date": "2026-08-04",
-  "scan_time_utc": "2026-08-04T11:30:40.978024+00:00",
+  "scan_time_utc": "2026-08-04T15:30:47.336701+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 157.709,
+      "price": 157.553,
       "prev_close": 163.864,
-      "change_1d_pct": -3.76,
+      "change_1d_pct": -3.85,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1523,
+      "price": 1.1521,
       "prev_close": 1.1387,
-      "change_1d_pct": 1.19,
+      "change_1d_pct": 1.18,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.345,
+      "price": 1.3446,
       "prev_close": 1.3287,
-      "change_1d_pct": 1.23,
+      "change_1d_pct": 1.2,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7408,
+      "price": 6.7355,
       "prev_close": 6.771,
-      "change_1d_pct": -0.45,
+      "change_1d_pct": -0.52,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1428.68,
+      "price": 1426.18,
       "prev_close": 1453.16,
-      "change_1d_pct": -1.68,
+      "change_1d_pct": -1.86,
       "data_points": 5,
       "source": "yahoo"
     },
     "SPX": {
-      "price": 7600.5,
-      "prev_close": 7413.18,
-      "change_1d_pct": 2.53,
-      "data_points": 4,
+      "price": 7698.97,
+      "prev_close": 7428.78,
+      "change_1d_pct": 3.64,
+      "data_points": 5,
       "source": "yahoo"
     },
     "NKX": {
@@ -56,70 +56,62 @@
       "price": 25852.92,
       "prev_close": 25310.85,
       "change_1d_pct": 2.14,
-      "data_points": 4,
+      "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.65,
+      "price": 16.23,
       "prev_close": 20.66,
-      "change_1d_pct": -24.25,
-      "data_points": 4,
+      "change_1d_pct": -21.44,
+      "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77.09,
-      "prev_close": 74.18,
-      "change_1d_pct": 3.93,
-      "data_points": 1,
-      "source": "web_search (Saxo, Jul 31)"
+      "price": null,
+      "source": "web_search_unavailable",
+      "note": "No specific numeric value found in web search as of 2026-08-04"
     },
     "GOLD": {
-      "price": 4112.0,
+      "price": 4133.4,
       "prev_close": 4100.1,
-      "change_1d_pct": 0.29,
+      "change_1d_pct": 0.81,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 83.78,
+      "price": 80.52,
       "prev_close": 89.03,
-      "change_1d_pct": -5.9,
+      "change_1d_pct": -9.56,
       "data_points": 4,
       "source": "yahoo"
     },
     "US10Y": {
-      "price": 4.686,
-      "prev_close": 4.604,
-      "change_1d_pct": 1.78,
-      "data_points": 4,
+      "price": 4.643,
+      "prev_close": 4.622,
+      "change_1d_pct": 0.45,
+      "data_points": 5,
       "source": "yahoo"
     },
     "JGB10Y": {
       "price": 2.85,
-      "prev_close": 2.82,
-      "change_1d_pct": 1.06,
-      "data_points": 1,
-      "source": "web_search (Economic Times, Aug 4)"
+      "source": "web_search",
+      "note": "From Business Recorder (published 9 hours ago): 10-year JGB yield at 2.85%"
     },
     "DE10Y": {
       "price": 3.15,
-      "prev_close": 3.21,
-      "change_1d_pct": -1.87,
-      "data_points": 1,
-      "source": "web_search (Investing.com, Aug 4)"
+      "source": "web_search",
+      "note": "From Investing.com (published 8 hours ago): German 10-year Bund yield at 3.15%"
     },
     "BAA10Y": {
       "price": 1.58,
-      "prev_close": 1.58,
-      "change_1d_pct": 0.0,
-      "data_points": 1,
-      "source": "web_search (FRED DBAA 6.27pct - US10Y 4.686pct, Jul 30)"
+      "source": "web_search",
+      "note": "From FRED BAA10Y series, last available 2026-07-30, as referenced in existing signals"
     },
     "BTC": {
-      "price": 63706.43,
+      "price": 63889.41,
       "prev_close": 62813.746,
-      "change_1d_pct": 1.42,
-      "data_points": 4,
+      "change_1d_pct": 1.71,
+      "data_points": 5,
       "source": "yahoo"
     }
   },
@@ -128,7 +120,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4112.0,
+      "current": 4133.4,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -137,13 +129,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 17.49
+      "distance_pct": 18.1
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1523,
+      "current": 1.1521,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -152,13 +144,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.2
+      "distance_pct": 0.18
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4112.0,
+      "current": 4133.4,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -166,52 +158,10 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 37.07
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10Y JGB",
-      "category": "rates",
-      "current": 2.85,
-      "threshold": 2.5,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "JGB yields rising - BOJ policy pressure, Japanese fiscal stress",
-      "escalate": [
-        "sov_debt"
-      ],
-      "distance_pct": 14.0
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10Y Bund",
-      "category": "rates",
-      "current": 3.15,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Bund yields at multi-year highs - EU fiscal stress, ECB pressure",
-      "escalate": [
-        "europe"
-      ],
-      "distance_pct": 5.0
-    },
-    {
-      "key": "BAA10Y",
-      "name": "BAA-10Y Spread",
-      "category": "credit",
-      "current": 1.58,
-      "threshold": 1.5,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Corporate credit stress rising - Baa-Treasury spread widening",
-      "escalate": [
-        "fin_stability"
-      ],
-      "distance_pct": 5.33
+      "distance_pct": 37.78
     }
   ],
-  "breach_count": 6,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
