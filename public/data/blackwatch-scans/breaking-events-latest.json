@@ -1,11 +1,13 @@
 {
-  "scan_time": "2026-08-04T15:03:00.000000+00:00",
+  "scan_time": "2026-08-04T19:02:00.000000+00:00",
   "scan_type": "breaking_event",
   "scanner_version": "1.0",
   "scanned_by": "Lumina",
   "domains_scanned": 12,
-  "queries_executed": 36,
+  "queries_executed": 12,
   "category_5_events_detected": 6,
+  "new_events_this_scan": 0,
+  "events_updated": 2,
   "events": [
     {
       "id": "EVT-001",
@@ -14,50 +16,53 @@
       "category": "sovereign_intervention",
       "severity": 5,
       "confidence": 9,
-      "description": "US Treasury and Japan MOF conducted rare coordinated yen-buying intervention. First joint US-Japan FX intervention since 1998. Treasury Sec Bessent's notepad read 'To Do Buy Japanese Yen $5-10 bil'. NY Fed sold euros to buy yen. Japan and US confirmed intervention on Aug 3, standing ready to act again.",
-      "sources": ["Reuters", "CNBC", "FT", "Japan Times", "Al Jazeera"],
+      "description": "US Treasury and Japan MOF conducted rare coordinated yen-buying intervention. First joint US-Japan FX intervention since 1998. Treasury Sec Bessent's notepad read 'To Do Buy Japanese Yen $5-10 bil'. NY Fed sold euros to buy yen. Japan and US confirmed intervention on Aug 3, standing ready to act again. 2-year JGB yield hit 1.545% — highest since 1995.",
+      "sources": ["Reuters", "CNBC", "FT", "Japan Times", "Business Insider", "CNA"],
       "urls": [
         "https://www.reuters.com/world/asia-pacific/us-treasury-undertakes-intervention-yen-market-ft-reports-2026-08-01/",
-        "https://www.cnbc.com/2026/08/03/yen-intervention-us-japan-trump-bessent-katayama.html",
-        "https://www.japantimes.co.jp/business/2026/08/03/markets/japan-us-joint-yen-intervention/"
+        "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-japan-trump-bessent-katayama.html",
+        "https://www.businessinsider.com/japanese-yen-intervention-dollar-usd-jpy-treasurys-ust-jgb-yields-2026-8"
       ],
       "timestamp": "2026-08-01T00:00:00Z",
+      "last_updated": "2026-08-04T19:02:00Z",
       "escalate_to": ["fin_stability", "us_cycle", "liquidity", "currency"],
       "impact_regions": ["US", "Japan", "Global FX"]
     },
     {
       "id": "EVT-002",
       "domain": "middle_east",
-      "title": "Iran War — Strait of Hormuz Crisis, Tanker Attacks, Ceasefire Stalemate",
+      "title": "Iran War — Strait of Hormuz Crisis, Fresh Tanker Strike, Ceasefire Stalemate",
       "category": "war_military",
       "severity": 5,
       "confidence": 10,
-      "description": "Active US-Iran war (Day 157+). Iran claims strikes on 2 ships in Strait of Hormuz. Oil tanker attacked by UAV Aug 1. Ceasefire negotiations stalled — Trump claims talks ongoing, Iran denies. Iran rejected 15-point peace plan. Iran making ceasefire conditional on Lebanon war resolution. Hormuz disruptions caused Brent to jump 10-13%.",
-      "sources": ["Wikipedia", "GlobalSecurity.org", "CNN", "Washington Post", "Crisis Group", "Haaretz"],
+      "description": "Active US-Iran war (Day 157+). NEW: Cargo ship hit by projectile overnight (Aug 3-4) off Oman in Strait of Hormuz. Iran denies talks with US, Trump calls leadership 'unbelievably duplicitous'. Iran discussing safe route through Hormuz with Oman. Israel strikes killed 26 in Gaza over weekend. Hormuz disruptions caused Brent to jump 10-13% earlier, now retreating to $82.92 as MOU signed June 18.",
+      "sources": ["Wikipedia", "CNN", "Newsday", "NBC News", "Britannica"],
       "urls": [
-        "https://en.wikipedia.org/wiki/2026_Iran_war",
-        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-        "https://www.washingtonpost.com/national-security/2026/08/03/trump-claims-active-ceasefire-talks-iran-denies-direct-negotiations/"
+        "https://www.newsday.com/news/nation/iran-us-hormuz-mideast-gaza-israel-palestinians-w67142",
+        "https://www.cnn.com/2026/08/02/world/live-news/iran-war-trump",
+        "https://www.nbcnews.com/middle-east-conflict"
       ],
       "timestamp": "2026-08-04T00:00:00Z",
+      "last_updated": "2026-08-04T19:02:00Z",
       "escalate_to": ["middle_east", "energy", "geopolitical", "food_security"],
       "impact_regions": ["Middle East", "Global Energy", "Global Shipping"]
     },
     {
       "id": "EVT-003",
       "domain": "pandemic_health",
-      "title": "Ebola Epidemic PHEIC — Bundibugyo Virus Intensifying in DRC/Uganda",
+      "title": "Ebola Epidemic PHEIC — 3,532 Cases, 1,707 Deaths, Fastest-Growing Outbreak",
       "category": "pandemic_health",
       "severity": 4,
       "confidence": 9,
-      "description": "WHO declared Public Health Emergency of International Concern (PHEIC) on May 16, 2026. Outbreak is INTENSIFYING with sustained transmission. 1,707 confirmed deaths in DRC, 2 in Uganda. Bundibugyo virus strain. As of first week of August, situation worsening.",
-      "sources": ["WHO", "ECDC", "Wikipedia", "MedicalXpress"],
+      "description": "WHO PHEIC declared May 16, 2026. UPDATE: Now 3,532+ confirmed cases and 1,707 deaths across 49 health zones in 5 provinces of DRC. 44% case-fatality rate. Uganda discharged last Ebola patient. Bundibugyo virus strain. AP reports this is the fastest-growing Ebola outbreak on record.",
+      "sources": ["WHO", "Wikipedia", "Mappr.co", "US News/AP"],
       "urls": [
-        "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614",
-        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic",
-        "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda"
+        "https://www.usnews.com/news/world/articles/2026-08-04/ebola-kills-1-700-in-eastern-congo-as-the-fastest-growing-outbreak-surges",
+        "https://www.mappr.co/ebola-outbreaks-by-country/",
+        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic"
       ],
-      "timestamp": "2026-08-01T00:00:00Z",
+      "timestamp": "2026-08-04T00:00:00Z",
+      "last_updated": "2026-08-04T19:02:00Z",
       "escalate_to": ["supply_chain", "social_cohesion"],
       "impact_regions": ["DRC", "Uganda", "Central Africa"]
     },
@@ -85,12 +90,12 @@
       "category": "sovereign_intervention",
       "severity": 5,
       "confidence": 9,
-      "description": "South Korea joined Japan and US in unprecedented joint FX intervention. Won hit 9-month high. First trilateral coordinated currency intervention. BOJ held rates at 1% (8-1 vote, Takata dissenting for 1.25%). BOJ warned core inflation exceeding 2% target. JGB yields at 2.85% (above 2.5% threshold).",
-      "sources": ["Reuters", "KED Global", "FXStreet", "CNBC", "Taipei Times"],
+      "description": "South Korea joined Japan and US in unprecedented joint FX intervention. Won hit 9-month high. First trilateral coordinated currency intervention. BOJ held rates at 1% (8-1 vote, Takata dissenting for 1.25%). BOJ warned core inflation exceeding 2% target. JGB yields at 2.85% (above 2.5% threshold). 2-year JGB hit 1.545% — highest since 1995.",
+      "sources": ["Reuters", "KED Global", "FXStreet", "CNBC", "Chosun", "Yonhap"],
       "urls": [
         "https://www.reuters.com/business/finance/rare-japan-korea-joint-intervention-shakes-up-yen-won-2026-07-31/",
-        "https://www.kedglobal.com/foreign-exchange/newsView/ked202607310009",
-        "https://www.cnbc.com/2026/07/31/boj-rates-yen-intervention-inflation-japan.html"
+        "https://www.chosun.com/english/market-money-en/2026/08/03/3XJR4ZBVYJCU7LSMADMHE264BY/",
+        "https://en.yna.co.kr/view/AEN20260804007700320"
       ],
       "timestamp": "2026-07-31T00:00:00Z",
       "escalate_to": ["japan_sovereign", "currency", "fin_stability"],
@@ -103,61 +108,77 @@
       "category": "energy_shock",
       "severity": 3,
       "confidence": 8,
-      "description": "OPEC+ (7 members: Saudi Arabia, Russia, Iraq, Kuwait, Kazakhstan, Algeria, Oman) agreed Aug 2 to boost production quota by 188,000 bpd for September. Continuing unwind of 2023 voluntary cuts. Brent declining from April 2026 peak (~$117) to ~$85-92 range. EIA forecasting $74/b average. Members cannot fill existing quotas.",
-      "sources": ["Bloomberg", "Rigzone", "OPEC.org"],
+      "description": "OPEC+ (7 members) agreed Aug 2 to boost production quota by 188,000 bpd for September. Brent fell 5.69% to $82.92/bbl as of Aug 3. Continuing unwind of 2023 voluntary cuts. EIA forecasting $74/b average. Members cannot fill existing quotas. WTI August range $67.93-$106.74.",
+      "sources": ["Bloomberg", "Rigzone", "Forbes", "Fortune", "LiteFinance", "EIA"],
       "urls": [
         "https://www.bloomberg.com/news/articles/2026-08-02/opec-makes-small-quota-hike-to-finish-unwinding-2023-oil-cuts",
-        "https://www.rigzone.com/news/opec_7_decide_to_boost_production_quota-03-aug-2026-184277-article/"
+        "https://fortune.com/article/price-of-oil-08-03-2026/",
+        "https://www.forbes.com/advisor/investing/oil-prices-today/"
       ],
       "timestamp": "2026-08-02T00:00:00Z",
+      "last_updated": "2026-08-04T19:02:00Z",
       "escalate_to": ["energy", "food_security"],
       "impact_regions": ["Global Energy"]
     }
   ],
   "additional_findings": [
     {
+      "domain": "us_fed",
+      "title": "FOMC Held Rates at 3.50%-3.75% (9-3 Vote) — August 3",
+      "severity": 2,
+      "description": "FOMC maintained target range at 3.50%-3.75% on Aug 3, 2026. 9-3 vote suggests internal disagreement. Routine decision, not emergency.",
+      "escalate_to": []
+    },
+    {
       "domain": "eu_ecb",
-      "title": "ECB Held Rates at 2.25%, September Hike Bets at 70%",
-      "severity": 3,
-      "description": "ECB held at 2.25% on July 23. Markets pricing 70% chance of September hike due to oil price surge from Iran war. German 10Y Bund above 3.0% threshold at 3.15%. Merz rejects EU €1.7trn budget proposal.",
-      "escalate_to": ["europe", "fin_stability"]
+      "title": "ECB Climate Risk Warning + Financial Statements Published",
+      "severity": 2,
+      "description": "ECB official Frank Elderson warned climate crisis poses growing threat to core financial stability. ECB published consolidated financial statement as at July 31, 2026. No emergency actions.",
+      "escalate_to": ["europe"]
     },
     {
       "domain": "uk",
-      "title": "BOE Held Rates, Warns Ready to Raise if Iran War Escalates",
+      "title": "BOE Held at 3.75%, Gilt Yields Volatile Over £24bn Treasury Gap",
       "severity": 3,
-      "description": "BOE held rates, explicitly flagged Iran war as inflation risk. Worst-case oil at $100/bbl could push UK inflation to 3.2%. Sterling slipping to 1.3450. UK facing drought-related food shortages.",
+      "description": "BOE held rates at 3.75%. Gilt yields volatile as traders anxious over £24 billion Treasury gap and debt issuance. Sterling slipping toward 1.3500. BOE flagged Iran war as inflation risk.",
       "escalate_to": ["europe", "fin_stability"]
     },
     {
       "domain": "latam",
-      "title": "Argentina Defaults on R$63M Debt to Brazil Casa da Moeda",
-      "severity": 3,
-      "description": "Argentina defaulted on two debt payments to Brazil's Casa da Moeda, breaking agreement. Diplomatic and financial tension escalating.",
-      "escalate_to": ["fin_stability", "currency"]
+      "title": "Argentina Third Credit Upgrade (Moody's), Brazil Copom This Week",
+      "severity": 1,
+      "description": "Argentina won third credit upgrade in 3 months (Moody's lifted rating). BCRA met $10.1bn dollar accumulation goal. IMF principal payments due from September (~$3bn remainder 2026). Brazil Copom rate decision this week.",
+      "escalate_to": []
     },
     {
       "domain": "africa",
-      "title": "Mali Offensives, Ethiopia TPLF Conflict Resurgence, Sahel Deterioration",
+      "title": "South Africa-Nigeria Diplomatic Crisis, Ethiopia TPLF Resurgence",
       "severity": 3,
-      "description": "Mali coup attempts, JNIM kidnapping, TPLF seizing areas in Ethiopia, Sahel jihadist insurgency pushing southward. Russian Africa Corps retreat from northern Mali.",
+      "description": "Anti-migrant violence fallout: South Africa deportations topping 109,000. Ghana cancelled Ramaphosa visit. Nigeria-Ghana diplomatic tension escalating. Ethiopia TPLF conflict resurgence. Sahel jihadist insurgency.",
       "escalate_to": ["geopolitical"]
     },
     {
-      "domain": "pandemic_health",
-      "title": "COVID-19 Growing in 41 US States",
+      "domain": "china",
+      "title": "PBOC Pledges Moderately Loose Policy for H2 2026",
       "severity": 2,
-      "description": "CDC estimates COVID-19 infections growing or likely growing in 41 states as of July 29, 2026.",
-      "escalate_to": ["supply_chain", "social_cohesion"]
+      "description": "PBOC vowed timely policy tool adjustment, facilitating panda bond issuance. Moderately loose monetary policy continuing. Focus on stabilizing property, local debt risks, banking reform.",
+      "escalate_to": ["china"]
     },
     {
       "domain": "financial_system",
-      "title": "Russia Sberbank Warns Rising Corporate Credit Risks",
-      "severity": 3,
-      "description": "Russia's largest lender reports deteriorating loan book, impaired loans increasing. Wartime debt boom creating banking vulnerability.",
-      "escalate_to": ["fin_stability", "geopolitical"]
+      "title": "No New Systemic Stress Events Detected",
+      "severity": 1,
+      "description": "No bank failures, credit freezes, or systemic risk events detected in this scan window. Russia Sberbank credit deterioration (previously noted) remains a background risk.",
+      "escalate_to": []
+    },
+    {
+      "domain": "pandemic_health",
+      "title": "COVID-19 Growing in 41 US States (Background)",
+      "severity": 2,
+      "description": "CDC estimates COVID-19 infections growing or likely growing in 41 states as of July 29. Not category-5 but monitoring.",
+      "escalate_to": ["supply_chain", "social_cohesion"]
     }
   ],
-  "all_clear_domains": [],
-  "scan_summary": "CRITICAL: 6 category-5 events detected. Active US-Iran war with Hormuz disruptions, unprecedented US-Japan-Korea trilateral FX intervention, gold at $4,060, Ebola PHEIC intensifying, OPEC+ quota increase. Global risk environment at CRITICAL."
+  "all_clear_domains": ["latam", "financial_system"],
+  "scan_summary": "CRITICAL: 6 category-5 events still active. No NEW category-5 events since last scan (15:03 UTC). Updates: (1) Fresh tanker strike in Hormuz overnight Aug 3-4 — EVT-002 updated, (2) Ebola now 3,532 cases/1,707 deaths — fastest-growing on record, EVT-003 updated, (3) FOMC held 3.50%-3.75% (9-3 vote, routine), (4) Brent fell to $82.92 (-5.69%), (5) UK gilt volatility over £24bn Treasury gap. Global risk environment remains CRITICAL."
 }
