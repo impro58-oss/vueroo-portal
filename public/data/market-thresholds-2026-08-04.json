@@ -1,0 +1,236 @@
+{
+  "scan_date": "2026-08-04",
+  "scan_time_utc": "2026-08-04T03:30:37.969882+00:00",
+  "scanner_version": "1.0.0",
+  "current_values": {
+    "USDJPY": {
+      "price": 157.593,
+      "prev_close": 163.864,
+      "change_1d_pct": -3.83,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "EURUSD": {
+      "price": 1.1515,
+      "prev_close": 1.1387,
+      "change_1d_pct": 1.12,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "GBPUSD": {
+      "price": 1.3432,
+      "prev_close": 1.3287,
+      "change_1d_pct": 1.09,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDCNY": {
+      "price": 6.753,
+      "prev_close": 6.771,
+      "change_1d_pct": -0.27,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDKRW": {
+      "price": 1428.31,
+      "prev_close": 1453.16,
+      "change_1d_pct": -1.71,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "SPX": {
+      "price": 7600.5,
+      "prev_close": 7413.18,
+      "change_1d_pct": 2.53,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "NKX": {
+      "price": 63333.35,
+      "prev_close": 61434.19,
+      "change_1d_pct": 3.09,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "HSI": {
+      "price": 25934.91,
+      "prev_close": 25310.85,
+      "change_1d_pct": 2.47,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "VIX": {
+      "price": 15.86,
+      "prev_close": 18.21,
+      "change_1d_pct": -12.9,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "MOVE": {
+      "price": 74.18,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search",
+      "source_url": "https://www.leadlagreport.com/when-the-bond-market-dies-so-does-capitalism/",
+      "source_date": "2026-07-29"
+    },
+    "GOLD": {
+      "price": 4116.3,
+      "prev_close": 4034.7,
+      "change_1d_pct": 2.02,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "OIL": {
+      "price": 84.76,
+      "prev_close": 90.74,
+      "change_1d_pct": -6.59,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "US10Y": {
+      "price": 4.686,
+      "prev_close": 4.604,
+      "change_1d_pct": 1.78,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "JGB10Y": {
+      "price": 2.799,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search",
+      "source_url": "https://note.com/hirokimiyano/n/n04a8c87512b1",
+      "source_date": "2026-08-01"
+    },
+    "DE10Y": {
+      "price": 3.155,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search",
+      "source_url": "https://ng.investing.com/news/forex-news/euro-yields-stabilize-after-trumpiran-talk-announcement-shortdated-notes-dip-2632575",
+      "source_date": "2026-08-03"
+    },
+    "BAA10Y": {
+      "price": 1.63,
+      "prev_close": 1.64,
+      "change_1d_pct": -0.61,
+      "data_points": 1,
+      "source": "web_search",
+      "source_url": "https://fred.stlouisfed.org/series/BAA10Y",
+      "source_date": "2026-07-31"
+    },
+    "BTC": {
+      "price": 63770.72,
+      "prev_close": 62813.746,
+      "change_1d_pct": 1.52,
+      "data_points": 4,
+      "source": "yahoo"
+    }
+  },
+  "breaches": [
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4116.3,
+      "threshold": 3500,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 17.61
+    },
+    {
+      "key": "EURUSD",
+      "name": "EUR/USD",
+      "category": "currency",
+      "current": 1.1515,
+      "threshold": 1.15,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "escalate": [
+        "us_cycle",
+        "currency"
+      ],
+      "distance_pct": 0.13
+    },
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4116.3,
+      "threshold": 3000,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 37.21
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.799,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 86.6,
+      "source": "web_search",
+      "source_date": "2026-08-01"
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.799,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 179.9,
+      "source": "web_search",
+      "source_date": "2026-08-01"
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.155,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 5.17,
+      "source": "web_search",
+      "source_date": "2026-08-03"
+    }
+  ],
+  "breach_count": 6,
+  "thresholds_monitored": 31,
+  "markets_monitored": 17,
+  "max_severity": "RED",
+  "manual_fill_complete": true,
+  "manual_fill_notes": "MOVE=74.18 (leadlagreport, Jul 29), JGB10Y=2.799% (note.com, Aug 1), DE10Y=3.155% (investing.com, Aug 3), BAA10Y=1.63% (FRED, Jul 31). Added 3 post-fill breaches: JGB10Y RED (>1.5), JGB10Y AMBER (>1.0), DE10Y AMBER (>3.0)."
+}
