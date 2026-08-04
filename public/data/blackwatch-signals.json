@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-04T11:30:42.000000+00:00",
+    "last_update": "2026-08-04T11:31:00.000000+00:00",
     "signals_auto": 19,
     "signals_manual": 1,
     "signals_total": 20,
-    "threshold_breach": "3 thresholds breached"
+    "threshold_breach": "6 thresholds breached (1 RED, 5 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -21,7 +21,7 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-07-30",
-      "note": "Threshold breach: Gold above 3500 (current: 4112.0)",
+      "note": "Threshold breaches: Gold above 3500 (4112.0), BAA-10Y spread above 1.5 (1.58)",
       "timestamp": "2026-08-04T11:30:42.000000+00:00"
     },
     "liquidity": {
@@ -51,7 +51,7 @@
       "description": "US Total Debt / GDP",
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
-      "note": "",
+      "note": "Threshold breach: Japan 10Y JGB above 2.5 (current: 2.85)",
       "timestamp": "2026-08-04T11:04:30.146789+00:00"
     },
     "energy": {
@@ -206,17 +206,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4055.77,
+      "value": 4112.0,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 17.3,
-      "description": "Gold Spot: ,055.77/oz (BullionVault live)",
+      "description": "Gold ,112/oz - RED threshold breach (>3500)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-04",
-      "note": "Live spot from BullionVault",
-      "timestamp": "2026-08-04T11:04:39Z"
+      "note": "Threshold breach: Gold above 3500 (RED) and above 3000 (AMBER)",
+      "timestamp": "2026-08-04T11:30:42.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -253,14 +253,14 @@
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-03",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.15)",
       "timestamp": "2026-08-04T11:04:33.556471+00:00"
     },
     "us_cycle": {
