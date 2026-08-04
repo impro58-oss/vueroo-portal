@@ -1,40 +1,40 @@
 {
-  "scan_date": "2026-08-03",
-  "scan_time_utc": "2026-08-03T23:31:38.260553+00:00",
+  "scan_date": "2026-08-04",
+  "scan_time_utc": "2026-08-04T03:30:37.969882+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 157.41,
+      "price": 157.593,
       "prev_close": 163.864,
-      "change_1d_pct": -3.94,
+      "change_1d_pct": -3.83,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1513,
+      "price": 1.1515,
       "prev_close": 1.1387,
-      "change_1d_pct": 1.11,
+      "change_1d_pct": 1.12,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.343,
+      "price": 1.3432,
       "prev_close": 1.3287,
-      "change_1d_pct": 1.08,
+      "change_1d_pct": 1.09,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7464,
+      "price": 6.753,
       "prev_close": 6.771,
-      "change_1d_pct": -0.36,
-      "data_points": 4,
+      "change_1d_pct": -0.27,
+      "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1429.13,
+      "price": 1428.31,
       "prev_close": 1453.16,
-      "change_1d_pct": -1.65,
+      "change_1d_pct": -1.71,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,16 +46,16 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 63754.9,
-      "prev_close": 62364.92,
-      "change_1d_pct": 2.23,
+      "price": 63333.35,
+      "prev_close": 61434.19,
+      "change_1d_pct": 3.09,
       "data_points": 4,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 26009.4,
-      "prev_close": 25207.18,
-      "change_1d_pct": 3.18,
+      "price": 25934.91,
+      "prev_close": 25310.85,
+      "change_1d_pct": 2.47,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -67,23 +67,20 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77,
-      "change_1d_pct": -3.75,
-      "data_points": 1,
-      "source": "web_search (Nuveen weekly commentary, ~Aug 1)",
-      "note": "MOVE Index fell 3 points to 77 per Nuveen fixed income commentary"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "GOLD": {
-      "price": 4109.1,
+      "price": 4116.3,
       "prev_close": 4034.7,
-      "change_1d_pct": 1.84,
+      "change_1d_pct": 2.02,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 83.65,
+      "price": 84.76,
       "prev_close": 90.74,
-      "change_1d_pct": -7.81,
+      "change_1d_pct": -6.59,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -95,31 +92,22 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.815,
-      "change_1d_pct": 0.71,
-      "data_points": 1,
-      "source": "web_search (Bangkok Post, Aug 3)",
-      "note": "10-year JGB yield at 2.815% after joint US-Japan yen intervention"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "DE10Y": {
-      "price": 3.15,
-      "change_1d_pct": -1.56,
-      "data_points": 1,
-      "source": "web_search (TradingEconomics, Aug 3)",
-      "note": "German 10Y bund yield eased to 3.15% as oil fell, ECB hike bets trim"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BAA10Y": {
-      "price": 1.63,
-      "change_1d_pct": 0,
-      "data_points": 1,
-      "source": "web_search (FRED DBAA 6.32% minus US10Y 4.69%, Jul 30)",
-      "note": "BAA corporate spread calculated from Moody's Baa yield minus 10Y Treasury"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BTC": {
-      "price": 63465.39,
-      "prev_close": 64725.31,
-      "change_1d_pct": -1.95,
-      "data_points": 5,
+      "price": 63770.72,
+      "prev_close": 62813.746,
+      "change_1d_pct": 1.52,
+      "data_points": 4,
       "source": "yahoo"
     }
   },
@@ -128,7 +116,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4109.1,
+      "current": 4116.3,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -137,13 +125,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 17.4
+      "distance_pct": 17.61
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1513,
+      "current": 1.1515,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -152,13 +140,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.11
+      "distance_pct": 0.13
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4109.1,
+      "current": 4116.3,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -166,57 +154,10 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 36.97
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.815,
-      "threshold": 1.5,
-      "direction": "above",
-      "severity": "RED",
-      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
-      "escalate": [
-        "japan_sovereign",
-        "fin_stability"
-      ],
-      "distance_pct": 87.67,
-      "source": "web_search"
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.815,
-      "threshold": 1.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
-      "escalate": [
-        "japan_sovereign"
-      ],
-      "distance_pct": 181.5,
-      "source": "web_search"
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10-Year (Bund)",
-      "category": "rates",
-      "current": 3.15,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "European fiscal stress \u2014 periphery spreads widening",
-      "escalate": [
-        "europe",
-        "fin_stability"
-      ],
-      "distance_pct": 5.0,
-      "source": "web_search"
+      "distance_pct": 37.21
     }
   ],
-  "breach_count": 6,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
