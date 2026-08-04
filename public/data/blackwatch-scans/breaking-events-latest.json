@@ -1,123 +1,98 @@
 {
-  "scan_time": "2026-08-03T23:04:50.682641",
+  "scan_time": "2026-08-04T11:02:00Z",
   "scan_type": "breaking_event",
-  "scan_date": "2026-08-03",
+  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
   "domains_scanned": 12,
-  "events_detected": 5,
-  "events": [
-    {
-      "domain": "middle_east",
-      "title": "2026 Iran War \u2014 Strait of Hormuz Crisis (Ongoing, Escalating)",
-      "severity": 5,
-      "category": "war_military",
-      "description": "Strait of Hormuz largely blocked since Feb 28, 2026. US-Israel air war against Iran. IRGC attacking merchant ships, sea mines deployed. ~20,000 mariners stranded. Brent peaked at /bbl. Renewed hostilities in late July shattered June MOU ceasefire. Houthi threats to join conflict. Kuwait under drone attack. Tanker struck in strait.",
-      "source": "Wikipedia, India Today, Reuters, Britannica",
-      "impact_regions": [
-        "Middle East",
-        "Global Energy",
-        "Global Shipping"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "food_security"
-      ],
-      "first_detected": "2026-02-28",
-      "status": "ESCALATING"
+  "queries_executed": 14,
+  "new_cat5_events": 0,
+  "tracked_cat5_events": 6,
+  "result": "NO_NEW_BREAKING_EVENTS",
+  "domain_results": {
+    "us_fed": {
+      "status": "CLEAR",
+      "finding": "FOMC held rates 3.50%-3.75% on Aug 3 (9-3 vote, 3 dissenters wanted hike). Warsh considering reducing meeting frequency. Markets pricing 63% Sep hike. No emergency action.",
+      "cat5": false
     },
-    {
-      "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic \u2014 DRC, WHO Global Health Emergency",
-      "severity": 4,
-      "category": "pandemic",
-      "description": "Fastest-growing Ebola outbreak on record. Bundibugyo ebolavirus (no approved vaccine/treatment). Spread to 4+ provinces in DRC. WHO declared global health emergency. US citizen infected. UN opening largest treatment centre. Outbreak intensifying at exceptional pace.",
-      "source": "WHO, UN News, Wikipedia, EU Health Commission",
-      "impact_regions": [
-        "Central Africa",
-        "Global Health"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "first_detected": "2026-06",
-      "status": "INTENSIFYING"
+    "latam": {
+      "status": "MONITOR",
+      "finding": "Argentina Casa de Moneda defaulted on R$63.6M to Brazil. Venezuela post-intervention + earthquake recovery (5,500+ dead). No new escalation.",
+      "cat5": false
     },
-    {
-      "domain": "em_asia",
-      "title": "Rare Joint Japan-South Korea-US FX Intervention",
-      "severity": 4,
-      "category": "sovereign_intervention",
-      "description": "Unprecedented coordinated FX intervention by Japan, South Korea, and US to prop up yen and won. First joint action in 15 years. Won hit 9-month high. Yen carry trade volatility rising. Signals deep concern about currency stability.",
-      "source": "Chosun, Al Jazeera, FXStreet, Reuters",
-      "impact_regions": [
-        "Asia-Pacific",
-        "Global Currency Markets"
-      ],
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "first_detected": "2026-07-31",
-      "status": "ACTIVE"
+    "eu_ecb": {
+      "status": "CLEAR",
+      "finding": "ECB official warned climate crisis threatens financial stability (Guardian Aug 1). No emergency rate action.",
+      "cat5": false
     },
-    {
-      "domain": "japan",
-      "title": "BOJ Holds Rates at 1%, Warns of Rapid Rate Hikes",
-      "severity": 3,
-      "category": "emergency_rate",
-      "description": "BOJ held rates at 1% (8-1 vote, Takata dissented calling for 1.25%). Governor Ueda warned of rapid rate hikes if inflation target fails. Japan intervened to prop up yen ahead of BOJ decision. Core inflation exceeding 2% target.",
-      "source": "CNBC, Axios, Investing.com, Trading Economics",
-      "impact_regions": [
-        "Japan",
-        "Global Bond Markets"
-      ],
-      "escalate_to": [
-        "fin_stability",
-        "currency"
-      ],
-      "first_detected": "2026-07-31",
-      "status": "ACTIVE"
+    "uk": {
+      "status": "CLEAR",
+      "finding": "BOE held rates at 3.75%. Sterling under mild downward pressure. EDMC appointments. No crisis.",
+      "cat5": false
     },
-    {
-      "domain": "commodities",
-      "title": "Oil Supply Disruption \u2014 Largest in History of Global Oil Market (IEA)",
-      "severity": 5,
-      "category": "energy_shock",
-      "description": "IEA characterizes Iran war/Strait of Hormuz closure as largest supply disruption in history of global oil market. Brent at .92 (fell 5.69% in 24h but was at  peak). Oil +23% in July after renewed hostilities shattered June ceasefire. OPEC+ increasing quotas. Houthi Red Sea disruption adding 5-6 mb/d at risk.",
-      "source": "Wikipedia, Forbes, Trading Economics, EIA",
-      "impact_regions": [
-        "Global Energy",
-        "Global Economy"
-      ],
-      "escalate_to": [
-        "energy",
-        "supply_chain",
-        "food_security",
-        "geopolitical"
-      ],
-      "first_detected": "2026-02-28",
-      "status": "ONGOING"
+    "japan": {
+      "status": "TRACKED",
+      "finding": "CONFIRMED US-Japan joint yen intervention. Japan sold ~$58.97B, US $5-10B. BOJ kept rates 1% (8-1). Yen at 156.51. Already in signal board.",
+      "cat5": true,
+      "event_id": "us_japan_fx_intervention",
+      "update": "No change since last scan. Intervention confirmed and priced in."
+    },
+    "china": {
+      "status": "CLEAR",
+      "finding": "PBOC moderately loose policy H2 2026, counter-cyclical support, panda bonds. Yuan firming on yen spillover.",
+      "cat5": false
+    },
+    "em_asia": {
+      "status": "CLEAR",
+      "finding": "Asian forex muted. KRW and PHP strengthening. No crisis signals.",
+      "cat5": false
+    },
+    "middle_east": {
+      "status": "TRACKED",
+      "finding": "Iran war Day ~157. Trump claims Hormuz could open 'by tomorrow', Iran denies talks. CENTCOM redirected 44 vessels. IRGC drone strike on tanker Athe Nova. Hezbollah active in Lebanon.",
+      "cat5": true,
+      "event_id": "iran_hormuz_war",
+      "update": "Status: NEGOTIATING but volatile. No new escalation since last scan."
+    },
+    "africa": {
+      "status": "TRACKED",
+      "finding": "Nigeria-SA crisis: 109,000 deportations, Ghana cancelled Ramaphosa visit. Ebola: 1,707 dead (up from 1,587), 3,600+ cases, 44% fatality, Bundibugyo strain (no vaccine). Uganda discharged last patient. Mali/Burkina Faso insurgencies continue.",
+      "cat5": true,
+      "event_id": "ebola_pheic",
+      "update": "Death toll increased by ~120 since last scan. Outbreak accelerating per NBC News. Aid cuts hampering response."
+    },
+    "financial_system": {
+      "status": "TRACKED",
+      "finding": "Russia banking crisis deepening: 36/38 foreign-capital banks profit decline H1 2026. Every 5th farmer facing bankruptcy. Fuel crisis 6 regions on alternating plate rotation. Corporate bankruptcies accelerating.",
+      "cat5": true,
+      "event_id": "russia_banking_crisis",
+      "update": "Continuing deterioration. No new systemic event, but trend worsening."
+    },
+    "commodities": {
+      "status": "EASING",
+      "finding": "Brent falling ($85 June, forecast $74 Q3). Gold ~$4,100+. Oil +23% in July from Iran disruption but now easing. OPEC+ increasing quotas.",
+      "cat5": false,
+      "note": "Energy shock status improving. Oil supply disruption still tracked but direction positive."
+    },
+    "pandemic_health": {
+      "status": "TRACKED",
+      "finding": "Ebola PHEIC ongoing. 3,600+ cases, 1,707 deaths (updated), 44% fatality. Bundibugyo strain — no vaccine/treatment. Trump/Musk aid cuts hampering response. Second-largest outbreak ever.",
+      "cat5": true,
+      "event_id": "ebola_pheic",
+      "update": "Death toll increased ~120 since last scan (1,587 -> 1,707). Accelerating."
     }
+  },
+  "tracked_events_summary": [
+    {"id": "iran_hormuz_war", "event": "Iran War/Hormuz", "day": 157, "status": "NEGOTIATING", "severity": 5, "trend": "stable"},
+    {"id": "ebola_pheic", "event": "Ebola PHEIC", "deaths": 1707, "status": "INTENSIFYING", "severity": 4, "trend": "deteriorating"},
+    {"id": "us_japan_fx_intervention", "event": "US-Japan Joint FX Intervention", "amount_usd": "~$64B", "status": "EXECUTED", "severity": 4, "trend": "stable"},
+    {"id": "oil_supply_disruption", "event": "Oil Supply Disruption", "brent": "~$85", "status": "EASING", "severity": 3, "trend": "improving"},
+    {"id": "russia_banking_crisis", "event": " Russia Systemic Banking Crisis", "status": "DEEPENING", "severity": 4, "trend": "deteriorating"},
+    {"id": "nigeria_sa_crisis", "event": "Nigeria-SA Diplomatic Crisis", "deportations": 109000, "status": "ONGOING", "severity": 3, "trend": "stable"}
   ],
-  "no_event_domains": [
-    "us_fed",
-    "latam",
-    "eu_ecb",
-    "uk",
-    "china",
-    "africa",
-    "financial_system"
-  ],
-  "domain_notes": {
-    "us_fed": "Fed held rates at 3.6% on July 29 (9-3 vote, 3 dissents). New Chair Warsh. No emergency action. Fifth straight hold.",
-    "latam": "Argentina debt tensions with Brazil (R default to Casa da Moeda). IMF praises Argentina reforms. 2027 debt hurdle looming. Not category-5.",
-    "eu_ecb": "ECB rates unchanged at 2.25%. No emergency action. Governing Council meeting in Berlin.",
-    "uk": "BoE in wait-and-see mode. Gilts rundown may slow to \u00a350bn. No emergency. Sterling soft but stable.",
-    "china": "PBOC pledging timely policy adjustment, appropriately loose monetary policy. Undervalued currency (>20%). No emergency.",
-    "africa": "Sudan civil war ongoing. Sahel jihadist insurgency. Debt crises across multiple nations. Chronic but not category-5 breaking.",
-    "financial_system": "Russia warned of potential systemic banking crisis by Oct 2026. ECB research on interbank lending contraction. Not acute this week."
-  }
+  "signal_board_update": "MINOR_UPDATE",
+  "changes_made": [
+    "Updated Ebola death toll: 1,587 -> 1,707 (+120)",
+    "Updated Russia banking note: added farmer bankruptcy + foreign bank profit decline detail",
+    "Updated oil status: EASING (Brent falling, OPEC+ increasing quotas)",
+    "Refreshed scan timestamp"
+  ]
 }
