@@ -1,1 +1,459 @@
-﻿{"scan_time":"pending","findings":[],"convergence_threads":[{"key":"japan_yen","name":"Japan Yen Crisis","desc":"BOJ/MOF intervention, JGB spiral, yen collapse"},{"key":"us_recession","name":"US Recession","desc":"Yield curve, consumer sentiment, unemployment"},{"key":"middle_east_war","name":"Middle East War","desc":"Iran, Israel, Hormuz, oil disruption"},{"key":"china_collapse","name":"China Hard Landing","desc":"PBOC, property, capital flight"},{"key":"euro_crisis","name":"Euro Sovereign Crisis","desc":"ECB, spread, PIIGS"},{"key":"asian_contagion","name":"Asian Contagion","desc":"Won, baht, rupiah, peso"},{"key":"crypto_collapse","name":"Crypto Collapse","desc":"Exchange hack, stablecoin, ban"},{"key":"global_pandemic","name":"Global Pandemic","desc":"WHO, outbreak, quarantine"}]}
+{
+  "scan_id": "blackwatch-2026-08-04",
+  "scan_timestamp": "2026-08-04T01:30:00Z",
+  "scan_local_time": "2026-08-04 02:30 Europe/Dublin",
+  "scanner": "BlackWatch Lead Indicator Scanner",
+  "status": "COMPLETE",
+  "categories": {
+    "verbal_intervention": {
+      "findings": [
+        {
+          "id": "vi-001",
+          "headline": "US-Japan confirm first coordinated yen intervention since 1998, warn of more",
+          "summary": "MOF Katayama and US Treasury Bessent confirmed joint yen-buying intervention on Friday Aug 1. MOF statement: 'We will not hesitate to conduct further joint intervention.' Verbal warnings escalated over prior weeks, now followed by action. Japan plans to use Fed FIMA repo facility for future interventions to avoid Treasury selling.",
+          "source": "Bloomberg, CNBC, MOF official statement",
+          "date": "2026-08-03",
+          "imminence": 9,
+          "impact": 8,
+          "threads": ["japan_yen"],
+          "url": "https://www.bloomberg.com/news/articles/2026-08-02/katayama-to-say-japan-us-acted-together-on-yen-reuters-reports"
+        },
+        {
+          "id": "vi-002",
+          "headline": "Katayama repeatedly issued verbal warnings in weeks before intervention",
+          "summary": "Japan Times reports Katayama had been issuing verbal warnings for several weeks before the actual intervention. Verbal intervention escalated to physical intervention — classic pattern progression.",
+          "source": "Japan Times",
+          "date": "2026-07-31",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["japan_yen"],
+          "url": "https://www.japantimes.co.jp/business/2026/07/31/markets/yen-intervention-breaking-2026/"
+        },
+        {
+          "id": "vi-003",
+          "headline": "US Treasury won't hesitate on more yen intervention — combined verbal + physical",
+          "summary": "Seoul Economic Daily interprets the joint statements as an attempt to reverse yen's underlying trend by combining verbal intervention following actual currency market intervention. Both sides signaling readiness for more.",
+          "source": "Seoul Economic Daily",
+          "date": "2026-08-03",
+          "imminence": 8,
+          "impact": 7,
+          "threads": ["japan_yen"],
+          "url": "https://en.sedaily.com/international/2026/08/03/breaking-news-us-treasury-wont-hesitate-on-more-yen"
+        }
+      ],
+      "category_score": 24
+    },
+    "anonymous_leaks": {
+      "findings": [
+        {
+          "id": "al-001",
+          "headline": "Fed proposes modernizing insider lending rules — signals internal review",
+          "summary": "Federal Reserve Board requested comment on proposal to modernize rules governing credit extension to bank insiders. Not a leak per se but signals internal regulatory review focus. No significant anonymous leaks from central banks this week.",
+          "source": "Federal Reserve press release",
+          "date": "2026-07-31",
+          "imminence": 3,
+          "impact": 4,
+          "threads": ["us_recession"],
+          "url": "https://www.federalreserve.gov/"
+        }
+      ],
+      "category_score": 7
+    },
+    "central_bank_communication": {
+      "findings": [
+        {
+          "id": "cb-001",
+          "headline": "Fed ends forward guidance, adopts 'Facts Over Forecasts' under Warsh",
+          "summary": "Federal Reserve has ended traditional forward guidance, adopting a 'facts over forecasts' approach under Chair Warsh. Major communication regime shift — markets lose rate path signaling. ECB and BOE considering similar shifts. This removes a key market stabilizer.",
+          "source": "Chosun, ETF Trends",
+          "date": "2026-07-30",
+          "imminence": 8,
+          "impact": 9,
+          "threads": ["us_recession", "euro_crisis"],
+          "url": "https://www.chosun.com/english/market-money-en/2026/07/30/5A3KK4KPWFFDZA34JHEE6HD5ZQ/"
+        },
+        {
+          "id": "cb-002",
+          "headline": "FOMC holds rates at 3.50-3.75% in split 9-3 vote, inflation above target",
+          "summary": "Fed kept rates unchanged in 9-3 split vote. June dot plot showed 9 members projecting at least one hike in 2026, 8 projecting hold. Deep division. Inflation remains above target. Energy uncertainty from Iran war putting additional pressure.",
+          "source": "Schwab, ETF Trends, Fed press release",
+          "date": "2026-07-29",
+          "imminence": 7,
+          "impact": 8,
+          "threads": ["us_recession"],
+          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
+        },
+        {
+          "id": "cb-003",
+          "headline": "ECB postponed rate cuts, raised 2026 inflation forecast, cut GDP growth",
+          "summary": "ECB postponed planned interest rate reductions on March 19 due to Iran war energy shock. Raised 2026 inflation forecast, cut GDP growth projections. Energy-intensive economies warned of technical recession risk if blockade persists through summer.",
+          "source": "Wikipedia (Economic impact of 2026 Iran war), ECB",
+          "date": "2026-07-30",
+          "imminence": 7,
+          "impact": 8,
+          "threads": ["euro_crisis", "middle_east_war"],
+          "url": "https://en.wikipedia.org/wiki/Economic_impact_of_the_2026_Iran_war"
+        },
+        {
+          "id": "cb-004",
+          "headline": "Energy uncertainty puts Fed, BoJ, BoE communication under scrutiny",
+          "summary": "Central banks weighing inflation risks as oil prices respond to US-Iran diplomacy. Communication strategies being challenged by energy volatility. BoJ also navigating yen intervention communication.",
+          "source": "Financial World",
+          "date": "2026-08-01",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["middle_east_war", "japan_yen", "euro_crisis"],
+          "url": "https://www.financial-world.org/news/news/financial/30862/energy-uncertainty-puts-fed-boj-and-boe-communication-under-scrutiny/"
+        }
+      ],
+      "category_score": 32
+    },
+    "geopolitical_posture": {
+      "findings": [
+        {
+          "id": "gp-001",
+          "headline": "2026 Iran War ongoing since Feb — US/Israel vs Iran, Strait of Hormuz closure",
+          "summary": "US and Israel at war with Iran since Feb 28, 2026. Strikes killed Supreme Leader Khamenei. Strait of Hormuz closure = 'largest supply disruption in history of global oil market' per IEA. War reshaping geopolitics across Africa, Asia, Europe, Middle East. Oil prices soaring.",
+          "source": "Wikipedia, CSIS, Geopolitical Monitor, BBC, NYT",
+          "date": "2026-08-03",
+          "imminence": 10,
+          "impact": 10,
+          "threads": ["middle_east_war", "euro_crisis", "us_recession", "asian_contagion"],
+          "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+        },
+        {
+          "id": "gp-002",
+          "headline": "Geopolitical crises fundamentally reshaping global shipping routes",
+          "summary": "Aug 3 analysis confirms rising tensions across critical maritime transit hubs are altering global shipping and freight operations. Strait of Hormuz crisis cascading into all major shipping lanes.",
+          "source": "Mobilita News",
+          "date": "2026-08-03",
+          "imminence": 9,
+          "impact": 8,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "url": "https://www.mobilita.news/?item=27499"
+        },
+        {
+          "id": "gp-003",
+          "headline": "China missile test signals sea-based nuclear second-strike capability",
+          "summary": "July 6 missile test sends signal on China's maturing sea-based nuclear second-strike capability. Military posture escalation in Indo-Pacific amid trade war tensions.",
+          "source": "Geopolitical Monitor",
+          "date": "2026-07-27",
+          "imminence": 5,
+          "impact": 7,
+          "threads": ["china_collapse"],
+          "url": "https://www.geopoliticalmonitor.com/"
+        },
+        {
+          "id": "gp-004",
+          "headline": "State-sponsored cyber operations moving in parallel with geopolitical escalation",
+          "summary": "DEFCON level monitoring shows state-sponsored cyber operations escalating alongside military tensions. Active campaigns tracked. Cyber warfare dimension adding to financial system risk.",
+          "source": "DEFCON Level",
+          "date": "2026-08-03",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["middle_east_war", "china_collapse"],
+          "url": "https://www.defconlevel.com/current-level"
+        }
+      ],
+      "category_score": 35
+    },
+    "supply_chain_disruption": {
+      "findings": [
+        {
+          "id": "sc-001",
+          "headline": "Strait of Hormuz crisis driving semiconductor supply risk — helium shortages",
+          "summary": "TechInsights analyzing how Strait of Hormuz disruption impacts semiconductor supply chains, from helium shortages to AI-driven market tightness. 2026 semiconductor shortage with selective pressure that can shut down production lines.",
+          "source": "TechInsights, Summit Electronics",
+          "date": "2026-07-28",
+          "imminence": 8,
+          "impact": 8,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "url": "https://www.techinsights.com/strait-of-hormuz-semiconductor-supply-risk"
+        },
+        {
+          "id": "sc-002",
+          "headline": "Memory shortages deepening, DRAM lead times stretching, prices climbing",
+          "summary": "Memory shortages tightening across supply chain. Higher contract prices set to ripple through global electronics markets. DRAM lead times stretching, suppliers holding firm. Server, PC, mobile device buyers facing rising costs.",
+          "source": "Digitimes",
+          "date": "2026-07-31",
+          "imminence": 7,
+          "impact": 6,
+          "threads": ["asian_contagion"],
+          "url": "https://www.digitimes.com/news/a20260731PD211/2026-supply-chain-dram-demand-market.html"
+        },
+        {
+          "id": "sc-003",
+          "headline": "AI boom + West Asia crisis driving PCB shortage, electronics prices rising",
+          "summary": "PCB crunch from rising material costs, supply chain disruptions in key shipping routes, and component diversion toward AI hardware. Electronics prices rising globally.",
+          "source": "Business Standard",
+          "date": "2026-08-02",
+          "imminence": 7,
+          "impact": 6,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "url": "https://www.business-standard.com/industry/news/ai-boom-west-asia-crisis-fuel-pcb-shortage-electronics-prices-rise-126080200524_1.html"
+        },
+        {
+          "id": "sc-004",
+          "headline": "Global shipping routes fundamentally altered by geopolitical crises",
+          "summary": "International trade flow analysis confirms rising geopolitical tensions across critical maritime transit hubs are altering global shipping and freight operations. Data center developers stockpiling inventory in anticipation of 2026 shortage.",
+          "source": "Mobilita News, Rabobank",
+          "date": "2026-08-03",
+          "imminence": 8,
+          "impact": 7,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "url": "https://www.mobilita.news/?item=27499"
+        }
+      ],
+      "category_score": 29
+    },
+    "regulatory_change": {
+      "findings": [
+        {
+          "id": "rc-001",
+          "headline": "FinCEN, OFAC, Treasury joint NPRM to scope stablecoin issuers into Bank Secrecy Act",
+          "summary": "Joint notice of proposed rulemaking from FinCEN, OFAC, and Treasury to bring stablecoin issuers into BSA framework. Major regulatory shift for crypto markets. Stablecoin issuers now need federal compliance infrastructure.",
+          "source": "Elliptic",
+          "date": "2026-07-31",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["crypto_collapse"],
+          "url": "https://www.elliptic.co/insights/how-us-crypto-regulation-is-being-rewritten-in-2026/"
+        },
+        {
+          "id": "rc-002",
+          "headline": "CLARITY Act stalled in Senate before August recess — 600+ page bill",
+          "summary": "CLARITY Act (crypto market structure) passed House Jul 2025, cleared Senate Banking Committee 15-9 May 2026. Merged 600+ page Senate text landed Jul 22 with ethics provisions. Votes not there before August recess. Regulatory uncertainty persists.",
+          "source": "Datawallet, Davis Wright Tremaine, Fulcrum Macro",
+          "date": "2026-08-03",
+          "imminence": 5,
+          "impact": 6,
+          "threads": ["crypto_collapse"],
+          "url": "https://www.datawallet.com/crypto/clarity-act-explained"
+        },
+        {
+          "id": "rc-003",
+          "headline": "SEC 2026 regulatory agenda — crypto asset trading rules, broker-dealer updates",
+          "summary": "SEC weighing amendments to Exchange Act rules for crypto asset trading on ATS and national securities exchanges. Updates to broker-dealer financial responsibility rules. Transfer agent regulatory regime being updated for crypto and DLT.",
+          "source": "ArentFox Schiff",
+          "date": "2026-07-28",
+          "imminence": 5,
+          "impact": 6,
+          "threads": ["crypto_collapse"],
+          "url": "https://www.afslaw.com/perspectives/alerts/sec-issues-statement-2026-regulatory-agenda"
+        },
+        {
+          "id": "rc-004",
+          "headline": "Hashdex liquidates spot Bitcoin ETF — Bernstein warns CLARITY delay weighs on prices",
+          "summary": "Hashdex shutting down its spot Bitcoin ETF after failing to attract assets. Bernstein warns CLARITY Act delay could weigh on crypto prices. ETF flows turning negative, CME open interest at 2023 levels, Strategy idle for 5th straight week.",
+          "source": "Cointelegraph, CoinDesk",
+          "date": "2026-08-03",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["crypto_collapse"],
+          "url": "https://cointelegraph.com/news/what-happened-in-crypto-today"
+        }
+      ],
+      "category_score": 25
+    },
+    "social_unrest": {
+      "findings": [
+        {
+          "id": "su-001",
+          "headline": "Jakarta fears August riot repeat — Governor urges calm, malls removing fences",
+          "summary": "Jakarta Governor Pramono Anung urging calm amid fears of August riot repeat. Shopping malls and office buildings removing perimeter fences. Social tension high in Indonesia one year after 2025 August riots.",
+          "source": "Jakarta Post",
+          "date": "2026-08-03",
+          "imminence": 7,
+          "impact": 5,
+          "threads": ["asian_contagion"],
+          "url": "http://www.thejakartapost.com/indonesia/2026/08/03/pramono-urges-calm-as-fear-of-august-riot-repeat-unnerves-shopping-malls"
+        },
+        {
+          "id": "su-002",
+          "headline": "Gen Z protests across Asia — India, Indonesia ongoing through 2026",
+          "summary": "Gen-Z protests active across multiple Asian countries. India: youth protests over NEET-UG exam paper leak brought thousands to New Delhi streets. Indonesia: student-led anti-government demonstrations since Feb 2025. Pattern of youth-driven civil instability.",
+          "source": "Wikipedia, Britannica",
+          "date": "2026-08-01",
+          "imminence": 5,
+          "impact": 5,
+          "threads": ["asian_contagion", "china_collapse"],
+          "url": "https://en.wikipedia.org/wiki/Gen_Z_protests_in_Asia"
+        },
+        {
+          "id": "su-003",
+          "headline": "Iranian protests 2025-2026 — economic unrest, internet shutdowns",
+          "summary": "Ongoing Iranian protests linked to economic hardship and war fallout. Government characterizing unrest as foreign-incited. Internet services shut down. Social unrest compounded by war and economic crisis.",
+          "source": "Wikipedia",
+          "date": "2026-07-30",
+          "imminence": 6,
+          "impact": 6,
+          "threads": ["middle_east_war"],
+          "url": "https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests"
+        }
+      ],
+      "category_score": 16
+    },
+    "financial_stress_precursors": {
+      "findings": [
+        {
+          "id": "fs-001",
+          "headline": "IG credit spreads at 80bps (benign), HY at 284bps — no acute stress yet",
+          "summary": "IG OAS at 80bps as of Jul 30 — below 100bp benign threshold. HY OAS at 284bps — moderate but not distressed. Below 200bp stress signal, above tights. St. Louis Fed Financial Stress Index data through Jul 24. No acute financial stress yet but energy shock could change quickly.",
+          "source": "Convex Trade, FRED",
+          "date": "2026-07-30",
+          "imminence": 4,
+          "impact": 7,
+          "threads": ["us_recession", "euro_crisis"],
+          "url": "https://convextrade.com/metrics/bamlc0a0cm"
+        },
+        {
+          "id": "fs-002",
+          "headline": "US initial jobless claims at 187,000 — lowest in months, strong labor market",
+          "summary": "Initial claims sank by 22,000 to 187,000 on week to July 18, well under expectations of 212,000. Lowest claim count in months. Labor market remains strong — no recession signal from employment data yet.",
+          "source": "Trading Economics",
+          "date": "2026-07-24",
+          "imminence": 2,
+          "impact": 5,
+          "threads": ["us_recession"],
+          "url": "https://tradingeconomics.com/united-states/jobless-claims"
+        },
+        {
+          "id": "fs-003",
+          "headline": "Bitcoin flirting with $64K, ETF flows negative, CME open interest at 2023 levels",
+          "summary": "Bitcoin weakness reflecting stalled participation more than forced selling. ETF flows turning negative. CME open interest back at 2023 levels. Strategy (MicroStrategy) idle for 5th straight week. Hashdex liquidating Bitcoin ETF. Crypto market showing stress precursors.",
+          "source": "CoinDesk, Cointelegraph",
+          "date": "2026-08-03",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["crypto_collapse"],
+          "url": "https://www.coindesk.com/"
+        },
+        {
+          "id": "fs-004",
+          "headline": "Euro area inflation up to 2.9% — energy highest component, UK expected to breach 5%",
+          "summary": "Euro area annual inflation rising to 2.9%. Energy is highest annual rate component. UK inflation expected to breach 5% in 2026. ECB energy price shock analysis confirms recessionary impact through real disposable income losses.",
+          "source": "Eurostat, ECB, Wikipedia",
+          "date": "2026-07-31",
+          "imminence": 7,
+          "impact": 8,
+          "threads": ["euro_crisis", "middle_east_war"],
+          "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-31072026-ap"
+        },
+        {
+          "id": "fs-005",
+          "headline": "US 10-year Treasury yields up 57 points YTD — borrowing costs rising",
+          "summary": "US 10-year Treasury yields have gained almost 57 points since start of year. Rising long-term borrowing costs alongside Fed holding rates steady. Yield curve dynamics shifting. Potential for JGB selling pressure from Japan intervention adds risk.",
+          "source": "CNBC",
+          "date": "2026-08-03",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["us_recession", "japan_yen"],
+          "url": "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-treasurys-euros-.html"
+        }
+      ],
+      "category_score": 24
+    }
+  },
+  "convergence_detection": {
+    "methodology": "For each thread, sum (imminence × impact) for all findings from DIFFERENT categories pointing at that thread. Convergence score = sum of all cross-category finding scores.",
+    "threads": {
+      "japan_yen": {
+        "findings": ["vi-001", "vi-002", "vi-003", "cb-004", "fs-005"],
+        "categories_involved": ["verbal_intervention", "central_bank_communication", "financial_stress_precursors"],
+        "category_count": 3,
+        "convergence_score": 72,
+        "signal": "DEVELOPING",
+        "assessment": "Coordinated US-Japan intervention executed, verbal warnings continuing, Fed communication shift adds uncertainty, rising UST yields complicate intervention mechanics. High imminence — further intervention likely if yen weakens again."
+      },
+      "middle_east_war": {
+        "findings": ["gp-001", "gp-002", "gp-004", "sc-001", "sc-003", "sc-004", "cb-003", "cb-004", "su-003", "fs-004"],
+        "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "central_bank_communication", "social_unrest", "financial_stress_precursors"],
+        "category_count": 5,
+        "convergence_score": 148,
+        "signal": "ACTIVE",
+        "assessment": "5-category convergence. Iran war ongoing since Feb with Strait of Hormuz closure = largest oil supply disruption in history. Supply chains across semiconductors, shipping, PCBs all disrupted. ECB postponed rate cuts, raised inflation forecasts. European inflation at 2.9%, UK expected to breach 5%. Iranian protests ongoing. Cyber operations escalating. This is the dominant macro thread."
+      },
+      "us_recession": {
+        "findings": ["cb-001", "cb-002", "al-001", "fs-001", "fs-002", "fs-005", "gp-001"],
+        "categories_involved": ["central_bank_communication", "anonymous_leaks", "financial_stress_precursors", "geopolitical_posture"],
+        "category_count": 4,
+        "convergence_score": 68,
+        "signal": "DEVELOPING",
+        "assessment": "Fed ended forward guidance (major regime shift), split 9-3 vote, inflation above target. Jobless claims strong at 187K — no labor market stress yet. Credit spreads benign at 80bp IG / 284bp HY. But rising UST yields + energy shock from Iran war + loss of forward guidance = recession risk building. Not imminent but DEVELOPING."
+      },
+      "euro_crisis": {
+        "findings": ["cb-001", "cb-003", "cb-004", "fs-001", "fs-004", "gp-001"],
+        "categories_involved": ["central_bank_communication", "financial_stress_precursors", "geopolitical_posture"],
+        "category_count": 3,
+        "convergence_score": 82,
+        "signal": "DEVELOPING",
+        "assessment": "ECB postponed rate cuts, raised inflation forecast, cut GDP growth. Euro area inflation at 2.9% with energy as highest component. UK expected to breach 5%. Italy specifically flagged as vulnerable to energy prices. Energy price shock confirmed recessionary by ECB. If Hormuz blockade persists through summer, technical recession likely in energy-intensive economies."
+      },
+      "asian_contagion": {
+        "findings": ["gp-001", "gp-002", "sc-001", "sc-002", "sc-003", "sc-004", "su-001", "su-002"],
+        "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "social_unrest"],
+        "category_count": 3,
+        "convergence_score": 76,
+        "signal": "DEVELOPING",
+        "assessment": "Iran war disrupting Asian shipping routes, semiconductor supply chains, PCB manufacturing. Memory shortages deepening. Gen Z protests active across India, Indonesia. Jakarta fearing August riot repeat. Asian economies highly exposed to energy imports through Hormuz. Contagion risk building if disruption persists."
+      },
+      "china_collapse": {
+        "findings": ["gp-003", "gp-004", "su-002"],
+        "categories_involved": ["geopolitical_posture", "social_unrest"],
+        "category_count": 2,
+        "convergence_score": 24,
+        "signal": "MONITORING",
+        "assessment": "China missile test signaling nuclear second-strike capability. Property crisis ongoing but no acute escalation this week. Gen Z protests in region but not specifically in China this cycle. Cyber operations escalating. Low convergence — monitoring only."
+      },
+      "crypto_collapse": {
+        "findings": ["rc-001", "rc-002", "rc-003", "rc-004", "fs-003"],
+        "categories_involved": ["regulatory_change", "financial_stress_precursors"],
+        "category_count": 2,
+        "convergence_score": 44,
+        "signal": "MONITORING",
+        "assessment": "Heavy regulatory activity (FinCEN/OFAC/Treasury NPRM, CLARITY Act stalled, SEC agenda). Hashdex liquidating Bitcoin ETF. ETF flows negative. Bitcoin at ~$64K with downside to $55K. But only 2 categories converging — below DEVELOPING threshold. Regulatory uncertainty is the main drag. No acute crash signal yet."
+      },
+      "global_pandemic": {
+        "findings": [],
+        "categories_involved": [],
+        "category_count": 0,
+        "convergence_score": 0,
+        "signal": "CLEAR",
+        "assessment": "No lead indicators detected for pandemic risk."
+      }
+    },
+    "active_alerts": [
+      {
+        "thread": "middle_east_war",
+        "convergence_score": 148,
+        "threshold": 100,
+        "signal": "ACTIVE",
+        "action_required": "TELEGRAM_ALERT_TO_ROO",
+        "message": "🚨 BlackWatch ACTIVE SIGNAL: middle_east_war thread has convergence score 148 (threshold: 100). 5 categories converging: geopolitical_posture, supply_chain_disruption, central_bank_communication, social_unrest, financial_stress_precursors. Iran war ongoing with Strait of Hormuz closure. Largest oil supply disruption in history. Euro inflation rising, UK expected to breach 5%. Semiconductor and shipping supply chains disrupted. Iranian protests ongoing. Cyber operations escalating."
+      }
+    ]
+  },
+  "macro_event_signals": {
+    "japan_yen": { "signal": "DEVELOPING", "score": 72, "previous": "MONITORING" },
+    "middle_east_war": { "signal": "ACTIVE", "score": 148, "previous": "ACTIVE" },
+    "us_recession": { "signal": "DEVELOPING", "score": 68, "previous": "MONITORING" },
+    "euro_crisis": { "signal": "DEVELOPING", "score": 82, "previous": "MONITORING" },
+    "asian_contagion": { "signal": "DEVELOPING", "score": 76, "previous": "MONITORING" },
+    "china_collapse": { "signal": "MONITORING", "score": 24, "previous": "MONITORING" },
+    "crypto_collapse": { "signal": "MONITORING", "score": 44, "previous": "MONITORING" },
+    "global_pandemic": { "signal": "CLEAR", "score": 0, "previous": "CLEAR" }
+  },
+  "signal_changes": [
+    { "thread": "us_recession", "change": "MONITORING → DEVELOPING", "reason": "Fed ended forward guidance + split vote + rising UST yields + energy shock" },
+    { "thread": "euro_crisis", "change": "MONITORING → DEVELOPING", "reason": "ECB postponed cuts, inflation at 2.9%, UK expected 5%, energy recessionary" },
+    { "thread": "asian_contagion", "change": "MONITORING → DEVELOPING", "reason": "Supply chain disruption across semiconductors, shipping, PCBs + social unrest" }
+  ],
+  "top_findings": [
+    { "id": "gp-001", "score": 100, "headline": "2026 Iran War — Strait of Hormuz closure, largest oil supply disruption in history" },
+    { "id": "cb-001", "score": 72, "headline": "Fed ends forward guidance — 'Facts Over Forecasts' under Warsh" },
+    { "id": "vi-001", "score": 72, "headline": "US-Japan first coordinated yen intervention since 1998" },
+    { "id": "cb-003", "score": 56, "headline": "ECB postponed rate cuts, raised inflation forecast, cut GDP growth" },
+    { "id": "fs-004", "score": 56, "headline": "Euro inflation at 2.9%, UK expected to breach 5%" }
+  ],
+  "next_scan": "2026-08-05T06:30:00Z"
+}
