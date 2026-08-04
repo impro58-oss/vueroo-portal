@@ -1,0 +1,152 @@
+﻿{
+    "new_events":  1,
+    "domain_notes":  {
+                         "latam":  "Argentina defaulted on R debt to Brazil\u0027s Casa da Moeda. IMF praises Argentina reforms. Not category-5.",
+                         "uk":  "BoE left rates at 3.75% (6-3 vote). Bailey pushed back on hike expectations. Sterling soft but stable. No emergency.",
+                         "eu_ecb":  "ECB rates unchanged at 2.25%. Governing Council meeting in Berlin. No emergency.",
+                         "china":  "PBOC pledging \u0027appropriately loose\u0027 monetary policy, timely tool adjustment. Property slump ongoing. No emergency.",
+                         "us_fed":  "Fed held rates at 3.6% on July 29 (9-3 vote, 3 dissents for hike). New Chair Warsh. Fifth straight hold. No emergency action."
+                     },
+    "comparison_to_last":  "1 NEW event: Russia systemic banking crisis escalated with Sberbank executive admission. Iran war status shifted from ESCALATING to NEGOTIATING. Ebola death toll rose by 120. All other events ongoing with minor updates.",
+    "new_category_5_events":  [
+                                  "russia_banking_escalation"
+                              ],
+    "events_detected":  6,
+    "scan_type":  "breaking_event",
+    "scan_date":  "2026-08-04",
+    "events":  [
+                   {
+                       "domain":  "middle_east",
+                       "source":  "Wikipedia, Guardian, CBS, Fox, CNN, The Hindu, Britannica",
+                       "description":  "Day 157 of Iran War. Trump called off multi-day air campaign Aug 1, claims Hormuz deal \u0027imminent\u0027. Iran denies direct US talks, confirms Oman-mediated discussions on Strait management. US naval blockade remains until negotiations conclude. Houthi threats to join if allies attack Iran. Ceasefire MOU from June shattered in July.",
+                       "category":  "war_military",
+                       "first_detected":  "2026-02-28",
+                       "severity":  5,
+                       "change_from_last":  "Trump cancelled strikes, negotiations announced. IRAN DENIES DIRECT TALKS — Oman mediating. Status shifted from ESCALATING to NEGOTIATING.",
+                       "escalate_to":  [
+                                           "middle_east",
+                                           "energy",
+                                           "geopolitical",
+                                           "supply_chain",
+                                           "food_security"
+                                       ],
+                       "status":  "NEGOTIATING",
+                       "title":  "2026 Iran War — Hormuz Negotiations Shift (Ongoing)",
+                       "impact_regions":  [
+                                              "Middle East",
+                                              "Global Energy",
+                                              "Global Shipping"
+                                          ]
+                   },
+                   {
+                       "domain":  "pandemic_health",
+                       "source":  "WHO, CDC, UN News, Wikipedia, TPR, ECDC",
+                       "description":  "Bundibugyo ebolavirus outbreak in DRC now second-largest Ebola outbreak ever recorded. 3,605 confirmed cases, 1,707 deaths (44% CFR). No approved vaccine/treatment for Bundibugyo strain. Spread to 4+ provinces. UN opening new treatment centers. Armed conflict hindering response.",
+                       "category":  "pandemic",
+                       "first_detected":  "2026-06",
+                       "severity":  5,
+                       "change_from_last":  "Death toll rose from 1,587 to 1,707. Now confirmed second-largest ever. UN opening new mobile bases.",
+                       "escalate_to":  [
+                                           "supply_chain",
+                                           "social_cohesion"
+                                       ],
+                       "status":  "INTENSIFYING",
+                       "title":  "2026 Ebola Epidemic — 1,707 Dead, Second-Largest Ever, Intensifying",
+                       "impact_regions":  [
+                                              "Central Africa",
+                                              "Global Health"
+                                          ]
+                   },
+                   {
+                       "domain":  "japan",
+                       "source":  "CNBC, NYT, NPR, Japan Times, Axios, Wolf Street",
+                       "description":  "First coordinated US-Japan currency intervention since 1998. Yen surged from 163.73 to ~156.34. Japan plans to use Fed FIMA repo facility for future interventions to avoid Treasury selling. US sold EUROS to buy yen. Analysts see little hope for sustained rally — fundamentals unchanged.",
+                       "category":  "sovereign_intervention",
+                       "first_detected":  "2026-07-31",
+                       "severity":  5,
+                       "change_from_last":  "Yen stabilized at 156-157. FIMA repo facility usage confirmed. Analysts warning fundamentals unchanged.",
+                       "escalate_to":  [
+                                           "currency",
+                                           "fin_stability",
+                                           "japan_sovereign"
+                                       ],
+                       "status":  "ACTIVE",
+                       "title":  "US-Japan Joint Yen Intervention — First Since 1998, Yen at 156-157",
+                       "impact_regions":  [
+                                              "Japan",
+                                              "United States",
+                                              "Global Currency Markets",
+                                              "Global Bond Markets"
+                                          ]
+                   },
+                   {
+                       "domain":  "commodities",
+                       "source":  "Trading Economics, EIA, Wikipedia, Forbes, StockMarketWatch",
+                       "description":  "IEA characterizes Iran war/Hormuz closure as largest supply disruption in history. Brent at ~-92. Oil +23% in July after renewed hostilities. OPEC+ increasing quotas. Houthi Red Sea disruption. 5-6 mb/d at risk.",
+                       "category":  "energy_shock",
+                       "first_detected":  "2026-02-28",
+                       "severity":  5,
+                       "change_from_last":  "Brent fell to ~-91 range. Slight improvement but disruption persists. Potential Hormuz deal could change rapidly.",
+                       "escalate_to":  [
+                                           "energy",
+                                           "supply_chain",
+                                           "food_security",
+                                           "geopolitical"
+                                       ],
+                       "status":  "ONGOING",
+                       "title":  "Oil Supply Disruption — Largest in History of Global Oil Market (IEA)",
+                       "impact_regions":  [
+                                              "Global Energy",
+                                              "Global Economy"
+                                          ]
+                   },
+                   {
+                       "domain":  "financial_system",
+                       "source":  "Moscow Times, Riddle Russia (ridl.io)",
+                       "description":  "NEW ESCALATION: Sberbank executive confirms Russian banks lack ruble liquidity to buy government bonds financing federal deficit. NPLs crossed 10% threshold. Record 620B ruble deposit outflows in July. Central Bank injected 2.3T rubles since Jan. Banks\u0027 total CB debt at 6T rubles (.6B). Kremlin-linked think tank warns of systemic crisis by Oct 2026.",
+                       "category":  "market_dislocation",
+                       "first_detected":  "2026-07-29",
+                       "severity":  4,
+                       "change_from_last":  "NEW: Sberbank executive public admission banks can\u0027t buy gov\u0027t debt. NPLs above 10%. Record deposit outflows. Ukrainian attacks on Russian e-commerce infrastructure threatening bank loan portfolios.",
+                       "escalate_to":  [
+                                           "fin_stability",
+                                           "geopolitical"
+                                       ],
+                       "status":  "ESCALATING",
+                       "title":  "Russia Systemic Banking Crisis Escalating — Banks Lack Cash for Government Debt",
+                       "impact_regions":  [
+                                              "Russia",
+                                              "Eurasian Economy"
+                                          ]
+                   },
+                   {
+                       "domain":  "em_asia",
+                       "source":  "Rio Times, Upshot Reports",
+                       "description":  "Nigeria formally accuses South African security forces of complicity in xenophobic violence after 116 Nigerian citizens killed. Diplomatic relations degrading. Trade and AfCFTA at risk. Nigerian diplomatic representation in Pretoria stalled.",
+                       "category":  "sovereign_crisis",
+                       "first_detected":  "2026-07-28",
+                       "severity":  3,
+                       "change_from_last":  "No change from last scan. Ongoing diplomatic crisis.",
+                       "escalate_to":  [
+                                           "geopolitical"
+                                       ],
+                       "status":  "ONGOING",
+                       "title":  "Nigeria-South Africa Diplomatic Crisis — 116 Citizens Killed",
+                       "impact_regions":  [
+                                              "West Africa",
+                                              "Southern Africa",
+                                              "African Continental Free Trade"
+                                          ]
+                   }
+               ],
+    "scan_time":  "2026-08-04T03:02:00Z",
+    "scanner":  "BlackWatch Breaking Event Scanner (4h cron)",
+    "no_event_domains":  [
+                             "us_fed",
+                             "latam",
+                             "eu_ecb",
+                             "uk",
+                             "china"
+                         ],
+    "domains_scanned":  12
+}
