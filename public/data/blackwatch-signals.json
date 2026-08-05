@@ -7,7 +7,7 @@
     "signals_manual": 0,
     "signals_total": 20,
     "breaking_event": "11:03 UTC scan: 8 events active. No NEW severity-5 events since 07:02 scan. Key update: Oil dropped 5%+ on Iran diplomacy hopes. Situation stable but fragile. macro_event=ACTIVE.",
-    "threshold_breach": "3 thresholds breached"
+    "threshold_breach": "3 thresholds breached (1 RED: Gold >3500, 2 AMBER: Gold >3000, EUR/USD >1.15). Manual data filled: JGB10Y=2.81%, DE10Y=3.21%, BAA10Y=1.61%. MOVE index exact value unavailable — qualitatively ELEVATED per CBOE."
   },
   "signals": {
     "fin_stability": {
@@ -22,7 +22,7 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4227.2). FIMA Repo expansion push by Bessent raises systemic questions about dollar liquidity backstop. 30-year Treasury yields at 19-year high. Russia banking crisis risk rising (Moscow Times).",
+      "note": "Threshold breach: Gold above 3500 (current: 4231.5, +20.9% above RED threshold). FIMA Repo expansion push by Bessent raises systemic questions about dollar liquidity backstop. 30-year Treasury yields at 19-year high. Russia banking crisis risk rising (Moscow Times). DE10Y at 3.21% (15-year high). JGB10Y at 2.81%. BAA10Y spread at 1.61%.",
       "timestamp": "2026-08-05T11:04:04.000000+00:00"
     },
     "liquidity": {
@@ -82,7 +82,7 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4231.5)",
+      "note": "Threshold breach: Gold above 3500 (current: 4231.5). Iran war Day 156+. Strait of Hormuz situation fluid — oil dropping 10.8% to $80 on diplomacy hopes but physical market still disrupted.",
       "timestamp": "2026-08-05T11:32:02.000000+00:00"
     },
     "cyber": {
@@ -208,13 +208,13 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4077.4,
+      "value": 4231.5,
       "unit": "$/oz",
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 164.5,
-      "description": "Gold Spot: $4,077.40/oz (Forbes Advisor, Aug 4 2026)",
+      "change_from_last": 154.1,
+      "description": "Gold Spot: $4,231.50/oz (Yahoo Finance COMEX, Aug 5 2026)",
       "series_id": "Web search - Forbes Advisor",
       "last_date": "2026-08-05",
       "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
