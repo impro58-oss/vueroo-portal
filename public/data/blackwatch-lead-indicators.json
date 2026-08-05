@@ -1,54 +1,77 @@
 {
-  "scan_id": "blackwatch-2026-08-04",
-  "scan_timestamp": "2026-08-04T01:30:00Z",
-  "scan_local_time": "2026-08-04 02:30 Europe/Dublin",
+  "scan_id": "blackwatch-2026-08-05",
+  "scan_timestamp": "2026-08-05T01:30:00Z",
+  "scan_local_time": "2026-08-05 02:30 Europe/Dublin",
   "scanner": "BlackWatch Lead Indicator Scanner",
   "status": "COMPLETE",
+  "previous_scan": "2026-08-04T01:30:00Z",
   "categories": {
     "verbal_intervention": {
       "findings": [
         {
           "id": "vi-001",
           "headline": "US-Japan confirm first coordinated yen intervention since 1998, warn of more",
-          "summary": "MOF Katayama and US Treasury Bessent confirmed joint yen-buying intervention on Friday Aug 1. MOF statement: 'We will not hesitate to conduct further joint intervention.' Verbal warnings escalated over prior weeks, now followed by action. Japan plans to use Fed FIMA repo facility for future interventions to avoid Treasury selling.",
-          "source": "Bloomberg, CNBC, MOF official statement",
+          "summary": "MOF Katayama and US Treasury Bessent confirmed joint yen-buying intervention on Aug 1. Both sides warning they 'will not hesitate' to intervene again. Japan plans to use Fed FIMA repo facility for future interventions to avoid Treasury selling. Deterrence effect increased by US involvement.",
+          "source": "Bloomberg, CNBC, MOF official statement, Mainichi",
           "date": "2026-08-03",
           "imminence": 9,
           "impact": 8,
           "threads": ["japan_yen"],
-          "url": "https://www.bloomberg.com/news/articles/2026-08-02/katayama-to-say-japan-us-acted-together-on-yen-reuters-reports"
+          "url": "https://www.cnbc.com/2026/08/03/yen-intervention-us-japan-trump-bessent-katayama.html"
         },
         {
           "id": "vi-002",
-          "headline": "Katayama repeatedly issued verbal warnings in weeks before intervention",
-          "summary": "Japan Times reports Katayama had been issuing verbal warnings for several weeks before the actual intervention. Verbal intervention escalated to physical intervention — classic pattern progression.",
-          "source": "Japan Times",
-          "date": "2026-07-31",
+          "headline": "Katayama repeatedly issued verbal warnings before intervention — classic escalation pattern",
+          "summary": "Japan Times reports Katayama had been issuing verbal warnings for several weeks before actual intervention. Bessent also told Fox Business the yen is undervalued. Verbal intervention escalated to physical intervention — pattern complete. E8 Markets notes Japan 'ready to act at any time'.",
+          "source": "Japan Times, E8 Markets",
+          "date": "2026-08-02",
           "imminence": 7,
           "impact": 7,
           "threads": ["japan_yen"],
-          "url": "https://www.japantimes.co.jp/business/2026/07/31/markets/yen-intervention-breaking-2026/"
+          "url": "https://blog.e8markets.com/article/japans-yen-warning-shot-fx-readiness-and-what-traders-should-do-now"
         },
         {
           "id": "vi-003",
-          "headline": "US Treasury won't hesitate on more yen intervention — combined verbal + physical",
-          "summary": "Seoul Economic Daily interprets the joint statements as an attempt to reverse yen's underlying trend by combining verbal intervention following actual currency market intervention. Both sides signaling readiness for more.",
-          "source": "Seoul Economic Daily",
+          "headline": "Bessent pushing Fed to expand FIMA repo backstop for Japan's yen defense",
+          "summary": "CNBC analysis: Bessent doesn't distinguish between FIMA and swap lines — sees all Fed facilities as tools to protect US interests, including currency. This expands the intervention toolkit and signals deeper US-Japan coordination. Brookings warns coordinated intervention could paradoxically weaken yen confidence by signaling desperation.",
+          "source": "CNBC, Brookings",
           "date": "2026-08-03",
           "imminence": 8,
+          "impact": 8,
+          "threads": ["japan_yen"],
+          "url": "https://www.cnbc.com/2026/08/03/bessent-fed-japan-yen-fima-repo-facility.html"
+        },
+        {
+          "id": "vi-004",
+          "headline": "USD/JPY rebounded to 157.6 after intervention, retracing 28% of the drop",
+          "summary": "EBC Financial Group reports USD/JPY rebounded to 157.6, retracing 28% of the intervention drop. Rate gap still favors dollar. Analysts question whether intervention can reverse trend without faster BoJ rate hikes and fiscal expansion dial-back. Intervention efficacy in doubt.",
+          "source": "EBC Financial Group, CNBC",
+          "date": "2026-08-04",
+          "imminence": 7,
           "impact": 7,
           "threads": ["japan_yen"],
-          "url": "https://en.sedaily.com/international/2026/08/03/breaking-news-us-treasury-wont-hesitate-on-more-yen"
+          "url": "https://www.ebc.com/forex/usd-jpy-rebound-us-japan-yen-intervention"
         }
       ],
-      "category_score": 24
+      "category_score": 30
     },
     "anonymous_leaks": {
       "findings": [
         {
           "id": "al-001",
-          "headline": "Fed proposes modernizing insider lending rules — signals internal review",
-          "summary": "Federal Reserve Board requested comment on proposal to modernize rules governing credit extension to bank insiders. Not a leak per se but signals internal regulatory review focus. No significant anonymous leaks from central banks this week.",
+          "headline": "ECB warns wars and cyberattacks could challenge euro zone banks' FX liquidity",
+          "summary": "Reuters reports ECB warning that wars (Iran war context) and cyberattacks could challenge euro zone banks' foreign exchange liquidity. Internal risk assessment surfacing — signals ECB is internally worried about FX liquidity under war conditions. Not an anonymous leak per se but an unusual public warning from the ECB.",
+          "source": "Reuters",
+          "date": "2026-07-31",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["euro_crisis", "middle_east_war"],
+          "url": "https://www.reuters.com/legal/transactional/wars-cyberattacks-could-challenge-euro-zone-banks-fx-liquidity-ecb-says-2026-07-31/"
+        },
+        {
+          "id": "al-002",
+          "headline": "Fed proposes modernizing insider lending rules — signals internal regulatory review",
+          "summary": "Federal Reserve Board requested comment on proposal to modernize rules governing credit extension to bank insiders. Signals internal regulatory review focus. No significant anonymous leaks from central banks this week, but this regulatory modernization signals internal concern about bank governance.",
           "source": "Federal Reserve press release",
           "date": "2026-07-31",
           "imminence": 3,
@@ -57,15 +80,15 @@
           "url": "https://www.federalreserve.gov/"
         }
       ],
-      "category_score": 7
+      "category_score": 10
     },
     "central_bank_communication": {
       "findings": [
         {
           "id": "cb-001",
           "headline": "Fed ends forward guidance, adopts 'Facts Over Forecasts' under Warsh",
-          "summary": "Federal Reserve has ended traditional forward guidance, adopting a 'facts over forecasts' approach under Chair Warsh. Major communication regime shift — markets lose rate path signaling. ECB and BOE considering similar shifts. This removes a key market stabilizer.",
-          "source": "Chosun, ETF Trends",
+          "summary": "Federal Reserve has ended traditional forward guidance, adopting a 'facts over forecasts' approach under Chair Warsh. Major communication regime shift — markets lose rate path signaling. Fed expected to adopt tightening bias while BoJ and BoE likely on hold. This removes a key market stabilizer.",
+          "source": "Chosun, ETF Trends, Financial World",
           "date": "2026-07-30",
           "imminence": 8,
           "impact": 9,
@@ -75,7 +98,7 @@
         {
           "id": "cb-002",
           "headline": "FOMC holds rates at 3.50-3.75% in split 9-3 vote, inflation above target",
-          "summary": "Fed kept rates unchanged in 9-3 split vote. June dot plot showed 9 members projecting at least one hike in 2026, 8 projecting hold. Deep division. Inflation remains above target. Energy uncertainty from Iran war putting additional pressure.",
+          "summary": "Fed kept rates unchanged in 9-3 split vote. June dot plot showed 9 members projecting at least one hike in 2026, 8 projecting hold. Deep division. Inflation remains above target. Energy uncertainty from Iran war putting additional pressure on rate decisions.",
           "source": "Schwab, ETF Trends, Fed press release",
           "date": "2026-07-29",
           "imminence": 7,
@@ -86,8 +109,8 @@
         {
           "id": "cb-003",
           "headline": "ECB postponed rate cuts, raised 2026 inflation forecast, cut GDP growth",
-          "summary": "ECB postponed planned interest rate reductions on March 19 due to Iran war energy shock. Raised 2026 inflation forecast, cut GDP growth projections. Energy-intensive economies warned of technical recession risk if blockade persists through summer.",
-          "source": "Wikipedia (Economic impact of 2026 Iran war), ECB",
+          "summary": "ECB postponed planned interest rate reductions due to Iran war energy shock. Raised 2026 inflation forecast, cut GDP growth projections. Energy-intensive economies warned of technical recession risk if blockade persists through summer. ECB has cut rates 8 times since June 2024 but paused since June 2026.",
+          "source": "Wikipedia, ECB, House of Commons Library",
           "date": "2026-07-30",
           "imminence": 7,
           "impact": 8,
@@ -96,8 +119,19 @@
         },
         {
           "id": "cb-004",
+          "headline": "Stronger Eurozone inflation reinforces ECB tightening expectations",
+          "summary": "FXStreet reports stronger Eurozone inflation and economic growth reinforcing expectations for tighter monetary policy. Euro advancing against yen on ECB hike bets and Japan fiscal concerns. German inflation confirmed at 2.4% y/y in June. ECB Governing Council meeting scheduled in Berlin.",
+          "source": "FXStreet, Reuters, ECB",
+          "date": "2026-08-04",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["euro_crisis", "japan_yen"],
+          "url": "https://www.fxstreet.com/news/euro-advances-as-ecb-tightening-expectations-japan-fiscal-concerns-weigh-on-yen-202608040935"
+        },
+        {
+          "id": "cb-005",
           "headline": "Energy uncertainty puts Fed, BoJ, BoE communication under scrutiny",
-          "summary": "Central banks weighing inflation risks as oil prices respond to US-Iran diplomacy. Communication strategies being challenged by energy volatility. BoJ also navigating yen intervention communication.",
+          "summary": "Central banks weighing inflation risks as oil prices respond to US-Iran diplomacy. Communication strategies challenged by energy volatility. Fed tightening bias, BoJ and BoE likely on hold. All three navigating conflicting inflation/growth signals from war shock.",
           "source": "Financial World",
           "date": "2026-08-01",
           "imminence": 6,
@@ -106,86 +140,86 @@
           "url": "https://www.financial-world.org/news/news/financial/30862/energy-uncertainty-puts-fed-boj-and-boe-communication-under-scrutiny/"
         }
       ],
-      "category_score": 32
+      "category_score": 36
     },
     "geopolitical_posture": {
       "findings": [
         {
           "id": "gp-001",
-          "headline": "2026 Iran War ongoing since Feb — US/Israel vs Iran, Strait of Hormuz closure",
-          "summary": "US and Israel at war with Iran since Feb 28, 2026. Strikes killed Supreme Leader Khamenei. Strait of Hormuz closure = 'largest supply disruption in history of global oil market' per IEA. War reshaping geopolitics across Africa, Asia, Europe, Middle East. Oil prices soaring.",
-          "source": "Wikipedia, CSIS, Geopolitical Monitor, BBC, NYT",
-          "date": "2026-08-03",
-          "imminence": 10,
-          "impact": 10,
+          "headline": "2026 Iran War: Hormuz deal imminent — Bessent says 'by tomorrow', Rubio hopeful 'very shortly'",
+          "summary": "MAJOR DEVELOPMENT: Treasury Secretary Bessent says Hormuz deal could come 'by tomorrow'. Secretary of State Rubio hopes US can reach deal 'very shortly'. Iran and Oman working on plan to reopen Strait. Qatar, Pakistan, Oman all working together. Iran wants sole control of northern route, shared control of southern. US official says Iranian account 'not accurate' — no Iranian approvals or tolls involved. Shaky ceasefire still holding. Time magazine reports Iran turning Hormuz into revenue source via 'invoices'.",
+          "source": "Guardian, CNN, NYT, Time, TWZ, ABC News, Wikipedia",
+          "date": "2026-08-04",
+          "imminence": 9,
+          "impact": 9,
           "threads": ["middle_east_war", "euro_crisis", "us_recession", "asian_contagion"],
-          "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+          "url": "https://www.theguardian.com/world/live/2026/aug/04/middle-east-crisis-qatar-iran-us-israel-war-donald-trump-strait-hormuz-gaza-latest-news-updates"
         },
         {
           "id": "gp-002",
-          "headline": "Geopolitical crises fundamentally reshaping global shipping routes",
-          "summary": "Aug 3 analysis confirms rising tensions across critical maritime transit hubs are altering global shipping and freight operations. Strait of Hormuz crisis cascading into all major shipping lanes.",
-          "source": "Mobilita News",
-          "date": "2026-08-03",
-          "imminence": 9,
+          "headline": "Oil prices crash 5%+ on Hormuz deal hopes — Brent below $80, WTI near $75",
+          "summary": "Brent crude fell 5.3% to close at $79.36/bbl on Bessent's Hormuz deal comments. WTI fell to ~$75. EIA forecasts Brent averaging $74/bbl in Q3 2026. Oil has fallen from $119 peak in March to $79. Markets pricing in Hormuz reopening. But risks remain — deal could collapse as US and Iran disagree on terms.",
+          "source": "CNBC, NYT, EIA, Bloomingbit",
+          "date": "2026-08-04",
+          "imminence": 8,
           "impact": 8,
-          "threads": ["middle_east_war", "asian_contagion"],
-          "url": "https://www.mobilita.news/?item=27499"
+          "threads": ["middle_east_war", "us_recession", "euro_crisis", "asian_contagion"],
+          "url": "https://www.cnbc.com/2026/08/04/oil-rises-after-selloff-as-talks-to-end-us-iran-war-remain-uncertain.html"
         },
         {
           "id": "gp-003",
+          "headline": "US appears headed for strategic defeat in Iran, allies fear — NYT",
+          "summary": "NYT reports allies fear US headed for strategic defeat in Iran. Core dispute is between Iran and Oman over control of Strait of Hormuz. Iran wants sole control of northern route and shared control of southern route, giving effective control. US rejects Iranian demands for approvals and tolls. Diplomatic gap remains despite optimistic statements.",
+          "source": "New York Times",
+          "date": "2026-08-01",
+          "imminence": 7,
+          "impact": 8,
+          "threads": ["middle_east_war"],
+          "url": "https://www.nytimes.com/2026/08/01/world/middleeast/us-iran-war-strategy.html"
+        },
+        {
+          "id": "gp-004",
           "headline": "China missile test signals sea-based nuclear second-strike capability",
-          "summary": "July 6 missile test sends signal on China's maturing sea-based nuclear second-strike capability. Military posture escalation in Indo-Pacific amid trade war tensions.",
-          "source": "Geopolitical Monitor",
+          "summary": "July 6 missile test sends signal on China's maturing sea-based nuclear second-strike capability. Military posture escalation in Indo-Pacific amid trade war tensions. Cyber operations also escalating in parallel with geopolitical tensions.",
+          "source": "Geopolitical Monitor, DEFCON Level",
           "date": "2026-07-27",
           "imminence": 5,
           "impact": 7,
           "threads": ["china_collapse"],
           "url": "https://www.geopoliticalmonitor.com/"
-        },
-        {
-          "id": "gp-004",
-          "headline": "State-sponsored cyber operations moving in parallel with geopolitical escalation",
-          "summary": "DEFCON level monitoring shows state-sponsored cyber operations escalating alongside military tensions. Active campaigns tracked. Cyber warfare dimension adding to financial system risk.",
-          "source": "DEFCON Level",
-          "date": "2026-08-03",
-          "imminence": 6,
-          "impact": 7,
-          "threads": ["middle_east_war", "china_collapse"],
-          "url": "https://www.defconlevel.com/current-level"
         }
       ],
-      "category_score": 35
+      "category_score": 32
     },
     "supply_chain_disruption": {
       "findings": [
         {
           "id": "sc-001",
-          "headline": "Strait of Hormuz crisis driving semiconductor supply risk — helium shortages",
-          "summary": "TechInsights analyzing how Strait of Hormuz disruption impacts semiconductor supply chains, from helium shortages to AI-driven market tightness. 2026 semiconductor shortage with selective pressure that can shut down production lines.",
-          "source": "TechInsights, Summit Electronics",
-          "date": "2026-07-28",
-          "imminence": 8,
-          "impact": 8,
-          "threads": ["middle_east_war", "asian_contagion"],
-          "url": "https://www.techinsights.com/strait-of-hormuz-semiconductor-supply-risk"
+          "headline": "Kumamoto earthquake stress-tests global semiconductor supply chain — TSMC resumed operations",
+          "summary": "NEW: 2026 Kumamoto earthquake hit Japan's semiconductor manufacturing hub. TSMC's JASM fab, Sony image sensor plant, and Renesas all affected. TSMC announced operations 'fully returned to normal' on Aug 4. But substack analysis warns 2026 is different — AI demand is surging, inventories low, so disruption impact amplified. TSMC donated ¥250M for recovery. Stress test revealed concentration risk in Kyushu.",
+          "source": "TSPA Semiconductor Substack, Focus Taiwan, Chosun, Wikipedia",
+          "date": "2026-08-04",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["asian_contagion", "japan_yen"],
+          "url": "https://tspasemiconductor.substack.com/p/the-kumamoto-earthquake-is-a-stress"
         },
         {
           "id": "sc-002",
-          "headline": "Memory shortages deepening, DRAM lead times stretching, prices climbing",
-          "summary": "Memory shortages tightening across supply chain. Higher contract prices set to ripple through global electronics markets. DRAM lead times stretching, suppliers holding firm. Server, PC, mobile device buyers facing rising costs.",
-          "source": "Digitimes",
-          "date": "2026-07-31",
+          "headline": "Semiconductor shortage deepening — AI demand + conflict-driven raw material inflation",
+          "summary": "Digitimes interviews Topco Scientific CEO: AI-driven demand, new fab construction, and conflict-led raw material inflation combining to squeeze semiconductor suppliers in 2026. FOUP shortages, rising material costs, wafer demand all tightening. 2026 shortage is selective supply squeeze driven by AI demand, memory allocation, and constrained capacity.",
+          "source": "Digitimes, Summit Electronics",
+          "date": "2026-08-04",
           "imminence": 7,
-          "impact": 6,
-          "threads": ["asian_contagion"],
-          "url": "https://www.digitimes.com/news/a20260731PD211/2026-supply-chain-dram-demand-market.html"
+          "impact": 7,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "url": "https://www.digitimes.com/news/a20260804PD215/demand-fab-materials-wafer-2026.html"
         },
         {
           "id": "sc-003",
-          "headline": "AI boom + West Asia crisis driving PCB shortage, electronics prices rising",
-          "summary": "PCB crunch from rising material costs, supply chain disruptions in key shipping routes, and component diversion toward AI hardware. Electronics prices rising globally.",
-          "source": "Business Standard",
+          "headline": "PCB shortage from AI boom + West Asia crisis — electronics prices rising globally",
+          "summary": "Business Standard: PCB crunch stems from rising material costs, supply chain disruptions in key shipping routes, and component diversion toward AI hardware. Electronics prices rising globally. Economic Times confirms global supply crunch continuing.",
+          "source": "Business Standard, Economic Times",
           "date": "2026-08-02",
           "imminence": 7,
           "impact": 6,
@@ -195,7 +229,7 @@
         {
           "id": "sc-004",
           "headline": "Global shipping routes fundamentally altered by geopolitical crises",
-          "summary": "International trade flow analysis confirms rising geopolitical tensions across critical maritime transit hubs are altering global shipping and freight operations. Data center developers stockpiling inventory in anticipation of 2026 shortage.",
+          "summary": "International trade flow analysis confirms rising geopolitical tensions across critical maritime transit hubs are altering global shipping and freight operations. Strait of Hormuz crisis cascading into all major shipping lanes. Data center developers stockpiling inventory.",
           "source": "Mobilita News, Rabobank",
           "date": "2026-08-03",
           "imminence": 8,
@@ -204,12 +238,23 @@
           "url": "https://www.mobilita.news/?item=27499"
         }
       ],
-      "category_score": 29
+      "category_score": 27
     },
     "regulatory_change": {
       "findings": [
         {
           "id": "rc-001",
+          "headline": "CLARITY Act shelved by Senate before August recess — 600+ page bill stalled",
+          "summary": "Senate Majority Leader Thune conceded votes are not there before August recess. Senate has shelved CLARITY Act for now. Forbes warns the landmark crypto bill is 'running out of time'. Cryptonomist notes uncertain passage in 2026. SEC Chair Atkins says SEC ready to provide crypto rules if CLARITY flounders — fallback regulatory path. Bitcoin hovering $64,650-$65,000 in subdued range.",
+          "source": "Forbes, Crypto Briefing, Cryptonomist, Yahoo Finance, Datawallet",
+          "date": "2026-08-03",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["crypto_collapse"],
+          "url": "https://www.forbes.com/sites/ninabambysheva/2026/08/03/cryptos-landmark-clarity-bill-is-running-out-of-time/"
+        },
+        {
+          "id": "rc-002",
           "headline": "FinCEN, OFAC, Treasury joint NPRM to scope stablecoin issuers into Bank Secrecy Act",
           "summary": "Joint notice of proposed rulemaking from FinCEN, OFAC, and Treasury to bring stablecoin issuers into BSA framework. Major regulatory shift for crypto markets. Stablecoin issuers now need federal compliance infrastructure.",
           "source": "Elliptic",
@@ -220,59 +265,48 @@
           "url": "https://www.elliptic.co/insights/how-us-crypto-regulation-is-being-rewritten-in-2026/"
         },
         {
-          "id": "rc-002",
-          "headline": "CLARITY Act stalled in Senate before August recess — 600+ page bill",
-          "summary": "CLARITY Act (crypto market structure) passed House Jul 2025, cleared Senate Banking Committee 15-9 May 2026. Merged 600+ page Senate text landed Jul 22 with ethics provisions. Votes not there before August recess. Regulatory uncertainty persists.",
-          "source": "Datawallet, Davis Wright Tremaine, Fulcrum Macro",
-          "date": "2026-08-03",
-          "imminence": 5,
-          "impact": 6,
-          "threads": ["crypto_collapse"],
-          "url": "https://www.datawallet.com/crypto/clarity-act-explained"
-        },
-        {
           "id": "rc-003",
-          "headline": "SEC 2026 regulatory agenda — crypto asset trading rules, broker-dealer updates",
-          "summary": "SEC weighing amendments to Exchange Act rules for crypto asset trading on ATS and national securities exchanges. Updates to broker-dealer financial responsibility rules. Transfer agent regulatory regime being updated for crypto and DLT.",
-          "source": "ArentFox Schiff",
+          "headline": "SEC ready to provide crypto rules if CLARITY Act flounders — Atkins signals fallback",
+          "summary": "SEC Chair Atkins says SEC prepared to provide crypto rules if CLARITY Act fails. This is a significant regulatory development — SEC positioning as backup regulator. Would mean SEC rulemaking rather than Congressional legislation, potentially more restrictive.",
+          "source": "Yahoo Finance",
           "date": "2026-07-28",
-          "imminence": 5,
+          "imminence": 6,
           "impact": 6,
           "threads": ["crypto_collapse"],
-          "url": "https://www.afslaw.com/perspectives/alerts/sec-issues-statement-2026-regulatory-agenda"
+          "url": "https://finance.yahoo.com/markets/crypto/articles/sec-ready-crypto-rules-clarity-160934707.html"
         },
         {
           "id": "rc-004",
-          "headline": "Hashdex liquidates spot Bitcoin ETF — Bernstein warns CLARITY delay weighs on prices",
-          "summary": "Hashdex shutting down its spot Bitcoin ETF after failing to attract assets. Bernstein warns CLARITY Act delay could weigh on crypto prices. ETF flows turning negative, CME open interest at 2023 levels, Strategy idle for 5th straight week.",
-          "source": "Cointelegraph, CoinDesk",
-          "date": "2026-08-03",
-          "imminence": 6,
+          "headline": "Hashdex liquidating first US spot Bitcoin ETF — liquidation starts Aug 18",
+          "summary": "Hashdex closing its $14.7M spot Bitcoin ETF (DEFI). First US spot Bitcoin ETF liquidation ever. Holders have until NYSE Arca close Aug 17 to sell, then cash wind-down begins. IBIT holds $60.5B of inflows, FBTC $9.95B. GBTC has seen $27.47B outflows. Signals ETF consolidation — winners and losers emerging. CryptoSlate warns holders face 'blind, unpredictable cash-out'.",
+          "source": "CoinDesk, Cryptonomist, CryptoSlate, CoinGabbar",
+          "date": "2026-08-04",
+          "imminence": 7,
           "impact": 7,
           "threads": ["crypto_collapse"],
-          "url": "https://cointelegraph.com/news/what-happened-in-crypto-today"
+          "url": "https://www.coindesk.com/business/2026/08/04/first-u-s-spot-bitcoin-etf-to-close-as-inflows-dwindle-investors-chase-ai-returns"
         }
       ],
-      "category_score": 25
+      "category_score": 26
     },
     "social_unrest": {
       "findings": [
         {
           "id": "su-001",
-          "headline": "Jakarta fears August riot repeat — Governor urges calm, malls removing fences",
-          "summary": "Jakarta Governor Pramono Anung urging calm amid fears of August riot repeat. Shopping malls and office buildings removing perimeter fences. Social tension high in Indonesia one year after 2025 August riots.",
-          "source": "Jakarta Post",
-          "date": "2026-08-03",
-          "imminence": 7,
+          "headline": "Jakarta protests continue — 2 demonstrations Aug 4, police on high alert",
+          "summary": "Two demonstrations scheduled in Central Jakarta on Aug 4 — youth and student groups. Hundreds of police deployed. Jakarta Post reports small protests drawing outsized social media attention. Woman arrested in Ciamis for spreading hoax protest info on TikTok. Police conducting cyber patrols. Fear of August riot repeat still present but protests smaller and more sporadic than 2025.",
+          "source": "Jakarta Post, Tribun Jakarta, Kompas, Aktual.com",
+          "date": "2026-08-04",
+          "imminence": 6,
           "impact": 5,
           "threads": ["asian_contagion"],
-          "url": "http://www.thejakartapost.com/indonesia/2026/08/03/pramono-urges-calm-as-fear-of-august-riot-repeat-unnerves-shopping-malls"
+          "url": "http://www.thejakartapost.com/indonesia/2026/08/05/explainer-why-small-protests-are-drawing-outsized-attention-on-social-media"
         },
         {
           "id": "su-002",
-          "headline": "Gen Z protests across Asia — India, Indonesia ongoing through 2026",
-          "summary": "Gen-Z protests active across multiple Asian countries. India: youth protests over NEET-UG exam paper leak brought thousands to New Delhi streets. Indonesia: student-led anti-government demonstrations since Feb 2025. Pattern of youth-driven civil instability.",
-          "source": "Wikipedia, Britannica",
+          "headline": "Gen Z protests across Asia ongoing — 120+ significant anti-government protests globally",
+          "summary": "Carnegie Endowment reports 120+ significant anti-government protests as of March 2026. Gen Z protests active across India (NEET-UG exam leak), Indonesia (anti-government), and elsewhere. Britannica notes mass youth protests toppled governments in several cases in late 2025. Political awakening of Gen Z marks turning point.",
+          "source": "Wikipedia, Britannica, Carnegie",
           "date": "2026-08-01",
           "imminence": 5,
           "impact": 5,
@@ -281,24 +315,46 @@
         },
         {
           "id": "su-003",
-          "headline": "Iranian protests 2025-2026 — economic unrest, internet shutdowns",
-          "summary": "Ongoing Iranian protests linked to economic hardship and war fallout. Government characterizing unrest as foreign-incited. Internet services shut down. Social unrest compounded by war and economic crisis.",
-          "source": "Wikipedia",
-          "date": "2026-07-30",
-          "imminence": 6,
-          "impact": 6,
-          "threads": ["middle_east_war"],
-          "url": "https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests"
+          "headline": "Flamingo Revolution in Albania — major protests over Trump Jr.-linked luxury development",
+          "summary": "NEW: Flamingo Revolution protests in Albania since May 16, 2026. Triggered by government handling of proposed luxury development involving Jared Kushner. Press freedom concerns also cited — Albania ranked 83rd in 2026 Press Freedom Index. Protests have evolved from small village demonstrations to national movement. First European Gen-Z-style protest wave.",
+          "source": "Wikipedia, Argumentum",
+          "date": "2026-08-04",
+          "imminence": 5,
+          "impact": 5,
+          "threads": ["euro_crisis"],
+          "url": "https://en.wikipedia.org/wiki/Flamingo_Revolution"
+        },
+        {
+          "id": "su-004",
+          "headline": "Morocco-Spain migration crisis — Morocco warns Spain after court ruling",
+          "summary": "Morocco warns Spain after court ruling on migration law. Migrants crossing from Morocco into Spain, lining up for food distribution on beaches in Ceuta. Diplomatic tension between Morocco and Spain adding to European instability.",
+          "source": "Euronews",
+          "date": "2026-08-04",
+          "imminence": 5,
+          "impact": 4,
+          "threads": ["euro_crisis"],
+          "url": "https://www.euronews.com/my-europe/2026/08/04/morocco-says-it-warned-spain-after-court-ruling-on-migration-law"
         }
       ],
-      "category_score": 16
+      "category_score": 19
     },
     "financial_stress_precursors": {
       "findings": [
         {
           "id": "fs-001",
-          "headline": "IG credit spreads at 80bps (benign), HY at 284bps — no acute stress yet",
-          "summary": "IG OAS at 80bps as of Jul 30 — below 100bp benign threshold. HY OAS at 284bps — moderate but not distressed. Below 200bp stress signal, above tights. St. Louis Fed Financial Stress Index data through Jul 24. No acute financial stress yet but energy shock could change quickly.",
+          "headline": "S&P 500 and Dow hit record highs — S&P at 7,644, Dow crosses 54,000",
+          "summary": "MAJOR: US stocks closed sharply higher Aug 4. S&P 500 gained 1.8% to 7,644.56 (first record high since June). Dow crossed 54,000. Nasdaq surged 2.6%. Led by AI-linked earnings (Palantir, chip stocks). Philly Semiconductor index up ~4%. Markets rallying on Hormuz deal hopes. Record highs despite Fed uncertainty and war — divergence between market and macro risk.",
+          "source": "CNN, Trading Economics, Detroit News, Yahoo Finance",
+          "date": "2026-08-04",
+          "imminence": 3,
+          "impact": 6,
+          "threads": ["us_recession"],
+          "url": "https://www.cnn.com/2026/08/04/investing/us-stock-market"
+        },
+        {
+          "id": "fs-002",
+          "headline": "IG credit spreads at 80bps (benign), HY at 284bps — no acute stress but oil drop helps",
+          "summary": "IG OAS at 80bps as of Jul 30 — below 100bp benign threshold. HY OAS at 284bps — moderate but not distressed. Below 200bp stress signal, above tights. No acute financial stress yet. Oil price drop to $79 helps reduce inflation pressure. But if Hormuz deal fails and oil spikes back, stress could emerge quickly.",
           "source": "Convex Trade, FRED",
           "date": "2026-07-30",
           "imminence": 4,
@@ -307,48 +363,37 @@
           "url": "https://convextrade.com/metrics/bamlc0a0cm"
         },
         {
-          "id": "fs-002",
-          "headline": "US initial jobless claims at 187,000 — lowest in months, strong labor market",
-          "summary": "Initial claims sank by 22,000 to 187,000 on week to July 18, well under expectations of 212,000. Lowest claim count in months. Labor market remains strong — no recession signal from employment data yet.",
-          "source": "Trading Economics",
-          "date": "2026-07-24",
-          "imminence": 2,
-          "impact": 5,
-          "threads": ["us_recession"],
-          "url": "https://tradingeconomics.com/united-states/jobless-claims"
-        },
-        {
           "id": "fs-003",
-          "headline": "Bitcoin flirting with $64K, ETF flows negative, CME open interest at 2023 levels",
-          "summary": "Bitcoin weakness reflecting stalled participation more than forced selling. ETF flows turning negative. CME open interest back at 2023 levels. Strategy (MicroStrategy) idle for 5th straight week. Hashdex liquidating Bitcoin ETF. Crypto market showing stress precursors.",
-          "source": "CoinDesk, Cointelegraph",
-          "date": "2026-08-03",
-          "imminence": 6,
+          "headline": "Bitcoin calm despite reasons to freak out — $63,661, volatility at lows",
+          "summary": "CoinDesk notes Bitcoin has 'plenty of reasons to freak out, yet calm pervades'. BTC at $63,661 (+1.93% 24h). ETF flows negative, CME open interest at 2023 levels. Hashdex liquidating. But volatility remains low. Bitcoin hovering $64,650-$65,000 range. Crypto market showing stress precursors but no panic — yet.",
+          "source": "CoinDesk, Yahoo Finance",
+          "date": "2026-08-04",
+          "imminence": 5,
           "impact": 7,
           "threads": ["crypto_collapse"],
-          "url": "https://www.coindesk.com/"
+          "url": "https://www.coindesk.com/daybook-us/2026/08/04/the-bitcoin-market-has-plenty-of-reasons-to-freak-out-yet-calm-pervades"
         },
         {
           "id": "fs-004",
-          "headline": "Euro area inflation up to 2.9% — energy highest component, UK expected to breach 5%",
-          "summary": "Euro area annual inflation rising to 2.9%. Energy is highest annual rate component. UK inflation expected to breach 5% in 2026. ECB energy price shock analysis confirms recessionary impact through real disposable income losses.",
-          "source": "Eurostat, ECB, Wikipedia",
+          "headline": "Euro area inflation rising — ECB tightening bets grow, German inflation at 2.4%",
+          "summary": "Euro area annual inflation rising to 2.9%. Energy is highest component. UK inflation expected to breach 5% in 2026. German inflation confirmed at 2.4% y/y in June. Stronger Eurozone inflation and growth reinforce expectations for tighter monetary policy. Euro advancing on ECB hike bets.",
+          "source": "Eurostat, ECB, FXStreet, Reuters",
           "date": "2026-07-31",
           "imminence": 7,
           "impact": 8,
           "threads": ["euro_crisis", "middle_east_war"],
-          "url": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-31072026-ap"
+          "url": "https://www.fxstreet.com/news/euro-advances-as-ecb-tightening-expectations-japan-fiscal-concerns-weigh-on-yen-202608040935"
         },
         {
           "id": "fs-005",
-          "headline": "US 10-year Treasury yields up 57 points YTD — borrowing costs rising",
-          "summary": "US 10-year Treasury yields have gained almost 57 points since start of year. Rising long-term borrowing costs alongside Fed holding rates steady. Yield curve dynamics shifting. Potential for JGB selling pressure from Japan intervention adds risk.",
-          "source": "CNBC",
-          "date": "2026-08-03",
-          "imminence": 6,
+          "headline": "Gold at $4,121-$4,139 — safe haven demand extreme despite risk-on rally",
+          "summary": "Gold trading at $4,121-4,151 range, up ~1% on Aug 4. Gold above $4,000 threshold for first time. Safe haven demand extreme despite stock market rally. Signals underlying systemic concern — markets buying risk (stocks) AND safety (gold) simultaneously. Divergence that often precedes volatility.",
+          "source": "Yahoo Finance, Schwab, Kitco",
+          "date": "2026-08-04",
+          "imminence": 5,
           "impact": 7,
-          "threads": ["us_recession", "japan_yen"],
-          "url": "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-treasurys-euros-.html"
+          "threads": ["us_recession", "middle_east_war"],
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/stocks-mixed-seoul-stabilises-oil-025545782.html"
         }
       ],
       "category_score": 24
@@ -357,61 +402,68 @@
   "convergence_detection": {
     "methodology": "For each thread, sum (imminence × impact) for all findings from DIFFERENT categories pointing at that thread. Convergence score = sum of all cross-category finding scores.",
     "threads": {
-      "japan_yen": {
-        "findings": ["vi-001", "vi-002", "vi-003", "cb-004", "fs-005"],
-        "categories_involved": ["verbal_intervention", "central_bank_communication", "financial_stress_precursors"],
-        "category_count": 3,
-        "convergence_score": 72,
-        "signal": "DEVELOPING",
-        "assessment": "Coordinated US-Japan intervention executed, verbal warnings continuing, Fed communication shift adds uncertainty, rising UST yields complicate intervention mechanics. High imminence — further intervention likely if yen weakens again."
-      },
       "middle_east_war": {
-        "findings": ["gp-001", "gp-002", "gp-004", "sc-001", "sc-003", "sc-004", "cb-003", "cb-004", "su-003", "fs-004"],
-        "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "central_bank_communication", "social_unrest", "financial_stress_precursors"],
+        "findings": ["gp-001", "gp-002", "gp-003", "sc-002", "sc-003", "sc-004", "cb-003", "cb-005", "al-001", "fs-004", "fs-005"],
+        "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "central_bank_communication", "anonymous_leaks", "financial_stress_precursors"],
         "category_count": 5,
-        "convergence_score": 148,
+        "convergence_score": 144,
         "signal": "ACTIVE",
-        "assessment": "5-category convergence. Iran war ongoing since Feb with Strait of Hormuz closure = largest oil supply disruption in history. Supply chains across semiconductors, shipping, PCBs all disrupted. ECB postponed rate cuts, raised inflation forecasts. European inflation at 2.9%, UK expected to breach 5%. Iranian protests ongoing. Cyber operations escalating. This is the dominant macro thread."
+        "change_from_previous": "ACTIVE → ACTIVE (stable)",
+        "assessment": "5-category convergence persists. MAJOR DEVELOPMENT: Hormuz deal appears imminent — Bessent says 'by tomorrow', Rubio 'very shortly'. Oil crashed 5%+ (Brent $79, WTI $75). But NYT reports allies fear US strategic defeat — Iran demanding control terms US rejects. Diplomatic gap remains. Supply chain disruptions ongoing (semiconductors, PCBs, shipping). ECB tightening on energy inflation. Gold at $4,121 (safe haven extreme). Score slightly down from 148→144 as oil price drop reduces immediate pressure, but deal could collapse."
       },
-      "us_recession": {
-        "findings": ["cb-001", "cb-002", "al-001", "fs-001", "fs-002", "fs-005", "gp-001"],
-        "categories_involved": ["central_bank_communication", "anonymous_leaks", "financial_stress_precursors", "geopolitical_posture"],
+      "japan_yen": {
+        "findings": ["vi-001", "vi-002", "vi-003", "vi-004", "cb-004", "cb-005", "sc-001", "fs-005"],
+        "categories_involved": ["verbal_intervention", "central_bank_communication", "supply_chain_disruption", "financial_stress_precursors"],
         "category_count": 4,
-        "convergence_score": 68,
-        "signal": "DEVELOPING",
-        "assessment": "Fed ended forward guidance (major regime shift), split 9-3 vote, inflation above target. Jobless claims strong at 187K — no labor market stress yet. Credit spreads benign at 80bp IG / 284bp HY. But rising UST yields + energy shock from Iran war + loss of forward guidance = recession risk building. Not imminent but DEVELOPING."
-      },
-      "euro_crisis": {
-        "findings": ["cb-001", "cb-003", "cb-004", "fs-001", "fs-004", "gp-001"],
-        "categories_involved": ["central_bank_communication", "financial_stress_precursors", "geopolitical_posture"],
-        "category_count": 3,
         "convergence_score": 82,
         "signal": "DEVELOPING",
-        "assessment": "ECB postponed rate cuts, raised inflation forecast, cut GDP growth. Euro area inflation at 2.9% with energy as highest component. UK expected to breach 5%. Italy specifically flagged as vulnerable to energy prices. Energy price shock confirmed recessionary by ECB. If Hormuz blockade persists through summer, technical recession likely in energy-intensive economies."
+        "change_from_previous": "DEVELOPING → DEVELOPING (up from 72→82)",
+        "assessment": "4-category convergence. Coordinated intervention executed Aug 1, verbal warnings continuing. Bessent pushing Fed FIMA repo expansion for Japan defense. USD/JPY rebounded to 157.6 — intervention already 28% retraced. Kumamoto earthquake adds supply chain dimension. ECB tightening bets pushing euro up vs yen. Gold at $4,121 signals yen weakness as safe haven alternative. Score increased from 72 to 82 — intervention efficacy in doubt, new supply chain dimension from earthquake."
+      },
+      "us_recession": {
+        "findings": ["cb-001", "cb-002", "al-002", "fs-001", "fs-002", "fs-005", "gp-001", "gp-002"],
+        "categories_involved": ["central_bank_communication", "anonymous_leaks", "financial_stress_precursors", "geopolitical_posture"],
+        "category_count": 4,
+        "convergence_score": 72,
+        "signal": "DEVELOPING",
+        "change_from_previous": "DEVELOPING → DEVELOPING (up from 68→72)",
+        "assessment": "4-category convergence. Fed ended forward guidance, split 9-3 vote. BUT: S&P 500 hit record 7,644, Dow crossed 54,000 — markets rallying. Credit spreads benign (IG 80bp, HY 284bp). Oil crash to $79 helps. Recession signal muted by strong market and easing energy pressure. However, gold at $4,121 and Fed communication regime shift maintain DEVELOPING signal. If Hormuz deal holds, recession risk may decrease further."
+      },
+      "euro_crisis": {
+        "findings": ["cb-001", "cb-003", "cb-004", "cb-005", "al-001", "fs-002", "fs-004", "su-003", "su-004", "gp-001", "gp-002"],
+        "categories_involved": ["central_bank_communication", "anonymous_leaks", "financial_stress_precursors", "social_unrest", "geopolitical_posture"],
+        "category_count": 5,
+        "convergence_score": 116,
+        "signal": "ACTIVE",
+        "change_from_previous": "DEVELOPING → ACTIVE (up from 82→116, threshold crossed)",
+        "assessment": "MAJOR ESCALATION: 5-category convergence now ACTIVE. ECB tightening bets growing, inflation at 2.9%, UK expected 5%. ECB warns about FX liquidity from wars. Flamingo Revolution in Albania adds political instability. Morocco-Spain migration crisis. Oil price drop helps but energy shock still feeding through. German Bund yields at 15-year highs (3.21%). Euro advancing on tightening bets — currency appreciation could hurt exports. Score jumped from 82 to 116 — crossed ACTIVE threshold. New factors: social unrest dimension (Albania, Morocco-Spain) and ECB FX liquidity warning."
       },
       "asian_contagion": {
         "findings": ["gp-001", "gp-002", "sc-001", "sc-002", "sc-003", "sc-004", "su-001", "su-002"],
         "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "social_unrest"],
         "category_count": 3,
-        "convergence_score": 76,
+        "convergence_score": 72,
         "signal": "DEVELOPING",
-        "assessment": "Iran war disrupting Asian shipping routes, semiconductor supply chains, PCB manufacturing. Memory shortages deepening. Gen Z protests active across India, Indonesia. Jakarta fearing August riot repeat. Asian economies highly exposed to energy imports through Hormuz. Contagion risk building if disruption persists."
+        "change_from_previous": "DEVELOPING → DEVELOPING (down from 76→72)",
+        "assessment": "3-category convergence. Supply chain disruptions ongoing but Kumamoto fabs resumed operations. Jakarta protests continuing but smaller and more sporadic. Oil price drop helps Asian energy importers. Hormuz deal hopes reducing pressure. Score slightly down from 76 to 72 — oil drop and TSMC resumption reduce immediate pressure, but supply chain structural damage persists."
       },
       "china_collapse": {
-        "findings": ["gp-003", "gp-004", "su-002"],
+        "findings": ["gp-004", "su-002"],
         "categories_involved": ["geopolitical_posture", "social_unrest"],
         "category_count": 2,
         "convergence_score": 24,
         "signal": "MONITORING",
-        "assessment": "China missile test signaling nuclear second-strike capability. Property crisis ongoing but no acute escalation this week. Gen Z protests in region but not specifically in China this cycle. Cyber operations escalating. Low convergence — monitoring only."
+        "change_from_previous": "MONITORING → MONITORING (stable)",
+        "assessment": "China missile test signaling nuclear second-strike. Gen Z protests in region but not specifically in China. Property crisis ongoing but no acute escalation. Low convergence — monitoring only."
       },
       "crypto_collapse": {
         "findings": ["rc-001", "rc-002", "rc-003", "rc-004", "fs-003"],
         "categories_involved": ["regulatory_change", "financial_stress_precursors"],
         "category_count": 2,
-        "convergence_score": 44,
+        "convergence_score": 46,
         "signal": "MONITORING",
-        "assessment": "Heavy regulatory activity (FinCEN/OFAC/Treasury NPRM, CLARITY Act stalled, SEC agenda). Hashdex liquidating Bitcoin ETF. ETF flows negative. Bitcoin at ~$64K with downside to $55K. But only 2 categories converging — below DEVELOPING threshold. Regulatory uncertainty is the main drag. No acute crash signal yet."
+        "change_from_previous": "MONITORING → MONITORING (up from 44→46)",
+        "assessment": "2-category convergence. Heavy regulatory activity. CLARITY Act shelved — SEC positioning as backup regulator. Hashdex liquidating first spot Bitcoin ETF (Aug 18). Bitcoin calm at ~$64K despite reasons to panic. Low volatility itself is a precursor. ETF consolidation underway. Score slightly up from 44 to 46 — approaching DEVELOPING threshold but not there yet. If Bitcoin breaks below $60K, would likely escalate."
       },
       "global_pandemic": {
         "findings": [],
@@ -419,41 +471,67 @@
         "category_count": 0,
         "convergence_score": 0,
         "signal": "CLEAR",
+        "change_from_previous": "CLEAR → CLEAR (stable)",
         "assessment": "No lead indicators detected for pandemic risk."
       }
     },
     "active_alerts": [
       {
         "thread": "middle_east_war",
-        "convergence_score": 148,
+        "convergence_score": 144,
+        "threshold": 100,
+        "signal": "ACTIVE",
+        "action_required": "MAINTAIN_ALERT",
+        "message": "BlackWatch ACTIVE: middle_east_war convergence 144 (threshold 100). 5 categories. Hormuz deal imminent per Bessent/Rubio but terms disputed. Oil crashed 5%+ (Brent $79, WTI $75). US allies fear strategic defeat. Supply chains still disrupted. Gold at $4,121. Score down slightly from 148 — deal hopes reducing pressure but could collapse."
+      },
+      {
+        "thread": "euro_crisis",
+        "convergence_score": 116,
         "threshold": 100,
         "signal": "ACTIVE",
         "action_required": "TELEGRAM_ALERT_TO_ROO",
-        "message": "🚨 BlackWatch ACTIVE SIGNAL: middle_east_war thread has convergence score 148 (threshold: 100). 5 categories converging: geopolitical_posture, supply_chain_disruption, central_bank_communication, social_unrest, financial_stress_precursors. Iran war ongoing with Strait of Hormuz closure. Largest oil supply disruption in history. Euro inflation rising, UK expected to breach 5%. Semiconductor and shipping supply chains disrupted. Iranian protests ongoing. Cyber operations escalating."
+        "message": "BlackWatch NEW ACTIVE SIGNAL: euro_crisis thread has convergence score 116 (threshold 100), up from 82 yesterday. 5 categories converging: central_bank_communication, anonymous_leaks, financial_stress_precursors, social_unrest, geopolitical_posture. ECB tightening bets growing, inflation at 2.9%, UK expected 5%. ECB warns FX liquidity risk from wars. German Bund yields at 15-year highs (3.21%). Flamingo Revolution in Albania. Morocco-Spain migration crisis. Oil price drop helps but energy shock still feeding through. This is a NEW escalation — euro_crisis crossed ACTIVE threshold."
       }
     ]
   },
   "macro_event_signals": {
-    "japan_yen": { "signal": "DEVELOPING", "score": 72, "previous": "MONITORING" },
-    "middle_east_war": { "signal": "ACTIVE", "score": 148, "previous": "ACTIVE" },
-    "us_recession": { "signal": "DEVELOPING", "score": 68, "previous": "MONITORING" },
-    "euro_crisis": { "signal": "DEVELOPING", "score": 82, "previous": "MONITORING" },
-    "asian_contagion": { "signal": "DEVELOPING", "score": 76, "previous": "MONITORING" },
-    "china_collapse": { "signal": "MONITORING", "score": 24, "previous": "MONITORING" },
-    "crypto_collapse": { "signal": "MONITORING", "score": 44, "previous": "MONITORING" },
-    "global_pandemic": { "signal": "CLEAR", "score": 0, "previous": "CLEAR" }
+    "japan_yen": { "signal": "DEVELOPING", "score": 82, "previous": "DEVELOPING (72)", "change": "score increased" },
+    "middle_east_war": { "signal": "ACTIVE", "score": 144, "previous": "ACTIVE (148)", "change": "score decreased — Hormuz deal hopes" },
+    "us_recession": { "signal": "DEVELOPING", "score": 72, "previous": "DEVELOPING (68)", "change": "score increased — but muted by stock rally" },
+    "euro_crisis": { "signal": "ACTIVE", "score": 116, "previous": "DEVELOPING (82)", "change": "DEVELOPING → ACTIVE — NEW ESCALATION" },
+    "asian_contagion": { "signal": "DEVELOPING", "score": 72, "previous": "DEVELOPING (76)", "change": "score decreased — oil drop, TSMC resumption" },
+    "china_collapse": { "signal": "MONITORING", "score": 24, "previous": "MONITORING (24)", "change": "stable" },
+    "crypto_collapse": { "signal": "MONITORING", "score": 46, "previous": "MONITORING (44)", "change": "score increased slightly" },
+    "global_pandemic": { "signal": "CLEAR", "score": 0, "previous": "CLEAR (0)", "change": "stable" }
   },
   "signal_changes": [
-    { "thread": "us_recession", "change": "MONITORING → DEVELOPING", "reason": "Fed ended forward guidance + split vote + rising UST yields + energy shock" },
-    { "thread": "euro_crisis", "change": "MONITORING → DEVELOPING", "reason": "ECB postponed cuts, inflation at 2.9%, UK expected 5%, energy recessionary" },
-    { "thread": "asian_contagion", "change": "MONITORING → DEVELOPING", "reason": "Supply chain disruption across semiconductors, shipping, PCBs + social unrest" }
+    { "thread": "euro_crisis", "change": "DEVELOPING → ACTIVE", "reason": "Crossed threshold: ECB tightening bets + FX liquidity warning + Flamingo Revolution + Morocco-Spain crisis + German Bund 15-year highs. 5 categories now converging.", "severity": "HIGH" }
   ],
   "top_findings": [
-    { "id": "gp-001", "score": 100, "headline": "2026 Iran War — Strait of Hormuz closure, largest oil supply disruption in history" },
+    { "id": "gp-001", "score": 81, "headline": "Hormuz deal imminent — Bessent 'by tomorrow', Rubio 'very shortly', but terms disputed" },
     { "id": "cb-001", "score": 72, "headline": "Fed ends forward guidance — 'Facts Over Forecasts' under Warsh" },
-    { "id": "vi-001", "score": 72, "headline": "US-Japan first coordinated yen intervention since 1998" },
-    { "id": "cb-003", "score": 56, "headline": "ECB postponed rate cuts, raised inflation forecast, cut GDP growth" },
-    { "id": "fs-004", "score": 56, "headline": "Euro inflation at 2.9%, UK expected to breach 5%" }
+    { "id": "vi-001", "score": 72, "headline": "US-Japan first coordinated yen intervention since 1998, FIMA repo expansion" },
+    { "id": "gp-002", "score": 64, "headline": "Oil crashes 5%+ — Brent $79, WTI $75 on Hormuz deal hopes" },
+    { "id": "fs-001", "score": 18, "headline": "S&P 500 record high 7,644, Dow crosses 54,000 — risk-on rally" }
   ],
-  "next_scan": "2026-08-05T06:30:00Z"
+  "market_snapshot": {
+    "timestamp": "2026-08-04 close",
+    "S&P 500": "7,644.56 (+1.8%) — record high",
+    "Dow Jones": "54,000+ — record high",
+    "Nasdaq": "+2.6%",
+    "Brent Crude": "$79.36 (-5.3%)",
+    "WTI Crude": "~$75 (-4.7%)",
+    "Gold": "$4,121-4,151 (+1%)",
+    "Bitcoin": "$63,661 (+1.9%)",
+    "USD/JPY": "157.6 (rebounded 28% from intervention low)",
+    "EUR/USD": "1.1534 (above 1.15 threshold)",
+    "German 10Y Bund": "3.21% (15-year high)",
+    "HY Credit Spread": "284bps (moderate)",
+    "IG Credit Spread": "80bps (benign)"
+  },
+  "divergence_watch": {
+    "note": "S&P 500 at record highs while gold at $4,121 — markets buying risk AND safety simultaneously. This divergence often precedes volatility. Stock rally driven by Hormuz deal hopes and AI earnings, but gold says underlying systemic concern remains. If Hormuz deal fails, this divergence could resolve violently.",
+    "risk_level": "ELEVATED"
+  },
+  "next_scan": "2026-08-06T06:30:00Z"
 }
