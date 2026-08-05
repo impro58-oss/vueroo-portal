@@ -2,7 +2,7 @@
   "metadata": {
     "source": "Multi-API: FRED, CoinGecko, NOAA + Lumina assessment",
     "system": "BlackWatch Manual Signals",
-    "last_update": "2026-08-05T17:03:35.588752+00:00",
+    "last_update": "2026-08-05T23:04:03.798513+00:00",
     "signals_fetched": 9,
     "signals_total": 9
   },
@@ -20,7 +20,7 @@
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-05",
       "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-05T17:03:32.431002+00:00"
+      "timestamp": "2026-08-05T23:04:01.468134+00:00"
     },
     "china": {
       "name": "China Health",
@@ -35,22 +35,22 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-05T17:03:33.065348+00:00"
+      "timestamp": "2026-08-05T23:04:01.862315+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 64630,
+      "value": 64543,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 1.0,
-      "description": "BTC $64,630 (+1.0% 24h), Dominance: 75.9%",
+      "change_from_last": 0.6,
+      "description": "BTC $64,543 (+0.6% 24h), Dominance: 75.8%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-05",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-05T17:03:33.309828+00:00"
+      "timestamp": "2026-08-05T23:04:02.082301+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -65,12 +65,12 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-05T17:03:33.906582+00:00"
+      "timestamp": "2026-08-05T23:04:02.485442+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 91.82,
+      "value": 88.9,
       "unit": "$/bbl (proxy)",
       "status": "amber",
       "trend": "stable",
@@ -78,9 +78,9 @@
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-07-27",
+      "last_date": "2026-08-03",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-05T17:03:34.975360+00:00"
+      "timestamp": "2026-08-05T23:04:03.243496+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,7 +95,7 @@
       "series_id": null,
       "last_date": "2026-08-05",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-05T17:03:34.975360+00:00"
+      "timestamp": "2026-08-05T23:04:03.243496+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -110,7 +110,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-05T17:03:34.975360+00:00"
+      "timestamp": "2026-08-05T23:04:03.243496+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -125,7 +125,7 @@
       "series_id": null,
       "last_date": "2026-08-05",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-05T17:03:34.975360+00:00"
+      "timestamp": "2026-08-05T23:04:03.243496+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -140,8 +140,8 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "Live from FRED. Enriched with social sentiment during deep scans.",
-      "timestamp": "2026-08-05T17:03:35.588752+00:00"
+      "timestamp": "2026-08-05T23:04:03.798513+00:00"
     }
   },
-  "timestamp": "2026-08-05T17:03:35.588752+00:00"
+  "timestamp": "2026-08-05T23:04:03.798513+00:00"
 }
