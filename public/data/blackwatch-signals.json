@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-05T11:32:02.000000+00:00",
+    "last_update": "2026-08-05T15:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "11:03 UTC scan: 8 events active. No NEW severity-5 events since 07:02 scan. Key update: Oil dropped 5%+ on Iran diplomacy hopes. Situation stable but fragile. macro_event=ACTIVE.",
-    "threshold_breach": "3 thresholds breached (1 RED: Gold >3500, 2 AMBER: Gold >3000, EUR/USD >1.15). Manual data filled: JGB10Y=2.81%, DE10Y=3.21%, BAA10Y=1.61%. MOVE index exact value unavailable — qualitatively ELEVATED per CBOE."
+    "breaking_event": "15:02 UTC scan: 12 events tracked. Hormuz deal imminent per US (today or tomorrow). Oil below 75. Gold at record 4297. SP/Dow at all-time highs. 2 severity-5 events ongoing (Iran war, trilateral FX intervention). 3 severity-4 events (Hormuz deal talks, Bessent FIMA push, Ebola PHEIC). Situation binary: deal = deflationary relief, failure = immediate escalation.",
+    "threshold_breach": "Gold at 4292.80 (22.6% above RED threshold of 3500, +3.5% today). Oil dropped to 74.86 on Hormuz deal hopes. S&P 500 at 7761 (all-time high). VIX at 16.28 (low). Markets pricing diplomatic resolution but gold at record highs signals deep systemic fear."
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4231.5, +20.9% above RED threshold). FIMA Repo expansion push by Bessent raises systemic questions about dollar liquidity backstop. 30-year Treasury yields at 19-year high. Russia banking crisis risk rising (Moscow Times). DE10Y at 3.21% (15-year high). JGB10Y at 2.81%. BAA10Y spread at 1.61%.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "note": "Gold at 4292.80 (+22.6% above RED threshold). Bessent pushing Fed to upsize FIMA repo facility for Japan yen defense. Trilateral FX intervention (US-Japan-SK) ongoing. Russia banking crisis risk rising. SP/Dow at all-time records (7761/54701). VIX low at 16.28. Equity-gold divergence extreme.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,17 +58,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 91.82,
+      "value": 74.86,
       "status": "amber",
       "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.49,
+      "confidence": 7,
+      "change_from_last": -16.96,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price (live: 74.86 Aug 5)",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-07-27",
-      "note": "ESCALATED by breaking event scanner 07:02 UTC: Houthi attacks on Saudi shipping at Bab al-Mandeb. UPDATE 11:03 UTC: Oil dropped 5%+ to below $76/barrel on Iran diplomacy hopes (Trump halted strike, demanding Hormuz reopening). Two-tier market persists but paper futures softening. Situation fluid.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "last_date": "2026-08-05",
+      "note": "Oil crashed 6%+ to 74.86 on Hormuz deal hopes. US says deal could come today or tomorrow. If Hormuz reopens, oil could drop to 60s. If talks fail, immediate spike back to 90+. Physical market still disrupted (tanker struck today, Indian ship sank in Red Sea).",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4231.5). Iran war Day 156+. Strait of Hormuz situation fluid — oil dropping 10.8% to $80 on diplomacy hopes but physical market still disrupted.",
-      "timestamp": "2026-08-05T11:32:02.000000+00:00"
+      "note": "Iran war Day 158. Hormuz deal imminent per US (today or tomorrow). Oil at 74.86. Gold at record 4292.80. SP at all-time high 7761. VIX low at 16.28. Equity markets pricing in deal; gold pricing in failure. Binary outcome.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,17 +103,17 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 91.82,
+      "value": 74.86,
       "unit": "$/bbl (proxy)",
       "status": "amber",
-      "trend": "stable",
+      "trend": "improving",
       "confidence": 5,
-      "change_from_last": 0,
+      "change_from_last": -16.96,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-07-27",
-      "note": "Bab al-Mandeb shipping disruption (50% Saudi flow reduction). Ebola PHEIC could impact African supply chains. CDC implementing entry screening.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "last_date": "2026-08-05",
+      "note": "Oil dropping to 74.86 on Hormuz deal hopes. Bab al-Mandeb disruption continues (50% Saudi flow reduction). Ebola PHEIC intensifying in DRC/Uganda. If Hormuz deal lands, supply chain pressures ease significantly.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -202,38 +202,38 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED: Unprecedented US-Japan-South Korea joint FX intervention (Aug 1). Bessent pushing Fed FIMA expansion. Won at 9-month high. Yen at 157 after intervention (from 163, 40-year low). Major sovereign coordination.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "note": "Trilateral FX intervention (US-Japan-SK) holding. Won at 9-month high. Yen at ~157 after intervention (from 163, 40-year low). Bessent pushing Fed FIMA expansion to sustain. PBOC signaling readiness for counter-cyclical support.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4231.5,
+      "value": 4292.8,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 154.1,
-      "description": "Gold Spot: $4,231.50/oz (Yahoo Finance COMEX, Aug 5 2026)",
+      "change_from_last": 61.3,
+      "description": "Gold Spot: 4292.80/oz (Yahoo Finance, Aug 5 2026 15:02 UTC)",
       "series_id": "Web search - Forbes Advisor",
       "last_date": "2026-08-05",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-05T11:03:16.894652+00:00"
+      "note": "Gold surges +3.5% to record highs despite equity rally. Safe haven demand unrelenting. Dec futures at 4133.80, spot range 4078-4297.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 64021,
+      "value": 64343,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 0.5,
-      "description": "BTC $64,021 (+0.5% 24h), Dominance: 75.9%",
+      "change_from_last": 322,
+      "description": "BTC 64343 (+0.43% 24h)",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-05",
-      "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-05T11:03:17.605824+00:00"
+      "note": "Live from Yahoo Finance. BTC stable, ignoring geopolitics.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "china": {
       "name": "China Health",
@@ -283,17 +283,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 91.82,
+      "value": 74.86,
       "status": "red",
       "trend": "stable",
       "confidence": 5,
-      "change_from_last": -8.49,
+      "change_from_last": -16.96,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy (now 74.86 live)",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-07-27",
-      "note": "Iran war Day 156+. Strait of Hormuz closed. Trump halted strike, demanding reopening and nuclear rollback. Houthis attacking Saudi shipping at Bab al-Mandeb (50% flow reduction). Diplomacy attempts ongoing but fragile. Oil dropping on hopes but physical market still disrupted.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "last_date": "2026-08-05",
+      "note": "Iran war Day 158. Hormuz deal imminent per US (today or tomorrow). Oil crashed 6%+ to 74.86 on diplomacy. Iran-Oman talks in new phase. Tanker struck in Hormuz today, Indian ship sank in Red Sea. Binary outcome: deal = oil sub-70, failure = immediate spike. Gold at 4297 says market still hedging failure.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -322,8 +322,8 @@
       "description": "Breaking event scanner: active category-5 events detected",
       "series_id": null,
       "last_date": "2026-08-05",
-      "note": "3 severity-5 events active: Iran/Hormuz war, Ebola largest ever in DRC, Bessent-Fed FIMA escalation. Oil dropping on diplomacy hopes.",
-      "timestamp": "2026-08-05T11:04:04.000000+00:00"
+      "note": "15:02 UTC: 2 severity-5 events ongoing (Iran war Day 158, trilateral FX intervention). 3 severity-4 events (Hormuz deal imminent, Bessent FIMA push, Ebola PHEIC). Hormuz deal could break today. Gold at record 4297 despite equity rally. SP/Dow at all-time highs. Situation binary.",
+      "timestamp": "2026-08-05T15:02:00.000000+00:00"
     }
   },
   "overall_risk": {
