@@ -1,40 +1,40 @@
 {
   "scan_date": "2026-08-05",
-  "scan_time_utc": "2026-08-05T03:30:40.505588+00:00",
+  "scan_time_utc": "2026-08-05T07:30:38.673858+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 157.459,
+      "price": 157.664,
       "prev_close": 163.3,
-      "change_1d_pct": -3.58,
+      "change_1d_pct": -3.45,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1541,
+      "price": 1.1538,
       "prev_close": 1.1467,
-      "change_1d_pct": 0.65,
+      "change_1d_pct": 0.62,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3457,
+      "price": 1.3459,
       "prev_close": 1.3367,
-      "change_1d_pct": 0.67,
+      "change_1d_pct": 0.69,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7535,
+      "price": 6.7469,
       "prev_close": 6.7661,
-      "change_1d_pct": -0.19,
+      "change_1d_pct": -0.28,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1422.88,
+      "price": 1424.88,
       "prev_close": 1442.28,
-      "change_1d_pct": -1.35,
+      "change_1d_pct": -1.21,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,43 +46,44 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 65861.0,
+      "price": 66300.44,
       "prev_close": 61867.43,
-      "change_1d_pct": 6.46,
-      "data_points": 4,
+      "change_1d_pct": 7.17,
+      "data_points": 5,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25858.52,
+      "price": 25921.25,
       "prev_close": 25807.92,
-      "change_1d_pct": 0.2,
-      "data_points": 4,
+      "change_1d_pct": 0.44,
+      "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 16.5,
-      "prev_close": 20.66,
-      "change_1d_pct": -20.14,
+      "price": 16.15,
+      "prev_close": 17.09,
+      "change_1d_pct": -5.5,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": null,
-      "error": "Value not available from free sources. ICE/BofA proprietary index. VIX at 16.5 suggests bond volatility likely in 80-100 range.",
-      "source": "manual",
-      "note": "Could not retrieve exact MOVE index value from web sources. FRED does not carry MOVE. MacroMicro blocks scraping. Estimated range 80-100 based on VIX context."
+      "price": 77.09,
+      "prev_close": 74.17,
+      "change_1d_pct": 3.93,
+      "data_points": 1,
+      "source": "web_search (Saxo Bank, July 31 2026)"
     },
     "GOLD": {
-      "price": 4188.0,
-      "prev_close": 4100.1,
-      "change_1d_pct": 2.14,
+      "price": 4227.2,
+      "prev_close": 4049.1,
+      "change_1d_pct": 4.4,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 78.28,
-      "prev_close": 89.03,
-      "change_1d_pct": -12.07,
+      "price": 79.91,
+      "prev_close": 90.12,
+      "change_1d_pct": -11.33,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -98,29 +99,26 @@
       "prev_close": 2.82,
       "change_1d_pct": 1.06,
       "data_points": 1,
-      "source": "web_search (Business Recorder)",
-      "note": "10-year JGB yield rose 3bps to 2.85% after weak auction. Aug 4 2026."
+      "source": "web_search (Business Recorder, Aug 4 2026)"
     },
     "DE10Y": {
       "price": 3.15,
-      "prev_close": 3.21,
-      "change_1d_pct": -1.87,
+      "prev_close": 3.12,
+      "change_1d_pct": 0.96,
       "data_points": 1,
-      "source": "web_search (Investing.com)",
-      "note": "German 10Y Bund yield flat at 3.15%, holding near multi-week highs. Aug 4 2026. TradingView reported 3.21% 15-year high on Aug 1."
+      "source": "web_search (Investing.com, Aug 4 2026)"
     },
     "BAA10Y": {
       "price": 1.61,
       "prev_close": 1.63,
       "change_1d_pct": -1.23,
       "data_points": 1,
-      "source": "web_fetch (FRED CSV)",
-      "note": "Moody's Baa Corporate Bond Yield Relative to 10Y Treasury. Latest: 1.61% as of Aug 3 2026."
+      "source": "web_search (FRED CSV, Aug 3 2026)"
     },
     "BTC": {
-      "price": 64025.59,
+      "price": 64003.65,
       "prev_close": 62763.32,
-      "change_1d_pct": 2.01,
+      "change_1d_pct": 1.98,
       "data_points": 4,
       "source": "yahoo"
     }
@@ -130,7 +128,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4188.0,
+      "current": 4227.2,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -139,13 +137,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 19.66
+      "distance_pct": 20.78
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1541,
+      "current": 1.1538,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -154,13 +152,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.36
+      "distance_pct": 0.33
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4188.0,
+      "current": 4227.2,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -168,7 +166,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 39.6
+      "distance_pct": 40.91
     }
   ],
   "breach_count": 3,
