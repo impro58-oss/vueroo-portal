@@ -2,10 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-05T17:03:38.634999+00:00",
+    "last_update": "2026-08-05T19:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Hormuz deal framework emerged — 48-hour window. Oil crashed to $75.69. Ebola 3,605 cases/1,587 deaths. KOSDAQ circuit breaker. Gold $4,169-4,304."
   },
   "signals": {
     "fin_stability": {
@@ -56,32 +57,32 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 91.82,
+      "value": 75.69,
       "status": "amber",
       "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.49,
+      "confidence": 8,
+      "change_from_last": -16.13,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price — crashed 13.4% on Hormuz diplomacy hopes",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-07-27",
-      "note": "",
-      "timestamp": "2026-08-05T17:03:33.890799+00:00"
+      "last_date": "2026-08-05",
+      "note": "Oil at $75.69 (from $87.38 on Aug 3). Physical market still disrupted — only 8 vessels through Hormuz vs 130/day normal. Two-tier market: paper softening, physical tightening.",
+      "timestamp": "2026-08-05T19:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 16.5,
       "status": "amber",
-      "trend": "deteriorating",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": 0.64,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "VIX as market fear proxy — Hormuz diplomacy improving sentiment",
       "series_id": "VIXCLS",
       "last_date": "2026-08-04",
-      "note": "Proxy indicator — GDELT API integration in Phase 2",
-      "timestamp": "2026-08-05T17:03:34.369040+00:00"
+      "note": "Hormuz deal framework emerging. European markets higher (DAX +0.65%, FTSE +0.40%). Oil down 13.4%. Geopolitical sentiment improving but fragile.",
+      "timestamp": "2026-08-05T19:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -101,17 +102,17 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 91.82,
+      "value": 75.69,
       "unit": "$/bbl (proxy)",
       "status": "amber",
-      "trend": "stable",
+      "trend": "improving",
       "confidence": 5,
-      "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
+      "change_from_last": -16.13,
+      "description": "Using Brent oil as supply chain cost proxy — oil crashed 13.4% on Hormuz diplomacy hopes",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-07-27",
-      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-05T17:03:34.975360+00:00"
+      "last_date": "2026-08-05",
+      "note": "Oil dropping but Hormuz still physically disrupted (8 vessels vs 130/day). Paper vs physical two-tier dynamic.",
+      "timestamp": "2026-08-05T19:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -206,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4070,
+      "value": 4169,
       "unit": "$/oz",
       "status": "red",
-      "trend": "stable",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": -237.6,
-      "description": "Gold spot price ~,070/oz (Forbes/Fortune/USA Today consensus, Aug 5 2026)",
+      "change_from_last": 99,
+      "description": "Gold spot ~$4,169/oz (Trading Economics), range $4,169-$4,304 (Convex). Safe haven flows persist.",
       "series_id": "Web search multi-source",
       "last_date": "2026-08-05",
-      "note": "Verified via web search - Forbes ,077, Fortune ,070, USA Today ,068",
-      "timestamp": "2026-08-05T17:03:32.431002+00:00"
+      "note": "Trading Economics $4,169, Convex $4,304. Gold pricing acute monetary-system stress. Historically these levels precede sovereign-debt event or policy reset.",
+      "timestamp": "2026-08-05T19:02:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -281,17 +282,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 91.82,
+      "value": 75.69,
       "status": "amber",
       "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.49,
+      "confidence": 9,
+      "change_from_last": -16.13,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy — Hormuz deal framework emerged, 48hr window",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-07-27",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-05T17:03:38.217688+00:00"
+      "last_date": "2026-08-05",
+      "note": "BREAKING: Trump says Hormuz deal could come this week. Iran-Oman-US negotiating 60-day interim agreement. Oil crashed 13.4% in 2 days. Only 8 vessels transiting vs 130/day pre-war. Trend improving but fragile.",
+      "timestamp": "2026-08-05T19:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
