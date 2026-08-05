@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-04T23:32:13.038050+00:00",
+    "last_update": "2026-08-05T03:04:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "5 thresholds breached (max: RED)"
+    "threshold_breach": "5 thresholds breached (max: RED)",
+    "breaking_event": "Breaking event scanner 2026-08-05 03:04 UTC: 7 events detected. Iran War (sev5), Ebola PHEIC (sev4), Joint FX Intervention (sev4), Fed 3-dissent hold (sev3), UK gilts 28yr high (sev3), SK won intervention (sev3), commodity rally (sev3)."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4128.3). JGB10Y above 2.0 (current: 2.85). DE10Y above 3.0 (current: 3.21). Multiple financial stability tripwires triggered.",
-      "timestamp": "2026-08-04T23:32:13.038050+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4128.3). JGB10Y above 2.0 (current: 2.85). DE10Y above 3.0 (current: 3.21). Multiple financial stability tripwires triggered. Joint Japan-US-Korea FX intervention adds stress.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 91.82,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -8.49,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-27",
-      "note": "",
-      "timestamp": "2026-08-04T23:04:39.894604+00:00"
+      "note": "ESCALATED by breaking event scanner: Iran war fueling commodity rally. Brent $87-91/bbl with geopolitical premium. Hormuz status uncertain. EIA forecasts Brent averaging $90/bbl.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -75,14 +76,14 @@
       "value": 15.86,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": -0.13,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-03",
-      "note": "Threshold breach: Gold above 3500 (current: 4128.3) - war premium or currency crisis. Gold above 3000 (current: 4128.3) - safe haven demand extreme.",
-      "timestamp": "2026-08-04T23:32:13.038050+00:00"
+      "note": "ESCALATED by breaking event scanner: Active US-Israel-Iran war (Day 156+). Hormuz ceasefire fragile. Joint US-Japan-Korea FX intervention. Ebola PHEIC. Multiple geopolitical flashpoints active simultaneously.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -104,15 +105,15 @@
       "domain": "Supply Chain",
       "value": 91.82,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy. Cass Freight Index not available on FRED.",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-07-27",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-04T23:04:40.808783+00:00"
+      "note": "ESCALATED by breaking event scanner: Hormuz shipping disruption risk from Iran war. Ebola PHEIC could impact African supply chains. Oil-driven transport costs elevated.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -133,12 +134,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "degC",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -193,16 +194,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 9,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1534) - dollar weakness, possible Fed pivot. USD/JPY at 157.78 (below 158 threshold but close).",
-      "timestamp": "2026-08-04T23:32:13.038050+00:00"
+      "note": "ESCALATED by breaking event scanner: Unprecedented Japan-US-South Korea joint FX intervention July 31. Yen was at 40-year lows. BOJ warns inflation could exceed target. EUR/USD above 1.15 (dollar weakness). Multiple currency stress points.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -213,10 +214,10 @@
       "trend": "improving",
       "confidence": 9,
       "change_from_last": 38.1,
-      "description": "Gold spot price: ,076.55/oz (BullionVault live)",
+      "description": "Gold spot price: $4,076.55/oz (BullionVault live)",
       "series_id": "BullionVault spot",
       "last_date": "2026-08-04",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "note": "Live from Yahoo Finance - COMEX Gold Futures. Down from Jan 2026 record of $5,515.",
       "timestamp": "2026-08-04T23:04:38.386568+00:00"
     },
     "crypto": {
@@ -246,7 +247,7 @@
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
+      "note": "Proxy: OECD CLI instead of direct PMI. PBOC pledged 'appropriately loose' monetary policy for H2 2026 on Aug 2. No emergency.",
       "timestamp": "2026-08-04T23:04:38.831072+00:00"
     },
     "europe": {
@@ -261,38 +262,38 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-04",
-      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.21) - 15-year high. EU fiscal stress, debt sustainability fears. Bund yields surging.",
-      "timestamp": "2026-08-04T23:32:13.038050+00:00"
+      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.21) - 15-year high. EU fiscal stress, debt sustainability fears. Bund yields surging. UK 30yr gilts at 28-year high. ECB next meeting Oct 28-29.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.43,
       "status": "amber",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) - recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-04",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1534) - dollar weakness signal. Yield curve 10Y-2Y at 0.43% - mildly inverted.",
-      "timestamp": "2026-08-04T23:32:13.038050+00:00"
+      "note": "ESCALATED by breaking event scanner: Fed July 29 hold with unprecedented 3 dissents (9-3 vote). New Chair Warsh hawkish. 30% probability of hike at next meeting. EUR/USD above 1.15. Yield curve 10Y-2Y at 0.43% - mildly inverted.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 91.82,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -8.49,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-07-27",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-04T23:04:43.791899+00:00"
+      "note": "ESCALATED by breaking event scanner: 2026 Iran War Day 156-157. Active US-Israel-Iran conflict. Hormuz ceasefire fragile, deal 'imminent' per US but Iran denies direct talks. Houthi threats to join war. Oil disruption risk active.",
+      "timestamp": "2026-08-05T03:04:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -313,127 +314,44 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 1420,
-    "red_count": 10,
-    "amber_count": 8,
+    "score": 1850,
+    "red_count": 14,
+    "amber_count": 4,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-04T23:32:13.038050+00:00"
+    "timestamp": "2026-08-05T03:04:00.000000+00:00",
+    "breaking_event_active": true,
+    "breaking_event_count": 7,
+    "breaking_event_max_severity": 5
   },
   "convergence": {
     "stressed_domains": [
-      {
-        "domain": "Social",
-        "red": 3,
-        "amber": 0,
-        "stress_level": 6
-      },
-      {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Climate",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "China",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Geopolitics",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Cyber",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Supply Chain",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Technology",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Europe",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "United States",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      }
+      {"domain": "Social", "red": 3, "amber": 0, "stress_level": 6},
+      {"domain": "Geopolitics", "red": 1, "amber": 0, "stress_level": 5},
+      {"domain": "Financial", "red": 1, "amber": 1, "stress_level": 4},
+      {"domain": "Energy", "red": 1, "amber": 0, "stress_level": 4},
+      {"domain": "Middle East", "red": 1, "amber": 0, "stress_level": 4},
+      {"domain": "Europe", "red": 1, "amber": 0, "stress_level": 3},
+      {"domain": "Supply Chain", "red": 1, "amber": 0, "stress_level": 3},
+      {"domain": "Currency", "red": 1, "amber": 0, "stress_level": 3},
+      {"domain": "Food", "red": 1, "amber": 0, "stress_level": 2},
+      {"domain": "Climate", "red": 1, "amber": 0, "stress_level": 2},
+      {"domain": "China", "red": 1, "amber": 0, "stress_level": 2},
+      {"domain": "United States", "red": 0, "amber": 1, "stress_level": 2},
+      {"domain": "Cyber", "red": 0, "amber": 1, "stress_level": 1},
+      {"domain": "Technology", "red": 0, "amber": 1, "stress_level": 1}
     ],
     "convergence_active": true,
     "convergence_domains": [
-      {
-        "domain": "Social",
-        "red": 3,
-        "amber": 0,
-        "stress_level": 6
-      },
-      {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Climate",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "China",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      }
+      {"domain": "Social", "red": 3, "amber": 0, "stress_level": 6},
+      {"domain": "Geopolitics", "red": 1, "amber": 0, "stress_level": 5},
+      {"domain": "Financial", "red": 1, "amber": 1, "stress_level": 4},
+      {"domain": "Energy", "red": 1, "amber": 0, "stress_level": 4},
+      {"domain": "Middle East", "red": 1, "amber": 0, "stress_level": 4},
+      {"domain": "Europe", "red": 1, "amber": 0, "stress_level": 3},
+      {"domain": "Supply Chain", "red": 1, "amber": 0, "stress_level": 3},
+      {"domain": "Currency", "red": 1, "amber": 0, "stress_level": 3}
     ],
-    "timestamp": "2026-08-04T23:04:44.146841+00:00"
+    "timestamp": "2026-08-05T03:04:00.000000+00:00"
   }
 }
