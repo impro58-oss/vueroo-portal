@@ -1,47 +1,47 @@
 {
   "scan_date": "2026-08-05",
-  "scan_time_utc": "2026-08-05T15:30:39.599463+00:00",
+  "scan_time_utc": "2026-08-05T19:30:39.828795+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 157.576,
+      "price": 157.732,
       "prev_close": 163.3,
-      "change_1d_pct": -3.51,
+      "change_1d_pct": -3.41,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.155,
+      "price": 1.1551,
       "prev_close": 1.1467,
-      "change_1d_pct": 0.72,
+      "change_1d_pct": 0.73,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3467,
+      "price": 1.3464,
       "prev_close": 1.3367,
-      "change_1d_pct": 0.75,
+      "change_1d_pct": 0.73,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.737,
+      "price": 6.7402,
       "prev_close": 6.7661,
-      "change_1d_pct": -0.43,
+      "change_1d_pct": -0.38,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1422.78,
+      "price": 1421.24,
       "prev_close": 1442.28,
-      "change_1d_pct": -1.35,
+      "change_1d_pct": -1.46,
       "data_points": 5,
       "source": "yahoo"
     },
     "SPX": {
-      "price": 7742.17,
+      "price": 7742.41,
       "prev_close": 7316.15,
-      "change_1d_pct": 5.82,
+      "change_1d_pct": 5.83,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -56,69 +56,61 @@
       "price": 25915.82,
       "prev_close": 25807.92,
       "change_1d_pct": 0.42,
-      "data_points": 5,
+      "data_points": 4,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 16.34,
+      "price": 15.52,
       "prev_close": 17.09,
-      "change_1d_pct": -4.39,
+      "change_1d_pct": -9.19,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 108.5,
-      "prev_close": null,
-      "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (estimated - highest since May per StockCharts article, no exact value available)"
+      "price": 77.0,
+      "source": "web_search (Nuveen weekly commentary)",
+      "note": "MOVE Index fell 3 points to 77 (week of Aug 3, 2026)"
     },
     "GOLD": {
-      "price": 4317.6,
+      "price": 4312.9,
       "prev_close": 4049.1,
-      "change_1d_pct": 6.63,
+      "change_1d_pct": 6.52,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 79.53,
+      "price": 79.51,
       "prev_close": 90.12,
-      "change_1d_pct": -11.75,
+      "change_1d_pct": -11.77,
       "data_points": 4,
       "source": "yahoo"
     },
     "US10Y": {
-      "price": 4.629,
+      "price": 4.617,
       "prev_close": 4.663,
-      "change_1d_pct": -0.73,
+      "change_1d_pct": -0.99,
       "data_points": 5,
       "source": "yahoo"
     },
     "JGB10Y": {
       "price": 2.81,
-      "prev_close": 2.85,
-      "change_1d_pct": -1.4,
-      "data_points": 1,
-      "source": "web_search (Business Recorder, Aug 5 2026)"
+      "source": "web_search (Business Recorder)",
+      "note": "Japan 10-year JGB yield fell 3.5bps to 2.81%"
     },
     "DE10Y": {
       "price": 3.09,
-      "prev_close": null,
-      "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (EconoTimes/Investing.com, Aug 5 2026)"
+      "source": "web_search (EconoTimes/Investing.com)",
+      "note": "German 10-year Bund yield dropped to 3.09%, 3-week low"
     },
     "BAA10Y": {
       "price": 1.61,
-      "prev_close": 1.63,
-      "change_1d_pct": -1.23,
-      "data_points": 1,
-      "source": "FRED CSV (BAA10Y series, Aug 3 2026)"
+      "source": "web_search (FRED CSV)",
+      "note": "BAA-10Y spread as of Aug 3, 2026"
     },
     "BTC": {
-      "price": 64472.56,
+      "price": 64864.62,
       "prev_close": 62763.32,
-      "change_1d_pct": 2.72,
+      "change_1d_pct": 3.35,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -128,83 +120,49 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4317.6,
+      "current": 4312.9,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
       "meaning": "Gold mania \u2014 currency crisis or war premium",
-      "escalate": ["fin_stability", "geopolitical"],
-      "distance_pct": 23.36
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 23.23
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.155,
+      "current": 1.1551,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
       "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
-      "escalate": ["us_cycle", "currency"],
-      "distance_pct": 0.43
+      "escalate": [
+        "us_cycle",
+        "currency"
+      ],
+      "distance_pct": 0.44
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4317.6,
+      "current": 4312.9,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
       "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
-      "escalate": ["fin_stability"],
-      "distance_pct": 43.92
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.81,
-      "threshold": 1.5,
-      "direction": "above",
-      "severity": "RED",
-      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
-      "escalate": ["japan_sovereign", "fin_stability"],
-      "distance_pct": 87.33
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.81,
-      "threshold": 1.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
-      "escalate": ["japan_sovereign"],
-      "distance_pct": 181.0
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10-Year (Bund)",
-      "category": "rates",
-      "current": 3.09,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "European fiscal stress \u2014 periphery spreads widening",
-      "escalate": ["europe", "fin_stability"],
-      "distance_pct": 3.0
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 43.76
     }
   ],
-  "breach_count": 6,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED",
-  "manual_data_filled": {
-    "MOVE": "108.5 (estimated, highest since May)",
-    "JGB10Y": "2.81% (Business Recorder)",
-    "DE10Y": "3.09% (EconoTimes)",
-    "BAA10Y": "1.61% (FRED)"
-  }
+  "max_severity": "RED"
 }
