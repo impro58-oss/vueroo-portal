@@ -1,158 +1,173 @@
 {
-  "scan_time": "2026-08-04T23:03:43.000000+00:00",
+  "scan_time": "2026-08-05T07:02:00Z",
   "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner (Lumina)",
   "domains_scanned": 12,
-  "events_detected": 7,
-  "category_5_count": 5,
-  "events": [
+  "queries_executed": 40,
+  "events_detected": [
     {
-      "domain": "us_fed",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "title": "US Treasury coordinated yen intervention with Japan - first since 1998",
-      "summary": "US Treasury and Japan MOF conducted rare coordinated yen-buying intervention on Aug 1. First US-Japan joint FX intervention since 1998. Japan dumping Treasuries to rescue yen, spilling into US debt market.",
-      "sources": [
-        "Reuters",
-        "CNBC",
-        "NYT",
-        "Al Jazeera",
-        "Axios"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "us_cycle"
-      ]
-    },
-    {
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "title": "Japan unprecedented joint FX intervention with US + South Korea",
-      "summary": "BOJ/MOF executed coordinated yen intervention with US Treasury and South Korea. Won hit 9-month high. Japan sold Treasuries to fund intervention. BOJ held rates at 1% with hawkish guidance.",
-      "sources": [
-        "Reuters",
-        "CNBC",
-        "FXStreet",
-        "Chosun",
-        "KED Global"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "currency",
-        "fin_stability",
-        "liquidity"
-      ]
-    },
-    {
-      "domain": "em_asia",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "title": "South Korea joins trilateral FX intervention with US and Japan",
-      "summary": "South Korea engaged in unprecedented joint intervention with US and Japan to support the won. Won hit 9-month high at 1,427 KRW/USD.",
-      "sources": [
-        "Reuters",
-        "KED Global",
-        "Chosun",
-        "FXStreet"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ]
-    },
-    {
+      "id": "BW-2026-08-05-0700-001",
       "domain": "middle_east",
       "category": "war_military",
       "severity": 5,
-      "title": "2026 Iran War Day 156 - Strait of Hormuz CLOSED",
-      "summary": "US-Israel-Iran war ongoing. Hormuz declared closed. Trump halted strike, demands reopening and nuclear rollback. Houthi Red Sea blockade diverting 6 Saudi tankers. Iran re-closed Hormuz after MOU. Kuwait drone attacks. Tanker struck.",
-      "sources": [
-        "Wikipedia",
-        "CNN",
-        "Britannica",
-        "IranSitRep",
-        "Washington Times"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "food_security"
-      ]
+      "title": "Iran War Day 170: US-Iran-Oman Nearing Interim Hormuz Deal, Houthis Attack Saudi Shipping at Bab al-Mandeb",
+      "summary": "US-Iran-Oman nearing interim 60-day agreement to reopen Strait of Hormuz and restore ceasefire (Economic Times, Jakarta Post, Aug 5). Iran denies direct negotiations, says talking only to Oman. One crew member missing after merchant ship hit by projectile in Hormuz (Aug 5). Meanwhile, Houthis began targeting Saudi shipping on July 22 at Bab al-Mandeb — Saudi crude flows through Bab al-Mandeb fell 50% (Kpler data). Houthi attacks on Aramco Jizan refinery (400,000 bpd) disrupting global physical crude markets. Vessel traffic at ~50% pre-attack levels. Diplomacy failing to end conflict despite ceasefire since March. Situation deteriorating.",
+      "sources": ["economictimes.indiatimes.com", "thejakartapost.com", "cnn.com", "bbc.com", "agbi.com", "cobbcountycourier.com", "en.wikipedia.org"],
+      "triggers_hit": ["military action", "Hormuz", "escalation", "war declaration", "oil disruption"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "impact_regions": ["Middle East", "Global Energy", "Global Shipping", "Asia Refiners"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "ACTIVE",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "new_since_last_scan": true,
+      "update_note": "NEW: Interim 60-day Hormuz deal reportedly imminent. NEW: Houthi attacks on Saudi shipping at Bab al-Mandeb (50% flow reduction). NEW: Aramco Jizan refinery targeted. Merchant ship hit in Hormuz."
     },
     {
+      "id": "BW-2026-08-05-0700-002",
       "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 4,
-      "title": "2026 Ebola epidemic - WHO PHEIC, Bundibugyo strain intensifying in DRC",
-      "summary": "WHO declared PHEIC May 16 2026. Bundibugyo ebolavirus outbreak in DRC intensifying. 1,707+ deaths in DRC, 2 in Uganda. No vaccine for this strain. EU coordinating response.",
-      "sources": [
-        "WHO",
-        "Wikipedia",
-        "EC Health",
-        "WHO Africa"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ]
+      "category": "sovereign_crisis",
+      "severity": 5,
+      "title": "Ebola Outbreak Now Largest Ever in DRC: 3,802 Cases, 1,707 Deaths, Record Weekly Transmission",
+      "summary": "WHO confirms this is now the largest Ebola outbreak ever recorded in DRC, surpassing 2018-2020 outbreak (3,317 cases). As of Aug 5: 3,802 cases, 1,707 confirmed deaths (44.7% CFR). Record weekly: 567 cases, 296 deaths in most recent reporting week. 1,481 new cases and 759 deaths added since mid-July alone. UN opening new treatment centres. Trump and Musk aid cuts hampering response (NBC). No vaccine for Bundibugyo strain. Uganda: 2 deaths (Kampala, no community spread). True scale likely exceeds confirmed numbers due to conflict zone and poor infrastructure.",
+      "sources": ["who.int", "cdc.gov", "un.org", "medicaldaily.com", "nbcnews.com", "en.wikipedia.org", "juneesoutherncross.com.au"],
+      "triggers_hit": ["WHO emergency", "outbreak", "epidemic"],
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "impact_regions": ["DRC", "East Africa", "Global (travel screening)"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "ACTIVE",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "new_since_last_scan": true,
+      "update_note": "ESCALATED to severity 5. Now largest ever in DRC. Cases up from 3,605 to 3,802. Deaths up from 1,587 to 1,707. Record weekly transmission (567 cases, 296 deaths). Aid cuts by Trump/Musk hampering response."
     },
     {
-      "domain": "africa",
-      "category": "geopolitical",
+      "id": "BW-2026-08-05-0700-003",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "title": "Bessent Pushes Fed to Expand FIMA Repo Facility for Japan Yen Defense — 'Whatever It Takes'",
+      "summary": "US Treasury Secretary Bessent publicly urging Fed Chair Warsh to expand FIMA Repo Facility cap (currently $60B/day per counterparty) to support Japan's currency intervention. Bessent: 'Will do whatever it takes to support Japan.' Japan holds ~$1.1T in US Treasuries. Estimated intervention size: $60-80B. Yen at 157 after intervention (down from 163, 40-year low). This is an unprecedented sovereign intervention escalation — Treasury actively pushing Fed to expand a liquidity facility for currency defense. Raises systemic questions about dollar liquidity backstop and Treasury-Fed coordination.",
+      "sources": ["cnbc.com", "axios.com", "usatoday.com", "indexbox.io", "hokanews.com"],
+      "triggers_hit": ["intervention", "FIMA repo", "Treasury selling", "decisive action"],
+      "escalate_to": ["currency", "fin_stability"],
+      "impact_regions": ["Japan", "US", "Global FX", "Global Bond Markets"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "ACTIVE",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "new_since_last_scan": true,
+      "update_note": "ESCALATED to severity 5. NEW: Bessent pushing Fed to expand FIMA facility. NEW: 'Whatever it takes' rhetoric. NEW: $60-80B intervention estimate. This is a sovereign intervention escalation."
+    },
+    {
+      "id": "BW-2026-08-05-0700-004",
+      "domain": "us_fed",
+      "category": "emergency_rate",
       "severity": 3,
-      "title": "Nigeria-South Africa diplomatic crisis - 116 killed in xenophobic violence",
-      "summary": "Nigeria formally accuses SA security forces of complicity. 116 citizens killed. Diplomatic relations strained. Trade and AfCFTA at risk. Nigeria evacuating citizens.",
-      "sources": [
-        "Rio Times",
-        "Wikipedia",
-        "Guardian Nigeria",
-        "Tribune Online"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "geopolitical",
-        "social_cohesion"
-      ]
+      "title": "Fed Held at 3.50-3.75%, 30-Year Treasury Yields at 19-Year High, Markets Pricing 63% Chance of September Hike",
+      "summary": "Fed funds rate at 3.63% effective (Aug 3). 30-Year Treasury yields reached 19-year high after Fed hold (Commerzbank). Polymarket still active on whether Fed hikes in 2026. Markets pricing 63% probability of September rate hike (TradingEconomics). Fed commented on modernizing insider lending rules (July 31). No emergency action but significant hawkish signal with yield dislocation at long end.",
+      "sources": ["ycharts.com", "federalreserve.gov", "polymarket.com", "tradingeconomics.com", "investing.com"],
+      "triggers_hit": ["surprise decision"],
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "impact_regions": ["US", "Global"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "MONITORING",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "new_since_last_scan": true,
+      "update_note": "NEW: 30-year yields at 19-year high. NEW: 63% market probability of September hike. No change to rate decision itself."
     },
     {
+      "id": "BW-2026-08-05-0700-005",
+      "domain": "uk",
+      "category": "market_dislocation",
+      "severity": 3,
+      "title": "UK Gilts Volatile on £24B Treasury Gap, BoE 6-3 Hold, Bank Windfall Tax Debate",
+      "summary": "Gilt yields remained volatile as traders anxious over £24 billion Treasury gap and potential debt issuance for new government policy pledges (WCGP market commentary, Aug 4). BoE held rates 5th consecutive time at 3.75% (6-3 vote, three members backing hike). BoE cited Middle East conflict as biggest driver in gilt markets. Guardian reporting on potential bank windfall tax under new government (Burnham). UK PSND at £2,984B (95.1% GDP). No emergency action but significant fiscal-gilt tension.",
+      "sources": ["wcgplc.co.uk", "moneysavingexpert.com", "bulleydaveywm.co.uk", "theguardian.com", "cardinalwealth.co.uk"],
+      "triggers_hit": ["gilts crisis"],
+      "escalate_to": ["europe", "fin_stability"],
+      "impact_regions": ["UK", "Europe"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "MONITORING",
+      "trend": "deteriorating",
+      "confidence": 7,
+      "new_since_last_scan": false,
+      "update_note": "Updated: £24B Treasury gap identified. Bank windfall tax debate emerging. No change to severity."
+    },
+    {
+      "id": "BW-2026-08-05-0700-006",
+      "domain": "em_asia",
+      "category": "sovereign_intervention",
+      "severity": 3,
+      "title": "Bessent Flags Won Volatility, Korean Won Biggest Asian FX Winner from Yen Support",
+      "summary": "US Treasury Secretary Bessent specifically cited Korean won volatility in context of joint intervention (Chosun, Aug 5). Won seen as biggest Asian FX beneficiary from US-Japan yen support. South Korea seen intervening alongside Japan (Nikkei Asia). SK Hynix US listing provided additional won support. Won strengthening toward 1,300/dollar. Bessent stressing stable yen's importance for regional stability.",
+      "sources": ["chosun.com", "asia.nikkei.com", "koreatimes.co.kr", "en.yna.co.kr", "econotimes.com"],
+      "triggers_hit": ["intervention"],
+      "escalate_to": ["currency", "fin_stability"],
+      "impact_regions": ["South Korea", "Asia", "Global FX"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "ACTIVE",
+      "trend": "improving",
+      "confidence": 8,
+      "new_since_last_scan": true,
+      "update_note": "NEW: Bessent specifically flags won volatility. NEW: Nikkei confirms SK intervention alongside Japan."
+    },
+    {
+      "id": "BW-2026-08-05-0700-007",
       "domain": "commodities",
       "category": "energy_shock",
-      "severity": 3,
-      "title": "Oil mixed as Hormuz MOU signed then broken, OPEC+ raising output",
-      "summary": "Brent fell 5pct to ~ after US-Iran MOU, but Iran re-closed Hormuz. OPEC+ approved 188kbpd Sept increase. Houthi Red Sea blockade diverting tankers. Gold above ,148.",
-      "sources": [
-        "Fortune",
-        "EIA",
-        "Investing.com",
-        "GoldSilver.com"
-      ],
-      "timestamp": "2026-08-04T23:03:43.000000+00:00",
-      "escalate_to": [
-        "energy",
-        "supply_chain"
-      ]
+      "severity": 4,
+      "title": "Brent at $87, EIA Forecasts $74 for 3Q26 — Bab al-Mandeb Disruption Creating Two-Tier Oil Market",
+      "summary": "Brent at $87.38 (Aug 3). EIA forecasting Brent averaging $74/bbl in 3Q26, down from recent peaks — expectations of increasing supply and moderating inventory draws. BUT: Houthi attacks on Saudi shipping at Bab al-Mandeb creating physical crude market panic (AGBI). Saudi flows through Bab al-Mandeb down 50% (Kpler). Aramco Jizan refinery (400,000 bpd) targeted. Two-tier market: paper futures softening while physical crude tightening due to shipping disruption. Gold at ~$4,050-4,128 (TradingEconomics: 63% probability of September Fed hike supporting gold). WTI range forecast: $67.93-$106.74 for August.",
+      "sources": ["eia.gov", "fortune.com", "tradingeconomics.com", "litefinance.org", "bbc.com", "agbi.com", "cnn.com"],
+      "triggers_hit": ["spike", "disruption", "pipeline attack"],
+      "escalate_to": ["energy", "food_security"],
+      "impact_regions": ["Global", "Middle East", "Asia Refiners"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "ACTIVE",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "new_since_last_scan": true,
+      "update_note": "ESCALATED to severity 4. NEW: Houthi Bab al-Mandeb attacks creating physical crude market panic. NEW: Two-tier market emerging (paper vs physical). NEW: Aramco refinery targeted."
+    },
+    {
+      "id": "BW-2026-08-05-0700-008",
+      "domain": "china",
+      "category": "sovereign_intervention",
+      "severity": 2,
+      "title": "China Factory PMI Contracts, PBOC Easing Bets Strengthening, Yuan Weakening",
+      "summary": "China's official factory PMI contracted while private PMI (Caixin) hit 4-month low, strengthening bets on PBOC easing and yuan weakness (VT Markets, Aug 5). PBOC setting slightly weaker CNY fixings (USD/CNH at 6.7583). PBOC maintaining 'appropriately loose' monetary policy for H2 2026. China tightening exit-entry controls (security-focused). No emergency action but notable economic deceleration.",
+      "sources": ["vtmarkets.com", "home.saxo", "investinglive.com", "qzhou.substack.com"],
+      "triggers_hit": ["PBOC emergency"],
+      "escalate_to": ["china", "fin_stability"],
+      "impact_regions": ["China", "Asia"],
+      "timestamp": "2026-08-05T07:02:00Z",
+      "status": "MONITORING",
+      "trend": "deteriorating",
+      "confidence": 7,
+      "new_since_last_scan": true,
+      "update_note": "NEW: Factory PMI contracted. NEW: Easing bets strengthening. No emergency, but deterioration."
     }
   ],
-  "domains_clean": [
-    "latam",
-    "eu_ecb",
-    "uk",
-    "china"
+  "no_new_events": [
+    {"domain": "latam", "status": "MONITORING", "note": "Argentina stability restored, Milei reforms validated. Brazil Copom rate decision scheduled Aug 5. No emergency. Argentina praised by IMF."},
+    {"domain": "eu_ecb", "status": "MONITORING", "note": "ECB published Eurosystem financial statement (July 31). No emergency action. Next meeting Oct 28-29."},
+    {"domain": "africa", "status": "MONITORING", "note": "Nigerians fleeing South Africa (afrophobia crisis, Abuja Network News). Sahel extremism ongoing. No new category-5 event. Nigeria-SA tensions bear monitoring for social cohesion signal."},
+    {"domain": "financial_system", "status": "MONITORING", "note": "No new bank failures or systemic risk events. Brazil assessed as far from systemic crisis (Bradesco BBI). 30-year Treasury yields at 19-year high but no liquidity freeze."}
   ],
-  "domains_with_events": [
-    "us_fed",
-    "japan",
-    "em_asia",
-    "middle_east",
-    "africa",
-    "commodities",
-    "pandemic_health"
+  "macro_event_signal": "ACTIVE",
+  "scan_summary": "8 events detected across 12 domains. 3 severity-5 (Iran war escalation with Houthi Bab al-Mandeb attacks, Ebola now largest ever in DRC, Bessent pushing Fed FIMA expansion). 1 severity-4 (commodity/energy two-tier market). 2 severity-3 (Fed hawkish hold with 19-year yield high, UK gilt volatility). 2 severity-3 (SK won intervention, China PMI contraction). Key changes since last scan: Iran/Hormuz situation deteriorating with Houthi expansion to Bab al-Mandeb; Ebola escalated to largest ever in DRC; Bessent-Fed FIMA escalation is new sovereign intervention; energy market splitting into paper vs physical tier.",
+  "changes_from_last_scan": [
+    "ESCALATED: Ebola from severity 4 to 5 (now largest ever in DRC, 3,802 cases, 1,707 deaths)",
+    "ESCALATED: Japan/FIMA from severity 4 to 5 (Bessent pushing Fed to expand facility, 'whatever it takes')",
+    "ESCALATED: Commodities from severity 3 to 4 (Houthi Bab al-Mandeb attacks, two-tier oil market)",
+    "NEW: Houthi attacks on Saudi shipping at Bab al-Mandeb (50% flow reduction)",
+    "NEW: Interim 60-day Hormuz deal reportedly imminent (US-Iran-Oman)",
+    "NEW: China factory PMI contracted, easing bets strengthening",
+    "NEW: 30-year Treasury yields at 19-year high",
+    "NEW: 63% market probability of September Fed hike",
+    "NEW: UK £24B Treasury gap identified, bank windfall tax debate",
+    "UPDATED: Bessent specifically flags Korean won volatility"
   ]
 }
