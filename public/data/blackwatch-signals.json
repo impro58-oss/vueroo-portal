@@ -2,26 +2,26 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T17:09:16.933838+00:00",
+    "last_update": "2026-08-06T19:04:21.500837+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 21
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.75,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "US High Yield OAS Spread",
+      "description": "HY OAS 2.75%. Russia banking crisis risk rising. Sber NPLs deteriorating, bankruptcies +13.7% YoY. 30Y Treasury at highest since 2007.",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-05",
-      "note": "",
-      "timestamp": "2026-08-06T17:09:10.435658+00:00"
+      "note": "Russia banking risk elevated. Fed hawks signaling possible rate hike.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,30 +58,30 @@
       "domain": "Energy",
       "value": 88.9,
       "status": "amber",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent ~$79.75/bbl. Iran war disrupted Hormuz oil flows. IEA calls it largest supply disruption. Houthi attack on Saudi oil tanker Aug 5.",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-06T17:09:11.828098+00:00"
+      "note": "Category-5: energy_shock. Hormuz closure impact ongoing despite ceasefire.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.81,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.69,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "Iran war active, Brazil-Argentina diplomatic breakdown, Russia banking crisis risk, Japan-SK-US joint FX intervention",
       "series_id": "VIXCLS",
       "last_date": "2026-08-05",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-06T17:09:12.363194+00:00"
+      "note": "Multiple geopolitical flashpoints active simultaneously.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -104,29 +104,29 @@
       "value": 88.9,
       "unit": "$/bbl (proxy)",
       "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Hormuz closure = largest oil supply disruption per IEA. Fuel shortages in Vietnam. Ebola impacting DRC supply chains.",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-06T17:09:06.705484+00:00"
+      "note": "Dual shock: Iran war + Ebola outbreak.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
-      "confidence": 3,
+      "trend": "stable",
+      "confidence": 5,
       "change_from_last": -4.92,
       "unit": "index",
-      "description": "IMF Food Price Index",
+      "description": "IMF Food Price Index 131.17. Iran war disrupting supply chains. Ebola outbreak in DRC affecting African food systems.",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-06T17:09:13.185610+00:00"
+      "note": "Hormuz disruption impacts global food shipping costs.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -149,14 +149,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
-      "description": "Consumer Sentiment as social mood proxy",
+      "description": "Consumer Sentiment 49.5. Iran war, Ebola PHEIC, economic uncertainty driving social stress.",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-06T17:09:13.582205+00:00"
+      "note": "Ebola PHEIC adds health anxiety to existing economic stress.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -192,31 +192,31 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0.03,
       "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad)",
+      "description": "Unprecedented Japan-SK-US joint FX intervention July 31. CNY undervalued 20%+ per CFR.",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-06T17:09:14.075361+00:00"
+      "note": "Category-5: sovereign_intervention. First-ever trilateral FX intervention.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4270.62,
+      "value": 4242.15,
       "unit": "$/oz",
       "status": "red",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": 236.92,
-      "description": "Gold spot: ,270.62/oz (Fortune, 7AM ET Aug 6)",
+      "trend": "stable",
+      "confidence": 10,
+      "change_from_last": -28.47,
+      "description": "Gold $4,242/oz (Aug 6). Down from $5,597 peak (Jan 2026). Safe haven demand from Iran war + Ebola.",
       "series_id": "Fortune/GoldPrice.org",
       "last_date": "2026-08-06",
-      "note": "Spot price verified via web search - Fortune.com",
-      "timestamp": "2026-08-06T17:09:04.486511+00:00"
+      "note": "Record Q1 demand $193bn. Central bank buying continues.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -282,16 +282,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": -8.05,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 8.05,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "2026 Iran War: Active conflict. Strait of Hormuz partially closed. Iran-Oman deal close but not finalized. Houthi attacks on shipping continue.",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-06T17:09:16.542040+00:00"
+      "note": "Category-5: war_military + energy_shock. Hormuz deal pending as of Aug 6.",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +307,32 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-06T17:09:16.918775+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "unit": "",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 1,
+      "description": "Multiple category-5 events active",
+      "series_id": null,
+      "last_date": "2026-08-06",
+      "note": "",
+      "timestamp": "2026-08-06T19:04:21.500837+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 579,
-    "red_count": 8,
+    "score": 1560,
+    "red_count": 11,
     "amber_count": 9,
-    "green_count": 2,
-    "manual_count": 1,
-    "timestamp": "2026-08-06T17:09:16.933838+00:00"
+    "green_count": 1,
+    "info_count": 0,
+    "timestamp": "2026-08-06T19:04:21.500837+00:00"
   },
   "convergence": {
     "stressed_domains": [

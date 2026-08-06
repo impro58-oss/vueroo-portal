@@ -1,0 +1,74 @@
+{
+  "scan_time": "2026-08-06T19:02:00Z",
+  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
+  "domains_scanned": 12,
+  "category_5_events": 4,
+  "events": [
+    {
+      "domain": "middle_east",
+      "name": "2026 Iran War — Strait of Hormuz Crisis",
+      "category": ["war_military", "energy_shock", "sovereign_intervention"],
+      "severity": "CRITICAL",
+      "description": "Active Iran-US-Israel war. Ceasefire declared but Strait of Hormuz not fully reopened. Iran-Oman deal close but not finalized as of Aug 6. Houthi attack on Saudi oil tanker Aug 5. Iran drafting bill to regulate Hormuz traffic with restrictions.",
+      "sources": ["CNN", "Britannica", "CFR", "Washington Times", "CBS News"],
+      "escalated_signals": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
+      "timestamp": "2026-08-06T19:02:00Z"
+    },
+    {
+      "domain": "pandemic_health",
+      "name": "2026 Ebola Epidemic — WHO PHEIC",
+      "category": ["pandemic_health"],
+      "severity": "CRITICAL",
+      "description": "WHO declared PHEIC on May 16, 2026. Fastest-growing Ebola outbreak on record. 3,874 confirmed cases, 1,751 deaths as of Aug 4. Bundibugyo strain — no approved vaccine. Cases in 5 DRC provinces plus Uganda. Africa CDC and WHO calling for urgent community-led action.",
+      "sources": ["WHO", "ECDC", "CDC", "MSF", "Wikipedia"],
+      "escalated_signals": ["social_cohesion", "supply_chain"],
+      "timestamp": "2026-08-06T19:02:00Z"
+    },
+    {
+      "domain": "financial_system",
+      "name": "Russia Banking Crisis Risk — Systemic",
+      "category": ["market_dislocation", "sovereign_crisis"],
+      "severity": "HIGH",
+      "description": "Sber (Russia's largest bank) reporting rapid NPL deterioration H1 2026. Bankruptcies up 13.7% YoY. Kremlin-linked think tank (CMASF) warns systemic banking crisis possible by October 2026 if problem assets continue rising. Stagflation risk elevated.",
+      "sources": ["Moscow Times", "Atlantic Council", "UNN Intelligence"],
+      "escalated_signals": ["fin_stability"],
+      "timestamp": "2026-08-06T19:02:00Z"
+    },
+    {
+      "domain": "em_asia",
+      "name": "Unprecedented Japan-South Korea-US Joint FX Intervention",
+      "category": ["sovereign_intervention"],
+      "severity": "HIGH",
+      "description": "First-ever trilateral coordinated currency intervention on July 31, 2026. Japan and South Korea bought their currencies in open market, possibly alongside the US. Won hit 9-month high. Signals deep concern about currency instability.",
+      "sources": ["Reuters", "FXStreet", "KED Global", "Chosun"],
+      "escalated_signals": ["currency", "fin_stability"],
+      "timestamp": "2026-08-06T19:02:00Z"
+    }
+  ],
+  "notable_non_cat5": [
+    {
+      "domain": "latam",
+      "name": "Brazil-Argentina Diplomatic Crisis",
+      "severity": "MEDIUM",
+      "description": "Brazil withdrew ambassador from Argentina after Milei insulted Lula. Diplomatic ties downgraded. Threatens bilateral trade relationship."
+    },
+    {
+      "domain": "us_fed",
+      "name": "Fed Holds Rates, Hawks Vocal",
+      "severity": "MEDIUM",
+      "description": "Fed kept rates at 3.5-3.75% on July 29. Three votes for increase. 30Y Treasury yield at highest since 2007. Chair Warsh says will not hesitate to act if inflation accelerates."
+    },
+    {
+      "domain": "commodities",
+      "name": "Gold at $4,242 — Safe Haven Demand Strong",
+      "severity": "MEDIUM",
+      "description": "Gold down from $5,597 peak (Jan 2026) but still historically extreme. Record Q1 demand $193bn. Driven by Iran war + Ebola uncertainty."
+    }
+  ],
+  "signals_updated": 21,
+  "red_count": 11,
+  "amber_count": 9,
+  "green_count": 1,
+  "overall_risk": "CRITICAL",
+  "risk_score": 1560
+}
