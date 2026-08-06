@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-06T18:00:10.163010",
+  "timestamp": "2026-08-06T21:00:12.138234",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -29,9 +29,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 105.68,
-    "unrealized_pnl_eur": 0.17,
-    "total_pnl_eur": 105.86,
-    "open_positions": 1,
+    "unrealized_pnl_eur": -0.28,
+    "total_pnl_eur": 105.4,
+    "open_positions": 2,
     "closed_trades": 161,
     "wins": 65,
     "losses": 96,
@@ -47,7 +47,22 @@
       "stop": 1.1412,
       "highest": 1.1572,
       "lowest": 1.1542,
-      "bars_held": 11,
+      "bars_held": 12,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "PEOPLEUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-06T21:00:12.138234",
+      "entry_price": 0.00744,
+      "atr": 0.0005878571428571429,
+      "stop": 0.005970357142857144,
+      "highest": 0.00744,
+      "lowest": 0.00744,
+      "bars_held": 0,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -320,16 +335,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "BFUSDUSDT",
-    "RLUSDUSDT",
-    "ZECUSDT",
-    "UUSDT",
-    "USD1USDT",
-    "KASUSDT",
-    "PAXGUSDT",
     "XAUTUSDT",
-    "XUSDUSDT",
+    "RLUSDUSDT",
+    "KASUSDT",
+    "BFUSDUSDT",
+    "UUSDT",
     "USDEUSDT",
+    "PAXGUSDT",
+    "XUSDUSDT",
+    "ZECUSDT",
+    "USD1USDT",
     "EURUSDT"
   ]
 }
