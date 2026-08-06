@@ -2,14 +2,14 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T03:02:00.000000+00:00",
+    "last_update": "2026-08-06T03:30:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "3 thresholds breached",
+    "threshold_breach": "3 thresholds breached (1 RED: Gold>3500, 2 AMBER: EUR/USD>1.15, Gold>3000)",
     "breaking_event_scan": "2026-08-06T03:02:00+00:00 - 5 events detected (1 cat-5, 2 cat-4, 1 cat-3, 1 cat-2)",
     "macro_event_active": true,
-    "macro_event_summary": "US-Treasury coordinated yen intervention (first since 1998); Iran war Hormuz talks; DRC Ebola PHEIC intensifying"
+    "macro_event_summary": "US-Treasury coordinated yen intervention (first since 1998); Iran war Hormuz talks; DRC Ebola PHEIC intensifying; Gold at $4,325 (RED threshold breach)"
   },
   "signals": {
     "fin_stability": {
@@ -210,17 +210,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4249.05,
+      "value": 4325.1,
       "unit": "$/oz",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 258.5,
-      "description": "Gold Futures (GC=F): $4,307.60 (+6.38%)",
+      "change_from_last": 276.0,
+      "description": "Gold Futures (GC=F): $4,325.10 (+6.82%)",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-08-05",
-      "note": "Updated via BullionVault live spot price",
-      "timestamp": "2026-08-05T23:04:08.000000+00:00"
+      "last_date": "2026-08-06",
+      "note": "Threshold scan: GOLD above 3500 (RED) and above 3000 (AMBER). Updated via Yahoo Finance.",
+      "timestamp": "2026-08-06T03:30:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -321,7 +321,7 @@
     "amber_count": 7,
     "green_count": 2,
     "manual_count": 0,
-    "timestamp": "2026-08-06T03:02:00.000000+00:00",
+    "timestamp": "2026-08-06T03:30:00.000000+00:00",
     "breaking_event_scan": "2026-08-06T03:02:00+00:00"
   },
   "convergence": {
