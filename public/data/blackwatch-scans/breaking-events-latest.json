@@ -1,67 +1,144 @@
 {
-  "scan_time": "2026-08-06T15:04:42.000000+00:00",
+  "scan_time": "2026-08-06T23:05:52.797726",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1",
+  "scanner_version": "1.0",
   "domains_scanned": 12,
-  "queries_executed": 36,
-  "events_detected": 6,
-  "category_5_count": 5,
-  "events": [
+  "queries_executed": 18,
+  "events_detected": [
     {
-      "id": "BE-2026-08-06-001",
+      "id": "EVT-2026-08-06-001",
       "domain": "us_fed",
-      "title": "US Treasury Coordinated Yen Intervention (Joint with Japan)",
       "category": "sovereign_intervention",
       "severity": 5,
-      "confidence": 10,
-      "summary": "US Treasury conducted rare coordinated yen-buying intervention with Japan. First joint US-Japan FX intervention in modern history. $5-10bil deployed. South Korea also joined."
+      "title": "US-Japan Joint FX Intervention (First in 28 Years)",
+      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention. First joint operation in over a decade. Driven by yen collapse toward 4-decade low spilling into Treasury market stress. FIMA repo facility used to avoid forced Treasury selling.",
+      "sources": [
+        "Reuters",
+        "NYT",
+        "CNBC",
+        "Al Jazeera"
+      ],
+      "timestamp": "2026-08-01T00:00:00Z",
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "us_cycle"
+      ],
+      "status": "active"
     },
     {
-      "id": "BE-2026-08-06-002",
+      "id": "EVT-2026-08-06-002",
       "domain": "middle_east",
-      "title": "2026 Iran War - Strait of Hormuz Crisis ACTIVE",
-      "category": "war_military",
-      "severity": 5,
-      "confidence": 10,
-      "summary": "Active US-Israel war on Iran. Hormuz partially blocked. Tanker explosions Aug 5-6. Houthis attacking Saudi tankers. Brent spiked 10-13%. Qatar mediating."
-    },
-    {
-      "id": "BE-2026-08-06-003",
-      "domain": "em_asia",
-      "title": "Trilateral US-Japan-Korea Coordinated Currency Intervention",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "confidence": 10,
-      "summary": "Unprecedented joint FX intervention by US, Japan, South Korea to support yen and won. Won hit 9-month high. Carry trade risks persist."
-    },
-    {
-      "id": "BE-2026-08-06-004",
-      "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic - WHO PHEIC Active, 1800+ Deaths",
-      "category": "pandemic_health",
-      "severity": 4,
-      "confidence": 10,
-      "summary": "Bundibugyo Ebola outbreak DRC declared PHEIC May 16. 3,874 confirmed cases, 1,751 deaths DRC, 2 in Uganda. 717 hospitalized. Largest Bundibugyo outbreak ever."
-    },
-    {
-      "id": "BE-2026-08-06-005",
-      "domain": "commodities",
-      "title": "Oil Supply Disruption - Hormuz + Houthi Red Sea Attacks",
       "category": "energy_shock",
       "severity": 4,
-      "confidence": 9,
-      "summary": "Brent jumped 10-13% on Hormuz disruption. 20% global oil/LNG transits strait. Bab el-Mandeb traffic collapsed from 20 to 1 vessel. $100/bbl risk."
+      "title": "Strait of Hormuz Deal Imminent - De-escalation",
+      "summary": "Iran and Oman in final stages of drafting agreement on Hormuz shipping routes. 60-day interim mechanism with northern lane for inbound, southern for outbound. No tolls on commercial shipping.",
+      "sources": [
+        "Al Jazeera",
+        "CNBC",
+        "CNN"
+      ],
+      "timestamp": "2026-08-06T12:00:00Z",
+      "escalate_to": [
+        "energy",
+        "middle_east",
+        "supply_chain"
+      ],
+      "status": "de-escalating"
     },
     {
-      "id": "BE-2026-08-06-006",
-      "domain": "japan",
-      "title": "BOJ Holds at 1% Amid Yen Crisis and Intervention",
-      "category": "emergency_rate",
+      "id": "EVT-2026-08-06-003",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 4,
+      "title": "Ebola PHEIC Escalating - DRC + Uganda",
+      "summary": "WHO PHEIC declared May 16. 3,973 confirmed cases, 1,801 deaths as of Aug 6. Treatment centers at 139% capacity. Bundibugyo strain has no vaccine.",
+      "sources": [
+        "WHO",
+        "ECDC",
+        "MSF"
+      ],
+      "timestamp": "2026-08-06T15:00:00Z",
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "EVT-2026-08-06-004",
+      "domain": "financial_system",
+      "category": "market_dislocation",
+      "severity": 4,
+      "title": "Russia Banking Crisis Accelerating",
+      "summary": "Sberbank NPLs at 5.5%. Bankruptcies +13.7% YoY. Record 636,000 personal bankruptcies. Sber cut GDP forecast to 0-0.5%. Kremlin think tank warns systemic crisis.",
+      "sources": [
+        "Moscow Times",
+        "UNN Intelligence"
+      ],
+      "timestamp": "2026-08-06T11:00:00Z",
+      "escalate_to": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "EVT-2026-08-06-005",
+      "domain": "em_asia",
+      "category": "market_dislocation",
       "severity": 3,
-      "confidence": 10,
-      "summary": "BOJ left rates at 1% (8-1, Takata dissented for 1.25%). Ueda warned of rapid hikes if inflation persists. Yen at 40-year lows triggered joint intervention."
+      "title": "Korean Won Surges 8.8% - Fastest Since Financial Crisis",
+      "summary": "South Korea joined US-Japan joint FX intervention. Won surged 8.8% - steepest since 2008. Carry trade unwinding risks persist.",
+      "sources": [
+        "Chosun",
+        "Seoul Economic Daily"
+      ],
+      "timestamp": "2026-08-02T00:00:00Z",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "EVT-2026-08-06-006",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 3,
+      "title": "OPEC+ Completes Full Rollback of Voluntary Production Cuts",
+      "summary": "OPEC+ raising quotas by 188,000 bpd in September, completing rollback of 2023 voluntary cuts. Timed to offset Iran war supply disruption.",
+      "sources": [
+        "OPEC",
+        "Forbes",
+        "Energy Connects"
+      ],
+      "timestamp": "2026-08-02T00:00:00Z",
+      "escalate_to": [
+        "energy",
+        "supply_chain"
+      ],
+      "status": "active"
     }
   ],
-  "all_clear": false,
-  "summary": "6 breaking events detected. 2x severity-5 (US-Japan FX intervention, Iran/Hormuz war), 3x severity-4 (trilateral intervention, Ebola PHEIC, oil shock), 1x severity-3 (BOJ rate hold amid yen crisis)."
+  "events_count": 6,
+  "category_5_count": 1,
+  "category_4_count": 3,
+  "category_3_count": 2,
+  "domains_with_events": [
+    "us_fed",
+    "middle_east",
+    "pandemic_health",
+    "financial_system",
+    "em_asia",
+    "commodities"
+  ],
+  "domains_clear": [
+    "latam",
+    "eu_ecb",
+    "uk",
+    "japan",
+    "china",
+    "africa"
+  ]
 }
