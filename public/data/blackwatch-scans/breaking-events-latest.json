@@ -1,94 +1,144 @@
 {
-  "scan_time": "2026-08-05T23:02:00.000000+00:00",
+  "scan_time": "2026-08-06T03:02:00+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
+  "scanner": "BlackWatch Breaking Event Scanner v1",
+  "operator": "Lumina (cron job 85bd4029)",
   "domains_scanned": 12,
   "queries_executed": 18,
-  "category_5_events_detected": 5,
-  "events": [
+  "events_detected": [
     {
-      "id": "BE-2026-0805-001",
-      "title": "US-Japan-Korea Coordinated Currency Intervention",
+      "id": "BE-2026-0806-001",
       "domain": "us_fed",
+      "title": "US Treasury coordinated yen intervention with Japan — first since 1998",
       "category": "sovereign_intervention",
-      "severity": 4,
-      "status": "ACTIVE",
-      "summary": "US Treasury and Japan conducted rare coordinated yen-buying intervention (July 31-August 1). South Korea joined unprecedented joint FX intervention. Won hit 9-month high. First joint US-Japan FX intervention in years.",
-      "sources": ["Reuters", "CNBC", "Al Jazeera", "NYT", "Chosun"],
-      "detected": "2026-08-05T23:02:00Z",
+      "severity": 5,
+      "confidence": 10,
+      "description": "US Treasury and Japan's Finance Ministry conducted a rare coordinated yen-buying intervention on July 31/Aug 1. First joint US-Japan FX intervention since 1998. Treasury Secretary Bessent's notepad read 'To Do Buy Japanese Yen $5-10 bil'. Both sides signal readiness for further action.",
+      "sources": ["Reuters", "CNBC", "NYT", "Al Jazeera"],
+      "urls": [
+        "https://www.reuters.com/world/asia-pacific/us-treasury-undertakes-intervention-yen-market-ft-reports-2026-08-01/",
+        "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-treasurys-euros-.html",
+        "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html"
+      ],
+      "triggers_matched": ["intervention", "Treasury intervention", "decisive action"],
       "escalate_to": ["fin_stability", "currency", "us_cycle"],
-      "impact_regions": ["US", "Japan", "South Korea", "Global FX"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
+      "timestamp": "2026-08-06T03:02:00+00:00"
     },
     {
-      "id": "BE-2026-0805-002",
-      "title": "Hormuz Deal Framework — 60-Day Interim Agreement Imminent",
+      "id": "BE-2026-0806-002",
       "domain": "middle_east",
+      "title": "Iran war: Hormuz ceasefire talks near deal but naval blockade active",
       "category": "war_military",
       "severity": 4,
-      "status": "DEESCALATING",
-      "summary": "Iran-Oman-US nearing 60-day interim agreement to reopen Strait of Hormuz. Trump says deal could come 'today or tomorrow'. Strait still physically disrupted. Oil crashed 13.4% to $75.69.",
-      "sources": ["CBS News", "AP News", "Al Jazeera", "NBC News", "Fox News", "ISW"],
-      "detected": "2026-08-05T23:02:00Z",
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain"],
-      "impact_regions": ["Iran", "US", "Oman", "Israel", "Global Energy"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
+      "confidence": 9,
+      "description": "US-Iran war ongoing. MOU/ceasefire suspended, US naval blockade reimposed — 44 vessels redirected, 2 disabled, 2 boarded. Iran and Oman finalizing Strait of Hormuz agreement. Trump says deal could come this week. Iran simultaneously boosting military strength during talks. Iran threatens to target US warships in Hormuz.",
+      "sources": ["AP News", "CNN", "Al Jazeera"],
+      "urls": [
+        "https://apnews.com/article/iran-war-us-hormuz-trump-august-5-2026-ecdbd96f2b46c70beb5926d8508f9c55",
+        "https://www.cnn.com/2026/08/04/world/live-news/iran-war-trump",
+        "https://www.aljazeera.com/news/2026/8/4/maximum-use-iran-boosts-military-strength-during-ceasefire-with-us"
+      ],
+      "triggers_matched": ["military action", "Hormuz", "escalation", "sanctions"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "timestamp": "2026-08-06T03:02:00+00:00"
     },
     {
-      "id": "BE-2026-0805-003",
-      "title": "KOSDAQ/KOSPI Consecutive Circuit Breakers — AI Bubble Implosion",
-      "domain": "em_asia",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "OCCURRED",
-      "summary": "KOSPI and KOSDAQ triggered back-to-back circuit breakers on July 29 — first-ever consecutive activation. KOSDAQ fell 8.05%. Semiconductor stocks plummeted. AI bubble bursting.",
-      "sources": ["Chosun", "BYDFi", "Futurism"],
-      "detected": "2026-08-05T23:02:00Z",
-      "escalate_to": ["fin_stability", "currency"],
-      "impact_regions": ["South Korea", "Asia", "Global Tech"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-0805-004",
-      "title": "Argentina-China Currency Swap Renewed — $18-20B, 5-Year Term",
-      "domain": "latam",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "status": "RESOLVED",
-      "summary": "Argentina renewed China currency swap to 5-year term, locking in $18-20B reserves. Previous swap expired August 6. Crisis averted.",
-      "sources": ["Rio Times", "TN Argentina"],
-      "detected": "2026-08-05T23:02:00Z",
-      "escalate_to": ["currency", "fin_stability"],
-      "impact_regions": ["Argentina", "China", "Latin America"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-0805-005",
-      "title": "Russia Latent Banking Crisis — NPLs >10%, Deposit Outflows $25B YTD",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 3,
-      "status": "DEVELOPING",
-      "summary": "Russia's banking system showing systemic stress. NPLs >10%. Deposit outflows $25B YTD. Sberbank warns. Kremlin think tank warns systemic crisis possible by October 2026.",
-      "sources": ["Moscow Times", "Riddle Russia"],
-      "detected": "2026-08-05T23:02:00Z",
-      "escalate_to": ["fin_stability", "geopolitical"],
-      "impact_regions": ["Russia", "Eastern Europe"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-0805-006",
-      "title": "Ebola Outbreak (Bundibugyo Strain) — WHO PHEIC, Fastest-Growing on Record",
+      "id": "BE-2026-0806-003",
       "domain": "pandemic_health",
+      "title": "Ebola Bundibugyo outbreak in DRC — largest ever, WHO PHEIC, intensifying",
       "category": "pandemic_health",
-      "severity": 3,
-      "status": "ACTIVE",
-      "summary": "WHO declared PHEIC May 17. Bundibugyo strain — no vaccine. Fastest-growing Ebola outbreak on record. DRC + Uganda.",
-      "sources": ["WHO", "ECDC", "EU Health Commission"],
-      "detected": "2026-08-05T23:02:00Z",
+      "severity": 4,
+      "confidence": 10,
+      "description": "WHO declared PHEIC on May 16, 2026. As of July 30: 3,605 confirmed cases, 1,587 deaths (44% CFR). Outbreak expanded to 5 provinces, 49 health zones. Largest Ebola outbreak ever recorded in DRC. No vaccine for Bundibugyo strain. WHO warns 'intensifying at exceptional pace'.",
+      "sources": ["WHO", "ECDC", "Wikipedia"],
+      "urls": [
+        "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614",
+        "https://health.ec.europa.eu/health-security-and-infectious-diseases/crisis-management/ebola-virus-outbreak-2026_en",
+        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic"
+      ],
+      "triggers_matched": ["WHO emergency", "outbreak", "epidemic"],
       "escalate_to": ["supply_chain", "social_cohesion"],
-      "impact_regions": ["DRC", "Uganda", "East Africa"],
-      "timestamp": "2026-08-05T23:02:00.000000+00:00"
+      "timestamp": "2026-08-06T03:02:00+00:00"
+    },
+    {
+      "id": "BE-2026-0806-004",
+      "domain": "em_asia",
+      "title": "Korean Won surges 8.8% — fastest since 1997 Asian Financial Crisis",
+      "category": "market_dislocation",
+      "severity": 3,
+      "confidence": 8,
+      "description": "Korean Won gained 8.8% against USD in July 2026 — steepest monthly gain since the 1997 Asian Financial Crisis. Driven by US-Japan coordinated yen intervention spillover. KOSPI crashed from peak, Samsung/SK Hynix wobbled. Constitutional crisis and attempted coup backdrop in South Korea.",
+      "sources": ["Chosun", "Seoul Economic Daily", "ABC News"],
+      "urls": [
+        "https://www.chosun.com/english/market-money-en/2026/08/02/TW667YOKLZDMHA75B72PIONDI4/",
+        "https://en.sedaily.com/finance/2026/08/02/korean-won-gains-88-percent-in-a-month-steepest-since",
+        "https://www.abc.net.au/news/2026-08-03/korean-markets-threatening-upset-tech-boom/106981956"
+      ],
+      "triggers_matched": ["intervention", "currency crisis", "contagion"],
+      "escalate_to": ["currency", "fin_stability"],
+      "timestamp": "2026-08-06T03:02:00+00:00"
+    },
+    {
+      "id": "BE-2026-0806-005",
+      "domain": "latam",
+      "title": "Argentina-China $19bn currency swap renewed for 5 years — deadline Aug 6",
+      "category": "sovereign_crisis",
+      "severity": 2,
+      "confidence": 9,
+      "description": "Argentina's $19bn China currency swap was set to expire Aug 6, 2026. RENEWED on Aug 5 for 5 years (previously 3-year terms). Removes default/renewal risk through 2027 presidential election. US had pressured Argentina to wind down the swap. Bloomberg confirmed renewal.",
+      "sources": ["Bloomberg", "Rio Times", "Diario Tiempo"],
+      "urls": [
+        "https://www.bloomberg.com/news/articles/2026-08-05/argentina-renews-19-billion-china-swap-for-another-five-years",
+        "https://www.riotimesonline.com/argentina-china-currency-swap-renewed-2026/"
+      ],
+      "triggers_matched": ["IMF emergency"],
+      "escalate_to": ["fin_stability", "currency"],
+      "resolved": true,
+      "timestamp": "2026-08-06T03:02:00+00:00"
     }
-  ]
+  ],
+  "non_events": [
+    {
+      "domain": "us_fed",
+      "note": "Fed held rates at 3.50-3.75% at July 29 meeting. No emergency action. Markets pricing 30% chance of September hike. New Fed chair Warsh hawkish on inflation."
+    },
+    {
+      "domain": "eu_ecb",
+      "note": "ECB held at 2.25% on July 23. Next decision Sept 10. 70% market chance of September hike due to oil price surge from Iran conflict. No emergency action."
+    },
+    {
+      "domain": "uk",
+      "note": "BOE held at 3.75%. Ready to raise if Iran war escalates. Next decision Sept 17. No emergency action."
+    },
+    {
+      "domain": "japan",
+      "note": "BOJ held at 1% on July 31 (8-1 vote, Takata dissented for hike). Post-intervention stabilization. Ueda warned of rapid hikes if inflation miss persists."
+    },
+    {
+      "domain": "china",
+      "note": "PBOC pledged 'appropriately loose monetary policy' for H2 2026. Counter-cyclical support. No emergency action."
+    },
+    {
+      "domain": "africa",
+      "note": "Mali offensives by JNIM/al-Qaida — security crisis but not new category-5 event. Sudan RSF siege of El-Obeid ongoing. DRC Ebola is the primary Africa emergency."
+    },
+    {
+      "domain": "financial_system",
+      "note": "No new bank failures or credit freeze detected. Russia banking crisis warning from Kremlin-linked think tank (late 2026 forecast) but Central Bank rejected. BOE warned AI could create market crisis."
+    },
+    {
+      "domain": "commodities",
+      "note": "Brent at ~$87/bbl. Oil dropped 5% after Trump held off Iran strike. Gold rising. VIX normal at 15.99 (-6.44%). No acute supply disruption currently."
+    }
+  ],
+  "summary": {
+    "total_events": 5,
+    "category_5_events": 1,
+    "category_4_events": 2,
+    "category_3_events": 1,
+    "category_2_events": 1,
+    "max_severity": 5,
+    "highest_priority": "US Treasury coordinated yen intervention (first since 1998)",
+    "active_monitoring": ["Iran Hormuz deal talks (deal possible this week)", "DRC Ebola expansion (5 provinces, 49 health zones)"]
+  }
 }
