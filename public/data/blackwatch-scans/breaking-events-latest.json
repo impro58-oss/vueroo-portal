@@ -1,144 +1,257 @@
 {
-  "scan_time": "2026-08-06T03:02:00+00:00",
+  "scan_time": "2026-08-06T07:02:00+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1",
   "operator": "Lumina (cron job 85bd4029)",
   "domains_scanned": 12,
   "queries_executed": 18,
+  "previous_scan": "2026-08-06T03:02:00+00:00",
   "events_detected": [
     {
       "id": "BE-2026-0806-001",
       "domain": "us_fed",
-      "title": "US Treasury coordinated yen intervention with Japan — first since 1998",
+      "title": "US Treasury coordinated yen intervention with Japan - first since 1998",
       "category": "sovereign_intervention",
       "severity": 5,
       "confidence": 10,
-      "description": "US Treasury and Japan's Finance Ministry conducted a rare coordinated yen-buying intervention on July 31/Aug 1. First joint US-Japan FX intervention since 1998. Treasury Secretary Bessent's notepad read 'To Do Buy Japanese Yen $5-10 bil'. Both sides signal readiness for further action.",
-      "sources": ["Reuters", "CNBC", "NYT", "Al Jazeera"],
-      "urls": [
-        "https://www.reuters.com/world/asia-pacific/us-treasury-undertakes-intervention-yen-market-ft-reports-2026-08-01/",
-        "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-treasurys-euros-.html",
-        "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html"
+      "description": "US Treasury and Japan Finance Ministry conducted rare coordinated yen-buying intervention Jul 31/Aug 1. Record 8.45T yen intervention + 5.33T follow-up. First joint US-Japan FX intervention since 1998. Asahi warns of perfect storm: extreme yen weakness, JGB stress, Treasury curve stress, credibility issues at Fed and BOJ.",
+      "sources": [
+        "Reuters",
+        "CNBC",
+        "NYT",
+        "Al Jazeera",
+        "Asahi Shimbun",
+        "TradingEconomics"
       ],
-      "triggers_matched": ["intervention", "Treasury intervention", "decisive action"],
-      "escalate_to": ["fin_stability", "currency", "us_cycle"],
-      "timestamp": "2026-08-06T03:02:00+00:00"
+      "triggers_matched": [
+        "intervention",
+        "Treasury intervention",
+        "decisive action"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "us_cycle"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "ONGOING",
+      "update": "Asahi analysis warns of perfect storm. BOJ published JGB reduction impact study Aug 4. Total intervention ~13.78T yen confirmed."
     },
     {
       "id": "BE-2026-0806-002",
       "domain": "middle_east",
-      "title": "Iran war: Hormuz ceasefire talks near deal but naval blockade active",
+      "title": "Iran Hormuz deal in final stage - ceasefire talks progressing but blockade active",
       "category": "war_military",
       "severity": 4,
       "confidence": 9,
-      "description": "US-Iran war ongoing. MOU/ceasefire suspended, US naval blockade reimposed — 44 vessels redirected, 2 disabled, 2 boarded. Iran and Oman finalizing Strait of Hormuz agreement. Trump says deal could come this week. Iran simultaneously boosting military strength during talks. Iran threatens to target US warships in Hormuz.",
-      "sources": ["AP News", "CNN", "Al Jazeera"],
-      "urls": [
-        "https://apnews.com/article/iran-war-us-hormuz-trump-august-5-2026-ecdbd96f2b46c70beb5926d8508f9c55",
-        "https://www.cnn.com/2026/08/04/world/live-news/iran-war-trump",
-        "https://www.aljazeera.com/news/2026/8/4/maximum-use-iran-boosts-military-strength-during-ceasefire-with-us"
+      "description": "Iran-Oman Hormuz agreement in final stage per Iranian FM. Trump says deal could come this week. Bessent said may have deal tomorrow. New middle corridor route being negotiated. US naval blockade still active - 44 vessels redirected. Houthi threats to Bahrain and UAE. Iran boosting military during talks.",
+      "sources": [
+        "AP News",
+        "CNN",
+        "Al Jazeera",
+        "Guardian",
+        "Economic Times",
+        "Hindu BusinessLine"
       ],
-      "triggers_matched": ["military action", "Hormuz", "escalation", "sanctions"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"],
-      "timestamp": "2026-08-06T03:02:00+00:00"
+      "triggers_matched": [
+        "military action",
+        "Hormuz",
+        "escalation",
+        "sanctions"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "DEVELOPING_POSITIVE",
+      "update": "Iran FM says final stage of drafting agreement. Middle corridor route being negotiated. Deal possible this week but both sides must back down on key demands."
     },
     {
       "id": "BE-2026-0806-003",
       "domain": "pandemic_health",
-      "title": "Ebola Bundibugyo outbreak in DRC — largest ever, WHO PHEIC, intensifying",
+      "title": "DRC Ebola Bundibugyo outbreak - largest ever, WORSENING. 3,874 cases, 1,751 deaths",
       "category": "pandemic_health",
       "severity": 4,
       "confidence": 10,
-      "description": "WHO declared PHEIC on May 16, 2026. As of July 30: 3,605 confirmed cases, 1,587 deaths (44% CFR). Outbreak expanded to 5 provinces, 49 health zones. Largest Ebola outbreak ever recorded in DRC. No vaccine for Bundibugyo strain. WHO warns 'intensifying at exceptional pace'.",
-      "sources": ["WHO", "ECDC", "Wikipedia"],
-      "urls": [
-        "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614",
-        "https://health.ec.europa.eu/health-security-and-infectious-diseases/crisis-management/ebola-virus-outbreak-2026_en",
-        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic"
+      "description": "WHO PHEIC declared May 16. As of Aug 3: 3,874 confirmed cases (UP from 3,605 on Aug 1), 1,751 deaths (UP from 1,587), 717 hospitalized. Outbreak expanding. MSF warns unprecedented spread. WHO pleads for more support. No vaccine for Bundibugyo strain. Largest Ebola outbreak ever in DRC.",
+      "sources": [
+        "WHO",
+        "ECDC",
+        "MSF",
+        "CGTN",
+        "Wikipedia"
       ],
-      "triggers_matched": ["WHO emergency", "outbreak", "epidemic"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "timestamp": "2026-08-06T03:02:00+00:00"
+      "triggers_matched": [
+        "WHO emergency",
+        "outbreak",
+        "epidemic"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "WORSENING",
+      "update": "Cases up 269 (+7.5%), deaths up 164 (+10.3%) since Aug 1. MSF warns unprecedented spread. WHO rushing vaccine trials."
     },
     {
       "id": "BE-2026-0806-004",
       "domain": "em_asia",
-      "title": "Korean Won surges 8.8% — fastest since 1997 Asian Financial Crisis",
+      "title": "Korean Won surges 8.8% - fastest since 1997 Asian Financial Crisis",
       "category": "market_dislocation",
       "severity": 3,
       "confidence": 8,
-      "description": "Korean Won gained 8.8% against USD in July 2026 — steepest monthly gain since the 1997 Asian Financial Crisis. Driven by US-Japan coordinated yen intervention spillover. KOSPI crashed from peak, Samsung/SK Hynix wobbled. Constitutional crisis and attempted coup backdrop in South Korea.",
-      "sources": ["Chosun", "Seoul Economic Daily", "ABC News"],
-      "urls": [
-        "https://www.chosun.com/english/market-money-en/2026/08/02/TW667YOKLZDMHA75B72PIONDI4/",
-        "https://en.sedaily.com/finance/2026/08/02/korean-won-gains-88-percent-in-a-month-steepest-since",
-        "https://www.abc.net.au/news/2026-08-03/korean-markets-threatening-upset-tech-boom/106981956"
+      "description": "Korean Won gained 8.8% vs USD in July 2026 - steepest monthly gain since 1997 Asian Financial Crisis. Driven by US-Japan coordinated yen intervention spillover. Bessent cited wons excess volatility. Constitutional crisis backdrop in South Korea.",
+      "sources": [
+        "Chosun",
+        "Seoul Economic Daily",
+        "ABC News",
+        "Korea JoongAng Daily"
       ],
-      "triggers_matched": ["intervention", "currency crisis", "contagion"],
-      "escalate_to": ["currency", "fin_stability"],
-      "timestamp": "2026-08-06T03:02:00+00:00"
+      "triggers_matched": [
+        "intervention",
+        "currency crisis",
+        "contagion"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "ONGOING"
+    },
+    {
+      "id": "BE-2026-0806-006",
+      "domain": "eu_ecb",
+      "title": "France 107B euro deficit shock - next euro debt crisis emerging",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "confidence": 7,
+      "description": "France central government deficit could rise to ~6% of GDP this year. ZeroHedge flags as next euro debt crisis. Social security and municipal gaps not included. ECB held at 2.25%, next decision Sept 10. 70% market chance of September hike due to oil/Iran.",
+      "sources": [
+        "ZeroHedge",
+        "ECB"
+      ],
+      "triggers_matched": [
+        "spread crisis",
+        "bailout"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "DEVELOPING",
+      "update": "NEW: France fiscal deterioration flagged as emerging euro debt crisis risk. Not yet acute but trajectory concerning."
+    },
+    {
+      "id": "BE-2026-0806-007",
+      "domain": "china",
+      "title": "PBOC signals 180-degree policy pivot - weaker yuan fix + counter-cyclical push",
+      "category": "sovereign_intervention",
+      "severity": 3,
+      "confidence": 8,
+      "description": "PBOC set USD/CNY fix at 6.7895, above Reuters estimate of 6.7462, fueling depreciation bets. Aug 1 meeting signaled full pivot to counter-cyclical support. PMI fell to 50.9 (private) / 49.2 (official). Real estate tumbling.",
+      "sources": [
+        "VT Markets",
+        "FXStreet",
+        "Xinhua",
+        "Saxo"
+      ],
+      "triggers_matched": [
+        "PBOC emergency",
+        "devaluation",
+        "property collapse"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "DEVELOPING",
+      "update": "NEW: PBOC fix above estimate signals deliberate yuan weakness tolerance. 180-degree policy pivot confirmed."
     },
     {
       "id": "BE-2026-0806-005",
       "domain": "latam",
-      "title": "Argentina-China $19bn currency swap renewed for 5 years — deadline Aug 6",
+      "title": "Argentina-China $19bn currency swap RENEWED for 5 years - deadline resolved",
       "category": "sovereign_crisis",
       "severity": 2,
-      "confidence": 9,
-      "description": "Argentina's $19bn China currency swap was set to expire Aug 6, 2026. RENEWED on Aug 5 for 5 years (previously 3-year terms). Removes default/renewal risk through 2027 presidential election. US had pressured Argentina to wind down the swap. Bloomberg confirmed renewal.",
-      "sources": ["Bloomberg", "Rio Times", "Diario Tiempo"],
-      "urls": [
-        "https://www.bloomberg.com/news/articles/2026-08-05/argentina-renews-19-billion-china-swap-for-another-five-years",
-        "https://www.riotimesonline.com/argentina-china-currency-swap-renewed-2026/"
+      "confidence": 10,
+      "description": "Argentina $19B China currency swap renewed Aug 5 for 5 years. Removes default/renewal risk through 2027 presidential election. US had pressured Argentina to wind down. BCRA and PBOC confirmed. Brazil-Argentina diplomatic crisis deepening separately.",
+      "sources": [
+        "Bloomberg",
+        "Rio Times",
+        "BCRA official",
+        "Ground News"
       ],
-      "triggers_matched": ["IMF emergency"],
-      "escalate_to": ["fin_stability", "currency"],
+      "triggers_matched": [
+        "IMF emergency"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ],
       "resolved": true,
-      "timestamp": "2026-08-06T03:02:00+00:00"
+      "timestamp": "2026-08-06T07:02:00+00:00",
+      "status": "RESOLVED",
+      "update": "CONFIRMED resolved. Bloomberg and BCRA official confirmation. Brazil-Argentina diplomatic crisis is separate developing issue."
     }
   ],
   "non_events": [
     {
       "domain": "us_fed",
-      "note": "Fed held rates at 3.50-3.75% at July 29 meeting. No emergency action. Markets pricing 30% chance of September hike. New Fed chair Warsh hawkish on inflation."
+      "note": "Fed held rates at 3.50-3.75% at July 29. No emergency action. Asia Times suggests next move up under Chair Warsh. Polymarket tracking hike possibility."
     },
     {
       "domain": "eu_ecb",
-      "note": "ECB held at 2.25% on July 23. Next decision Sept 10. 70% market chance of September hike due to oil price surge from Iran conflict. No emergency action."
+      "note": "ECB held at 2.25% on July 23. Next decision Sept 10. 70% market chance of September hike. No emergency action. France fiscal risk developing but not acute."
     },
     {
       "domain": "uk",
-      "note": "BOE held at 3.75%. Ready to raise if Iran war escalates. Next decision Sept 17. No emergency action."
+      "note": "BOE held at 3.75% (6-3 vote July 30). Bailey downplayed further tightening. Sterling under pressure, October budget risk. No emergency action."
     },
     {
       "domain": "japan",
-      "note": "BOJ held at 1% on July 31 (8-1 vote, Takata dissented for hike). Post-intervention stabilization. Ueda warned of rapid hikes if inflation miss persists."
-    },
-    {
-      "domain": "china",
-      "note": "PBOC pledged 'appropriately loose monetary policy' for H2 2026. Counter-cyclical support. No emergency action."
+      "note": "BOJ held at 1% on July 31 (8-1 vote). Post-intervention stabilization. BOJ published JGB reduction impact study Aug 4. Asahi warns perfect storm conditions but no new emergency action."
     },
     {
       "domain": "africa",
-      "note": "Mali offensives by JNIM/al-Qaida — security crisis but not new category-5 event. Sudan RSF siege of El-Obeid ongoing. DRC Ebola is the primary Africa emergency."
+      "note": "Nigeria approved 80% military pay rise due to security challenges. South Africa-Nigeria diplomatic tensions. DRC Ebola is primary Africa emergency. No new coup/conflict."
     },
     {
       "domain": "financial_system",
-      "note": "No new bank failures or credit freeze detected. Russia banking crisis warning from Kremlin-linked think tank (late 2026 forecast) but Central Bank rejected. BOE warned AI could create market crisis."
+      "note": "No new bank failures or credit freeze. ECB cyber stress test paper. BOE warned AI could create market crisis. No systemic event."
     },
     {
       "domain": "commodities",
-      "note": "Brent at ~$87/bbl. Oil dropped 5% after Trump held off Iran strike. Gold rising. VIX normal at 15.99 (-6.44%). No acute supply disruption currently."
+      "note": "WTI crude fell to $75.69 (Aug 5, down 0.10%). Oil up 10.42% monthly, 17.63% YoY. Gold peaked $5,597 on Jan 29, currently ~$4,235-4,278. No acute supply disruption. Hormuz deal progress easing oil pressure."
     }
   ],
   "summary": {
-    "total_events": 5,
+    "total_events": 7,
     "category_5_events": 1,
     "category_4_events": 2,
-    "category_3_events": 1,
+    "category_3_events": 3,
     "category_2_events": 1,
     "max_severity": 5,
-    "highest_priority": "US Treasury coordinated yen intervention (first since 1998)",
-    "active_monitoring": ["Iran Hormuz deal talks (deal possible this week)", "DRC Ebola expansion (5 provinces, 49 health zones)"]
+    "highest_priority": "US-Japan coordinated yen intervention (ongoing, perfect storm conditions)",
+    "active_monitoring": [
+      "Iran Hormuz deal talks - final stage, deal possible this week",
+      "DRC Ebola - WORSENING: 3,874 cases, 1,751 deaths, unprecedented spread",
+      "France fiscal deterioration - emerging euro debt crisis risk",
+      "PBOC policy pivot - deliberate yuan weakness, 180-degree turn",
+      "Korean won volatility - 1997-style dislocation risk"
+    ],
+    "changes_from_previous_scan": [
+      "NEW: France 107B deficit flagged as emerging euro debt crisis (severity 3)",
+      "NEW: PBOC 180-degree policy pivot with weaker yuan fix (severity 3)",
+      "UPDATED: DRC Ebola cases up 7.5%, deaths up 10.3% - WORSENING",
+      "UPDATED: Iran Hormuz deal now in final stage - DEVELOPING_POSITIVE",
+      "RESOLVED: Argentina-China swap renewed for 5 years - confirmed by Bloomberg/BCRA",
+      "ONGOING: US-Japan yen intervention aftermath - perfect storm warnings"
+    ]
   }
 }

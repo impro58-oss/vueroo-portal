@@ -2,17 +2,18 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T05:34:16.616467+00:00",
+    "last_update": "2026-08-06T07:02:00+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Breaking event scanner 07:02 UTC: 7 events, 2 new (France deficit, PBOC pivot), Ebola worsening, Hormuz deal final stage"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.73,
-      "status": "green",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.05,
@@ -20,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-04",
-      "note": "",
-      "timestamp": "2026-08-06T05:34:10.764836+00:00"
+      "note": "ESCALATED: Asahi warns perfect storm - yen weakness, JGB stress, Treasury curve stress, Fed/BOJ credibility issues. Yen intervention ~13.78T yen.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -73,15 +74,15 @@
       "domain": "Geopolitics",
       "value": 16.5,
       "status": "amber",
-      "trend": "deteriorating",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": 0.64,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-04",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-06T05:34:12.551250+00:00"
+      "note": "UPDATED: Iran Hormuz deal in final stage. Ceasefire progress. Houthi threats continue but de-escalation trajectory.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -110,8 +111,8 @@
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-06T05:34:12.190618+00:00"
+      "note": "UPDATED: DRC Ebola worsening (3,874 cases, 1,751 deaths). Potential supply chain implications if outbreak spreads beyond DRC.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -192,30 +193,30 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-06T05:34:13.931440+00:00"
+      "note": "ESCALATED: US-Japan yen intervention (13.78T yen), PBOC weak CNY fix (6.7895 vs 6.7462 est), Korean won +8.8% monthly. Multi-front currency stress.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4313.4,
+      "value": 4278.02,
       "unit": "$/oz",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 279.7,
-      "description": "Gold Futures (GC=F): $4,313.40 (+6.93%)",
-      "series_id": "Yahoo Finance GC=F",
+      "change_from_last": 244.32,
+      "description": "Gold Spot: $4,278.02 (+0.72% 24h, +26% YoY) \u2014 verified via TradingEconomics Aug 6 2026",
+      "series_id": "TradingEconomics Gold Spot",
       "last_date": "2026-08-06",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "note": "Verified via web search Aug 6 2026. Forbes: $4,235.89, Convex: $4,304.3, TradingEconomics: $4,278.02",
       "timestamp": "2026-08-06T05:34:10.518758+00:00"
     },
     "crypto": {
@@ -239,29 +240,29 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-06T05:34:10.845653+00:00"
+      "note": "UPDATED: PBOC 180-degree policy pivot to counter-cyclical support. Weak CNY fix 6.7895 above estimate. PMI 49.2 (official) / 50.9 (private). Real estate tumbling.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-05",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-06T05:34:15.565681+00:00"
+      "note": "UPDATED: France 107B euro deficit shock, deficit could hit 6% GDP. ZeroHedge flags next euro debt crisis. ECB held 2.25%, Sept hike likely (70%).",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -290,8 +291,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-06T05:34:16.265752+00:00"
+      "note": "UPDATED: Iran-Oman Hormuz agreement in final stage. Deal possible this week. Blockade still active but de-escalation underway.",
+      "timestamp": "2026-08-06T07:02:00+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,12 +313,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 579,
+    "score": 545,
     "red_count": 8,
-    "amber_count": 9,
-    "green_count": 2,
+    "amber_count": 11,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-06T05:34:16.616467+00:00"
+    "timestamp": "2026-08-06T07:02:00+00:00"
   },
   "convergence": {
     "stressed_domains": [
