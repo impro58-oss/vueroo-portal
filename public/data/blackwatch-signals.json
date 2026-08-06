@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T19:30:39.000000+00:00",
+    "last_update": "2026-08-06T19:30:50.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "5 thresholds breached (1 RED, 4 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "HY OAS 2.75%. Russia banking crisis risk rising. Sber NPLs deteriorating, bankruptcies +13.7% YoY. 30Y Treasury at highest since 2007.",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-05",
-      "note": "Threshold breach: Gold above 3500 (current: 4304.6)",
-      "timestamp": "2026-08-06T19:30:39.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4304.6, +22.99% over threshold). Gold mania -- currency crisis or war premium.",
+      "timestamp": "2026-08-06T19:30:50.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -201,23 +201,23 @@
       "description": "Unprecedented Japan-SK-US joint FX intervention July 31. CNY undervalued 20%+ per CFR.",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Category-5: sovereign_intervention. First-ever trilateral FX intervention.",
-      "timestamp": "2026-08-06T19:04:21.500837+00:00"
+      "note": "Threshold breach: USD/JPY 158.45 above 158.0 (AMBER). EUR/USD 1.1522 above 1.15 (AMBER). Intervention zone -- joint intervention likely failing.",
+      "timestamp": "2026-08-06T19:30:50.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4242.15,
+      "value": 4304.6,
       "unit": "$/oz",
       "status": "red",
       "trend": "stable",
       "confidence": 10,
       "change_from_last": -28.47,
-      "description": "Gold $4,242/oz (Aug 6). Down from $5,597 peak (Jan 2026). Safe haven demand from Iran war + Ebola.",
+      "description": "Gold 4304.6/oz (Aug 6). +6.72% in one day. RED threshold breach (>3500). Safe haven demand from Iran war + Ebola + currency crisis fears.",
       "series_id": "Fortune/GoldPrice.org",
       "last_date": "2026-08-06",
       "note": "Record Q1 demand $193bn. Central bank buying continues.",
-      "timestamp": "2026-08-06T19:04:21.500837+00:00"
+      "timestamp": "2026-08-06T19:30:50.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -261,8 +261,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-06",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-06T17:09:15.716732+00:00"
+      "note": "Threshold breach: German 10Y Bund 3.11% above 3.0% (AMBER). EU bond yields elevated -- ECB tightening stress.",
+      "timestamp": "2026-08-06T19:30:50.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
