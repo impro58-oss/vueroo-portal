@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T07:02:00+00:00",
+    "last_update": "2026-08-06T07:30:45.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner 07:02 UTC: 7 events, 2 new (France deficit, PBOC pivot), Ebola worsening, Hormuz deal final stage"
+    "breaking_event": "Breaking event scanner 07:02 UTC: 7 events, 2 new (France deficit, PBOC pivot), Ebola worsening, Hormuz deal final stage",
+    "threshold_breach": "3 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.73,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.05,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-04",
-      "note": "ESCALATED: Asahi warns perfect storm - yen weakness, JGB stress, Treasury curve stress, Fed/BOJ credibility issues. Yen intervention ~13.78T yen.",
-      "timestamp": "2026-08-06T07:02:00+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4321.4)",
+      "timestamp": "2026-08-06T07:30:45.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -73,16 +74,16 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 16.5,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.64,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-04",
-      "note": "UPDATED: Iran Hormuz deal in final stage. Ceasefire progress. Houthi threats continue but de-escalation trajectory.",
-      "timestamp": "2026-08-06T07:02:00+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4321.4)",
+      "timestamp": "2026-08-06T07:30:45.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
