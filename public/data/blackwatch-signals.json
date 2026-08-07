@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-07T07:30:00.000000+00:00",
+    "last_update": "2026-08-07T11:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
     "threshold_breach": "7 thresholds breached (3 RED: Gold>3500, JGB10Y>2.0, Gold>3000; 4 AMBER: USDJPY>158, EURUSD>1.15, MOVE>100, DE10Y>2.5)",
-    "breaking_event": "CAT-5: 5 events across 12 domains. Hormuz deal close, Ebola 4,053 cases, Russia banking + US regulatory gap, Nigeria military expansion, trilateral FX intervention."
+    "breaking_event": "CAT-5: 6 events across 12 domains (3 NEW). Ebola 4,053 cases/1,850 deaths (largest in DRC history), Russia Sberbank NPL crisis, KOSPI 2008-level rout, Hormuz deal final stage + 2 IDF killed in Lebanon, Bessent yen intervention dollar vulnerability, Nigeria 12 divisions + 28K recruits."
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-05",
-      "note": "ESCALATED: US-Japan coordinated yen intervention + SK joint FX intervention + Russia banking stress + US regulatory oversight gap (American Banker Aug 6)",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Russia Sberbank NPL crisis, US regulatory oversight gap, KOSPI 2008-level rout, Bessent yen intervention dollar vulnerability",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -67,8 +67,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Hormuz deal close but not finalized. Partial reopening possible. Houthi attack on Saudi tanker Aug 5. Brent declining on peace hopes ($87.38).",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Hormuz deal in final drafting stage. Brent rising to 83.29. Houthi warns Bahrain/UAE. 2 IDF soldiers killed in Lebanon.",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-05",
-      "note": "ESCALATED: Iran war active, Hormuz deal in final drafting stage, Israel-Gaza, Nigeria military expansion (12 divisions), Sudan conflict",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Hormuz deal final stage, 2 IDF killed in Lebanon, Nigeria 12 divisions + 28K recruits, Houthi threats, Nigeria-SA diplomatic crisis",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -112,8 +112,8 @@
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Hormuz shipping disruption, partial deal close, IRGC Navy harassing vessels",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Hormuz deal final drafting but not finalized, Brent rising on uncertainty (83.29), shipping disruption persisting",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -157,8 +157,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola 4,053 cases / 1,850 deaths (crossed 4K threshold), 330 children dead, Nigeria military expansion, Gaza casualties",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Ebola 4,053 cases / 1,850 deaths / 330 children dead (largest DRC history), Nigeria 12 divisions, 2 IDF killed in Lebanon, KOSPI rout",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -202,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED: US Treasury confirmed participation in trilateral FX intervention (Bessent $5-10B yen buy), won surges, USD index below 100",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Bessent yen intervention reveals dollar vulnerability, KOSPI rout + Korean capital flight to US stocks, won surged 8.8pct but carry trade risks persist",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4350.3,
+      "value": 4306,
       "unit": "$/oz",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 50.0,
-      "description": "Gold Futures (GC=F): ,350.30 (+7.85%)",
-      "series_id": "Yahoo Finance GC=F",
+      "change_from_last": -44.3,
+      "description": "Gold Spot: 4,306 (+1.4pct 1D), strongest weekly gain since January",
+      "series_id": "TradingEconomics/LiveGoldPrice",
       "last_date": "2026-08-07",
-      "note": "THRESHOLD BREACH RED: Gold ,350 above ,500 RED threshold (+24.3%). Also above ,000 AMBER (+45%). Safe haven demand extreme.",
-      "timestamp": "2026-08-07T07:30:00.000000+00:00"
+      "note": "THRESHOLD BREACH RED: Gold 4,306 above 3,500 RED threshold. Safe haven demand extreme.",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -292,8 +292,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Iran war, Hormuz deal in final drafting (partial reopening), Israel defies Trump peace plan, Houthi tanker attack",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "ESCALATED 11:02: Hormuz deal final stage (Iran-Oman), 2 IDF soldiers killed in Lebanon, Houthi warns Bahrain/UAE, Brent 83.29 rising",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -321,8 +321,8 @@
       "description": "Breaking macro event detection",
       "series_id": null,
       "last_date": "2026-08-07",
-      "note": "CAT-5: Hormuz deal in final drafting, Ebola 4,053 cases, Russia banking crisis, Nigeria 12 divisions, Trilateral FX intervention, GOLD ,350 (+7.85% 1D) above RED threshold, MOVE ~115 (highest in 6mo), JGB 2.83% (RED), Brent ",
-      "timestamp": "2026-08-07T07:02:00.000000+00:00"
+      "note": "CAT-5 UPDATE 11:02 UTC: 6 events (3 NEW). Ebola 4,053 cases/1,850 deaths/330 children (largest DRC history). Russia Sberbank NPL crisis (11.7pct corporate, 13.2pct consumer). KOSPI 2008-level rout, Korean capital flight to US. Hormuz deal final drafting stage, 2 IDF killed in Lebanon. Bessent yen intervention dollar vulnerability. Nigeria 12 divisions, 28K recruits. Gold 4,306. Brent 83.29.",
+      "timestamp": "2026-08-07T11:02:00.000000+00:00"
     }
   },
   "overall_risk": {
@@ -333,7 +333,7 @@
     "amber_count": 5,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-07T07:02:00.000000+00:00"
+    "timestamp": "2026-08-07T11:02:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [

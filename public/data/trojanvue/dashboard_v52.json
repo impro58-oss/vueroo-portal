@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T06:00:15.172334",
+  "timestamp": "2026-08-07T12:00:20.906120",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -29,9 +29,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 105.4,
-    "unrealized_pnl_eur": -8.4,
-    "total_pnl_eur": 97.0,
-    "open_positions": 1,
+    "unrealized_pnl_eur": -5.71,
+    "total_pnl_eur": 99.69,
+    "open_positions": 3,
     "closed_trades": 162,
     "wins": 65,
     "losses": 97,
@@ -47,8 +47,38 @@
       "stop": 0.005970357142857144,
       "highest": 0.00764,
       "lowest": 0.00744,
-      "bars_held": 3,
+      "bars_held": 5,
       "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "FETUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-07T09:01:32.385101",
+      "entry_price": 0.1314,
+      "atr": 0.008207142857142857,
+      "stop": 0.15191785714285713,
+      "highest": 0.1314,
+      "lowest": 0.1313,
+      "bars_held": 1,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "CFGUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-07T09:01:32.385101",
+      "entry_price": 0.1595,
+      "atr": 0.009892857142857144,
+      "stop": 0.18423214285714287,
+      "highest": 0.1595,
+      "lowest": 0.1593,
+      "bars_held": 1,
+      "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
@@ -320,16 +350,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "KASUSDT",
-    "USD1USDT",
-    "BFUSDUSDT",
-    "ZECUSDT",
-    "UUSDT",
-    "XUSDUSDT",
-    "PAXGUSDT",
-    "USDEUSDT",
     "RLUSDUSDT",
+    "USDEUSDT",
+    "KASUSDT",
+    "ZECUSDT",
+    "PAXGUSDT",
+    "BFUSDUSDT",
     "EURUSDT",
-    "XAUTUSDT"
+    "XAUTUSDT",
+    "XUSDUSDT",
+    "USD1USDT",
+    "UUSDT"
   ]
 }
