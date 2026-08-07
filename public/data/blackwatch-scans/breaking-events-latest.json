@@ -1,137 +1,105 @@
 {
-  "scan_time": "2026-08-07T15:03:54.000000+00:00",
+  "scan_time": "2026-08-07T19:03:59.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1",
-  "operator": "Lumina (cron job 85bd4029)",
   "domains_scanned": 12,
-  "queries_executed": 18,
-  "previous_scan": "2026-08-06T11:02:00+00:00",
-  "events_detected": [
+  "events_detected": 6,
+  "category_5_count": 3,
+  "category_4_count": 2,
+  "category_3_count": 1,
+  "events": [
     {
-      "id": "BE-2026-0807-001",
+      "id": "EVT-001",
+      "title": "US-Japan Joint Yen Intervention - First Since 1998",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "timestamp": "2026-08-01",
+      "source": "Reuters, CNBC, Japan Times, Al Jazeera",
+      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention on July 31. First US-Japan joint intervention since 1998. Bessent note: Buy Japanese Yen $5-10 bil.",
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "us_cycle"
+      ]
+    },
+    {
+      "id": "EVT-002",
+      "title": "Strait of Hormuz Crisis - Iran War Day 161, Strait Still Closed",
       "domain": "middle_east",
-      "title": "Strait of Hormuz Crisis - Day 161, No Reopening Signed",
       "category": "war_military",
       "severity": 5,
-      "confidence": 10,
-      "description": "Strait of Hormuz remains closed Day 161 of 2026 Iran war. Iran parliament reviewing bill to ban US/Israeli vessels from transit. Iran-Oman talks seek approved shipping corridors but no reopening signed as of Aug 7 1600 UTC. Houthi movement warns Bahrain and UAE against joining Hormuz campaign. 20,000 mariners stranded, 2,000 ships stuck. Brent peaked at $126/bbl, largest energy disruption since 1970s.",
-      "sources": [
-        "Wikipedia",
-        "Iran SITREP",
-        "Britannica",
-        "Reuters",
-        "India Today"
-      ],
-      "triggers_matched": [
-        "military action",
-        "Hormuz",
-        "oil disruption",
-        "war declaration",
-        "escalation"
-      ],
+      "timestamp": "2026-08-07",
+      "source": "ISW, Wikipedia, IranSITREP, Britannica, Al Jazeera",
+      "summary": "Strait of Hormuz remains closed as of Aug 7 1600 UTC. Iran parliament reviewing bill to ban US/Israeli vessels. US-Iran strikes ongoing since June. Iran targeting energy infrastructure across Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, Oman.",
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
         "supply_chain",
-        "food_security"
-      ],
-      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+        "fin_stability"
+      ]
     },
     {
-      "id": "BE-2026-0807-002",
+      "id": "EVT-003",
+      "title": "Ebola Epidemic - WHO PHEIC Declared, 3,973 Cases, 1,801 Deaths",
       "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic - WHO PHEIC, Fastest Growing on Record",
-      "category": "pandemic_health",
+      "category": "pandemic",
       "severity": 5,
-      "confidence": 10,
-      "description": "Bundibugyo ebolavirus outbreak in DRC declared PHEIC by WHO on May 16. 3,994 confirmed cases, 3,653 deaths (91.5% CFR) as of Aug 4. Fastest growing Ebola outbreak on record. No approved vaccine for Bundibugyo strain. Cases in DRC, Uganda, and imported case in France. Armed conflict in Ituri hinders response.",
-      "sources": [
-        "WHO",
-        "Wikipedia",
-        "Doctors Without Borders",
-        "European Commission"
-      ],
-      "triggers_matched": [
-        "WHO emergency",
-        "outbreak",
-        "epidemic",
-        "quarantine"
-      ],
+      "timestamp": "2026-08-05",
+      "source": "WHO, ECDC, European Commission, Wikipedia",
+      "summary": "Bundibugyo virus Ebola outbreak in DRC declared WHO PHEIC on May 16. 3,973 confirmed cases, 1,801 deaths, 674 hospitalized. Spread to Uganda (2 deaths). No vaccine for Bundibugyo strain.",
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
-      ],
-      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+      ]
     },
     {
-      "id": "BE-2026-0807-003",
-      "domain": "us_fed",
-      "title": "US Treasury Coordinated FX Intervention - Yen/Won Joint Action",
-      "category": "sovereign_intervention",
+      "id": "EVT-004",
+      "title": "China Real Estate Crash - Nationwide Economic Emergency, 10 Quarters of Deflation",
+      "domain": "china",
+      "category": "sovereign_crisis",
       "severity": 4,
-      "confidence": 10,
-      "description": "US Treasury intervened to support yen after Japan stepped in (Aug 1). Treasury Sec Bessent note: 'To Do Buy Japanese Yen $5-10 bil'. Unprecedented joint intervention: US, Japan, South Korea coordinated FX action. Won hit 9-month high. Reuters calls it 'odd FX intervention'. China yuan undervalued 20%+ per CFR. Fed chair Warsh signaling possible rate hike, inflation reaccelerating.",
-      "sources": [
-        "Reuters",
-        "CNBC",
-        "Chosun",
-        "FXStreet",
-        "CFR"
-      ],
-      "triggers_matched": [
-        "intervention",
-        "Treasury intervention",
-        "decisive action"
-      ],
+      "timestamp": "2026-08-07",
+      "source": "Chiang Rai Times, The Tribune, Epoch Times",
+      "summary": "China property crash described as nationwide economic emergency. S&P expects 1.5-2.5% primary price drops, 4-5% secondary drops in 2026. 10 straight quarters of falling prices. PBOC pledging loose monetary policy.",
       "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity",
-        "currency"
-      ],
-      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+        "china",
+        "fin_stability"
+      ]
     },
     {
-      "id": "BE-2026-0807-004",
-      "domain": "commodities",
-      "title": "Global Food Crisis + Energy Shock - 49M More Acute Hunger",
-      "category": "energy_shock",
+      "id": "EVT-005",
+      "title": "France Fiscal Crisis - EUR107B H1 Deficit, Potential 8% Deficit Ratio",
+      "domain": "eu_ecb",
+      "category": "sovereign_crisis",
       "severity": 4,
-      "confidence": 9,
-      "description": "Hormuz disruption caused largest oil supply disruption since 1970s. Brent peaked $126/bbl, currently $88.9 on ceasefire hopes. 49M additional people projected to face acute hunger in 2026. Fertilizer, aluminum, helium shortages. Energy markets pricing chokepoint risk premium. Central banks forced to keep rates high.",
-      "sources": [
-        "Wikipedia",
-        "IndexBox",
-        "Economic Collapse Report"
-      ],
-      "triggers_matched": [
-        "spike",
-        "disruption",
-        "shortage",
-        "food emergency"
-      ],
+      "timestamp": "2026-08-05",
+      "source": "Futunn, The Corner, ECB Economic Bulletin",
+      "summary": "France central government deficit EUR107B in H1 2026, 14.4% higher than prior year. Full-year deficit ratio potentially 8%. Called new epicenter of Eurozone debt crisis. ECB keeping rates at 2.25%, markets pricing 40bps of hikes.",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "id": "EVT-006",
+      "title": "OPEC+ Completes Production Cut Rollback - 188K BPD Increase in September",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 3,
+      "timestamp": "2026-08-02",
+      "source": "Bloomberg, Rigzone, Energy Connects",
+      "summary": "OPEC+ seven members agreed to boost collective target by 188,000 bpd in September, completing phased rollback of 2023 voluntary cuts. Oil at $78-82/bbl, up 22% YoY.",
       "escalate_to": [
         "energy",
-        "food_security",
         "supply_chain"
-      ],
-      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+      ]
     }
   ],
-  "events_count": 4,
-  "category_5_count": 2,
-  "severity_5_count": 2,
-  "severity_4_count": 2,
-  "summary": "4 breaking events detected. 2 severity-5 (Hormuz, Ebola), 2 severity-4 (FX intervention, food/energy crisis). 15 signals now red. Systemic risk elevated.",
-  "actions_taken": [
-    "macro_event signal set to ACTIVE/red",
-    "middle_east escalated to red",
-    "energy escalated to red",
-    "geopolitical escalated to red",
-    "food_security escalated to red",
-    "supply_chain escalated to red",
-    "currency escalated to red",
-    "fin_stability note updated"
+  "no_events_domains": [
+    "latam",
+    "uk",
+    "em_asia",
+    "africa"
   ]
 }
