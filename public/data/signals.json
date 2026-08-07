@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-07T03:03:45.000000+00:00",
+    "last_update": "2026-08-07T07:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
     "threshold_breach": "8 thresholds breached + macro_event ACTIVE",
-    "breaking_event": "CAT-5: 3 sovereign interventions, 2 war/military events, 1 pandemic PHEIC, 1 market dislocation. 11 events detected across 12 domains."
+    "breaking_event": "CAT-5: 5 events across 12 domains. Hormuz deal close, Ebola 4,053 cases, Russia banking + US regulatory gap, Nigeria military expansion, trilateral FX intervention."
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-05",
-      "note": "ESCALATED: US-Japan coordinated yen intervention + SK joint FX intervention + Russia banking stress",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: US-Japan coordinated yen intervention + SK joint FX intervention + Russia banking stress + US regulatory oversight gap (American Banker Aug 6)",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -67,8 +67,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Hormuz disruption, Brent spiked 10-13%, OPEC+ completing rollback",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Hormuz deal close but not finalized. Partial reopening possible. Houthi attack on Saudi tanker Aug 5. Brent declining on peace hopes ($87.38).",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-05",
-      "note": "ESCALATED: Iran war active, Strait of Hormuz crisis, Israel-Gaza escalation, Sudan conflict",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Iran war active, Hormuz deal in final drafting stage, Israel-Gaza, Nigeria military expansion (12 divisions), Sudan conflict",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -112,8 +112,8 @@
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Hormuz shipping disruption, IRGC Navy harassing vessels",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Hormuz shipping disruption, partial deal close, IRGC Navy harassing vessels",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,8 +127,8 @@
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Oil spike threatens food prices, Hormuz disruption",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Oil declining on Hormuz peace hopes but food prices still elevated",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -157,8 +157,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC, Gaza casualties, diplomatic crises",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Ebola 4,053 cases / 1,850 deaths (crossed 4K threshold), 330 children dead, Nigeria military expansion, Gaza casualties",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -202,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED: Joint yen intervention (first since 1998), won surges 8.8%, USD index below 100",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: US Treasury confirmed participation in trilateral FX intervention (Bessent $5-10B yen buy), won surges, USD index below 100",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -247,8 +247,8 @@
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "ESCALATED: 10 quarters deflation, property crisis, PBOC loose policy signal",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: 10 quarters deflation, property crisis, PBOC 'appropriately loose' policy signal, yuan undervalued 20%+ per CFR",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -292,8 +292,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Iran war, Hormuz crisis, Israel defies Trump peace plan",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "ESCALATED: Iran war, Hormuz deal in final drafting (partial reopening), Israel defies Trump peace plan, Houthi tanker attack",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -321,19 +321,19 @@
       "description": "Breaking macro event detection",
       "series_id": null,
       "last_date": "2026-08-07",
-      "note": "CAT-5: US-Japan coordinated yen intervention (first since 1998), Strait of Hormuz crisis, Ebola Bundibugyo PHEIC (1801+ deaths), Gold at 4304, SK-US-Japan trilateral FX intervention, Israel-Gaza escalation",
-      "timestamp": "2026-08-07T03:03:45.000000+00:00"
+      "note": "CAT-5: Hormuz deal in final drafting (partial, not full reopening), Ebola 4,053 cases/1,850 deaths (crossed 4K), Russia banking crisis + US regulatory oversight gap, Nigeria Army expansion to 12 divisions, Trilateral FX intervention confirmed (US Treasury $5-10B yen buy), Gold ~$4,300",
+      "timestamp": "2026-08-07T07:02:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 1760,
+    "score": 1780,
     "red_count": 15,
     "amber_count": 5,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-07T03:03:45.000000+00:00"
+    "timestamp": "2026-08-07T07:02:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [

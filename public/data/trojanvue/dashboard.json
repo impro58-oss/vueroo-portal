@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T03:08:01.791711",
+  "timestamp": "2026-08-07T06:00:15.172334",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,31 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 105.68,
-    "unrealized_pnl_eur": -8.68,
+    "realized_pnl_eur": 105.4,
+    "unrealized_pnl_eur": -8.4,
     "total_pnl_eur": 97.0,
-    "open_positions": 2,
-    "closed_trades": 161,
+    "open_positions": 1,
+    "closed_trades": 162,
     "wins": 65,
-    "losses": 96,
-    "win_rate": 40.4
+    "losses": 97,
+    "win_rate": 40.1
   },
   "open_positions": {
-    "EURIUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-05T09:00:31.608392",
-      "entry_price": 1.1542,
-      "atr": 0.00519999999999995,
-      "stop": 1.1412,
-      "highest": 1.1572,
-      "lowest": 1.1542,
-      "bars_held": 14,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "PEOPLEUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -62,7 +47,7 @@
       "stop": 0.005970357142857144,
       "highest": 0.00764,
       "lowest": 0.00744,
-      "bars_held": 2,
+      "bars_held": 3,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -70,19 +55,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "HUMAUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-07-28T06:00:17.912267",
-      "exit_date": "2026-07-30T15:00:28.525244",
-      "entry_price": 0.02081,
-      "exit_price": 0.0201,
-      "pnl_pct": 3.41,
-      "pnl_eur": 8.53,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "XPLUSDT",
       "direction": "SHORT",
@@ -329,22 +301,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "EURIUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-05T09:00:31.608392",
+      "exit_date": "2026-08-07T06:00:15.172334",
+      "entry_price": 1.1542,
+      "exit_price": 1.1529,
+      "pnl_pct": -0.11,
+      "pnl_eur": -0.28,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "NEUTRAL",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XAUTUSDT",
-    "RLUSDUSDT",
-    "XUSDUSDT",
     "KASUSDT",
-    "PAXGUSDT",
-    "UUSDT",
     "USD1USDT",
-    "USDEUSDT",
     "BFUSDUSDT",
     "ZECUSDT",
-    "EURUSDT"
+    "UUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT",
+    "USDEUSDT",
+    "RLUSDUSDT",
+    "EURUSDT",
+    "XAUTUSDT"
   ]
 }
