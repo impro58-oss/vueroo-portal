@@ -2,11 +2,13 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-07T19:03:59.000000+00:00",
+    "last_update": "2026-08-07T19:33:19.668617+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 6 events detected (3 Cat-5, 2 Cat-4, 1 Cat-3)"
+    "breaking_event": "Breaking event scanner: 6 events detected (3 Cat-5, 2 Cat-4, 1 Cat-3)",
+    "threshold_scan_breaches": 6,
+    "threshold_scan_max_severity": "RED"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +23,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "ESCALATED: US-Japan FX intervention + Hormuz disruption + France fiscal crisis + China property crash",
-      "timestamp": "2026-08-07T19:03:59.000000+00:00"
+      "note": "ESCALATED: US-Japan FX intervention + Hormuz disruption + France fiscal crisis + China property crash + GOLD RED breach at ,408 (+9.29% daily). JGB10Y RED breach at 2.81% (BOJ losing control). German bund AMBER at 3.10%.",
+      "timestamp": "2026-08-07T19:33:19.668617+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -108,7 +110,7 @@
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
       "note": "ESCALATED: Hormuz shipping disruption + Ebola outbreak affecting DRC/Uganda",
@@ -133,12 +135,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -201,23 +203,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED: First US-Japan joint yen intervention since 1998. KRW surging 8.8%",
-      "timestamp": "2026-08-07T19:03:59.000000+00:00"
+      "note": "ESCALATED: First US-Japan joint yen intervention since 1998. KRW surging 8.8% + EUR/USD above 1.15 AMBER (dollar weakness).",
+      "timestamp": "2026-08-07T19:33:19.668617+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4349.87,
+      "value": 4408.6,
       "unit": "$/oz",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 360.4,
-      "description": "Gold Spot: ,349.87/oz (JM Bullion live)",
+      "change_from_last": 58.73000000000047,
+      "description": "Gold Spot: ,408.60/oz (Yahoo Finance live)",
       "series_id": "JM Bullion spot",
       "last_date": "2026-08-07",
-      "note": "Live spot from JM Bullion web search - manual update",
-      "timestamp": "2026-08-07T17:04:19.127737+00:00"
+      "note": "THRESHOLD BREACH: Gold above ,500 RED tripwire. +9.29% daily move. Currency crisis or war premium.",
+      "timestamp": "2026-08-07T19:33:19.668617+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -261,8 +263,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "ESCALATED: France EUR107B deficit, 8% deficit ratio. ECB pricing 40bps hikes",
-      "timestamp": "2026-08-07T19:03:59.000000+00:00"
+      "note": "ESCALATED: France EUR107B deficit, 8% deficit ratio. ECB pricing 40bps hikes + German 10Y bund at 3.10% (AMBER threshold breach).",
+      "timestamp": "2026-08-07T19:33:19.668617+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -273,7 +275,7 @@
       "confidence": 9,
       "change_from_last": -0.01,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-06",
       "note": "ESCALATED: Fed held at 3.5-3.75%, 30Y yield highest since 2007, inflation reaccelerating",
