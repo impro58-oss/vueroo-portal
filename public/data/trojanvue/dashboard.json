@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T12:00:20.906120",
+  "timestamp": "2026-08-07T15:01:56.501933",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -29,9 +29,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 105.4,
-    "unrealized_pnl_eur": -5.71,
-    "total_pnl_eur": 99.69,
-    "open_positions": 3,
+    "unrealized_pnl_eur": -6.77,
+    "total_pnl_eur": 98.63,
+    "open_positions": 4,
     "closed_trades": 162,
     "wins": 65,
     "losses": 97,
@@ -47,7 +47,7 @@
       "stop": 0.005970357142857144,
       "highest": 0.00764,
       "lowest": 0.00744,
-      "bars_held": 5,
+      "bars_held": 6,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -62,7 +62,7 @@
       "stop": 0.15191785714285713,
       "highest": 0.1314,
       "lowest": 0.1313,
-      "bars_held": 1,
+      "bars_held": 2,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -76,10 +76,25 @@
       "atr": 0.009892857142857144,
       "stop": 0.18423214285714287,
       "highest": 0.1595,
-      "lowest": 0.1593,
-      "bars_held": 1,
+      "lowest": 0.1585,
+      "bars_held": 2,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-07T15:01:56.501933",
+      "entry_price": 1.1561,
+      "atr": 0.005342857142857109,
+      "stop": 1.142742857142857,
+      "highest": 1.1561,
+      "lowest": 1.1561,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250
     }
@@ -346,20 +361,20 @@
       "timeframe": "DAILY"
     }
   ],
-  "btc_regime": "NEUTRAL",
+  "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "RLUSDUSDT",
-    "USDEUSDT",
-    "KASUSDT",
-    "ZECUSDT",
-    "PAXGUSDT",
     "BFUSDUSDT",
-    "EURUSDT",
+    "ZECUSDT",
     "XAUTUSDT",
+    "PAXGUSDT",
+    "USDEUSDT",
     "XUSDUSDT",
+    "UUSDT",
+    "RLUSDUSDT",
+    "EURUSDT",
     "USD1USDT",
-    "UUSDT"
+    "KASUSDT"
   ]
 }

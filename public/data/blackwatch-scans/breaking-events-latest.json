@@ -1,161 +1,137 @@
 {
-  "scan_time": "2026-08-07T03:02:52Z",
+  "scan_time": "2026-08-07T15:03:54.000000+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1",
+  "operator": "Lumina (cron job 85bd4029)",
   "domains_scanned": 12,
-  "queries_executed": 36,
-  "events_detected": 11,
-  "category_5_events": 6,
-  "overall_risk": "CRITICAL",
-  "events": [
+  "queries_executed": 18,
+  "previous_scan": "2026-08-06T11:02:00+00:00",
+  "events_detected": [
     {
-      "id": "EVT-2026-08-07-001",
-      "title": "US-Japan Coordinated Yen Intervention (First Since 1998)",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "timestamp": "2026-07-31T00:00:00Z",
-      "source": "Reuters, CNBC, Japan Times, Al Jazeera",
-      "description": "US Treasury and Bank of Japan conducted coordinated yen-buying intervention. First joint US-Japan operation since 1998. Bessent reportedly wrote 'Buy Japanese Yen $5-10 bil' on notepad. Both sides signal readiness to intervene again.",
-      "escalate_to": ["fin_stability", "currency", "us_cycle"],
-      "impact_regions": ["Japan", "United States", "Global FX"]
-    },
-    {
-      "id": "EVT-2026-08-07-002",
-      "title": "Strait of Hormuz Crisis - IRGC Harassing Shipping",
+      "id": "BE-2026-0807-001",
       "domain": "middle_east",
+      "title": "Strait of Hormuz Crisis - Day 161, No Reopening Signed",
       "category": "war_military",
       "severity": 5,
-      "timestamp": "2026-08-04T00:00:00Z",
-      "source": "Wikipedia, CNN, Critical Threats, Britannica",
-      "description": "2026 Iran war active. IRGC Navy harassing vessels in Strait of Hormuz. Brent crude spiked 10-13%. Iran threatens to close strait. US-Iran negotiations ongoing via Oman. UKMTO reported failed attack on vessel Aug 2.",
-      "escalate_to": ["energy", "geopolitical", "supply_chain", "food_security"],
-      "impact_regions": ["Middle East", "Global Energy", "Asia Shipping"]
+      "confidence": 10,
+      "description": "Strait of Hormuz remains closed Day 161 of 2026 Iran war. Iran parliament reviewing bill to ban US/Israeli vessels from transit. Iran-Oman talks seek approved shipping corridors but no reopening signed as of Aug 7 1600 UTC. Houthi movement warns Bahrain and UAE against joining Hormuz campaign. 20,000 mariners stranded, 2,000 ships stuck. Brent peaked at $126/bbl, largest energy disruption since 1970s.",
+      "sources": [
+        "Wikipedia",
+        "Iran SITREP",
+        "Britannica",
+        "Reuters",
+        "India Today"
+      ],
+      "triggers_matched": [
+        "military action",
+        "Hormuz",
+        "oil disruption",
+        "war declaration",
+        "escalation"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "EVT-2026-08-07-003",
-      "title": "Ebola Bundibugyo PHEIC - Intensifying in DRC",
+      "id": "BE-2026-0807-002",
       "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 4,
-      "timestamp": "2026-05-16T00:00:00Z",
-      "source": "WHO, BMJ, Wikipedia, Medical Xpress",
-      "description": "WHO declared Public Health Emergency of International Concern on May 16, 2026. 1,801 confirmed deaths in DRC, 2 in Uganda. Outbreak intensifying with sustained transmission. Vaccine candidates entering clinical trials.",
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "impact_regions": ["DRC", "Uganda", "Central Africa"]
+      "title": "2026 Ebola Epidemic - WHO PHEIC, Fastest Growing on Record",
+      "category": "pandemic_health",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Bundibugyo ebolavirus outbreak in DRC declared PHEIC by WHO on May 16. 3,994 confirmed cases, 3,653 deaths (91.5% CFR) as of Aug 4. Fastest growing Ebola outbreak on record. No approved vaccine for Bundibugyo strain. Cases in DRC, Uganda, and imported case in France. Armed conflict in Ituri hinders response.",
+      "sources": [
+        "WHO",
+        "Wikipedia",
+        "Doctors Without Borders",
+        "European Commission"
+      ],
+      "triggers_matched": [
+        "WHO emergency",
+        "outbreak",
+        "epidemic",
+        "quarantine"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "EVT-2026-08-07-004",
-      "title": "Gold at $4,304 - Safe Haven Panic",
-      "domain": "commodities",
-      "category": "market_dislocation",
-      "severity": 4,
-      "timestamp": "2026-08-05T00:00:00Z",
-      "source": "Convex, Sunday Guardian Live, InteractiveCrypto",
-      "description": "Gold surges above $4,285, spot at $4,304.3. USD index dipped below 100. Safe haven demand driven by Iran war, Fed rate expectations, dollar weakness.",
-      "escalate_to": ["fin_stability", "currency"],
-      "impact_regions": ["Global"]
-    },
-    {
-      "id": "EVT-2026-08-07-005",
-      "title": "South Korea-US-Japan Trilateral FX Intervention",
-      "domain": "em_asia",
+      "id": "BE-2026-0807-003",
+      "domain": "us_fed",
+      "title": "US Treasury Coordinated FX Intervention - Yen/Won Joint Action",
       "category": "sovereign_intervention",
       "severity": 4,
-      "timestamp": "2026-07-31T00:00:00Z",
-      "source": "KED Global, Chosun, Daily Motion",
-      "description": "Unprecedented joint FX intervention by South Korea, US, and Japan. Korean won surged 8.8% - fastest since financial crisis. Won hits 9-month high. Carry trade risks persist.",
-      "escalate_to": ["currency", "fin_stability"],
-      "impact_regions": ["South Korea", "Japan", "United States"]
+      "confidence": 10,
+      "description": "US Treasury intervened to support yen after Japan stepped in (Aug 1). Treasury Sec Bessent note: 'To Do Buy Japanese Yen $5-10 bil'. Unprecedented joint intervention: US, Japan, South Korea coordinated FX action. Won hit 9-month high. Reuters calls it 'odd FX intervention'. China yuan undervalued 20%+ per CFR. Fed chair Warsh signaling possible rate hike, inflation reaccelerating.",
+      "sources": [
+        "Reuters",
+        "CNBC",
+        "Chosun",
+        "FXStreet",
+        "CFR"
+      ],
+      "triggers_matched": [
+        "intervention",
+        "Treasury intervention",
+        "decisive action"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity",
+        "currency"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "EVT-2026-08-07-006",
-      "title": "Israel-Gaza Escalation Despite Peace Plan",
-      "domain": "middle_east",
-      "category": "war_military",
-      "severity": 4,
-      "timestamp": "2026-08-03T00:00:00Z",
-      "source": "Al Jazeera, Haaretz",
-      "description": "Israel escalates Gaza attacks, defying Trump peace plan. 1,250 killed since October 2025 ceasefire. Warplanes striking without prior warnings. Hamas agreed to disarm but Israel continues attacks.",
-      "escalate_to": ["geopolitical", "social_cohesion"],
-      "impact_regions": ["Gaza", "Israel", "Middle East"]
-    },
-    {
-      "id": "EVT-2026-08-07-007",
-      "title": "Brazil-Argentina Diplomatic Crisis",
-      "domain": "latam",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "timestamp": "2026-08-05T00:00:00Z",
-      "source": "Reuters, Buenos Aires Herald",
-      "description": "Brazil downgrades diplomatic ties with Argentina after Milei insults Lula. Brazil withdrew ambassador. Crisis threatens economic relationship - most important in Argentina foreign trade.",
-      "escalate_to": ["geopolitical"],
-      "impact_regions": ["Argentina", "Brazil", "LatAm"]
-    },
-    {
-      "id": "EVT-2026-08-07-008",
-      "title": "China Deflation - 10 Quarters of Falling Prices",
-      "domain": "china",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "timestamp": "2026-08-03T00:00:00Z",
-      "source": "CFR, The Tribune, World Bank",
-      "description": "China property crisis ongoing since 2021. S&P expects primary home prices to fall 1.5-2.5% in 2026. PBOC signals stronger counter-cyclical support, moderately loose monetary policy. Household wealth destruction compared to US 2008.",
-      "escalate_to": ["china", "fin_stability"],
-      "impact_regions": ["China", "Asia"]
-    },
-    {
-      "id": "EVT-2026-08-07-009",
-      "title": "Sudan Conflict - 500K Trapped Under RSF Siege",
-      "domain": "africa",
-      "category": "war_military",
-      "severity": 3,
-      "timestamp": "2026-08-03T00:00:00Z",
-      "source": "Rio Times, Operation Broken Silence",
-      "description": "500,000 trapped under RSF siege in El-Obeid. Drone strike on court in North Darfur kills dozens. International aid only 40% funded. No diplomatic breakthrough in sight. Mali offensives also ongoing.",
-      "escalate_to": ["geopolitical"],
-      "impact_regions": ["Sudan", "Mali", "Africa"]
-    },
-    {
-      "id": "EVT-2026-08-07-010",
-      "title": "OPEC+ Completes Rollback of Production Cuts",
+      "id": "BE-2026-0807-004",
       "domain": "commodities",
+      "title": "Global Food Crisis + Energy Shock - 49M More Acute Hunger",
       "category": "energy_shock",
-      "severity": 2,
-      "timestamp": "2026-08-02T00:00:00Z",
-      "source": "OPEC, Rigzone, Energy Connects",
-      "description": "OPEC+ agreed to raise production by 188,000 bpd in September - 6th consecutive monthly increase. Completes phased rollback of voluntary supply cuts from 2023. Members cannot fill existing quotas.",
-      "escalate_to": ["energy"],
-      "impact_regions": ["Global Energy"]
-    },
-    {
-      "id": "EVT-2026-08-07-011",
-      "title": "Russia Banking Stress - Sberbank Warns of Rising Credit Risks",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 2,
-      "timestamp": "2026-07-29T00:00:00Z",
-      "source": "Moscow Times",
-      "description": "Sberbank reports deterioration in loan quality Q2. Impaired loans increasing. Corporate borrowers face mounting pressure from slowing economy. Bankruptcies rose 13.7% YoY in Q1.",
-      "escalate_to": ["fin_stability"],
-      "impact_regions": ["Russia", "Eastern Europe"]
+      "severity": 4,
+      "confidence": 9,
+      "description": "Hormuz disruption caused largest oil supply disruption since 1970s. Brent peaked $126/bbl, currently $88.9 on ceasefire hopes. 49M additional people projected to face acute hunger in 2026. Fertilizer, aluminum, helium shortages. Energy markets pricing chokepoint risk premium. Central banks forced to keep rates high.",
+      "sources": [
+        "Wikipedia",
+        "IndexBox",
+        "Economic Collapse Report"
+      ],
+      "triggers_matched": [
+        "spike",
+        "disruption",
+        "shortage",
+        "food emergency"
+      ],
+      "escalate_to": [
+        "energy",
+        "food_security",
+        "supply_chain"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     }
   ],
-  "non_events": [
-    {
-      "domain": "us_fed",
-      "status": "no_emergency",
-      "note": "Fed held rates at 3.5-3.75% in July. New chair Kevin Warsh emphasizing inflation. Markets pricing in hike. No emergency action."
-    },
-    {
-      "domain": "eu_ecb",
-      "status": "no_emergency",
-      "note": "ECB kept rates unchanged at July 23 meeting. Forward curve pricing 40bps of hikes by end-2026. No emergency."
-    },
-    {
-      "domain": "uk",
-      "status": "no_emergency",
-      "note": "BOE held at 3.75% for 5th meeting. Signaled could raise if Iran war escalates. Gilts falling toward 4.9%. No emergency."
-    }
+  "events_count": 4,
+  "category_5_count": 2,
+  "severity_5_count": 2,
+  "severity_4_count": 2,
+  "summary": "4 breaking events detected. 2 severity-5 (Hormuz, Ebola), 2 severity-4 (FX intervention, food/energy crisis). 15 signals now red. Systemic risk elevated.",
+  "actions_taken": [
+    "macro_event signal set to ACTIVE/red",
+    "middle_east escalated to red",
+    "energy escalated to red",
+    "geopolitical escalated to red",
+    "food_security escalated to red",
+    "supply_chain escalated to red",
+    "currency escalated to red",
+    "fin_stability note updated"
   ]
 }

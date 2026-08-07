@@ -1,298 +1,135 @@
 {
-  "scan_time": "2026-08-06T11:02:00+00:00",
+  "scan_time": "2026-08-07T15:03:54.000000+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1",
   "operator": "Lumina (cron job 85bd4029)",
   "domains_scanned": 12,
   "queries_executed": 18,
-  "previous_scan": "2026-08-06T07:02:00+00:00",
+  "previous_scan": "2026-08-06T11:02:00+00:00",
   "events_detected": [
     {
-      "id": "BE-2026-0806-003",
+      "id": "BE-2026-0807-001",
       "domain": "middle_east",
-      "title": "Hormuz deal final stage - Iran says drafting agreement with Oman",
+      "title": "Strait of Hormuz Crisis - Day 161, No Reopening Signed",
       "category": "war_military",
-      "severity": 4,
-      "confidence": 9,
-      "description": "Iran FM says final stage of drafting Hormuz agreement with Oman. Trump says deal could come this week. Oil dropping below 79 on de-escalation hopes. Two Israeli soldiers killed in Lebanon.",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Strait of Hormuz remains closed Day 161 of 2026 Iran war. Iran parliament reviewing bill to ban US/Israeli vessels from transit. Iran-Oman talks seek approved shipping corridors but no reopening signed as of Aug 7 1600 UTC. Houthi movement warns Bahrain and UAE against joining Hormuz campaign. 20,000 mariners stranded, 2,000 ships stuck. Brent peaked at $126/bbl, largest energy disruption since 1970s.",
       "sources": [
-        "Al Jazeera",
-        "NBC News",
-        "CNN",
-        "AP",
-        "The Hindu"
+        "Wikipedia",
+        "Iran SITREP",
+        "Britannica",
+        "Reuters",
+        "India Today"
       ],
       "triggers_matched": [
+        "military action",
         "Hormuz",
-        "escalation",
-        "oil disruption"
+        "oil disruption",
+        "war declaration",
+        "escalation"
       ],
       "escalate_to": [
         "middle_east",
         "energy",
-        "geopolitical"
+        "geopolitical",
+        "supply_chain",
+        "food_security"
       ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "DE_ESCALATING",
-      "update": "Oil prices easing (.15) on Hormuz reopening hopes."
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "BE-2026-0806-004",
+      "id": "BE-2026-0807-002",
       "domain": "pandemic_health",
-      "title": "Ebola outbreak outpacing WHO response - on track to surpass 4000 cases",
+      "title": "2026 Ebola Epidemic - WHO PHEIC, Fastest Growing on Record",
       "category": "pandemic_health",
-      "severity": 4,
-      "confidence": 9,
-      "description": "WHO chief Tedros warns Ebola spreading faster than response scale-up. 3,874 confirmed cases, 1,751 deaths. Bundibugyo strain has no vaccine. PHEIC declared May 16.",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Bundibugyo ebolavirus outbreak in DRC declared PHEIC by WHO on May 16. 3,994 confirmed cases, 3,653 deaths (91.5% CFR) as of Aug 4. Fastest growing Ebola outbreak on record. No approved vaccine for Bundibugyo strain. Cases in DRC, Uganda, and imported case in France. Armed conflict in Ituri hinders response.",
       "sources": [
         "WHO",
-        "ECDC",
-        "RTE",
         "Wikipedia",
-        "Tempo.co"
+        "Doctors Without Borders",
+        "European Commission"
       ],
       "triggers_matched": [
-        "pandemic",
         "WHO emergency",
-        "outbreak"
+        "outbreak",
+        "epidemic",
+        "quarantine"
       ],
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
       ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "WORSENING",
-      "update": "Fastest-spreading Ebola outbreak on record. 717 hospitalized."
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "BE-2026-0806-005",
-      "domain": "eu_ecb",
-      "title": "France 107B euro deficit shock - could hit 8pct GDP",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "confidence": 8,
-      "description": "France reported 106.8B euro deficit in 6 months. Could hit 8pct GDP. ZeroHedge flags next euro debt crisis. ECB held 2.25pct, Sept hike likely.",
-      "sources": [
-        "ZeroHedge",
-        "Les Echos",
-        "Belgium Times",
-        "EconomieMatin"
-      ],
-      "triggers_matched": [
-        "sovereign crisis",
-        "bond yield spike",
-        "bailout"
-      ],
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "France deficit trajectory unsustainable. ECB Sept hike expectations at 70pct."
-    },
-    {
-      "id": "BE-2026-0806-006",
-      "domain": "japan",
-      "title": "US-Japan coordinated yen intervention confirmed - FIMA repo activated",
+      "id": "BE-2026-0807-003",
+      "domain": "us_fed",
+      "title": "US Treasury Coordinated FX Intervention - Yen/Won Joint Action",
       "category": "sovereign_intervention",
-      "severity": 5,
+      "severity": 4,
       "confidence": 10,
-      "description": "Coordinated US-Japan yen-buying intervention confirmed. Record 13.78T yen total. First joint US-Japan FX intervention since 1998. Bessent pushing Fed to expand FIMA repo. JGB yields rising on weak auction.",
+      "description": "US Treasury intervened to support yen after Japan stepped in (Aug 1). Treasury Sec Bessent note: 'To Do Buy Japanese Yen $5-10 bil'. Unprecedented joint intervention: US, Japan, South Korea coordinated FX action. Won hit 9-month high. Reuters calls it 'odd FX intervention'. China yuan undervalued 20%+ per CFR. Fed chair Warsh signaling possible rate hike, inflation reaccelerating.",
       "sources": [
+        "Reuters",
         "CNBC",
-        "CFR",
-        "Wolf Street",
-        "TradingEconomics",
-        "American Partisan"
+        "Chosun",
+        "FXStreet",
+        "CFR"
       ],
       "triggers_matched": [
         "intervention",
-        "FIMA repo",
-        "Treasury selling",
+        "Treasury intervention",
         "decisive action"
       ],
       "escalate_to": [
         "fin_stability",
-        "currency",
-        "us_cycle"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "FIMA repo facility to prevent Japan forced Treasury selling. JGB auction weak."
-    },
-    {
-      "id": "BE-2026-0806-007",
-      "domain": "em_asia",
-      "title": "Unprecedented 3-way US-Japan-Korea joint FX intervention",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "confidence": 9,
-      "description": "South Korea joined unprecedented joint intervention with US and Japan. Won hits 9-month high. First trilateral FX intervention in history.",
-      "sources": [
-        "Chosun",
-        "KED Global",
-        "Seoul Economic Daily"
-      ],
-      "triggers_matched": [
-        "intervention",
-        "currency crisis",
-        "contagion"
-      ],
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "Won gained ~8.8pct monthly. Carry trade risks persist."
-    },
-    {
-      "id": "BE-2026-0806-008",
-      "domain": "china",
-      "title": "PBOC sets weakest CNY fix in months - depreciation tolerance signal",
-      "category": "sovereign_intervention",
-      "severity": 3,
-      "confidence": 8,
-      "description": "PBOC set USD/CNY fix at 6.7895, above Reuters estimate of 6.7462. PBOC pledged appropriately loose monetary policy for H2 2026. CFR estimates yuan undervalued 20pct+.",
-      "sources": [
-        "VT Markets",
-        "CFR",
-        "Business Recorder",
-        "Asharq Al-Awsat"
-      ],
-      "triggers_matched": [
-        "PBOC emergency",
-        "devaluation"
-      ],
-      "escalate_to": [
-        "china",
-        "currency",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "PBOC H2 policy: appropriately loose. Weak fix signals managed depreciation."
-    },
-    {
-      "id": "BE-2026-0806-009",
-      "domain": "latam",
-      "title": "Argentina 18B China swap deadline TODAY - Brazil diplomatic crisis",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "confidence": 7,
-      "description": "Argentina US currency swap with China faces August 6 deadline. Brazil withdrew ambassador. Argentina defaulting on R.6M debt to Brazil mint.",
-      "sources": [
-        "Rio Times",
-        "Buenos Aires Herald",
-        "Frances News",
-        "CFR"
-      ],
-      "triggers_matched": [
-        "default",
-        "sovereign crisis",
-        "IMF emergency"
-      ],
-      "escalate_to": [
-        "fin_stability",
+        "us_cycle",
+        "liquidity",
         "currency"
       ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "CRITICAL_TODAY",
-      "update": "Aug 6 deadline day. Venezuela IMF contacts resumed after 20 years."
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     },
     {
-      "id": "BE-2026-0806-010",
-      "domain": "financial_system",
-      "title": "Russia systemic banking crisis warning - bankruptcies +13.7pct YoY",
-      "category": "market_dislocation",
-      "severity": 3,
-      "confidence": 7,
-      "description": "Kremlin-linked think tank warns systemic banking crisis by late 2026. 137,500 bankruptcies in Q1. Record 636,000 Russians declared bankruptcy.",
-      "sources": [
-        "Moscow Times"
-      ],
-      "triggers_matched": [
-        "bank failure",
-        "systemic risk",
-        "liquidity crisis"
-      ],
-      "escalate_to": [
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "Medium probability of systemic crisis per CMASF."
-    },
-    {
-      "id": "BE-2026-0806-011",
+      "id": "BE-2026-0807-004",
       "domain": "commodities",
-      "title": "Gold at 4169 - extreme safe haven, oil easing on Hormuz hopes",
-      "category": "market_dislocation",
+      "title": "Global Food Crisis + Energy Shock - 49M More Acute Hunger",
+      "category": "energy_shock",
       "severity": 4,
       "confidence": 9,
-      "description": "Gold at 4169/oz near record highs. Oil dropping below 79 on Hormuz deal hopes. Brent at 79.15, down from 88.9.",
+      "description": "Hormuz disruption caused largest oil supply disruption since 1970s. Brent peaked $126/bbl, currently $88.9 on ceasefire hopes. 49M additional people projected to face acute hunger in 2026. Fertilizer, aluminum, helium shortages. Energy markets pricing chokepoint risk premium. Central banks forced to keep rates high.",
       "sources": [
-        "TradingEconomics",
-        "Forbes",
-        "USA Today",
-        "IndexBox"
+        "Wikipedia",
+        "IndexBox",
+        "Economic Collapse Report"
       ],
       "triggers_matched": [
         "spike",
-        "disruption"
+        "disruption",
+        "shortage",
+        "food emergency"
       ],
       "escalate_to": [
         "energy",
-        "fin_stability"
+        "food_security",
+        "supply_chain"
       ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "Gold extreme demand signals currency crisis + war premium."
-    },
-    {
-      "id": "BE-2026-0806-012",
-      "domain": "africa",
-      "title": "Nigeria-South Africa diplomatic crisis - 109,000 deportations",
-      "category": "sovereign_crisis",
-      "severity": 2,
-      "confidence": 7,
-      "description": "South African deportations topping 109,000. Ghana cancelled Ramaphosa visit. Nigeria demands compensation. Massive humanitarian crisis.",
-      "sources": [
-        "Rio Times",
-        "Upshot Reports",
-        "Abuja Network News"
-      ],
-      "triggers_matched": [
-        "conflict",
-        "debt crisis"
-      ],
-      "escalate_to": [
-        "geopolitical"
-      ],
-      "timestamp": "2026-08-06T11:02:00+00:00",
-      "status": "ONGOING",
-      "update": "Diplomatic crisis between major African economies worsening."
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
     }
   ],
-  "new_events_count": 3,
-  "new_events": [
-    "Ebola outpacing WHO response (3,874 cases, 4,000 this week)",
-    "Russia systemic banking crisis warning (+13.7pct YoY)",
-    "Trilateral US-Japan-Korea FX intervention (unprecedented)"
-  ],
-  "escalated_events": [
-    "Hormuz deal final stage - de-escalation but blockade active",
-    "France 107B deficit shock - could hit 8pct GDP",
-    "US-Japan yen intervention with FIMA repo facility",
-    "PBOC weak CNY fix signaling depreciation tolerance",
-    "Argentina China swap deadline TODAY",
-    "Gold at ,169 - extreme safe haven demand",
-    "Nigeria-SA diplomatic crisis - 109,000 deportations"
-  ],
-  "category_5_events": 2,
-  "severity_5_events": 1,
-  "severity_4_events": 4,
-  "overall_assessment": "CRITICAL - Multiple category-5 macro events active. Currency intervention across 3 major economies. Euro debt crisis risk from France. Ebola accelerating. Hormuz de-escalation is the one positive signal.",
-  "trend_summary": "Currency wars intensifying (trilateral intervention), European fiscal stress worsening (France), Middle East de-escalating (Hormuz deal), health emergency worsening (Ebola), commodity markets bifurcating (gold up, oil down)."
+  "events_count": 4,
+  "category_5_count": 2,
+  "summary": "4 breaking events detected. 2 severity-5 (Hormuz, Ebola), 2 severity-4 (FX intervention, food/energy crisis). 15 signals now red. Systemic risk elevated.",
+  "actions_taken": [
+    "macro_event signal set to ACTIVE/red",
+    "middle_east escalated to red",
+    "energy escalated to red",
+    "geopolitical escalated to red",
+    "food_security escalated to red",
+    "supply_chain escalated to red",
+    "currency escalated to red",
+    "fin_stability note updated"
+  ]
 }
