@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-07T19:33:19.668617+00:00",
+    "last_update": "2026-08-07T23:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 6 events detected (3 Cat-5, 2 Cat-4, 1 Cat-3)",
-    "threshold_scan_breaches": 6,
+    "breaking_event": "Breaking event scanner: 8 events detected (4 Cat-5, 3 Cat-4, 1 Cat-3). NEW: KOSPI circuit breaker + Russia banking crisis.",
+    "threshold_scan_breaches": 8,
     "threshold_scan_max_severity": "RED"
   },
   "signals": {
@@ -23,8 +23,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "ESCALATED: US-Japan FX intervention + Hormuz disruption + France fiscal crisis + China property crash + GOLD RED breach at ,408 (+9.29% daily). JGB10Y RED breach at 2.81% (BOJ losing control). German bund AMBER at 3.10%.",
-      "timestamp": "2026-08-07T19:33:19.668617+00:00"
+      "note": "ESCALATED: US-Japan FX intervention + Hormuz disruption + France fiscal crisis + China property crash + GOLD at $4,350 (+28% YoY). JGB10Y at 2.85% (BOJ losing control). 30Y Treasury at 5.274% (highest since 2007). NEW: KOSPI circuit breaker (4.58-5% crash, SK Hynix -10.37%) + Russia banking crisis (Sberbank NPLs at 11.7%, $167.5B problematic loans).",
+      "timestamp": "2026-08-07T23:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -203,8 +203,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "ESCALATED: First US-Japan joint yen intervention since 1998. KRW surging 8.8% + EUR/USD above 1.15 AMBER (dollar weakness).",
-      "timestamp": "2026-08-07T19:33:19.668617+00:00"
+      "note": "ESCALATED: First US-Japan joint yen intervention since 1998. South Korea joined unprecedented tripartite intervention. KRW surging 8.8%. NEW: KOSPI circuit breaker triggered Aug 6-7 (4.58-5% crash).",
+      "timestamp": "2026-08-07T23:02:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -314,28 +314,28 @@
     "macro_event": {
       "name": "Macro Event Status",
       "domain": "System",
-      "value": "ACTIVE - 3 Cat-5 Events",
+      "value": "ACTIVE - 4 Cat-5 Events",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
       "change_from_last": 0,
       "unit": "",
-      "description": "3 active category-5 events: US-Japan FX intervention, Hormuz/Iran war, Ebola PHEIC. Plus 2 category-4: China property crash, France fiscal crisis.",
+      "description": "4 active category-5 events: US-Japan FX intervention, Hormuz/Iran war, Ebola PHEIC, KOSPI circuit breaker. Plus 3 category-4: China property crash, France fiscal crisis, Russia banking crisis.",
       "series_id": null,
-      "last_date": "2026-08-07",
-      "note": "Breaking event scanner: multi-domain convergence. Hormuz closure + yen intervention + Ebola PHEIC = systemic risk elevation.",
-      "timestamp": "2026-08-07T19:03:59.000000+00:00"
+      "last_date": "2026-08-08",
+      "note": "Breaking event scanner: multi-domain convergence escalating. Hormuz closure + yen intervention + Ebola PHEIC + KOSPI market dislocation + Russia banking stress = systemic risk at critical. NEW this scan: KOSPI circuit breaker and Russia banking crisis.",
+      "timestamp": "2026-08-07T23:02:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 1850,
+    "score": 1950,
     "red_count": 17,
     "amber_count": 3,
     "green_count": 1,
     "info_count": 0,
-    "timestamp": "2026-08-07T19:03:59.000000+00:00"
+    "timestamp": "2026-08-07T23:02:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
