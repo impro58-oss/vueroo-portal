@@ -1,47 +1,47 @@
 {
   "scan_date": "2026-08-07",
-  "scan_time_utc": "2026-08-07T11:30:38.921832+00:00",
+  "scan_time_utc": "2026-08-07T15:30:38.424498+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 158.361,
+      "price": 157.672,
       "prev_close": 157.582,
-      "change_1d_pct": 0.49,
+      "change_1d_pct": 0.06,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.153,
+      "price": 1.1561,
       "prev_close": 1.1544,
-      "change_1d_pct": -0.12,
+      "change_1d_pct": 0.15,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.344,
+      "price": 1.3496,
       "prev_close": 1.3492,
-      "change_1d_pct": -0.39,
+      "change_1d_pct": 0.03,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.737,
+      "price": 6.7343,
       "prev_close": 6.7509,
-      "change_1d_pct": -0.21,
+      "change_1d_pct": -0.25,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1417.13,
+      "price": 1409.49,
       "prev_close": 1435.7,
-      "change_1d_pct": -1.29,
+      "change_1d_pct": -1.83,
       "data_points": 5,
       "source": "yahoo"
     },
     "SPX": {
-      "price": 7709.96,
-      "prev_close": 7437.63,
-      "change_1d_pct": 3.66,
+      "price": 7761.86,
+      "prev_close": 7489.72,
+      "change_1d_pct": 3.63,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -49,7 +49,7 @@
       "price": 65606.71,
       "prev_close": 63754.9,
       "change_1d_pct": 2.9,
-      "data_points": 5,
+      "data_points": 4,
       "source": "yahoo"
     },
     "HSI": {
@@ -60,61 +60,68 @@
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.23,
+      "price": 14.96,
       "prev_close": 15.86,
-      "change_1d_pct": -3.97,
+      "change_1d_pct": -5.67,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 115.0,
-      "change_1d_pct": 0.0,
-      "source": "web_search_estimate",
-      "note": "Estimated from Reuters report of bond volatility at half-year high. Exact value not directly available."
+      "price": 77.0,
+      "change_1d_pct": -3.75,
+      "data_points": 1,
+      "source": "web_search_nuveen",
+      "source_url": "https://www.nuveen.com/en-us/insights/fixed-income/fixed-income-weekly-commentary",
+      "note": "MOVE Index fell 3 points to 77 per Nuveen weekly commentary (Aug 4)"
     },
     "GOLD": {
-      "price": 4382.3,
+      "price": 4414.8,
       "prev_close": 4033.7,
-      "change_1d_pct": 8.64,
+      "change_1d_pct": 9.45,
       "data_points": 5,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 82.04,
+      "price": 83.45,
       "prev_close": 83.77,
-      "change_1d_pct": -2.07,
+      "change_1d_pct": -0.38,
       "data_points": 5,
       "source": "yahoo"
     },
     "US10Y": {
-      "price": 4.67,
-      "prev_close": 4.745,
-      "change_1d_pct": -1.58,
+      "price": 4.652,
+      "prev_close": 4.686,
+      "change_1d_pct": -0.73,
       "data_points": 5,
       "source": "yahoo"
     },
     "JGB10Y": {
       "price": 2.81,
-      "change_1d_pct": -1.24,
-      "source": "web_search",
-      "note": "Business Recorder/Reuters Aug 5: 10yr JGB fell 3.5bps to 2.81%"
+      "change_1d_pct": -3.5,
+      "data_points": 1,
+      "source": "web_search_reuters",
+      "source_url": "https://www.brecorder.com/news/40433407",
+      "note": "JGB 10Y fell 3.5bps to 2.81% per Reuters/BusinessRecorder (Aug 5)"
     },
     "DE10Y": {
-      "price": 3.10,
-      "change_1d_pct": 0.0,
-      "source": "web_search",
-      "note": "Investing.com Aug 6: German 10yr Bund flat at 3.10%, 3-week low"
+      "price": 3.11,
+      "change_1d_pct": 0,
+      "data_points": 1,
+      "source": "web_search_brecorder",
+      "source_url": "https://www.brecorder.com/news/40433590",
+      "note": "German 10Y Bund at 3.11% per BusinessRecorder (Aug 6)"
     },
     "BAA10Y": {
-      "price": 1.65,
-      "change_1d_pct": 0.0,
-      "source": "web_search_calc",
-      "note": "Calculated: BAA yield 6.32% (FRED DBAA Jul 30) - US10Y 4.67% = 1.65% spread"
+      "price": 1.80,
+      "change_1d_pct": 0,
+      "data_points": 1,
+      "source": "web_search_estimated",
+      "note": "BAA10Y spread estimated at ~1.80% based on FRED series (data through Aug 4) and current US10Y at 4.65%. Baa yields ~6.45%. Manual estimate - not precise."
     },
     "BTC": {
-      "price": 65004.33,
+      "price": 64961.83,
       "prev_close": 63460.9,
-      "change_1d_pct": 2.43,
+      "change_1d_pct": 2.37,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -124,7 +131,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4382.3,
+      "current": 4414.8,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -133,28 +140,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 25.21
-    },
-    {
-      "key": "USDJPY",
-      "name": "USD/JPY",
-      "category": "currency",
-      "current": 158.361,
-      "threshold": 158.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Intervention zone \u2014 joint intervention likely failing",
-      "escalate": [
-        "japan_sovereign",
-        "currency"
-      ],
-      "distance_pct": 0.23
+      "distance_pct": 26.14
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.153,
+      "current": 1.1561,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -163,13 +155,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.26
+      "distance_pct": 0.53
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4382.3,
+      "current": 4414.8,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -177,25 +169,11 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 46.08
+      "distance_pct": 47.16
     }
   ],
-  "breach_count": 5,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED",
-  "manual_breaches_added": [
-    {
-      "key": "MOVE",
-      "name": "MOVE Index",
-      "category": "volatility",
-      "current": 115.0,
-      "threshold": 100,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Bond volatility elevated \u2014 rate market stress building",
-      "source": "web_search_estimate",
-      "distance_pct": 15.0
-    }
-  ]
+  "max_severity": "RED"
 }
