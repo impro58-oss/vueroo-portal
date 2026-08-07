@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-07T07:02:00.000000+00:00",
+    "last_update": "2026-08-07T07:30:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
-    "threshold_breach": "8 thresholds breached + macro_event ACTIVE",
+    "threshold_breach": "7 thresholds breached (3 RED: Gold>3500, JGB10Y>2.0, Gold>3000; 4 AMBER: USDJPY>158, EURUSD>1.15, MOVE>100, DE10Y>2.5)",
     "breaking_event": "CAT-5: 5 events across 12 domains. Hormuz deal close, Ebola 4,053 cases, Russia banking + US regulatory gap, Nigeria military expansion, trilateral FX intervention."
   },
   "signals": {
@@ -208,17 +208,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4300.3,
+      "value": 4350.3,
       "unit": "$/oz",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 266.6,
-      "description": "Gold Futures (GC=F): $4,300.30 (+6.61%)",
+      "change_from_last": 50.0,
+      "description": "Gold Futures (GC=F): ,350.30 (+7.85%)",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-08-06",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-06T23:15:22.590512+00:00"
+      "last_date": "2026-08-07",
+      "note": "THRESHOLD BREACH RED: Gold ,350 above ,500 RED threshold (+24.3%). Also above ,000 AMBER (+45%). Safe haven demand extreme.",
+      "timestamp": "2026-08-07T07:30:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -321,7 +321,7 @@
       "description": "Breaking macro event detection",
       "series_id": null,
       "last_date": "2026-08-07",
-      "note": "CAT-5: Hormuz deal in final drafting (partial, not full reopening), Ebola 4,053 cases/1,850 deaths (crossed 4K), Russia banking crisis + US regulatory oversight gap, Nigeria Army expansion to 12 divisions, Trilateral FX intervention confirmed (US Treasury $5-10B yen buy), Gold ~$4,300",
+      "note": "CAT-5: Hormuz deal in final drafting, Ebola 4,053 cases, Russia banking crisis, Nigeria 12 divisions, Trilateral FX intervention, GOLD ,350 (+7.85% 1D) above RED threshold, MOVE ~115 (highest in 6mo), JGB 2.83% (RED), Brent ",
       "timestamp": "2026-08-07T07:02:00.000000+00:00"
     }
   },
