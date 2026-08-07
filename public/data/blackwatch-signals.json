@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-06T23:35:04.000000+00:00",
+    "last_update": "2026-08-07T03:03:45.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "signals_total": 21,
+    "threshold_breach": "8 thresholds breached + macro_event ACTIVE",
+    "breaking_event": "CAT-5: 3 sovereign interventions, 2 war/military events, 1 pandemic PHEIC, 1 market dislocation. 11 events detected across 12 domains."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-05",
-      "note": "Threshold breach: Gold above 3500 (current: 4304.1)",
-      "timestamp": "2026-08-06T23:35:04.000000+00:00"
+      "note": "ESCALATED: US-Japan coordinated yen intervention + SK joint FX intervention + Russia banking stress",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-06T23:15:24.246758+00:00"
+      "note": "ESCALATED: Hormuz disruption, Brent spiked 10-13%, OPEC+ completing rollback",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-05",
-      "note": "Threshold breach: Gold above 3500 (current: 4304.1)",
-      "timestamp": "2026-08-06T23:35:04.000000+00:00"
+      "note": "ESCALATED: Iran war active, Strait of Hormuz crisis, Israel-Gaza escalation, Sudan conflict",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -104,30 +105,30 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-06T23:15:25.110713+00:00"
+      "note": "ESCALATED: Hormuz shipping disruption, IRGC Navy harassing vessels",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-06T23:15:25.560601+00:00"
+      "note": "ESCALATED: Oil spike threatens food prices, Hormuz disruption",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -156,8 +157,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-06T23:15:26.119318+00:00"
+      "note": "ESCALATED: Ebola PHEIC, Gaza casualties, diplomatic crises",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -193,7 +194,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0.03,
@@ -201,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 158.407)",
-      "timestamp": "2026-08-06T23:35:04.000000+00:00"
+      "note": "ESCALATED: Joint yen intervention (first since 1998), won surges 8.8%, USD index below 100",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -240,14 +241,14 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-06T23:15:23.034909+00:00"
+      "note": "ESCALATED: 10 quarters deflation, property crisis, PBOC loose policy signal",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -283,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-06T23:15:29.620561+00:00"
+      "note": "ESCALATED: Iran war, Hormuz crisis, Israel defies Trump peace plan",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,17 +309,31 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-06T23:15:30.467712+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event - Breaking",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "unit": "",
+      "description": "Breaking macro event detection",
+      "series_id": null,
+      "last_date": "2026-08-07",
+      "note": "CAT-5: US-Japan coordinated yen intervention (first since 1998), Strait of Hormuz crisis, Ebola Bundibugyo PHEIC (1801+ deaths), Gold at 4304, SK-US-Japan trilateral FX intervention, Israel-Gaza escalation",
+      "timestamp": "2026-08-07T03:03:45.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 579,
-    "red_count": 8,
-    "amber_count": 9,
-    "green_count": 2,
+    "score": 1760,
+    "red_count": 15,
+    "amber_count": 5,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-06T23:15:30.505058+00:00"
+    "timestamp": "2026-08-07T03:03:45.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
