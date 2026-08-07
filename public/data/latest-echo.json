@@ -1,24 +1,135 @@
 {
-  "timestamp": "2026-08-05T15:02:00.000000+00:00",
+  "scan_time": "2026-08-07T15:03:54.000000+00:00",
   "scan_type": "breaking_event",
-  "events_detected": 12,
-  "category_5_events": 2,
-  "severity_4_plus": 5,
-  "top_event": "Hormuz deal imminent - US says 'today or tomorrow', Iran-Oman talks in final phase",
-  "overall_risk": "CRITICAL",
-  "signals_red": 7,
-  "signals_amber": 10,
-  "market_snapshot": {
-    "S&P_500": 7761.89,
-    "Dow": 54701.04,
-    "Gold": 4292.80,
-    "Oil_Brent": 74.86,
-    "VIX": 16.28,
-    "BTC": 64343.27
-  },
-  "new_events": [
-    "Hormuz deal imminent - 'today or tomorrow'",
-    "Argentina defaults on Brazil debt",
-    "Gold at record $4,297, oil below $75"
+  "scanner": "BlackWatch Breaking Event Scanner v1",
+  "operator": "Lumina (cron job 85bd4029)",
+  "domains_scanned": 12,
+  "queries_executed": 18,
+  "previous_scan": "2026-08-06T11:02:00+00:00",
+  "events_detected": [
+    {
+      "id": "BE-2026-0807-001",
+      "domain": "middle_east",
+      "title": "Strait of Hormuz Crisis - Day 161, No Reopening Signed",
+      "category": "war_military",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Strait of Hormuz remains closed Day 161 of 2026 Iran war. Iran parliament reviewing bill to ban US/Israeli vessels from transit. Iran-Oman talks seek approved shipping corridors but no reopening signed as of Aug 7 1600 UTC. Houthi movement warns Bahrain and UAE against joining Hormuz campaign. 20,000 mariners stranded, 2,000 ships stuck. Brent peaked at $126/bbl, largest energy disruption since 1970s.",
+      "sources": [
+        "Wikipedia",
+        "Iran SITREP",
+        "Britannica",
+        "Reuters",
+        "India Today"
+      ],
+      "triggers_matched": [
+        "military action",
+        "Hormuz",
+        "oil disruption",
+        "war declaration",
+        "escalation"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+    },
+    {
+      "id": "BE-2026-0807-002",
+      "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic - WHO PHEIC, Fastest Growing on Record",
+      "category": "pandemic_health",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Bundibugyo ebolavirus outbreak in DRC declared PHEIC by WHO on May 16. 3,994 confirmed cases, 3,653 deaths (91.5% CFR) as of Aug 4. Fastest growing Ebola outbreak on record. No approved vaccine for Bundibugyo strain. Cases in DRC, Uganda, and imported case in France. Armed conflict in Ituri hinders response.",
+      "sources": [
+        "WHO",
+        "Wikipedia",
+        "Doctors Without Borders",
+        "European Commission"
+      ],
+      "triggers_matched": [
+        "WHO emergency",
+        "outbreak",
+        "epidemic",
+        "quarantine"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+    },
+    {
+      "id": "BE-2026-0807-003",
+      "domain": "us_fed",
+      "title": "US Treasury Coordinated FX Intervention - Yen/Won Joint Action",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "confidence": 10,
+      "description": "US Treasury intervened to support yen after Japan stepped in (Aug 1). Treasury Sec Bessent note: 'To Do Buy Japanese Yen $5-10 bil'. Unprecedented joint intervention: US, Japan, South Korea coordinated FX action. Won hit 9-month high. Reuters calls it 'odd FX intervention'. China yuan undervalued 20%+ per CFR. Fed chair Warsh signaling possible rate hike, inflation reaccelerating.",
+      "sources": [
+        "Reuters",
+        "CNBC",
+        "Chosun",
+        "FXStreet",
+        "CFR"
+      ],
+      "triggers_matched": [
+        "intervention",
+        "Treasury intervention",
+        "decisive action"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity",
+        "currency"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+    },
+    {
+      "id": "BE-2026-0807-004",
+      "domain": "commodities",
+      "title": "Global Food Crisis + Energy Shock - 49M More Acute Hunger",
+      "category": "energy_shock",
+      "severity": 4,
+      "confidence": 9,
+      "description": "Hormuz disruption caused largest oil supply disruption since 1970s. Brent peaked $126/bbl, currently $88.9 on ceasefire hopes. 49M additional people projected to face acute hunger in 2026. Fertilizer, aluminum, helium shortages. Energy markets pricing chokepoint risk premium. Central banks forced to keep rates high.",
+      "sources": [
+        "Wikipedia",
+        "IndexBox",
+        "Economic Collapse Report"
+      ],
+      "triggers_matched": [
+        "spike",
+        "disruption",
+        "shortage",
+        "food emergency"
+      ],
+      "escalate_to": [
+        "energy",
+        "food_security",
+        "supply_chain"
+      ],
+      "timestamp": "2026-08-07T15:03:54.000000+00:00"
+    }
+  ],
+  "events_count": 4,
+  "category_5_count": 2,
+  "summary": "4 breaking events detected. 2 severity-5 (Hormuz, Ebola), 2 severity-4 (FX intervention, food/energy crisis). 15 signals now red. Systemic risk elevated.",
+  "actions_taken": [
+    "macro_event signal set to ACTIVE/red",
+    "middle_east escalated to red",
+    "energy escalated to red",
+    "geopolitical escalated to red",
+    "food_security escalated to red",
+    "supply_chain escalated to red",
+    "currency escalated to red",
+    "fin_stability note updated"
   ]
 }
