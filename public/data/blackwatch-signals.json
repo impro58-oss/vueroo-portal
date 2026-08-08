@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-08T07:02:00.000000+00:00",
+    "last_update": "2026-08-08T07:34:50.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scan 08-08 07:02 UTC: 11 events, 3 new, 6 updated. Energy->red, us_cycle->red, geopolitical->red."
+    "breaking_event": "Breaking event scan 08-08 07:02 UTC: 11 events, 3 new, 6 updated. Energy->red, us_cycle->red, geopolitical->red.",
+    "threshold_breach": "3 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.04,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "ESCALATED: Yen intervention unwinding + Russia banking crisis + France fiscal + EU sovereign exposures + SK circuit breaker aftermath.",
-      "timestamp": "2026-08-08T07:02:00.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4399.7)",
+      "timestamp": "2026-08-08T07:34:50.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -193,16 +194,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-08T05:34:14.708892+00:00"
+      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1562)",
+      "timestamp": "2026-08-08T07:34:50.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
