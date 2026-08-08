@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-08",
-  "scan_time_utc": "2026-08-08T19:30:38.467578+00:00",
+  "scan_time_utc": "2026-08-08T23:30:39.549256+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -67,9 +67,8 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 117.5,
-      "source": "web_search (StockCharts article: highest since May 2026)",
-      "note": "Approximate — MOVE nudged up to highest since May per StockCharts Aug 2026. Threshold: >120 = AMBER, >160 = RED. Current ~117.5 is below AMBER."
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "GOLD": {
       "price": 4399.7,
@@ -93,24 +92,21 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.81,
-      "source": "web_search (Business Recorder Aug 5, 2026: 10yr JGB yield fell 3.5bps to 2.81%)",
-      "note": "Threshold: >2.0 = AMBER, >3.0 = RED. Current 2.81% triggers AMBER."
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "DE10Y": {
-      "price": 3.09,
-      "source": "web_search (EconoTimes Aug 5, 2026: 10yr Bund yield dropped to 3.09%, three-week low)",
-      "note": "Threshold: >3.0 = AMBER, >4.0 = RED. Current 3.09% triggers AMBER."
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BAA10Y": {
-      "price": 1.61,
-      "source": "web_search (FRED BAA10Y CSV: 1.61% as of Aug 6, 2026)",
-      "note": "Threshold: >2.0 = AMBER, >3.0 = RED. Current 1.61% is below AMBER — no breach."
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BTC": {
-      "price": 64967.5,
+      "price": 64882.09,
       "prev_close": 64055.953,
-      "change_1d_pct": 1.42,
+      "change_1d_pct": 1.29,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -159,39 +155,9 @@
         "fin_stability"
       ],
       "distance_pct": 46.66
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.81,
-      "threshold": 2.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "JGB yields elevated \u2014 BOJ normalization pressure, yen carry risk",
-      "escalate": [
-        "currency"
-      ],
-      "distance_pct": 40.5,
-      "source": "web_search"
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10-Year Bund Yield",
-      "category": "rates",
-      "current": 3.09,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Bund yields above 3% \u2014 EU borrowing costs elevated, fragmentation risk",
-      "escalate": [
-        "europe"
-      ],
-      "distance_pct": 3.0,
-      "source": "web_search"
     }
   ],
-  "breach_count": 5,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
