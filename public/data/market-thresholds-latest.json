@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-08",
-  "scan_time_utc": "2026-08-08T07:34:48.944259+00:00",
+  "scan_time_utc": "2026-08-08T11:31:09.896868+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -67,10 +67,9 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77,
-      "source": "web_search",
-      "source_detail": "Nuveen fixed income commentary, Aug 2026",
-      "note": "MOVE Index fell ~3 points to 77 per Nuveen weekly commentary"
+      "price": null,
+      "source": "web_search_unavailable",
+      "note": "No live value found via web search. Reuters requires JS. MacroMicro requires JS. Marking as unavailable this scan."
     },
     "GOLD": {
       "price": 4399.7,
@@ -94,27 +93,30 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.78,
+      "price": 2.81,
       "source": "web_search",
-      "source_detail": "Trading Economics, Aug 7 2026",
-      "note": "Japan 10Y JGB yield rose to 2.78%"
+      "source_url": "https://www.brecorder.com/news/amp/40433407",
+      "source_date": "2026-08-05",
+      "note": "Japan 10-year JGB yield fell 3.5bps to 2.81% (Aug 5, Business Recorder/Reuters)"
     },
     "DE10Y": {
-      "price": 3.12,
+      "price": 3.10,
       "source": "web_search",
-      "source_detail": "Trading Economics, Aug 7 2026",
-      "note": "Germany 10Y Bund yield ~3.12%, down 8bps on ME diplomatic optimism"
+      "source_url": "https://www.investing.com/news/forex-news/german-yields-hold-steady-at-3week-lows-as-easing-oil-cools-ecb-hike-bets-4840076",
+      "source_date": "2026-08-06",
+      "note": "German 10-year Bund yield flat at 3.10%, near 3-week lows (Aug 6, Investing.com)"
     },
     "BAA10Y": {
       "price": 1.61,
       "source": "web_search",
-      "source_detail": "FRED BAA10Y, Aug 6 2026",
-      "note": "Baa-10Y spread 1.61%, stable range"
+      "source_url": "https://fred.stlouisfed.org/series/BAA10Y",
+      "source_date": "2026-08-06",
+      "note": "Moody's Baa-Treasury spread at 1.61% (Aug 6, FRED)"
     },
     "BTC": {
-      "price": 64958.12,
+      "price": 64934.97,
       "prev_close": 64055.953,
-      "change_1d_pct": 1.41,
+      "change_1d_pct": 1.37,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -158,7 +160,7 @@
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
+      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
       "escalate": [
         "fin_stability"
       ],
@@ -168,50 +170,57 @@
       "key": "JGB10Y",
       "name": "Japan 10-Year JGB Yield",
       "category": "rates",
-      "current": 2.78,
+      "current": 2.81,
       "threshold": 1.5,
       "direction": "above",
       "severity": "RED",
-      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
       "escalate": [
         "japan_sovereign",
         "fin_stability"
       ],
-      "distance_pct": 85.33
+      "distance_pct": 87.33,
+      "source": "web_search",
+      "source_date": "2026-08-05"
     },
     {
       "key": "JGB10Y",
       "name": "Japan 10-Year JGB Yield",
       "category": "rates",
-      "current": 2.78,
+      "current": 2.81,
       "threshold": 1.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "JGB under pressure — BOJ yield curve control stress",
+      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
       "escalate": [
         "japan_sovereign"
       ],
-      "distance_pct": 178.0
+      "distance_pct": 181.0,
+      "source": "web_search",
+      "source_date": "2026-08-05"
     },
     {
       "key": "DE10Y",
       "name": "German 10-Year (Bund)",
       "category": "rates",
-      "current": 3.12,
+      "current": 3.10,
       "threshold": 3.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "European fiscal stress — periphery spreads widening",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
       "escalate": [
         "europe",
         "fin_stability"
       ],
-      "distance_pct": 4.0
+      "distance_pct": 3.33,
+      "source": "web_search",
+      "source_date": "2026-08-06"
     }
   ],
   "breach_count": 6,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED",
-  "manual_breaches_added": ["JGB10Y_RED", "JGB10Y_AMBER", "DE10Y_AMBER"]
+  "manual_breaches": 3,
+  "manual_notes": "JGB10Y, DE10Y, BAA10Y, MOVE sourced via web search. MOVE unavailable this scan."
 }
