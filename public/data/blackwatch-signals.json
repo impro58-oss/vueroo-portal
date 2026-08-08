@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-08T11:31:11.000000+00:00",
+    "last_update": "2026-08-08T15:04:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "6 thresholds breached (3 Yahoo + 3 manual web search)"
+    "threshold_breach": "6 thresholds breached (3 Yahoo + 3 manual web search)",
+    "breaking_event": "Breaking event scan 15:02 UTC: 12 active events, 0 new. Hormuz Day 161, Ebola accelerating, gold $4,350."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "Threshold breaches: Gold above 3500 (RED, 4399.7), JGB10Y above 1.5 (RED, 2.81%), DE10Y above 3.0 (AMBER, 3.10%), Gold above 3000 (AMBER, 4399.7)",
-      "timestamp": "2026-08-08T11:31:11.000000+00:00"
+      "note": "HY spreads elevated. Gold $4,350. KRW carry trade unwind. Russia bankruptcies +13.7%. US regulatory gap. JGB yields highest since 1995.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-08T11:05:20.047144+00:00"
+      "note": "Hormuz closed Day 161. Brent ~$82. Iran-Oman corridor deal pending. Energy grid stress Europe (Paks, Danube).",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "Threshold breach: Gold above 3500 (current: 4399.7) + JGB10Y above 1.5 (RED, 2.81%)",
-      "timestamp": "2026-08-08T11:31:11.000000+00:00"
+      "note": "Iran war + Sudan siege + Nigeria-SA crisis + Russia banking stress. Multi-domain conflict active.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -104,30 +105,30 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-08T11:05:20.455247+00:00"
+      "note": "Hormuz closure disrupting shipping. Ebola PHEIC affecting DRC/Uganda supply lines. Europe energy grid stress.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-08T11:05:21.129561+00:00"
+      "note": "Hormuz closure + Ebola + Sudan siege affecting food supply chains.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -193,7 +194,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.03,
@@ -201,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1562)",
-      "timestamp": "2026-08-08T11:31:11.000000+00:00"
+      "note": "Joint US-Japan-Korea FX intervention. KRW +8.8%. Yen volatile. EUR/USD above 1.15. Gold $4,350.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -261,7 +262,7 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: DE10Y above 3.0 (AMBER, 3.10%) — European fiscal stress. Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "note": "Threshold breach: DE10Y above 3.0 (AMBER, 3.10%) \u00e2\u20ac\u201d European fiscal stress. Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
       "timestamp": "2026-08-08T11:05:22.974096+00:00"
     },
     "us_cycle": {
@@ -283,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-08T11:05:23.796681+00:00"
+      "note": "Iran war Day 161. Hormuz closed. US blockade. CENTCOM strikes. Houthi threats. No ceasefire.",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,17 +309,27 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-08T11:05:24.203650+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Status",
+      "domain": "System",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "description": "Breaking event scanner: active Cat-5 events detected",
+      "timestamp": "2026-08-08T15:04:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
     "score": 579,
-    "red_count": 8,
-    "amber_count": 9,
+    "red_count": 11,
+    "amber_count": 6,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-08T11:05:24.221732+00:00"
+    "timestamp": "2026-08-08T15:04:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
