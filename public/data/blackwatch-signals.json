@@ -7,7 +7,7 @@
     "signals_manual": 0,
     "signals_total": 20,
     "breaking_event": "Breaking event scan 08-08 07:02 UTC: 11 events, 3 new, 6 updated. Energy->red, us_cycle->red, geopolitical->red.",
-    "threshold_breach": "3 thresholds breached"
+    "threshold_breach": "6 thresholds breached (3 Yahoo + 3 manual). RED: Gold>3500, JGB10Y>1.5. AMBER: EUR/USD>1.15, Gold>3000, JGB10Y>1.0, DE10Y>3.0"
   },
   "signals": {
     "fin_stability": {
@@ -22,7 +22,7 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "Threshold breach: Gold above 3500 (current: 4399.7)",
+      "note": "Threshold breaches: Gold above 3500 (current: 4399.7) + JGB10Y above 1.5 (current: 2.78) + DE10Y above 3.0 (current: 3.12)",
       "timestamp": "2026-08-08T07:34:50.000000+00:00"
     },
     "liquidity": {
@@ -262,7 +262,7 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.12%) \u2014 European fiscal stress, periphery spreads widening. Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
       "timestamp": "2026-08-08T05:34:16.212020+00:00"
     },
     "us_cycle": {
