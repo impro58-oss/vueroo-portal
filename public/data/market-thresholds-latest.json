@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-08",
-  "scan_time_utc": "2026-08-08T11:31:09.896868+00:00",
+  "scan_time_utc": "2026-08-08T23:30:39.549256+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -18,16 +18,16 @@
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3493,
+      "price": 1.3492,
       "prev_close": 1.3492,
-      "change_1d_pct": 0.01,
+      "change_1d_pct": 0.0,
       "data_points": 6,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7482,
+      "price": 6.7372,
       "prev_close": 6.7509,
-      "change_1d_pct": -0.04,
+      "change_1d_pct": -0.2,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,9 +67,11 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": null,
-      "source": "web_search_unavailable",
-      "note": "No live value found via web search. Reuters requires JS. MacroMicro requires JS. Marking as unavailable this scan."
+      "price": 80.48,
+      "prev_close": 82.91,
+      "change_1d_pct": -2.93,
+      "data_points": 1,
+      "source": "web_search_yahoo_finance"
     },
     "GOLD": {
       "price": 4399.7,
@@ -93,30 +95,30 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.81,
-      "source": "web_search",
-      "source_url": "https://www.brecorder.com/news/amp/40433407",
-      "source_date": "2026-08-05",
-      "note": "Japan 10-year JGB yield fell 3.5bps to 2.81% (Aug 5, Business Recorder/Reuters)"
+      "price": 2.78,
+      "prev_close": 2.85,
+      "change_1d_pct": -2.46,
+      "data_points": 1,
+      "source": "web_search_tradingeconomics"
     },
     "DE10Y": {
-      "price": 3.10,
-      "source": "web_search",
-      "source_url": "https://www.investing.com/news/forex-news/german-yields-hold-steady-at-3week-lows-as-easing-oil-cools-ecb-hike-bets-4840076",
-      "source_date": "2026-08-06",
-      "note": "German 10-year Bund yield flat at 3.10%, near 3-week lows (Aug 6, Investing.com)"
+      "price": 3.12,
+      "prev_close": 3.20,
+      "change_1d_pct": -2.5,
+      "data_points": 1,
+      "source": "web_search_tradingeconomics"
     },
     "BAA10Y": {
       "price": 1.61,
-      "source": "web_search",
-      "source_url": "https://fred.stlouisfed.org/series/BAA10Y",
-      "source_date": "2026-08-06",
-      "note": "Moody's Baa-Treasury spread at 1.61% (Aug 6, FRED)"
+      "prev_close": 1.62,
+      "change_1d_pct": -0.62,
+      "data_points": 1,
+      "source": "web_search_fred"
     },
     "BTC": {
-      "price": 64934.97,
+      "price": 64882.09,
       "prev_close": 64055.953,
-      "change_1d_pct": 1.37,
+      "change_1d_pct": 1.29,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -170,7 +172,7 @@
       "key": "JGB10Y",
       "name": "Japan 10-Year JGB Yield",
       "category": "rates",
-      "current": 2.81,
+      "current": 2.78,
       "threshold": 1.5,
       "direction": "above",
       "severity": "RED",
@@ -179,15 +181,13 @@
         "japan_sovereign",
         "fin_stability"
       ],
-      "distance_pct": 87.33,
-      "source": "web_search",
-      "source_date": "2026-08-05"
+      "distance_pct": 85.33
     },
     {
       "key": "JGB10Y",
       "name": "Japan 10-Year JGB Yield",
       "category": "rates",
-      "current": 2.81,
+      "current": 2.78,
       "threshold": 1.0,
       "direction": "above",
       "severity": "AMBER",
@@ -195,15 +195,13 @@
       "escalate": [
         "japan_sovereign"
       ],
-      "distance_pct": 181.0,
-      "source": "web_search",
-      "source_date": "2026-08-05"
+      "distance_pct": 178.0
     },
     {
       "key": "DE10Y",
       "name": "German 10-Year (Bund)",
       "category": "rates",
-      "current": 3.10,
+      "current": 3.12,
       "threshold": 3.0,
       "direction": "above",
       "severity": "AMBER",
@@ -212,15 +210,11 @@
         "europe",
         "fin_stability"
       ],
-      "distance_pct": 3.33,
-      "source": "web_search",
-      "source_date": "2026-08-06"
+      "distance_pct": 4.0
     }
   ],
   "breach_count": 6,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED",
-  "manual_breaches": 3,
-  "manual_notes": "JGB10Y, DE10Y, BAA10Y, MOVE sourced via web search. MOVE unavailable this scan."
+  "max_severity": "RED"
 }
