@@ -1,105 +1,204 @@
 {
-  "scan_time": "2026-08-07T19:03:59.000000+00:00",
+  "scan_time": "2026-08-08T11:04:32.289940Z",
   "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v1",
+  "date": "2026-08-08",
+  "utc_time": "2026-08-08T11:02Z",
   "domains_scanned": 12,
-  "events_detected": 6,
-  "category_5_count": 3,
-  "category_4_count": 2,
-  "category_3_count": 1,
+  "queries_executed": 36,
   "events": [
     {
-      "id": "EVT-001",
-      "title": "US-Japan Joint Yen Intervention - First Since 1998",
-      "domain": "japan",
-      "category": "sovereign_intervention",
+      "domain": "middle_east",
+      "title": "Strait of Hormuz CLOSED Day 161 - Iran parliament reviewing US/Israel ship ban",
       "severity": 5,
-      "timestamp": "2026-08-01",
-      "source": "Reuters, CNBC, Japan Times, Al Jazeera",
-      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention on July 31. First US-Japan joint intervention since 1998. Bessent note: Buy Japanese Yen $5-10 bil.",
+      "category": "energy_shock",
+      "source": "iransitrep.com, straits.live, CNN, NPR",
+      "summary": "Hormuz effectively closed. 2 ships transited Aug 2 vs 73/day normal. Iran parliament bill to ban US/Israeli vessels. Brent $82.31. Houthis attacking Saudi oil tankers.",
+      "escalate_to": [
+        "energy",
+        "supply_chain",
+        "geopolitical",
+        "middle_east"
+      ],
+      "is_new": false,
+      "status_change": "Worsening - Iran parliament advancing ban bill, Houthis attacking tankers",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "japan",
+      "title": "US-Japan first joint yen intervention in 15 years - $58.97B deployed",
+      "severity": 5,
+      "category": "sovereign_intervention",
+      "source": "CNBC, Reuters, Al Jazeera, Mainichi",
+      "summary": "Joint US-Japan FX intervention Aug 1-3. Japan sold ~$58.97B. Using Fed FIMA repo. Yen 163->157. 2Y JGB 1.545% highest since 1995. US 30Y yield highest since 2007.",
       "escalate_to": [
         "fin_stability",
         "currency",
-        "us_cycle"
-      ]
+        "japan_sovereign"
+      ],
+      "is_new": false,
+      "status_change": "Stabilizing but sustainability questioned",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     },
     {
-      "id": "EVT-002",
-      "title": "Strait of Hormuz Crisis - Iran War Day 161, Strait Still Closed",
-      "domain": "middle_east",
+      "domain": "africa",
+      "title": "Sudan RSF siege of El-Obeid - UN warns imminent mass atrocities",
+      "severity": 4,
       "category": "war_military",
-      "severity": 5,
-      "timestamp": "2026-08-07",
-      "source": "ISW, Wikipedia, IranSITREP, Britannica, Al Jazeera",
-      "summary": "Strait of Hormuz remains closed as of Aug 7 1600 UTC. Iran parliament reviewing bill to ban US/Israeli vessels. US-Iran strikes ongoing since June. Iran targeting energy infrastructure across Saudi Arabia, UAE, Qatar, Kuwait, Bahrain, Oman.",
+      "source": "NPR, DW, Sudan Tribune",
+      "summary": "500,000 trapped. Drone strikes, cholera, water shortages. UN/US/EU warning imminent atrocities.",
       "escalate_to": [
-        "middle_east",
-        "energy",
         "geopolitical",
-        "supply_chain",
-        "fin_stability"
-      ]
+        "social_cohesion"
+      ],
+      "is_new": false,
+      "status_change": "Worsening - UN escalating warnings, cholera outbreak",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     },
     {
-      "id": "EVT-003",
-      "title": "Ebola Epidemic - WHO PHEIC Declared, 3,973 Cases, 1,801 Deaths",
       "domain": "pandemic_health",
+      "title": "Ebola PHEIC ongoing - 3,973 cases 1,801 deaths DRC/Uganda",
+      "severity": 4,
       "category": "pandemic",
-      "severity": 5,
-      "timestamp": "2026-08-05",
-      "source": "WHO, ECDC, European Commission, Wikipedia",
-      "summary": "Bundibugyo virus Ebola outbreak in DRC declared WHO PHEIC on May 16. 3,973 confirmed cases, 1,801 deaths, 674 hospitalized. Spread to Uganda (2 deaths). No vaccine for Bundibugyo strain.",
+      "source": "WHO, ECDC, BMJ",
+      "summary": "Bundibugyo strain. PHEIC May 16. Transmission accelerating. 567 new cases/week. Vaccine trials starting.",
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
-      ]
+      ],
+      "is_new": false,
+      "status_change": "Worsening - transmission accelerating",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     },
     {
-      "id": "EVT-004",
-      "title": "China Real Estate Crash - Nationwide Economic Emergency, 10 Quarters of Deflation",
-      "domain": "china",
-      "category": "sovereign_crisis",
+      "domain": "eu_ecb",
+      "title": "Europe energy grid stress: Paks nuclear outage Danube historic lows",
       "severity": 4,
-      "timestamp": "2026-08-07",
-      "source": "Chiang Rai Times, The Tribune, Epoch Times",
-      "summary": "China property crash described as nationwide economic emergency. S&P expects 1.5-2.5% primary price drops, 4-5% secondary drops in 2026. 10 straight quarters of falling prices. PBOC pledging loose monetary policy.",
+      "category": "energy_shock",
+      "source": "Previous scan + ongoing",
+      "summary": "Paks 1/8 turbines down. Danube historic lows. Diesel margins 20yr highs. Hungary near energy crisis. DE10Y above 3.0.",
+      "escalate_to": [
+        "energy",
+        "supply_chain",
+        "europe"
+      ],
+      "is_new": false,
+      "status_change": "Ongoing - heatwave persisting",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "us_fed",
+      "title": "Fed: 3 FOMC dissenters vote for hike, Warsh emphasizing inflation fight",
+      "severity": 3,
+      "category": "emergency_rate",
+      "source": "JP Morgan, NYT, Reuters",
+      "summary": "July FOMC held at 3.5-3.75%. 3 members wanted hike. Warsh hawkish. Markets pricing hike odds up. $125B Treasury refunding Aug 15.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ],
+      "is_new": false,
+      "status_change": "Elevated - 3 dissenters unusual",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "em_asia",
+      "title": "Korean Won surges 8.8% fastest since financial crisis",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "Chosun, FRED",
+      "summary": "KRW surged 8.8% fastest since 2008. Individuals buying dollars. Won at 1415.95. Likely carry trade unwind + dollar weakness post yen intervention.",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "is_new": true,
+      "status_change": "NEW - rapid KRW appreciation signals carry trade unwind",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "latam",
+      "title": "Argentina-Brazil diplomatic crisis Brazil withdraws ambassador",
+      "severity": 3,
+      "category": "sovereign_crisis",
+      "source": "PIIE, Buenos Aires Herald",
+      "summary": "Brazil withdrew ambassador. Merval -2.61%. Argentina IMF payments $3B due H2 2026. Trade relationship at risk.",
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ],
+      "is_new": false,
+      "status_change": "Ongoing",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "china",
+      "title": "China property bust spilling across borders PBOC pledges loose policy",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "PIIE, CFR, Trading Economics",
+      "summary": "Property bust spilling. Current accounts shifting 4pp. PBOC loose policy H2 2026. Growth targets trimmed.",
       "escalate_to": [
         "china",
-        "fin_stability"
-      ]
+        "fin_stability",
+        "currency"
+      ],
+      "is_new": false,
+      "status_change": "Ongoing",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     },
     {
-      "id": "EVT-005",
-      "title": "France Fiscal Crisis - EUR107B H1 Deficit, Potential 8% Deficit Ratio",
-      "domain": "eu_ecb",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "timestamp": "2026-08-05",
-      "source": "Futunn, The Corner, ECB Economic Bulletin",
-      "summary": "France central government deficit EUR107B in H1 2026, 14.4% higher than prior year. Full-year deficit ratio potentially 8%. Called new epicenter of Eurozone debt crisis. ECB keeping rates at 2.25%, markets pricing 40bps of hikes.",
+      "domain": "uk",
+      "title": "UK gilt volatility 24B Treasury gap BoE 6-3 hold",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "Trading Economics, BBC",
+      "summary": "BoE 6-3 hold. Gilts volatile. 24B Treasury gap. Fiscal uncertainty from new government.",
       "escalate_to": [
         "europe",
         "fin_stability"
-      ]
+      ],
+      "is_new": false,
+      "status_change": "Elevated",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     },
     {
-      "id": "EVT-006",
-      "title": "OPEC+ Completes Production Cut Rollback - 188K BPD Increase in September",
-      "domain": "commodities",
-      "category": "energy_shock",
+      "domain": "africa",
+      "title": "Mali coup attempt thwarted water and power crisis",
       "severity": 3,
-      "timestamp": "2026-08-02",
-      "source": "Bloomberg, Rigzone, Energy Connects",
-      "summary": "OPEC+ seven members agreed to boost collective target by 188,000 bpd in September, completing phased rollback of 2023 voluntary cuts. Oil at $78-82/bbl, up 22% YoY.",
+      "category": "war_military",
+      "source": "Wikipedia, Critical Threats",
+      "summary": "Coordinated attacks described as coup attempt. Water and power crisis. US expanding base in Bosaso.",
       "escalate_to": [
-        "energy",
-        "supply_chain"
-      ]
+        "geopolitical"
+      ],
+      "is_new": false,
+      "status_change": "Ongoing",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
+    },
+    {
+      "domain": "financial_system",
+      "title": "Russia bankruptcies up 13.7% YoY wartime debt boom banking crisis concerns",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "Moscow Times, American Banker",
+      "summary": "Russian bankruptcies up 13.7%. Record 636K declarations. US deregulatory gap creating systemic risk.",
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ],
+      "is_new": true,
+      "status_change": "NEW - Russian banking stress + US regulatory gap",
+      "timestamp": "2026-08-08T11:04:32.289940Z"
     }
   ],
-  "no_events_domains": [
-    "latam",
-    "uk",
-    "em_asia",
-    "africa"
-  ]
+  "summary": "12 domains scanned. Hormuz closed Day 161. US-Japan joint yen intervention. Sudan El-Obeid siege. Ebola PHEIC. Europe energy crisis. 3 new events: KRW surge, Russian banking stress, Mali coup attempt details.",
+  "events_detected": 12,
+  "new_events": 3,
+  "category_5_events": 2,
+  "category_4_events": 3,
+  "category_3_events": 6,
+  "max_severity": 5,
+  "macro_event_active": true
 }

@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-08T07:34:50.000000+00:00",
+    "last_update": "2026-08-08T11:04:49.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scan 08-08 07:02 UTC: 11 events, 3 new, 6 updated. Energy->red, us_cycle->red, geopolitical->red.",
+    "breaking_event": "Breaking event scan 08-08 11:02 UTC: 12 events detected, 3 new (KRW surge, Russian banking stress, Mali coup details). Currency->red, middle_east->red, europe->red.",
     "threshold_breach": "6 thresholds breached (3 Yahoo + 3 manual). RED: Gold>3500, JGB10Y>1.5. AMBER: EUR/USD>1.15, Gold>3000, JGB10Y>1.0, DE10Y>3.0"
   },
   "signals": {
@@ -194,7 +194,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.03,
@@ -202,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1562)",
-      "timestamp": "2026-08-08T07:34:50.000000+00:00"
+      "note": "ESCALATED: KRW surges 8.8% fastest since 2008 + US-Japan joint yen intervention + EUR/USD above 1.15. Carry trade unwind risk escalating.",
+      "timestamp": "2026-08-08T11:04:49.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -254,16 +254,16 @@
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.12%) \u2014 European fiscal stress, periphery spreads widening. Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-08T05:34:16.212020+00:00"
+      "note": "ESCALATED: Paks nuclear outage + Danube historic lows + diesel margins 20yr highs + UK gilt volatility + DE10Y above 3.0 (3.12%).",
+      "timestamp": "2026-08-08T11:04:49.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -284,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-08T05:34:16.918263+00:00"
+      "note": "ESCALATED: Hormuz closed Day 161. Iran parliament reviewing US/Israel ship ban bill. Houthis attacking Saudi oil tankers. No reopening signed as of Aug 7.",
+      "timestamp": "2026-08-08T11:04:49.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -315,11 +315,11 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 1470,
-    "red_count": 12,
-    "amber_count": 5,
-    "green_count": 2,
+    "red_count": 16,
+    "amber_count": 3,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-08T07:02:00.000000+00:00"
+    "timestamp": "2026-08-08T11:04:49.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -331,9 +331,21 @@
       },
       {
         "domain": "Financial",
-        "red": 1,
+        "red": 2,
         "amber": 1,
-        "stress_level": 3
+        "stress_level": 5
+      },
+      {
+        "domain": "Currency",
+        "red": 2,
+        "amber": 0,
+        "stress_level": 4
+      },
+      {
+        "domain": "United States",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Energy",
@@ -342,13 +354,7 @@
         "stress_level": 2
       },
       {
-        "domain": "Geopolitics",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Supply Chain",
+        "domain": "Middle East",
         "red": 1,
         "amber": 0,
         "stress_level": 2
@@ -366,28 +372,28 @@
         "stress_level": 2
       },
       {
-        "domain": "Currency",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "United States",
+        "domain": "Geopolitics",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "Cyber",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Europe",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Technology",
@@ -396,13 +402,7 @@
         "stress_level": 1
       },
       {
-        "domain": "Europe",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
+        "domain": "Cyber",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -441,6 +441,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-08T07:02:00.000000+00:00"
+    "timestamp": "2026-08-08T11:04:49.000000+00:00"
   }
 }
