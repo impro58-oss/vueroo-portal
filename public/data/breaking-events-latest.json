@@ -1,142 +1,83 @@
 {
-  "scan_time": "2026-08-07T23:02:00.000000+00:00",
-  "scan_type": "breaking_event",
-  "domains_scanned": 12,
-  "events_detected": 8,
-  "category_5_count": 4,
-  "category_4_count": 3,
-  "category_3_count": 1,
-  "events": [
-    {
-      "id": "EVT-001",
-      "title": "US-Japan Joint Yen Intervention - First Since 1998, $58.97B BOJ Intervention",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "timestamp": "2026-08-01",
-      "source": "Reuters, CNBC, Al Jazeera, Bloomberg, Central Banking",
-      "summary": "US Treasury and Japan MOF conducted coordinated yen-buying intervention on July 31. BOJ sold as much as $58.97B to buy yen. First US-Japan joint intervention since 1998. Yen lifted to 157/USD from 163 (40-year low). South Korea also joined unprecedented joint intervention. 30Y US Treasury yield hit 5.274% (highest since 2007). JGB 10Y at 2.85%.",
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "us_cycle"
-      ]
+    "scan_id": "BW-BES-2026-08-08-0302",
+    "scan_type": "breaking_event_4h",
+    "timestamp": "2026-08-08T03:02:00.000000+00:00",
+    "scanner": "Lumina BlackWatch",
+    "domains_scanned": 12,
+    "domains_with_events": 7,
+    "cat5_events_detected": 5,
+    "overall_status": "CAT-5 ACTIVE",
+    "events": [
+        {
+            "id": "ME-2026-08-08-001",
+            "domain": "middle_east",
+            "category": "war_military",
+            "severity": "CAT-5",
+            "title": "Iran War Day 161 - Strait of Hormuz Closed",
+            "summary": "Active US-Israel-Iran war since Feb 2026. Strait of Hormuz remains closed as of Aug 7. Iran parliament reviewing bill to ban US/Israeli vessels. Houthi threats to Bahrain/UAE. No reopening signed.",
+            "sources": ["Wikipedia (2026 Iran war)", "IranSITREP", "Guardian", "Britannica"],
+            "escalates": ["energy", "geopolitical", "middle_east", "supply_chain", "food_security"]
+        },
+        {
+            "id": "ME-2026-08-08-002",
+            "domain": "pandemic_health",
+            "category": "health_emergency",
+            "severity": "CAT-5",
+            "title": "2026 Ebola Epidemic - DRC/Uganda, WHO PHEIC",
+            "summary": "Bundibugyo virus outbreak in DRC: 3,973 confirmed cases, 1,801 deaths, 674 hospitalized. WHO declared PHEIC on May 16. Spread to Uganda (2 deaths).",
+            "sources": ["WHO", "ECDC", "Wikipedia"],
+            "escalates": ["supply_chain", "social_cohesion"]
+        },
+        {
+            "id": "ME-2026-08-08-003",
+            "domain": "japan",
+            "category": "sovereign_intervention",
+            "severity": "CAT-5",
+            "title": "Japan-US-South Korea Trilateral Currency Intervention",
+            "summary": "Rare joint intervention: Japan sold ~$58.97bn to buy yen, coordinated with US Treasury and South Korea. BOJ at 1% rate, accelerating tightening. Won hit 9-month high.",
+            "sources": ["Al Jazeera", "Fortune", "Reuters", "Chosun", "JP Morgan"],
+            "escalates": ["currency", "fin_stability", "liquidity"]
+        },
+        {
+            "id": "ME-2026-08-08-004",
+            "domain": "commodities",
+            "category": "energy_shock",
+            "severity": "CAT-5",
+            "title": "Gold at $4,350/oz + Oil Shock + Food Crisis Convergence",
+            "summary": "Gold at $4,350 (RED, +28% YoY). Brent crude ~$83-86 after peaking above $100 in July. 49M more facing acute hunger in 2026.",
+            "sources": ["Trading Economics", "Forbes", "Fortune", "IndexBox"],
+            "escalates": ["energy", "food_security", "fin_stability"]
+        },
+        {
+            "id": "ME-2026-08-08-005",
+            "domain": "us_fed",
+            "category": "emergency_rate",
+            "severity": "CAT-5",
+            "title": "Fed Chair Warsh Signaling Rate Hike - Inflation Reaccelerating",
+            "summary": "Fed held rates at 3.5-3.75% (9-3 split vote) in July. Chair Warsh emphasizing inflation concerns. Markets pricing in rate hike. Next FOMC Sept 16.",
+            "sources": ["J.P. Morgan", "Reuters", "Arizona Daily Independent"],
+            "escalates": ["fin_stability", "us_cycle", "liquidity"]
+        }
+    ],
+    "domains_clean": [
+        {"domain": "latam", "status": "monitoring", "note": "Argentina-Brazil diplomatic tensions, Merval slide 2.61%, no CAT-5 trigger"},
+        {"domain": "eu_ecb", "status": "monitoring", "note": "ECB rates stable at 2.25%, no emergency action"},
+        {"domain": "uk", "status": "monitoring", "note": "BOE held at 3.75%, gilts falling yields, no emergency"},
+        {"domain": "china", "status": "monitoring", "note": "PBOC loose policy continuation, no emergency action"},
+        {"domain": "em_asia", "status": "elevated", "note": "Joint Korea-US-Japan intervention already captured in ME-003"}
+    ],
+    "signal_changes": {
+        "middle_east": {"from": "amber", "to": "red", "reason": "Iran war Day 161, Hormuz closed"},
+        "energy": {"from": "amber", "to": "red", "reason": "Hormuz disruption, oil shock premium"},
+        "geopolitical": {"from": "amber", "to": "red", "reason": "Multi-front: Iran war + Ebola + currency intervention"},
+        "food_security": {"from": "red", "to": "red", "reason": "Worsening - 49M more acute hunger, Iran war supply disruption"},
+        "fin_stability": {"from": "green", "to": "amber", "reason": "Fed hike signal + currency intervention + gold divergence"}
     },
-    {
-      "id": "EVT-002",
-      "title": "Strait of Hormuz Crisis - Iran War Day 161, Strait Still Closed",
-      "domain": "middle_east",
-      "category": "war_military",
-      "severity": 5,
-      "timestamp": "2026-08-07",
-      "source": "ISW, Wikipedia, IranSITREP, Britannica, GlobalSecurity",
-      "summary": "Strait of Hormuz remains closed as of Aug 7 1600 UTC. Iran parliament reviewing bill to ban US/Israeli vessels. US-Iran strikes ongoing since June. 60-day interim mechanism proposed: inbound traffic through northern lane in Iranian waters, outbound through southern Omani waters, no tolls, mine clearance within 30 days. Iran demands US end attacks before reopening. Trump held off planned strike on Iran Saturday night, oil dropped 5%.",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "fin_stability"
-      ]
-    },
-    {
-      "id": "EVT-003",
-      "title": "Ebola Epidemic - WHO PHEIC Active, 3,748 Cases, 1,657 Deaths, New Vaccine Trial Launched",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 5,
-      "timestamp": "2026-08-07",
-      "source": "WHO, ECDC, CDC, UN News, Wikipedia",
-      "summary": "Bundibugyo virus Ebola outbreak in DRC declared WHO PHEIC on May 16. 3,748 confirmed cases, 1,657 deaths, 708 recoveries as of Aug 1. Spread to Uganda (2 deaths). New vaccine trial launched. No existing vaccine for Bundibugyo strain. CDC issued interim traveler guidance. Intensifying transmission per WHO.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ]
-    },
-    {
-      "id": "EVT-007",
-      "title": "South Korea KOSPI Circuit Breaker Triggered - Market Dislocation",
-      "domain": "em_asia",
-      "category": "market_dislocation",
-      "severity": 5,
-      "timestamp": "2026-08-06",
-      "source": "IBTimes, BigGo Finance, New Indian Express, Economic Times",
-      "summary": "South Korea's KOSPI plunged 4.58-5% on Aug 6-7, triggering sell-side circuit breakers and SIDECAR mechanisms. SK Hynix crashed 10.37%, Samsung dropped 6%+. 124 stocks hit all-time lows. ₩3.3 trillion ($2.3B) foreign sell-off. Triggered by semiconductor selloff (SanDisk disappointing guidance) and AI trade unwinding. Trading halted for 20 minutes. KOSDAQ broke below 800. Worst drop since 1980 in earlier session (12.06%). Thailand also saw circuit breaker.",
-      "escalate_to": [
-        "fin_stability",
-        "currency"
-      ]
-    },
-    {
-      "id": "EVT-004",
-      "title": "China Real Estate Crash - Prices at 21-Year Low, 10 Quarters of Deflation",
-      "domain": "china",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "timestamp": "2026-08-07",
-      "source": "Chiang Rai Times, The Tribune, The Deep Dive, Social News XYZ",
-      "summary": "China inflation-adjusted home prices fell to lowest level since Q2 2005 series start. Down 1.9% from Q4 2025, 7.1% YoY, 24.7% from Q3 2021 peak. S&P expects 1.5-2.5% primary price drops, 4-5% secondary drops in 2026. PBOC pledging 'appropriately loose' monetary policy for H2 2026. Household wealth destruction compared to US 2008 crash scale.",
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ]
-    },
-    {
-      "id": "EVT-005",
-      "title": "France Fiscal Crisis - EUR107B H1 Deficit, Potential 8% Deficit Ratio",
-      "domain": "eu_ecb",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "timestamp": "2026-08-07",
-      "source": "Futunn, ZeroHedge, Notayesmanseconomics, AfD Bundestag",
-      "summary": "France central government deficit EUR107B in H1 2026, 14.4% higher than budgeted. Full-year deficit ratio potentially 8%. Called new epicenter of Eurozone debt crisis. France Misery Index at 10.7% with rising unemployment. ECB keeping rates at 2.25%, markets pricing 40bps of hikes. German political figures warning of contagion risk to Germany.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ]
-    },
-    {
-      "id": "EVT-008",
-      "title": "Russia Banking Crisis - Sberbank Warns on NPLs, Systemic Contagion Risk",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 4,
-      "timestamp": "2026-08-07",
-      "source": "Moscow Times, UNN, Finway, North Denver News",
-      "summary": "Russia's Sberbank warns of rising corporate credit risks. Central Bank classified 11.7% of corporate loans, 13.2% of consumer loans as problematic as of June 2026. Total problematic loans: 13.4 trillion rubles ($167.5B). Bankruptcies rising 13.7% YoY. Banks forced to increase provisions, restructure debts, cut costs. VTB bank exposed to Wildberries warehouse losses. Risk of new defaults and financial sector layoffs.",
-      "escalate_to": [
-        "fin_stability",
-        "geopolitical"
-      ]
-    },
-    {
-      "id": "EVT-006",
-      "title": "OPEC+ Production Rollback + Oil at $78, Gold at $4,350 - Commodity Dislocation",
-      "domain": "commodities",
-      "category": "energy_shock",
-      "severity": 3,
-      "timestamp": "2026-08-07",
-      "source": "Bloomberg, TradingEconomics, Fortune, World Bank, GoldSilver",
-      "summary": "OPEC+ completed phased rollback of 2023 voluntary cuts, +188K bpd in September. Brent crude at $78.07/bbl (up 22% YoY) but dropped 5% after Trump held off Iran strike. Gold surged to $4,350/oz (up 28% YoY, +6.75% monthly) — best week since November 2025. World Bank projects energy prices surging 24% in 2026. Safe haven demand from China institutional investors and central banks.",
-      "escalate_to": [
-        "energy",
-        "supply_chain"
-      ]
+    "overall_risk": {
+        "level": "CRITICAL",
+        "score": 1315,
+        "red_count": 11,
+        "amber_count": 7,
+        "green_count": 1
     }
-  ],
-  "no_events_domains": [
-    "latam",
-    "uk",
-    "africa"
-  ],
-  "new_events_this_scan": [
-    "EVT-007: South Korea KOSPI circuit breaker (Cat-5 market dislocation) - NEW",
-    "EVT-008: Russia banking crisis intensifying (Cat-4) - NEW"
-  ],
-  "updated_events": [
-    "EVT-001: Updated with $58.97B BOJ intervention size, SK joined intervention, 30Y Treasury at 5.274%",
-    "EVT-003: Updated case count to 3,748 cases / 1,657 deaths, new vaccine trial launched",
-    "EVT-004: Updated with 21-year low price data, Q2 2005 series baseline breach",
-    "EVT-006: Updated with current oil $78, gold $4,350, World Bank 24% energy surge projection"
-  ]
 }

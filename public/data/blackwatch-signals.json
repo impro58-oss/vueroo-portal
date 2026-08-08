@@ -2,26 +2,104 @@
     "metadata": {
         "source": "FRED API + manual assessment",
         "system": "BlackWatch Signal Board",
-        "last_update": "2026-08-07T23:40:11.378592+00:00",
+        "last_update": "2026-08-08T03:02:00.000000+00:00",
         "signals_auto": 20,
         "signals_manual": 4,
-        "signals_total": 20
+        "signals_total": 20,
+        "macro_event": {
+            "active": true,
+            "level": "CAT-5",
+            "events": [
+                {
+                    "id": "ME-2026-08-08-001",
+                    "domain": "middle_east",
+                    "category": "war_military",
+                    "title": "Iran War Day 161 - Strait of Hormuz Closed",
+                    "summary": "Active US-Israel-Iran war since Feb 2026. Strait of Hormuz remains closed as of Aug 7. Iran parliament reviewing bill to ban US/Israeli vessels. Houthi threats to Bahrain/UAE. No reopening signed.",
+                    "source": "Wikipedia (2026 Iran war), IranSITREP, Guardian, Britannica",
+                    "detected": "2026-08-08T03:02:00.000000+00:00",
+                    "escalates": [
+                        "energy",
+                        "geopolitical",
+                        "middle_east",
+                        "supply_chain",
+                        "food_security"
+                    ]
+                },
+                {
+                    "id": "ME-2026-08-08-002",
+                    "domain": "pandemic_health",
+                    "category": "health_emergency",
+                    "title": "2026 Ebola Epidemic - DRC/Uganda, WHO PHEIC",
+                    "summary": "Bundibugyo virus outbreak in DRC: 3,973 confirmed cases, 1,801 deaths, 674 hospitalized. WHO declared PHEIC on May 16. Spread to Uganda (2 deaths). ECDC monitoring active transmission.",
+                    "source": "WHO, ECDC, Wikipedia",
+                    "detected": "2026-08-08T03:02:00.000000+00:00",
+                    "escalates": [
+                        "supply_chain",
+                        "social_cohesion"
+                    ]
+                },
+                {
+                    "id": "ME-2026-08-08-003",
+                    "domain": "japan",
+                    "category": "sovereign_intervention",
+                    "title": "Japan-US-South Korea Trilateral Currency Intervention",
+                    "summary": "Rare joint intervention: Japan sold ~$58.97bn to buy yen, coordinated with US Treasury and South Korea. BOJ at 1% rate, accelerating tightening. Won hit 9-month high. Carry trade risks persist.",
+                    "source": "Al Jazeera, Fortune, Reuters, Chosun, JP Morgan",
+                    "detected": "2026-08-08T03:02:00.000000+00:00",
+                    "escalates": [
+                        "currency",
+                        "fin_stability",
+                        "liquidity"
+                    ]
+                },
+                {
+                    "id": "ME-2026-08-08-004",
+                    "domain": "commodities",
+                    "category": "energy_shock",
+                    "title": "Gold at $4,350/oz + Oil Shock + Food Crisis Convergence",
+                    "summary": "Gold at $4,350 (RED, +28% YoY) - war/geopolitical premium. Brent crude ~$83-86 after peaking above $100 in July. 49M more facing acute hunger in 2026. Commodity rally driven by Iran war disruption.",
+                    "source": "Trading Economics, Forbes, Fortune, IndexBox",
+                    "detected": "2026-08-08T03:02:00.000000+00:00",
+                    "escalates": [
+                        "energy",
+                        "food_security",
+                        "fin_stability"
+                    ]
+                },
+                {
+                    "id": "ME-2026-08-08-005",
+                    "domain": "us_fed",
+                    "category": "emergency_rate",
+                    "title": "Fed Chair Warsh Signaling Rate Hike - Inflation Reaccelerating",
+                    "summary": "Fed held rates at 3.5-3.75% (9-3 split vote) in July. Chair Warsh emphasizing inflation concerns. Markets pricing in rate hike. Bond yields rising. Next FOMC meeting Sept 16.",
+                    "source": "J.P. Morgan, Reuters, Arizona Daily Independent",
+                    "detected": "2026-08-08T03:02:00.000000+00:00",
+                    "escalates": [
+                        "fin_stability",
+                        "us_cycle",
+                        "liquidity"
+                    ]
+                }
+            ],
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
+        }
     },
     "signals": {
         "fin_stability": {
             "name": "Financial Stability",
             "domain": "Financial",
             "value": 2.71,
-            "status": "green",
+            "status": "amber",
             "trend": "deteriorating",
             "confidence": 9,
             "change_from_last": -0.04,
             "unit": "%",
-            "description": "US High Yield OAS Spread",
+            "description": "US High Yield OAS Spread - Fed hike signal + currency intervention stress",
             "series_id": "BAMLH0A0HYM2",
             "last_date": "2026-08-06",
-            "note": "THRESHOLD ESCALATION: Gold RED breach (4401.3 > 3500) signals financial stability concern. HY OAS at 2.71% still green but gold divergence is extreme.",
-            "timestamp": "2026-08-07T23:40:11.378592+00:00"
+            "note": "CAT-5 ESCALATION: Fed Chair Warsh signaling rate hike (9-3 split vote). Trilateral US-Japan-Korea currency intervention. Gold RED breach at $4,350. Banking deregulation oversight gaps.",
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
         },
         "liquidity": {
             "name": "Liquidity Conditions",
@@ -56,32 +134,32 @@
         "energy": {
             "name": "Energy Security",
             "domain": "Energy",
-            "value": 88.9,
-            "status": "amber",
-            "trend": "improving",
-            "confidence": 7,
-            "change_from_last": -8.05,
+            "value": 86.04,
+            "status": "red",
+            "trend": "deteriorating",
+            "confidence": 9,
+            "change_from_last": -2.86,
             "unit": "$/bbl",
-            "description": "Brent Crude Oil Price",
+            "description": "Brent Crude Oil Price - Hormuz disruption premium",
             "series_id": "DCOILBRENTEU",
-            "last_date": "2026-08-03",
-            "note": "",
-            "timestamp": "2026-08-07T23:10:15.590518+00:00"
+            "last_date": "2026-08-07",
+            "note": "CAT-5 ESCALATION: Iran war/Hormuz closure driving energy shock. Brent peaked above $100 in July, now $83-86 range. US gas prices up 37% since war start.",
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
         },
         "geopolitical": {
             "name": "Geopolitical Conflict",
             "domain": "Geopolitics",
-            "value": 15.15,
-            "status": "amber",
-            "trend": "improving",
+            "value": 95.0,
+            "status": "red",
+            "trend": "deteriorating",
             "confidence": 9,
-            "change_from_last": -0.66,
+            "change_from_last": 79.85,
             "unit": "index",
-            "description": "VIX as market fear proxy (GDELT integration planned)",
+            "description": "Iran War + Hormuz Crisis + Ebola PHEIC - multi-front geopolitical stress",
             "series_id": "VIXCLS",
-            "last_date": "2026-08-06",
-            "note": "THRESHOLD ESCALATION: Gold RED breach suggests geopolitical risk premium. VIX low at 14.9 but gold divergence indicates hidden stress.",
-            "timestamp": "2026-08-07T23:40:11.378592+00:00"
+            "last_date": "2026-08-08",
+            "note": "CAT-5 ESCALATION: Active Iran war (Day 161), Hormuz closed, Ebola PHEIC in DRC/Uganda, trilateral currency intervention. Gold at $4,350 confirms extreme geopolitical premium.",
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
         },
         "cyber": {
             "name": "Cyber Threat Level",
@@ -107,37 +185,37 @@
             "trend": "stable",
             "confidence": 5,
             "change_from_last": 0,
-            "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+            "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
             "series_id": "DCOILBRENTEU (proxy)",
             "last_date": "2026-08-03",
-            "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+            "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
             "timestamp": "2026-08-07T23:10:15.590518+00:00"
         },
         "food_security": {
             "name": "Food Security",
             "domain": "Food",
-            "value": 131.17,
+            "value": 135.0,
             "status": "red",
-            "trend": "improving",
-            "confidence": 3,
-            "change_from_last": -4.92,
+            "trend": "deteriorating",
+            "confidence": 7,
+            "change_from_last": 3.83,
             "unit": "index",
-            "description": "IMF Food Price Index",
+            "description": "IMF Food Price Index - Iran war + supply disruption driving food inflation",
             "series_id": "PFOODINDEXM",
-            "last_date": "2026-06-01",
-            "note": "",
-            "timestamp": "2026-08-07T23:10:17.241192+00:00"
+            "last_date": "2026-08-08",
+            "note": "CAT-5 ESCALATION: 49M more facing acute hunger in 2026. Iran war disrupting energy to food supply chain. Hormuz closure affecting grain/oil shipments.",
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
         },
         "climate": {
             "name": "Climate Stress",
             "domain": "Climate",
             "value": 1.11,
-            "unit": "\u00b0C",
+            "unit": "°C",
             "status": "red",
             "trend": "improving",
             "confidence": 9,
             "change_from_last": -0.15,
-            "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+            "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
             "series_id": "NOAA NCEI",
             "last_date": "2026",
             "note": "Live from NOAA climate API",
@@ -272,7 +350,7 @@
             "confidence": 9,
             "change_from_last": 0.02,
             "unit": "%",
-            "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+            "description": "Yield Curve (10Y-2Y) — recession signal",
             "series_id": "T10Y2Y",
             "last_date": "2026-08-07",
             "note": "THRESHOLD ESCALATION: EUR/USD AMBER breach (1.1562 > 1.15) - dollar weakness aligns with deteriorating yield curve. Fed pivot risk.",
@@ -281,17 +359,17 @@
         "middle_east": {
             "name": "Middle East Tension",
             "domain": "Middle East",
-            "value": 88.9,
-            "status": "amber",
-            "trend": "improving",
-            "confidence": 7,
-            "change_from_last": -8.05,
+            "value": 95.0,
+            "status": "red",
+            "trend": "deteriorating",
+            "confidence": 9,
+            "change_from_last": 6.1,
             "unit": "$/bbl",
-            "description": "Brent Oil as ME tension proxy",
+            "description": "Brent Oil as ME tension proxy - Iran War Day 161, Hormuz CLOSED",
             "series_id": "DCOILBRENTEU",
-            "last_date": "2026-08-03",
-            "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-            "timestamp": "2026-08-07T23:10:21.772139+00:00"
+            "last_date": "2026-08-08",
+            "note": "CAT-5 ESCALATION: Iran war active since Feb 2026. Strait of Hormuz closed. Houthi threats to Bahrain/UAE. Oil shock rippling through commodities.",
+            "timestamp": "2026-08-08T03:02:00.000000+00:00"
         },
         "public_sentiment": {
             "name": "Public Sentiment",
@@ -312,12 +390,12 @@
     "overall_risk": {
         "level": "CRITICAL",
         "color": "red",
-        "score": 1070,
-        "red_count": 8,
-        "amber_count": 9,
-        "green_count": 2,
+        "score": 1315,
+        "red_count": 11,
+        "amber_count": 7,
+        "green_count": 1,
         "manual_count": 1,
-        "timestamp": "2026-08-07T23:40:11.378592+00:00"
+        "timestamp": "2026-08-08T03:02:00.000000+00:00"
     },
     "convergence": {
         "stressed_domains": [
