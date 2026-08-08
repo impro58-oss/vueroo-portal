@@ -2,17 +2,18 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-08T17:03:08.062500+00:00",
+    "last_update": "2026-08-08T19:03:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 21,
+    "breaking_event": "Breaking event scanner 19:02 UTC: 2 new/escalating events. Iran maximalist demands + private credit distress. 12 events tracked."
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.04,
@@ -20,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "",
-      "timestamp": "2026-08-08T17:03:02.563452+00:00"
+      "note": "ESCALATED: Private credit 1.8T PIK distress growing, Russia banking deterioration",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -57,31 +58,31 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-08T17:03:03.775238+00:00"
+      "note": "ESCALATED: Paks nuclear complete shutdown, Romania reactor closure, oil rising on Iran draft plan",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.15,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.66,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-08T17:03:04.478101+00:00"
+      "note": "ESCALATED: Iran-Saudi defense pact expanding, Sudan siege, Argentina-Brazil worst in 40 years",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,15 +104,15 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-08T17:03:04.070457+00:00"
+      "note": "ESCALATED: Europe energy grid at breaking point, Hormuz closed Day 161",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-08T17:03:07.718738+00:00"
+      "note": "ESCALATED: Iran new maximalist demands for Hormuz, Egypt may join defense pact",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,33 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-08T17:03:08.030753+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "unit": "",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0,
+      "description": "Breaking event scanner: 2 Cat-5 events active (Hormuz/Ebola), 4 Cat-4 events. Iran new maximalist demands. Private credit distress growing.",
+      "series_id": null,
+      "last_date": "2026-08-08",
+      "note": "Auto-set by BlackWatch Breaking Event Scanner. 12 events tracked across 12 domains.",
+      "timestamp": "2026-08-08T19:03:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 579,
-    "red_count": 8,
-    "amber_count": 9,
-    "green_count": 2,
-    "manual_count": 1,
-    "timestamp": "2026-08-08T17:03:08.062500+00:00"
+    "score": 52,
+    "red_count": 13,
+    "amber_count": 6,
+    "green_count": 1,
+    "info_count": 1,
+    "manual_count": 0,
+    "timestamp": "2026-08-08T19:03:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
