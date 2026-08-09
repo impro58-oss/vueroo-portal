@@ -2,41 +2,42 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-09T17:04:41.239065+00:00",
+    "last_update": "2026-08-09T19:03:38.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Breaking event scanner: 4 CAT-5 events detected (trilateral FX intervention, Hormuz disruption, Iran war, Ebola PHEIC)"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": -0.04,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "",
-      "timestamp": "2026-08-09T17:04:36.071418+00:00"
+      "note": "BREAKING: US-Japan-Korea trilateral FX intervention (first in 15 years). Systemic currency war escalation. Private credit distress confirmed.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 3,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "",
-      "timestamp": "2026-08-09T17:04:36.438831+00:00"
+      "note": "FIMA repo facility used for joint intervention. Dollar funding stress. Treasury 30Y at highest since 2007.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -57,31 +58,31 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-09T17:04:37.125310+00:00"
+      "note": "BREAKING: Strait of Hormuz active disruption. US naval blockade on Iran. Kharg Island idle. OPEC+ raising output but infrastructure attacks ongoing.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.15,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -0.66,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-09T17:04:37.511106+00:00"
+      "note": "BREAKING: 2026 Iran war active. 170 ballistic missiles launched at Israel. US bases targeted. Proxies attacking Saudi.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,30 +104,30 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-09T17:04:37.708902+00:00"
+      "note": "Hormuz closure disrupting global shipping. Oil infrastructure attacks. 2026 fuel crisis spreading.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
-      "confidence": 3,
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-09T17:04:38.237235+00:00"
+      "note": "2026 fuel crisis from Iran war creating food inflation. South America facing severe pressure. FAO warns fresh surge.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-09T17:04:38.989347+00:00"
+      "note": "BREAKING: Unprecedented US-Japan-Korea trilateral FX intervention. First joint US-Japan intervention in 15 years. Currency war regime shift.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -209,14 +210,14 @@
       "value": 4399.7,
       "unit": "$/oz",
       "status": "red",
-      "trend": "improving",
-      "confidence": 9,
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 304.3,
       "description": "Gold Futures (GC=F): $4,399.70 (+7.43%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-09",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-09T17:04:35.781090+00:00"
+      "note": "Gold at $4,343 (Aug 7), up 27.79% YoY. JP Morgan targeting $6,000 by end 2026. Safe haven demand from Iran war + currency war.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -240,28 +241,28 @@
       "unit": "CLI index",
       "status": "red",
       "trend": "stable",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-09T17:04:36.126803+00:00"
+      "note": "PBOC pledging loose monetary policy. Property crisis ongoing - real estate at 20-year lows, 70M jobs at risk.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-09T17:04:40.142049+00:00"
+      "note": "ECB forward curve pricing 40bps hikes by end 2026. Spanish debt decoupling from Germany/France. German growth only 0.7%.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-09T17:04:40.819214+00:00"
+      "note": "Iran war active. Hormuz crisis Day 161+. Proxies coordinating attacks. US naval blockade on Iranian ports.",
+      "timestamp": "2026-08-09T19:03:38.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,15 +313,21 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 579,
-    "red_count": 8,
-    "amber_count": 9,
-    "green_count": 2,
+    "score": 510,
+    "red_count": 15,
+    "amber_count": 4,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-09T17:04:41.239065+00:00"
+    "timestamp": "2026-08-09T19:03:38.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
+      {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 6
+      },
       {
         "domain": "Social",
         "red": 3,
@@ -328,10 +335,28 @@
         "stress_level": 6
       },
       {
-        "domain": "Financial",
+        "domain": "Currency",
+        "red": 2,
+        "amber": 0,
+        "stress_level": 4
+      },
+      {
+        "domain": "Energy",
         "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Food",
@@ -346,37 +371,19 @@
         "stress_level": 2
       },
       {
-        "domain": "Currency",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Geopolitics",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Cyber",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Supply Chain",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -398,16 +405,16 @@
         "red": 0,
         "amber": 1,
         "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
       }
     ],
     "convergence_active": true,
     "convergence_domains": [
+      {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 6
+      },
       {
         "domain": "Social",
         "red": 3,
@@ -415,30 +422,24 @@
         "stress_level": 6
       },
       {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Climate",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
         "domain": "Currency",
+        "red": 2,
+        "amber": 0,
+        "stress_level": 4
+      },
+      {
+        "domain": "Energy",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Geopolitics",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-09T17:04:41.239065+00:00"
+    "timestamp": "2026-08-09T19:03:38.000000+00:00"
   }
 }
