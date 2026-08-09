@@ -1,202 +1,264 @@
 {
-  "scan_time": "2026-08-08T23:03:00.000000Z",
+  "scan_time": "2026-08-09T11:02:00.000000Z",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1",
   "operator": "Lumina (cron job 85bd4029)",
   "date": "2026-08-09",
-  "utc_time": "2026-08-08T23:02Z",
+  "utc_time": "2026-08-09T11:02Z",
   "domains_scanned": 12,
-  "queries_executed": 36,
-  "previous_scan": "2026-08-08T19:03:00.000000Z",
+  "queries_executed": 14,
+  "previous_scan": "2026-08-09T07:03:00.000000Z",
   "events_detected": [
     {
-      "id": "BE-2026-0809-001",
+      "id": "BE-2026-0809-12001",
       "domain": "middle_east",
-      "title": "Hormuz Deal 'On Verge of Being Finalised' - Iran-Oman Coordinates Agreed, But Houthi Warnings Escalate",
+      "title": "Iran-Oman Hormuz Deal 'Very Close' - Reopening Tied to US Compensation",
       "category": "war_military",
       "severity": 5,
       "confidence": 10,
-      "description": "Al Jazeera/AP/Bloomberg: Iran says Hormuz deal with Oman 'on the verge of being finalised' after both countries agreed coordinates for shipping routes. Trump says deal could be announced soon. HOWEVER: Houthi movement warned Bahrain and UAE they 'will be targeted' if they join Hormuz campaign. No reopening signed as of Aug 7. Iran parliament reviewing bill to ban US/Israeli vessels. Hormuz remains closed Day 161. Potential de-escalation but not yet confirmed.",
-      "sources": ["Al Jazeera", "AP News", "Bloomberg", "Fortune", "IranSitRep", "Wikipedia"],
-      "triggers_matched": ["military action", "Hormuz", "escalation", "oil disruption", "war declaration"],
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain"],
-      "is_new": false,
-      "status_change": "POTENTIAL DE-ESCALATION - Iran-Oman coordinates agreed, deal close. But Houthi threats to Bahrain/UAE escalate. Not yet signed.",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "description": "Iran announced Aug 9 that Hormuz deal with Oman is 'very close'. Reopening depends on conditions including US compensation for MoU violations. Iran parliament reviewing ban on US/Israeli ships + toll charges. Trump admin rejected plan. War Day 163. Hormuz at 2% pre-war traffic. FIRST MEANINGFUL DE-ESCALATION SIGNAL since war began Feb 2026.",
+      "sources": [
+        "The Hill",
+        "ABC News",
+        "Economic Times",
+        "Tribune India",
+        "NPR",
+        "Wikipedia"
+      ],
+      "triggers_matched": [
+        "Hormuz",
+        "oil disruption",
+        "war declaration"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain"
+      ],
+      "is_new": true,
+      "status_change": "DE-ESCALATION SIGNAL - Iran-Oman deal 'very close'. Reopening tied to US concessions. Trend shifted to improving.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-002",
-      "domain": "pandemic_health",
-      "title": "Ebola: 4,053 Cases 1,850 Deaths - DRC Accelerating, WHO Says Outbreak Outpacing Response",
-      "category": "pandemic",
+      "id": "BE-2026-0809-12002",
+      "domain": "japan",
+      "title": "US-Japan Joint Currency Intervention Ongoing - FIMA Repo Active, BOJ Accelerating Tightening",
+      "category": "sovereign_intervention",
       "severity": 5,
       "confidence": 10,
-      "description": "WHO/ECDC: Bundibugyo virus disease outbreak intensifying in DRC. 4,053 confirmed cases (up from 3,973), 1,850 deaths (up from 1,801), 694 hospitalized. 53 of 140 health zones affected across 5 DRC provinces. Uganda declared Ebola-free July 28. France imported case confirmed June 24. WHO: outbreak spreading faster than response efforts. US pledged $242M. No approved vaccine for Bundibugyo strain. PHEIC declared May 16, 2026.",
-      "sources": ["WHO", "ECDC", "Wikipedia", "CDC"],
-      "triggers_matched": ["WHO emergency", "outbreak", "epidemic", "quarantine", "PHEIC"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
+      "description": "Joint intervention confirmed Aug 2-3. Japan sold ~$58.97B. Using Fed FIMA repo facility. BOJ held rates at 1% (8-1). BOJ accelerating tightening timeline. Takaichi food tax cut costing 4.4T yen. JGB yields surging. 1.3438 quadrillion debt exposed. BoA sees yen at 149 by year-end.",
+      "sources": [
+        "CNBC",
+        "Al Jazeera",
+        "Fortune",
+        "Japan Times",
+        "Wolf Street",
+        "Blockonomi"
+      ],
+      "triggers_matched": [
+        "intervention",
+        "FIMA repo",
+        "Treasury selling",
+        "decisive action"
+      ],
+      "escalate_to": [
+        "japan_sovereign",
+        "currency",
+        "fin_stability",
+        "liquidity"
+      ],
       "is_new": false,
-      "status_change": "Worsening - cases up 80, deaths up 49 since last report. DRC accelerating. No vaccine for Bundibugyo strain.",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "ONGOING - no new escalation. BOJ accelerating tightening timeline is new detail.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-003",
-      "domain": "japan",
-      "title": "Unprecedented Trilateral US-Japan-Korea FX Intervention - Yen Rally Fading, BOJ Signals September Hike",
+      "id": "BE-2026-0809-12003",
+      "domain": "pandemic_health",
+      "title": "Ebola Outbreak Outpacing Response - WHO Chief Warns, Health Workers Striking",
+      "category": "pandemic",
+      "severity": 4,
+      "confidence": 9,
+      "description": "PHEIC declared May 16/17 (Bundibugyo virus). 1,801 deaths in DRC, 2 in Uganda. WHO chief says outbreak outpacing response (Aug 5). Health workers striking. MSF running PARTNERS clinical trial. CDC issuing traveler guidance. ECDC monitoring.",
+      "sources": [
+        "Wikipedia",
+        "ECDC",
+        "CDC",
+        "MSF",
+        "Spectrum Local News"
+      ],
+      "triggers_matched": [
+        "pandemic",
+        "WHO emergency",
+        "outbreak"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "is_new": false,
+      "status_change": "WORSENING - WHO says outbreak outpacing response. Health workers striking.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
+    },
+    {
+      "id": "BE-2026-0809-12004",
+      "domain": "em_asia",
+      "title": "South Korea Won at 9-Month High - Trilateral Intervention Working",
       "category": "sovereign_intervention",
       "severity": 4,
-      "confidence": 10,
-      "description": "CNBC/Reuters/Al Jazeera: US Treasury intervened alongside Japan to support yen - Bessent's notepad read 'Buy Japanese Yen $5-10 bil'. Japan may have sold $58.97bn in New York markets. South Korea also joined - unprecedented trilateral intervention. Won hit 9-month high. Yen rally fading one week later. BOJ kept rates at 1% (8-1 vote), signaling possible September hike. BOJ accelerating tightening timeline under US pressure. Next FOMC Sep 16, BOJ Sep 17-18.",
-      "sources": ["CNBC", "Reuters", "Al Jazeera", "Fortune", "Chosun", "KED Global", "Axios", "Economy.ac"],
-      "triggers_matched": ["intervention", "FIMA repo", "Treasury selling", "decisive action"],
-      "escalate_to": ["fin_stability", "currency", "liquidity"],
-      "is_new": true,
-      "status_change": "ESCALATING - unprecedented trilateral US-Japan-Korea intervention confirmed. Yen gains fading. BOJ signaling September hike. Carry trade unwind risk remains.",
-      "timestamp": "2026-08-08T23:03:00Z"
-    },
-    {
-      "id": "BE-2026-0809-004",
-      "domain": "financial_system",
-      "title": "Private Credit $1.8T Market: PIK Distress Growing + Fed Boston Research + Russia Bankruptcies +13.7%",
-      "category": "market_dislocation",
-      "severity": 4,
-      "confidence": 9,
-      "description": "Axios (Aug 7): Growing share of private credit borrowers making PIK payments - rolling interest into balances instead of cash. Fed Boston research confirms trend. Bloomberg: private credit funds rebounding but $1.8T market under scrutiny - 'either bring about next financial crisis or pressure peter out'. ABC Australia: billion-dollar property collapse highlights private credit danger. American Banker: federal regulatory bodies face sweeping workforce reductions, oversight gap growing. Fed research on BDC funding published Aug 7. Russia: bankruptcies +13.7% YoY (137,500 Q1 2026), record 636K declarations.",
-      "sources": ["Axios", "Bloomberg", "Fed Boston", "American Banker", "ABC Australia", "Federal Reserve", "Moscow Times"],
-      "triggers_matched": ["bank failure", "systemic risk", "credit freeze", "counterparty"],
-      "escalate_to": ["fin_stability", "liquidity"],
+      "confidence": 8,
+      "description": "KRW best performing Asian currency. Won hits 9-month high from unprecedented joint intervention with US and Japan. Semiconductor demand supporting. Carry trade risks persist. DBS says intervention risks support KRW.",
+      "sources": [
+        "Chosun",
+        "FXStreet",
+        "KED Global"
+      ],
+      "triggers_matched": [
+        "intervention",
+        "currency crisis"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
       "is_new": false,
-      "status_change": "ESCALATING - PIK distress growing, Fed Boston research confirms, regulatory oversight gap widening, Russian banking stress deepening",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "STABILIZING - won at 9-month high, intervention working.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-005",
-      "domain": "eu_ecb",
-      "title": "Europe Grid at Breaking Point: Paks Nuclear Complete Shutdown + Romania Reactor Closure + Heatwave",
-      "category": "energy_shock",
+      "id": "BE-2026-0809-12005",
+      "domain": "japan",
+      "title": "Japan JGB Yields Surge - Takaichi Fiscal Push Adding to Debt Servicing Costs",
+      "category": "sovereign_crisis",
       "severity": 4,
-      "confidence": 10,
-      "description": "Europe energy grid under severe stress. Paks Nuclear Power Plant (40% of Hungary's electricity) shut down all but one turbine due to Danube record-low water levels. Romania closed one of two reactors after blowing up rocks to divert cooling water. Second heatwave late July into early August. ECB rate at 2.25% (deposit rate), German 10yr Bund yield above 3.0% (3.09%). ECB cut rates 8 times Jun 2024-Jun 2025, then held until Jun 2026 when they raised. Financial conditions slightly tighter.",
-      "sources": ["ECB", "FRED", "House of Commons Library", "Trading Economics"],
-      "triggers_matched": ["disruption", "shortage", "energy emergency"],
-      "escalate_to": ["energy", "supply_chain", "europe", "fin_stability"],
+      "confidence": 8,
+      "description": "Takaichi food tax cut costing 4.4T yen revenue. 1.3438 quadrillion debt exposed. Morningstar DBRS says risks 'manageable' but favorable debt dynamics is key challenge. US feared forced Treasury selling if Japan needed to dump bonds for intervention.",
+      "sources": [
+        "CNBC",
+        "Blockonomi",
+        "Morningstar",
+        "Wolf Street"
+      ],
+      "triggers_matched": [
+        "JGB spike",
+        "decisive action"
+      ],
+      "escalate_to": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
       "is_new": false,
-      "status_change": "Ongoing - Europe grid stress continues. ECB rates elevated, Bund yields above 3%.",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "ONGOING - Morningstar says risks manageable but debt dynamics worsening.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-006",
-      "domain": "africa",
-      "title": "Sudan El-Obeid Siege + Nigeria-SA Xenophobic Crisis: 109K Deportations, Ghana Cancels Ramaphosa Visit",
-      "category": "war_military",
-      "severity": 4,
-      "confidence": 9,
-      "description": "Sudan: El-Obeid under relentless drone strikes, water shortages, cholera outbreak. UN warns of mass atrocities. Nigeria-SA: Diplomatic crisis deepening - SA deportations topping 109,000 by end-March 2026. Ghana cancelled President Ramaphosa's August visit in protest. Nigeria renewing calls for compensation for citizens' losses. BBC: Nigeria security forces struggle with multiple threats. Nollywood actor allegedly recruited as coup propagandist.",
-      "sources": ["Rio Times", "BBC", "Upshot Reports", "Abuja Network News", "AllAfrica"],
-      "triggers_matched": ["conflict", "coup", "war declaration"],
-      "escalate_to": ["geopolitical", "social_cohesion"],
-      "is_new": false,
-      "status_change": "Ongoing - Sudan siege continues, Nigeria-SA diplomatic crisis widening with Ghana cancellation",
-      "timestamp": "2026-08-08T23:03:00Z"
-    },
-    {
-      "id": "BE-2026-0809-007",
-      "domain": "commodities",
-      "title": "Gold at $4,400 + Oil Above $100: Geopolitical Oil Shock Replacing AI Speculation",
-      "category": "market_dislocation",
-      "severity": 4,
-      "confidence": 9,
-      "description": "IndexBox: 'Markets pivoted from AI speculation to geopolitical oil shock.' Brent above $100, 20% July surge. Gold at $4,399.70 (Aug 8), up 9.07% on week, safe-haven demand from Iran war + rate concerns. Gold-oil moving in opposite directions for most of 2026. Food crisis: 49 million more impoverished people projected to face acute hunger in 2026. Gold record high was $5,602 in Jan 2026.",
-      "sources": ["IndexBox", "Yahoo Finance", "GoldSilver.com", "Economic Collapse Report"],
-      "triggers_matched": ["spike", "disruption", "shortage", "safe haven"],
-      "escalate_to": ["currency", "fin_stability", "energy", "food_security"],
-      "is_new": false,
-      "status_change": "ESCALATING - oil above $100 confirmed as geopolitical shock. Gold at $4,400. Food crisis projections worsening.",
-      "timestamp": "2026-08-08T23:03:00Z"
-    },
-    {
-      "id": "BE-2026-0809-008",
+      "id": "BE-2026-0809-12006",
       "domain": "latam",
-      "title": "Argentina-Brazil 'Worst in Four Decades' - Country Risk 451 bps, Brazil Withdrew Ambassador",
+      "title": "Argentina Country Risk at 451 bps - IMF Payment Wall, Brazil Diplomatic Crisis",
       "category": "sovereign_crisis",
       "severity": 3,
-      "confidence": 8,
-      "description": "Argentina-Brazil relations at worst point in 40 years. Brazil withdrew ambassador from Argentina. Argentina country risk climbed to 451 bps (Aug 7), up 3%, highest since June - decoupling from regional rally. Argentina defaulted on R$63.6M debt to Brazil's Casa da Moeda. Argentina-China extended currency swap Aug 6. IMF payments $3B due H2 2026, doubling in 2027. Merval down 2.61%.",
-      "sources": ["Rio Times", "Buenos Aires Herald", "Frances News"],
-      "triggers_matched": ["sovereign crisis", "default", "devaluation"],
-      "escalate_to": ["fin_stability", "currency"],
+      "confidence": 7,
+      "description": "Country risk at 451 bps (highest since June). ~$3B IMF payments due rest of 2026, doubling in 2027. Brazil withdrew ambassador from Argentina. Merval -2.61%. Bilateral trade threatened. Decoupling from regional rally.",
+      "sources": [
+        "PIIE",
+        "Rio Times Online",
+        "Buenos Aires Herald"
+      ],
+      "triggers_matched": [
+        "sovereign crisis",
+        "IMF emergency"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ],
       "is_new": false,
-      "status_change": "Worsening - ambassador withdrawn, debt default confirmed, country risk rising",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "ONGOING - country risk rising, IMF payment wall approaching.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-009",
-      "domain": "us_fed",
-      "title": "Fed: Rate Hold at 3.50-3.75%, Inflation Concerns Reaccelerating, September Hike Odds Dropped",
-      "category": "emergency_rate",
-      "severity": 3,
-      "confidence": 8,
-      "description": "JPMorgan: Fed held rates at 3.50-3.75% in July, 5th consecutive hold. New Fed Chair Kevin Warsh emphasizing inflation concerns - investors concluding rate hike coming soon, bidding up bond yields. Reuters: Warsh's emphasis on inflation led investors to conclude increase coming. Weak jobs report reduced September hike odds. 3 FOMC dissenters voted for hike in July. Next FOMC Sep 16. Treasury refunding $125B on Aug 15.",
-      "sources": ["JPMorgan", "Reuters", "Federal Reserve", "Investing.com", "Central Bank Watch"],
-      "triggers_matched": ["emergency rate", "surprise decision"],
-      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
-      "is_new": false,
-      "status_change": "Stabilizing - weak jobs report reduced September hike odds, but Warsh's inflation emphasis keeps tightening bias alive",
-      "timestamp": "2026-08-08T23:03:00Z"
-    },
-    {
-      "id": "BE-2026-0809-010",
+      "id": "BE-2026-0809-12007",
       "domain": "china",
-      "title": "PBOC Pledges 'Timely' Policy Adjustment + Currency Undervalued 20%+ + Property Crisis Ongoing",
-      "category": "market_dislocation",
+      "title": "China Property Crisis + PBOC Loose Policy + Currency Undervaluation 20%+",
+      "category": "sovereign_crisis",
       "severity": 3,
       "confidence": 7,
-      "description": "PBOC pledged to adjust monetary policy tools 'in timely manner' and facilitate panda bond issuance (Aug 2). Implementing 'appropriately loose' monetary policy with 'ample liquidity'. CFR: Chinese currency undervalued 20%+. Property sector crisis ongoing since 2020 Evergrande default. PBOC gold buying streak at 21 months. De-dollarization accelerating.",
-      "sources": ["Reuters", "Business Recorder", "CFR", "Wikipedia", "Yuan Talks"],
-      "triggers_matched": ["intervention", "capital flight", "devaluation"],
-      "escalate_to": ["china", "fin_stability", "currency"],
+      "description": "PBOC pledging timely policy adjustment, appropriately loose monetary policy. Property crisis ongoing since 2020. CFR estimates yuan undervalued 20%+. Beijing trimmed 2026 growth forecast. Stabilizing property, local debt, small banks.",
+      "sources": [
+        "CFR",
+        "TradingEconomics",
+        "YuanTalks",
+        "Business Recorder"
+      ],
+      "triggers_matched": [
+        "devaluation",
+        "property collapse"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ],
       "is_new": false,
-      "status_change": "Ongoing - PBOC in easing mode, currency undervalued, property crisis unresolved",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "ONGOING - PBOC signaling more support. No escalation.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     },
     {
-      "id": "BE-2026-0809-011",
-      "domain": "em_asia",
-      "title": "KRW at 9-Month High on Trilateral Intervention - KOSPI Weakness Signals Underlying Stress",
+      "id": "BE-2026-0809-12008",
+      "domain": "financial_system",
+      "title": "Private Credit $1.8T Market - Averting Worst Fears, Regulatory Gaps Widening",
       "category": "market_dislocation",
       "severity": 3,
-      "confidence": 8,
-      "description": "South Korea won hit 9-month high on unprecedented joint intervention with US and Japan. KRW best performing Asian currency on semiconductor demand + FX coordination. JP Morgan warns: intervention alone rarely changes trend without credible monetary-fiscal mix. Korean retail investors returning to Wall Street as KOSPI rout continues. Carry trade risks persist.",
-      "sources": ["Chosun", "KED Global", "JP Morgan Private Bank Asia"],
-      "triggers_matched": ["intervention", "currency crisis", "contagion"],
-      "escalate_to": ["currency", "fin_stability"],
+      "confidence": 6,
+      "description": "Bloomberg Aug 6: private credit funds 'avert worst fears and rebound from lows.' 10.6% of BDC-held companies show credit stress. American Banker flags regulatory oversight gaps. Federal regulatory bodies face workforce reductions. Russian bankruptcies +13.7% YoY.",
+      "sources": [
+        "Bloomberg",
+        "American Banker",
+        "Morningstar",
+        "Moscow Times"
+      ],
+      "triggers_matched": [
+        "systemic risk",
+        "liquidity crisis"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ],
       "is_new": false,
-      "status_change": "Stabilizing on intervention support, but KOSPI weakness and carry trade risks remain",
-      "timestamp": "2026-08-08T23:03:00Z"
-    },
-    {
-      "id": "BE-2026-0809-012",
-      "domain": "uk",
-      "title": "BoE Held 6-3 at 3.75% - Mortgage Rates Rising in August, Fiscal Uncertainty Persists",
-      "category": "market_dislocation",
-      "severity": 3,
-      "confidence": 7,
-      "description": "BoE held base rate at 3.75% (6-3 vote). Governor Bailey downplaying need for additional rate hikes, saying disinflation on track. However, average mortgage rates edging back up in August as lenders increased fixed rates. Lower oil prices eased inflation fears, reinforcing gradual tightening expectations. Gilt yields falling on oil slump.",
-      "sources": ["Trading Economics", "HomeOwners Alliance", "House of Commons Library"],
-      "triggers_matched": ["gilts crisis", "fiscal emergency"],
-      "escalate_to": ["europe", "fin_stability"],
-      "is_new": false,
-      "status_change": "Stabilizing - Bailey gradual approach, gilt yields easing on lower oil. But mortgage rates rising.",
-      "timestamp": "2026-08-08T23:03:00Z"
+      "status_change": "STABILIZING - private credit rebounding, but regulatory gaps widening.",
+      "timestamp": "2026-08-09T11:02:00.000000Z"
     }
   ],
-  "events_detected": 12,
-  "new_events": 1,
-  "category_5_events": 2,
-  "category_4_events": 4,
-  "category_3_events": 6,
-  "max_severity": 5,
-  "macro_event_active": true,
-  "summary": "12 domains scanned at 23:02 UTC Aug 8. 1 NEW event: unprecedented trilateral US-Japan-Korea FX intervention confirmed. 2 Cat-5 events ongoing (Hormuz deal close but not signed, Ebola accelerating). 4 Cat-4 events (trilateral intervention, private credit PIK distress, Europe grid, Sudan/Africa). Oil above $100, gold at $4,400. Argentina-Brazil worst in 40 years. Hormuz deal reportedly close - potential de-escalation. Saturday night - markets quiet but geopolitical risk elevated.",
-  "changes_from_previous_scan": "NEW: Trilateral US-Japan-Korea FX intervention confirmed (unprecedented). Hormuz deal close - Iran-Oman coordinates agreed, 'on verge of being finalised' (potential Cat-5 de-escalation). Houthi threats to Bahrain/UAE. Private credit PIK distress escalating (Fed Boston research). Oil above $100 confirmed (IndexBox). BoE 6-3 hold. PBOC 'timely' adjustment pledge."
+  "summary": {
+    "total_events": 8,
+    "category_5_count": 2,
+    "new_events": 1,
+    "de_escalation_signals": 1,
+    "highest_severity": 5,
+    "macro_event_active": true,
+    "key_development": "Iran-Oman Hormuz deal 'very close' - first meaningful de-escalation signal since war began. Energy, Middle East, and Geopolitical trends shifted to 'improving'. Ebola outbreak worsening. Currency war ongoing but stabilizing in Asia.",
+    "trend_shifts": {
+      "energy": "deteriorating -> improving",
+      "middle_east": "deteriorating -> improving",
+      "geopolitical": "deteriorating -> improving",
+      "supply_chain": "deteriorating -> improving"
+    },
+    "domains_stable": [
+      "us_fed",
+      "eu_ecb",
+      "uk"
+    ],
+    "domains_critical": [
+      "japan",
+      "middle_east"
+    ],
+    "domains_worsening": [
+      "pandemic_health"
+    ],
+    "domains_improving": [
+      "em_asia",
+      "commodities",
+      "financial_system"
+    ]
+  }
 }
