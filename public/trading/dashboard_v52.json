@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-09T03:10:21.726080",
+  "timestamp": "2026-08-09T06:00:17.744826",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -28,46 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 94.65,
-    "unrealized_pnl_eur": -23.29,
+    "realized_pnl_eur": 71.4,
+    "unrealized_pnl_eur": -0.04,
     "total_pnl_eur": 71.36,
-    "open_positions": 5,
-    "closed_trades": 163,
+    "open_positions": 3,
+    "closed_trades": 165,
     "wins": 65,
-    "losses": 98,
-    "win_rate": 39.9
+    "losses": 100,
+    "win_rate": 39.4
   },
   "open_positions": {
-    "FETUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-07T09:01:32.385101",
-      "entry_price": 0.1314,
-      "atr": 0.008207142857142857,
-      "stop": 0.15191785714285713,
-      "highest": 0.1314,
-      "lowest": 0.1313,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "CFGUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-07T09:01:32.385101",
-      "entry_price": 0.1595,
-      "atr": 0.009892857142857144,
-      "stop": 0.18423214285714287,
-      "highest": 0.1595,
-      "lowest": 0.1566,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "EURIUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -77,7 +47,7 @@
       "stop": 1.142742857142857,
       "highest": 1.1584,
       "lowest": 1.1561,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -92,7 +62,7 @@
       "stop": 0.03257142857142857,
       "highest": 0.038,
       "lowest": 0.038,
-      "bars_held": 0,
+      "bars_held": 1,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -107,7 +77,7 @@
       "stop": 0.05288214285714286,
       "highest": 0.0609,
       "lowest": 0.0609,
-      "bars_held": 0,
+      "bars_held": 1,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -115,32 +85,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "HOLOUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-07-30T03:06:44.103573",
-      "exit_date": "2026-07-30T21:00:18.537013",
-      "entry_price": 0.0826,
-      "exit_price": 0.06845714285714287,
-      "pnl_pct": -17.12,
-      "pnl_eur": -42.81,
-      "reason": "ATR_STOP",
-      "bars_held": 6,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "BIOUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-07-29T13:12:15.915870",
-      "exit_date": "2026-07-31T09:00:23.859453",
-      "entry_price": 0.02259,
-      "exit_price": 0.02315,
-      "pnl_pct": -2.48,
-      "pnl_eur": -6.2,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "APTUSDT",
       "direction": "SHORT",
@@ -374,22 +318,48 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "FETUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-07T09:01:32.385101",
+      "exit_date": "2026-08-09T06:00:17.744826",
+      "entry_price": 0.1314,
+      "exit_price": 0.1381,
+      "pnl_pct": -5.1,
+      "pnl_eur": -12.75,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "CFGUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-07T09:01:32.385101",
+      "exit_date": "2026-08-09T06:00:17.744826",
+      "entry_price": 0.1595,
+      "exit_price": 0.1662,
+      "pnl_pct": -4.2,
+      "pnl_eur": -10.5,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "ZECUSDT",
-    "USDEUSDT",
     "EURUSDT",
-    "XAUTUSDT",
-    "UUSDT",
-    "BFUSDUSDT",
-    "USD1USDT",
     "KASUSDT",
-    "XUSDUSDT",
     "PAXGUSDT",
-    "RLUSDUSDT"
+    "XAUTUSDT",
+    "USD1USDT",
+    "USDEUSDT",
+    "RLUSDUSDT",
+    "BFUSDUSDT",
+    "UUSDT",
+    "ZECUSDT",
+    "XUSDUSDT"
   ]
 }
