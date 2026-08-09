@@ -1,204 +1,164 @@
 {
-  "scan_time": "2026-08-08T11:04:32.289940Z",
+  "scan_time": "2026-08-09T03:04:00.000000Z",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1",
-  "date": "2026-08-08",
-  "utc_time": "2026-08-08T11:02Z",
+  "date": "2026-08-09",
+  "utc_time": "2026-08-09T03:02Z",
   "domains_scanned": 12,
   "queries_executed": 36,
   "events": [
     {
       "domain": "middle_east",
-      "title": "Strait of Hormuz CLOSED Day 161 - Iran parliament reviewing US/Israel ship ban",
+      "title": "Strait of Hormuz CLOSED Day 162 - Iran issues 6 demands, Iran-Oman corridor deal close but conditions attached",
       "severity": 5,
       "category": "energy_shock",
-      "source": "iransitrep.com, straits.live, CNN, NPR",
-      "summary": "Hormuz effectively closed. 2 ships transited Aug 2 vs 73/day normal. Iran parliament bill to ban US/Israeli vessels. Brent $82.31. Houthis attacking Saudi oil tankers.",
-      "escalate_to": [
-        "energy",
-        "supply_chain",
-        "geopolitical",
-        "middle_east"
-      ],
+      "source": "ISW, CBS, Fox News, Wikipedia, Iran FM Araghchi",
+      "summary": "Hormuz remains closed Day 162. Iran FM Araghchi says Iran-Oman close to temporary transit route deal. SNSC Secretary Zolghadr issued 6 conditions for reopening: lift naval blockade, withdraw military, lift sanctions, unfreeze assets, pay reparations, cease threats. State Dept sanctioned 6 entities + 1 individual for Iran crypto funds. Iran parliament bill to ban US/Israeli vessels. Brent ~$83. Gold approaching $4,300.",
+      "escalate_to": ["energy", "supply_chain", "geopolitical", "middle_east"],
       "is_new": false,
-      "status_change": "Worsening - Iran parliament advancing ban bill, Houthis attacking tankers",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
+      "status_change": "Evolving - Iran-Oman corridor deal close but Iran attaches 6 preconditions, US sanctions crypto entities",
+      "timestamp": "2026-08-09T03:04:00Z"
     },
     {
       "domain": "japan",
-      "title": "US-Japan first joint yen intervention in 15 years - $58.97B deployed",
+      "title": "US-Japan yen intervention $75-85B total - Bessent notepad controversy, 1997-style Asian devaluation fears",
       "severity": 5,
       "category": "sovereign_intervention",
-      "source": "CNBC, Reuters, Al Jazeera, Mainichi",
-      "summary": "Joint US-Japan FX intervention Aug 1-3. Japan sold ~$58.97B. Using Fed FIMA repo. Yen 163->157. 2Y JGB 1.545% highest since 1995. US 30Y yield highest since 2007.",
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "japan_sovereign"
-      ],
+      "source": "OMFIF, Reuters Breakingviews, Irish Times, BOOM Finance",
+      "summary": "OMFIF estimates Japanese intervention ~$75B + US $5-10B. Bessent notepad photograph controversy - admitted US Treasury involvement. Irish Times: Bessent fears 1997-style competitive devaluations, wants Japan to avoid dumping US Treasuries. US Treasury allegedly used Euros not Dollars to avoid weakening dollar. Yen surges below 161. Carry trade unwind risk elevated.",
+      "escalate_to": ["fin_stability", "currency", "japan_sovereign"],
       "is_new": false,
-      "status_change": "Stabilizing but sustainability questioned",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "africa",
-      "title": "Sudan RSF siege of El-Obeid - UN warns imminent mass atrocities",
-      "severity": 4,
-      "category": "war_military",
-      "source": "NPR, DW, Sudan Tribune",
-      "summary": "500,000 trapped. Drone strikes, cholera, water shortages. UN/US/EU warning imminent atrocities.",
-      "escalate_to": [
-        "geopolitical",
-        "social_cohesion"
-      ],
-      "is_new": false,
-      "status_change": "Worsening - UN escalating warnings, cholera outbreak",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
+      "status_change": "Evolving - Bessent notepad controversy, alleged Euro-funded intervention, 1997-style fears confirmed",
+      "timestamp": "2026-08-09T03:04:00Z"
     },
     {
       "domain": "pandemic_health",
-      "title": "Ebola PHEIC ongoing - 3,973 cases 1,801 deaths DRC/Uganda",
+      "title": "Ebola outbreak tops 4,000 confirmed cases - MSF warns alarming spread, US tightens travel restrictions",
       "severity": 4,
       "category": "pandemic",
-      "source": "WHO, ECDC, BMJ",
-      "summary": "Bundibugyo strain. PHEIC May 16. Transmission accelerating. 567 new cases/week. Vaccine trials starting.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
+      "source": "Outbreak News Today, ReliefWeb, Regional Media News, Punch, WHO",
+      "summary": "DRC Ebola outbreak (Bundibugyo strain) now >4,000 confirmed cases, 17th outbreak in DRC history. MSF warned Aug 5 of alarming spread. US tightened travel restrictions for passengers from Uganda, South Sudan, DRC. WHO DG and Africa CDC conducted joint mission Aug 4-5 to Uganda and DRC. Uganda: 20 confirmed cases, 2 deaths, no new since June 21. No licensed vaccine for Bundibugyo strain.",
+      "escalate_to": ["supply_chain", "social_cohesion"],
       "is_new": false,
-      "status_change": "Worsening - transmission accelerating",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "eu_ecb",
-      "title": "Europe energy grid stress: Paks nuclear outage Danube historic lows",
-      "severity": 4,
-      "category": "energy_shock",
-      "source": "Previous scan + ongoing",
-      "summary": "Paks 1/8 turbines down. Danube historic lows. Diesel margins 20yr highs. Hungary near energy crisis. DE10Y above 3.0.",
-      "escalate_to": [
-        "energy",
-        "supply_chain",
-        "europe"
-      ],
-      "is_new": false,
-      "status_change": "Ongoing - heatwave persisting",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "us_fed",
-      "title": "Fed: 3 FOMC dissenters vote for hike, Warsh emphasizing inflation fight",
-      "severity": 3,
-      "category": "emergency_rate",
-      "source": "JP Morgan, NYT, Reuters",
-      "summary": "July FOMC held at 3.5-3.75%. 3 members wanted hike. Warsh hawkish. Markets pricing hike odds up. $125B Treasury refunding Aug 15.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "is_new": false,
-      "status_change": "Elevated - 3 dissenters unusual",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "em_asia",
-      "title": "Korean Won surges 8.8% fastest since financial crisis",
-      "severity": 3,
-      "category": "market_dislocation",
-      "source": "Chosun, FRED",
-      "summary": "KRW surged 8.8% fastest since 2008. Individuals buying dollars. Won at 1415.95. Likely carry trade unwind + dollar weakness post yen intervention.",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": true,
-      "status_change": "NEW - rapid KRW appreciation signals carry trade unwind",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "latam",
-      "title": "Argentina-Brazil diplomatic crisis Brazil withdraws ambassador",
-      "severity": 3,
-      "category": "sovereign_crisis",
-      "source": "PIIE, Buenos Aires Herald",
-      "summary": "Brazil withdrew ambassador. Merval -2.61%. Argentina IMF payments $3B due H2 2026. Trade relationship at risk.",
-      "escalate_to": [
-        "fin_stability",
-        "currency"
-      ],
-      "is_new": false,
-      "status_change": "Ongoing",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "china",
-      "title": "China property bust spilling across borders PBOC pledges loose policy",
-      "severity": 3,
-      "category": "market_dislocation",
-      "source": "PIIE, CFR, Trading Economics",
-      "summary": "Property bust spilling. Current accounts shifting 4pp. PBOC loose policy H2 2026. Growth targets trimmed.",
-      "escalate_to": [
-        "china",
-        "fin_stability",
-        "currency"
-      ],
-      "is_new": false,
-      "status_change": "Ongoing",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
-    },
-    {
-      "domain": "uk",
-      "title": "UK gilt volatility 24B Treasury gap BoE 6-3 hold",
-      "severity": 3,
-      "category": "market_dislocation",
-      "source": "Trading Economics, BBC",
-      "summary": "BoE 6-3 hold. Gilts volatile. 24B Treasury gap. Fiscal uncertainty from new government.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "is_new": false,
-      "status_change": "Elevated",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
+      "status_change": "Worsening - crossed 4,000 cases milestone, US travel restrictions, MSF alarming spread warning",
+      "timestamp": "2026-08-09T03:04:00Z"
     },
     {
       "domain": "africa",
-      "title": "Mali coup attempt thwarted water and power crisis",
-      "severity": 3,
+      "title": "Sudan civil war 14M displaced + Nigeria-South Africa 178K deportations xenophobic crisis deepening",
+      "severity": 4,
       "category": "war_military",
-      "source": "Wikipedia, Critical Threats",
-      "summary": "Coordinated attacks described as coup attempt. Water and power crisis. US expanding base in Bosaso.",
-      "escalate_to": [
-        "geopolitical"
-      ],
+      "source": "Wikipedia, Arab News, Rio Times, The Gazelle News",
+      "summary": "Sudan: 14M+ forcibly displaced, 4.5M refugees - one of largest displacement crises globally. Nigeria-SA crisis: 178K+ immigrants fled or deported from South Africa. Mozambicans killed, Nigeria and Ghana claim citizens killed. Fani-Kayode appointed to protect Nigerian interests in SA. Sudan banking confidence crisis worsening.",
+      "escalate_to": ["geopolitical", "social_cohesion"],
       "is_new": false,
-      "status_change": "Ongoing",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
+      "status_change": "Worsening - 178K deportations confirmed, Sudan displacement at 14M, diplomatic crisis deepening",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "eu_ecb",
+      "title": "ECB rate hold at 2.25% + German bunds above 3% + Europe energy grid stress + UK gilt volatility",
+      "severity": 4,
+      "category": "energy_shock",
+      "source": "House of Commons Library, Financial News, MoneyWeek",
+      "summary": "ECB held rates at 2.25% after 8 cuts Jun24-Jun25 then pause. DE10Y above 3.0%. UK 10Y gilt yield ~4.89-4.95%, volatile on Burnham fiscal flexibility remarks. MoneyWeek: bond market will burn Burnham. UK CPI 2.6% above 2% target, BoE expected to hold. Eurozone GDP beat 0.4% QoQ vs 0.2% consensus.",
+      "escalate_to": ["energy", "supply_chain", "europe", "fin_stability"],
+      "is_new": false,
+      "status_change": "Ongoing - UK gilt volatility on Burnham fiscal remarks, ECB hold confirmed, EU GDP beat",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "commodities",
+      "title": "NEW: British Columbia declares provincial state of emergency - wildfires spreading",
+      "severity": 4,
+      "category": "market_dislocation",
+      "source": "CBC News, EmergencyInfoBC, NYT, BC Wildfire Service",
+      "summary": "BC declared province-wide state of emergency Aug 8 due to regional wildfires. Officials warn more challenging fire behaviour ahead. NYT: wildfire crisis shifted westward, evacuations triggered. Ontario fires earlier choked cities to the south. This is a new climate-stress event escalating to emergency level.",
+      "escalate_to": ["climate", "supply_chain", "food_security"],
+      "is_new": true,
+      "status_change": "NEW EVENT - BC provincial state of emergency declared, wildfire crisis escalating",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "us_fed",
+      "title": "Fed: 3 dissenters want hike, markets pricing 77% September hike odds, CPI Aug 13-14 key",
+      "severity": 3,
+      "category": "emergency_rate",
+      "source": "Trading Economics, Fox Business, Newsquawk, Polymarket",
+      "summary": "July FOMC held at 3.5-3.75%. 3 governors dissented wanting 25bp hike. Markets now pricing 77% probability of September hike. Polymarket live on September decision. Next CPI Aug 13-14 key data point. Pantheon: August inflation more likely to bear on September decision. 30Y Treasury yield hit 5.28% in July, highest since 2007.",
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "is_new": false,
+      "status_change": "Elevated - September hike odds at 77%, 30Y at 5.28% highest since 2007",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "latam",
+      "title": "Argentina-Brazil crisis worst in four decades - country risk 451, Xinhua reports electoral interference",
+      "severity": 3,
+      "category": "sovereign_crisis",
+      "source": "Prensa Mercosur, Rio Times, Xinhua, Buenos Aires Herald",
+      "summary": "Prensa Mercosur: Argentina-Brazil relations at most delicate point in four decades. Argentina country risk climbed to 451 bps, Merval fell 6th day. Brazil withdrew ambassador. Xinhua: crisis represents orchestrated electoral interference by conservative international from US. Brazil markets pricing Lula 4, UBS warns 2027 fiscal reckoning. Real at R$5.13/$.",
+      "escalate_to": ["fin_stability", "currency"],
+      "is_new": false,
+      "status_change": "Worsening - worst crisis in 4 decades per Prensa Mercosur, Xinhua reports electoral interference angle",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "em_asia",
+      "title": "India RBI intervenes to shield rupee at 95.28 - Raghuram Rajan warns on oil reserves",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "Reuters, Times of India, Economic Times, SEBI",
+      "summary": "Rupee at 95.28/$. RBI intervening to shield from oil price jump. Rajan warns India needs larger strategic oil reserves and diversified imports. SEBI: India markets supported by resilient fundamentals but global risks elevated. Philippine energy crisis from Hormuz closure. South Korea extreme heat spreading to Seoul.",
+      "escalate_to": ["currency", "fin_stability"],
+      "is_new": false,
+      "status_change": "Elevated - RBI active intervention, rupee at 95.28, Philippine energy crisis",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "china",
+      "title": "China FX reserves $3.42T + PBOC loose policy continues + property crisis ongoing",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "SAFE, Wikipedia, Reuters, CFR",
+      "summary": "China FX reserves $3.4188T end-July, +$2.5B from June. PBOC maintaining moderately loose monetary policy H2 2026. Property crisis ongoing with no resolution. Currency undervalued 20%+ per CFR. Current account surplus shifting 4pp.",
+      "escalate_to": ["china", "fin_stability", "currency"],
+      "is_new": false,
+      "status_change": "Ongoing - FX reserves stable, PBOC loose stance unchanged, property crisis continues",
+      "timestamp": "2026-08-09T03:04:00Z"
+    },
+    {
+      "domain": "uk",
+      "title": "UK: Burnham fiscal flexibility remarks rattle gilts + bond market will burn Burnham warning",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "Financial News, MoneyWeek, House of Commons Library, BBC",
+      "summary": "New PM Burnham fiscal flexibility remarks caused gilt yield spike to 4.95%, then pulled back to 4.89% after Chancellor Healey reaction. MoneyWeek warns bond market will burn Burnham. CPI 2.6% above target. BoE 6-3 hold at 3.75%. Gilt issuance elevated, fiscal rules under pressure.",
+      "escalate_to": ["europe", "fin_stability"],
+      "is_new": false,
+      "status_change": "Elevated - Burnham gilt volatility, MoneyWeek bond market warning",
+      "timestamp": "2026-08-09T03:04:00Z"
     },
     {
       "domain": "financial_system",
-      "title": "Russia bankruptcies up 13.7% YoY wartime debt boom banking crisis concerns",
+      "title": "HY OAS at 271bps + Russia banking crisis risk + Brazil credit clouds forming",
       "severity": 3,
       "category": "market_dislocation",
-      "source": "Moscow Times, American Banker",
-      "summary": "Russian bankruptcies up 13.7%. Record 636K declarations. US deregulatory gap creating systemic risk.",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "is_new": true,
-      "status_change": "NEW - Russian banking stress + US regulatory gap",
-      "timestamp": "2026-08-08T11:04:32.289940Z"
+      "source": "ConvexTrade, Moscow Times, Valor Economico, BankSift",
+      "summary": "HY OAS 271bps (below 600 stress threshold). Russia bankruptcies +13.7% YoY, wartime debt boom banking crisis risk. Brazil: Valor reports clouds forming in credit market, bank executives warning privately. US regulatory oversight gap persists. No systemic freeze but stress building.",
+      "escalate_to": ["fin_stability", "liquidity"],
+      "is_new": false,
+      "status_change": "Elevated - Brazil credit clouds, Russia banking stress, HY spreads contained",
+      "timestamp": "2026-08-09T03:04:00Z"
     }
   ],
-  "summary": "12 domains scanned. Hormuz closed Day 161. US-Japan joint yen intervention. Sudan El-Obeid siege. Ebola PHEIC. Europe energy crisis. 3 new events: KRW surge, Russian banking stress, Mali coup attempt details.",
+  "summary": "12 domains scanned at 03:02 UTC Aug 9. 1 NEW Cat-4 event: British Columbia provincial state of emergency (wildfires). Iran-Hormuz Day 162 with Iran 6 demands + Iran-Oman corridor deal close. Ebola >4,000 cases, US travel restrictions. Yen intervention controversy escalates (Bessent notepad, Euro-funded allegations). Argentina-Brazil worst crisis in 4 decades. Gold approaching $4,300. Fed September hike odds 77%. 12 active events tracked.",
   "events_detected": 12,
-  "new_events": 3,
+  "new_events": 1,
   "category_5_events": 2,
-  "category_4_events": 3,
+  "category_4_events": 4,
   "category_3_events": 6,
   "max_severity": 5,
-  "macro_event_active": true
+  "macro_event_active": true,
+  "changes_from_previous_scan": "1 NEW event: BC wildfire state of emergency (Cat-4). Hormuz: Iran 6 demands issued, Iran-Oman deal close. Ebola: crossed 4,000 cases, US travel restrictions. Yen: Bessent notepad controversy, Euro-funded intervention allegations. Argentina-Brazil: worst in 4 decades. Gold near $4,300. Saturday night/Sunday morning - markets quiet."
 }
