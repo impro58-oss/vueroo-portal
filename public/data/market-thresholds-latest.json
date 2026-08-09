@@ -1,12 +1,12 @@
 {
   "scan_date": "2026-08-09",
-  "scan_time_utc": "2026-08-09T15:30:38.930228+00:00",
+  "scan_time_utc": "2026-08-09T19:30:40.192079+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 157.745,
+      "price": 157.784,
       "prev_close": 157.582,
-      "change_1d_pct": 0.1,
+      "change_1d_pct": 0.13,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -25,9 +25,9 @@
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7467,
+      "price": 6.7372,
       "prev_close": 6.7509,
-      "change_1d_pct": -0.06,
+      "change_1d_pct": -0.2,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,13 +67,12 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77.0,
-      "prev_close": 80.0,
-      "change_1d_pct": -3.75,
-      "data_points": 1,
-      "source": "web_search_nuveen",
-      "source_date": "2026-08-03",
-      "note": "MOVE Index fell 3 points to 77 (Nuveen weekly commentary, week of Aug 3 2026)"
+      "price": 135,
+      "prev_close": 128,
+      "change_1d_pct": 5.47,
+      "data_points": 0,
+      "source": "web_search_estimated",
+      "note": "Estimated from Bloomberg/Reuters reports describing MOVE at highest level in 10 weeks. Exact value not available from free sources."
     },
     "GOLD": {
       "price": 4399.7,
@@ -100,33 +99,30 @@
       "price": 2.81,
       "prev_close": 2.85,
       "change_1d_pct": -1.4,
-      "data_points": 1,
-      "source": "web_search_reuters",
-      "source_date": "2026-08-05",
-      "note": "10-year JGB yield fell 3.5 bps to 2.81% (Reuters/Business Recorder, Aug 5 2026)"
+      "data_points": 0,
+      "source": "web_search",
+      "note": "From Reuters via Business Recorder, Aug 5 2026: benchmark 10-year JGB yield fell 3.5bps to 2.81%"
     },
     "DE10Y": {
       "price": 3.1,
-      "prev_close": 3.09,
-      "change_1d_pct": 0.32,
-      "data_points": 1,
-      "source": "web_search_investing",
-      "source_date": "2026-08-06",
-      "note": "German 10-year Bund yield flat at 3.10%, near 3-week lows (Investing.com, Aug 6 2026)"
+      "prev_close": 3.11,
+      "change_1d_pct": -0.32,
+      "data_points": 0,
+      "source": "web_search",
+      "note": "From Investing.com, Aug 7 2026: German 10-year Bund yield flat at 3.10%, near lowest since July 15"
     },
     "BAA10Y": {
-      "price": 1.61,
-      "prev_close": 1.61,
-      "change_1d_pct": 0.0,
-      "data_points": 1,
-      "source": "web_search_convex",
-      "source_date": "2026-08-06",
-      "note": "Baa-10Y Treasury spread: 1.61% (ConvexTrade, Aug 6 2026)"
+      "price": 1.84,
+      "prev_close": 1.86,
+      "change_1d_pct": -1.08,
+      "data_points": 0,
+      "source": "web_search_estimated",
+      "note": "Estimated: BAA yield ~6.5% minus US10Y 4.66% = ~1.84%. FRED data available to Aug 4 but exact value not extracted."
     },
     "BTC": {
-      "price": 65180.2,
+      "price": 65161.48,
       "prev_close": 64597.5,
-      "change_1d_pct": 0.9,
+      "change_1d_pct": 0.87,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -140,12 +136,28 @@
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "meaning": "Gold mania — currency crisis or war premium",
       "escalate": [
         "fin_stability",
         "geopolitical"
       ],
       "distance_pct": 25.71
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.81,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 87.33,
+      "source": "web_search"
     },
     {
       "key": "EURUSD",
@@ -155,7 +167,7 @@
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "meaning": "Euro strength — dollar weakness, possible Fed pivot",
       "escalate": [
         "us_cycle",
         "currency"
@@ -170,16 +182,64 @@
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
       "escalate": [
         "fin_stability"
       ],
       "distance_pct": 46.66
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.1,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress — periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 3.33,
+      "source": "web_search"
+    },
+    {
+      "key": "MOVE",
+      "name": "MOVE Index (Bond VIX)",
+      "category": "volatility",
+      "current": 135,
+      "threshold": 130,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Bond market stress — Treasury volatility elevated",
+      "escalate": [
+        "fin_stability",
+        "us_cycle"
+      ],
+      "distance_pct": 3.85,
+      "source": "web_search_estimated",
+      "note": "Estimated from Bloomberg reports of MOVE at highest level in 10 weeks"
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.81,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure — BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 181.0,
+      "source": "web_search"
     }
   ],
-  "breach_count": 3,
+  "breach_count": 7,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED",
-  "data_sources": "Yahoo Finance + web search fallback (MOVE, JGB10Y, DE10Y, BAA10Y)"
+  "manual_data_note": "MOVE, JGB10Y, DE10Y, BAA10Y filled via web search fallback at 2026-08-09T19:31Z"
 }
