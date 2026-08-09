@@ -2,42 +2,41 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-09T23:04:15.000000+00:00",
+    "last_update": "2026-08-09T23:05:04.054362+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "breaking_event": "Breaking Event Scanner 23:02 UTC: 2 NEW events \u2014 Netanyahu rejects Gaza peace plan + Houthi Aramco strike; Gold $4,343 + 77% Fed hike probability. 4 escalated: Ebola 4,000+ cases doubling every 10 days, PBOC restarting liquidity injections, Europe fiscal stress with RBA hiking, Argentina risk at 451. All 12 domains active. Risk score 520."
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "red",
+      "status": "green",
       "trend": "deteriorating",
-      "confidence": 10,
+      "confidence": 9,
       "change_from_last": -0.04,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "BREAKING: US-Japan-Korea trilateral FX intervention. Treasury volatility surging. Gold at $4,343 (record territory). German Bund yield above 3.10%. Bond market stress across all developed markets. Fed futures pricing 77% rate hike for September. 3 FOMC dissenters. BofA warns Fed strategy could weigh on economy. US sold $638B T-bills this week.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T23:04:56.131529+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "FIMA repo facility used for joint intervention. Dollar funding stress. Treasury 30Y at highest since 2007. BOJ spent 6-8 trillion yen in 2 days. Yen giving up intervention gains at 157.76.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T23:04:56.716335+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -52,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-09T17:04:36.785072+00:00"
+      "timestamp": "2026-08-09T23:04:57.053003+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "BREAKING: Strait of Hormuz \u2014 Iran-Oman deal close but Iran demanding 6 conditions (lift blockade, sanctions, withdraw troops, pay reparations, release assets, cease attacks). Houthi drone strike on Saudi Aramco refinery on Red Sea coast. Oil pulling back from $92 to $83.59 but supply disruption continues.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T23:04:57.403027+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.15,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
       "change_from_last": -0.66,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "BREAKING: Netanyahu rejects Trump Gaza peace plan \u2014 IDF will not withdraw until Hamas disarmed. Houthis struck Saudi Aramco oil refinery. Houthi ballistic missiles targeting Saudi troop concentrations. Israel expanding military reach. Saudi-Pakistan defense pact forming Sunni-led military front.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-09T23:04:57.742548+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -104,41 +103,41 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Hormuz closure disrupting global shipping. Houthi attacks on Saudi Aramco refinery. 2026 fuel crisis spreading. Oil at $83.59 after pulling back from $92 geopolitical peak.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-09T17:04:37.708902+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "deteriorating",
-      "confidence": 7,
+      "trend": "improving",
+      "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "2026 fuel crisis from Iran war creating food inflation. South America facing severe pressure. FAO warns fresh surge. Ebola outbreak compounding African food security crisis.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T23:04:58.628475+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00c2\u00b0C",
+      "unit": "\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -157,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-09T17:04:38.612721+00:00"
+      "timestamp": "2026-08-09T23:04:59.311318+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -193,31 +192,31 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 9,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 5,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "USD/JPY at 157.76, yen giving up intervention gains. JGB 10Y yield at 2.81%. Japan debt servicing costs at 31 trillion yen (quarter of spending), projected to reach third of outlays in 3 years. BOJ spent 6-8 trillion yen in 2 days. Intervention described as 'laying bare dangers of monetary experiments.'",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-09T23:04:59.679071+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4343.43,
+      "value": 4399.7,
       "unit": "$/oz",
       "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "change_from_last": 243.73,
-      "description": "Gold Futures (GC=F): $4,343.43 (+2.44%)",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": 304.3,
+      "description": "Gold Futures (GC=F): $4,399.70 (+7.43%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-09",
-      "note": "RECORD TERRITORY: Gold at $4,343.43 (Aug 7), broke above $4,300. Up 2.44% single day, up 27.79% YoY. Strongest weekly gain since January. Fed 77% hike probability for September. Safe haven demand from Iran war + currency war + JGB crisis + global rate hike cycle.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-09T17:04:35.781090+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -241,28 +240,28 @@
       "unit": "CLI index",
       "status": "red",
       "trend": "stable",
-      "confidence": 8,
+      "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "PBOC restarting liquidity injections ('Great Debasement'). July CPI missed forecasts \u2014 rate cuts or RRR cuts expected. Property crisis ongoing - real estate at 20-year lows, 70M jobs at risk. Evergrande wound up in HK.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
+      "timestamp": "2026-08-09T17:04:36.126803+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 8,
+      "trend": "stable",
+      "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
-      "note": "German 10-year Bund yield at 3.10%, above 3.0% tripwire. European fiscal stress - periphery spreads widening. ECB forward curve pricing 40bps hikes by end 2026. Spanish debt decoupling from Germany/France. RBA (Australia) raised rates 3x to 4.35% from Iran war energy shock \u2014 global rate hike cycle spreading.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-09T23:05:02.857695+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -273,26 +272,26 @@
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
+      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-07",
-      "note": "Fed futures pricing 77% rate hike for September. 3 FOMC dissenters demanded hike at July meeting \u2014 unprecedented divisions. Chair Warsh defiant on 2% inflation target. BofA warns Fed strategy could weigh on economy. 30Y Treasury at highest since 2007. US sold $638B T-bills this week.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T23:05:03.332489+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Iran war active. Hormuz crisis Day 161+. Netanyahu rejected Gaza peace plan. Houthis struck Saudi Aramco refinery. Saudi-Pakistan defense pact. Iran-Oman Hormuz deal close but 6 conditions imposed. State Dept sanctioned Iran crypto entities.",
-      "timestamp": "2026-08-09T23:04:15.000000+00:00"
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-09T23:05:03.671948+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,27 +306,21 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-09T17:04:41.213967+00:00"
+      "timestamp": "2026-08-09T23:05:04.034545+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 520,
-    "red_count": 15,
-    "amber_count": 4,
-    "green_count": 1,
+    "score": 579,
+    "red_count": 8,
+    "amber_count": 9,
+    "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-09T23:04:15.000000+00:00"
+    "timestamp": "2026-08-09T23:05:04.054362+00:00"
   },
   "convergence": {
     "stressed_domains": [
-      {
-        "domain": "Financial",
-        "red": 3,
-        "amber": 0,
-        "stress_level": 6
-      },
       {
         "domain": "Social",
         "red": 3,
@@ -335,28 +328,10 @@
         "stress_level": 6
       },
       {
-        "domain": "Currency",
-        "red": 2,
-        "amber": 0,
-        "stress_level": 4
-      },
-      {
-        "domain": "Energy",
+        "domain": "Financial",
         "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Geopolitics",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Supply Chain",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "amber": 1,
+        "stress_level": 3
       },
       {
         "domain": "Food",
@@ -371,19 +346,37 @@
         "stress_level": 2
       },
       {
+        "domain": "Currency",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "Middle East",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "domain": "Energy",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
       },
       {
         "domain": "Cyber",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Supply Chain",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -405,16 +398,16 @@
         "red": 0,
         "amber": 1,
         "stress_level": 1
+      },
+      {
+        "domain": "Middle East",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
       }
     ],
     "convergence_active": true,
     "convergence_domains": [
-      {
-        "domain": "Financial",
-        "red": 3,
-        "amber": 0,
-        "stress_level": 6
-      },
       {
         "domain": "Social",
         "red": 3,
@@ -422,24 +415,30 @@
         "stress_level": 6
       },
       {
-        "domain": "Currency",
-        "red": 2,
-        "amber": 0,
-        "stress_level": 4
+        "domain": "Financial",
+        "red": 1,
+        "amber": 1,
+        "stress_level": 3
       },
       {
-        "domain": "Energy",
+        "domain": "Food",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "Geopolitics",
+        "domain": "Climate",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Currency",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-09T23:04:15.000000+00:00"
+    "timestamp": "2026-08-09T23:05:04.054362+00:00"
   }
 }
