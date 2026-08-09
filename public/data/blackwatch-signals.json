@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-09T15:30:40.000000+00:00",
+    "last_update": "2026-08-09T15:30:40+00:00",
     "signals_auto": 19,
     "signals_manual": 1,
     "signals_total": 20,
     "breaking_event": "Breaking event scanner: 8 events, 2 cat-5. New: yen waning, FIMA repo permanent, gold surge from yen bailout, RBA energy shock, Argentina deepening, Ebola worsening.",
-    "threshold_breach": "3 thresholds breached"
+    "threshold_breach": "3 thresholds breached (Gold RED >3500, EUR/USD AMBER >1.15, Gold AMBER >3000)"
   },
   "signals": {
     "fin_stability": {
@@ -58,17 +58,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 88.9,
+      "value": 83.55,
       "status": "amber",
       "trend": "improving",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price - live scan .55 (+5.28% today)",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-03",
+      "last_date": "2026-08-09",
       "note": "",
-      "timestamp": "2026-08-09T11:05:31.622315+00:00"
+      "timestamp": "2026-08-09T15:30:40+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -103,7 +103,7 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 88.9,
+      "value": 83.55,
       "unit": "$/bbl (proxy)",
       "status": "amber",
       "trend": "stable",
@@ -111,9 +111,9 @@
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-03",
+      "last_date": "2026-08-09",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-09T11:05:26.890731+00:00"
+      "timestamp": "2026-08-09T15:30:40+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -207,32 +207,32 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4343,
+      "value": 4399.7,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 57.53,
-      "description": "Gold Spot: $4,343/oz (Aug 7, TradingEconomics) RED THRESHOLD BREACH: >$3,500. Surged ~7% ($174) on Aug 5. Driven by yen bailout monetary inflation (FIMA repo permanent) + safe haven + easing Fed hike bets. Up 27.79% YoY.",
+      "description": "Gold Spot: ,399.70/oz (Aug 9, Yahoo Finance) RED THRESHOLD BREACH: >,500. Surged +7.43% today. Driven by yen bailout monetary inflation (FIMA repo permanent) + safe haven + easing Fed hike bets. Up ~28% YoY.",
       "series_id": "TradingEconomics CFD",
-      "last_date": "2026-08-07",
+      "last_date": "2026-08-09",
       "note": "NEW DRIVER: Gold surge partly attributed to yen bailout monetary inflation via FIMA repo. FIMA repo becoming permanent = backdoor YCC. Financial architecture signal.",
-      "timestamp": "2026-08-09T15:02:00Z"
+      "timestamp": "2026-08-09T15:30:40+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 64916,
+      "value": 65180,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
       "change_from_last": -0.1,
-      "description": "BTC $64,916 (-0.1% 24h), Dominance: 75.9%",
+      "description": "BTC ,180 (+0.90% 24h), Dominance: ~76%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-09",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-09T11:05:10.604510+00:00"
+      "timestamp": "2026-08-09T15:30:40+00:00"
     },
     "china": {
       "name": "China Health",
@@ -282,17 +282,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 88.9,
+      "value": 83.55,
       "status": "amber",
       "trend": "improving",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy - Hormuz ceasefire Day 53, Oman deal close but 6 conditions",
+      "description": "Brent Oil as ME tension proxy - .55 (+5.28% today). Hormuz ceasefire Day 53, Oman deal close but 6 conditions",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-03",
+      "last_date": "2026-08-09",
       "note": "Ceasefire Day 53, strikes resumed 11 days. Oman deal close but 6 Iranian conditions. US crypto sanctions on Iran. Hormuz ~2% pre-war traffic.",
-      "timestamp": "2026-08-09T15:02:00Z"
+      "timestamp": "2026-08-09T15:30:40+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -318,7 +318,7 @@
     "green_count": 1,
     "amber_count": 10,
     "manual_count": 2,
-    "timestamp": "2026-08-09T15:02:00+00:00"
+    "timestamp": "2026-08-09T15:30:40+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -434,6 +434,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-09T15:02:00Z"
+    "timestamp": "2026-08-09T15:30:40+00:00"
   }
 }

@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-09",
-  "scan_time_utc": "2026-08-09T11:35:32.664881+00:00",
+  "scan_time_utc": "2026-08-09T15:30:38.930228+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -25,16 +25,16 @@
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7482,
+      "price": 6.7467,
       "prev_close": 6.7509,
-      "change_1d_pct": -0.04,
+      "change_1d_pct": -0.06,
       "data_points": 6,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1415.7,
+      "price": 1407.45,
       "prev_close": 1435.7,
-      "change_1d_pct": -1.39,
+      "change_1d_pct": -1.97,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,9 +67,13 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77,
-      "source": "web_search (Nuveen weekly, ~Aug 3)",
-      "note": "MOVE Index fell ~3pts to 77 per Nuveen fixed-income weekly commentary"
+      "price": 77.0,
+      "prev_close": 80.0,
+      "change_1d_pct": -3.75,
+      "data_points": 1,
+      "source": "web_search_nuveen",
+      "source_date": "2026-08-03",
+      "note": "MOVE Index fell 3 points to 77 (Nuveen weekly commentary, week of Aug 3 2026)"
     },
     "GOLD": {
       "price": 4399.7,
@@ -94,23 +98,35 @@
     },
     "JGB10Y": {
       "price": 2.81,
-      "source": "web_search (Business Recorder, Aug 5 2026)",
-      "note": "Benchmark 10-year JGB yield fell 3.5bps to 2.81%"
+      "prev_close": 2.85,
+      "change_1d_pct": -1.4,
+      "data_points": 1,
+      "source": "web_search_reuters",
+      "source_date": "2026-08-05",
+      "note": "10-year JGB yield fell 3.5 bps to 2.81% (Reuters/Business Recorder, Aug 5 2026)"
     },
     "DE10Y": {
-      "price": 3.09,
-      "source": "web_search (EconoTimes, Aug 5 2026)",
-      "note": "German 10Y Bund yield dropped to 3.09%, three-week low"
+      "price": 3.1,
+      "prev_close": 3.09,
+      "change_1d_pct": 0.32,
+      "data_points": 1,
+      "source": "web_search_investing",
+      "source_date": "2026-08-06",
+      "note": "German 10-year Bund yield flat at 3.10%, near 3-week lows (Investing.com, Aug 6 2026)"
     },
     "BAA10Y": {
       "price": 1.61,
-      "source": "FRED CSV (BAA10Y, Aug 6 2026)",
-      "note": "Moody's Baa-10Y Treasury spread from FRED direct CSV"
+      "prev_close": 1.61,
+      "change_1d_pct": 0.0,
+      "data_points": 1,
+      "source": "web_search_convex",
+      "source_date": "2026-08-06",
+      "note": "Baa-10Y Treasury spread: 1.61% (ConvexTrade, Aug 6 2026)"
     },
     "BTC": {
-      "price": 64935.53,
+      "price": 65180.2,
       "prev_close": 64597.5,
-      "change_1d_pct": 0.52,
+      "change_1d_pct": 0.9,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -164,5 +180,6 @@
   "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "data_sources": "Yahoo Finance + web search fallback (MOVE, JGB10Y, DE10Y, BAA10Y)"
 }
