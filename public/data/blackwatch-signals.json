@@ -2,17 +2,18 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-09T23:05:04.054362+00:00",
+    "last_update": "2026-08-09T23:30:42.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "threshold_breach": "3 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.04,
@@ -20,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "",
-      "timestamp": "2026-08-09T23:04:56.131529+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4404.2)",
+      "timestamp": "2026-08-09T23:30:42.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -72,16 +73,16 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.15,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.66,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-09T23:04:57.742548+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4404.2)",
+      "timestamp": "2026-08-09T23:30:42.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-09T23:04:59.679071+00:00"
+      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1561)",
+      "timestamp": "2026-08-09T23:30:42.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
