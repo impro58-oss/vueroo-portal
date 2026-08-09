@@ -2,28 +2,26 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-09T15:30:40+00:00",
-    "signals_auto": 19,
-    "signals_manual": 1,
-    "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 8 events, 2 cat-5. New: yen waning, FIMA repo permanent, gold surge from yen bailout, RBA energy shock, Argentina deepening, Ebola worsening.",
-    "threshold_breach": "3 thresholds breached (Gold RED >3500, EUR/USD AMBER >1.15, Gold AMBER >3000)"
+    "last_update": "2026-08-09T17:04:41.239065+00:00",
+    "signals_auto": 20,
+    "signals_manual": 0,
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "red",
+      "status": "green",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.04,
       "unit": "%",
-      "description": "US High Yield OAS Spread - ESCALATED: Gold RED breach ($4,343 > $3,500). Yen bailout monetary inflation via FIMA repo adding to financial stress.",
+      "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-06",
-      "note": "Threshold breach: Gold above 3500 (current: 4399.7)",
-      "timestamp": "2026-08-09T15:30:40.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-09T17:04:36.071418+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -38,7 +36,7 @@
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
       "note": "",
-      "timestamp": "2026-08-09T11:05:30.858578+00:00"
+      "timestamp": "2026-08-09T17:04:36.438831+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -53,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-09T11:05:31.224407+00:00"
+      "timestamp": "2026-08-09T17:04:36.785072+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 83.55,
+      "value": 88.9,
       "status": "amber",
       "trend": "improving",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price - live scan .55 (+5.28% today)",
+      "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-09",
+      "last_date": "2026-08-03",
       "note": "",
-      "timestamp": "2026-08-09T15:30:40+00:00"
+      "timestamp": "2026-08-09T17:04:37.125310+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
-      "value": 14.9,
-      "status": "red",
-      "trend": "deteriorating",
+      "value": 15.15,
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": -0.25,
+      "change_from_last": -0.66,
       "unit": "index",
-      "description": "VIX as market fear proxy \u2014 ESCALATED via Gold RED breach (geopolitical/war premium)",
+      "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-06",
-      "note": "Threshold breach: Gold above 3500 (current: 4399.7)",
-      "timestamp": "2026-08-09T15:30:40.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-09T17:04:37.511106+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -98,12 +96,12 @@
       "series_id": null,
       "last_date": "2026-08-09",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-09T11:05:26.890731+00:00"
+      "timestamp": "2026-08-09T17:04:37.708902+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 83.55,
+      "value": 88.9,
       "unit": "$/bbl (proxy)",
       "status": "amber",
       "trend": "stable",
@@ -111,9 +109,9 @@
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-09",
+      "last_date": "2026-08-03",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-09T15:30:40+00:00"
+      "timestamp": "2026-08-09T17:04:37.708902+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -128,21 +126,22 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-09T11:05:32.609768+00:00"
+      "timestamp": "2026-08-09T17:04:38.237235+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
-      "value": null,
-      "status": "manual",
-      "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
-      "unit": "anomaly",
-      "description": "No FRED feed \u2014 NOAA/Copernicus manual assessment",
-      "note": "Manual assessment \u2014 NOAA integration in Phase 2",
-      "last_date": null,
-      "timestamp": "2026-08-09T11:05:32.609768+00:00"
+      "value": 1.11,
+      "unit": "\u00b0C",
+      "status": "red",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.15,
+      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "series_id": "NOAA NCEI",
+      "last_date": "2026",
+      "note": "Live from NOAA climate API",
+      "timestamp": "2026-08-09T17:04:37.008652+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -157,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-09T11:05:33.007461+00:00"
+      "timestamp": "2026-08-09T17:04:38.612721+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -172,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-09T11:05:26.890731+00:00"
+      "timestamp": "2026-08-09T17:04:37.708902+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -187,22 +186,22 @@
       "series_id": null,
       "last_date": "2026-08-09",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-09T11:05:26.890731+00:00"
+      "timestamp": "2026-08-09T17:04:37.708902+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.7,
-      "status": "amber",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0.03,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-07-31",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1562)",
-      "timestamp": "2026-08-09T15:30:40.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-09T17:04:38.989347+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -210,29 +209,29 @@
       "value": 4399.7,
       "unit": "$/oz",
       "status": "red",
-      "trend": "deteriorating",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": 57.53,
-      "description": "Gold Spot: ,399.70/oz (Aug 9, Yahoo Finance) RED THRESHOLD BREACH: >,500. Surged +7.43% today. Driven by yen bailout monetary inflation (FIMA repo permanent) + safe haven + easing Fed hike bets. Up ~28% YoY.",
-      "series_id": "TradingEconomics CFD",
+      "change_from_last": 304.3,
+      "description": "Gold Futures (GC=F): $4,399.70 (+7.43%)",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-09",
-      "note": "NEW DRIVER: Gold surge partly attributed to yen bailout monetary inflation via FIMA repo. FIMA repo becoming permanent = backdoor YCC. Financial architecture signal.",
-      "timestamp": "2026-08-09T15:30:40+00:00"
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-09T17:04:35.781090+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 65180,
+      "value": 65181,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.1,
-      "description": "BTC ,180 (+0.90% 24h), Dominance: ~76%",
+      "change_from_last": 0.2,
+      "description": "BTC $65,181 (+0.2% 24h), Dominance: 75.9%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-09",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-09T15:30:40+00:00"
+      "timestamp": "2026-08-09T17:04:36.395439+00:00"
     },
     "china": {
       "name": "China Health",
@@ -247,7 +246,7 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-09T11:05:04.980862+00:00"
+      "timestamp": "2026-08-09T17:04:36.126803+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -262,7 +261,7 @@
       "series_id": "ECBDFR",
       "last_date": "2026-08-07",
       "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-09T11:05:34.786563+00:00"
+      "timestamp": "2026-08-09T17:04:40.142049+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -277,22 +276,22 @@
       "series_id": "T10Y2Y",
       "last_date": "2026-08-07",
       "note": "",
-      "timestamp": "2026-08-09T11:05:35.109476+00:00"
+      "timestamp": "2026-08-09T17:04:40.483455+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 83.55,
+      "value": 88.9,
       "status": "amber",
       "trend": "improving",
       "confidence": 7,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy - .55 (+5.28% today). Hormuz ceasefire Day 53, Oman deal close but 6 conditions",
+      "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-09",
-      "note": "Ceasefire Day 53, strikes resumed 11 days. Oman deal close but 6 Iranian conditions. US crypto sanctions on Iran. Hormuz ~2% pre-war traffic.",
-      "timestamp": "2026-08-09T15:30:40+00:00"
+      "last_date": "2026-08-03",
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-09T17:04:40.819214+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,18 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-09T11:05:35.837241+00:00"
+      "timestamp": "2026-08-09T17:04:41.213967+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 556,
-    "red_count": 7,
-    "green_count": 1,
-    "amber_count": 10,
-    "manual_count": 2,
-    "timestamp": "2026-08-09T15:30:40+00:00"
+    "score": 579,
+    "red_count": 8,
+    "amber_count": 9,
+    "green_count": 2,
+    "manual_count": 1,
+    "timestamp": "2026-08-09T17:04:41.239065+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -336,6 +335,12 @@
       },
       {
         "domain": "Food",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Climate",
         "red": 1,
         "amber": 0,
         "stress_level": 2
@@ -422,18 +427,18 @@
         "stress_level": 2
       },
       {
-        "domain": "Currency",
+        "domain": "Climate",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "China",
+        "domain": "Currency",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-09T15:30:40+00:00"
+    "timestamp": "2026-08-09T17:04:41.239065+00:00"
   }
 }
