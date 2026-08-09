@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-09",
-  "scan_time_utc": "2026-08-09T03:31:12.170977+00:00",
+  "scan_time_utc": "2026-08-09T07:33:30.324762+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -32,9 +32,9 @@
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1407.45,
+      "price": 1415.7,
       "prev_close": 1435.7,
-      "change_1d_pct": -1.97,
+      "change_1d_pct": -1.39,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,22 +67,23 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 77,
-      "source": "web_search (Nuveen commentary, Aug 4)",
-      "note": "MOVE Index at 77 points - down 3pts from prior week"
+      "price": 74.67,
+      "source": "web_search (Convex)",
+      "data_points": 1,
+      "as_of": "2026-08-05"
     },
     "GOLD": {
       "price": 4399.7,
-      "prev_close": 4033.7,
-      "change_1d_pct": 9.07,
-      "data_points": 5,
+      "prev_close": 4095.4,
+      "change_1d_pct": 7.43,
+      "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
       "price": 83.55,
-      "prev_close": 83.77,
-      "change_1d_pct": -0.26,
-      "data_points": 5,
+      "prev_close": 79.36,
+      "change_1d_pct": 5.28,
+      "data_points": 4,
       "source": "yahoo"
     },
     "US10Y": {
@@ -94,24 +95,27 @@
     },
     "JGB10Y": {
       "price": 2.8,
-      "source": "web_search (TradingEconomics, Aug 7)",
-      "note": "Japan 10Y JGB yield at 2.80%"
+      "source": "web_search (TradingEconomics)",
+      "data_points": 1,
+      "as_of": "2026-08-07"
     },
     "DE10Y": {
       "price": 3.12,
-      "source": "web_search (TradingEconomics, Aug 7)",
-      "note": "German 10Y Bund yield at 3.12%"
+      "source": "web_search (TradingEconomics)",
+      "data_points": 1,
+      "as_of": "2026-08-07"
     },
     "BAA10Y": {
       "price": 1.61,
-      "source": "web_search (FRED CSV, Aug 6)",
-      "note": "BAA-10Y corporate spread at 1.61% (161 bps)"
+      "source": "web_search (FRED CSV)",
+      "data_points": 1,
+      "as_of": "2026-08-06"
     },
     "BTC": {
-      "price": 64724.23,
+      "price": 64786.08,
       "prev_close": 64597.5,
-      "change_1d_pct": 0.2,
-      "data_points": 4,
+      "change_1d_pct": 0.29,
+      "data_points": 5,
       "source": "yahoo"
     }
   },
@@ -162,39 +166,41 @@
     },
     {
       "key": "JGB10Y",
-      "name": "Japan 10Y JGB",
+      "name": "Japan 10-Year JGB Yield",
       "category": "rates",
       "current": 2.8,
       "threshold": 1.5,
       "direction": "above",
       "severity": "RED",
-      "meaning": "JGB yield surge - BoJ fiscal stress, potential yen intervention",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
       "escalate": [
-        "fin_stability",
-        "geopolitical"
+        "japan_sovereign",
+        "fin_stability"
       ],
-      "distance_pct": 86.67
+      "distance_pct": 86.67,
+      "source": "web_search"
     },
     {
       "key": "DE10Y",
-      "name": "German 10Y Bund",
+      "name": "German 10-Year (Bund)",
       "category": "rates",
       "current": 3.12,
       "threshold": 3.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Bund yield elevated - EU fiscal stress, periphery spreads widening",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
       "escalate": [
         "europe",
-        "currency"
+        "fin_stability"
       ],
-      "distance_pct": 4.0
+      "distance_pct": 4.0,
+      "source": "web_search"
     }
   ],
   "breach_count": 5,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED",
-  "manual_values_filled": true,
-  "manual_fill_time": "2026-08-09T03:32:00Z"
+  "manual_fill_complete": true,
+  "manual_fill_time": "2026-08-09T07:34:30Z"
 }
