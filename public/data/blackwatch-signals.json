@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment + Breaking Event Scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-10T23:04:30.000000+00:00",
+    "last_update": "2026-08-10T23:30:40.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "breaking_event": "3 cat-5 events active: Hormuz crisis (sev 5), US-Japan intervention unraveling (sev 5), Ebola epidemic (sev 4)"
+    "breaking_event": "3 cat-5 events active: Hormuz crisis (sev 5), US-Japan intervention unraveling (sev 5), Ebola epidemic (sev 4)",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "macro_event": {
@@ -28,7 +29,7 @@
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.01,
@@ -36,8 +37,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-07",
-      "note": "ESCALATED by breaking event scanner: US-Japan intervention unraveling, global bond yields rising, BlackRock confirms Fed repricing to tightening.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4454.5)",
+      "timestamp": "2026-08-10T23:30:40.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -88,7 +89,7 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.9,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.25,
@@ -96,8 +97,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED by breaking event scanner: Iran IRGC hardliner appointment, Hormuz talks stalling, Ceuta border crisis spillover.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4454.5)",
+      "timestamp": "2026-08-10T23:30:40.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -123,10 +124,10 @@
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": -3.9,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-10",
-      "note": "ESCALATED by breaking event scanner: Hormuz disruption ongoing + Ebola impacting Central Africa supply routes. Proxy indicator — Baltic Dry Index or Cass Freight would be better.",
+      "note": "ESCALATED by breaking event scanner: Hormuz disruption ongoing + Ebola impacting Central Africa supply routes. Proxy indicator \u00e2\u20ac\u201d Baltic Dry Index or Cass Freight would be better.",
       "timestamp": "2026-08-10T23:04:30.000000+00:00"
     },
     "food_security": {
@@ -148,12 +149,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "°C",
+      "unit": "\u00c2\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -231,7 +232,7 @@
       "description": "Gold spot: $4,360.50/oz (USA Today, Aug 10 2026)",
       "series_id": "USA Today spot price",
       "last_date": "2026-08-10",
-      "note": "Live spot price from web search — updated during BlackWatch 6h refresh",
+      "note": "Live spot price from web search \u00e2\u20ac\u201d updated during BlackWatch 6h refresh",
       "timestamp": "2026-08-10T23:04:01.156120+00:00"
     },
     "crypto": {
@@ -288,7 +289,7 @@
       "confidence": 9,
       "change_from_last": 0.01,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
+      "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-10",
       "note": "ESCALATED by breaking event scanner: Fed repricing from easing to tightening (BlackRock). 30% probability of rate hike. Global bond yields rising.",
