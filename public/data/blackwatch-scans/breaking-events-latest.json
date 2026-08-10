@@ -1,187 +1,109 @@
 {
-  "scan_time": "2026-08-10T11:05:44.000000+00:00",
-  "scan_type": "breaking_event_4h",
-  "scanner_version": "2.0",
+  "scan_time": "2026-08-10T19:03:58.092306+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v1.0",
   "domains_scanned": 12,
-  "queries_executed": 24,
-  "events_detected": 12,
-  "new_events": 3,
-  "cat_5_count": 2,
-  "cat_4_count": 4,
-  "cat_3_count": 5,
+  "queries_executed": 36,
+  "events_detected": 3,
   "events": [
     {
-      "domain": "em_asia",
-      "title": "Korean Won Record Volatility - Sharpest Swings Since 2009 Financial Crisis",
-      "category": "market_dislocation",
-      "severity": 4,
-      "source": "Korea Herald / Chosun (Aug 9-10)",
-      "summary": "Won swings from 1,550 to 1,400s in just over a month. Volatility highest since global financial crisis. Joint US-Japan intervention driving won appreciation. SK hynix ADR dollar conversion adding support.",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": true
-    },
-    {
+      "id": "BW-2026-08-10-001",
+      "title": "Strait of Hormuz Crisis - Shipping Collapsed, Oil Rising",
       "domain": "middle_east",
-      "title": "Hormuz Crisis Month 6 - Iran-Oman Transit Talks, 6 US Demands",
       "category": "energy_shock",
+      "secondary_category": "war_military",
       "severity": 5,
-      "source": "ISW / Congress.gov / Wikipedia (Aug 8-10)",
-      "summary": "Strait blocked since Feb 28. 17 seafarer deaths, 20K mariners stranded. Iran-Oman close to temporary transit agreement. Iran conditions reopening on 6 demands including lifting naval blockade, sanctions, withdrawing forces, paying reparations. Oil peaked $100 in April, now mid-$70s.",
+      "confidence": 9,
+      "summary": "Strait of Hormuz shipping has effectively collapsed since the Iran-US/Israel conflict began late February 2026. Brent crude near $85/bbl. Iran FM Araghchi says Hormuz will not reopen until US eases sanctions and pays war reparations. Houthis attacking Saudi oil tankers. Iran parliament reviewing ban on US/Israeli ships. Largest energy disruption in recorded history.",
+      "sources": [
+        "Al Jazeera (Aug 10)",
+        "NYT (Aug 9-10)",
+        "CNN (Aug 5)",
+        "NPR (Aug 6)",
+        "Congress.gov (Aug 7)",
+        "Wikipedia - 2026 Strait of Hormuz crisis"
+      ],
+      "impact_regions": [
+        "Global",
+        "Middle East",
+        "Asia",
+        "Europe",
+        "Americas"
+      ],
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
+        "food_security",
         "supply_chain"
       ],
-      "is_new": false
+      "detected_at": "2026-08-10T19:03:58.092306+00:00"
     },
     {
+      "id": "BW-2026-08-10-002",
+      "title": "Historic US-Japan Joint Currency Intervention - FIMA Repo Upsized",
       "domain": "japan",
-      "title": "US-Japan First Joint FX Intervention - FIMA Repo Expansion Pushed",
       "category": "sovereign_intervention",
-      "severity": 5,
-      "source": "CNBC / Bloomberg (Aug 3-5)",
-      "summary": "First-ever coordinated US-Japan FX intervention. Yen hit 40-year low. Bessent pushing Fed to expand FIMA Repo Facility so Japan can borrow dollars using Treasuries as collateral without selling them. BOJ held rate at 1% on July 31, signaling possible hikes from Sept/Oct.",
+      "secondary_category": "emergency_rate",
+      "severity": 4,
+      "confidence": 9,
+      "summary": "First-ever joint US-Japan FX intervention to prop up yen. Japan sold approximately $58.97B to buy yen. US Treasury Secretary Bessent participated, with note reading 'To Do Buy Japanese Yen $5-10 bil.' FIMA repo facility being upsized from $60B/day limit. BOJ kept rates at 1% (8-1 vote). Fed Chair Warsh signaling possible rate hike. BofA sees yen strengthening 6% by year-end.",
+      "sources": [
+        "CNBC (Aug 3)",
+        "Bloomberg (Aug 5)",
+        "Al Jazeera (Aug 3)",
+        "Fortune (Aug 3)",
+        "OMFIF (Aug 7)",
+        "Japan Times (Aug 6)"
+      ],
+      "impact_regions": [
+        "Japan",
+        "United States",
+        "Global"
+      ],
       "escalate_to": [
+        "japan_sovereign",
         "currency",
         "fin_stability",
         "us_cycle"
       ],
-      "is_new": false
+      "detected_at": "2026-08-10T19:03:58.092306+00:00"
     },
     {
-      "domain": "eu_ecb",
-      "title": "France Deficit Crisis - EUR 107B H1, Interest Payments +19%, Snowball Effect",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "source": "Le Monde / ZeroHedge / Futunn (Aug 5-7)",
-      "summary": "France H1 deficit EUR 107B (14.4% above budget). Interest payments jumped 19% to EUR 34.5B. Full-year deficit ratio potentially 8%. Le Monde warns of snowball effect. ECB kept rates unchanged at 2.25% on July 23.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "is_new": false
-    },
-    {
-      "domain": "china",
-      "title": "China 10th Quarter of Deflation - Property Wealth Destruction vs US 2008",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "source": "The Tribune / CFR / World Bank (Aug 3-7)",
-      "summary": "10 straight quarters of falling prices. S&P expects primary home prices -1.5-2.5% in 2026, secondary -4-5%. Household wealth destruction compared to US 2008 crash. PBOC maintaining moderately loose policy, counter-cyclical support. Currency undervalued 20%+.",
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ],
-      "is_new": false
-    },
-    {
+      "id": "BW-2026-08-10-003",
+      "title": "2026 Ebola Epidemic - Fastest Growing on Record, WHO PHEIC Declared",
       "domain": "pandemic_health",
-      "title": "Ebola PHEIC - Largest Recorded DRC Outbreak, 1,801+ Deaths",
-      "category": "pandemic_health",
+      "category": "pandemic",
       "severity": 4,
-      "source": "WHO / CDC / ECDC / MSF (Aug 7-10)",
-      "summary": "WHO declared PHEIC May 16. Now largest Ebola outbreak in DRC history, surpassing 2018-2020. 1,801+ confirmed deaths in DRC, 2 in Uganda. MSF supporting PARTNERS clinical trial. ECDC update scheduled for Aug 10.",
+      "confidence": 9,
+      "summary": "Bundibugyo ebolavirus outbreak in DRC and Uganda declared WHO PHEIC on May 16, 2026. ~1,916 confirmed deaths in DRC, 2 in Uganda. Fastest-growing Ebola outbreak on record. WHO and Africa CDC conceded Aug 6 that outbreak is spreading faster than response efforts. New variant identified by Lancet researchers. Started in February, months before official declaration.",
+      "sources": [
+        "Wikipedia - 2026 Ebola epidemic",
+        "WSWS (Aug 10)",
+        "Medical Xpress (Aug 10)",
+        "Impakter (Aug 10)",
+        "AP/Journal-Advocate (Aug 10)"
+      ],
+      "impact_regions": [
+        "Central Africa",
+        "East Africa",
+        "Global"
+      ],
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
       ],
-      "is_new": false
-    },
-    {
-      "domain": "financial_system",
-      "title": "Private Credit Distress - Growing PIK Payments, Borrower Stress",
-      "category": "market_dislocation",
-      "severity": 3,
-      "source": "Axios / Bloomberg / Fed Boston (Aug 7-8)",
-      "summary": "Growing share of private credit borrowers making payments-in-kind (PIK) - rolling interest into balances instead of cash. Fed Boston research confirms trend. Bloomberg reports private credit squeezed by bank refinancings. Not imminent crisis but warning sign.",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "is_new": true
-    },
-    {
-      "domain": "commodities",
-      "title": "Food Crisis Escalation - China Fertilizer Export Bans, FAO Warns of Price Surge",
-      "category": "energy_shock",
-      "severity": 3,
-      "source": "Commodity Board / FAO / Reuters (Aug 5-6)",
-      "summary": "China fertilizer export bans (MAP, DAP, TSP) through at least August 2026 tightening global availability. FAO warns fresh food price surge. 49M more impoverished projected for 2026. Super El Nino, fertilizer shortage, cyclosporiasis outbreak converging.",
-      "escalate_to": [
-        "food_security",
-        "supply_chain"
-      ],
-      "is_new": true
-    },
-    {
-      "domain": "us_fed",
-      "title": "Fed Hawkish Pivot - Warsh Emphasizing Inflation, Market Pricing Hike",
-      "category": "emergency_rate",
-      "severity": 3,
-      "source": "Reuters / JPMorgan (Aug 5-8)",
-      "summary": "Fed left rates unchanged at 3.5-3.75% in July. New Chair Warsh emphasizing inflation without nuance, leading investors to conclude hike coming soon. Bond yields being bid up. 30yr at highest since 2007. Treasury refinancing $125B on Aug 15.",
-      "escalate_to": [
-        "us_cycle",
-        "fin_stability",
-        "liquidity"
-      ],
-      "is_new": false
-    },
-    {
-      "domain": "latam",
-      "title": "Argentina-Brazil Diplomatic Crisis, Argentina Country Risk Rising",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "source": "PIIE / Rio Times / Buenos Aires Herald (Aug 5-8)",
-      "summary": "Brazil withdrew ambassador from Argentina. Argentina country risk climbed to 451 bps on Aug 7, highest since June. IMF principal payments of ~$3B due from September, doubling in 2027. Decade-long peso destruction of purchasing power.",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": false
-    },
-    {
-      "domain": "uk",
-      "title": "UK Fiscal Strain - Rabobank Warns of Autumn Sterling Shock",
-      "category": "sovereign_crisis",
-      "severity": 2,
-      "source": "Rabobank / BofA / FXStreet (Aug 4-9)",
-      "summary": "BOE taking gradual approach, Bailey downplaying rate hikes. But Rabobank warns unfunded spending pledges could trigger Sterling sell-off. BofA warns of autumn fiscal shock. UK bonds largely held by foreign investors - capital outflow risk.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "is_new": false
-    },
-    {
-      "domain": "africa",
-      "title": "Nigeria 3B Defense Gamble, ISWAP Escalation, Sahel Instability",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "source": "Telegraph / ACLED / This Week in Africa (Aug 5-8)",
-      "summary": "Nigeria spending 3B on defense against ISWAP/al-Qaeda linked factions controlling Sahel region. ISWAP increasingly bold, targeting military camps and senior officers. Burkina Faso Traore crackdown on civil society. 20 countries signed new Africa charter.",
-      "escalate_to": [
-        "geopolitical",
-        "social_cohesion"
-      ],
-      "is_new": false
+      "detected_at": "2026-08-10T19:03:58.092306+00:00"
     }
   ],
-  "previous_scan_comparison": {
-    "previous_scan_time": "2026-08-10T07:06:42.000000+00:00",
-    "new_events_this_scan": [
-      "Korean Won Record Volatility (Cat 4)",
-      "Private Credit PIK Distress (Cat 3)",
-      "Food Crisis Fertilizer Export Bans (Cat 3)"
-    ],
-    "escalated_domains": [
-      "em_asia",
-      "financial_system",
-      "commodities"
-    ]
-  }
+  "no_events_detected_domains": [
+    "latam",
+    "eu_ecb",
+    "uk",
+    "china",
+    "em_asia",
+    "africa",
+    "financial_system"
+  ],
+  "notes": "Argentina-Brazil diplomatic crisis noted but not category-5. China property crisis ongoing but no new emergency. EM Asia currency defense noted (Bloomberg Aug 9) but not at crisis level. Africa: South Africa-Nigeria diplomatic tensions noted but not category-5. Financial system: regulatory oversight gaps noted (American Banker Aug 6) but no acute failure."
 }
