@@ -1,139 +1,160 @@
 {
-  "scan_time": "2026-08-10T03:02:00.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner — 4h cycle",
+  "scan_id": "2026-08-10-15-breaking",
+  "scan_type": "breaking_event_scan",
+  "scan_number": 3,
+  "scan_time": "2026-08-10T15:02:00+00:00",
+  "scan_time_utc": "2026-08-10T15:02:00Z",
+  "analyst": "Lumina",
+  "operator": "cron job 85bd4029 (4h Breaking Event Scanner)",
+  "previous_scan": "2026-08-10T12:03:00Z",
   "domains_scanned": 12,
-  "queries_executed": 20,
-  "category_5_events_detected": 4,
-  "events": [
-    {
-      "title": "Strait of Hormuz remains CLOSED — Iran war Day 163",
-      "domain": "middle_east",
-      "category": "war_military",
-      "severity": 5,
-      "confidence": 10,
-      "source": "Wikipedia, IranSitRep, CBS News, Congress.gov, The Independent",
-      "url": "https://www.iransitrep.com/",
-      "summary": "Strait of Hormuz blocked since Feb 28, 2026. Day 163 of US-Israel-Iran war. Hormuz at 2% pre-war traffic, zero tanker throughput. Iran's Supreme National Security Council says strait won't open until US meets 6 demands including war compensation. Houthis threaten retaliation against Bahrain and UAE. Ceasefire attempted April 7 but collapsed after Israeli attacks in Lebanon.",
-      "impact_regions": ["Middle East", "Global Energy", "Global Trade"],
-      "escalate_to": ["middle_east", "energy", "geopolitical", "fin_stability"],
-      "first_detected": "2026-08-10T03:02:00Z",
+  "queries_executed": 36,
+  "scan_summary": {
+    "new_cat5_events": 0,
+    "ongoing_cat4_5_events": 6,
+    "total_tracked_events": 12,
+    "status": "NO_NEW_BREAKING_EVENTS",
+    "change_from_last": "No new category-5 events detected. All 12 ongoing events remain active. Gold at $4,391 (slight pullback from $4,400 open). Korean won at 1,418.4 (slight rebound). Trump signals restraint on Iran. No emergency rate decisions, no bank failures, no circuit breakers triggered."
+  },
+  "domain_results": {
+    "us_fed": {
+      "name": "US Federal Reserve / Treasury",
       "status": "ONGOING",
-      "trend": "deteriorating"
-    },
-    {
-      "title": "US-Japan joint yen intervention — $58.97B sold, FIMA repo activated",
-      "domain": "japan",
-      "category": "sovereign_intervention",
+      "new_events": 0,
+      "findings": "Fed held rates at 3.50%-3.75% on July 29 (5th consecutive). 30% hike probability persists. US-Japan joint yen intervention confirmed Aug 3 — US sold euros to buy yen via FIMA repo. $638B T-bills sold this week. No emergency action today.",
+      "category": "ongoing",
       "severity": 4,
-      "confidence": 10,
-      "source": "CNBC, Bloomberg, Al Jazeera, Reuters, Fortune",
-      "url": "https://www.cnbc.com/2026/08/03/japan-yen-intervention-us-treasurys-euros-.html",
-      "summary": "Rare coordinated US-Japan FX intervention to prop up yen. Japan sold ~$58.97B on Thursday, US Treasury joined Friday. Treasury Sec Bessent sold euros (not dollars) to buy yen — unprecedented. Japan announced plans to use Fed's FIMA repo facility for future interventions. BOJ kept rates at 1% (8-1 vote). BOJ accelerating tightening timeline. Bank of America sees yen at ¥149 by end-2026.",
-      "impact_regions": ["Japan", "United States", "Global Currency Markets"],
-      "escalate_to": ["fin_stability", "currency", "us_cycle"],
-      "first_detected": "2026-08-10T03:02:00Z",
-      "status": "ONGOING",
-      "trend": "stable"
+      "sources": ["tradingeconomics.com", "wolfstreet.com", "fortune.com", "cnbc.com"],
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"]
     },
-    {
-      "title": "South Korea KOSPI circuit breaker triggered — 4.58% crash",
-      "domain": "em_asia",
-      "category": "market_dislocation",
-      "severity": 3,
-      "confidence": 9,
-      "source": "IBTimes, New Indian Express",
-      "url": "https://www.ibtimes.com.au/kospi-index-plummets-semiconductor-selloff-1873643",
-      "summary": "KOSPI plunged 4.58% (-301.88 pts to 6,296.38) triggering 20-minute market-wide circuit breaker. Sharp selloff in memory chipmakers (Samsung, SK Hynix). AI stock selloff was immediate trigger but underlying causes broader. South Korea also joined US-Japan joint FX intervention, won hit 9-month high.",
-      "impact_regions": ["South Korea", "Asia Tech", "Global Semis"],
-      "escalate_to": ["fin_stability", "currency"],
-      "first_detected": "2026-08-10T03:02:00Z",
+    "latam": {
+      "name": "Latin America",
       "status": "ONGOING",
-      "trend": "deteriorating"
-    },
-    {
-      "title": "2026 Ebola epidemic — WHO PHEIC, 4,000+ cases, 1,801 deaths in DRC",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 4,
-      "confidence": 10,
-      "source": "WHO, CDC, ECDC, Al Jazeera, UN News, Wikipedia",
-      "url": "https://www.aljazeera.com/news/2026/8/7/ebola-cases-top-4000-in-drc-as-who-urges-ervebo-vaccine-trial",
-      "summary": "Ebola outbreak caused by Bundibugyo virus in DRC/Uganda declared WHO PHEIC on May 16, 2026. As of early August: 3,605+ confirmed cases, 1,801+ deaths in DRC, 2 deaths in Uganda. Cases topped 4,000. WHO recommending full-scale human trial of Ervebo vaccine for cross-protection. ECDC publishing next epidemiological update August 10. Remote areas compounding containment difficulty.",
-      "impact_regions": ["DRC", "Uganda", "East Africa"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "first_detected": "2026-08-10T03:02:00Z",
-      "status": "ONGOING",
-      "trend": "deteriorating"
-    }
-  ],
-  "secondary_events": [
-    {
-      "title": "Fed Chair Warsh signaling September rate hike",
-      "domain": "us_fed",
-      "category": "emergency_rate",
+      "new_events": 0,
+      "findings": "Argentina country risk at 451 bps (highest since June). Brazil diplomatic crisis continues — ambassador withdrawn. Argentina IMF payments $3B due Sep-Dec 2026, double in 2027. No new emergency.",
+      "category": "ongoing",
       "severity": 3,
-      "confidence": 8,
-      "summary": "Fed held rates at 3.5-3.75% in July. New Chair Kevin Warsh emphasizing inflation, leading investors to expect September hike. Jobs report weakened hike odds slightly. Next FOMC: Sept 16, 2026.",
-      "escalate_to": ["us_cycle", "fin_stability"]
-    },
-    {
-      "title": "Gold at $4,343 — safe haven demand extreme, +27.79% YoY",
-      "domain": "commodities",
-      "category": "energy_shock",
-      "severity": 3,
-      "confidence": 9,
-      "summary": "Gold at $4,343.43/oz (Aug 7), up 6.58% monthly, 27.79% YoY. Peaked at $5,597 on Jan 29. Hormuz tensions driving safe haven demand. Gold-oil divergence notable — gold up while oil flat at $82/bbl.",
+      "sources": ["riotimesonline.com", "buenosairesherald.com", "piie.com"],
       "escalate_to": ["fin_stability", "currency"]
     },
-    {
-      "title": "Argentina country risk climbing — 451 bps, IMF payments due",
-      "domain": "latam",
-      "category": "sovereign_crisis",
-      "severity": 2,
-      "confidence": 7,
-      "summary": "Argentina country risk at 451 bps, highest since June. Decoupling from regional rally. $3B IMF payments due H2 2026, doubling in 2027. Diplomatic crisis with Brazil (ambassador withdrawn). Peso purchasing power destruction continues.",
-      "escalate_to": ["fin_stability"]
-    },
-    {
-      "title": "UK gilt volatility — £24B Treasury gap, BoE held 6-3",
-      "domain": "uk",
-      "category": "market_dislocation",
-      "severity": 2,
-      "confidence": 7,
-      "summary": "BoE voted 6-3 to hold rates at 3.75%. Gilt yields volatile over £24B Treasury gap and new government debt issuance concerns. Sterling under pressure, GBP/USD watching 1.3500 resistance.",
+    "eu_ecb": {
+      "name": "ECB / European Financial",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "ECB deposit rate at 2.25%. Cut rates 8 times Jun 2024-Jun 2025, then paused until Jun 2026 when they raised. France H1 deficit >107B EUR. ECB pricing 40bps hikes. German Bund 10Y at 3.11% (AMBER threshold). No emergency action today.",
+      "category": "ongoing",
+      "severity": 3,
+      "sources": ["ecb.europa.eu", "fred.stlouisfed.org", "commonslibrary.parliament.uk"],
       "escalate_to": ["europe", "fin_stability"]
     },
-    {
-      "title": "China property crisis spilling across borders — PBOC vows support",
-      "domain": "china",
-      "category": "sovereign_crisis",
-      "severity": 2,
-      "confidence": 7,
-      "summary": "China property bust spreading internationally via current account shifts. PBOC vowing timely policy support and ample liquidity. Beijing trimmed 2026 growth forecast. Banks directed to follow political criteria — risk of new bubble.",
+    "uk": {
+      "name": "UK / Bank of England",
+      "status": "STABLE",
+      "new_events": 0,
+      "findings": "BOE taking gradual tightening approach. Governor Bailey downplaying need for additional rate hikes. Gilt yields fell as oil slump eases inflation fears. No emergency.",
+      "category": "none",
+      "severity": 1,
+      "sources": ["tradingeconomics.com", "poundsterlinglive.com"],
+      "escalate_to": ["europe", "fin_stability"]
+    },
+    "japan": {
+      "name": "Japan / BOJ / MOF",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "BOJ accelerated tightening timeline. Rates at 1% after June hike, 8-1 vote to hold. Joint US-Japan intervention Aug 3 — possibly $58.97B sold. BOA forecasts yen to 149 by end 2026. FIMA repo given new strategic value. No new emergency today.",
+      "category": "ongoing",
+      "severity": 4,
+      "sources": ["economy.ac", "cnbc.com", "japantimes.co.jp", "aljazeera.com", "fortune.com"],
+      "escalate_to": ["japan_sovereign", "currency", "fin_stability"]
+    },
+    "china": {
+      "name": "China / PBOC",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "PBOC pledged to fine-tune monetary policy (Aug 2 statement). Currency undervalued by 20%+ (CFR). Property crisis ongoing since 2021. Politburo called for 'more proactive' fiscal policy but no broad action. No emergency.",
+      "category": "ongoing",
+      "severity": 3,
+      "sources": ["cfr.org", "nytimes.com", "tradingeconomics.com", "shafaqna.com"],
       "escalate_to": ["china", "fin_stability"]
     },
-    {
-      "title": "South Africa anti-migrant crisis — 109,000 deportations, diplomatic fallout",
-      "domain": "africa",
-      "category": "social_cohesion",
+    "em_asia": {
+      "name": "Emerging Asia",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "Korean won at 1,418.4 (Aug 10), rebounded from near 1,400. Record volatility — sharpest swings since 2009. Joint Korea/US/Japan intervention unprecedented. Won led Asian FX losses today as dollar rose. India diaspora deposits $40B. No new emergency.",
+      "category": "ongoing",
+      "severity": 4,
+      "sources": ["koreaherald.com", "bloomberg.com", "chosun.com", "fxstreet.com", "kedglobal.com", "investing.com"],
+      "escalate_to": ["currency", "fin_stability"]
+    },
+    "middle_east": {
+      "name": "Middle East / Geopolitical",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "Iran war ongoing since Feb 28, 2026. Hormuz crisis 6 months. Iran-Oman transit talks progressing. Houthi warnings to Bahrain and UAE. Trump signaling restraint on Iran, favoring economic pressure (Bloomberg, 26 min ago). No new escalation today.",
+      "category": "ongoing",
+      "severity": 5,
+      "sources": ["wikipedia.org", "britannica.com", "congress.gov", "aljazeera.com", "bloomberg.com"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"]
+    },
+    "africa": {
+      "name": "Africa",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "Nigeria-South Africa diplomatic row ongoing. Niger coup aftermath continues. Nigeria 2026 budget graft concerns. No new coup or crisis today.",
+      "category": "ongoing",
       "severity": 2,
-      "confidence": 7,
-      "summary": "Anti-migrant violence fallout: South Africa deportations topped 109,000 by end-March 2026. Ghana cancelled Ramaphosa visit. Nigeria security forces stretched. Diplomatic crisis escalating.",
-      "escalate_to": ["social_cohesion"]
+      "sources": ["allafrica.com", "riotimesonline.com"],
+      "escalate_to": ["geopolitical"]
+    },
+    "financial_system": {
+      "name": "Financial System Stress",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "HY OAS spread at 271 bps (Aug 6). Private credit market $1.5-2T (FSB). Redemption requests from big-name private credit funds. Russia bankruptcies +13.7% YoY. No bank failures, no credit freeze, no circuit breakers today. Market warning signals flashing but no dislocation.",
+      "category": "ongoing",
+      "severity": 3,
+      "sources": ["convextrade.com", "asiaasset.com", "americanbanker.com", "moscowtimes.com"],
+      "escalate_to": ["fin_stability", "liquidity"]
+    },
+    "commodities": {
+      "name": "Commodities / Energy",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "Gold at $4,391 (Aug 10), opened at $4,400 — highest since early June. Up 29.67% YoY. Brent above $100 with 20% July surge. Iran war fuel crisis creating South America divide. Oil exporters (Brazil, Venezuela) gaining, importers facing inflation. No new spike today.",
+      "category": "ongoing",
+      "severity": 4,
+      "sources": ["finance.yahoo.com", "tradingeconomics.com", "apmex.com", "indexbox.io", "wikipedia.org"],
+      "escalate_to": ["energy", "food_security"]
+    },
+    "pandemic_health": {
+      "name": "Pandemic / Health Emergency",
+      "status": "ONGOING",
+      "new_events": 0,
+      "findings": "Ebola epidemic ongoing — PHEIC declared May 16, 2026. 1,801 confirmed deaths in DRC, 2 in Uganda. Bundibugyo virus vaccine candidates entering clinical trials. MSF supporting PARTNERS clinical trial. ECDC epidemiological update due Aug 10. No new outbreak today.",
+      "category": "ongoing",
+      "severity": 3,
+      "sources": ["wikipedia.org", "ecdc.europa.eu", "cdc.gov", "doctorswithoutborders.org", "bmj.com"],
+      "escalate_to": ["supply_chain", "social_cohesion"]
     }
+  },
+  "events_tracked": [
+    {"id": "EVT-001", "title": "US-Japan Joint Yen Intervention", "category": "sovereign_intervention", "severity": 5, "status": "ONGOING", "first_detected": "2026-08-03", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-002", "title": "Iran War / Hormuz Crisis", "category": "war_military", "severity": 5, "status": "ONGOING", "first_detected": "2026-02-28", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-003", "title": "France Deficit Crisis", "category": "sovereign_crisis", "severity": 4, "status": "ONGOING", "first_detected": "2026-07-15", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-004", "title": "China Deflation / Property Crisis", "category": "sovereign_crisis", "severity": 3, "status": "ONGOING", "first_detected": "2026-01-15", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-005", "title": "Ebola PHEIC DRC/Uganda", "category": "pandemic_health", "severity": 3, "status": "ONGOING", "first_detected": "2026-05-16", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-006", "title": "Fed Hawkish Pivot (30% hike probability)", "category": "emergency_rate", "severity": 4, "status": "ONGOING", "first_detected": "2026-07-29", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-007", "title": "Korean Won Record Volatility", "category": "market_dislocation", "severity": 4, "status": "ONGOING", "first_detected": "2026-08-01", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-008", "title": "Private Credit PIK Distress", "category": "market_dislocation", "severity": 3, "status": "ONGOING", "first_detected": "2026-08-05", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-009", "title": "China Fertilizer Export Bans", "category": "energy_shock", "severity": 3, "status": "ONGOING", "first_detected": "2026-07-20", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-010", "title": "Argentina-Brazil Diplomatic Crisis", "category": "sovereign_crisis", "severity": 3, "status": "ONGOING", "first_detected": "2026-08-01", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-011", "title": "Gold at Record Highs ($4,391)", "category": "market_dislocation", "severity": 4, "status": "ONGOING", "first_detected": "2026-01-28", "last_updated": "2026-08-10T15:02Z"},
+    {"id": "EVT-012", "title": "Nigeria-South Africa Diplomatic Row", "category": "sovereign_crisis", "severity": 2, "status": "ONGOING", "first_detected": "2026-08-03", "last_updated": "2026-08-10T15:02Z"}
   ],
-  "domains_clear": [
-    "eu_ecb — ECB held rates at 2.25%, no emergency action. Bank lending rates stable at 3.6%.",
-    "financial_system — No new bank failures or credit freeze detected. Regulatory loosening concerns flagged but no acute event."
-  ],
-  "scan_summary": {
-    "total_events": 10,
-    "category_5_events": 4,
-    "secondary_events": 6,
-    "domains_with_events": 10,
-    "domains_clear": 2,
-    "highest_severity": 5,
-    "overall_assessment": "CRITICAL — Active war (Iran/Hormuz), sovereign FX intervention (US-Japan), market dislocation (KOSPI circuit breaker), and WHO PHEIC (Ebola). Signal board macro_event should remain ACTIVE/RED."
-  }
+  "new_events_this_scan": 0,
+  "escalated_signals_this_scan": 0,
+  "signal_board_update": "NO CHANGES REQUIRED — macro_event already ACTIVE, all related signals already escalated. Timestamp refresh only.",
+  "dashboard_push_required": true,
+  "notification_required": false
 }
