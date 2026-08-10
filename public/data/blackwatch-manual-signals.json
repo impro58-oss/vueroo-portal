@@ -2,7 +2,7 @@
   "metadata": {
     "source": "Multi-API: FRED, CoinGecko, NOAA + Lumina assessment",
     "system": "BlackWatch Manual Signals",
-    "last_update": "2026-08-10T17:04:13.714477+00:00",
+    "last_update": "2026-08-10T23:04:08.458251+00:00",
     "signals_fetched": 9,
     "signals_total": 9
   },
@@ -10,17 +10,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4412.3,
+      "value": 4459.0,
       "unit": "$/oz",
-      "status": "amber",
+      "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 166.5,
-      "description": "Gold Futures (GC=F): $4,412.30 (+3.92%)",
+      "change_from_last": 213.2,
+      "description": "Gold Futures (GC=F): $4,459.00 (+5.02%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-10",
       "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-10T17:03:58.537114+00:00"
+      "timestamp": "2026-08-10T23:04:01.156120+00:00"
     },
     "china": {
       "name": "China Health",
@@ -35,22 +35,22 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-10T17:04:01.576616+00:00"
+      "timestamp": "2026-08-10T23:04:03.145256+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 63830,
+      "value": 63957,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -2.1,
-      "description": "BTC $63,830 (-2.1% 24h), Dominance: 75.8%",
+      "change_from_last": -1.6,
+      "description": "BTC $63,957 (-1.6% 24h), Dominance: 75.8%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-10",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-10T17:04:01.866445+00:00"
+      "timestamp": "2026-08-10T23:04:03.400040+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -65,7 +65,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-10T17:04:02.248035+00:00"
+      "timestamp": "2026-08-10T23:04:03.824809+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
@@ -80,7 +80,7 @@
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-10T17:04:11.345800+00:00"
+      "timestamp": "2026-08-10T23:04:06.944097+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,7 +95,7 @@
       "series_id": null,
       "last_date": "2026-08-10",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-10T17:04:11.345800+00:00"
+      "timestamp": "2026-08-10T23:04:06.944097+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -110,7 +110,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-10T17:04:11.345800+00:00"
+      "timestamp": "2026-08-10T23:04:06.944097+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -125,7 +125,7 @@
       "series_id": null,
       "last_date": "2026-08-10",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-10T17:04:11.345800+00:00"
+      "timestamp": "2026-08-10T23:04:06.944097+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -140,8 +140,8 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "Live from FRED. Enriched with social sentiment during deep scans.",
-      "timestamp": "2026-08-10T17:04:13.714477+00:00"
+      "timestamp": "2026-08-10T23:04:08.458251+00:00"
     }
   },
-  "timestamp": "2026-08-10T17:04:13.714477+00:00"
+  "timestamp": "2026-08-10T23:04:08.458251+00:00"
 }
