@@ -67,8 +67,12 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 118.0,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search_estimated",
+      "note": "Reuters reports highest in half a year. Exact value not available. Estimated below 130 threshold. UNVERIFIED."
     },
     "GOLD": {
       "price": 4388.8,
@@ -92,16 +96,28 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.85,
+      "prev_close": 2.81,
+      "change_1d_pct": 1.42,
+      "data_points": 1,
+      "source": "web_search",
+      "note": "From Reuters/Economic Times Aug 4-5: 10yr JGB yield rose 3bps to 2.850%"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.11,
+      "prev_close": 3.09,
+      "change_1d_pct": 0.65,
+      "data_points": 1,
+      "source": "web_search",
+      "note": "From EconoTimes/Business Recorder Aug 5-6: 10yr Bund yield at 3.09-3.11%"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.61,
+      "prev_close": 1.62,
+      "change_1d_pct": -0.62,
+      "data_points": 1,
+      "source": "FRED",
+      "note": "From FRED CSV data Aug 6: BAA10Y = 1.61%"
     },
     "BTC": {
       "price": 65032.49,
@@ -112,21 +128,6 @@
     }
   },
   "breaches": [
-    {
-      "key": "GOLD",
-      "name": "Gold",
-      "category": "commodity",
-      "current": 4388.8,
-      "threshold": 3500,
-      "direction": "above",
-      "severity": "RED",
-      "meaning": "Gold mania \u2014 currency crisis or war premium",
-      "escalate": [
-        "fin_stability",
-        "geopolitical"
-      ],
-      "distance_pct": 25.39
-    },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
@@ -170,9 +171,68 @@
         "fin_stability"
       ],
       "distance_pct": 46.29
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.85,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure - BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 185.0
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.11,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress - periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 3.67
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.85,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral - Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 90.0
+    },
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4388.8,
+      "threshold": 3500,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 25.39
     }
   ],
-  "breach_count": 4,
+  "breach_count": 7,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
