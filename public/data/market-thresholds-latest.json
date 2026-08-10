@@ -1,47 +1,47 @@
 {
   "scan_date": "2026-08-10",
-  "scan_time_utc": "2026-08-10T07:30:40.099937+00:00",
+  "scan_time_utc": "2026-08-10T15:30:39.534041+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 158.46,
+      "price": 158.903,
       "prev_close": 157.529,
-      "change_1d_pct": 0.59,
+      "change_1d_pct": 0.87,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1561,
+      "price": 1.1553,
       "prev_close": 1.1507,
-      "change_1d_pct": 0.47,
+      "change_1d_pct": 0.4,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3493,
+      "price": 1.3522,
       "prev_close": 1.3427,
-      "change_1d_pct": 0.49,
+      "change_1d_pct": 0.71,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.745,
+      "price": 6.7336,
       "prev_close": 6.7523,
-      "change_1d_pct": -0.11,
+      "change_1d_pct": -0.28,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1418.7,
+      "price": 1417.52,
       "prev_close": 1428.5,
-      "change_1d_pct": -0.69,
+      "change_1d_pct": -0.77,
       "data_points": 5,
       "source": "yahoo"
     },
     "SPX": {
-      "price": 7757.64,
-      "prev_close": 7489.72,
-      "change_1d_pct": 3.58,
+      "price": 7760.77,
+      "prev_close": 7600.5,
+      "change_1d_pct": 2.11,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -49,76 +49,76 @@
       "price": 66970.22,
       "prev_close": 63957.53,
       "change_1d_pct": 4.71,
-      "data_points": 5,
+      "data_points": 4,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25902.54,
+      "price": 25937.49,
       "prev_close": 26009.4,
-      "change_1d_pct": -0.41,
+      "change_1d_pct": -0.28,
       "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.4,
+      "price": 15.16,
       "prev_close": 16.5,
-      "change_1d_pct": -6.67,
+      "change_1d_pct": -8.12,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": null,
-      "error": "UNKNOWN — web search did not return exact value. Cloudflare blocks on MacroMicro/Reuters prevented fetch.",
-      "source": "manual",
-      "note": "VIX is 15.4 (low), suggesting calm rates vol. MOVE typically 80-120 in calm. Not estimated to avoid fabrication."
+      "price": 74.7,
+      "source": "web_search (convextrade.com)",
+      "data_points": 1,
+      "change_1d_pct": null,
+      "note": "MOVE Index from convextrade.com Aug 10"
     },
     "GOLD": {
-      "price": 4413.1,
+      "price": 4411.8,
       "prev_close": 4245.8,
-      "change_1d_pct": 3.94,
+      "change_1d_pct": 3.91,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 84.03,
+      "price": 86.28,
       "prev_close": 79.45,
-      "change_1d_pct": 5.76,
+      "change_1d_pct": 8.6,
       "data_points": 4,
       "source": "yahoo"
     },
     "US10Y": {
-      "price": 4.66,
-      "prev_close": 4.686,
-      "change_1d_pct": -0.55,
+      "price": 4.69,
+      "prev_close": 4.627,
+      "change_1d_pct": 1.36,
       "data_points": 5,
       "source": "yahoo"
     },
     "JGB10Y": {
       "price": 2.81,
-      "prev_close": 2.845,
-      "change_1d_pct": -1.23,
+      "source": "web_search (brecorder.com/firstpost.com)",
       "data_points": 1,
-      "source": "web_search (Business Recorder, Aug 5 2026)",
-      "note": "10-year JGB yield fell 3.5bps to 2.81% per Reuters/Business Recorder"
+      "change_1d_pct": null,
+      "note": "JGB 10Y from Reuters Aug 5-10"
     },
     "DE10Y": {
-      "price": 3.09,
-      "prev_close": 3.10,
-      "change_1d_pct": -0.32,
+      "price": 3.13,
+      "source": "web_search (investing.com)",
       "data_points": 1,
-      "source": "web_search (EconoTimes/Investing.com, Aug 5-6 2026)",
-      "note": "German 10yr Bund yield at 3.09%, three-week low per EconoTimes"
+      "change_1d_pct": null,
+      "note": "German 10Y Bund from investing.com Aug 10"
     },
     "BAA10Y": {
-      "price": null,
-      "error": "UNKNOWN — FRED page did not expose current value in text. US 10Y at 4.66%, typical Baa yield ~6.0-6.5% would put spread ~1.3-1.8%.",
-      "source": "manual",
-      "note": "Not estimated to avoid fabrication. FRED BAA10Y series page returned metadata only."
+      "price": 1.61,
+      "source": "web_search (FRED CSV)",
+      "data_points": 1,
+      "change_1d_pct": null,
+      "note": "BAA10Y spread from FRED CSV Aug 6"
     },
     "BTC": {
-      "price": 65268.61,
+      "price": 64349.26,
       "prev_close": 64262.113,
-      "change_1d_pct": 1.57,
+      "change_1d_pct": 0.14,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -128,7 +128,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4413.1,
+      "current": 4411.8,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -137,13 +137,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.09
+      "distance_pct": 26.05
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 158.46,
+      "current": 158.903,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -152,13 +152,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 0.29
+      "distance_pct": 0.57
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1561,
+      "current": 1.1553,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -167,13 +167,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.53
+      "distance_pct": 0.46
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4413.1,
+      "current": 4411.8,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -181,11 +181,26 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 47.1
+      "distance_pct": 47.06
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10Y Bund",
+      "category": "rates",
+      "current": 3.13,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress - bund yields elevated",
+      "escalate": [
+        "europe"
+      ],
+      "distance_pct": 4.33
     }
   ],
-  "breach_count": 4,
+  "breach_count": 5,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_values_filled": true
 }
