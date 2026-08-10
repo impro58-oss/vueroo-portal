@@ -6,8 +6,9 @@
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
+    "manual_threshold_fill": "JGB10Y=2.81, DE10Y=3.18, BAA10Y=1.62, MOVE=est.115",
     "breaking_event": "3 cat-5 events active: Hormuz crisis (sev 5), US-Japan intervention unraveling (sev 5), Ebola epidemic (sev 4)",
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "6 thresholds breached (incl. JGB10Y RED, DE10Y AMBER from manual fill)"
   },
   "signals": {
     "macro_event": {
@@ -37,8 +38,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: Gold above 3500 (current: 4454.5)",
-      "timestamp": "2026-08-10T23:30:40.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4454.5). JGB10Y above 1.5 (current: 2.81). DE10Y above 3.0 (current: 3.18)",
+      "timestamp": "2026-08-10T23:31:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -97,8 +98,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: Gold above 3500 (current: 4454.5)",
-      "timestamp": "2026-08-10T23:30:40.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4454.5). JGB10Y above 1.5 RED (current: 2.81). DE10Y above 3.0 AMBER (current: 3.18)",
+      "timestamp": "2026-08-10T23:31:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -217,8 +218,8 @@
       "description": "Trade-Weighted Dollar Index (broad) + Yen at 159.29",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED by breaking event scanner: US-Japan intervention unraveling, yen erasing gains, worst session since February. BOJ may hike to 1.25% Sept.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "ESCALATED by breaking event scanner: US-Japan intervention unraveling, yen erasing gains, worst session since February. BOJ may hike to 1.25% Sept. THRESHOLD: JGB10Y 2.81% above 1.5% RED — Japan fiscal crisis, BOJ losing control of yield curve.",
+      "timestamp": "2026-08-10T23:31:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -277,8 +278,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-10",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-10T23:04:14.454963+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2). THRESHOLD: German 10Y Bund at 3.18% above 3.0% AMBER — European fiscal stress, periphery spreads widening.",
+      "timestamp": "2026-08-10T23:31:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",

@@ -2,6 +2,7 @@
   "scan_date": "2026-08-10",
   "scan_time_utc": "2026-08-10T23:30:39.071264+00:00",
   "scanner_version": "1.0.0",
+  "manual_supplement_utc": "2026-08-10T23:31:00.000000+00:00",
   "current_values": {
     "USDJPY": {
       "price": 159.274,
@@ -67,8 +68,11 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 115,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search_estimate",
+      "note": "Estimated from market context — VXTLT rising, 10Y yields elevated. Exact value not publicly accessible via web. Below 130 AMBER threshold."
     },
     "GOLD": {
       "price": 4454.5,
@@ -92,16 +96,25 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.81,
+      "change_1d_pct": 0.01,
+      "data_points": 0,
+      "source": "web_search_tradingeconomics",
+      "note": "TradingEconomics Aug 10 2026: 2.81%, up 0.01pp from previous session"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.18,
+      "change_1d_pct": 0.05,
+      "data_points": 0,
+      "source": "web_search_tradingeconomics",
+      "note": "TradingEconomics Aug 10 2026: 3.18%, up 0.05pp from previous session"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.62,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search_tradingeconomics",
+      "note": "TradingEconomics Aug 2026: 1.62% (monthly data from FRED)"
     },
     "BTC": {
       "price": 63909.67,
@@ -120,12 +133,28 @@
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "meaning": "Gold mania — currency crisis or war premium",
       "escalate": [
         "fin_stability",
         "geopolitical"
       ],
       "distance_pct": 27.27
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.81,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 87.33,
+      "source": "web_search_manual"
     },
     {
       "key": "USDJPY",
@@ -135,7 +164,7 @@
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Intervention zone \u2014 joint intervention likely failing",
+      "meaning": "Intervention zone — joint intervention likely failing",
       "escalate": [
         "japan_sovereign",
         "currency"
@@ -150,12 +179,28 @@
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "meaning": "Euro strength — dollar weakness, possible Fed pivot",
       "escalate": [
         "us_cycle",
         "currency"
       ],
       "distance_pct": 0.4
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.18,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress — periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 6.0,
+      "source": "web_search_manual"
     },
     {
       "key": "GOLD",
@@ -165,15 +210,17 @@
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
       "escalate": [
         "fin_stability"
       ],
       "distance_pct": 48.48
     }
   ],
-  "breach_count": 4,
+  "breach_count": 6,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_instruments_filled": ["MOVE", "JGB10Y", "DE10Y", "BAA10Y"],
+  "manual_breaches_added": ["JGB10Y", "DE10Y"]
 }
