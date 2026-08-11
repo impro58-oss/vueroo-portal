@@ -2,27 +2,28 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-11T19:04:34.945466+00:00",
+    "last_update": "2026-08-11T19:34:27.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event_scan": "2026-08-11T20:00Z"
+    "breaking_event_scan": "2026-08-11T20:00Z",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-10",
-      "note": "Yen intervention fading despite  spent. JGB 10Y at 2.807%. US-Japan intervention + private credit distress + Hormuz oil shock.",
-      "timestamp": "2026-08-11T19:04:34.945466+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4425.8)",
+      "timestamp": "2026-08-11T19:34:27.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -193,16 +194,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "USD/JPY reclaimed 159 despite  intervention. Trilateral US-Japan-Korea FX coordination failing to hold. BOJ signaling possible October hike.",
-      "timestamp": "2026-08-11T19:04:34.945466+00:00"
+      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.26)",
+      "timestamp": "2026-08-11T19:34:27.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
