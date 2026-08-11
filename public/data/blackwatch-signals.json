@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-11T23:04:08.332152+00:00",
+    "last_update": "2026-08-11T23:04:39.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event_scan": "2026-08-11T23:03Z"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-10",
-      "note": "",
-      "timestamp": "2026-08-11T23:03:45.218053+00:00"
+      "note": "ESCALATED: Yen carry trade unraveling. US-Japan joint intervention fading. Rickards warns of systemic risk. BOJ pressured to hike.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -57,31 +58,31 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.05,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-11T23:03:48.514746+00:00"
+      "note": "ESCALATED: Oil +5% Aug 11 on stalled Hormuz talks. Russia extends gasoline/diesel export ban thru Jan 2027. Ukraine drone strike on Russian refinery.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.46,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0.56,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-10",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-11T23:03:48.892002+00:00"
+      "note": "ESCALATED: Houthi lethal strike on commercial vessel. Hormuz talks stalled. Yemen civil war escalation risk. Trump pressure on Iran intensifying.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,15 +104,15 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-11T23:03:47.261018+00:00"
+      "note": "ESCALATED: Houthi attacks on commercial vessels in Bab al-Mandeb killing crew. Hormuz blocked since Feb 28. Russia diesel/gasoline export ban thru Jan 2027.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-11T23:03:50.911891+00:00"
+      "note": "USD/JPY intervention unraveling. Yen gives up half gains. Carry trade unwinding accelerating. Argentina peso at 1,500.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.05,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-11T23:03:53.270493+00:00"
+      "note": "ESCALATED: Houthi double-tap strike kills 6 on commercial vessel in Bab al-Mandeb Aug 11. Hormuz blocked since Feb 28. Iran setting new conditions. Yemen civil war risk reigniting.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,32 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-11T23:03:53.759563+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Breaking",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 1,
+      "unit": "alert",
+      "description": "4 category-5 events active: Houthi lethal attack on commercial vessel, Ebola 2,011 deaths, yen intervention failing, oil surging on Hormuz stall",
+      "series_id": null,
+      "last_date": "2026-08-11",
+      "note": "Breaking event scan 23:03 UTC. Houthi double-tap strike kills 6 in Bab al-Mandeb. Ebola crosses 2,000 deaths. Yen intervention unraveling. Argentina peso at 1,500.",
+      "timestamp": "2026-08-11T23:04:39.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 544,
-    "red_count": 7,
-    "amber_count": 10,
-    "green_count": 2,
-    "manual_count": 1,
-    "timestamp": "2026-08-11T23:04:08.332152+00:00"
+    "score": 480,
+    "red_count": 12,
+    "amber_count": 8,
+    "green_count": 1,
+    "manual_count": 0,
+    "timestamp": "2026-08-11T23:04:39.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -330,8 +346,26 @@
       {
         "domain": "Financial",
         "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "amber": 2,
+        "stress_level": 4
+      },
+      {
+        "domain": "Energy",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Food",
@@ -346,22 +380,28 @@
         "stress_level": 2
       },
       {
+        "domain": "Currency",
+        "red": 0,
+        "amber": 2,
+        "stress_level": 2
+      },
+      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       },
       {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
-        "domain": "Geopolitics",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Breaking",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Cyber",
@@ -370,19 +410,7 @@
         "stress_level": 1
       },
       {
-        "domain": "Supply Chain",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
         "domain": "Technology",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Currency",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -395,12 +423,6 @@
       },
       {
         "domain": "United States",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -417,8 +439,26 @@
       {
         "domain": "Financial",
         "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "amber": 2,
+        "stress_level": 4
+      },
+      {
+        "domain": "Energy",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Food",
@@ -433,12 +473,30 @@
         "stress_level": 2
       },
       {
+        "domain": "Currency",
+        "red": 0,
+        "amber": 2,
+        "stress_level": 2
+      },
+      {
         "domain": "China",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Breaking",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-11T23:04:08.332152+00:00"
+    "timestamp": "2026-08-11T23:04:39.000000+00:00"
   }
 }
