@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-11T11:05:56.711409+00:00",
+    "last_update": "2026-08-11T11:33:15.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-07",
-      "note": "",
-      "timestamp": "2026-08-11T11:05:50.459751+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4445.3)",
+      "timestamp": "2026-08-11T11:33:15.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -72,7 +73,7 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.9,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.25,
@@ -80,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-07",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-11T11:05:52.631438+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4445.3)",
+      "timestamp": "2026-08-11T11:33:15.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-11T11:05:54.190426+00:00"
+      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.194)",
+      "timestamp": "2026-08-11T11:33:15.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -215,9 +216,8 @@
       "description": "Gold Futures (GC=F): $4,439.00 (+4.64%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-11",
-      "note": "Spot price ,375.89/oz via JM Bullion 2026-08-11",
-      "timestamp": "2026-08-11T11:05:48.552501+00:00",
-      "manual_value": 4375.89
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-11T11:05:48.552501+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
