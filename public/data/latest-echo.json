@@ -1,147 +1,325 @@
 {
-  "scan_time": "2026-08-10T23:04:30.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
-  "domains_scanned": 12,
-  "queries_executed": 12,
-  "events_detected": 3,
-  "events": [
-    {
-      "id": "BW-2026-08-11-001",
-      "title": "Strait of Hormuz Crisis — Iran Military Reshuffle, Talks Stalling, Oil Rising",
-      "domain": "middle_east",
-      "category": "energy_shock",
-      "secondary_category": "war_military",
-      "severity": 5,
-      "confidence": 9,
-      "summary": "Iran shakes up military leadership — IRGC hardliner Rezaei appointed, signaling escalation faction in control. Strait of Hormuz talks stalling. Trump shifts to 'low-key' pressure strategy, no rush to resolve. Oil prices rising as Iran tempers optimism about Hormuz reopening. Brent ~$85/bbl. 22 EU heads of government letter criticizes Spain's regularization as 'pull factor' for Ceuta crisis. Largest energy disruption in recorded history ongoing. Houthis attacking Saudi oil tankers. Iran parliament reviewing ban on US/Israeli ships.",
-      "sources": [
-        "CNN (Aug 10 — live updates)",
-        "NBC News (Aug 10)",
-        "Al Jazeera (Aug 3-10)",
-        "Semafor (Aug 10)",
-        "CFR Global Conflict Tracker (Aug 10)",
-        "Wikipedia — 2026 Strait of Hormuz crisis",
-        "Guardian (Aug 10)"
-      ],
-      "impact_regions": [
-        "Global",
-        "Middle East",
-        "Asia",
-        "Europe",
-        "Americas"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "food_security",
-        "supply_chain"
-      ],
-      "detected_at": "2026-08-10T23:04:30.000000+00:00",
-      "update_from_previous": "Military leadership reshuffle (Rezaei/IRGC hardliner), talks stalling, oil rising again after temporary optimism. EU diplomatic tensions escalating over Ceuta spillover."
+  "scan_id": "2026-08-09-deep",
+  "scan_type": "weekly_deep_scan",
+  "scan_number": 11,
+  "scan_time": "2026-08-09T10:00:00+01:00",
+  "scan_time_utc": "2026-08-09T09:00:00Z",
+  "analyst": "Lumina",
+  "operator": "cron job 9dc704e6",
+  "previous_scan": "2026-08-02-deep",
+  "overall_risk": {
+    "level": "CRITICAL",
+    "color": "red",
+    "substatus": "ESCALATING",
+    "score": 750,
+    "red_count": 15,
+    "amber_count": 3,
+    "green_count": 1,
+    "manual_count": 1,
+    "info_count": 0,
+    "change_from_last": "MAJOR ESCALATION: +8 RED, -6 AMBER, -2 GREEN, -1 INFO. Iran deal stalled, currency war escalated, Europe grid crisis, private credit distress confirmed."
+  },
+  "signal_board": {
+    "fin_stability": { "name": "Financial Stability", "status": "red", "trend": "deteriorating", "confidence": 10, "change": "downgraded_green_to_red", "value": 2.71, "unit": "%", "description": "HY OAS Spread 271 bps — systemic risk escalated: US-Japan intervention + JGB crisis + private credit PIK", "last_date": "2026-08-06", "note": "Breaking event: US-Japan intervention + JGB yield crisis + private credit systemic risk" },
+    "liquidity": { "name": "Liquidity Conditions", "status": "red", "trend": "deteriorating", "confidence": 7, "change": "downgraded_amber_to_red", "value": 0.88, "unit": "%", "description": "M2 YoY growth — US-Japan intervention used FIMA repo, dollar funding stress", "last_date": "2026-07-06", "note": "FIMA repo facility used, Treasury yield spike risk" },
+    "sov_debt": { "name": "Sovereign Debt Stress", "status": "red", "trend": "stable", "confidence": 3, "change": "unchanged", "value": 122.59, "unit": "%", "description": "US Debt/GDP — Japan ¥1.3438 quadrillion debt now critical overlay", "last_date": "2026-01-01", "note": "Stale data. Japan sovereign risk now critical overlay" },
+    "energy": { "name": "Energy Security", "status": "red", "trend": "deteriorating", "confidence": 9, "change": "downgraded_amber_to_red", "value": 86.04, "unit": "$/bbl", "description": "Brent crude — Hormuz crisis, Houthis attacking Saudi, oil disruption active", "last_date": "2026-08-07", "note": "Reversal of Aug 2 de-escalation assessment. Iran demanding concessions." },
+    "geopolitical": { "name": "Geopolitical Conflict", "status": "red", "trend": "deteriorating", "confidence": 10, "change": "downgraded_amber_to_red", "value": 15.15, "description": "VIX proxy — Iran crisis active, Ukraine record missile attacks, Houthi attacks on Saudi", "last_date": "2026-08-06", "note": "Multiple active geopolitical vectors. Reversal of Aug 2 improvement." },
+    "cyber": { "name": "Cyber Threat Level", "status": "amber", "trend": "stable", "confidence": 4, "change": "unchanged", "value": "Elevated", "description": "Iranian-affiliated cyber activity targeting US water/energy. Data centres exposed carriers to Chinese hacking. RovoBlast Confluence exploit.", "last_date": "2026-08-09", "note": "House panel: data centres exposed US carriers to Chinese hacking" },
+    "supply_chain": { "name": "Supply Chain Health", "status": "red", "trend": "deteriorating", "confidence": 7, "change": "downgraded_amber_to_red", "value": 86.04, "unit": "$/bbl (proxy)", "description": "Hormuz disruption + Bab al-Mandab reduced + Cape of Good Hope rerouting", "last_date": "2026-08-07", "note": "FAO warns fertilizer scarcity reducing yields H2 2026 into 2027" },
+    "food_security": { "name": "Food Security", "status": "red", "trend": "improving", "confidence": 3, "change": "unchanged", "value": 131.17, "unit": "index", "description": "IMF Food Price Index — FAO warns fresh food price surge Aug 5", "last_date": "2026-06-01", "note": "FAO: high food prices + inflation + El Niño driving acute food insecurity" },
+    "climate": { "name": "Climate Stress", "status": "red", "trend": "deteriorating", "confidence": 9, "change": "unchanged", "value": "Strong El Niño", "unit": "anomaly", "description": "WMO: strongest El Niño on record trajectory. Europe heatwave forcing nuclear shutdowns.", "last_date": "2026-08-07", "note": "SST anomalies exceeding 2.9°C. August-October above-normal globally." },
+    "social_cohesion": { "name": "Social Cohesion", "status": "red", "trend": "deteriorating", "confidence": 3, "change": "unchanged", "value": 49.5, "unit": "index", "description": "Consumer Sentiment — 120+ significant anti-government protests globally", "last_date": "2026-06-01", "note": "Carnegie Endowment: 120+ significant protests. US protests rising." },
+    "inst_trust": { "name": "Institutional Trust", "status": "red", "trend": "deteriorating", "confidence": 5, "change": "unchanged", "value": 27, "unit": "%", "description": "Gallup election concerns. Brazil-Argentina diplomatic crisis. UN warns Iran targeting minorities.", "last_date": "2025-Q1", "note": "Gallup: election concerns high ahead of 2026 midterms" },
+    "ai_acceleration": { "name": "AI Acceleration", "status": "amber", "trend": "improving", "confidence": 5, "change": "unchanged", "value": "Rapid", "description": "EU AI Act transparency obligations effective Aug 2. OpenAI backs national safety standard. Voluntary safety tests with Trump officials.", "last_date": "2026-08-09", "note": "EU AI Act live. OpenAI backing national standard. Regulatory inflection." },
+    "currency": { "name": "Currency Stability", "status": "red", "trend": "deteriorating", "confidence": 10, "change": "downgraded_info_to_red", "value": 119.7, "unit": "index", "description": "DXY broad — unprecedented US-Japan-Korea trilateral FX intervention, yen 40yr low, currency war", "last_date": "2026-07-31", "note": "First trilateral in history. Yen gains fading. BOJ signaling September hike." },
+    "gold": { "name": "Gold / Precious Metals", "status": "red", "trend": "improving", "confidence": 9, "change": "downgraded_green_to_red", "value": 4350, "unit": "$/oz", "description": "Gold at ~$4,350/oz — record highs, +27.79% YoY, safe-haven demand from Iran war + rate concerns", "last_date": "2026-08-07", "note": "Reclassified as panic buying territory. Was green last scan." },
+    "crypto": { "name": "Crypto Markets", "status": "green", "trend": "stable", "confidence": 9, "change": "unchanged", "value": 64200, "unit": "$", "description": "BTC ~$64,200, stable $63-65K range, dominance 75.8%", "last_date": "2026-08-09", "note": "Markets decoupled from geopolitical risk" },
+    "china": { "name": "China Health", "status": "red", "trend": "stable", "confidence": 7, "change": "unchanged", "value": 49.0, "unit": "PMI", "description": "Non-Manufacturing PMI fell to 49.0 from 50.2 — contraction. Politburo refused major stimulus.", "last_date": "2026-07-31", "note": "Services and construction both weakening. No stimulus signals." },
+    "europe": { "name": "Europe Stability", "status": "amber", "trend": "stable", "confidence": 9, "change": "unchanged", "value": 2.25, "unit": "%", "description": "ECB rate 2.25% — grid at breaking point: Paks nuclear near full shutdown, 6 countries forced plant shutdowns", "last_date": "2026-08-07", "note": "Paks came millimeters from full powering down. Bund yields above 3%." },
+    "us_cycle": { "name": "US Cycle Position", "status": "red", "trend": "deteriorating", "confidence": 9, "change": "downgraded_amber_to_red", "value": 0.46, "unit": "%", "description": "10Y-2Y spread — 30Y yield highest since 2007, Fed forced to support yen, 3 dissenters, weak jobs", "last_date": "2026-08-07", "note": "Fed trapped: weak jobs vs. sticky inflation. Treasury refunding $125B Aug 15." },
+    "middle_east": { "name": "Middle East Tension", "status": "red", "trend": "deteriorating", "confidence": 10, "change": "downgraded_amber_to_red", "value": 86.04, "unit": "$/bbl", "description": "Hormuz Day 161 — Iran demanding concessions, Houthis attacking Saudi, threats to Bahrain/UAE", "last_date": "2026-08-07", "note": "Reversal of Aug 2 de-escalation. Deal stalled. Houthi NATO-style pact with Iran allies." },
+    "public_sentiment": { "name": "Public Sentiment", "status": "red", "trend": "deteriorating", "confidence": 3, "change": "unchanged", "value": 49.5, "unit": "index", "description": "Consumer Sentiment — FAO warns high food prices driving acute food insecurity", "last_date": "2026-06-01", "note": "120+ global protests. Ireland water disputes." }
+  },
+  "signal_changes_from_last": [
+    { "signal": "Financial Stability", "change": "downgraded_green_to_red", "reason": "Systemic risk escalated: US-Japan intervention + JGB crisis + private credit PIK distress confirmed by Fed Boston" },
+    { "signal": "Liquidity Conditions", "change": "downgraded_amber_to_red", "reason": "FIMA repo facility used, dollar funding stress, Treasury yield spike risk" },
+    { "signal": "Energy Security", "change": "downgraded_amber_to_red", "reason": "Iran deal stalled, Hormuz still closed Day 161, Houthis attacking Saudi. Reversal of Aug 2 de-escalation." },
+    { "signal": "Geopolitical Conflict", "change": "downgraded_amber_to_red", "reason": "Iran crisis active, Ukraine record missile attacks, Houthi attacks. Reversal of Aug 2 improvement." },
+    { "signal": "Supply Chain Health", "change": "downgraded_amber_to_red", "reason": "Hormuz disruption, Cape of Good Hope rerouting, FAO fertilizer scarcity warning" },
+    { "signal": "Currency Stability", "change": "downgraded_info_to_red", "reason": "Unprecedented US-Japan-Korea trilateral FX intervention. Yen 40yr low. Currency war dynamics." },
+    { "signal": "Gold / Precious Metals", "change": "downgraded_green_to_red", "reason": "Gold at $4,350 record highs. Reclassified as panic buying territory." },
+    { "signal": "US Cycle Position", "change": "downgraded_amber_to_red", "reason": "30Y yield highest since 2007, Fed trapped, weak jobs report, 3 dissenters" },
+    { "signal": "Middle East Tension", "change": "downgraded_amber_to_red", "reason": "Hormuz deal stalled, Iran demanding concessions, Houthi attacks on Saudi, threats to Bahrain/UAE" }
+  ],
+  "convergence": {
+    "active": true,
+    "severity": "CRITICAL (ESCALATING)",
+    "primary_convergence": {
+      "name": "Currency-Financial-Sovereign Debt Spiral",
+      "domains": ["Currency", "Financial", "United States", "Japan"],
+      "description": "Unprecedented US-Japan-Korea trilateral FX intervention. JGB yields surging expose ¥1.3438 quadrillion debt. Private credit PIK distress growing. No precedent in post-Bretton Woods history.",
+      "severity": "CRITICAL"
     },
-    {
-      "id": "BW-2026-08-11-002",
-      "title": "US-Japan Joint Currency Intervention Unraveling — Yen Erases Half of Gains",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "secondary_category": "emergency_rate",
-      "severity": 5,
-      "confidence": 9,
-      "summary": "Historic US-Japan joint currency intervention is unraveling — yen has erased half the gains. JPY at 159.29/dollar, worst session since February. Yen swung to 1% loss despite US/Japan authorities' efforts. BOJ expected to hike to 1.25% in September. Fed held rates at 3.50-3.75% with 30% market probability of hike. BlackRock notes scarcity-driven inflation from Middle East energy shock has driven repricing of Fed expectations from easing to tightening, global rise in bond yields. Questions over efficacy of intervention — more currency moves may be needed.",
-      "sources": [
-        "Bloomberg (Aug 10)",
-        "Telegraph (Aug 10)",
-        "Yahoo Finance (Aug 10)",
-        "Semafor (Aug 10)",
-        "CNBC (Aug 10)",
-        "BlackRock Investment Institute (Aug 10)"
-      ],
-      "impact_regions": [
-        "Japan",
-        "United States",
-        "Global"
-      ],
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability",
-        "us_cycle"
-      ],
-      "detected_at": "2026-08-10T23:04:30.000000+00:00",
-      "update_from_previous": "SEVERITY UPGRADED 4→5. Intervention unraveling, yen erasing gains. BlackRock confirms scarcity-driven inflation shifting Fed expectations to tightening. Global bond yields rising."
+    "secondary_convergence": {
+      "name": "Geopolitical-Energy-Supply Chain-Food Chain",
+      "domains": ["Geopolitics", "Energy", "Supply Chain", "Middle East", "Food"],
+      "description": "Hormuz Day 161. Iran demanding concessions. Houthis attacking Saudi. FAO warns food price surge. Fertilizer scarcity into 2027. Transforming from acute to chronic.",
+      "severity": "CRITICAL"
     },
-    {
-      "id": "BW-2026-08-11-003",
-      "title": "2026 Ebola Epidemic — 4,230 Cases, 1,918 Deaths, Outpacing Global Response",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 4,
-      "confidence": 9,
-      "summary": "Bundibugyo ebolavirus outbreak in DRC and Uganda. WHO PHEIC declared May 16, 2026. As of Aug 7: 4,230 confirmed cases, 1,918 deaths (45.3% fatality rate). Fastest-growing Ebola outbreak on record, second largest ever. WHO and Africa CDC conceded Aug 6 that outbreak is outpacing response. Imported case in France. Ongoing armed conflict (M23) hinders detection/treatment. True scale likely exceeds confirmed numbers. Existing treatments certified for Zaire ebolavirus, not Bundibugyo — complicating response.",
-      "sources": [
-        "Wikipedia — 2026 Ebola epidemic (Aug 10)",
-        "WSWS (Aug 10)",
-        "BNO News (Aug 8)",
-        "CDC (Aug 10)",
-        "Medical Xpress (Aug 10)",
-        "Impakter (Aug 10)"
-      ],
-      "impact_regions": [
-        "Central Africa",
-        "East Africa",
-        "Europe (France import)",
-        "Global"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "detected_at": "2026-08-10T23:04:30.000000+00:00",
-      "update_from_previous": "Cases up from ~4,141 to 4,230 (+89). Deaths up from 1,889 to 1,918 (+29). France imported case confirmed. 45.3% fatality rate. WHO concedes response outpaced."
+    "tertiary_convergence": {
+      "name": "Climate-Energy-Nuclear Grid",
+      "domains": ["Climate", "Energy", "Europe"],
+      "description": "Strongest El Niño on record. Europe heatwave forcing nuclear shutdowns in 6 countries. Paks came millimeters from full powering down. Structural vulnerability exposed.",
+      "severity": "HIGH"
+    },
+    "quaternary_convergence": {
+      "name": "Social-Financial-Stagflation",
+      "domains": ["Social", "Financial", "United States", "Food"],
+      "description": "Consumer sentiment 49.5. Trust 27%. 120+ global protests. FAO warns food price surge. Fed trapped. Stagflation crystalizing.",
+      "severity": "HIGH"
+    },
+    "new_convergence": {
+      "name": "AI Regulation-Cyber-Infrastructure",
+      "domains": ["Technology", "Cyber", "Financial"],
+      "description": "EU AI Act live Aug 2. OpenAI backing national safety standard. Iranian cyber activity targeting US infrastructure. Data centres exposed to Chinese hacking.",
+      "severity": "MEDIUM-HIGH"
     }
+  },
+  "current_state": {
+    "observable": [
+      { "item": "Brent crude at ~$83-86/bbl", "detail": "Aug 7 Fortune: $86.04. Aug 6 Fortune: $83.64. Volatile on Hormuz negotiations.", "source": "Fortune, Forbes — Aug 6-7" },
+      { "item": "Gold at ~$4,350/oz", "detail": "Trading Economics: $4,343.43 (Aug 7). TheStreet: ~$4,350. Up 27.79% YoY.", "source": "Trading Economics, TheStreet — Aug 7" },
+      { "item": "BTC at ~$64,200", "detail": "Yahoo Finance: $64,216.91 (Aug 6). Stable $63-65K range.", "source": "Yahoo Finance — Aug 6" },
+      { "item": "HY OAS spread at 271 bps", "detail": "Convex/FRED: 271 bps (Aug 6). Tightened from 284 bps but systemic risk escalated.", "source": "Convex, FRED — Aug 6" },
+      { "item": "Fed held at 3.50-3.75% with 3 dissenters", "detail": "JPMorgan: 5th consecutive hold. Warsh emphasizing inflation. Weak jobs reduced Sep hike odds.", "source": "JPMorgan, CBS — Jul 29-Aug 7" },
+      { "item": "US-Japan joint FX intervention confirmed", "detail": "First since 1998. South Korea joined — first trilateral. Japan may have sold $58.97bn. Yen gains fading.", "source": "Al Jazeera, NYT, CNBC — Aug 3" },
+      { "item": "Iran demands US concessions for Hormuz", "detail": "CNN Aug 8: Iran close to deal with Oman but demanding concessions. Not signed. Day 161.", "source": "CNN, AP — Aug 4-8" },
+      { "item": "Houthis attacked Saudi Najran province", "detail": "Al Jazeera/RT Aug 7: 11 civilians wounded. Houthi threats to Bahrain/UAE. NATO-style pact with Iran allies.", "source": "Al Jazeera, RT, ISW — Aug 7" },
+      { "item": "Ebola: 4,053 cases, 1,850 deaths", "detail": "ECDC Aug 6: DRC accelerating. 53 of 140 health zones affected. No vaccine for Bundibugyo strain.", "source": "ECDC, CDC, WHO — Aug 6-7" },
+      { "item": "China Non-Manufacturing PMI fell to 49.0", "detail": "FocusEconomics: fell from 50.2 in June. Contraction. Politburo refused major stimulus.", "source": "FocusEconomics, Bursa — Jul 31-Aug 6" },
+      { "item": "US unemployment at 4.1%", "detail": "EPI Aug 7: 58 consecutive months at 4.5% or below. NYT: hiring slumps, worrying sign.", "source": "EPI, NYT, BLS — Aug 7" },
+      { "item": "EU AI Act transparency obligations effective Aug 2", "detail": "European Commission: deep fakes, AI-generated text must be labeled. OpenAI backs national safety standard.", "source": "EU Commission, Forbes, Reuters — Aug 2-3" },
+      { "item": "Paks nuclear nearly fully shut down", "detail": "CNN/New Scientist: all but one turbine offline. Came millimeters from full powering down. 6 countries affected.", "source": "CNN, New Scientist, Le Monde — Aug 3-7" },
+      { "item": "Brazil downgraded diplomatic ties with Argentina", "detail": "Reuters Aug 5: Brazil withdrew ambassador. Argentina country risk 451 bps. Debt default to Brazil.", "source": "Reuters, Al Jazeera, Rio Times — Aug 5-6" },
+      { "item": "FAO warns fresh food price surge", "detail": "Reuters Aug 5: adverse weather + geopolitical tensions pushing prices up. Fertilizer scarcity into 2027.", "source": "Reuters, FAO, GlobalIssues — Aug 5-7" },
+      { "item": "WMO confirms strongest El Niño on record trajectory", "detail": "CNN Aug 4: SST anomalies exceeding 2.9°C. 2026/2027 may set warmest year records.", "source": "WMO, CNN, NOAA — Aug 4-7" },
+      { "item": "Private credit PIK distress confirmed by Fed Boston", "detail": "Axios Aug 7: PIK usage rose from 6% to 10% by early 2026. Cross-industry. Bloomberg: $1.8T market.", "source": "Axios, Fed Boston, Bloomberg — Aug 6-7" }
+    ],
+    "strong_inference": [
+      { "item": "Iran deal close narrative is negotiating tactic, not breakthrough", "confidence": 9 },
+      { "item": "US-Japan intervention is regime shift in global currency architecture", "confidence": 9 },
+      { "item": "Private credit PIK distress is systemic, not idiosyncratic", "confidence": 8 },
+      { "item": "Europe nuclear grid vulnerability to heatwave/drought is structural", "confidence": 9 },
+      { "item": "China Politburo acceptance of lower growth trajectory", "confidence": 8 },
+      { "item": "Fed structurally trapped — no good options", "confidence": 8 },
+      { "item": "Global stagflation crystalizing", "confidence": 7 }
+    ],
+    "weak_signals": [
+      { "item": "Iran-Oman Hormuz coordinates agreed but Iran demanding concessions", "confidence": 6 },
+      { "item": "BOJ September hike could trigger carry trade unwind", "confidence": 7 },
+      { "item": "Houthi threats to Bahrain and UAE — widening conflict scope", "confidence": 6 },
+      { "item": "House panel: data centres exposed carriers to Chinese hacking", "confidence": 7 },
+      { "item": "RovoBlast Confluence exploit — enterprise data exfiltration", "confidence": 5 },
+      { "item": "Russia forming Ukrainian POW Spetsnaz brigade", "confidence": 5 },
+      { "item": "China non-manufacturing PMI contraction — services and construction weakening", "confidence": 7 },
+      { "item": "Argentina country risk 451 bps — sovereign default trajectory", "confidence": 7 },
+      { "item": "Ireland water snitch hotline — climate stress reaching social cohesion", "confidence": 4 },
+      { "item": "BLS benchmark revision Aug 28 — could significantly revise employment data", "confidence": 5 },
+      { "item": "Paks nuclear millimeters from full powering down — near-miss on cascade", "confidence": 7 },
+      { "item": "120+ significant anti-government protests globally", "confidence": 7 },
+      { "item": "El Niño suppressing Atlantic hurricanes but intensifying global heat", "confidence": 7 },
+      { "item": "Russia record missile attacks in July — shifting from drones to ballistic", "confidence": 8 },
+      { "item": "Ukraine receiving 3x fewer interceptors due to Middle East war", "confidence": 8 },
+      { "item": "Treasury refunding $125B on Aug 15 — could stress bond market", "confidence": 5 },
+      { "item": "Albania Flamingo Revolution — media capture driving instability", "confidence": 5 },
+      { "item": "WMO: SST anomalies exceeding 2.9°C — record warm for 2+ months", "confidence": 7 }
+    ],
+    "symbolic": [
+      "Trilateral intervention = end of dollar's unchallenged supremacy era",
+      "Paks millimeters from darkness = civilization's infrastructure is climate-exposed",
+      "VIX at ~15 while 15 signals red = market has become a complacency machine",
+      "EU AI Act taking effect = governance attempting to catch up with capability",
+      "Gold at $4,350 = the oldest safe haven is pricing what systems can't model",
+      "Iran demanding concessions = the negotiation is the strategy",
+      "August historical resonance — geopolitical escalation month holds true"
+    ],
+    "unknown": [
+      "Will Hormuz deal actually close? Iran demanding concessions, not signed",
+      "Will BOJ September hike trigger carry trade unwind?",
+      "Will Fed hike in September despite weak jobs?",
+      "Full scope of private credit PIK exposure — $1.8T market opacity",
+      "North Korea status — silent through this crisis",
+      "African conflicts — Sudan, Nigeria-SA — underreported",
+      "El Niño peak intensity — could exceed all forecasts",
+      "China Q3 stimulus — will Politburo reverse course?",
+      "BLS benchmark revision Aug 28 — how large?",
+      "Iran nuclear program status during Hormuz negotiations"
+    ]
+  },
+  "primary_drivers": [
+    { "rank": 1, "name": "Hormuz Crisis — From De-escalation to Stalemate", "confidence": 10, "detail": "Iran demanding US concessions. Day 161. Houthis attacking Saudi. NATO-style pact. Transforming from acute to chronic economic warfare." },
+    { "rank": 2, "name": "Currency War — Unprecedented Trilateral Intervention", "confidence": 10, "detail": "First US-Japan FX intervention since 1998. First trilateral with South Korea. Yen gains fading. BOJ signaling September hike. Regime shift." },
+    { "rank": 3, "name": "Private Credit $1.8T Systemic Risk", "confidence": 9, "detail": "Fed Boston confirms PIK usage up 67% since 2022. Cross-industry distress. Regulatory oversight gap growing. Russia bankruptcies +13.7%." },
+    { "rank": 4, "name": "Europe Grid — Climate Meets Infrastructure", "confidence": 9, "detail": "Paks nuclear nearly fully shut down. 6 countries forced plant shutdowns. Danube record-low. Structural vulnerability exposed. NEW driver." },
+    { "rank": 5, "name": "Fed Trapped — Jobs Weak, Inflation Sticky", "confidence": 8, "detail": "Weak jobs report. 3 dissenters. Warsh inflation emphasis. Treasury refunding $125B Aug 15. No good options." },
+    { "rank": 6, "name": "Global Stagflation Crystalizing", "confidence": 7, "detail": "FAO food price surge. Fertilizer scarcity into 2027. China PMI contraction. Europe grid stress. Argentina crisis. Synchronized slowdown." },
+    { "rank": 7, "name": "AI Governance Inflection", "confidence": 7, "detail": "EU AI Act live Aug 2. OpenAI backs national safety standard. Voluntary tests with Trump officials. Regulatory inflection point." }
   ],
-  "no_events_detected_domains": [
-    "us_fed",
-    "latam",
-    "eu_ecb",
-    "uk",
-    "china",
-    "em_asia",
-    "africa",
-    "financial_system",
-    "commodities"
+  "scenarios": [
+    { "name": "Hormuz Deal Collapses — Chronic Economic Warfare", "probability": 55, "confidence": 9, "time_horizon": "Weeks-Months", "impact": "Critical", "change": "up from 35% (inverse of Aug 2 deal holds)", "triggers": ["Iran walks away", "US rejects concessions", "Houthi attacks intensify", "oil above $90"], "inverse": "Deal actually closes, Hormuz reopens, oil drops to $65-70" },
+    { "name": "BOJ September Hike → Carry Trade Unwind", "probability": 35, "confidence": 8, "time_horizon": "September", "impact": "High", "change": "NEW high-priority", "triggers": ["BOJ Sep 17-18 hike", "yen below 140", "US 10Y above 4.5%", "global equity selloff"], "inverse": "BOJ delays hike, carry trade continues" },
+    { "name": "Global Stagflation Confirmed", "probability": 50, "confidence": 8, "time_horizon": "Weeks-Months", "impact": "High", "change": "up from 45%", "triggers": ["CPI above 4%", "oil above $100", "China Q3 GDP below 4%", "Eurozone recession"], "inverse": "Hormuz reopens, oil drops, China stimulates, inflation cools" },
+    { "name": "Private Credit Repricing Event", "probability": 30, "confidence": 7, "time_horizon": "Weeks-Months", "impact": "High", "change": "up from 25%", "triggers": ["Major BDC markdown", "fund redemption gating", "regulatory enforcement"], "inverse": "Fed/ECB liquidity suppresses volatility, PIK plateaus" },
+    { "name": "Ukraine → NATO Direct Conflict", "probability": 18, "confidence": 8, "time_horizon": "Days-Weeks", "impact": "Catastrophic", "change": "down from 20%", "triggers": ["NATO member killed", "Article 5 invoked", "Patriot by NATO personnel"], "inverse": "Ceasefire or frozen conflict" },
+    { "name": "Europe Grid Failure — Cascading Blackout", "probability": 15, "confidence": 7, "time_horizon": "Weeks", "impact": "High", "change": "NEW", "triggers": ["Additional plant shutdown", "grid frequency deviation", "emergency rationing"], "inverse": "Heatwave breaks, river levels recover, plants restart" },
+    { "name": "Grinding Stalemate — New Normal", "probability": 20, "confidence": 7, "time_horizon": "Months", "impact": "Medium", "change": "down from 30%", "triggers": ["Pattern persists", "no escalation", "no breakthrough"], "inverse": "Decisive advantage or major shock" },
+    { "name": "China Hard Landing", "probability": 20, "confidence": 6, "time_horizon": "Months", "impact": "High", "change": "up from 18%", "triggers": ["Q3 GDP below 4%", "developer default", "capital flight spike"], "inverse": "Beijing major stimulus" },
+    { "name": "AI Governance Treaty", "probability": 15, "confidence": 5, "time_horizon": "Months", "impact": "High (positive)", "change": "up from 12%", "triggers": ["Additional AI failures", "UN Security Council", "US-EU-China alignment"], "inverse": "Arms race dynamics prevail" },
+    { "name": "BLACK SWAN: Iran Nuclear Escalation", "probability": 5, "confidence": 3, "time_horizon": "Weeks-Months", "impact": "Catastrophic", "change": "up from 3%", "triggers": ["IAEA expelled", "90% enrichment", "Israel strikes Natanz"], "inverse": "Iran maintains status quo under deal" },
+    { "name": "BLACK SWAN: Super El Niño Agricultural Crisis", "probability": 25, "confidence": 7, "time_horizon": "Months", "impact": "High", "change": "up from 20%", "triggers": ["Historic strength confirmed", "simultaneous droughts", "grain failures"], "inverse": "El Niño weakens" },
+    { "name": "BLACK SWAN: Fed Forced Hike → Market Crash", "probability": 12, "confidence": 5, "time_horizon": "September meeting", "impact": "Critical", "change": "up from 10%", "triggers": ["CPI above 4%", "Fed hike September", "30Y above 5.5%"], "inverse": "Inflation cools, dissenters quiet" },
+    { "name": "BLACK SWAN: AI-Triggered Financial System Disruption", "probability": 10, "confidence": 4, "time_horizon": "Weeks-Months", "impact": "Critical", "change": "up from 8%", "triggers": ["AI targets financial infrastructure", "algorithm flash crash", "AI-manipulated market data"], "inverse": "Financial systems air-gapped" },
+    { "name": "BLACK SWAN: European Nuclear Cascade", "probability": 5, "confidence": 4, "time_horizon": "Weeks", "impact": "High", "change": "NEW", "triggers": ["Multiple simultaneous shutdowns", "grid frequency collapse", "emergency rationing"], "inverse": "Heatwave breaks, plants restart" }
   ],
-  "developments_not_cat5": [
-    {
-      "domain": "latam",
-      "note": "Colombia new rightwing president (De La Espriella), $1B US security aid pledged. Rightward shift across Latin America. Not category-5."
-    },
-    {
-      "domain": "eu_ecb",
-      "note": "Ceuta border crisis — Italy suspended Schengen with Spain, Spain retaliated with border checks. 22 EU heads criticized Spain's regularization policy. Diplomatic stress but not macro-5."
-    },
-    {
-      "domain": "china",
-      "note": "China Shock 2.0 reshuffling markets (Reuters Aug 9). PBOC net draining yuan in OMO. Digital yuan 5-year plan published. No new emergency."
-    },
-    {
-      "domain": "em_asia",
-      "note": "Emerging Asia currency defense getting makeover (Bloomberg Aug 9). Central banks finding non-reserve tools. Not at crisis level."
-    },
-    {
-      "domain": "commodities",
-      "note": "EIA: oil prices falling on expected supply increase. Brent forecast $74/bbl for 3Q26. Moderating factor amid Hormuz crisis."
-    },
-    {
-      "domain": "financial_system",
-      "note": "No acute bank failure. BlackRock notes hyperscaler capex revised 30% higher to $720B for 2026. BofA bullishness highest since 2021. No systemic risk event."
-    },
-    {
-      "domain": "pandemic_health",
-      "note": "Salmonella outbreak linked to jalapeño peppers (CDC Aug 10). Not macro-level."
-    }
+  "opportunities": [
+    { "risk": "Hormuz/chronic oil disruption", "beneficiary": "LNG exporters, domestic energy, renewables, nuclear, uranium", "mechanism": "Supply substitution + price spike" },
+    { "risk": "Currency war/intervention", "beneficiary": "Currency hedging, precious metals, stablecoin infrastructure", "mechanism": "Currency diversification" },
+    { "risk": "Private credit distress", "beneficiary": "Distressed debt funds, special situations, restructuring", "mechanism": "Credit cycle repricing" },
+    { "risk": "Europe grid vulnerability", "beneficiary": "Grid hardening, distributed generation, demand response", "mechanism": "Infrastructure investment" },
+    { "risk": "Stagflation", "beneficiary": "Real assets, TIPS, commodities, value stocks", "mechanism": "Real vs financial appreciation" },
+    { "risk": "AI regulation", "beneficiary": "AI governance, compliance, safety startups, edge AI", "mechanism": "Regulatory demand" },
+    { "risk": "Food crisis", "beneficiary": "AgTech, vertical farming, alt proteins, drought-resistant crops", "mechanism": "Substitution + innovation" },
+    { "risk": "Climate/El Niño", "beneficiary": "Climate adaptation, flood defense, water management", "mechanism": "Climate adaptation" },
+    { "risk": "Cyber/infrastructure", "beneficiary": "Cybersecurity, zero-trust, cyber insurance, air-gap systems", "mechanism": "Breach-driven demand" },
+    { "risk": "China slowdown", "beneficiary": "Vietnam, India, Mexico, nearshoring", "mechanism": "Supply chain diversification" },
+    { "risk": "Argentina-Brazil crisis", "beneficiary": "Commodity exporters, FX hedging, distressed debt", "mechanism": "Sovereign crisis repricing" }
   ],
-  "notes": "3 active cat-5 events confirmed. Iran-Hormuz crisis escalating with IRGC hardliner appointment. US-Japan intervention unraveling — severity upgraded to 5. Ebola continues worsening (+89 cases, +29 deaths since last scan). Global bond yields rising on scarcity-driven inflation. BlackRock confirms Fed repricing from easing to tightening. Oil moderating on supply expectations but Hormuz risk dominates."
+  "risk_ranking": [
+    { "rank": 1, "risk": "Hormuz chronic disruption → energy/food crisis", "probability": 55, "impact": "Critical", "confidence": 9, "change": "up from 35%" },
+    { "rank": 2, "risk": "Global stagflation confirmed", "probability": 50, "impact": "High", "confidence": 8, "change": "up from 45%" },
+    { "rank": 3, "risk": "BOJ September hike → carry trade unwind", "probability": 35, "impact": "High", "confidence": 8, "change": "NEW" },
+    { "rank": 4, "risk": "Private credit repricing event", "probability": 30, "impact": "High", "confidence": 7, "change": "up from 25%" },
+    { "rank": 5, "risk": "Super El Niño agricultural crisis", "probability": 25, "impact": "High", "confidence": 7, "change": "up from 20%" },
+    { "rank": 6, "risk": "China hard landing", "probability": 20, "impact": "High", "confidence": 6, "change": "up from 18%" },
+    { "rank": 7, "risk": "Ukraine → NATO direct conflict", "probability": 18, "impact": "Catastrophic", "confidence": 8, "change": "down from 20%" },
+    { "rank": 8, "risk": "Grinding stalemate persists", "probability": 20, "impact": "Medium", "confidence": 7, "change": "down from 30%" },
+    { "rank": 9, "risk": "Europe grid cascading failure", "probability": 15, "impact": "High", "confidence": 7, "change": "NEW" },
+    { "rank": 10, "risk": "AI governance treaty", "probability": 15, "impact": "High (positive)", "confidence": 5, "change": "up from 12%" },
+    { "rank": 11, "risk": "Fed forced hike → market crash", "probability": 12, "impact": "Critical", "confidence": 5, "change": "up from 10%" },
+    { "rank": 12, "risk": "AI-triggered financial disruption", "probability": 10, "impact": "Critical", "confidence": 4, "change": "up from 8%" },
+    { "rank": 13, "risk": "Iran nuclear escalation", "probability": 5, "impact": "Catastrophic", "confidence": 3, "change": "up from 3%" },
+    { "rank": 14, "risk": "European nuclear cascade", "probability": 5, "impact": "High", "confidence": 4, "change": "NEW" },
+    { "rank": 15, "risk": "Argentina sovereign default", "probability": 15, "impact": "Medium", "confidence": 7, "change": "up from Aug 2" }
+  ],
+  "adversarial_challenge": [
+    { "challenge": "Hormuz deal actually closes — Iran has agreed coordinates, Trump says deal could come this week", "impact": "Energy/supply chain signals flip, convergence weakens" },
+    { "challenge": "Market decoupling is rational, not complacent — AI-driven trading may have permanently reduced tail risk", "impact": "VIX low is correct pricing, not complacency" },
+    { "challenge": "Private credit distress is contained — Bloomberg says funds rebounded, PIK may be structural not distress", "impact": "No cascade, systemic risk overstated" },
+    { "challenge": "BOJ delays September hike — 8-1 vote suggests caution, global growth concerns", "impact": "Carry trade unwind scenario doesn't materialize" },
+    { "challenge": "El Niño weakens — NOAA data shows anomalies decreased in April-May", "impact": "Agricultural crisis and grid stress ease" },
+    { "challenge": "China announces major stimulus — Politburo refusal could be positioning not final", "impact": "China hard landing scenario weakens" },
+    { "challenge": "Fed cuts instead of holds/hikes — weak jobs could be trend not blip", "impact": "Financial conditions ease, stagflation probability drops" },
+    { "challenge": "AI regulation successfully contains risk — EU AI Act live, OpenAI backing standard", "impact": "AI containment failure scenario weakens" },
+    { "challenge": "Ukraine war freezes — both sides exhausted, missile campaign may be last push", "impact": "NATO escalation scenario disappears" }
+  ],
+  "emerging_weak_signals": [
+    "BLS benchmark revision Aug 28 — could significantly revise employment data",
+    "Paks nuclear millimeters from darkness — near-miss on cascading grid failure",
+    "Russia forming Ukrainian POW Spetsnaz brigade — information warfare or tactical shift",
+    "Ireland water snitch hotline — climate stress reaching social cohesion",
+    "Argentina country risk 451 bps — sovereign default trajectory, IMF payments doubling 2027",
+    "Houthi NATO-style pact with Iran allies — attack on one = attack on all",
+    "China non-manufacturing PMI 49.0 — services and construction both contracting",
+    "RovoBlast Confluence exploit — enterprise data exfiltration method",
+    "Data centres exposed carriers to Chinese hacking — AI infrastructure attack surface",
+    "Russia record missile attacks in July — shifting from drones to ballistic missiles",
+    "Iran parliament reviewing bill to ban US/Israeli vessels — escalation amid negotiations",
+    "BOJ Review on JGB purchase reductions — tightening trajectory signal",
+    "FAO fertilizer scarcity warning — yields reduced H2 2026 into 2027",
+    "Spain 56.6% renewables — post-oil-shock economic model visible",
+    "Treasury refunding $125B on Aug 15 — could stress bond market if demand weak",
+    "Albania Flamingo Revolution — media capture driving instability in Europe",
+    "Global protest wave 2026 — Nepal, Kashmir, India, Tunisia, Colombia synchronized",
+    "WMO: SST anomalies exceeding 2.9°C — record warm for 2+ months"
+  ],
+  "prediction_tracking": {
+    "previous_scan": "2026-08-02-deep",
+    "results": [
+      { "scenario": "Iran Deal Holds — Energy Price Collapse", "aug2_prob": 35, "aug9_prob": 5, "assessment": "WRONG", "note": "Deal did NOT hold. Iran demanding concessions. Overestimated deal probability." },
+      { "scenario": "Ukraine → NATO Direct Conflict", "aug2_prob": 20, "aug9_prob": 18, "assessment": "PARTIAL", "note": "Escalation continues but Article 5 not triggered" },
+      { "scenario": "Stagflation Confirmed Globally", "aug2_prob": 45, "aug9_prob": 50, "assessment": "CORRECT", "note": "Trend strengthening as predicted. FAO food surge confirms." },
+      { "scenario": "AI Containment Failure Cascade", "aug2_prob": 30, "aug9_prob": 25, "assessment": "PARTIAL", "note": "Regulation responding, cascade hasn't materialized" },
+      { "scenario": "Credit Market Repricing", "aug2_prob": 25, "aug9_prob": 30, "assessment": "CORRECT direction", "note": "Fed Boston PIK research confirms distress growing" },
+      { "scenario": "Grinding Stalemate", "aug2_prob": 30, "aug9_prob": 20, "assessment": "WRONG", "note": "Underestimated escalation speed" },
+      { "scenario": "China Hard Landing", "aug2_prob": 18, "aug9_prob": 20, "assessment": "CORRECT direction", "note": "PMI contraction, no stimulus" },
+      { "scenario": "Cyber-Physical Infrastructure Attack", "aug2_prob": 20, "aug9_prob": 15, "assessment": "PARTIAL", "note": "Ongoing but no major escalation" },
+      { "scenario": "Global Food + Social Crisis", "aug2_prob": 25, "aug9_prob": 25, "assessment": "CORRECT", "note": "FAO warning confirms, 120+ protests" },
+      { "scenario": "AI Governance Treaty", "aug2_prob": 12, "aug9_prob": 15, "assessment": "CORRECT direction", "note": "EU AI Act live, OpenAI backing standard" },
+      { "scenario": "BLACK SWAN: Super El Niño Agricultural Crisis", "aug2_prob": 20, "aug9_prob": 25, "assessment": "CORRECT", "note": "WMO confirms record-strong trajectory" },
+      { "scenario": "BLACK SWAN: Fed Forced Hike → Market Crash", "aug2_prob": 10, "aug9_prob": 12, "assessment": "PARTIAL", "note": "Weak jobs reduced odds but inflation bias remains" }
+    ],
+    "accuracy": { "correct": 3, "partial": 5, "wrong": 2, "not_triggered": 4 },
+    "key_error": "Overestimated Iran deal probability (35% → reality: deal not signed). De-escalation assessment was premature.",
+    "key_success": "Stagflation and food crisis scenarios materializing as predicted."
+  },
+  "memory_evolution": {
+    "what_was_right": [
+      "Stagflation crystalization (45% → 50%, correct direction)",
+      "Food crisis trajectory (FAO warning confirms)",
+      "Super El Niño intensification (WMO confirms strongest on record)",
+      "China refusing major stimulus (Politburo confirms)",
+      "Private credit PIK distress (Fed Boston research confirms)",
+      "AI governance accelerating (EU AI Act live)"
+    ],
+    "what_was_wrong": [
+      "Iran de-escalation assessment (35% deal holds → 5%) — biggest call error. Deal close narrative was negotiating tactic.",
+      "Grinding stalemate (30% → 20%) — underestimated escalation speed",
+      "Energy downgrade to amber — reversed within one week. Iran deal framework was fragile."
+    ],
+    "what_was_missed": [
+      "Europe grid vulnerability — not identified as driver in Aug 2 scan. Paks nuclear near-shutdown is new convergence.",
+      "Trilateral US-Japan-Korea intervention — unprecedented, not in any scenario. Currency war dimension escalated.",
+      "BOJ September hike as carry trade risk — not identified as scenario. Now top-3 risk."
+    ],
+    "pattern_corrections": [
+      "When deal is close in active conflict, weight deal stalls/collapses at 60%+ until signed",
+      "Energy de-escalation should require 2+ weeks sustained improvement before upgrading signal",
+      "Currency intervention by major powers should immediately trigger new scenario (regime shift signal)",
+      "Climate + infrastructure convergence should be monitored when extreme weather hits energy regions"
+    ]
+  },
+  "recommended_preparations": [
+    { "priority": "immediate", "item": "Monitor Brent crude — if above $90, hedge transport fuel costs. Ireland imports 100% of oil" },
+    { "priority": "immediate", "item": "EUR/USD volatility from currency war. Ireland's euro membership provides buffer but ECB-Fed-BOJ divergence creates friction" },
+    { "priority": "immediate", "item": "Monitor local food inflation — FAO warns fresh surge. Ireland imports ~80% of food" },
+    { "priority": "immediate", "item": "Gold at $4,350 and rising — continue holding or consider partial allocation as hedge" },
+    { "priority": "short_term", "item": "BOJ Sep 17-18 meeting — if hike, expect global equity selloff. Review carry trade exposure" },
+    { "priority": "short_term", "item": "Fed Sep 16 FOMC — if hike despite weak jobs, 30Y above 5.5% would stress mortgage rates" },
+    { "priority": "short_term", "item": "Treasury refunding $125B Aug 15 — weak demand could spike yields globally" },
+    { "priority": "short_term", "item": "BLS benchmark revision Aug 28 — could reveal weaker employment" },
+    { "priority": "short_term", "item": "El Niño preparation — Ireland typically gets milder/wetter winters. Monitor flooding risk" },
+    { "priority": "medium_term", "item": "Energy independence — accelerate Ireland's renewable push (wind/solar)" },
+    { "priority": "medium_term", "item": "Supply chain diversification — explore alternative suppliers for Hormuz-affected routes" },
+    { "priority": "medium_term", "item": "Cyber resilience — review cybersecurity posture given Iranian-affiliated activity" },
+    { "priority": "medium_term", "item": "Protest monitoring — 120+ global protests, Ireland has had climate-related water disputes" },
+    { "priority": "financial", "item": "Diversify currency exposure — dollar weakness structural, euro strength may not last" },
+    { "priority": "financial", "item": "Real assets — gold, real estate, commodities as stagflation hedge" },
+    { "priority": "financial", "item": "Short-duration bonds — reduce interest rate risk" },
+    { "priority": "financial", "item": "Emergency fund — maintain 6+ months expenses in liquid assets" },
+    { "priority": "financial", "item": "Review private credit exposure — understand PIK usage in any fund holdings" }
+  ],
+  "recursive_intelligence_score": {
+    "evidence_quality": 8,
+    "logical_consistency": 8,
+    "blind_spot_detection": 7,
+    "alternative_hypothesis_testing": 8,
+    "predictive_usefulness": 7,
+    "actionability": 8,
+    "overall": 8,
+    "lowest_from_last_scan": "blind_spot_detection (7/10)",
+    "improvement_note": "Improved by identifying Europe grid as missed convergence. Africa, North Korea remain underreported. Next scan should search more deeply for underreported regions.",
+    "this_scan_lowest": "blind_spot_detection (7/10) — Africa, North Korea remain underreported"
+  },
+  "summary": "Weekly deep scan #11. MAJOR ESCALATION from Aug 2. 15 RED signals (up from 7). Iran Hormuz deal stalled — Iran demanding US concessions, Day 161. Unprecedented US-Japan-Korea trilateral FX intervention (first in history). Private credit PIK distress confirmed by Fed Boston. Europe grid at breaking point — Paks nuclear came millimeters from full shutdown. WMO confirms strongest El Niño on record. FAO warns fresh food price surge. 9 signal downgrades from last scan. Stagflation crystalizing. Key error from Aug 2: overestimated Iran deal probability. 3 correct predictions, 5 partial, 2 wrong."
 }

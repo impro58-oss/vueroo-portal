@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-11T06:00:24.719201",
+  "timestamp": "2026-08-11T12:00:26.870299",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -29,9 +29,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 75.63,
-    "unrealized_pnl_eur": -13.14,
-    "total_pnl_eur": 62.49,
-    "open_positions": 2,
+    "unrealized_pnl_eur": -18.41,
+    "total_pnl_eur": 57.22,
+    "open_positions": 4,
     "closed_trades": 168,
     "wins": 66,
     "losses": 102,
@@ -47,7 +47,7 @@
       "stop": 0.0059691785714285715,
       "highest": 0.006918,
       "lowest": 0.006859,
-      "bars_held": 12,
+      "bars_held": 14,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -62,9 +62,39 @@
       "stop": 1.1430285714285715,
       "highest": 1.1571,
       "lowest": 1.1561,
-      "bars_held": 10,
+      "bars_held": 12,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "JSTUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-11T09:01:21.411687",
+      "entry_price": 0.09699,
+      "atr": 0.003021428571428573,
+      "stop": 0.10454357142857144,
+      "highest": 0.09699,
+      "lowest": 0.09693,
+      "bars_held": 1,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "ONDOUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-11T09:01:21.411687",
+      "entry_price": 0.337,
+      "atr": 0.017828571428571426,
+      "stop": 0.38157142857142856,
+      "highest": 0.337,
+      "lowest": 0.3366,
+      "bars_held": 1,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
     }
@@ -335,16 +365,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
-    "EURUSDT",
-    "KASUSDT",
-    "USDEUSDT",
+    "XAUTUSDT",
     "RLUSDUSDT",
-    "XUSDUSDT",
     "BFUSDUSDT",
+    "USD1USDT",
     "ZECUSDT",
+    "USDEUSDT",
+    "KASUSDT",
+    "EURUSDT",
+    "XUSDUSDT",
     "UUSDT",
-    "PAXGUSDT",
-    "XAUTUSDT"
+    "PAXGUSDT"
   ]
 }
