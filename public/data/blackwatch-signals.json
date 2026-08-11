@@ -2,13 +2,14 @@
   "metadata": {
     "source": "FRED API + manual assessment + Breaking Event Scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-10T23:30:40.000000+00:00",
+    "last_update": "2026-08-11T03:04:20.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
     "manual_threshold_fill": "JGB10Y=2.81, DE10Y=3.18, BAA10Y=1.62, MOVE=est.115",
-    "breaking_event": "3 cat-5 events active: Hormuz crisis (sev 5), US-Japan intervention unraveling (sev 5), Ebola epidemic (sev 4)",
-    "threshold_breach": "6 thresholds breached (incl. JGB10Y RED, DE10Y AMBER from manual fill)"
+    "breaking_event": "Breaking event scanner: 7 events detected across 12 domains. Cat-5: US-Japan intervention (sev 5), Hormuz crisis (sev 5), Ebola epidemic (sev 4), China property emergency (sev 4). Cat-4: France fiscal crisis (sev 3), Gold record (sev 3), Colombia earthquake (sev 3).",
+    "threshold_breach": "6 thresholds breached (incl. JGB10Y RED, DE10Y AMBER from manual fill)",
+    "scan_time": "2026-08-11T03:04:20.000000+00:00"
   },
   "signals": {
     "macro_event": {
@@ -17,14 +18,14 @@
       "value": "ACTIVE",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0,
       "unit": "alert",
       "description": "Breaking event scanner: 3 category-5 macro events active",
       "series_id": null,
-      "last_date": "2026-08-10",
-      "note": "BW-2026-08-11-001: Hormuz crisis escalating (IRGC hardliner). BW-2026-08-11-002: US-Japan intervention unraveling, yen 159.29. BW-2026-08-11-003: Ebola 4230 cases / 1918 deaths.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "last_date": "2026-08-11",
+      "note": "BW-2026-08-11-004: US-Japan EUR-sold yen intervention, ECB blindsided. BW-2026-08-11-005: Hormuz crisis 5+ months, talks stalling. BW-2026-08-11-006: Ebola 4209 cases/1916 deaths, fastest-growing on record. BW-2026-08-11-007: China 10 quarters deflation, property emergency. BW-2026-08-11-008: France EUR107B H1 deficit, 8% ratio.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "fin_stability": {
       "name": "Financial Stability",
@@ -38,8 +39,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: Gold above 3500 (current: 4454.5). JGB10Y above 1.5 (current: 2.81). DE10Y above 3.0 (current: 3.18)",
-      "timestamp": "2026-08-10T23:31:00.000000+00:00"
+      "note": "ESCALATED: US-Japan intervention via euro sales blindsided ECB. France fiscal crisis EUR107B deficit. Private credit distress rising (PIK). Gold at $4,304+ breaking 1980 real record. Bessent urging FIMA repo expansion.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -83,8 +84,8 @@
       "description": "Brent Crude Oil Price ~$85/bbl (Guardian Aug 10)",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-10",
-      "note": "ESCALATED by breaking event scanner: Hormuz talks stalling, Iran tempers optimism on reopening. EIA forecasts $74/bbl 3Q26 but Hormuz risk dominates.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "ESCALATED: Hormuz disruption ongoing, talks stalling. Brent ~$85/bbl. EIA forecasting $74/bbl 3Q26 but Hormuz risk dominates. Saudi cutting September OSP to 6-year low for Asia.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -121,15 +122,15 @@
       "domain": "Supply Chain",
       "value": 85.0,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": -3.9,
       "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-10",
-      "note": "ESCALATED by breaking event scanner: Hormuz disruption ongoing + Ebola impacting Central Africa supply routes. Proxy indicator \u00e2\u20ac\u201d Baltic Dry Index or Cass Freight would be better.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "ESCALATED: Ebola epidemic impacting Central Africa supply routes. Hormuz disruption ongoing 5+ months. Colombia earthquake adds regional disruption. Food crisis worsening - 49M more acute hunger projected 2026.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -143,8 +144,8 @@
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-10T23:04:11.230335+00:00"
+      "note": "ESCALATED: 49M more acute hunger projected 2026. Afghanistan 14M affected. Nigeria food insecurity deteriorating. Cereal production 25-27% below average in conflict zones.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -173,8 +174,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-10T23:04:11.734292+00:00"
+      "note": "ESCALATED: Ebola PHEIC declared. Nigeria-South Africa xenophobia tensions. Afghanistan hunger crisis 14M affected. Chemotherapy drug shortages in US. Adderall at 2% pharmacy availability.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -210,7 +211,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.45,
@@ -218,8 +219,8 @@
       "description": "Trade-Weighted Dollar Index (broad) + Yen at 159.29",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED by breaking event scanner: US-Japan intervention unraveling, yen erasing gains, worst session since February. BOJ may hike to 1.25% Sept. THRESHOLD: JGB10Y 2.81% above 1.5% RED — Japan fiscal crisis, BOJ losing control of yield curve.",
-      "timestamp": "2026-08-10T23:31:00.000000+00:00"
+      "note": "ESCALATED: US sold euros to buy yen (unprecedented). ECB blindsided. South Korea also intervening in tandem. India rupee at 95.30. ASEAN currencies under pressure. DXY below 100. Weaponized yen. JGB10Y at 2.79%. BOJ hawkish hold at 1%. Takaichi pressuring BOJ to buy JGBs.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -263,23 +264,23 @@
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-10T23:04:03.145256+00:00"
+      "note": "ESCALATED: 10 consecutive quarters of deflation - longest since market transition. Property sector nationwide economic emergency. PBOC tightening, stingy OM operations. New global asset tax on super-rich signals fiscal distress. CNY at 0.14820 USD.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-10",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2). THRESHOLD: German 10Y Bund at 3.18% above 3.0% AMBER — European fiscal stress, periphery spreads widening.",
-      "timestamp": "2026-08-10T23:31:00.000000+00:00"
+      "note": "ESCALATED: France EUR107B H1 deficit, 8% deficit ratio - new Eurozone debt epicenter. ECB blindsided by US euro-selling intervention. Sovereign debt market upheaval. German 10Y at 3.18%. ECB forward curve pricing 40bp hikes by end-2026.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -308,8 +309,8 @@
       "description": "Brent Oil as ME tension proxy ~$85/bbl",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-10",
-      "note": "ESCALATED by breaking event scanner: IRGC hardliner Rezaei appointed, Hormuz talks stalling, Trump shifting to wait-out strategy.",
-      "timestamp": "2026-08-10T23:04:30.000000+00:00"
+      "note": "ESCALATED: Hormuz crisis 5+ months ongoing. Iran retaliatory strikes on US installations. Talks stalling, Iran tempering optimism. State Dept sanctions on Iran crypto networks. Saudi cutting Arab Light to 6-year low for Asia. US zero Saudi oil imports July 2026.",
+      "timestamp": "2026-08-11T03:04:20.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -331,11 +332,11 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 621,
-    "red_count": 11,
-    "amber_count": 9,
+    "red_count": 16,
+    "amber_count": 4,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-10T23:04:30.000000+00:00"
+    "timestamp": "2026-08-11T03:04:20.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
