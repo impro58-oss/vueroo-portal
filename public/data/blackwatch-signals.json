@@ -2,11 +2,25 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T07:03:52.000000+00:00",
+    "last_update": "2026-08-12T07:33:19.224332+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner Aug 12: 7 events detected. Hormuz escalation, gold $4,400+, UK drought, Ebola accelerating, South Korea won crisis, UAE OPEC exit, France fiscal distress."
+    "breaking_event": "Breaking event scanner Aug 12: 7 events detected. Hormuz escalation, gold $4,400+, UK drought, Ebola accelerating, South Korea won crisis, UAE OPEC exit, France fiscal distress.",
+    "threshold_scan_integration": {
+      "scan_time": "2026-08-12T07:30:48Z",
+      "breaches_detected": 6,
+      "max_severity": "RED",
+      "signals_escalated": 6,
+      "escalated_signals": [
+        "fin_stability",
+        "geopolitical",
+        "currency",
+        "europe",
+        "us_cycle",
+        "gold"
+      ]
+    }
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +35,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-10",
-      "note": "BREAKING Aug 12: Gold Breaks $4,400 \u2014 2-Month High on Hormuz Escalation. ",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "THRESHOLD SCAN ESCALATION Aug 12: Gold $4,458 (RED, >$3,500), JGB 10Y 2.82% (RED, >1.5%), German Bund 3.198% (AMBER, >3.0%). Multiple systemic risk tripwires breached.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -81,8 +95,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-10",
-      "note": "BREAKING Aug 12: Hormuz escalation. Houthi deadly strike. Iran talks at impasse. Shipping attacks escalating.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "THRESHOLD SCAN ESCALATION Aug 12: Gold $4,458 (RED, >$3,500) \u2014 currency crisis or war premium confirmed. Hormuz escalation continues. Houthi deadly strike. Iran talks at impasse.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -201,23 +215,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "BREAKING Aug 12: South Korean Won Sharpest Swings Since Financial Crisis. Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "THRESHOLD SCAN ESCALATION Aug 12: USD/JPY 159.37 (AMBER, >158) \u2014 intervention zone, joint intervention likely failing. EUR/USD 1.1541 (AMBER, >1.15) \u2014 euro strength, dollar weakness.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4400,
+      "value": 4458.4,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "change_from_last": 44.6,
-      "description": "Gold broke $4,400/oz Aug 11 \u2014 2-month high. December futures $4,446.90. Hormuz escalation + inflation fears driving safe haven demand.",
+      "change_from_last": 58.4,
+      "description": "Gold $4,458/oz (THRESHOLD RED, >$3,500). 2.71% daily gain. Hormuz escalation + inflation fears driving safe haven demand.",
       "series_id": "goldpricez.com spot",
       "last_date": "2026-08-12",
-      "note": "BREAKING Aug 12: Gold broke $4,400, highest in 2 months. Chinese institutional demand growing. Hormuz escalation driving safe haven surge.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "THRESHOLD SCAN Aug 12: Gold at $4,458.4 \u2014 RED breach (>$3,500) and AMBER breach (>$3,000). 27.4% above RED threshold. Currency crisis or war premium.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -261,8 +275,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-11",
-      "note": "BREAKING Aug 12: France Fiscal Distress: Eurozone Debt Crisis Epicenter. Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "THRESHOLD SCAN ESCALATION Aug 12: German 10Y Bund 3.198% (AMBER, >3.0%) \u2014 European fiscal stress, periphery spreads widening. France fiscal distress already flagged.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -276,8 +290,8 @@
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-12T05:34:20.254071+00:00"
+      "note": "THRESHOLD SCAN ESCALATION Aug 12: EUR/USD 1.1541 (AMBER, >1.15) \u2014 dollar weakness, possible Fed pivot. Yield curve 10Y-2Y at 0.48%.",
+      "timestamp": "2026-08-12T07:33:19.224332+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
