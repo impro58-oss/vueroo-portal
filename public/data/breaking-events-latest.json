@@ -1,340 +1,113 @@
 {
-  "scan_time": "2026-08-11T19:04:21.958478+00:00",
+  "scan_time": "2026-08-12T03:02:00.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner_version": "4h-cron",
+  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
+  "operator": "Lumina (cron)",
   "domains_scanned": 12,
   "queries_executed": 36,
   "events_detected": [
     {
-      "id": "BE-2026-08-11-20-001",
+      "id": "BW-2026-08-12-001",
       "domain": "middle_east",
       "category": "war_military",
       "severity": 5,
-      "title": "Hormuz Talks Stall \u2014 Oil Surges 5%+ as Iran Refuses Direct Talks",
-      "description": "US-Iran negotiations over Strait of Hormuz reopening stalled Aug 11. Iran set new conditions, refusing direct engagement with Washington. WTI surged 5.27% to .30/bbl, Brent +5.18% to .88/bbl. Gold strengthened in tandem as safe-haven demand rose. Strait remains largely blocked since Feb 28 \u2014 20% of global oil/LNG traffic affected.",
-      "sources": [
-        "Al Jazeera",
-        "BigGo Finance",
-        "QZ",
-        "yournews.com",
-        "Forbes"
-      ],
-      "timestamp": "2026-08-11T12:00:00+00:00",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain"
-      ],
-      "impact_regions": [
-        "Iran",
-        "US",
-        "Global (oil markets)"
-      ],
-      "is_new": true,
-      "change_from_last": "ESCALATION \u2014 talks were ongoing in last scan, now stalled with oil surge"
+      "title": "US fires missiles at cargo ship violating Iran blockade; Trump claims 'total control' of Hormuz",
+      "summary": "US forces fired missiles at a cargo ship violating the Iran blockade. Trump claims US is in 'total control' of the Strait of Hormuz. Iran's Supreme National Security Council says Hormuz will not open until US 'corrects its behavior.' Houthi rebels killed 6 in attack on commercial vessel in Bab al-Mandeb. Hopes fade for Hormuz deal.",
+      "sources": ["Al Jazeera (live)", "CNN", "CBS News", "Newsday/AP"],
+      "timestamp": "2026-08-12T03:00:00Z",
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "fin_stability"],
+      "url": "https://www.aljazeera.com/news/liveblog/2026/8/12/iran-war-live-us-fires-missiles-at-cargo-ship-violating-iran-blockade"
     },
     {
-      "id": "BE-2026-08-11-20-002",
+      "id": "BW-2026-08-12-002",
       "domain": "pandemic_health",
       "category": "sovereign_crisis",
-      "severity": 5,
-      "title": "Ebola Deaths Cross 2,000 \u2014 Fastest-Spreading Outbreak on Record",
-      "description": "DRC Ebola epidemic (Bundibugyo strain) crosses 2,000 deaths as of Aug 11. 4,209 confirmed cases, 1,916 deaths in DRC, 2 deaths in Uganda. WHO declared PHEIC May 17. No approved vaccines or treatments for Bundibugyo strain. Irish Times reports fastest-spreading Ebola outbreak on record. Second-deadliest in history.",
-      "sources": [
-        "Wikipedia",
-        "ECDC",
-        "Irish Times",
-        "The Hindu",
-        "GOV.UK"
-      ],
-      "timestamp": "2026-08-11T10:00:00+00:00",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion",
-        "food_security"
-      ],
-      "impact_regions": [
-        "DRC",
-        "Uganda",
-        "Central Africa",
-        "Global (health security)"
-      ],
-      "is_new": true,
-      "change_from_last": "NEW \u2014 deaths crossed 2,000 threshold since last scan. Escalation from ongoing outbreak."
+      "severity": 4,
+      "title": "Ebola deaths surpass 2,000 in DRC's fastest-spreading outbreak on record",
+      "summary": "Confirmed Ebola deaths reached 2,011 in DRC as of Aug 11. WHO declared PHEIC on May 16, 2026. Bundibugyo species has no vaccine. Outbreak spreading into Uganda. Second-deadliest Ebola outbreak in history.",
+      "sources": ["Irish Times", "UN News", "WHO", "Wikipedia"],
+      "timestamp": "2026-08-11T18:00:00Z",
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "url": "https://www.irishtimes.com/world/africa/2026/08/11/drc-ebola-deaths-surpass-2000-in-fastest-spreading-outbreak-on-record/"
     },
     {
-      "id": "BE-2026-08-11-20-003",
+      "id": "BW-2026-08-12-003",
       "domain": "japan",
       "category": "sovereign_intervention",
-      "severity": 5,
-      "title": "Yen Intervention Fading \u2014 USD/JPY Reclaims 159 Despite  Spent",
-      "description": "USD/JPY reclaimed 159 after joint US-Japan intervention totaling ~ ( +  over two days). JGB 10-year yield climbed to 2.807%. BOJ holds at 1% despite yen crisis. MUFG expects JGBs rangebound week of Aug 10, focus on fiscal-monetary policy mix. Intervention failing to deliver lasting boost.",
-      "sources": [
-        "CryptoRank",
-        "OMFIF",
-        "Business Insider",
-        "MUFG Research",
-        "Bloomberg"
-      ],
-      "timestamp": "2026-08-11T08:00:00+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "liquidity",
-        "us_cycle"
-      ],
-      "impact_regions": [
-        "Japan",
-        "US",
-        "Global"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 intervention fading, yen back near pre-intervention levels"
+      "severity": 4,
+      "title": "Yen intervention unraveling — USD/JPY back near 159 despite coordinated US-Japan action",
+      "summary": "Joint US-Japan yen intervention is unraveling. USD/JPY fell to ~159 on Aug 11, giving up half its intervention gains. Bloomberg reports yen sliding toward 160, raising renewed intervention concerns. BOJ accelerating tightening timeline but carry trade unwinding continues.",
+      "sources": ["Bloomberg", "Telegraph", "TradingEconomics", "IG UK", "Babypips"],
+      "timestamp": "2026-08-11T20:00:00Z",
+      "escalate_to": ["currency", "fin_stability"],
+      "url": "https://www.bloomberg.com/news/articles/2026-08-11/yen-slides-toward-160-per-dollar-raising-intervention-concerns"
     },
     {
-      "id": "BE-2026-08-11-20-004",
+      "id": "BW-2026-08-12-004",
       "domain": "us_fed",
       "category": "emergency_rate",
-      "severity": 4,
-      "title": "Fed Expected to Hold at 3.50-3.75% \u2014 30% Probability of Hike",
-      "description": "Fed widely expected to hold federal funds rate at 3.50-3.75% for fifth consecutive meeting in July 2026. However, markets assign nearly 30% probability to a rate hike. Cleveland Fed inflation nowcasting active. Fed requested comment on modernizing mutual banking rules and insider lending rules (July 31).",
-      "sources": [
-        "Trading Economics",
-        "Cleveland Fed",
-        "CME FedWatch",
-        "FRED"
-      ],
-      "timestamp": "2026-08-11T05:00:00+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "impact_regions": [
-        "US",
-        "Global"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 30% hike probability is elevated, stalemate continues"
-    },
-    {
-      "id": "BE-2026-08-11-20-005",
-      "domain": "latam",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "title": "Brazil-Argentina Diplomatic Crisis \u2014 Ambassador Withdrawn",
-      "description": "Brazilian government withdrew ambassador from Argentina, deepening crisis with significant trade implications. Argentina-Merval slid 2.61%. Argentina peso decade-long destruction of purchasing power continues. Colombia policy spat adding pressure. Diplomatic tensions threaten most important trade relationship in Argentina foreign commerce.",
-      "sources": [
-        "Blue Dollar",
-        "Buenos Aires Herald",
-        "Rio Times"
-      ],
-      "timestamp": "2026-08-05T00:00:00+00:00",
-      "escalate_to": [
-        "geopolitical",
-        "fin_stability"
-      ],
-      "impact_regions": [
-        "Argentina",
-        "Brazil",
-        "LatAm"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 diplomatic crisis persists, trade relations deteriorating"
-    },
-    {
-      "id": "BE-2026-08-11-20-006",
-      "domain": "eu_ecb",
-      "category": "sovereign_crisis",
       "severity": 3,
-      "title": "ECB Held Rates \u2014 Bulgaria Joined Eurozone Jan 2026",
-      "description": "ECB cut rates 8 times Jun 2024 to Jun 2025, then held unchanged until Jun 2026 when rates were raised. Current deposit facility rate 2.25%. Bulgaria joined Eurozone January 2026. Lending rates for firms unchanged at 3.6%. Financial conditions slightly tighter since June meeting.",
-      "sources": [
-        "ECB Economic Bulletin",
-        "House of Commons Library",
-        "FRED",
-        "Wikipedia"
-      ],
-      "timestamp": "2026-08-10T00:00:00+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "impact_regions": [
-        "Eurozone",
-        "Bulgaria"
-      ],
-      "is_new": false,
-      "change_from_last": "STABLE \u2014 no emergency action, rate hold continues"
+      "title": "Fed rate hike odds at 50% for September as inflation stays elevated — CPI due Wednesday",
+      "summary": "Fed Chair Warsh emphasizing inflation, markets pricing 50% odds of a September hike. CPI due Aug 13. Rates at 3.5-3.75%. Reuters reports investors bidding up bond yields on hike expectations. J.P. Morgan notes inflation concerns reaccelerating.",
+      "sources": ["CNN", "Reuters", "J.P. Morgan", "Forex.com", "Washington Examiner"],
+      "timestamp": "2026-08-11T20:00:00Z",
+      "escalate_to": ["us_cycle", "fin_stability", "liquidity"],
+      "url": "https://www.cnn.com/2026/08/11/business/fed-markets-kevin-warsh"
     },
     {
-      "id": "BE-2026-08-11-20-007",
-      "domain": "uk",
-      "category": "emergency_rate",
-      "severity": 3,
-      "title": "BoE Voted 6-3 to Hold \u2014 CPI 2.6% Above Target",
-      "description": "Bank of England voted 6-3 to keep rates unchanged. Governor Bailey downplayed further tightening, saying disinflation on track. CPI inflation 2.6% in June 2026, above 2% target. Gilt yields fell as oil prices slid, easing inflation fears. Pre-Middle East conflict, BoE expected inflation to fall to 2% from April.",
-      "sources": [
-        "Trading Economics",
-        "House of Commons Library",
-        "Pound Sterling Live"
-      ],
-      "timestamp": "2026-08-04T00:00:00+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "impact_regions": [
-        "UK"
-      ],
-      "is_new": false,
-      "change_from_last": "STABLE \u2014 6-3 hold, no emergency action"
-    },
-    {
-      "id": "BE-2026-08-11-20-008",
-      "domain": "china",
-      "category": "sovereign_intervention",
-      "severity": 3,
-      "title": "PBOC Five-Year Reform Plan \u2014 Property Crisis Spilling Across Borders",
-      "description": "PBOC unveiled 5-year reform plan focusing on financial stability and opening-up, including digital yuan infrastructure. Beijing introduced new policies to lower threshold for home buying but netizens reject. China property bust spilling across borders \u2014 current account balances increasing 4pp of GDP within 5 years of bubble bursting. PIIE warns of global spillover effects.",
-      "sources": [
-        "CGTN",
-        "PIIE",
-        "People News Today",
-        "Wikipedia",
-        "MacroMicro"
-      ],
-      "timestamp": "2026-08-10T00:00:00+00:00",
-      "escalate_to": [
-        "china",
-        "fin_stability",
-        "supply_chain"
-      ],
-      "impact_regions": [
-        "China",
-        "Asia",
-        "Global"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 new 5-year plan announced, property crisis continues"
-    },
-    {
-      "id": "BE-2026-08-11-20-009",
-      "domain": "em_asia",
-      "category": "sovereign_intervention",
-      "severity": 3,
-      "title": "Emerging Asia Currency Defense \u2014 Korea Won Leads Losses",
-      "description": "South Korean won led Asian FX losses as dollar edged higher. Won had biggest monthly gain since 2022 from corporate dollar repatriation, now giving back. India lured  from diaspora via high-yield dollar deposits, supporting rupee. DBS notes KRW supported by intervention coordination with US and Japan. Bloomberg reports currency defense makeover as EM Asia guards reserves.",
-      "sources": [
-        "Bloomberg",
-        "Investing.com",
-        "FXStreet",
-        "BitcoinWorld"
-      ],
-      "timestamp": "2026-08-09T00:00:00+00:00",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "impact_regions": [
-        "South Korea",
-        "India",
-        "ASEAN"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 won giving back gains, rupee stabilized by diaspora deposits"
-    },
-    {
-      "id": "BE-2026-08-11-20-010",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 3,
-      "title": "Russia Bankruptcies +13.7% YoY \u2014 Oversight Gap in Deregulatory Climate",
-      "description": "Russia records 137,500 bankruptcies in Q1 2026, +13.7% YoY. American Banker warns oversight gap as regulatory cuts threaten systemic stability. Uninsured payment platform failures damage traditional banks reputations. Russia wartime debt boom raising banking crisis concerns. No acute bank failure detected this scan.",
-      "sources": [
-        "Moscow Times",
-        "American Banker",
-        "Federal Reserve",
-        "JPMorgan"
-      ],
-      "timestamp": "2026-08-07T00:00:00+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "impact_regions": [
-        "Russia",
-        "US",
-        "Global"
-      ],
-      "is_new": false,
-      "change_from_last": "STABLE \u2014 no acute bank failure, systemic risk remains elevated"
-    },
-    {
-      "id": "BE-2026-08-11-20-011",
+      "id": "BW-2026-08-12-005",
       "domain": "commodities",
       "category": "energy_shock",
-      "severity": 5,
-      "title": "Oil Surges 5%+ on Hormuz Stall \u2014 Gold Climbs in Tandem",
-      "description": "WTI surged 5.27% to .30/bbl, Brent +5.18% to .88/bbl on Aug 11 as Hormuz talks stalled. Brent above  in some benchmarks per IndexBox. Markets pivoted from AI speculation to geopolitical oil shock. 2026 Iran war fuel crisis causing worldwide fuel shortages \u2014 Vietnam facing panic buying. Safe-haven gold strengthened in tandem.",
-      "sources": [
-        "BigGo Finance",
-        "Forbes",
-        "IndexBox",
-        "Wikipedia",
-        "QZ"
-      ],
-      "timestamp": "2026-08-11T14:00:00+00:00",
-      "escalate_to": [
-        "energy",
-        "food_security",
-        "supply_chain",
-        "geopolitical"
-      ],
-      "impact_regions": [
-        "Global"
-      ],
-      "is_new": true,
-      "change_from_last": "ESCALATION \u2014 5%+ single-day surge on stalled talks, gold climbing"
+      "severity": 4,
+      "title": "Oil surges 5% as Hormuz talks stall; gold climbs to $4,322 on safe-haven demand",
+      "summary": "Oil posted 5%+ single-day gain on stalled Hormuz negotiations. Brent at $88.23/bbl. Gold climbed to $4,322 on safe-haven demand. WTI range forecast $67.93-$106.74. Iran setting new conditions for reopening Hormuz.",
+      "sources": ["Forbes", "BigGo Finance", "eciks.org", "LiteFinance"],
+      "timestamp": "2026-08-11T22:00:00Z",
+      "escalate_to": ["energy", "supply_chain", "food_security"],
+      "url": "https://finance.biggo.com/news/ddd8220a-513c-44ae-a936-a18be69c68ce"
     },
     {
-      "id": "BE-2026-08-11-20-012",
-      "domain": "africa",
+      "id": "BW-2026-08-12-006",
+      "domain": "latam",
       "category": "sovereign_crisis",
       "severity": 3,
-      "title": "DRC Ebola + Namibia IMF Debt Clearance \u2014 Mixed Africa Signals",
-      "description": "DRC Ebola epidemic crosses 2,000 deaths (linked to pandemic_health domain). Namibia reportedly cleared entire IMF debt, sparking debate. Niger under Extended Credit Facility, ninth review. Uganda selected issues report published by IMF Aug 6. No acute coup or civil war detected in this scan cycle.",
-      "sources": [
-        "IMF",
-        "Wikipedia",
-        "YouTube",
-        "ECDC",
-        "Irish Times"
-      ],
-      "timestamp": "2026-08-11T10:00:00+00:00",
-      "escalate_to": [
-        "geopolitical",
-        "supply_chain"
-      ],
-      "impact_regions": [
-        "DRC",
-        "Namibia",
-        "Niger",
-        "Uganda"
-      ],
-      "is_new": false,
-      "change_from_last": "ONGOING \u2014 Ebola escalation is primary Africa signal"
+      "title": "Argentina country risk spikes to 451; Brazil withdraws ambassador; central bank reform vote Aug 19",
+      "summary": "Argentina country risk premium climbed to 451 bps on Aug 7, highest since June. Brazil withdrew ambassador, deepening diplomatic crisis. Central bank reform bill pushed toward Aug 19 vote. Decoupling from regional rally.",
+      "sources": ["Rio Times", "Blue Dollar", "Buenos Aires Herald", "Tekedia"],
+      "timestamp": "2026-08-11T12:00:00Z",
+      "escalate_to": ["currency", "fin_stability"],
+      "url": "https://www.riotimesonline.com/argentina-country-risk-451-decoupling-2026/"
+    },
+    {
+      "id": "BW-2026-08-12-007",
+      "domain": "em_asia",
+      "category": "market_dislocation",
+      "severity": 3,
+      "title": "Korean won nears 1,400 with sharpest swings since financial crisis; EM Asia currency defense intensifies",
+      "summary": "Korean won experiencing sharpest swings since the financial crisis, nearing 1,400/dollar. India lured $40B from diaspora via high-yield deposits to support rupee. EM Asia guarding reserves with new currency defense strategies. Coordinated intervention by US-Japan contributing to won volatility.",
+      "sources": ["Bloomberg", "Korea Herald", "Investing.com", "FXStreet"],
+      "timestamp": "2026-08-09T00:00:00Z",
+      "escalate_to": ["currency", "fin_stability"],
+      "url": "https://www.bloomberg.com/news/articles/2026-08-09/currency-defense-gets-makeover-as-emerging-asia-guards-reserves"
+    },
+    {
+      "id": "BW-2026-08-12-008",
+      "domain": "china",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "title": "China property crisis spilling across borders; PBOC unveils 5-year reform plan",
+      "summary": "China's property bust is spilling across borders with current account balances increasing 4pp of GDP. Beijing introducing new policies to lower home-buying threshold but public refuses. PBOC unveiled 5-year reform plan focused on financial stability and digital yuan.",
+      "sources": ["PIIE", "CGTN", "People News Today", "Wikipedia"],
+      "timestamp": "2026-08-10T00:00:00Z",
+      "escalate_to": ["china", "fin_stability"],
+      "url": "https://www.piie.com/blogs/realtime-economics/2026/chinas-property-bust-spilling-across-its-borders"
     }
   ],
-  "new_events_count": 3,
-  "escalated_events_count": 2,
-  "ongoing_events_count": 7,
-  "category_5_detected": true,
-  "category_5_events": [
-    "Hormuz talks stall + oil surge 5%+ (middle_east + commodities)",
-    "Ebola deaths cross 2,000 \u2014 fastest-spreading on record (pandemic_health)",
-    "Yen intervention failing despite  spent (japan)"
-  ],
-  "summary": "3 NEW/ESCALATED events detected in 4h scan. Hormuz talks stalled driving oil +5% and gold higher. Ebola crossed 2,000 deaths threshold. Yen intervention fading despite . Overall risk remains CRITICAL."
+  "no_significant_events": ["eu_ecb", "uk", "africa", "financial_system"],
+  "scan_notes": "EU: ECB rates unchanged, cut 8 times Jun 2024-Jun 2025, no emergency. UK: BoE 6-3 vote to hold, no crisis. Africa: No new coups/conflicts this cycle. Financial system: No new bank failures or credit freeze, though Russia banking bankruptcies rising 13.7% YoY (background).",
+  "category_5_count": 2,
+  "category_4_count": 3,
+  "category_3_count": 3,
+  "total_events": 8,
+  "highest_severity": 5
 }
