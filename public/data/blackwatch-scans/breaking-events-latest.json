@@ -1,46 +1,167 @@
 {
-  "scan_time": "2026-08-11T15:03:31.000000+00:00",
-  "scan_type": "breaking_event",
+  "scan_id": "2026-08-12-breaking-08",
+  "scan_type": "breaking_event_scan",
+  "scan_time": "2026-08-12T07:03:52.903769",
+  "scan_number": "4h_08",
+  "analyst": "Lumina",
+  "operator": "cron 85bd4029",
   "domains_scanned": 12,
-  "queries_executed": 36,
-  "events_detected": 6,
-  "all_events": [
+  "queries_executed": 17,
+  "events_detected": 7,
+  "breaking_events": [
     {
-      "title": "Iran War Day 163: Strait of Hormuz CLOSED",
       "domain": "middle_east",
+      "title": "Hormuz Escalation: Tanker Harassment + Houthi Deadly Strike",
+      "severity": 5,
       "category": "war_military",
-      "severity": 5
+      "description": "Iran escalating tanker harassment in Hormuz (Day 165, 1% pre-war traffic). Houthi missiles kill 6 in Bab el-Mandeb. Iran says Hormuz stays closed unless US accepts concessions. Talks at fresh impasse.",
+      "sources": [
+        "USA Today Aug 11",
+        "Newsday Aug 11",
+        "IranSITREP Aug 12",
+        "Wikipedia 2026 Hormuz crisis"
+      ],
+      "impact_regions": [
+        "Middle East",
+        "Global Energy",
+        "Global Supply Chain"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ]
     },
     {
-      "title": "2026 Ebola Epidemic: WHO PHEIC declared",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 4
-    },
-    {
-      "title": "US-Japan Joint FX Intervention: First in 30 years",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 4
-    },
-    {
-      "title": "Gold at 4,382/oz: +30.88% YoY",
-      "domain": "financial_system",
+      "domain": "commodities",
+      "title": "Gold Breaks $4,400 \u2014 2-Month High on Hormuz Escalation",
+      "severity": 4,
       "category": "market_dislocation",
-      "severity": 4
+      "description": "Gold surged above $4,400/oz (Aug 11), highest in 2 months. December futures at $4,446.90. Chinese institutional demand growing. Oil-driven inflation fears + Hormuz risk = safe haven surge.",
+      "sources": [
+        "Trading Economics Aug 11",
+        "BullionVault Aug 11",
+        "Yahoo Finance Aug 11"
+      ],
+      "impact_regions": [
+        "Global Financial"
+      ],
+      "escalate_to": [
+        "gold",
+        "fin_stability"
+      ]
     },
     {
-      "title": "South Korean Won near 1,400: sharpest swings since financial crisis",
-      "domain": "em_asia",
-      "category": "market_dislocation",
-      "severity": 3
-    },
-    {
-      "title": "Argentina country risk 451 bps, Merval breakdown",
-      "domain": "latam",
+      "domain": "uk",
+      "title": "UK Drought: Worst Food Security Crisis in Decades",
+      "severity": 4,
       "category": "sovereign_crisis",
-      "severity": 3
+      "description": "71% of England in drought. 27M+ people under hosepipe bans. Fifth heatwave forecast. DEFRA warns food shortages. Telegraph calls it worst food security crisis in decades.",
+      "sources": [
+        "Telegraph Aug 11",
+        "IndexBox Aug 11",
+        "Guardian Aug 7",
+        "Independent Aug 12"
+      ],
+      "impact_regions": [
+        "UK",
+        "Europe",
+        "Global Food"
+      ],
+      "escalate_to": [
+        "food_security",
+        "supply_chain",
+        "social_cohesion"
+      ]
+    },
+    {
+      "domain": "em_asia",
+      "title": "South Korean Won Sharpest Swings Since Financial Crisis",
+      "severity": 3,
+      "category": "market_dislocation",
+      "description": "Won nearing 1,400/dollar after weakening to 1,550. Sharpest swings since 2008. Bank of Korea Deputy Governor says 1,400 still high. Retail investors fleeing to US stocks.",
+      "sources": [
+        "Korea Herald Aug 10",
+        "Chosun Aug 11",
+        "FXStreet Aug 7"
+      ],
+      "impact_regions": [
+        "South Korea",
+        "EM Asia"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ]
+    },
+    {
+      "domain": "commodities",
+      "title": "UAE Exits OPEC, Accelerates Independent Oil Exports",
+      "severity": 3,
+      "category": "sovereign_intervention",
+      "description": "UAE withdrew from OPEC May 1, 2026. Now issuing 8th spot tender since June. ADNOC telling customers to resume loading from Das and Zirku islands. EIA forecasts global oil consumption down 1.2M b/d in 2026.",
+      "sources": [
+        "Vindobona Aug 12",
+        "OilPrice Aug 11",
+        "EIA Aug 12",
+        "Modern Diplomacy Aug 9"
+      ],
+      "impact_regions": [
+        "OPEC",
+        "Global Energy"
+      ],
+      "escalate_to": [
+        "energy",
+        "middle_east"
+      ]
+    },
+    {
+      "domain": "eu_ecb",
+      "title": "France Fiscal Distress: Eurozone Debt Crisis Epicenter",
+      "severity": 3,
+      "category": "sovereign_crisis",
+      "description": "France H1 2026 deficit exceeds 107 billion euro, 14.4% higher than prior year. Full-year deficit ratio could hit 8%. Potential new epicenter of Eurozone debt crisis.",
+      "sources": [
+        "Futunn Aug 7",
+        "ECB Economic Bulletin Aug 6",
+        "House of Commons Library Aug 12"
+      ],
+      "impact_regions": [
+        "Europe",
+        "Eurozone"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "domain": "pandemic_health",
+      "title": "Ebola: Fastest-Growing Outbreak on Record, 300+ Children Dead",
+      "severity": 4,
+      "category": "pandemic_health",
+      "description": "4,053 cases, 1,850 deaths. Fastest-growing Ebola outbreak ever. Second-deadliest. 300+ children dead. Bundibugyo strain has no approved vaccine. WHO declared public health emergency.",
+      "sources": [
+        "Wikipedia Aug 12",
+        "WHO Aug 12",
+        "UN News Aug 7",
+        "Joseph Eastman Substack Aug 7"
+      ],
+      "impact_regions": [
+        "DRC",
+        "Uganda",
+        "Central Africa",
+        "Global Health"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ]
     }
   ],
-  "summary": "CRITICAL: Iran war Day 163 Hormuz closed, Ebola PHEIC, US-Japan joint FX intervention, Gold 4,382. 6 events, 4 at severity 4+."
+  "summary": "7 breaking events detected across 12 domains. Hormuz escalation (CAT 5), gold $4,400+ (CAT 4), UK drought food crisis (CAT 4), Ebola accelerating (CAT 4), South Korea won crisis (CAT 3), UAE OPEC exit (CAT 3), France fiscal distress (CAT 3). Signal board updated \u2014 multiple signals escalated to red.",
+  "signal_board_updated": true,
+  "timestamp": "2026-08-12T07:03:52.000000+00:00"
 }
