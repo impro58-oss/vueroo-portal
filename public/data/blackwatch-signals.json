@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T11:05:13.000000+00:00",
+    "last_update": "2026-08-12T11:30:40.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner Aug 12 12:00 UTC: 12 events detected across 10 domains. Hormuz tanker escalation (cat-5), Gold >$4,400 (cat-5), Yen intervention unraveling (cat-4 NEW), ECB blindsided by US euro sale (cat-4 NEW), US fiscal crisis building - IMF 7.4% deficit forecast (cat-4 NEW), Ebola fastest-growing on record (cat-4), UK drought 75% of England (cat-4), China $148B land lease time bomb (cat-3 NEW), Colombia 7.4 earthquake (cat-3 NEW), India rupee record low 95.42 (cat-3 NEW), Nigeria coup plot + Lassa Fever (cat-3 NEW), Netanyahu blocking Gaza disarmament (cat-3 NEW). 9 new events, 3 escalating."
+    "breaking_event": "Threshold scanner Aug 12 11:30 UTC: 4 breaches detected (1 RED, 3 AMBER). Gold RED breach at $4,469.90 (+27.7% above $3,500 threshold). USD/JPY AMBER at 159.117 (intervention zone). EUR/USD AMBER at 1.1542. Gold AMBER at $4,469.90 (above $3,000). Manual fills: JGB10Y 2.85%, DE10Y 3.15%, BAA10Y 1.62%, MOVE estimated ~115."
   },
   "signals": {
     "fin_stability": {
@@ -207,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4371.0,
+      "value": 4469.9,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "change_from_last": 69.77,
-      "description": "Gold $4,371/oz (spiked above $4,400 on Hormuz escalation). DXY below 100. War premium + currency crisis signal.",
-      "series_id": "BullionVault Spot",
+      "change_from_last": 98.9,
+      "description": "Gold $4,469.90/oz (up 2.98% today, +$129.20). DXY below 100. War premium + currency crisis signal. 27.7% above RED threshold.",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-12",
-      "note": "BREAKING Aug 12 12:00: Gold spiked above $4,400 on Hormuz tanker harassment. Holding $4,371. DXY below 100. Forecast average Aug $4,586, Sep $5,120. 27% above RED threshold.",
-      "timestamp": "2026-08-12T11:05:13.000000+00:00"
+      "note": "BREAKING Aug 12 11:30 UTC: Gold surged to $4,469.90 (+2.98%) on Hormuz tanker escalation + yen intervention failure + dollar weakness. DXY below 100. Forecast average Aug $4,586, Sep $5,120.",
+      "timestamp": "2026-08-12T11:30:40.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
