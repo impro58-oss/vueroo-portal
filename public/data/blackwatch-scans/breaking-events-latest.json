@@ -1,167 +1,190 @@
 {
-  "scan_id": "2026-08-12-breaking-08",
-  "scan_type": "breaking_event_scan",
-  "scan_time": "2026-08-12T07:03:52.903769",
-  "scan_number": "4h_08",
-  "analyst": "Lumina",
-  "operator": "cron 85bd4029",
+  "scan_time": "2026-08-12T11:03:42Z",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
   "domains_scanned": 12,
-  "queries_executed": 17,
-  "events_detected": 7,
-  "breaking_events": [
+  "queries_executed": 36,
+  "events_detected": [
     {
+      "id": "EVT-20260812-001",
       "domain": "middle_east",
-      "title": "Hormuz Escalation: Tanker Harassment + Houthi Deadly Strike",
-      "severity": 5,
+      "title": "Strait of Hormuz Crisis: Iran Escalates Tanker Harassment, US Blockade Continues",
       "category": "war_military",
-      "description": "Iran escalating tanker harassment in Hormuz (Day 165, 1% pre-war traffic). Houthi missiles kill 6 in Bab el-Mandeb. Iran says Hormuz stays closed unless US accepts concessions. Talks at fresh impasse.",
-      "sources": [
-        "USA Today Aug 11",
-        "Newsday Aug 11",
-        "IranSITREP Aug 12",
-        "Wikipedia 2026 Hormuz crisis"
-      ],
-      "impact_regions": [
-        "Middle East",
-        "Global Energy",
-        "Global Supply Chain"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "food_security"
-      ]
+      "severity": 5,
+      "confidence": 10,
+      "summary": "Iranian forces escalated harassment of tanker traffic in Strait of Hormuz. Only 8-15 vessels transiting daily vs ~130 pre-conflict. Iran conditions reopening on 6 US demands including lifting naval blockade, sanctions, withdrawing forces, paying reparations. Talks at impasse. Gold spiked above $4,400 on the news. EIA forecasts oil prices remain elevated until flows normalize.",
+      "sources": ["Congress.gov (CRS)", "Wikipedia (2026 Hormuz crisis)", "ISW", "Al Jazeera", "NYT", "EIA"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "is_new": false,
+      "status_change": "ESCALATING — tanker harassment intensified, gold spiked above $4,400"
     },
     {
-      "domain": "commodities",
-      "title": "Gold Breaks $4,400 \u2014 2-Month High on Hormuz Escalation",
-      "severity": 4,
-      "category": "market_dislocation",
-      "description": "Gold surged above $4,400/oz (Aug 11), highest in 2 months. December futures at $4,446.90. Chinese institutional demand growing. Oil-driven inflation fears + Hormuz risk = safe haven surge.",
-      "sources": [
-        "Trading Economics Aug 11",
-        "BullionVault Aug 11",
-        "Yahoo Finance Aug 11"
-      ],
-      "impact_regions": [
-        "Global Financial"
-      ],
-      "escalate_to": [
-        "gold",
-        "fin_stability"
-      ]
-    },
-    {
-      "domain": "uk",
-      "title": "UK Drought: Worst Food Security Crisis in Decades",
-      "severity": 4,
-      "category": "sovereign_crisis",
-      "description": "71% of England in drought. 27M+ people under hosepipe bans. Fifth heatwave forecast. DEFRA warns food shortages. Telegraph calls it worst food security crisis in decades.",
-      "sources": [
-        "Telegraph Aug 11",
-        "IndexBox Aug 11",
-        "Guardian Aug 7",
-        "Independent Aug 12"
-      ],
-      "impact_regions": [
-        "UK",
-        "Europe",
-        "Global Food"
-      ],
-      "escalate_to": [
-        "food_security",
-        "supply_chain",
-        "social_cohesion"
-      ]
-    },
-    {
-      "domain": "em_asia",
-      "title": "South Korean Won Sharpest Swings Since Financial Crisis",
-      "severity": 3,
-      "category": "market_dislocation",
-      "description": "Won nearing 1,400/dollar after weakening to 1,550. Sharpest swings since 2008. Bank of Korea Deputy Governor says 1,400 still high. Retail investors fleeing to US stocks.",
-      "sources": [
-        "Korea Herald Aug 10",
-        "Chosun Aug 11",
-        "FXStreet Aug 7"
-      ],
-      "impact_regions": [
-        "South Korea",
-        "EM Asia"
-      ],
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ]
-    },
-    {
-      "domain": "commodities",
-      "title": "UAE Exits OPEC, Accelerates Independent Oil Exports",
-      "severity": 3,
+      "id": "EVT-20260812-002",
+      "domain": "japan",
+      "title": "US-Japan Joint Yen Intervention UNRAVELING — Yen Erases Half Gains",
       "category": "sovereign_intervention",
-      "description": "UAE withdrew from OPEC May 1, 2026. Now issuing 8th spot tender since June. ADNOC telling customers to resume loading from Das and Zirku islands. EIA forecasts global oil consumption down 1.2M b/d in 2026.",
-      "sources": [
-        "Vindobona Aug 12",
-        "OilPrice Aug 11",
-        "EIA Aug 12",
-        "Modern Diplomacy Aug 9"
-      ],
-      "impact_regions": [
-        "OPEC",
-        "Global Energy"
-      ],
-      "escalate_to": [
-        "energy",
-        "middle_east"
-      ]
-    },
-    {
-      "domain": "eu_ecb",
-      "title": "France Fiscal Distress: Eurozone Debt Crisis Epicenter",
-      "severity": 3,
-      "category": "sovereign_crisis",
-      "description": "France H1 2026 deficit exceeds 107 billion euro, 14.4% higher than prior year. Full-year deficit ratio could hit 8%. Potential new epicenter of Eurozone debt crisis.",
-      "sources": [
-        "Futunn Aug 7",
-        "ECB Economic Bulletin Aug 6",
-        "House of Commons Library Aug 12"
-      ],
-      "impact_regions": [
-        "Europe",
-        "Eurozone"
-      ],
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ]
-    },
-    {
-      "domain": "pandemic_health",
-      "title": "Ebola: Fastest-Growing Outbreak on Record, 300+ Children Dead",
       "severity": 4,
+      "confidence": 10,
+      "summary": "Historic joint US-Japan currency intervention (~$75bn Japan + $5-10bn US) has failed to hold. Yen erased ~50% of intervention gains less than 2 weeks later. US Treasury sold euros (not dollars) to avoid pushing US yields higher, blindsiding ECB. BOJ held rate at 1% during intervention, limiting effectiveness. Bessent-Takaichi rift on BOJ policy clouds coordinated defense. CNBC calls it 'weaponized yen' but fundamentals winning over intervention.",
+      "sources": ["CNBC", "Semafor", "Telegraph", "OMFIF", "Bloomberg", "FT via Bloomberg"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["currency", "fin_stability"],
+      "is_new": true,
+      "status_change": "NEW — intervention unraveling confirmed, yen erasing gains"
+    },
+    {
+      "id": "EVT-20260812-003",
+      "domain": "eu_ecb",
+      "title": "US Euro Sale for Yen Intervention Blindsided ECB — Franco-German Fiscal Stress",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "confidence": 9,
+      "summary": "US Treasury sold euros to buy yen without informing ECB beforehand, causing a 4%+ EUR/JPY drop. ECB was blindsided. France's fiscal position deteriorating — central government deficit €107B in H1 2026, 14.4% higher, full-year ratio potentially 8%. German 10Y Bund at 3.198% (above 3.0% amber threshold). New epicenter of Eurozone debt crisis flagged as France. ECB rates unchanged at July meeting.",
+      "sources": ["Bloomberg", "FT", "Brussels Signal", "Futunn", "ECB Economic Bulletin"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["europe", "fin_stability"],
+      "is_new": true,
+      "status_change": "NEW — US blindsided ECB with euro sale; France deficit crisis emerging"
+    },
+    {
+      "id": "EVT-20260812-004",
+      "domain": "commodities",
+      "title": "Gold Above $4,370 — War Premium + Currency Crisis Signal",
+      "category": "market_dislocation",
+      "severity": 5,
+      "confidence": 10,
+      "summary": "Gold holding above $4,370/oz, spiked above $4,400 on Hormuz tanker harassment escalation. DXY below 100. Average August price forecast at $4,586. 27% above RED threshold ($3,500). Multiple drivers: Hormuz crisis, US fiscal deterioration, yen intervention failure, dollar weakness. CoinCodex projects $5,120 by September.",
+      "sources": ["Rio Times", "InteractiveCrypto", "ConvexTrade", "LiteFinance"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["gold", "currency", "geopolitical"],
+      "is_new": false,
+      "status_change": "ESCALATING — spiked above $4,400, holding $4,370+"
+    },
+    {
+      "id": "EVT-20260812-005",
+      "domain": "pandemic_health",
+      "title": "Ebola Epidemic: Fastest Growing Outbreak on Record — WHO Emergency Declared",
       "category": "pandemic_health",
-      "description": "4,053 cases, 1,850 deaths. Fastest-growing Ebola outbreak ever. Second-deadliest. 300+ children dead. Bundibugyo strain has no approved vaccine. WHO declared public health emergency.",
-      "sources": [
-        "Wikipedia Aug 12",
-        "WHO Aug 12",
-        "UN News Aug 7",
-        "Joseph Eastman Substack Aug 7"
-      ],
-      "impact_regions": [
-        "DRC",
-        "Uganda",
-        "Central Africa",
-        "Global Health"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ]
+      "severity": 4,
+      "confidence": 10,
+      "summary": "2026 Ebola epidemic (Bundibugyo ebolavirus) in DRC/Uganda is now fastest growing Ebola outbreak on record and 2nd largest. Declared public health emergency. WHO says outbreak spreading faster than response efforts. US pledged $242M. Vaccine candidates entering clinical trials but existing treatments certified for Zaire species, not Bundibugyo. ECDC monitoring for imported cases.",
+      "sources": ["Wikipedia", "WHO", "The Hill", "BMJ", "ECDC via ViVa"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "is_new": false,
+      "status_change": "ESCALATING — now fastest growing on record, spreading faster than response"
+    },
+    {
+      "id": "EVT-20260812-006",
+      "domain": "financial_system",
+      "title": "US Fiscal Crisis Building — IMF Forecasts 7.4% Deficit Through 2031",
+      "category": "sovereign_crisis",
+      "severity": 4,
+      "confidence": 8,
+      "summary": "IMF forecasts US general government deficit of 7.4%+ GDP every year 2026-2031. Trump wants 60% Pentagon budget increase + $275B battleship program. Telegraph warns 'ingredients coming together for US financial crisis'. US smallest bank failed ($3.7M assets) — regulator-driven. Oversight gap widening as fintech charters expand while Fed/OCC/FDIC downsize. Private credit squeezed by bank refinancings.",
+      "sources": ["Telegraph", "American Banker", "Bloomberg", "MIT Sloan"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["fin_stability", "sov_debt", "us_cycle"],
+      "is_new": true,
+      "status_change": "NEW — IMF deficit forecast + Telegraph crisis warning + oversight gaps"
+    },
+    {
+      "id": "EVT-20260812-007",
+      "domain": "commodities",
+      "title": "UK Drought: Worst Food Security Crisis in Decades + Global Food Crisis Accelerating",
+      "category": "energy_shock",
+      "severity": 4,
+      "confidence": 9,
+      "summary": "75% of England in drought. UK faces worst food security crisis in decades — harvests and milk production at risk. Globally, 49M more people projected to fall into acute hunger in 2026. Afghanistan hunger crisis affects 14M. Nigeria food insecurity deteriorating with cereal production 25-27% below average. Oil price elevation from Hormuz crisis compounding food inflation globally.",
+      "sources": ["Telegraph", "UN News", "Action Against Hunger", "Economic Collapse Report"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["food_security", "social_cohesion", "supply_chain"],
+      "is_new": false,
+      "status_change": "ESCALATING — 75% of England in drought, global acute hunger +49M"
+    },
+    {
+      "id": "EVT-20260812-008",
+      "domain": "china",
+      "title": "China Property Crisis: $148B Expiring Land Leases + $130B Developer Defaults",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "confidence": 9,
+      "summary": "Bloomberg reports $148B in expiring land leases becoming a 'ticking time bomb' for real estate sector. Developers defaulted on ~$130B debt. Office values in major cities down 40%+ from peaks. Property bust spilling across borders — current account balances increasing 4% GDP post-bubble. Nationwide economic emergency declared. PBOC released 5-year reform plan focusing on financial stability.",
+      "sources": ["Bloomberg", "Firstpost", "Chiang Rai Times", "PIIE", "Wikipedia"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["china", "fin_stability"],
+      "is_new": true,
+      "status_change": "NEW — $148B land lease time bomb + $130B developer defaults confirmed"
+    },
+    {
+      "id": "EVT-20260812-009",
+      "domain": "latam",
+      "title": "Colombia 7.4 Earthquake + Brazil-Argentina Diplomatic Crisis + US Venezuela Intervention",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "confidence": 7,
+      "summary": "Colombia hit by 7.4 magnitude earthquake (111 killed, felt in Venezuela). Brazil withdrew ambassador from Argentina, threatening trade relations. US intervention in Venezuela ongoing — Colombia mobilized security forces along border for mass refugee influx. Argentina pushing central bank reform for Aug 19 vote. US Treasury ESF fund used for Argentina lifeline then yen rescue.",
+      "sources": ["India Today", "Blue Dollar", "Buenos Aires Herald", "Rio Times", "Wikipedia", "CFR"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["geopolitical", "fin_stability"],
+      "is_new": true,
+      "status_change": "NEW — 7.4 earthquake + diplomatic crises + ongoing Venezuela intervention"
+    },
+    {
+      "id": "EVT-20260812-010",
+      "domain": "em_asia",
+      "title": "Indian Rupee at 95.42 — Record Weakness on Oil Prices + ASEAN Capital Outflows",
+      "category": "market_dislocation",
+      "severity": 3,
+      "confidence": 8,
+      "summary": "Indian rupee weakened to ₹95.42 against USD, pressured by crude oil rise from Hormuz crisis. ASEAN currencies under pressure from ongoing capital outflows and external vulnerabilities (JPM cautious). South Korean won supported by intervention coordination with US/Japan — best performing Asian currency. ING notes US Treasury intervention may stall North Asian FX slide but ASEAN remains vulnerable.",
+      "sources": ["Economic Times India", "Times of India", "APAC News Network", "JPMorgan Private Bank", "ING", "FXStreet"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["currency", "fin_stability"],
+      "is_new": true,
+      "status_change": "NEW — rupee at record low 95.42, ASEAN capital outflows continuing"
+    },
+    {
+      "id": "EVT-20260812-011",
+      "domain": "africa",
+      "title": "Nigeria Coup Plot Revealed + Russian Financing of Africa Coups + Lassa Fever Outbreak",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "confidence": 7,
+      "summary": "Nigeria: Alleged 2025 coup plot against Tinubu administration detailed — 53 health workers infected with Lassa Fever as cases hit 1,000 in 2026. South Africa: Prosecutors allege Russia financed coup attempt in Benin via social media influencer. Mali: 2026 offensives with Russia's Africa Corps described as thwarted coup attempt. Cameroon at risk of over-indebtedness without IMF agreement. 2026 Ceuta migrant crisis ongoing.",
+      "sources": ["Bloomberg", "Premium Times Nigeria", "Wikipedia (2026 Mali offensives)", "allAfrica", "Financial Afrik"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["geopolitical", "social_cohesion"],
+      "is_new": true,
+      "status_change": "NEW — Nigeria coup plot details + Russian coup financing + Lassa Fever 1,000 cases"
+    },
+    {
+      "id": "EVT-20260812-012",
+      "domain": "middle_east",
+      "title": "Gaza Disarmament Deal at Risk — Netanyahu Refuses Withdrawal",
+      "category": "war_military",
+      "severity": 3,
+      "confidence": 8,
+      "summary": "Trump's Board of Peace reached agreement to disarm Hamas in exchange for Israeli withdrawal. Al-Quds Brigades consented Aug 2. But Netanyahu says Israeli forces will not withdraw until Hamas 'genuinely disarmed', effectively staging a 'coup' against the plan. Israel continues strikes on Gaza City, Khan Younis, Deir el-Balah. Risk of endless war as disarmament-without-withdrawal creates impasse.",
+      "sources": ["Wikipedia (Gaza war)", "Al Jazeera", "BBC", "Wikipedia (Timeline 2026)"],
+      "detected_at": "2026-08-12T11:03Z",
+      "escalate_to": ["middle_east", "geopolitical"],
+      "is_new": true,
+      "status_change": "NEW — Netanyahu blocking disarmament deal, strikes continuing"
     }
   ],
-  "summary": "7 breaking events detected across 12 domains. Hormuz escalation (CAT 5), gold $4,400+ (CAT 4), UK drought food crisis (CAT 4), Ebola accelerating (CAT 4), South Korea won crisis (CAT 3), UAE OPEC exit (CAT 3), France fiscal distress (CAT 3). Signal board updated \u2014 multiple signals escalated to red.",
-  "signal_board_updated": true,
-  "timestamp": "2026-08-12T07:03:52.000000+00:00"
+  "scan_summary": {
+    "total_events": 12,
+    "category_5_count": 2,
+    "severity_5_count": 2,
+    "severity_4_count": 5,
+    "severity_3_count": 5,
+    "new_events": 9,
+    "escalating_events": 3,
+    "domains_with_events": 10,
+    "domains_clean": 2,
+    "highest_severity": 5,
+    "overall_assessment": "CRITICAL — Multiple concurrent crises escalating. Hormuz tanker harassment intensifying (cat-5). Yen intervention unraveling (cat-4, NEW). ECB blindsided by US euro sale (cat-4, NEW). US fiscal crisis building (cat-4, NEW). Gold above $4,400 (cat-5). Ebola fastest-growing on record (cat-4). China property $148B time bomb (cat-3, NEW). Global food crisis +49M (cat-4). 12 events across 10 domains."
+  }
 }

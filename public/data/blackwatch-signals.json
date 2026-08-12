@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T11:03:51.808393+00:00",
+    "last_update": "2026-08-12T11:05:13.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Breaking event scanner Aug 12 12:00 UTC: 12 events detected across 10 domains. Hormuz tanker escalation (cat-5), Gold >$4,400 (cat-5), Yen intervention unraveling (cat-4 NEW), ECB blindsided by US euro sale (cat-4 NEW), US fiscal crisis building - IMF 7.4% deficit forecast (cat-4 NEW), Ebola fastest-growing on record (cat-4), UK drought 75% of England (cat-4), China $148B land lease time bomb (cat-3 NEW), Colombia 7.4 earthquake (cat-3 NEW), India rupee record low 95.42 (cat-3 NEW), Nigeria coup plot + Lassa Fever (cat-3 NEW), Netanyahu blocking Gaza disarmament (cat-3 NEW). 9 new events, 3 escalating."
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-10",
-      "note": "",
-      "timestamp": "2026-08-12T11:03:45.632144+00:00"
+      "note": "BREAKING Aug 12 12:00: Yen intervention unraveling (-50% gains), ECB blindsided by US euro sale, US fiscal crisis building (IMF 7.4% deficit through 2031), China $148B land lease time bomb, private credit squeezed. Telegraph warns 'ingredients for US financial crisis'.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -72,16 +73,16 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.46,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0.56,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-10",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-12T11:03:47.324138+00:00"
+      "note": "BREAKING Aug 12 12:00: Hormuz tanker harassment escalated. Gaza disarmament deal at risk \u2014 Netanyahu refusing withdrawal. Colombia 7.4 earthquake (111 killed). Nigeria coup plot revealed. Russia financing coups in Africa. US intervention in Venezuela ongoing.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,30 +104,30 @@
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-12T11:03:47.646808+00:00"
+      "note": "BREAKING Aug 12 12:00: Hormuz at 8-15 transits/day vs 130 pre-conflict. Ebola outbreak (Bundibugyo) disrupting DRC/Uganda. Drug shortages ongoing (chemo, ADHD, Sanofi Pompe disease). Food supply chains stressed by drought + oil prices.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
-      "confidence": 3,
+      "trend": "deteriorating",
+      "confidence": 5,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-12T11:03:48.118240+00:00"
+      "note": "BREAKING Aug 12 12:00: 75% of England in drought \u2014 worst food security crisis in decades. 49M more people projected into acute hunger in 2026. Nigeria cereal production 25-27% below average. Afghanistan 14M affected.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -149,14 +150,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-12T11:03:48.534008+00:00"
+      "note": "BREAKING Aug 12 12:00: UK drought crisis + 49M global acute hunger + Nigeria coup plot + Lassa Fever 1,000 cases + Colombia earthquake 111 dead. Multiple stress points eroding social cohesion globally.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -192,31 +193,31 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-12T11:03:48.945297+00:00"
+      "note": "BREAKING Aug 12 12:00: Yen intervention FAILING \u2014 erased 50% gains in 2 weeks. US sold euros (not dollars) to protect Treasuries, blindsiding ECB. India rupee at record low 95.42. ASEAN capital outflows continuing. DXY below 100.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4410.47,
+      "value": 4371.0,
       "unit": "$/oz",
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 69.77,
-      "description": "Gold Spot: \\,410.47/oz (BullionVault live)",
+      "description": "Gold $4,371/oz (spiked above $4,400 on Hormuz escalation). DXY below 100. War premium + currency crisis signal.",
       "series_id": "BullionVault Spot",
       "last_date": "2026-08-12",
-      "note": "Live spot from BullionVault - updated via BlackWatch cron refresh",
-      "timestamp": "2026-08-12T11:04:02.275203+00:00"
+      "note": "BREAKING Aug 12 12:00: Gold spiked above $4,400 on Hormuz tanker harassment. Holding $4,371. DXY below 100. Forecast average Aug $4,586, Sep $5,120. 27% above RED threshold.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -239,35 +240,35 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
-      "confidence": 7,
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-12T11:03:45.732332+00:00"
+      "note": "BREAKING Aug 12 12:00: $148B expiring land leases = 'ticking time bomb' (Bloomberg). Developers defaulted on ~$130B debt. Office values down 40%+. Property bust spilling across borders. PBOC released 5-year reform plan.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-11",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-12T11:03:50.531365+00:00"
+      "note": "BREAKING Aug 12 12:00: US blindsided ECB with euro sale for yen intervention. France deficit \u20ac107B H1 2026 (+14.4%), full-year potentially 8%. German Bund 3.198% (AMBER breach). New epicenter of Eurozone debt crisis flagged.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.48,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.01,
@@ -275,23 +276,23 @@
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-12T11:03:50.962647+00:00"
+      "note": "BREAKING Aug 12 12:00: IMF forecasts US deficit 7.4%+ GDP through 2031. Trump wants 60% Pentagon increase + $275B battleships. Fed dropped forward guidance (Warsh). 30% probability of rate hike at next meeting. Telegraph: 'ingredients for US financial crisis coming together'.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -8.05,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-12T11:03:51.359314+00:00"
+      "note": "BREAKING Aug 12 12:00: Hormuz tanker harassment ESCALATED. Iran's 6 demands for reopening. Gaza disarmament deal at risk \u2014 Netanyahu blocking withdrawal. Saudi cuts Asia oil price to 6-year low. US-Saudi-Israel plan to bypass Iran chokepoints.",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,31 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-12T11:03:51.786553+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "System",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "unit": "",
+      "description": "Multiple concurrent category-5 macro events detected",
+      "series_id": null,
+      "last_date": "2026-08-12",
+      "note": "BREAKING Aug 12 12:00: Hormuz tanker escalation + Gold >$4,400 + Yen intervention failure + ECB blindsided + US fiscal crisis + Ebola accelerating",
+      "timestamp": "2026-08-12T11:05:13.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 544,
-    "red_count": 7,
-    "amber_count": 10,
-    "green_count": 2,
+    "score": 545,
+    "red_count": 16,
+    "amber_count": 4,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-12T11:03:51.806383+00:00"
+    "timestamp": "2026-08-12T11:05:13.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -439,6 +454,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-12T11:03:51.808393+00:00"
+    "timestamp": "2026-08-12T11:05:13.000000+00:00"
   }
 }
