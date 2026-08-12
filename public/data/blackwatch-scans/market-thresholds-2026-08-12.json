@@ -1,0 +1,195 @@
+{
+  "scan_date": "2026-08-12",
+  "scan_time_utc": "2026-08-12T19:30:44.858089+00:00",
+  "scanner_version": "1.0.0",
+  "current_values": {
+    "USDJPY": {
+      "price": 159.486,
+      "prev_close": 157.6,
+      "change_1d_pct": 1.2,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "EURUSD": {
+      "price": 1.1525,
+      "prev_close": 1.1557,
+      "change_1d_pct": -0.28,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "GBPUSD": {
+      "price": 1.3491,
+      "prev_close": 1.347,
+      "change_1d_pct": 0.16,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDCNY": {
+      "price": 6.7433,
+      "prev_close": 6.7497,
+      "change_1d_pct": -0.09,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "USDKRW": {
+      "price": 1417.9,
+      "prev_close": 1421.16,
+      "change_1d_pct": -0.23,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "SPX": {
+      "price": 7751.33,
+      "prev_close": 7723.55,
+      "change_1d_pct": 0.36,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "NKX": {
+      "price": 67524.06,
+      "prev_close": 66300.44,
+      "change_1d_pct": 1.85,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "HSI": {
+      "price": 25440.17,
+      "prev_close": 25915.82,
+      "change_1d_pct": -1.84,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "VIX": {
+      "price": 14.48,
+      "prev_close": 15.15,
+      "change_1d_pct": -4.42,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "MOVE": {
+      "price": 125.0,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search_estimated",
+      "note": "MOVE Index not directly available via Yahoo. Estimated ~125 based on elevated bond volatility context (US 10Y rising, JGBs surging, oil spike). FRED does not carry MOVE directly."
+    },
+    "GOLD": {
+      "price": 4476.6,
+      "prev_close": 4340.7,
+      "change_1d_pct": 3.13,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "OIL": {
+      "price": 88.79,
+      "prev_close": 83.55,
+      "change_1d_pct": 6.27,
+      "data_points": 4,
+      "source": "yahoo"
+    },
+    "US10Y": {
+      "price": 4.682,
+      "prev_close": 4.67,
+      "change_1d_pct": 0.26,
+      "data_points": 5,
+      "source": "yahoo"
+    },
+    "JGB10Y": {
+      "price": 2.85,
+      "prev_close": 2.805,
+      "change_1d_pct": 1.6,
+      "data_points": 1,
+      "source": "web_search",
+      "note": "From Business Recorder/Zawya: 10yr JGB yield rose 4.5bps to 2.850%"
+    },
+    "DE10Y": {
+      "price": 3.163,
+      "prev_close": 3.183,
+      "change_1d_pct": -0.6,
+      "data_points": 1,
+      "source": "web_search",
+      "note": "From Economic Times: 10yr Bund yield fell ~2bps to 3.163%"
+    },
+    "BAA10Y": {
+      "price": 1.62,
+      "prev_close": 1.64,
+      "change_1d_pct": -1.2,
+      "data_points": 1,
+      "source": "web_search_fred",
+      "note": "From FRED BAA10Y series: 1.62% as of 2026-08-10 (latest available)"
+    },
+    "BTC": {
+      "price": 63294.75,
+      "prev_close": 64904.688,
+      "change_1d_pct": -2.48,
+      "data_points": 5,
+      "source": "yahoo"
+    }
+  },
+  "breaches": [
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4476.6,
+      "threshold": 3500,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 27.9
+    },
+    {
+      "key": "USDJPY",
+      "name": "USD/JPY",
+      "category": "currency",
+      "current": 159.486,
+      "threshold": 158.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Intervention zone \u2014 joint intervention likely failing",
+      "escalate": [
+        "japan_sovereign",
+        "currency"
+      ],
+      "distance_pct": 0.94
+    },
+    {
+      "key": "EURUSD",
+      "name": "EUR/USD",
+      "category": "currency",
+      "current": 1.1525,
+      "threshold": 1.15,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "escalate": [
+        "us_cycle",
+        "currency"
+      ],
+      "distance_pct": 0.22
+    },
+    {
+      "key": "GOLD",
+      "name": "Gold",
+      "category": "commodity",
+      "current": 4476.6,
+      "threshold": 3000,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 49.22
+    }
+  ],
+  "breach_count": 4,
+  "thresholds_monitored": 31,
+  "markets_monitored": 17,
+  "max_severity": "RED"
+}
