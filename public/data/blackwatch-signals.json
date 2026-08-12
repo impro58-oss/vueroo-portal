@@ -1,27 +1,43 @@
 {
   "metadata": {
-    "source": "FRED API + manual assessment",
+    "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T17:04:19.171818+00:00",
+    "last_update": "2026-08-12T19:02:00.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20
+    "signals_manual": 1,
+    "signals_total": 21,
+    "breaking_event": "Breaking event scanner update: 12 events detected, 2 cat-5, 4 cat-4. Hormuz Day 164, Ebola deadliest-track, yen intervention failing, Fed hike probability rising."
   },
   "signals": {
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "System",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0,
+      "unit": "alert",
+      "description": "2 cat-5 events: Hormuz closed Day 164 (Iran vows closure until sanctions lifted), Ebola on track to surpass deadliest in history (4,300+ cases, 2,000+ deaths). 4 cat-4: yen intervention failing, Fed hike prob 30%, gold $4,322, US fiscal crisis.",
+      "series_id": null,
+      "last_date": "2026-08-12",
+      "note": "BlackWatch Breaking Event Scanner 4h cycle. 12 events across all 12 domains. No domain clean.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
+    },
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.72,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "US High Yield OAS Spread",
+      "description": "US High Yield OAS Spread — yen intervention failing, regulatory oversight gaps",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-12T17:04:10.648965+00:00"
+      "note": "ESCALATED by breaking event scanner: yen intervention unraveling, ECB blindsided by US euro sale, regulatory oversight gap widening, Russia banking stress.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -56,32 +72,32 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.05,
+      "value": 89.12,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0.22,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price — Hormuz crisis driving elevation",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-12T17:04:12.733711+00:00"
+      "last_date": "2026-08-12",
+      "note": "ESCALATED by breaking event scanner: Hormuz closure Day 164, EIA forecasts prices remain elevated, global inventories falling sharply.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.28,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.18,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "VIX as market fear proxy — Hormuz war + Ebola + yen crisis",
       "series_id": "VIXCLS",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-12T17:04:13.171977+00:00"
+      "note": "ESCALATED by breaking event scanner: Hormuz Day 164, Iran vows closure, Ebola deadliest-track, yen intervention failing, Gaza disarmament blocked.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -101,43 +117,43 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 88.9,
+      "value": 89.12,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
-      "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 7,
+      "change_from_last": 0.22,
+      "description": "Brent oil as supply chain cost proxy — Hormuz closure disrupting global shipping",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-03",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-12T11:03:47.646808+00:00"
+      "last_date": "2026-08-12",
+      "note": "ESCALATED by breaking event scanner: Hormuz closure Day 164 disrupting oil supply chains. IEA cut demand forecast 550kb/d. Ebola outbreak threatening DRC/Uganda supply chains.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-12T17:04:13.930311+00:00"
+      "note": "ESCALATED by breaking event scanner: 75% of England in drought, 49M more acute hunger globally, oil prices compounding food inflation.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -155,8 +171,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-12T17:04:15.163898+00:00"
+      "note": "ESCALATED by breaking event scanner: Ebola deadliest-track, global food crisis +49M acute hunger, Hormuz war impact on public sentiment.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -267,31 +283,31 @@
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.48,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.01,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal + Fed hike probability rising",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-12T17:04:17.390350+00:00"
+      "note": "ESCALATED by breaking event scanner: 30% rate hike probability priced in, Fed Chair Warsh signaling hike, bond yields rising, IMF forecasts 7.4% deficit through 2031.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 88.9,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
-      "change_from_last": -8.05,
+      "value": 89.12,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0.22,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy — Hormuz CLOSED Day 164",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-03",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-12T17:04:18.731694+00:00"
+      "last_date": "2026-08-12",
+      "note": "ESCALATED by breaking event scanner: Hormuz closed Day 164, Iran vows closure until US lifts sanctions, Trump claims total control. 8 ships vs 73/day normal.",
+      "timestamp": "2026-08-12T19:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,12 +328,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 544,
-    "red_count": 7,
-    "amber_count": 10,
-    "green_count": 2,
+    "score": 485,
+    "red_count": 13,
+    "amber_count": 6,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-12T17:04:19.171818+00:00"
+    "timestamp": "2026-08-12T19:02:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -439,6 +455,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-12T17:04:19.171818+00:00"
+    "timestamp": "2026-08-12T19:02:00.000000+00:00"
   }
 }
