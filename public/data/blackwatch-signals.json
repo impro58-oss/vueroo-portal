@@ -2,41 +2,26 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T07:33:19.224332+00:00",
+    "last_update": "2026-08-12T11:03:51.808393+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "breaking_event": "Breaking event scanner Aug 12: 7 events detected. Hormuz escalation, gold $4,400+, UK drought, Ebola accelerating, South Korea won crisis, UAE OPEC exit, France fiscal distress.",
-    "threshold_scan_integration": {
-      "scan_time": "2026-08-12T07:30:48Z",
-      "breaches_detected": 6,
-      "max_severity": "RED",
-      "signals_escalated": 6,
-      "escalated_signals": [
-        "fin_stability",
-        "geopolitical",
-        "currency",
-        "europe",
-        "us_cycle",
-        "gold"
-      ]
-    }
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-10",
-      "note": "THRESHOLD SCAN ESCALATION Aug 12: Gold $4,458 (RED, >$3,500), JGB 10Y 2.82% (RED, >1.5%), German Bund 3.198% (AMBER, >3.0%). Multiple systemic risk tripwires breached.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "",
+      "timestamp": "2026-08-12T11:03:45.632144+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -51,7 +36,7 @@
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
       "note": "",
-      "timestamp": "2026-08-12T05:34:15.749601+00:00"
+      "timestamp": "2026-08-12T11:03:46.004768+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -66,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-12T05:34:16.209836+00:00"
+      "timestamp": "2026-08-12T11:03:46.630086+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 81.99,
-      "status": "red",
-      "trend": "deteriorating",
+      "value": 88.9,
+      "status": "amber",
+      "trend": "improving",
       "confidence": 5,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Brent crude $81.99 (Aug 11). Hormuz at 1% pre-war. Iran escalating tanker harassment. Oil surged 5% on stalling talks.",
+      "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "BREAKING Aug 12: Hormuz escalation. EIA forecasts -1.2M b/d global consumption. UAE exited OPEC, 8th spot tender.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-12T11:03:46.949787+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.46,
-      "status": "red",
+      "status": "amber",
       "trend": "deteriorating",
-      "confidence": 10,
+      "confidence": 9,
       "change_from_last": 0.56,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-10",
-      "note": "THRESHOLD SCAN ESCALATION Aug 12: Gold $4,458 (RED, >$3,500) \u2014 currency crisis or war premium confirmed. Hormuz escalation continues. Houthi deadly strike. Iran talks at impasse.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-12T11:03:47.324138+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -111,37 +96,37 @@
       "series_id": null,
       "last_date": "2026-08-12",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-12T05:34:16.914251+00:00"
+      "timestamp": "2026-08-12T11:03:47.646808+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
       "value": 88.9,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-03",
-      "note": "BREAKING Aug 12: Hormuz Escalation: Tanker Harassment + Houthi Deadly Strike. Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-12T11:03:47.646808+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "deteriorating",
+      "trend": "improving",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "BREAKING Aug 12: UK drought \u2014 worst food security crisis in decades. 71% of England in drought, 27M under hosepipe bans.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-12T11:03:48.118240+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -156,7 +141,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-12T05:34:15.907790+00:00"
+      "timestamp": "2026-08-12T11:03:46.777669+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -170,8 +155,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "BREAKING Aug 12: UK Drought: Worst Food Security Crisis in Decades. ",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-12T11:03:48.534008+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -186,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-12T05:34:16.914251+00:00"
+      "timestamp": "2026-08-12T11:03:47.646808+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -201,52 +186,52 @@
       "series_id": null,
       "last_date": "2026-08-12",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-12T05:34:16.914251+00:00"
+      "timestamp": "2026-08-12T11:03:47.646808+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "amber",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "THRESHOLD SCAN ESCALATION Aug 12: USD/JPY 159.37 (AMBER, >158) \u2014 intervention zone, joint intervention likely failing. EUR/USD 1.1541 (AMBER, >1.15) \u2014 euro strength, dollar weakness.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-12T11:03:48.945297+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4458.4,
+      "value": 4410.47,
       "unit": "$/oz",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "change_from_last": 58.4,
-      "description": "Gold $4,458/oz (THRESHOLD RED, >$3,500). 2.71% daily gain. Hormuz escalation + inflation fears driving safe haven demand.",
-      "series_id": "goldpricez.com spot",
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": 69.77,
+      "description": "Gold Spot: \\,410.47/oz (BullionVault live)",
+      "series_id": "BullionVault Spot",
       "last_date": "2026-08-12",
-      "note": "THRESHOLD SCAN Aug 12: Gold at $4,458.4 \u2014 RED breach (>$3,500) and AMBER breach (>$3,000). 27.4% above RED threshold. Currency crisis or war premium.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "Live spot from BullionVault - updated via BlackWatch cron refresh",
+      "timestamp": "2026-08-12T11:04:02.275203+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 63799,
+      "value": 64130,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.2,
-      "description": "BTC $63,799 (-0.2% 24h), Dominance: 75.7%",
+      "change_from_last": -0.3,
+      "description": "BTC $64,130 (-0.3% 24h), Dominance: 75.7%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-12",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-12T05:34:15.511644+00:00"
+      "timestamp": "2026-08-12T11:03:45.992977+00:00"
     },
     "china": {
       "name": "China Health",
@@ -261,22 +246,22 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-12T05:34:15.256839+00:00"
+      "timestamp": "2026-08-12T11:03:45.732332+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "deteriorating",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-11",
-      "note": "THRESHOLD SCAN ESCALATION Aug 12: German 10Y Bund 3.198% (AMBER, >3.0%) \u2014 European fiscal stress, periphery spreads widening. France fiscal distress already flagged.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-12T11:03:50.531365+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -290,23 +275,23 @@
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-11",
-      "note": "THRESHOLD SCAN ESCALATION Aug 12: EUR/USD 1.1541 (AMBER, >1.15) \u2014 dollar weakness, possible Fed pivot. Yield curve 10Y-2Y at 0.48%.",
-      "timestamp": "2026-08-12T07:33:19.224332+00:00"
+      "note": "",
+      "timestamp": "2026-08-12T11:03:50.962647+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 81.99,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
+      "value": 88.9,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 5,
       "change_from_last": -8.05,
       "unit": "$/bbl",
-      "description": "Hormuz Day 165. Iran says closed unless US accepts concessions. Houthi killed 6 in Bab el-Mandeb. Talks at fresh impasse.",
+      "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-03",
-      "note": "BREAKING Aug 12: Hormuz at 1% pre-war traffic. Houthi deadly strike killed 6. Iran conditions reopening on US concessions.",
-      "timestamp": "2026-08-12T07:03:52.000000+00:00"
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-12T11:03:51.359314+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -321,7 +306,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-12T05:34:21.062751+00:00"
+      "timestamp": "2026-08-12T11:03:51.786553+00:00"
     }
   },
   "overall_risk": {
@@ -332,7 +317,7 @@
     "amber_count": 10,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-12T05:34:21.082348+00:00"
+    "timestamp": "2026-08-12T11:03:51.806383+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -454,6 +439,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-12T05:34:21.082348+00:00"
+    "timestamp": "2026-08-12T11:03:51.808393+00:00"
   }
 }
