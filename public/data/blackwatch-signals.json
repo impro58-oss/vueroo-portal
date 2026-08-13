@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T19:04:19.000000+00:00",
+    "last_update": "2026-08-13T19:30:44.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner 20:02 UTC: 6 signal escalations. Middle East escalating. Ebola 6th province. Yen intervention unraveling. Gold record territory."
+    "breaking_event": "Breaking event scanner 20:02 UTC: 6 signal escalations. Middle East escalating. Ebola 6th province. Yen intervention unraveling. Gold record territory.",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 8,
       "change_from_last": -0.01,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-12",
-      "note": "BREAKING EVENT: Gold at 4400+ record. Burry 1987-style crash warning. ECB debt independence risks. Private credit distress ongoing.",
-      "timestamp": "2026-08-13T19:04:19.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4404.8)",
+      "timestamp": "2026-08-13T19:30:44.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
