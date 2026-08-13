@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-12T23:30:41.000000+00:00",
+    "last_update": "2026-08-13T03:04:11.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "signals_total": "21",
+    "threshold_breach": "4 thresholds breached",
+    "breaking_event": "3 cat-5 events: Hormuz Day 164, Ebola 2000+ deaths, US Treasury hedge fund leverage crisis"
   },
   "signals": {
     "fin_stability": {
@@ -21,23 +22,23 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-11",
-      "note": "Threshold breach: Gold above 3500 (current: 4466.2)",
-      "timestamp": "2026-08-12T23:30:41.000000+00:00"
+      "note": "ESCALATED: US Treasury acutely dependent on hedge fund short-term funding at 100x leverage. 8.3T money market. Fed flagged hedge fund leverage as primary concern.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "",
-      "timestamp": "2026-08-12T23:10:37.560491+00:00"
+      "note": "ESCALATED: Hedge fund leverage in Treasury funding markets flagged. 8.3T money market exposure.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-12T23:10:38.290495+00:00"
+      "note": "ESCALATED: Hormuz Day 164, 59 ships redirected, oil surging 5%+. Brent elevated.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-11",
-      "note": "Threshold breach: Gold above 3500 (current: 4466.2)",
-      "timestamp": "2026-08-12T23:30:41.000000+00:00"
+      "note": "ESCALATED: Hormuz Day 164, Nigeria alleged coup plot vs Tinubu, Iran-US semi-negotiating.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -105,14 +106,14 @@
       "value": 93.26,
       "unit": "$/bbl (proxy)",
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-12T23:10:37.663001+00:00"
+      "note": "ESCALATED: Ebola outbreak disrupting DRC/Uganda supply chains. Hormuz shipping disruption ongoing.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -156,8 +157,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-12T23:10:40.237368+00:00"
+      "note": "ESCALATED: Ebola PHEIC + Nigeria alleged coup plot + anti-gang violence.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -283,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-12T23:10:42.644648+00:00"
+      "note": "ESCALATED: Hormuz Day 164, 59 vessels redirected, 3 disabled, 2 boarded. Talks stalled.",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,17 +309,31 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-12T23:10:42.990427+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "unit": "alert",
+      "description": "Breaking event scanner: 3 category-5 events active",
+      "series_id": "blackwatch-breaking-event-scanner",
+      "last_date": "2026-08-13",
+      "note": "ESCALATED: Hormuz closure Day 164 + Ebola 2000+ deaths + US Treasury hedge fund leverage crisis",
+      "timestamp": "2026-08-13T03:04:11.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
     "score": 544,
-    "red_count": 7,
-    "amber_count": 10,
-    "green_count": 2,
+    "red_count": 12,
+    "amber_count": 8,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-12T23:10:43.012002+00:00"
+    "timestamp": "2026-08-13T03:04:11.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
