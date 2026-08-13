@@ -22,7 +22,7 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-11",
-      "note": "Threshold breach: Gold above 3500 (current: 4449.2)",
+      "note": "ESCALATED by threshold scanner: Gold above 3500 RED (current: $4,449.20, +27.1% above threshold). Currency crisis or war premium. Also above 3000 AMBER (+48.3%).",
       "timestamp": "2026-08-13T11:33:41.000000+00:00"
     },
     "liquidity": {
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy - ESCALATED by breaking event scanner",
       "series_id": "VIXCLS",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Active US-Israel-Iran war since Feb 2026. Hormuz blockade. Coordinated US-Japan yen intervention. Gold at record highs. Multiple systemic stress vectors.",
-      "timestamp": "2026-08-13T11:10:00.000000+00:00"
+      "note": "ESCALATED: Active US-Israel-Iran war since Feb 2026. Hormuz blockade. Coordinated US-Japan yen intervention. Gold at record highs ($4,449, +27% above RED threshold). USD/JPY at 159.3, above intervention zone. Multiple systemic stress vectors.",
+      "timestamp": "2026-08-13T11:33:41.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -202,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.301)",
+      "note": "ESCALATED by threshold scanner: USD/JPY above 158.0 AMBER (current: 159.301, +0.82% above). Joint intervention likely failing. EUR/USD above 1.15 AMBER (current: 1.1541) — dollar weakness.",
       "timestamp": "2026-08-13T11:33:41.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4390.47,
+      "value": 4449.2,
       "unit": "$/oz",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
-      "change_from_last": -70.43,
-      "description": "Gold spot: ,390.47/oz (BullionVault live)",
-      "series_id": "BullionVault spot",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 87.4,
+      "description": "Gold spot: $4,449.20/oz (Yahoo Finance GC=F, +2.0% 24h)",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-13",
-      "note": "Live spot from BullionVault - updated during 6h BlackWatch refresh",
-      "timestamp": "2026-08-13T11:03:37+00:00"
+      "note": "THRESHOLD BREACH: Gold above 3500 RED (+27.1%) and above 3000 AMBER (+48.3%). Safe haven demand extreme — currency crisis or war premium.",
+      "timestamp": "2026-08-13T11:33:39+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",

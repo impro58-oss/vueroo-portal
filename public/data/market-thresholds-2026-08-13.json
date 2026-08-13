@@ -1,40 +1,40 @@
 {
   "scan_date": "2026-08-13",
-  "scan_time_utc": "2026-08-13T07:30:41.299895+00:00",
+  "scan_time_utc": "2026-08-13T11:33:39.578757+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.396,
+      "price": 159.301,
       "prev_close": 158.409,
-      "change_1d_pct": 0.62,
+      "change_1d_pct": 0.56,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1525,
+      "price": 1.1541,
       "prev_close": 1.1525,
-      "change_1d_pct": 0.0,
+      "change_1d_pct": 0.14,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3485,
+      "price": 1.3495,
       "prev_close": 1.3455,
-      "change_1d_pct": 0.22,
+      "change_1d_pct": 0.3,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7444,
+      "price": 6.7317,
       "prev_close": 6.7488,
-      "change_1d_pct": -0.07,
+      "change_1d_pct": -0.25,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1423.08,
+      "price": 1420.99,
       "prev_close": 1422.3,
-      "change_1d_pct": 0.05,
+      "change_1d_pct": -0.09,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -53,38 +53,36 @@
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25343.3,
+      "price": 25396.51,
       "prev_close": 25530.28,
-      "change_1d_pct": -0.73,
+      "change_1d_pct": -0.52,
       "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 14.68,
+      "price": 14.58,
       "prev_close": 14.9,
-      "change_1d_pct": -1.48,
+      "change_1d_pct": -2.15,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 74.67,
-      "prev_close": null,
-      "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (convextrade.com, ~Aug 2026)",
-      "note": "MOVE Index from convextrade.com. Yahoo Finance ticker unavailable. Value as of latest available date."
+      "price": 70.0,
+      "source": "web_search",
+      "source_note": "Global X ETFs commentary: held closer to 70 level since early June 2026",
+      "data_date": "2026-08-09"
     },
     "GOLD": {
-      "price": 4431.2,
+      "price": 4449.2,
       "prev_close": 4361.8,
-      "change_1d_pct": 1.59,
+      "change_1d_pct": 2.0,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 88.64,
+      "price": 87.38,
       "prev_close": 87.72,
-      "change_1d_pct": 1.05,
+      "change_1d_pct": -0.39,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -96,33 +94,27 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.88,
-      "prev_close": 2.86,
-      "change_1d_pct": 0.7,
-      "data_points": 1,
-      "source": "web_search (tradingeconomics.com, Aug 13 2026)",
-      "note": "Japan 10-year JGB yield. Climbing on BOJ hike expectations."
+      "price": 2.85,
+      "source": "web_search",
+      "source_note": "Business Recorder: 10-year JGB yield rose 4.5bps to 2.850%",
+      "data_date": "2026-08-12"
     },
     "DE10Y": {
-      "price": 3.16,
-      "prev_close": 3.15,
-      "change_1d_pct": 0.32,
-      "data_points": 1,
-      "source": "web_search (tradingeconomics.com, Aug 13 2026)",
-      "note": "German 10-year Bund yield. ECB September hike expected."
+      "price": 3.10,
+      "source": "web_search",
+      "source_note": "Investing.com: German 10-year Bund yield flat at 3.10%",
+      "data_date": "2026-08-06"
     },
     "BAA10Y": {
-      "price": 2.5,
-      "prev_close": null,
-      "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (FRED data to Aug 10, estimated from Baa yield ~7.18% minus US10Y 4.68%)",
-      "note": "BAA-10Y corporate credit spread. FRED data current to Aug 10, 2026. Estimated from Baa ~7.18% minus US10Y 4.682%. Confidence: MEDIUM."
+      "price": 1.62,
+      "source": "FRED CSV",
+      "source_note": "FRED BAA10Y series: Moody's Baa vs 10Y Treasury spread",
+      "data_date": "2026-08-10"
     },
     "BTC": {
-      "price": 63838.0,
+      "price": 63335.79,
       "prev_close": 64844.887,
-      "change_1d_pct": -1.55,
+      "change_1d_pct": -2.33,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -132,7 +124,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4431.2,
+      "current": 4449.2,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -141,13 +133,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.61
+      "distance_pct": 27.12
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.396,
+      "current": 159.301,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -156,13 +148,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 0.88
+      "distance_pct": 0.82
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1525,
+      "current": 1.1541,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -171,13 +163,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.22
+      "distance_pct": 0.36
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4431.2,
+      "current": 4449.2,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -185,7 +177,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 47.71
+      "distance_pct": 48.31
     }
   ],
   "breach_count": 4,
