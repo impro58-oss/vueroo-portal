@@ -1,121 +1,163 @@
 {
-  "scan_time": "2026-08-13T11:03:56.827233",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
-  "operator": "Lumina (cron 85bd4029)",
+  "scan_time": "2026-08-13T15:03:51.761720",
+  "scan_type": "breaking_event_4h",
+  "date": "2026-08-13",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "category_5_events_detected": 4,
+  "new_category_5_events": 0,
+  "ongoing_category_5_events": 4,
   "events": [
     {
-      "id": "BW-2026-08-13-001",
-      "title": "US-Iran War: Strait of Hormuz Blockade Active Since February 2026",
+      "id": "ME-001",
+      "title": "US-Iran War / Hormuz Blockade",
       "domain": "middle_east",
-      "category": "war_military",
       "severity": 5,
-      "confidence": 10,
-      "description": "Active war between US/Israel and Iran since February 2026. Iran has blockaded the Strait of Hormuz since Feb 28, 2026. IRGC boarding/attacking merchant ships, sea mines deployed. US blockaded Iranian ships Apr 13 - May 29. Trump reinstating blockade as of Aug 12. Negotiations ongoing but stalled. Brent crude at $93.26/bbl. Oil surged 5%+ on Aug 11 when Hormuz talks stalled.",
-      "sources": ["CNN (Aug 12, 2026)", "Wikipedia - 2026 Iran war", "Wikipedia - 2026 Strait of Hormuz crisis", "The Guardian (Aug 9, 2026)", "Al Jazeera (Aug 12, 2026)", "Congress.gov CRS R45281"],
-      "impact_regions": ["Middle East", "Global energy markets", "Global shipping", "US", "Iran", "Israel"],
-      "escalate_to": ["middle_east", "energy", "geopolitical", "food_security", "supply_chain"],
-      "detected_at": "2026-08-13T11:03:56Z",
-      "status": "ACTIVE_ONGOING",
-      "first_detected": "2026-02-28"
+      "status": "ESCALATING",
+      "category": "war_military",
+      "summary": "Trump reinstated naval blockade Aug 12. Iran rejects ceasefire. No deal exists. Trump claims total control over Hormuz. Houthi threats continue.",
+      "sources": [
+        "CNN",
+        "Bloomberg",
+        "CBS",
+        "Wikipedia",
+        "Britannica"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ],
+      "last_updated": "2026-08-13T15:03:51.761720",
+      "new_this_scan": false
     },
     {
-      "id": "BW-2026-08-13-002",
-      "title": "Coordinated US-Japan Yen Intervention — First Since 2011",
+      "id": "JP-001",
+      "title": "US-Japan-South Korea Yen Intervention Unraveling",
       "domain": "japan",
+      "severity": 4,
+      "status": "ONGOING",
       "category": "sovereign_intervention",
-      "severity": 4,
-      "confidence": 10,
-      "description": "US Treasury and Japan executed first coordinated yen intervention in 15 years on July 31, 2026. US sold euros to buy yen via NY Fed on Treasury's behalf. Japan deployed ~$36.58B. FIMA facility used to avoid selling US Treasuries. 5-standard deviation move in USD/JPY. Bessent called BOJ 'behind the curve' on inflation. BOJ held rate at 1.00% post-intervention. Yen rallied to 155 then unwound to ~159. Structurally distinct from 2011 — executed amid sovereign debt stress.",
-      "sources": ["OMFIF (Aug 7, 2026)", "Wolf Street (Aug 8, 2026)", "ABC News (Aug 5, 2026)", "LSEG (Aug 10, 2026)", "Crypto Briefing (Aug 12, 2026)", "Investors Chronicle (Aug 11, 2026)", "Discovery Alert (Aug 12, 2026)"],
-      "impact_regions": ["Japan", "US", "Global FX markets", "Treasury markets"],
-      "escalate_to": ["currency", "fin_stability", "liquidity"],
-      "detected_at": "2026-08-13T11:03:56Z",
-      "status": "ACTIVE_ONGOING",
-      "first_detected": "2026-07-31"
+      "summary": "USD/JPY back at 159.40, intervention gains fading. Takaichi pushing BOJ for faster hikes. Coordinated intervention only achieved temporary 5pct gain.",
+      "sources": [
+        "Bloomberg",
+        "Reuters",
+        "Telegraph",
+        "FXStreet"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "last_updated": "2026-08-13T15:03:51.761720",
+      "new_this_scan": false
     },
     {
-      "id": "BW-2026-08-13-003",
-      "title": "2026 Ebola Epidemic — WHO PHEIC Declared, Fastest-Growing Outbreak on Record",
+      "id": "HD-001",
+      "title": "Ebola PHEIC - Fastest Growing Outbreak on Record",
       "domain": "pandemic_health",
-      "category": "pandemic",
       "severity": 4,
-      "confidence": 10,
-      "description": "Ebola outbreak in DRC and Uganda caused by Bundibugyo ebolavirus. WHO declared Public Health Emergency of International Concern (PHEIC) on May 17, 2026. As of early August: 4,053 confirmed cases, 1,850 deaths. Second-deadliest Ebola outbreak in history, largest ever in DRC. WHO warns it could surpass the 11,000-death 2014-2016 outbreak. Existing treatments certified for Zaire species, not Bundibugyo — complicating response. Cases confirmed in Goma (major transit hub).",
-      "sources": ["Wikipedia - 2026 Ebola epidemic", "ECDC (Aug 12, 2026)", "WHO via Newsday (Aug 12, 2026)", "CDC (Aug 7, 2026)", "MSF/Doctors Without Borders", "Joseph Eastman Substack (Aug 7, 2026)"],
-      "impact_regions": ["DRC", "Uganda", "Central Africa", "Global health"],
-      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
-      "detected_at": "2026-08-13T11:03:56Z",
-      "status": "ACTIVE_ONGOING",
-      "first_detected": "2026-05-17"
+      "status": "WORSENING",
+      "category": "pandemic",
+      "summary": "Death toll surpasses 2000. Fastest-growing Ebola outbreak. Bundibugyo strain. MSF running PARTNERS trial. WHO PHEIC since May 17.",
+      "sources": [
+        "WaPo",
+        "CDC",
+        "ECDC",
+        "Wikipedia",
+        "MSF"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "last_updated": "2026-08-13T15:03:51.761720",
+      "new_this_scan": false
     },
     {
-      "id": "BW-2026-08-13-004",
-      "title": "Gold at Record Highs Above $4,400 — Safe Haven Panic Driving Markets",
-      "domain": "commodities",
+      "id": "FN-001",
+      "title": "Gold Record Highs - War Premium Extreme",
+      "domain": "financial_system",
+      "severity": 4,
+      "status": "ONGOING",
       "category": "market_dislocation",
-      "severity": 3,
-      "confidence": 9,
-      "description": "Gold futures at $4,460.90 (+2.27%), holding near record territory above $4,400/oz. Driven by Iran war safe-haven demand, Hormuz uncertainty, and yen intervention fallout. Oil surged 5%+ on Aug 11 when Hormuz talks stalled. Brent at $93.26. Markets pricing in possible Fed rate hike (~30% probability). UK rate hike expectations shifted from cuts to possible hikes due to Middle East conflict inflation transmission.",
-      "sources": ["Eurasia Business News (Aug 11, 2026)", "IndexBox (Aug 10, 2026)", "BigGo Finance (Aug 11, 2026)", "InvestingCube (Aug 11, 2026)", "Fortune (Aug 10, 2026)"],
-      "impact_regions": ["Global financial markets"],
-      "escalate_to": ["energy", "fin_stability"],
-      "detected_at": "2026-08-13T11:03:56Z",
-      "status": "ACTIVE_ONGOING",
-      "first_detected": "2026-08-01"
+      "summary": "Gold at 4441-4468 Dec futures. +27pct above RED threshold. Safe haven extreme. Targets 5000.",
+      "sources": [
+        "Yahoo Finance",
+        "Markets.com",
+        "JM Bullion"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "geopolitical"
+      ],
+      "last_updated": "2026-08-13T15:03:51.761720",
+      "new_this_scan": false
     }
   ],
   "domain_summaries": {
     "us_fed": {
-      "status": "WATCH",
-      "notes": "Fed expected to hold at 3.50-3.75% for 5th consecutive meeting. ~30% probability of rate hike priced in. New Fed chair emphasizing inflation. No emergency action detected."
+      "status": "normal",
+      "events": 0,
+      "note": "Fed holding 3.50-3.75pct. Benign CPI. 30pct hike probability."
     },
     "latam": {
-      "status": "WATCH",
-      "notes": "Argentina country risk at 451bps, decoupling from regional rally. Brazil-Argentina diplomatic tensions escalating. Argentina central bank reform vote Aug 19. US Treasury ESF $2.5B lifeline to Argentina noted. No category-5 event."
+      "status": "elevated",
+      "events": 0,
+      "note": "Argentina risk 451bps. US ESF 2.5bn lifeline."
     },
     "eu_ecb": {
-      "status": "WATCH",
-      "notes": "ECB raised rates in June 2026 (hike). Rates unchanged since. Bulgaria joined Eurozone Jan 2026. No emergency action detected."
+      "status": "normal",
+      "events": 0,
+      "note": "ECB rates unchanged. Bulgaria joined eurozone."
     },
     "uk": {
-      "status": "ELEVATED",
-      "notes": "CPI inflation at 2.6% (above 2% target). Middle East conflict shifted expectations from 2 rate cuts to possible rate hikes. No BOE emergency action but gilt market stress building. Routine gilt issuance continuing."
+      "status": "elevated",
+      "events": 0,
+      "note": "UK food security crisis - worst in decades. Drought plus war impact."
     },
     "japan": {
-      "status": "CATEGORY_5",
-      "notes": "Coordinated US-Japan yen intervention July 31. First since 2011. BOJ at 1.00%, Bessent calling BOJ 'behind the curve'. FIMA facility expansion requested. 5-sigma move in USD/JPY."
+      "status": "critical",
+      "events": 1,
+      "note": "Yen 159.40, intervention unraveling. BOJ rate hike pressure."
     },
     "china": {
-      "status": "WATCH",
-      "notes": "PBOC nudging yuan fix stronger. USD/CNY at 6.7442, yuan up 6.08% over 12 months. No emergency policy detected."
+      "status": "elevated",
+      "events": 0,
+      "note": "148B property lease time bomb. Deflation faltering."
     },
     "em_asia": {
-      "status": "WATCH",
-      "notes": "EM Asia defending currencies. India rupee recovering from May record low via diaspora dollar deposits. South Korea won biggest monthly gain since 2022. Won leading declines on Aug 10. No crisis-level event."
+      "status": "elevated",
+      "events": 0,
+      "note": "Won nears 1400, sharpest swings since financial crisis."
     },
     "middle_east": {
-      "status": "CATEGORY_5",
-      "notes": "Active US-Israel-Iran war since February 2026. Hormuz blockade active. Trump reinstating blockade Aug 12. Negotiations stalled. Oil elevated. Houthi attack on Saudi Aramco Jazan refinery Aug 9."
+      "status": "critical",
+      "events": 1,
+      "note": "Trump reinstated blockade Aug 12. No ceasefire. Iran rejects US claims."
     },
     "africa": {
-      "status": "ELEVATED",
-      "notes": "Ebola outbreak in DRC/Uganda — WHO PHEIC declared. South Africa central bank warns of 'silent crisis'. Nigeria alleged coup plot against Tinubu. No new category-5 political event, but health crisis is category-5."
+      "status": "elevated",
+      "events": 0,
+      "note": "Ebola ongoing. No new coups."
     },
     "financial_system": {
-      "status": "WATCH",
-      "notes": "No active bank failures or credit freeze detected. Regulatory cuts raising systemic stability concerns per American Banker. ECB June 2026 rate hike pressuring banks. Reserve requirement ratio cut expected in China to increase lending capacity."
+      "status": "elevated",
+      "events": 1,
+      "note": "Gold record highs. Russia bankruptcies up. No systemic bank failure."
     },
     "commodities": {
-      "status": "ELEVATED",
-      "notes": "Brent at $93.26, gold at $4,460.90 (record territory). Oil surged 5% on Aug 11 Hormuz talks stall. Iran demanding concessions (end blockade, compensation, sanctions relief, unfreeze assets) before reopening Hormuz. Food prices elevated but IMF index declining."
+      "status": "elevated",
+      "events": 0,
+      "note": "Brent 93. EIA forecasts 85 Q3. UK food crisis. Ukraine grain halted."
     },
     "pandemic_health": {
-      "status": "CATEGORY_5",
-      "notes": "2026 Ebola epidemic — Bundibugyo ebolavirus. WHO PHEIC declared May 17. 4,053 cases, 1,850 deaths. Fastest-growing Ebola outbreak ever. Could surpass 2014-2016 outbreak (11,000 deaths). No treatments certified for Bundibugyo species."
+      "status": "critical",
+      "events": 1,
+      "note": "Ebola death toll 2000+. Fastest-growing. Bundibugyo strain."
     }
-  }
+  },
+  "new_events_detected": false,
+  "signal_updates_needed": false,
+  "assessment": "No new category-5 events. 4 ongoing active. Middle East escalating. Ebola worsening. Yen intervention unraveling. Gold record highs. CRITICAL."
 }
