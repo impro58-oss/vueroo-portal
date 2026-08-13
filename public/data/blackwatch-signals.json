@@ -1,11 +1,12 @@
 {
   "metadata": {
-    "source": "FRED API + manual assessment",
+    "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T11:03:34.466141+00:00",
+    "last_update": "2026-08-13T11:10:00.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20
+    "signals_manual": 1,
+    "signals_total": 21,
+    "breaking_event_scan": "2026-08-13T11:03:56Z - 4 category-5 events detected"
   },
   "signals": {
     "fin_stability": {
@@ -57,31 +58,31 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price - ESCALATED by breaking event scanner",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-13T11:03:27.798510+00:00"
+      "note": "ESCALATED: Iran Hormuz blockade active since Feb 2026. Oil surged 5%+ on Aug 11 when Hormuz talks stalled. Houthi attack on Saudi Aramco refinery Aug 9.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.28,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -0.18,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "VIX as market fear proxy - ESCALATED by breaking event scanner",
       "series_id": "VIXCLS",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-13T11:03:28.140007+00:00"
+      "note": "ESCALATED: Active US-Israel-Iran war since Feb 2026. Hormuz blockade. Coordinated US-Japan yen intervention. Gold at record highs. Multiple systemic stress vectors.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,15 +104,15 @@
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy - ESCALATED by breaking event scanner",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-13T05:34:15.140277+00:00"
+      "note": "ESCALATED: Hormuz blockade disrupting global shipping. Ebola outbreak in DRC/Uganda threatening supply chains.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -193,15 +194,15 @@
       "domain": "Currency",
       "value": 119.06,
       "status": "info",
-      "trend": "stable",
-      "confidence": 7,
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-13T11:03:31.735556+00:00"
+      "note": "ESCALATED: Coordinated US-Japan yen intervention (first since 2011) causing FX volatility. 5-sigma USD/JPY move. FIMA facility expansion requested. EM Asia currencies under pressure.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy - ESCALATED by breaking event scanner",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-13T11:03:34.039468+00:00"
+      "note": "ESCALATED: Active hot war US-Israel vs Iran since Feb 2026. Hormuz blockade. Trump reinstating blockade Aug 12. Houthi attack on Saudi Aramco refinery Aug 9. Not tension - active conflict.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,33 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-13T11:03:34.466141+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event - Breaking",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 1,
+      "unit": "",
+      "description": "4 category-5 breaking events active: US-Iran war/Hormuz, US-Japan yen intervention, Ebola PHEIC, Gold record highs",
+      "series_id": null,
+      "last_date": "2026-08-13",
+      "note": "Breaking event scanner detected 4 category-5 events on Aug 13 scan. Multiple signal escalations triggered.",
+      "timestamp": "2026-08-13T11:10:00.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 544,
-    "red_count": 7,
-    "amber_count": 10,
-    "green_count": 2,
+    "score": 580,
+    "red_count": 11,
+    "amber_count": 7,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-13T11:03:34.466141+00:00"
+    "timestamp": "2026-08-13T11:10:00.000000+00:00",
+    "breaking_events": 4
   },
   "convergence": {
     "stressed_domains": [

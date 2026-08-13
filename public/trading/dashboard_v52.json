@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T06:00:34.768334",
+  "timestamp": "2026-08-13T12:00:20.566649",
   "version": "5.3.1-BATCH",
   "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
   "parameters": {
@@ -29,9 +29,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 55.53,
-    "unrealized_pnl_eur": 3.03,
-    "total_pnl_eur": 58.56,
-    "open_positions": 2,
+    "unrealized_pnl_eur": 1.36,
+    "total_pnl_eur": 56.9,
+    "open_positions": 3,
     "closed_trades": 172,
     "wins": 67,
     "losses": 105,
@@ -47,7 +47,7 @@
       "stop": 0.026821428571428576,
       "highest": 0.03423,
       "lowest": 0.03305,
-      "bars_held": 11,
+      "bars_held": 13,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -61,9 +61,24 @@
       "atr": 0.006992857142857141,
       "stop": 0.13118214285714286,
       "highest": 0.1137,
-      "lowest": 0.1112,
-      "bars_held": 3,
+      "lowest": 0.1102,
+      "bars_held": 5,
       "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "AVNTUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-13T09:01:06.366045",
+      "entry_price": 0.098,
+      "atr": 0.005214285714285714,
+      "stop": 0.08496428571428571,
+      "highest": 0.098,
+      "lowest": 0.098,
+      "bars_held": 1,
+      "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
@@ -335,16 +350,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "EURUSDT",
-    "USD1USDT",
-    "PAXGUSDT",
-    "RLUSDUSDT",
     "ZECUSDT",
-    "XAUTUSDT",
-    "BFUSDUSDT",
+    "USDEUSDT",
+    "USD1USDT",
     "KASUSDT",
-    "XUSDUSDT",
+    "PAXGUSDT",
+    "XAUTUSDT",
     "UUSDT",
-    "USDEUSDT"
+    "EURUSDT",
+    "RLUSDUSDT",
+    "XUSDUSDT",
+    "BFUSDUSDT"
   ]
 }
