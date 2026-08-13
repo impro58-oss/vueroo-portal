@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T15:02:00.000000+00:00",
+    "last_update": "2026-08-13T15:31:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
     "breaking_event_scan": "2026-08-13T15:02Z - No new cat-5 events. 4 ongoing active. ME escalating (blockade reinstated Aug 12). Ebola worsening (2000+ deaths). Yen intervention unraveling (159.40). Gold record highs (4441+).",
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "6 thresholds breached (2 RED, 4 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -202,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED by threshold scanner: USD/JPY above 158.0 AMBER (current: 159.301, +0.82% above). Joint intervention likely failing. EUR/USD above 1.15 AMBER (current: 1.1541) \u00e2\u20ac\u201d dollar weakness.",
-      "timestamp": "2026-08-13T11:33:41.000000+00:00"
+      "note": "ESCALATED by threshold scanner: USD/JPY above 158.0 AMBER (current: 159.364, +0.86% above). Joint intervention likely failing. EUR/USD above 1.15 AMBER (current: 1.1538) dollar weakness. JGB10Y at 2.855% RED - BOJ losing yield curve control.",
+      "timestamp": "2026-08-13T15:31:00+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4441.1,
+      "value": 4424.3,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
       "change_from_last": 87.4,
-      "description": "Gold spot: ~,441/oz (Yahoo Finance GC=F, Dec futures ,468.80)",
+      "description": "Gold spot: ,424.30/oz (Yahoo Finance GC=F)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-13",
-      "note": "THRESHOLD BREACH: Gold above 3500 RED (+27.1%). Above 3000 AMBER (+48.3%). Safe haven demand extreme. Iran war + yen intervention + sovereign stress. Targets 5000.",
-      "timestamp": "2026-08-13T15:02:00+00:00"
+      "note": "THRESHOLD BREACH: Gold above 3500 RED (+26.4%). Above 3000 AMBER (+47.5%). Safe haven demand extreme. Iran war + yen intervention + sovereign stress. Targets 5000.",
+      "timestamp": "2026-08-13T15:31:00+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -322,8 +322,8 @@
       "description": "4 category-5 breaking events active: US-Iran war/Hormuz blockade, US-Japan yen intervention, Ebola PHEIC (2000+ deaths), Gold record highs (,441)",
       "series_id": null,
       "last_date": "2026-08-13",
-      "note": "Aug 13 15:02Z scan: No new cat-5 events. 4 ongoing: ME ESCALATING (blockade reinstated), Ebola WORSENING (fastest-growing), Yen UNRAVELING (159.40), Gold RECORD (4441).",
-      "timestamp": "2026-08-13T15:02:00.000000+00:00"
+      "note": "Aug 13 15:31Z threshold scan: 6 breaches (2 RED, 4 AMBER). GOLD RED (4424>3500), JGB10Y RED (2.855>2.5), USDJPY AMBER (159.4>158), EURUSD AMBER (1.154>1.15), GOLD AMBER (4424>3000), DE10Y AMBER (3.15>3.0). ME escalating, Ebola worsening, Yen unraveling, Gold record.",
+      "timestamp": "2026-08-13T15:31:00+00:00"
     }
   },
   "overall_risk": {
@@ -334,7 +334,7 @@
     "amber_count": 7,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-13T11:10:00.000000+00:00",
+    "timestamp": "2026-08-13T15:31:00.000000+00:00",
     "breaking_events": 4
   },
   "convergence": {
