@@ -2,41 +2,42 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T23:04:04.785891+00:00",
+    "last_update": "%Y-%m-%dT%H:%M:%S.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "5 cat-5 events: US-Japan FX, Hormuz, Ebola, France fiscal, JGB surge"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-12",
-      "note": "",
-      "timestamp": "2026-08-13T23:03:56.505400+00:00"
+      "note": "ESCALATED: US-Japan joint FX intervention + JGB 2yr at 31yr high + France fiscal distress",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "",
-      "timestamp": "2026-08-13T23:03:56.900401+00:00"
+      "note": "ESCALATED: Joint FX intervention draining reserves + JGB surge",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -57,22 +58,22 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-13T23:03:57.661079+00:00"
+      "note": "ESCALATED: Strait of Hormuz partially blocked by Iran. Oil elevated",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.55,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.73,
@@ -80,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-12",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-13T23:03:58.093138+00:00"
+      "note": "ESCALATED: Iran war + Hormuz + Africa conflicts",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,30 +104,30 @@
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-13T23:03:58.060297+00:00"
+      "note": "ESCALATED: Hormuz disruptions + Ebola outbreak",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-13T23:03:58.812821+00:00"
+      "note": "ESCALATED: Hormuz + Ebola + inventory drawdown",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -155,8 +156,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-13T23:03:59.205802+00:00"
+      "note": "ESCALATED: Converging crises amplifying social stress",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -252,16 +253,16 @@
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-13",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-13T23:04:03.068317+00:00"
+      "note": "ESCALATED: France fiscal crisis 107B H1 deficit 3.5T debt",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-13T23:04:04.213840+00:00"
+      "note": "ESCALATED: Active Iran war, Hormuz crisis since Feb 2026",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,64 +308,102 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-13T23:04:04.767093+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "unit": "",
+      "description": "Multiple category-5 events active",
+      "series_id": null,
+      "last_date": "2026-08-14",
+      "note": "US-Japan FX intervention + Hormuz crisis + Ebola epidemic + France fiscal crisis + JGB surge",
+      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
-    "amber_count": 8,
-    "green_count": 4,
+    "score": 334,
+    "red_count": 15,
+    "amber_count": 3,
+    "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-13T23:04:04.785891+00:00"
+    "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
       {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 9
+      },
+      {
         "domain": "Social",
         "red": 3,
         "amber": 0,
-        "stress_level": 6
+        "stress_level": 9
       },
       {
-        "domain": "Financial",
+        "domain": "Energy",
         "red": 1,
-        "amber": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
         "stress_level": 3
       },
       {
         "domain": "Food",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Climate",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "China",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Europe",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Systemic",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
       },
       {
         "domain": "Cyber",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Supply Chain",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -376,19 +415,7 @@
         "stress_level": 1
       },
       {
-        "domain": "Europe",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
         "domain": "United States",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -397,36 +424,72 @@
     "convergence_active": true,
     "convergence_domains": [
       {
+        "domain": "Financial",
+        "red": 3,
+        "amber": 0,
+        "stress_level": 9
+      },
+      {
         "domain": "Social",
         "red": 3,
         "amber": 0,
-        "stress_level": 6
+        "stress_level": 9
       },
       {
-        "domain": "Financial",
+        "domain": "Energy",
         "red": 1,
-        "amber": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
         "stress_level": 3
       },
       {
         "domain": "Food",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Climate",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "China",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
+      },
+      {
+        "domain": "Europe",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Systemic",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
       }
     ],
-    "timestamp": "2026-08-13T23:04:04.785891+00:00"
+    "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
   }
 }

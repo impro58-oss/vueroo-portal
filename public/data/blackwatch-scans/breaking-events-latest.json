@@ -1,170 +1,87 @@
 {
-  "scan_time": "2026-08-13T20:02:00.000000",
-  "scan_type": "breaking_event_4h",
-  "date": "2026-08-13",
+  "scan_time": "2026-08-13T23:03:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v1",
   "domains_scanned": 12,
-  "queries_executed": 36,
-  "new_category_5_events": 0,
-  "ongoing_category_5_events": 4,
+  "category_5_events_detected": 5,
   "events": [
     {
-      "id": "ME-001",
-      "title": "US-Iran War / Hormuz Blockade — Trump Reinstates Blockade",
-      "domain": "middle_east",
-      "severity": 5,
-      "status": "ESCALATING",
-      "category": "war_military",
-      "summary": "Trump reinstated naval blockade Aug 12. Iran rejects US 'total control' claims. Hormuz remains blocked — traffic at near 3-month lows. Iran's new security chief Rezaie demands: US end war, unfreeze assets, region-wide ceasefire including Gaza/Lebanon. Turkey reports 60-day ceasefire extension agreement. Iran FM Araghchi says US 'miscalculated.' No deal exists.",
-      "sources": ["CNN", "CNBC", "ABC News", "Wikipedia", "Britannica", "Business Standard"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"],
-      "last_updated": "2026-08-13T20:02:00.000000",
-      "new_this_scan": false,
-      "update": "Turkey reports 60-day ceasefire extension. Iran expands demands to include Gaza/Lebanon. Traffic at 3-month lows."
-    },
-    {
-      "id": "JP-001",
-      "title": "US-Japan Yen Intervention Unraveling — Takaichi Pushes Faster Hikes",
-      "domain": "japan",
-      "severity": 4,
-      "status": "ESCALATING",
+      "id": "EVT-2026-0814-001",
+      "domain": "us_fed",
       "category": "sovereign_intervention",
-      "summary": "Bloomberg (Aug 13): Takaichi government supports faster BOJ rate hike, next move Sep or Oct. CNBC: Yen erased half of intervention gains. Bessent-Takaichi rift on BOJ policy clouds coordinated defense. Goldman says $1T reserves allows more interventions. BOJ held at 1% around intervention time, limiting impact.",
-      "sources": ["Bloomberg", "CNBC", "Reuters", "Telegraph", "FXStreet", "Goldman Sachs"],
-      "escalate_to": ["currency", "fin_stability"],
-      "last_updated": "2026-08-13T20:02:00.000000",
-      "new_this_scan": false,
-      "update": "Takaichi government now publicly pushing BOJ for faster hikes. Bessent-Takaichi rift emerging. Escalation from ONGOING to ESCALATING."
-    },
-    {
-      "id": "HD-001",
-      "title": "Ebola PHEIC — Spreads to 6th Province, Could Become Deadliest Ever",
-      "domain": "pandemic_health",
+      "title": "Historic US-Japan Joint FX Intervention",
+      "summary": "US Treasury and Japan MOF executed unprecedented coordinated FX intervention ~July 31, 2026 to support the yen. Japan spent ~$75B, US contributed $5-10B via FIMA facility. Yen has already erased half its gains, trading back near 159. First joint US-Japan intervention in history.",
+      "sources": ["CNBC", "Fortune", "ABC News", "OMFIF", "Telegraph"],
       "severity": 5,
-      "status": "WORSENING",
-      "category": "pandemic",
-      "summary": "Guardian (Aug 13): Ebola spreads to 6th province in DRC. 53 health zones affected across 5 provinces. WHO warns cases and deaths surging — could become deadliest ever. Bundibugyo strain has no approved vaccine. Uganda outbreak declared over Jul 28 but DRC accelerating. MSF running PARTNERS trial.",
-      "sources": ["The Guardian", "CDC", "ECDC", "Wikipedia", "WHO", "IBTimes"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "last_updated": "2026-08-13T20:02:00.000000",
-      "new_this_scan": false,
-      "update": "Severity upgraded 4→5. Spread to 6th province. WHO warns could become deadliest ever. WORSENING."
+      "escalate_to": ["fin_stability", "liquidity", "currency"],
+      "impact_regions": ["US", "Japan", "Global"],
+      "timestamp": "2026-08-13T23:03:00+00:00",
+      "status": "ACTIVE"
     },
     {
-      "id": "FN-001",
-      "title": "Gold Record Highs — War Premium Extreme, $4,400+ Territory",
-      "domain": "financial_system",
+      "id": "EVT-2026-0814-002",
+      "domain": "middle_east",
+      "category": "war_military",
+      "title": "Strait of Hormuz Crisis — Iran War Ongoing",
+      "summary": "US and Israel launched air war against Iran in late February 2026. Iran has blocked Strait of Hormuz since Feb 28. Oil supply severely disrupted. Trump claims US controls Hormuz (Aug 12); Iran demands conditions including unfreezing assets and end to Israel's wars. Active conflict status with no resolution in sight.",
+      "sources": ["Wikipedia", "CNN", "Britannica", "Congress.gov", "EIA"],
+      "severity": 5,
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
+      "impact_regions": ["Middle East", "Global energy markets", "Global shipping"],
+      "timestamp": "2026-08-13T23:03:00+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "EVT-2026-0814-003",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "title": "2026 Ebola Epidemic — DR Congo",
+      "summary": "Fastest-growing Ebola outbreak on record, second-deadliest ever. 4,053 confirmed cases, 1,850 deaths as of early August 2026. Caused by Bundibugyo ebolavirus (different from Zaire species, complicating treatment). WHO warns could surpass 2014-2016 outbreak that killed 11,000+. Declared public health emergency.",
+      "sources": ["Wikipedia", "WHO", "AP/Newsday", "GBC Ghana", "Substack pathogen tracking"],
       "severity": 4,
-      "status": "ONGOING",
+      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
+      "impact_regions": ["DRC", "Central Africa", "Global health"],
+      "timestamp": "2026-08-13T23:03:00+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "EVT-2026-0814-004",
+      "domain": "eu_ecb",
+      "category": "sovereign_crisis",
+      "title": "France Fiscal Crisis — New Eurozone Debt Epicenter",
+      "summary": "France's central government deficit hit €107 billion in H1 2026, 14.4% above budget. National debt at record €3.5 trillion. Interest costs jumped 19% to €34.5B. Full-year deficit ratio could reach 8%. Le Monde warns of 'snowball effect'. Potential new epicenter of eurozone debt crisis.",
+      "sources": ["Le Monde", "Futunn", "Notayesmanseconomics"],
+      "severity": 4,
+      "escalate_to": ["europe", "fin_stability"],
+      "impact_regions": ["France", "Eurozone", "EU"],
+      "timestamp": "2026-08-13T23:03:00+00:00",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "EVT-2026-0814-005",
+      "domain": "japan",
       "category": "market_dislocation",
-      "summary": "Gold spot $4,386-4,401/oz. Dec futures $4,441-4,468. +25% since early 2025. Up ~10% month-over-month. Targets $5,000. Safe haven demand from Iran war + currency instability + Fed uncertainty. Michael Burry warns of 1987-style crash.",
-      "sources": ["USA Today", "Fortune", "Yahoo Finance", "CNBC", "Vietnam.vn"],
-      "escalate_to": ["fin_stability", "currency", "geopolitical"],
-      "last_updated": "2026-08-13T20:02:00.000000",
-      "new_this_scan": false,
-      "update": "Gold holding above $4,400. Dec futures at $4,441-4,468. +10% MoM. Burry crash warning adds signal."
+      "title": "Japan JGB Yield Surge + BOJ Policy Crisis",
+      "summary": "2-year JGB yield hit 31-year high of 1.64% on bets BOJ raises rates in September. BOJ's rate-hike path colliding with PM Takaichi's spending plans driving yields higher. Fund managers chasing retail cash as JGBs surge. Yen intervention unraveling. Structural fiscal-monetary tension escalating.",
+      "sources": ["Reuters", "Bloomberg", "CNBC", "Channel News Asia"],
+      "severity": 4,
+      "escalate_to": ["fin_stability", "currency", "liquidity"],
+      "impact_regions": ["Japan", "Global bond markets", "US Treasury"],
+      "timestamp": "2026-08-13T23:03:00+00:00",
+      "status": "ACTIVE"
     }
   ],
-  "domain_summaries": {
-    "us_fed": {
-      "status": "normal",
-      "events": 0,
-      "note": "Fed expected to hold 3.50-3.75%. Benign CPI Aug 12. 30% Sep hike probability. No emergency."
-    },
-    "latam": {
-      "status": "elevated",
-      "events": 0,
-      "note": "No new crisis. Argentina coverage historical. Venezuela ongoing chronic."
-    },
-    "eu_ecb": {
-      "status": "elevated",
-      "events": 0,
-      "note": "Reuters poll: ECB set for one more rate hike on energy prices. Commerzbank warns ECB independence risks from rising debt. French/Italian bond yields near highs."
-    },
-    "uk": {
-      "status": "elevated",
-      "events": 0,
-      "note": "CPI 2.6% above target. BOE may cut. No emergency. Food security crisis ongoing."
-    },
-    "japan": {
-      "status": "critical",
-      "events": 1,
-      "note": "Takaichi pushing BOJ for faster hikes. Bessent-Takaichi rift. Yen gains fading. Intervention unraveling. ESCALATING."
-    },
-    "china": {
-      "status": "elevated",
-      "events": 0,
-      "note": "PBOC pledges timely new policy. $148B property lease time bomb. Deflation faltering. PMI 4-month low."
-    },
-    "em_asia": {
-      "status": "elevated",
-      "events": 0,
-      "note": "Won at 9-month high post-intervention. Asia FX flat. No crisis."
-    },
-    "middle_east": {
-      "status": "critical",
-      "events": 1,
-      "note": "Trump reinstated blockade Aug 12. Hormuz remains blocked. Iran expands demands. 60-day ceasefire extension reported by Turkey. Traffic at 3-month lows. ESCALATING."
-    },
-    "africa": {
-      "status": "critical",
-      "events": 1,
-      "note": "Ebola spreads to 6th province. WHO warns could become deadliest ever. 53 health zones affected. Uganda outbreak over but DRC accelerating."
-    },
-    "financial_system": {
-      "status": "elevated",
-      "events": 1,
-      "note": "Gold at $4,400+ record territory. Burry warns 1987-style crash. No systemic bank failure. 7 individual stock halts only."
-    },
-    "commodities": {
-      "status": "elevated",
-      "events": 0,
-      "note": "Brent ~$89-93. IEA cuts 2026 demand forecast (-1.6 mb/d). Supply projected -4.3 mb/d. Structural stress but no new spike."
-    },
-    "pandemic_health": {
-      "status": "critical",
-      "events": 1,
-      "note": "Ebola severity UPGRADED to 5. 6th province. Deadliest ever warning. No vaccine for Bundibugyo strain."
-    }
-  },
-  "new_events_detected": false,
-  "signal_updates_needed": true,
-  "signal_updates": {
-    "middle_east": {
-      "action": "ESCALATE",
-      "from": "amber",
-      "to": "red",
-      "reason": "Trump reinstated blockade. Hormuz remains blocked. Iran expanding demands. Traffic at 3-month lows. Active war status."
-    },
-    "energy": {
-      "action": "ESCALATE",
-      "from": "amber",
-      "to": "red",
-      "reason": "Brent at $93. Hormuz blocked. IEA projects -4.3 mb/d supply decline. Structural oil disruption ongoing."
-    },
-    "geopolitical": {
-      "action": "ESCALATE",
-      "from": "green",
-      "to": "red",
-      "reason": "Active US-Iran war. Hormuz blockade. Iran FM says US miscalculated. Multiple active geopolitical vectors."
-    },
-    "currency": {
-      "action": "ESCALATE",
-      "from": "info",
-      "to": "red",
-      "reason": "Yen intervention unraveling. Takaichi-Bessent rift. BOJ rate hike pressure. Currency war dynamics active."
-    },
-    "fin_stability": {
-      "action": "ESCALATE",
-      "from": "green",
-      "to": "amber",
-      "reason": "Gold at $4,400+ record. Burry crash warning. ECB debt independence risks. Private credit distress ongoing."
-    },
-    "gold": {
-      "action": "UPDATE",
-      "from": "green",
-      "to": "red",
-      "reason": "Gold at $4,386-4,401 spot, Dec futures $4,441-4,468. +10% MoM. Record territory. War premium extreme."
-    }
-  },
-  "assessment": "No new category-5 events. 4 ongoing events — 3 ESCALATING/WORSENING. Middle East: Trump reinstated blockade, Iran expands demands, Hormuz remains blocked. Japan: Takaichi pushing faster BOJ hikes, intervention unraveling, Bessent rift. Ebola: spread to 6th province, severity upgraded to 5, WHO warns deadliest ever. Gold: $4,400+ record territory. 6 signals need escalation. CRITICAL."
+  "domains_clear": [
+    {"domain": "latam", "status": "monitoring", "note": "Argentina country risk at 451, central bank reform vote Aug 19. Brazil-Argentina diplomatic tensions. No category-5 event."},
+    {"domain": "uk", "status": "monitoring", "note": "UK gilt yields at ~5.05% (10Y), 5.7% (30Y). No emergency BOE action detected. Routine debt management operations."},
+    {"domain": "china", "status": "monitoring", "note": "PBOC maintaining loose stance, overnight reverse repos scheduled. Yuan fix stable at 6.7882. No emergency action."},
+    {"domain": "em_asia", "status": "monitoring", "note": "Korean won leading declines, India luring $40B diaspora deposits. Currency defense measures active but no category-5 crisis."},
+    {"domain": "africa", "status": "elevated", "note": "Mali offensives + water/power crisis. Benin coup attempt with Russia ties. Tigray precipice. No single category-5 event but multiple elevated conflicts."},
+    {"domain": "financial_system", "status": "monitoring", "note": "No acute bank failure detected this week. Deregulatory oversight gaps noted. Private credit systemic risk assessed as low by IMF."}
+  ],
+  "signal_board_updates": {
+    "macro_event": "ACTIVATED — red status",
+    "signals_escalated_to_red": ["fin_stability", "liquidity", "energy", "middle_east", "geopolitical", "europe", "supply_chain", "food_security", "social_cohesion"],
+    "overall_risk": "CRITICAL — 15 red, 3 amber, 2 green, 1 info"
+  }
 }
