@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T17:03:56.180817+00:00",
+    "last_update": "2026-08-13T19:04:19.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Breaking event scanner 20:02 UTC: 6 signal escalations. Middle East escalating. Ebola 6th province. Yen intervention unraveling. Gold record territory."
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-12",
-      "note": "",
-      "timestamp": "2026-08-13T17:03:43.018821+00:00"
+      "note": "BREAKING EVENT: Gold at 4400+ record. Burry 1987-style crash warning. ECB debt independence risks. Private credit distress ongoing.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -57,31 +58,31 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-13T17:03:49.710540+00:00"
+      "note": "BREAKING EVENT ESCALATION: Brent ~93. Hormuz blocked. IEA projects -4.3 mb/d supply decline. Structural oil disruption ongoing.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.55,
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": -0.73,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-12",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-13T17:03:50.672361+00:00"
+      "note": "BREAKING EVENT ESCALATION: Active US-Iran war. Hormuz blockade. Iran FM says US miscalculated. Multiple active geopolitical vectors.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -192,31 +193,31 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-13T17:03:53.028983+00:00"
+      "note": "BREAKING EVENT ESCALATION: Yen intervention unraveling. Takaichi-Bessent rift. BOJ rate hike pressure. Currency war active.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
       "value": 4390.06,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "improving",
+      "confidence": 10,
       "change_from_last": 28.26,
       "description": "Gold spot price: \\,390.06/oz (live web search via JM Bullion)",
       "series_id": "JM Bullion spot",
       "last_date": "2026-08-13",
-      "note": "Live spot price verified via web search",
-      "timestamp": "2026-08-13T17:03:40.776243+00:00"
+      "note": "BREAKING EVENT: Gold at 4386-4401 spot, Dec futures 4441-4468. +10% MoM. Record territory. War premium extreme. Targets 5000.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -282,16 +283,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-13T17:03:55.670706+00:00"
+      "note": "BREAKING EVENT ESCALATION: Trump reinstated blockade Aug 12. Hormuz remains blocked. Iran expands demands to include Gaza/Lebanon. Traffic at 3-month lows. Active war.",
+      "timestamp": "2026-08-13T19:04:19.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,12 +313,13 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
-    "amber_count": 8,
-    "green_count": 4,
+    "score": 1560,
+    "red_count": 12,
+    "amber_count": 7,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-13T17:03:56.180817+00:00"
+    "timestamp": "2026-08-13T19:04:19.000000+00:00",
+    "info_count": 0
   },
   "convergence": {
     "stressed_domains": [
