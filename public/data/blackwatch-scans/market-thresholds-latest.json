@@ -1,40 +1,40 @@
 {
-  "scan_date": "2026-08-13",
-  "scan_time_utc": "2026-08-13T23:31:12.654783+00:00",
+  "scan_date": "2026-08-14",
+  "scan_time_utc": "2026-08-14T03:30:51.744115+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.469,
+      "price": 159.343,
       "prev_close": 157.891,
-      "change_1d_pct": 1.0,
+      "change_1d_pct": 0.92,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1535,
+      "price": 1.1542,
       "prev_close": 1.1556,
-      "change_1d_pct": -0.18,
+      "change_1d_pct": -0.12,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3489,
+      "price": 1.3497,
       "prev_close": 1.3491,
-      "change_1d_pct": -0.01,
+      "change_1d_pct": 0.04,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.736,
+      "price": 6.7434,
       "prev_close": 6.7474,
-      "change_1d_pct": -0.17,
-      "data_points": 4,
+      "change_1d_pct": -0.06,
+      "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1418.1,
+      "price": 1412.18,
       "prev_close": 1407.0,
-      "change_1d_pct": 0.79,
+      "change_1d_pct": 0.37,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,17 +46,17 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 68308.59,
-      "prev_close": 65683.26,
-      "change_1d_pct": 4.0,
-      "data_points": 4,
+      "price": 68889.01,
+      "prev_close": 65606.71,
+      "change_1d_pct": 5.0,
+      "data_points": 5,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25396.51,
-      "prev_close": 25530.28,
-      "change_1d_pct": -0.52,
-      "data_points": 4,
+      "price": 25173.12,
+      "prev_close": 25668.03,
+      "change_1d_pct": -1.93,
+      "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
@@ -71,16 +71,16 @@
       "source": "manual"
     },
     "GOLD": {
-      "price": 4413.9,
+      "price": 4378.2,
       "prev_close": 4361.8,
-      "change_1d_pct": 1.19,
+      "change_1d_pct": 0.38,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 86.98,
+      "price": 87.09,
       "prev_close": 87.72,
-      "change_1d_pct": -0.84,
+      "change_1d_pct": -0.72,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -104,10 +104,10 @@
       "source": "manual"
     },
     "BTC": {
-      "price": 63421.17,
-      "prev_close": 64844.887,
-      "change_1d_pct": -2.2,
-      "data_points": 5,
+      "price": 63381.4,
+      "prev_close": 63910.586,
+      "change_1d_pct": -0.83,
+      "data_points": 4,
       "source": "yahoo"
     }
   },
@@ -116,7 +116,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4413.9,
+      "current": 4378.2,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -125,13 +125,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.11
+      "distance_pct": 25.09
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.469,
+      "current": 159.343,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -140,13 +140,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 0.93
+      "distance_pct": 0.85
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1535,
+      "current": 1.1542,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -155,13 +155,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.3
+      "distance_pct": 0.37
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4413.9,
+      "current": 4378.2,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -169,7 +169,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 47.13
+      "distance_pct": 45.94
     }
   ],
   "breach_count": 4,
