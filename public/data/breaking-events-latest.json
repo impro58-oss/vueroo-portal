@@ -1,298 +1,81 @@
 {
-  "scan_time": "2026-08-14T22:57:46.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
-  "operator": "Lumina (cron automated)",
+  "scan_time": "2026-08-14T23:59:50.001593+00:00",
+  "scan_type": "breaking-event-scanner-4h",
   "domains_scanned": 12,
-  "queries_executed": 30,
-  "events_detected": 10,
-  "category_5_events": 10,
-  "new_events": 3,
-  "escalated_events": 7,
-  "overall_risk": "CRITICAL",
+  "category_5_events_found": 2,
   "events": [
     {
-      "id": "EVT-2026-0814-2301",
+      "id": "iran-war-hormuz-crisis",
+      "category": "war_military",
+      "severity": "CAT-5",
       "domain": "middle_east",
-      "title": "NEW: ADNOC Tankers Attacked by UAVs in Strait of Hormuz (Aug 13)",
-      "category": "energy_shock",
-      "severity": 5,
-      "status": "escalating",
-      "summary": "Two ADNOC vessels attacked by Iranian UAVs while transiting Strait of Hormuz on Aug 13. UAE condemned as piracy. UKMTO confirmed UAV strikes. No injuries. Direct escalation of Iran-Hormuz crisis. Hormuz traffic remains low, world burning through oil stockpiles.",
-      "sources": [
-        "Al Jazeera",
-        "Gulf News",
-        "The National",
-        "Seatrade Maritime",
-        "CNN"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
+      "title": "2026 Iran War / Strait of Hormuz Crisis",
+      "status": "ONGOING",
+      "started": "2026-02-28",
+      "summary": "Active war between US/Israel coalition and Iran + Axis of Resistance (Hezbollah, Houthis, PMF). Strait of Hormuz effectively closed. IEA calls it largest oil supply disruption in history. Brent crude at 82.37, up 32.91pct YoY.",
+      "escalated_signals": [
         "middle_east",
         "energy",
         "geopolitical",
         "supply_chain",
         "food_security"
       ],
-      "new": true,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2302",
-      "domain": "eu_ecb",
-      "title": "NEW: ECB Confirmed to Hike Rates 25bps to 2.50% in September",
-      "category": "emergency_rate",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Reuters poll (Aug 10-13): 83% of economists expect ECB hike to 2.50% in Sept. Shortest tightening cycle since 2011. France fiscal crisis context. Morningstar sees possible further hikes.",
       "sources": [
-        "Reuters",
-        "FXStreet",
-        "Investing.com",
-        "Morningstar"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "new": true,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2303",
-      "domain": "financial_system",
-      "title": "NEW: Private Credit Distress Escalating - Investors Pulling Billions",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "ZeroHedge: investors pulling billions from private credit funds. Public markets calm but private credit PIK distress growing. Hedge fund Treasury leverage at 100x. Fitch defaults rising. Russia bankruptcies +13.7% YoY.",
-      "sources": [
-        "ZeroHedge",
-        "The Telegraph",
-        "Axios",
-        "Fed Boston",
-        "Moscow Times"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "new": true,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2304",
-      "domain": "japan",
-      "title": "ESCALATION: BOJ Rate Hike Odds Jump to 75% - Government Supports Sept/Oct Move",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "status": "deteriorating",
-      "summary": "Bloomberg Aug 13: PM Takaichi government supports near-term BOJ rate hike. Market odds 60% to 75%. Joint FX intervention failing, yen at ~159. 10Y JGB 2.87%, 30Y 4.00%. Japan debt 194% GDP.",
-      "sources": [
-        "Bloomberg",
-        "OMFIF",
-        "Fortune",
-        "FXStreet",
-        "Trading Economics"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability",
-        "liquidity"
-      ],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2305",
-      "domain": "middle_east",
-      "title": "Strait of Hormuz Crisis CONTINUES - Traffic Low, Stockpiles Depleting",
-      "category": "energy_shock",
-      "severity": 5,
-      "status": "escalating",
-      "summary": "Hormuz closed since Jul 12. ADNOC attacks Aug 13. Trump claims control, Iran refutes. OPEC+ +206kbpd. EIA: prices elevated until flows normalize. 20M bpd disrupted.",
-      "sources": [
-        "Wikipedia",
+        "Wikipedia: 2026 Iran war",
+        "Wikipedia: Economic impact of 2026 Iran war",
         "CNN",
-        "ISW",
-        "Britannica",
-        "EIA STEO"
+        "CFR Global Conflict Tracker",
+        "EIA STEO",
+        "OMFIF",
+        "Bloomberg"
       ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain"
-      ],
-      "new": false,
-      "escalated": true
+      "confidence": 9,
+      "timestamp": "2026-08-14T23:59:50.001593+00:00"
     },
     {
-      "id": "EVT-2026-0814-2306",
-      "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic - Fastest Growing Ever, Now in DRC and Uganda",
+      "id": "ebola-epidemic-2026",
       "category": "pandemic_health",
-      "severity": 5,
-      "status": "deteriorating",
-      "summary": "Bundibugyo ebolavirus in DRC and Uganda. WHO PHEIC declared May 17. Fastest-growing on record. Existing treatments for Zaire strain, not Bundibugyo. No containment.",
-      "sources": [
-        "Wikipedia",
-        "CDC",
-        "ECDC",
-        "MSF",
-        "WHO Africa"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion",
-        "food_security"
-      ],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2307",
-      "domain": "eu_ecb",
-      "title": "France Debt Snowball - Fiscal Mess Out of Control",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "France debt EUR3.5T+. H1 2026 interest +19% YoY. Deficit 5.13%. Debt-to-GDP 118%. Reuters: fiscal mess out of control. Funding above all eurozone peers.",
-      "sources": [
-        "Le Monde",
-        "TradingView/Reuters",
-        "Debt Clock.io"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2308",
-      "domain": "china",
-      "title": "China Property  Expiring Lease +  Developer Defaults",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Bloomberg:  lease crisis.  developer defaults. Office values down 40%+. PBOC loose, no emergency cuts. Drought in 5 provinces.",
-      "sources": [
-        "Bloomberg",
-        "Firstpost",
-        "China Money Network",
-        "ORCASIA"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2309",
-      "domain": "uk",
-      "title": "UK Food Security Red Alert - 27M Hosepipe Bans, Worst Drought in Decades",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Independent: red alert for food security. 27M hosepipe bans. July driest on record at 10% avg rainfall. 9 water companies banning. Gilt yields 5.05% (10Y).",
-      "sources": [
-        "The Independent",
-        "New Scientist",
-        "Food Manufacture",
-        "House of Commons Library"
-      ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "europe",
-        "food_security",
-        "supply_chain",
+      "severity": "CAT-5",
+      "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic - WHO PHEIC",
+      "status": "ONGOING",
+      "started": "2026-05-14",
+      "summary": "Bundibugyo ebolavirus outbreak in DRC and Uganda. WHO declared PHEIC on May 16. 4748 confirmed cases, 2216 deaths (46.7pct CFR). Second-largest Ebola outbreak ever. No approved vaccine for BDBV. Spreading in 6 DRC provinces + Kampala, Uganda. Armed conflict (M23) hinders response.",
+      "escalated_signals": [
+        "macro_event",
         "social_cohesion"
       ],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-2310",
-      "domain": "em_asia",
-      "title": "EM Asia Currency Pressure - Won Near 1,400, Rupiah -7.2%, Rupee -6.2%",
-      "category": "market_dislocation",
-      "severity": 3,
-      "status": "deteriorating",
-      "summary": "Rising US Treasury yields draining EM capital. Korean won near 1,400. Rupiah -7.2%, rupee -6.2% YTD. SK intervened. RBI cushioning rupee.",
       "sources": [
-        "Asia Times",
-        "Korea Herald",
-        "Business Recorder"
+        "Wikipedia: 2026 Ebola epidemic",
+        "ECDC",
+        "Washington Post",
+        "WHO",
+        "BNO News"
       ],
-      "timestamp": "2026-08-14T22:57:46.000000+00:00",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "new": false,
-      "escalated": true
+      "confidence": 9,
+      "timestamp": "2026-08-14T23:59:50.001593+00:00"
     }
   ],
-  "domains_summary": {
-    "us_fed": {
-      "status": "watch",
-      "findings": "Fed held at 3.50-3.75%. Markets pricing 30% hike. New chair hawkish. No emergency action."
-    },
-    "latam": {
-      "status": "amber",
-      "findings": "Venezuela-Colombia earthquakes. Argentina risk 451bps. BCRA reform vote Aug 19."
-    },
-    "eu_ecb": {
-      "status": "red",
-      "findings": "ECB hike to 2.50% Sept confirmed (83% consensus). France EUR3.5T debt. Shortest tightening since 2011."
-    },
-    "uk": {
-      "status": "red",
-      "findings": "Red alert food security. 27M hosepipe bans. BOE 3.75%. Gilts 5.05%."
-    },
-    "japan": {
-      "status": "red",
-      "findings": "BOJ hike odds 75%. Gov supports Sept/Oct. Yen ~159. JGB 2.87%. Debt 194% GDP."
-    },
-    "china": {
-      "status": "red",
-      "findings": " lease crisis.  defaults. Drought 5 provinces. Office -40%."
-    },
-    "em_asia": {
-      "status": "amber",
-      "findings": "Won near 1,400. Rupiah -7.2%. Rupee -6.2%. US yields draining capital."
-    },
-    "middle_east": {
-      "status": "red",
-      "findings": "ADNOC tankers attacked Aug 13. Hormuz closed. Stockpiles depleting."
-    },
-    "africa": {
-      "status": "amber",
-      "findings": "Russia financing coup attempts. Tigray on precipice. Ebola DRC/Uganda."
-    },
-    "financial_system": {
-      "status": "red",
-      "findings": "Investors pulling billions from private credit. HF leverage 100x. Russia bankruptcies +13.7%."
-    },
-    "commodities": {
-      "status": "red",
-      "findings": "Brent -93. Gold ,330+. EIA raises forecast. Saudi cut Asia OSP ."
-    },
-    "pandemic_health": {
-      "status": "red",
-      "findings": "Ebola fastest-growing ever. DRC and Uganda. Bundibugyo strain. No containment."
-    }
-  }
+  "domains_clear": [
+    "us_fed",
+    "latam",
+    "eu_ecb",
+    "uk",
+    "japan",
+    "china",
+    "em_asia",
+    "africa",
+    "financial_system",
+    "commodities"
+  ],
+  "notable_observations": [
+    "US Fed: Rate at 3.50-3.75pct, markets pricing 30pct chance of hike. No emergency action.",
+    "ECB: Set to deliver final rate hike next month per Reuters. Not emergency.",
+    "Japan: Joint US-Japan yen intervention on Jul 31 (first since 1998). BOJ at 1.00pct, government supports near-term hike.",
+    "China: PBOC pledging timely new policy rollout (Reuters Aug 12). Yuan strengthening.",
+    "LatAm: Argentina central bank reform vote Aug 19. Country risk at 451bps.",
+    "EM Asia: Won nears 1400 with sharpest swings since financial crisis. Joint intervention helping.",
+    "Financial System: No acute bank failure detected. Fed modernizing insider lending rules.",
+    "Commodities: Oil surging on Hormuz. Gold at 4432 (safe haven). Food index at 131.17."
+  ]
 }
