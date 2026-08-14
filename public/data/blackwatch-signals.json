@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-13T23:31:14.000000+00:00",
+    "last_update": "2026-08-14T03:04:13.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "5 cat-5 events: US-Japan FX, Hormuz, Ebola, France fiscal, JGB surge",
-    "threshold_breach": "4 thresholds breached (1 RED: Gold>3500, 3 AMBER: USDJPY>158, EURUSD>1.15, Gold>3000)"
+    "breaking_event": "8 cat-5 events active: Hormuz, US-Japan FX, Ebola, France debt, China property, UK food, US Treasury risk, Venezuela-Colombia quakes",
+    "threshold_breach": "5 thresholds breached (2 RED: Gold>3500, Energy>90; 3 AMBER: USDJPY>158, EURUSD>1.15, Gold>3000)"
   },
   "signals": {
     "fin_stability": {
@@ -16,14 +16,14 @@
       "value": 2.71,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": -0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-12",
-      "note": "ESCALATED: Gold RED breach at $4,413.90 (above $3,500 threshold) + US-Japan joint FX intervention + JGB 2yr at 31yr high + France fiscal distress",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: US Treasury hedge fund dependency (100x leverage) + private credit PIK distress + Japan FX intervention failing + France debt snowball",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -31,14 +31,14 @@
       "value": 0.88,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "ESCALATED: Joint FX intervention draining reserves + JGB surge",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: $75bn Japan intervention + US Treasury short-term funding risk from leveraged hedge funds",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -61,14 +61,14 @@
       "value": 93.26,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Strait of Hormuz partially blocked by Iran. Oil elevated",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: Hormuz effectively closed, tanker explosions Aug 5, OPEC+ +206kbpd insufficient, EIA raises Brent forecast to $87 avg",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -76,14 +76,14 @@
       "value": 14.55,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": -0.73,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-12",
-      "note": "ESCALATED: Gold RED breach $4,413.90 (currency crisis/war premium) + Iran war + Hormuz + Africa conflicts",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: Iran Hormuz closure + Trump claims control + Gaza strikes resume + Venezuela-Colombia quakes + Africa food crisis",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -107,13 +107,13 @@
       "unit": "$/bbl (proxy)",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
+      "confidence": 8,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz disruptions + Ebola outbreak",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: Hormuz closure disrupting 20M bpd + Ukraine grain forecast cut + UK drought + Russia fuel crisis",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -121,14 +121,14 @@
       "value": 131.17,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 8,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Hormuz + Ebola + inventory drawdown",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: UK worst food crisis in decades + Hormuz disrupting fertilizer/food + Ukraine grain cut to 38-40M tonnes + Nigeria 36.3M food insecure",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -151,14 +151,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Converging crises amplifying social stress",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: UK 27M hosepipe bans + food crisis + Venezuela-Colombia quake humanitarian crisis + Africa food emergency",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -196,14 +196,14 @@
       "value": 119.06,
       "status": "amber",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 9,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Threshold AMBER breach: USD/JPY above 158.0 (current: 159.469) + EUR/USD above 1.15 (current: 1.1535). Dollar weakness accelerating.",
-      "timestamp": "2026-08-13T23:31:14.000000+00:00"
+      "note": "Yen erased half intervention gains, USD/JPY ~159, BOJ pressured to hike. Korean won near 1,400. Bessent warns 1997-style crisis risk",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -212,13 +212,13 @@
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 52.1,
       "description": "Gold Futures (GC=F): $4,413.90 (+1.19%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-13",
-      "note": "THRESHOLD RED BREACH: Gold above $3,500 (RED) and $3,000 (AMBER). Currency crisis or war premium. Safe haven demand extreme.",
-      "timestamp": "2026-08-13T23:03:56.207637+00:00"
+      "note": "Gold above $4,400, central bank buying (China), first real-term break of 1980 record. Safe haven demand extreme",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -241,14 +241,14 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
-      "confidence": 7,
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-13T23:03:56.604690+00:00"
+      "note": "ESCALATED: $148B expiring lease time bomb + $130B developer defaults + office values down 40%+ PBOC pledges loose stance",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -256,14 +256,14 @@
       "value": 2.25,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-13",
-      "note": "ESCALATED: France fiscal crisis 107B H1 deficit 3.5T debt",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: France debt 3.5T+ EUR, H1 interest 34.5bn EUR (+19%), deficit 5.13%, snowball effect. UK food security crisis worst in decades",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -286,14 +286,14 @@
       "value": 93.26,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Active Iran war, Hormuz crisis since Feb 2026",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "ESCALATED: Hormuz closed since Jul 12, tanker explosions Aug 5, Trump-Iran standoff, Gaza airstrikes resume",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -316,24 +316,24 @@
       "value": "ACTIVE",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
+      "confidence": 10,
       "unit": "",
       "description": "Multiple category-5 events active",
       "series_id": null,
       "last_date": "2026-08-14",
-      "note": "US-Japan FX intervention + Hormuz crisis + Ebola epidemic + France fiscal crisis + JGB surge",
-      "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+      "note": "8 cat-5 events: Hormuz closure, US-Japan FX failing, Ebola fastest-ever, France debt snowball, China property $148B bomb, UK food crisis, US hedge fund Treasury risk, Venezuela-Colombia quakes",
+      "timestamp": "2026-08-14T03:04:13.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 334,
+    "score": 340,
     "red_count": 15,
     "amber_count": 3,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "%Y-%m-%dT%H:%M:%S.000000+00:00"
+    "timestamp": "2026-08-14T03:04:13.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
