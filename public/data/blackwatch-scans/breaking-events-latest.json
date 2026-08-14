@@ -1,141 +1,177 @@
 {
-  "scan_time": "2026-08-14T03:02:53.000000+00:00",
+  "scan_time": "2026-08-14T07:03:54.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
-  "operator": "Lumina (cron automated)",
   "domains_scanned": 12,
-  "queries_executed": 30,
-  "events_detected": 8,
-  "category_5_events": 8,
-  "new_events": 2,
-  "escalated_events": 6,
-  "overall_risk": "CRITICAL",
+  "events_detected": 7,
   "events": [
     {
-      "id": "EVT-2026-0814-001",
-      "domain": "middle_east",
-      "title": "Strait of Hormuz Crisis ESCALATION - Tanker Explosions",
-      "category": "energy_shock",
-      "severity": 5,
-      "status": "escalating",
-      "summary": "Iran effectively closed Strait of Hormuz since Jul 12. Aug 5 tanker explosions near Kumzar. Trump claims 'complete control' Aug 12, Iran refutes. OPEC+ pledged +206kbpd. 20M bpd disrupted. EIA raises Brent forecast to $87 avg. Biggest global energy disruption.",
-      "sources": ["Wikipedia: 2026 Strait of Hormuz crisis", "Al Jazeera", "CNN", "NYT", "IEA Oil Market Report Aug 2026", "EIA STEO"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-002",
-      "domain": "japan",
-      "title": "US-Japan Joint FX Intervention FAILING - Yen Erases Half Gains",
+      "title": "US-Japan Joint FX Intervention Unraveling",
+      "domain": "us_fed",
       "category": "sovereign_intervention",
       "severity": 5,
-      "status": "deteriorating",
-      "summary": "Historic joint US-Japan FX intervention (~$75bn Japan + $5-10bn US) failing. Yen erased half gains, USD/JPY back at ~159. BOJ pressured to hike rates (Sept/Oct). Goldman says more intervention possible. FIMA facility weaponized. Bessent warns of 1997-style crisis risk.",
-      "sources": ["CNBC", "OMFIF", "Fortune", "Semafor", "Bloomberg", "Economic Times"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["japan_sovereign", "currency", "fin_stability", "liquidity"],
-      "new": false,
-      "escalated": true
+      "description": "US Treasury bought yen alongside Japan (~$75B Japan + $5-10B US), first US FX intervention in 15 years. Yen erased half its gains within 2 weeks. 30Y Treasury at 5.2%, highest since 2007. Intervention unraveling.",
+      "sources": [
+        "Fortune",
+        "CNBC",
+        "Telegraph",
+        "Bloomberg",
+        "WSWS"
+      ],
+      "impact_regions": [
+        "US",
+        "Japan",
+        "Global"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity",
+        "currency"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
     },
     {
-      "id": "EVT-2026-0814-003",
-      "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic - Fastest Growing Ever, Could Become Deadliest",
-      "category": "pandemic_health",
+      "title": "Strait of Hormuz Crisis - IRGC Closure, Ongoing US-Iran Conflict",
+      "domain": "middle_east",
+      "category": "war_military",
       "severity": 5,
-      "status": "deteriorating",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC. 4,053 confirmed cases, 1,850 deaths. WHO warns could become deadliest ever. PHEIC declared. Existing treatments certified for Zaire strain, not Bundibugyo. Second-deadliest Ebola outbreak in history, largest in DRC.",
-      "sources": ["Wikipedia: 2026 Ebola epidemic", "IBTimes UK", "WHO", "GBC Ghana", "Joseph Eastman Substack"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
-      "new": false,
-      "escalated": true
+      "description": "IRGC closed Strait of Hormuz. US-Iran war ongoing. Tanker explosions reported. Trump claims control, Iran refutes. Brent at ~$89-93/bbl. EIA raised 2026 forecast to $87 avg. 0.6M bbl/day ongoing disruption through 2027.",
+      "sources": [
+        "Wikipedia",
+        "Al Jazeera",
+        "Britannica",
+        "ISW",
+        "CNN",
+        "NYT"
+      ],
+      "impact_regions": [
+        "Middle East",
+        "Global"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
     },
     {
-      "id": "EVT-2026-0814-004",
-      "domain": "eu_ecb",
-      "title": "France Debt Snowball - €3.5T+ Debt, H1 Interest +19%",
+      "title": "Ebola Epidemic - DR Congo, Fastest-Growing on Record",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 4,
+      "description": "2026 Ebola epidemic in DR Congo. 4,053 confirmed cases, 1,850 deaths. Bundibugyo ebolavirus strain. Declared public health emergency. Existing treatments certified for Zaire strain only. On track to surpass deadliest outbreak in history.",
+      "sources": [
+        "Wikipedia",
+        "Newsday",
+        "WHO",
+        "GBC Ghana",
+        "Eastman Substack"
+      ],
+      "impact_regions": [
+        "Africa",
+        "Global"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+    },
+    {
+      "title": "UK Food Security Crisis - Drought + Hormuz Disruption",
+      "domain": "commodities",
+      "category": "food_crisis",
+      "severity": 4,
+      "description": "UK drought with 27M under hosepipe bans. Telegraph warns worst food security crisis in decades. Hormuz shipping disruption cutting fertiliser and food re-export routes. Ukraine grain export forecast cut to 38-40M tonnes from 43M.",
+      "sources": [
+        "Telegraph",
+        "Guardian",
+        "TechTimes"
+      ],
+      "impact_regions": [
+        "UK",
+        "Europe",
+        "Global"
+      ],
+      "escalate_to": [
+        "food_security",
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+    },
+    {
+      "title": "China Property Crisis - $148B Expiring Lease Time Bomb",
+      "domain": "china",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "description": "China racing to defuse $148B property threat from expiring leases. $190B non-residential property with leases of 20 years or less. PBOC maintaining loose monetary stance. China launching global tax hunt, capital flight controls.",
+      "sources": [
+        "Bloomberg",
+        "China Money Network",
+        "PIIE",
+        "FT",
+        "Reuters"
+      ],
+      "impact_regions": [
+        "China",
+        "Asia",
+        "Global"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+    },
+    {
+      "title": "South Korean Won - Sharpest Swings Since Financial Crisis",
+      "domain": "em_asia",
+      "category": "currency_crisis",
+      "severity": 3,
+      "description": "Won nearing 1,400/dollar after weakening to 1,550 in just over a month. Sharpest swings since 1997 Asian financial crisis. KOSPI rout driving retail investors back to US stocks. India rupee also under pressure.",
+      "sources": [
+        "Korea Herald",
+        "Business Recorder",
+        "Mezha"
+      ],
+      "impact_regions": [
+        "South Korea",
+        "Asia",
+        "India"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+    },
+    {
+      "title": "US Fiscal Crisis Signals - 7.4% Deficit, 30Y at 5.2%",
+      "domain": "financial_system",
       "category": "sovereign_crisis",
       "severity": 4,
-      "status": "deteriorating",
-      "summary": "France national debt exceeded €3.5 trillion for first time. H1 2026 interest payments €34.5bn (+19% YoY). Fiscal deficit 5.13%. Debt-to-GDP 118%. Snowball effect feared as costly debt meets sluggish growth.",
-      "sources": ["Le Monde", "Global Debt Clock", "Debt Clock.io", "Xpert Digital"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["europe", "fin_stability"],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-005",
-      "domain": "china",
-      "title": "China Property $148B Expiring Lease Time Bomb + $130B Developer Defaults",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Bloomberg reports $148B expiring land lease crisis scuttling deals. Developers defaulted on ~$130B debt. Office values down 40%+ from peaks. PBOC pledges 'appropriately loose' stance but no emergency cuts. Nationwide economic emergency from property crash.",
-      "sources": ["Bloomberg", "Firstpost", "China Money Network", "Chiang Rai Times", "Reuters"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["china", "fin_stability"],
-      "new": true,
-      "escalated": false
-    },
-    {
-      "id": "EVT-2026-0814-006",
-      "domain": "uk",
-      "title": "UK Food Security Crisis - 'Worst in Decades' + 27M Hosepipe Bans",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Telegraph reports 'worst food security crisis in decades'. 27M people under hosepipe bans. Drought + Hormuz disrupting fertilizer/food imports via Middle East re-export hubs. Guardian warns government ignoring stockpile measure.",
-      "sources": ["The Telegraph", "The Guardian", "House of Commons Library"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["europe", "food_security", "supply_chain", "social_cohesion"],
-      "new": true,
-      "escalated": false
-    },
-    {
-      "id": "EVT-2026-0814-007",
-      "domain": "financial_system",
-      "title": "US Financial Crisis Risk Building - Hedge Fund Treasury Dependency at 100x Leverage",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "deteriorating",
-      "summary": "Telegraph: US Treasury acutely dependent on short-term funding from hedge funds tapping $8.3T money market, some at 100x leverage. Private credit PIK distress growing (Fed Boston research). Fitch defaults rising. Ingredients for US financial crisis coming together.",
-      "sources": ["The Telegraph", "Axios", "Seeking Alpha", "Fed Boston"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["fin_stability", "liquidity"],
-      "new": false,
-      "escalated": true
-    },
-    {
-      "id": "EVT-2026-0814-008",
-      "domain": "latam",
-      "title": "Venezuela-Colombia Devastating Earthquakes - Humanitarian Crisis",
-      "category": "market_dislocation",
-      "severity": 3,
-      "status": "active",
-      "summary": "Devastating earthquakes hit Venezuela and Colombia. Benefit concert organized. Stark divide in response between countries. Venezuela relies on international rescuers, Colombia declines foreign crews except US. Humanitarian crisis unfolding.",
-      "sources": ["NBC News", "Breitbart", "AP News", "CFR"],
-      "timestamp": "2026-08-14T03:02:53Z",
-      "escalate_to": ["geopolitical", "social_cohesion"],
-      "new": true,
-      "escalated": false
+      "description": "IMF forecasts US deficit 7.4%+ GDP through 2031. 30Y Treasury at 5.2%, highest since 2007. Telegraph: ingredients for US financial crisis. Private credit distress rising - PIK payments increasing. CBO: $3B daily debt interest.",
+      "sources": [
+        "Telegraph",
+        "Fortune",
+        "Axios",
+        "American Banker"
+      ],
+      "impact_regions": [
+        "US",
+        "Global"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "liquidity",
+        "sov_debt"
+      ],
+      "timestamp": "2026-08-14T07:03:54.000000+00:00"
     }
   ],
-  "domains_summary": {
-    "us_fed": {"status": "watch", "findings": "Fed held at 3.50-3.75% Jul 29. Markets pricing 30% hike probability. New Fed chair hawkish on inflation. No emergency action."},
-    "latam": {"status": "alert", "findings": "Venezuela-Colombia earthquakes. Argentina country risk 451bps. Milei pushing central bank reform for Aug 19 vote. Argentina peso destruction continues."},
-    "eu_ecb": {"status": "red", "findings": "France debt snowball €3.5T+. ECB cut 8x Jun24-Jun25, unchanged since. Morningstar sees possible ECB rate hike 2026. No emergency action."},
-    "uk": {"status": "red", "findings": "Worst food security crisis in decades. 27M hosepipe bans. BOE at 3.75%, markets pricing possible hike by Nov. Middle East conflict shifting rate expectations."},
-    "japan": {"status": "red", "findings": "Joint FX intervention failing. Yen back at ~159. BOJ at 1.00%. Gov supports faster rate hike (Sept/Oct). 10Y JGB at 2.87%, 30Y at 4.00%. Goldman says capacity for more intervention."},
-    "china": {"status": "red", "findings": "$148B expiring lease crisis. $130B developer defaults. PBOC loose stance, no emergency cuts. Yuan steadying as exporters squeezed. Office values down 40%+."},
-    "em_asia": {"status": "amber", "findings": "Korean won near 1,400, sharpest swings since financial crisis. SK intervened alongside Japan. Indian rupee cushioned by RBI. DBS short USD/KRW on intervention risks."},
-    "middle_east": {"status": "red", "findings": "Hormuz closed. Tanker explosions Aug 5. Trump-Iran standoff. Gaza airstrikes resume. Netanyahu rejects withdrawal. OPEC+ +206kbpd."},
-    "africa": {"status": "amber", "findings": "Nigeria 36.3M food insecure. Somalia 6M crisis-level hunger. Zambia debt restructured but 70% under $3/day. South Africa crime crisis during election campaign."},
-    "financial_system": {"status": "red", "findings": "US Treasury hedge fund dependency at 100x leverage. Private credit PIK distress growing. Russia bankruptcies +13.7% YoY. Swiss TBTF reforms. Senegal debt restructuring risk."},
-    "commodities": {"status": "red", "findings": "Brent ~$93, EIA raises forecast to $87 avg 2026. Gold above $4,400, first real-term break of 1980 record. Saudi cut Asia OSP by $11 (biggest in 2 decades). Ukraine grain export cut to 38-40M tonnes."},
-    "pandemic_health": {"status": "red", "findings": "Ebola fastest-growing ever, 4,053 cases, 1,850 deaths. Bundibugyo strain complicates response. COVID growing in 43 states. Prescription drug prices fell 3.1% (steepest since 1963)."}
-  }
+  "no_events_domains": []
 }
