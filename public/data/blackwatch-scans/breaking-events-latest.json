@@ -1,177 +1,167 @@
 {
-  "scan_time": "2026-08-14T07:03:54.000000+00:00",
+  "scan_time": "2026-08-15T07:03:33.000000+00:00",
   "scan_type": "breaking_event",
-  "domains_scanned": 12,
-  "events_detected": 7,
+  "events_detected": 8,
   "events": [
     {
-      "title": "US-Japan Joint FX Intervention Unraveling",
-      "domain": "us_fed",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "description": "US Treasury bought yen alongside Japan (~$75B Japan + $5-10B US), first US FX intervention in 15 years. Yen erased half its gains within 2 weeks. 30Y Treasury at 5.2%, highest since 2007. Intervention unraveling.",
-      "sources": [
-        "Fortune",
-        "CNBC",
-        "Telegraph",
-        "Bloomberg",
-        "WSWS"
-      ],
-      "impact_regions": [
-        "US",
-        "Japan",
-        "Global"
-      ],
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity",
-        "currency"
-      ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
-    },
-    {
-      "title": "Strait of Hormuz Crisis - IRGC Closure, Ongoing US-Iran Conflict",
+      "title": "Strait of Hormuz Crisis - Iran Closure Disrupting Global Oil Supply",
       "domain": "middle_east",
-      "category": "war_military",
+      "category": "energy_shock",
       "severity": 5,
-      "description": "IRGC closed Strait of Hormuz. US-Iran war ongoing. Tanker explosions reported. Trump claims control, Iran refutes. Brent at ~$89-93/bbl. EIA raised 2026 forecast to $87 avg. 0.6M bbl/day ongoing disruption through 2027.",
+      "summary": "Iran IRGC closed Strait of Hormuz in retaliation for US/Israeli strikes. 20M barrels/day of oil traffic disrupted. Biggest global energy disruption in decades. Brent at $93+, EIA forecasts $87 avg for 2026. Saudi Arabia rerouting oil around Africa.",
       "sources": [
-        "Wikipedia",
-        "Al Jazeera",
-        "Britannica",
-        "ISW",
         "CNN",
-        "NYT"
-      ],
-      "impact_regions": [
-        "Middle East",
-        "Global"
+        "Al Jazeera",
+        "IEA",
+        "EIA",
+        "NYT",
+        "Wikipedia"
       ],
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
-        "supply_chain",
-        "food_security"
+        "food_security",
+        "supply_chain"
       ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
     },
     {
-      "title": "Ebola Epidemic - DR Congo, Fastest-Growing on Record",
+      "title": "Historic US-Japan Joint Currency Intervention - Yen Rescue Unravelling",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "summary": "US Treasury and Japan jointly intervened to support yen (first in 15 years). US sold euros (not dollars) to buy yen, blindsiding ECB. Japan spent est. $36-59B. Yen has already erased half the gains, back to 159. BOJ hinting at September rate hike. 30Y Treasury yield at 5.2% - highest since 2007.",
+      "sources": [
+        "CNBC",
+        "Bloomberg",
+        "Fortune",
+        "Reuters",
+        "FT",
+        "Telegraph"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "us_cycle"
+      ],
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+    },
+    {
+      "title": "2026 Ebola Epidemic - Fastest Growing Outbreak on Record, WHO PHEIC Declared",
       "domain": "pandemic_health",
       "category": "pandemic",
-      "severity": 4,
-      "description": "2026 Ebola epidemic in DR Congo. 4,053 confirmed cases, 1,850 deaths. Bundibugyo ebolavirus strain. Declared public health emergency. Existing treatments certified for Zaire strain only. On track to surpass deadliest outbreak in history.",
+      "severity": 5,
+      "summary": "Bundibugyo ebolavirus outbreak in DRC/Uganda. 4,566 confirmed cases, 2,128 deaths as of Aug 11. Declared WHO Public Health Emergency of International Concern on May 17. Fastest growing Ebola outbreak on record. Existing treatments certified for Zaire species, not Bundibugyo. Deaths doubled in last 20 days.",
       "sources": [
-        "Wikipedia",
-        "Newsday",
         "WHO",
-        "GBC Ghana",
-        "Eastman Substack"
-      ],
-      "impact_regions": [
-        "Africa",
-        "Global"
+        "CDC",
+        "ECDC",
+        "Washington Post",
+        "UN News",
+        "Wikipedia"
       ],
       "escalate_to": [
         "supply_chain",
-        "social_cohesion"
+        "social_cohesion",
+        "food_security"
       ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
     },
     {
-      "title": "UK Food Security Crisis - Drought + Hormuz Disruption",
+      "title": "2026 Iran War - Active Conflict with US/Israel, Hormuz Closure",
+      "domain": "middle_east",
+      "category": "war_military",
+      "severity": 5,
+      "summary": "Active war between Iran and US/Israel. Iran launched retaliatory missile/drone strikes on US embassies, military installations, and oil infrastructure. IRGC closed Strait of Hormuz. US conducting strikes on Iran. Trump claims control of Hormuz, Iran denies. Ceasefire talks ongoing but fragile.",
+      "sources": [
+        "CNN",
+        "Britannica",
+        "Wikipedia",
+        "Fox News"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ],
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+    },
+    {
+      "title": "Gaza War Escalation - Netanyahu Refuses Withdrawal, Ceasefire Destabilized",
+      "domain": "middle_east",
+      "category": "war_military",
+      "severity": 4,
+      "summary": "Israeli airstrikes on Gaza resumed (Aug 13). Netanyahu says forces will not withdraw until Hamas genuinely disarmed. 70,000+ Gazans killed. Trump Board of Peace reached disarmament agreement July 31 but implementation stalled. Ceasefire destabilized by Israeli attacks on Hamas officials.",
+      "sources": [
+        "Al Jazeera",
+        "BBC",
+        "Britannica",
+        "Wikipedia",
+        "New Arab"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "geopolitical",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+    },
+    {
+      "title": "UK Faces Worst Food Security Crisis in Decades - Drought",
       "domain": "commodities",
       "category": "food_crisis",
-      "severity": 4,
-      "description": "UK drought with 27M under hosepipe bans. Telegraph warns worst food security crisis in decades. Hormuz shipping disruption cutting fertiliser and food re-export routes. Ukraine grain export forecast cut to 38-40M tonnes from 43M.",
+      "severity": 3,
+      "summary": "Three quarters of England in drought. Soils parched, crop failures. Market analysts warn most severe food security crisis in decades. Afghanistan hunger crisis affects 14M people. Nigeria food insecurity deteriorating due to Middle East conflict and climate shocks.",
       "sources": [
-        "Telegraph",
         "Guardian",
-        "TechTimes"
-      ],
-      "impact_regions": [
-        "UK",
-        "Europe",
-        "Global"
+        "Telegraph",
+        "UN News",
+        "Action Against Hunger"
       ],
       "escalate_to": [
         "food_security",
         "supply_chain",
         "social_cohesion"
       ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
     },
     {
-      "title": "China Property Crisis - $148B Expiring Lease Time Bomb",
+      "title": "China Property Crisis - $148B Expiring Leases Time Bomb, $130B Defaults",
       "domain": "china",
       "category": "sovereign_crisis",
       "severity": 3,
-      "description": "China racing to defuse $148B property threat from expiring leases. $190B non-residential property with leases of 20 years or less. PBOC maintaining loose monetary stance. China launching global tax hunt, capital flight controls.",
+      "summary": "China racing to solve $148B property threat as land leases expire. Office values down 40%+ from peaks. Developers defaulted on roughly $130B of debt. PBOC pledging appropriately loose monetary stance. Overnight reverse repo operations scheduled.",
       "sources": [
         "Bloomberg",
-        "China Money Network",
-        "PIIE",
-        "FT",
-        "Reuters"
-      ],
-      "impact_regions": [
-        "China",
-        "Asia",
-        "Global"
+        "Firstpost",
+        "China Money Network"
       ],
       "escalate_to": [
         "china",
         "fin_stability"
       ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
     },
     {
-      "title": "South Korean Won - Sharpest Swings Since Financial Crisis",
-      "domain": "em_asia",
-      "category": "currency_crisis",
-      "severity": 3,
-      "description": "Won nearing 1,400/dollar after weakening to 1,550 in just over a month. Sharpest swings since 1997 Asian financial crisis. KOSPI rout driving retail investors back to US stocks. India rupee also under pressure.",
-      "sources": [
-        "Korea Herald",
-        "Business Recorder",
-        "Mezha"
-      ],
-      "impact_regions": [
-        "South Korea",
-        "Asia",
-        "India"
-      ],
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
-    },
-    {
-      "title": "US Fiscal Crisis Signals - 7.4% Deficit, 30Y at 5.2%",
+      "title": "Private Credit Distress - Growing PIK Payments, Borrower Strain",
       "domain": "financial_system",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "description": "IMF forecasts US deficit 7.4%+ GDP through 2031. 30Y Treasury at 5.2%, highest since 2007. Telegraph: ingredients for US financial crisis. Private credit distress rising - PIK payments increasing. CBO: $3B daily debt interest.",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "Fed Boston research shows growing share of private credit borrowers making payments-in-kind (PIK) instead of cash. Fitch default rate includes bankruptcies and deferred interest. Highly-indebted companies ditching private credit for cheaper bank loans. Not imminent crisis but deteriorating.",
       "sources": [
-        "Telegraph",
-        "Fortune",
         "Axios",
+        "Bloomberg",
         "American Banker"
-      ],
-      "impact_regions": [
-        "US",
-        "Global"
       ],
       "escalate_to": [
         "fin_stability",
-        "liquidity",
-        "sov_debt"
+        "liquidity"
       ],
-      "timestamp": "2026-08-14T07:03:54.000000+00:00"
+      "timestamp": "2026-08-15T07:03:33.000000+00:00"
     }
   ],
-  "no_events_domains": []
+  "domains_scanned": 12,
+  "queries_executed": 36,
+  "category_5_count": 5
 }
