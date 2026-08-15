@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-15T19:02:00.000000+00:00",
+    "last_update": "2026-08-15T19:35:25.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "breaking_event": "9 events detected, 6 cat-5. NEW: Trump Hormuz territory declaration, Hezbollah ceasefire violation, Fed RMP zero, 30Y Treasury 5.216%, KRW near 1400, UK gilts multi-year highs."
+    "breaking_event": "9 events detected, 6 cat-5. NEW: Trump Hormuz territory declaration, Hezbollah ceasefire violation, Fed RMP zero, 30Y Treasury 5.216%, KRW near 1400, UK gilts multi-year highs.",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 8,
       "change_from_last": 0.0,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "ESCALATED: 30Y Treasury at 5.216% (highest since 2001), Fed RMP cut to zero, US borrowing costs at 25-year high",
-      "timestamp": "2026-08-15T19:02:00.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4437.3)",
+      "timestamp": "2026-08-15T19:35:25.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
