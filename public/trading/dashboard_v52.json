@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-08-15T15:00:14.096855",
-  "version": "5.3.1-BATCH",
-  "system": "V5.3.1 Batch Edition \u2014 Tuned exits + neutral zone + stablecoin blacklist",
+  "timestamp": "2026-08-15T18:00:17.375209",
+  "version": "5.3.1-A1",
+  "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
   "parameters": {
     "entry_channel": 20,
     "exit_channel": 40,
     "sma_filter": 50,
     "time_stop": 15,
-    "atr_stop_mult": 2.5,
-    "trailing_atr_mult": 3.0,
+    "atr_stop_mult": 0,
+    "trailing_atr_mult": 0,
     "max_positions": 10,
     "capital_per_token_eur": 250,
     "universe_size": 189,
@@ -17,11 +17,11 @@
     "cache_ttl_hours": 3,
     "min_bars_before_exit": 8,
     "btc_neutral_zone_pct": 2.0,
-    "v531_improvements": [
-      "Donchian exit channel 20->40",
-      "ATR stop 1.5->2.5",
-      "Trailing stop 1.5->3.0",
-      "Min 8 bars before Donchian/trailing exits",
+    "a1_improvements": [
+      "Option A1: removed ATR 2.5 hard stop",
+      "Option A1: removed 3.0 ATR trailing stop",
+      "Exit: Donchian 40 channel + time stop 15 only",
+      "Min 8 bars before Donchian exit",
       "BTC neutral zone (+/-2% of SMA50) allows both directions",
       "Stablecoins blacklisted (USDE, BFUSD, U, RLUSD, EUR, XUSD, PAXG, XAUT)"
     ]
@@ -29,8 +29,8 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 55.19,
-    "unrealized_pnl_eur": -10.58,
-    "total_pnl_eur": 44.61,
+    "unrealized_pnl_eur": -9.6,
+    "total_pnl_eur": 45.59,
     "open_positions": 2,
     "closed_trades": 175,
     "wins": 69,
@@ -47,7 +47,7 @@
       "stop": 1.3867500000000001,
       "highest": 1.573,
       "lowest": 1.533,
-      "bars_held": 10,
+      "bars_held": 12,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -62,7 +62,7 @@
       "stop": 1.1486928571428572,
       "highest": 1.1592,
       "lowest": 1.1573,
-      "bars_held": 8,
+      "bars_held": 10,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -335,16 +335,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XUSDUSDT",
-    "UUSDT",
     "RLUSDUSDT",
-    "XAUTUSDT",
-    "USDEUSDT",
-    "KASUSDT",
     "USD1USDT",
+    "EURUSDT",
+    "KASUSDT",
     "PAXGUSDT",
     "BFUSDUSDT",
+    "UUSDT",
     "ZECUSDT",
-    "EURUSDT"
+    "XUSDUSDT",
+    "XAUTUSDT",
+    "USDEUSDT"
   ]
 }
