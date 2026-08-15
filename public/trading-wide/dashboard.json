@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-08-15T16:01:04.445337",
+  "version": "5.3.1-WIDE-TRAILING-6ATR",
+  "system": "V5.3.1 Wide Trailing 6 ATR Only \u2014 Same entries, wide trailing exit",
+  "parameters": {
+    "entry_channel": 20,
+    "sma_filter": 50,
+    "trailing_atr_mult": 6.0,
+    "max_positions": 10,
+    "capital_per_token_eur": 250,
+    "universe_size": 189,
+    "batch_size": 50,
+    "data_source": "Binance",
+    "cache_ttl_hours": 3,
+    "min_bars_before_exit": 8,
+    "btc_neutral_zone_pct": 2.0,
+    "wide_trailing_improvements": [
+      "Single exit: 6 ATR trailing stop",
+      "No hard ATR stop, no Donchian exit, no time stop",
+      "Same entries as V5.3.1 (Donchian 20 + SMA50 + BTC regime + 4H confirmation)",
+      "Min 8 bars before trailing exit",
+      "BTC neutral zone (+/-2% of SMA50) allows both directions",
+      "Stablecoins blacklisted (USDE, BFUSD, U, RLUSD, EUR, XUSD, PAXG, XAUT)"
+    ]
+  },
+  "portfolio": {
+    "total_capital_eur": 2500,
+    "realized_pnl_eur": 0,
+    "unrealized_pnl_eur": 0.0,
+    "total_pnl_eur": 0.0,
+    "open_positions": 1,
+    "closed_trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0
+  },
+  "open_positions": {
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-15T16:01:04.445337",
+      "entry_price": 1.1574,
+      "atr": 0.0033999999999999747,
+      "stop": null,
+      "highest": 1.1574,
+      "lowest": 1.1574,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    }
+  },
+  "recent_trades": [],
+  "btc_regime": "NEUTRAL",
+  "daily_tokens_scanned": 189,
+  "h4_tokens_scanned": 50,
+  "blacklisted": [
+    "BFUSDUSDT",
+    "RLUSDUSDT",
+    "USD1USDT",
+    "PAXGUSDT",
+    "XAUTUSDT",
+    "USDEUSDT",
+    "EURUSDT",
+    "XUSDUSDT",
+    "ZECUSDT",
+    "UUSDT",
+    "KASUSDT"
+  ]
+}
