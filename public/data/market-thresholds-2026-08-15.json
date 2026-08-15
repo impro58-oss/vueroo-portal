@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-15",
-  "scan_time_utc": "2026-08-15T15:30:38.650189+00:00",
+  "scan_time_utc": "2026-08-15T19:36:40.282353+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -25,9 +25,9 @@
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7419,
+      "price": 6.7322,
       "prev_close": 6.7474,
-      "change_1d_pct": -0.08,
+      "change_1d_pct": -0.23,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,9 +67,11 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 102.5,
-      "source": "web_search_estimated",
-      "note": "Estimated from recent market context (VIX 14.25, US10Y 4.696%, stable bond market). Exact live value not retrievable from public sources."
+      "price": 69.58,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search (Yahoo ^MOVE)"
     },
     "GOLD": {
       "price": 4437.3,
@@ -93,27 +95,30 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.875,
-      "source": "web_search",
-      "source_url": "https://www.brecorder.com/news/40434808/short-term-jgb-yields-jump-to-multi-decade-highs-on-boj-rate-hike-bets",
-      "note": "Reuters via Business Recorder, Aug 14 2026"
+      "price": 2.88,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search (Trading Economics)"
     },
     "DE10Y": {
-      "price": 3.15,
-      "source": "web_search",
-      "source_url": "https://www.investing.com/news/forex-news/german-yields-hover-oneweek-highs-as-oil-spikes-for-sixth-day-us-cpi-in-focus-4853748",
-      "note": "Investing.com, Aug 12 2026"
+      "price": 3.16,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search (Trading Economics)"
     },
     "BAA10Y": {
       "price": 1.67,
-      "source": "web_search",
-      "source_url": "https://fred.stlouisfed.org/series/BAA10Y",
-      "note": "FRED CSV export, Aug 13 2026 (latest available)"
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 1,
+      "source": "web_search (FRED CSV)"
     },
     "BTC": {
-      "price": 63000.0,
+      "price": 63026.78,
       "prev_close": 63551.875,
-      "change_1d_pct": -0.87,
+      "change_1d_pct": -0.83,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -177,10 +182,66 @@
         "fin_stability"
       ],
       "distance_pct": 47.91
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.88,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral - Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 92.0
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.88,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure - BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 188.0
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.16,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress - periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 5.33
     }
   ],
-  "breach_count": 4,
+  "breach_count": 7,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_fallback_data": {
+    "MOVE": 69.58,
+    "JGB10Y": 2.88,
+    "DE10Y": 3.16,
+    "BAA10Y": 1.67,
+    "sources": {
+      "MOVE": "Yahoo Finance ^MOVE (Aug 14)",
+      "JGB10Y": "Trading Economics (Aug 14)",
+      "DE10Y": "Trading Economics (Aug 14)",
+      "BAA10Y": "FRED CSV BAA10Y (Aug 13)"
+    }
+  }
 }
