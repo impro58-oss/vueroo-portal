@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrojanVue Wide Trailing 6 ATR — V5.3.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-surface: #15151f;
+            --bg-elevated: #1e1e2e;
+            --bg-card: #0f172a;
+            --color-primary: #00d4ff;
+            --color-primary-dark: #00a8cc;
+            --color-primary-glow: rgba(0, 212, 255, 0.3);
+            --color-primary-subtle: rgba(0, 212, 255, 0.1);
+            --color-success: #10b981;
+            --color-danger: #ef4444;
+            --color-warning: #f59e0b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0,212,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0.5;
+        }
+        .glow { box-shadow: 0 0 20px var(--color-primary-glow); }
+        .badge-long {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-short {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-open {
+            background: rgba(0, 212, 255, 0.15);
+            color: #00d4ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge-closed {
+            background: rgba(100, 116, 139, 0.15);
+            color: #94a3b8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .pnl-positive { color: #10b981; }
+        .pnl-negative { color: #ef4444; }
+        .signal-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+        .dot-bullish { background: #10b981; box-shadow: 0 0 6px rgba(16, 185, 129, 0.5); }
+        .dot-bearish { background: #ef4444; box-shadow: 0 0 6px rgba(239, 68, 68, 0.5); }
+        .pnl-bar {
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+        }
+        .pnl-bar-negative {
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--color-danger), #b91c1c);
+        }
+        .regime-card {
+            background: var(--bg-elevated);
+            border: 1px solid rgba(0,212,255,0.1);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .regime-bullish { border-color: rgba(16, 185, 129, 0.3); }
+        .regime-bearish { border-color: rgba(239, 68, 68, 0.3); }
+        table { width: 100%; border-collapse: collapse; }
+        th { 
+            text-align: left; 
+            color: var(--text-muted); 
+            font-size: 11px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(0,212,255,0.1);
+        }
+        td { 
+            padding: 10px 12px; 
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            font-size: 13px;
+        }
+        tr:hover td { background: rgba(0,212,255,0.03); }
+        .sparkline { display: inline-block; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
+        .refresh-spin { animation: spin 1s linear; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <div class="border-b border-cyan-900/30 bg-[#0f172a]">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="/dashboard" class="w-10 h-10 rounded-lg bg-slate-700/50 border border-slate-600/30 flex items-center justify-center hover:bg-cyan-600/20 hover:border-cyan-500/30 transition" title="Back to Dashboard">
+                    <i class="fas fa-home text-slate-300 text-sm"></i>
+                </a>
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white">TrojanVue Paper Trading</h1>
+                    <p class="text-xs text-slate-400">V5.3.1 Batch | Donchian 20/40 | ATR 2.5 | Trailing 3.0 | SMA 50 | BTC Neutral Zone | Binance 189 Pairs</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div id="regime-badge" class="regime-card px-4 py-2">
+                    <span class="text-xs text-slate-400">BTC REGIME</span><br>
+                    <span id="regime-text" class="text-sm font-bold">—</span>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-slate-400">Last Scan</div>
+                    <div id="last-scan" class="text-sm font-mono text-slate-300">—</div>
+                </div>
+                <button onclick="loadData()" class="px-3 py-2 rounded-lg bg-cyan-600/20 border border-cyan-500/30 text-cyan-400 text-sm hover:bg-cyan-600/30 transition">
+                    <i class="fas fa-sync-alt mr-1" id="refresh-icon"></i> Refresh
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Overview -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4" id="overview-cards">
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Realized P&L</div>
+                <div id="realized-pnl" class="text-xl font-bold font-mono">€0.00</div>
+            </div>
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Unrealized P&L</div>
+                <div id="unrealized-pnl" class="text-xl font-bold font-mono">€0.00</div>
+            </div>
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Total P&L</div>
+                <div id="total-pnl" class="text-xl font-bold font-mono">€0.00</div>
+            </div>
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Win Rate</div>
+                <div id="win-rate" class="text-xl font-bold font-mono">—</div>
+            </div>
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Open / Closed</div>
+                <div id="trade-count" class="text-xl font-bold font-mono">0 / 0</div>
+            </div>
+            <div class="card">
+                <div class="text-xs text-slate-400 mb-1">Avg Trade</div>
+                <div id="avg-trade" class="text-xl font-bold font-mono">€0.00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trading Metrics Grid (NEW) -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="grid grid-cols-4 gap-4 mb-6">
+            <!-- Trading Regime -->
+            <div class="card">
+                <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Trading Regime</div>
+                <div class="flex items-center justify-between">
+                    <div>
+                        <div class="text-2xl font-bold" id="btc-regime-display">BEARISH</div>
+                        <div class="text-xs text-slate-500 mt-1" id="btc-status-display">Shorts allowed</div>
+                    </div>
+                    <div class="signal-dot pulse" id="regime-dot-display" style="width: 12px; height: 12px; background: #ef4444;"></div>
+                </div>
+            </div>
+
+            <!-- Capital Per Trade -->
+            <div class="card">
+                <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Capital / Trade</div>
+                <div class="text-2xl font-bold">EUR 500</div>
+                <div class="text-xs text-slate-500 mt-1">Max 10 positions</div>
+            </div>
+
+            <!-- Profit Factor -->
+            <div class="card">
+                <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Profit Factor</div>
+                <div class="text-2xl font-bold text-green-400" id="profit-factor-display">2.40x</div>
+                <div class="text-xs text-slate-500 mt-1" id="profit-detail-display">Wins / Losses</div>
+            </div>
+
+            <!-- Win Rate Detailed -->
+            <div class="card">
+                <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Win Rate</div>
+                <div class="text-2xl font-bold text-green-400" id="win-rate-display">46.2%</div>
+                <div class="text-xs text-slate-500 mt-1" id="win-detail-display">37W / 43L</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blacklist Management (NEW) -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="card mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold text-white">Blacklist Management</h3>
+                    <div class="text-xs text-slate-400 mt-1">Automatically blacklists underperforming symbols (>15% loss or 3+ consecutive losses)</div>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold text-red-400" id="blacklist-count">2</div>
+                    <div class="text-xs text-slate-400">Blacklisted</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Static Blacklist -->
+                <div class="bg-[#1a1a28] rounded p-3 border border-red-500/20">
+                    <div class="text-xs uppercase text-slate-400 mb-2">Static Blacklist</div>
+                    <div class="space-y-1" id="static-blacklist">
+                        <div class="text-sm font-mono text-slate-300"><span>KASUSDT</span> <span class="text-slate-500 text-xs ml-2">(delisted)</span></div>
+                        <div class="text-sm font-mono text-slate-300"><span>ZECUSDT</span> <span class="text-slate-500 text-xs ml-2">(manipulation-prone)</span></div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Blacklist -->
+                <div class="bg-[#1a1a28] rounded p-3 border border-yellow-500/20">
+                    <div class="text-xs uppercase text-slate-400 mb-2">Dynamic Blacklist</div>
+                    <div class="text-sm text-slate-400" id="dynamic-blacklist">
+                        None currently
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Candidates -->
+            <div class="mt-4 pt-4 border-t border-slate-700/50">
+                <div class="text-xs uppercase text-slate-400 mb-2">Monitoring (Next to Blacklist)</div>
+                <div class="text-sm font-mono space-y-1 text-slate-400" id="monitoring-candidates">
+                    None currently
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- P&L Timeline -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="card">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-base font-semibold text-white"><i class="fas fa-chart-area text-cyan-400 mr-2"></i>Cumulative P&L</h2>
+            </div>
+            <div style="position: relative; height: 280px; width: 100%;">
+                <canvas id="pnl-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+        <div class="flex gap-2 border-b border-cyan-900/30 pb-0">
+            <button onclick="showTab('positions')" class="tab-btn px-4 py-2 text-sm font-medium text-cyan-400 border-b-2 border-cyan-400" data-tab="positions">
+                <i class="fas fa-briefcase mr-1"></i> Open Positions
+            </button>
+            <button onclick="showTab('history')" class="tab-btn px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent hover:text-slate-200" data-tab="history">
+                <i class="fas fa-history mr-1"></i> Trade History
+            </button>
+            <button onclick="showTab('signals')" class="tab-btn px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent hover:text-slate-200" data-tab="signals">
+                <i class="fas fa-signal mr-1"></i> Today's Signals
+            </button>
+            <button onclick="showTab('tokens')" class="tab-btn px-4 py-2 text-sm font-medium text-slate-400 border-b-2 border-transparent hover:text-slate-200" data-tab="tokens">
+                <i class="fas fa-coins mr-1"></i> Token Status
+            </button>
+        </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="max-w-7xl mx-auto px-4 mt-4 pb-8">
+        <!-- Open Positions -->
+        <div id="tab-positions" class="tab-content">
+            <div class="card">
+                <div id="positions-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Token</th>
+                                <th>Direction</th>
+                                <th>Entry Price</th>
+                                <th>Current</th>
+                                <th>Unrealized P&L</th>
+                                <th>Held</th>
+                                <th>Signal</th>
+                                <th>Stop</th>
+                            </tr>
+                        </thead>
+                        <tbody id="positions-body">
+                            <tr><td colspan="8" class="text-center text-slate-500 py-8">No open positions</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trade History -->
+        <div id="tab-history" class="tab-content" style="display:none">
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Token</th>
+                            <th>Dir</th>
+                            <th>Entry</th>
+                            <th>Exit</th>
+                            <th>P&L %</th>
+                            <th>P&L €</th>
+                            <th>Reason</th>
+                            <th>Bars</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <tr><td colspan="9" class="text-center text-slate-500 py-8">No trades yet</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Today's Signals -->
+        <div id="tab-signals" class="tab-content" style="display:none">
+            <div class="card">
+                <div id="signals-content" class="text-center text-slate-500 py-8">
+                    Loading signals...
+                </div>
+            </div>
+        </div>
+
+        <!-- Token Status -->
+        <div id="tab-tokens" class="tab-content" style="display:none">
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Price</th>
+                            <th>200 SMA</th>
+                            <th>Position</th>
+                            <th>vs SMA</th>
+                            <th>20d High</th>
+                            <th>20d Low</th>
+                            <th>Near Signal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tokens-body">
+                        <tr><td colspan="8" class="text-center text-slate-500 py-8">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="border-t border-cyan-900/30 bg-[#0f172a] mt-8">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xs text-slate-500">
+                TrojanVue V5.3.1 | Donchian 20/40 | ATR 2.5 | Trailing 3.0 | SMA 50 | BTC Neutral Zone | Binance 189 Pairs
+            </div>
+            <div class="text-xs text-slate-500">
+                Paper Trading — €250 per token | <span id="token-count">189</span> tokens
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        const GITHUB_BASE = '/trading-wide/;
+        const DATA_URL = GITHUB_BASE + 'dashboard.json';
+        const TRADES_URL = GITHUB_BASE + 'trades.json';
+        const POSITIONS_URL = GITHUB_BASE + 'positions.json';
+        let pnlChart = null;
+
+        function formatEur(val) {
+            const sign = val >= 0 ? '+' : '';
+            return `€${sign}${val.toFixed(2)}`;
+        }
+
+        function formatPct(val) {
+            const sign = val >= 0 ? '+' : '';
+            return `${sign}${val.toFixed(2)}%`;
+        }
+
+        function pnlClass(val) {
+            return val >= 0 ? 'pnl-positive' : 'pnl-negative';
+        }
+
+        function showTab(name) {
+            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'border-cyan-400');
+                btn.classList.add('text-slate-400', 'border-transparent');
+            });
+            document.getElementById(`tab-${name}`).style.display = 'block';
+            const activeBtn = document.querySelector(`[data-tab="${name}"]`);
+            activeBtn.classList.remove('text-slate-400', 'border-transparent');
+            activeBtn.classList.add('text-cyan-400', 'border-cyan-400');
+        }
+
+        function renderPnlChart(trades) {
+            const ctx = document.getElementById('pnl-chart').getContext('2d');
+            if (pnlChart) pnlChart.destroy();
+
+            let cumPnl = 0;
+            const labels = ['Start'];
+            const data = [0];
+
+            trades.forEach(t => {
+                cumPnl += t.pnl_eur || 0;
+                const date = t.exit_date ? new Date(t.exit_date).toLocaleDateString('en-IE', {month: 'short', day: 'numeric'}) : '';
+                labels.push(date);
+                data.push(cumPnl);
+            });
+
+            // Add current unrealized
+            const unrealized = parseFloat(document.getElementById('unrealized-pnl').textContent.replace(/[€+]/g, '')) || 0;
+            if (unrealized !== 0) {
+                labels.push('Now');
+                data.push(cumPnl + unrealized);
+            }
+
+            pnlChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Cumulative P&L (€)',
+                        data: data,
+                        borderColor: '#00d4ff',
+                        backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 3,
+                        pointBackgroundColor: data.map(v => v >= 0 ? '#10b981' : '#ef4444'),
+                        pointBorderColor: data.map(v => v >= 0 ? '#10b981' : '#ef4444'),
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1e1e2e',
+                            titleColor: '#f8fafc',
+                            bodyColor: '#cbd5e1',
+                            borderColor: 'rgba(0,212,255,0.3)',
+                            borderWidth: 1,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.03)' },
+                            ticks: { color: '#64748b', font: { size: 10 } }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.03)' },
+                            ticks: {
+                                color: '#64748b',
+                                font: { size: 10, family: 'JetBrains Mono' },
+                                callback: v => `€${v.toFixed(0)}`
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function loadData() {
+            const icon = document.getElementById('refresh-icon');
+            icon.classList.add('refresh-spin');
+
+            try {
+                const [dashRes, tradesRes] = await Promise.all([
+                    fetch(DATA_URL + '?t=' + Date.now()),
+                    fetch(TRADES_URL + '?t=' + Date.now())
+                ]);
+
+                const dash = await dashRes.json();
+                const trades = await tradesRes.json();
+
+                // Portfolio overview
+                const p = dash.portfolio || {};
+                document.getElementById('realized-pnl').textContent = formatEur(p.realized_pnl_eur || 0);
+                document.getElementById('realized-pnl').className = `text-xl font-bold font-mono ${pnlClass(p.realized_pnl_eur || 0)}`;
+
+                document.getElementById('unrealized-pnl').textContent = formatEur(p.unrealized_pnl_eur || 0);
+                document.getElementById('unrealized-pnl').className = `text-xl font-bold font-mono ${pnlClass(p.unrealized_pnl_eur || 0)}`;
+
+                document.getElementById('total-pnl').textContent = formatEur(p.total_pnl_eur || 0);
+                document.getElementById('total-pnl').className = `text-xl font-bold font-mono ${pnlClass(p.total_pnl_eur || 0)}`;
+
+                document.getElementById('win-rate').textContent = `${p.win_rate || 0}%`;
+                document.getElementById('trade-count').textContent = `${p.open_positions || 0} / ${p.closed_trades || 0}`;
+
+                const avgTrade = p.closed_trades > 0 ? (p.realized_pnl_eur / p.closed_trades) : 0;
+                document.getElementById('avg-trade').textContent = formatEur(avgTrade);
+                document.getElementById('avg-trade').className = `text-xl font-bold font-mono ${pnlClass(avgTrade)}`;
+
+                // BTC regime
+                const regime = dash.btc_regime || 'UNKNOWN';
+                const regimeBadge = document.getElementById('regime-badge');
+                const regimeText = document.getElementById('regime-text');
+                if (regime === 'BULLISH') {
+                    regimeBadge.className = 'regime-card px-4 py-2 regime-bullish';
+                    regimeText.innerHTML = '<span class="signal-dot dot-bullish"></span>BULLISH';
+                    regimeText.className = 'text-sm font-bold text-green-400';
+                } else {
+                    regimeBadge.className = 'regime-card px-4 py-2 regime-bearish';
+                    regimeText.innerHTML = '<span class="signal-dot dot-bearish pulse"></span>BEARISH';
+                    regimeText.className = 'text-sm font-bold text-red-400';
+                }
+
+                // Update new metric displays
+                document.getElementById('btc-regime-display').textContent = regime;
+                document.getElementById('btc-status-display').textContent = regime === 'BEARISH' ? 'Shorts allowed' : 'Shorts blocked';
+                const regimeDot = document.getElementById('regime-dot-display');
+                if (regime === 'BEARISH') {
+                    regimeDot.style.background = '#ef4444';
+                } else {
+                    regimeDot.style.background = '#10b981';
+                }
+
+                // Profit factor calculation
+                if (p.wins && p.losses) {
+                    const profitFactor = p.losses > 0 ? p.wins / p.losses : p.wins > 0 ? 999 : 0;
+                    document.getElementById('profit-factor-display').textContent = profitFactor.toFixed(2) + 'x';
+                    document.getElementById('profit-detail-display').textContent = `${p.wins}W / ${p.losses}L`;
+                }
+
+                // Win rate display
+                document.getElementById('win-rate-display').textContent = `${p.win_rate || 0}%`;
+                document.getElementById('win-detail-display').textContent = `${p.wins || 0}W / ${p.losses || 0}L`;
+
+                // Blacklist count (placeholder for now)
+                document.getElementById('blacklist-count').textContent = '2';
+
+                // Last scan
+                document.getElementById('last-scan').textContent = dash.timestamp ? 
+                    new Date(dash.timestamp).toLocaleString('en-IE', {dateStyle: 'short', timeStyle: 'short'}) : '—';
+
+                // Open positions
+                const positionsBody = document.getElementById('positions-body');
+                const openPos = dash.open_positions || {};
+                if (Object.keys(openPos).length === 0) {
+                    positionsBody.innerHTML = '<tr><td colspan="8" class="text-center text-slate-500 py-8">No open positions — waiting for signals</td></tr>';
+                } else {
+                    positionsBody.innerHTML = Object.entries(openPos).map(([sym, pos]) => {
+                        const dirBadge = pos.direction === 'LONG' ? 'badge-long' : 'badge-short';
+                        const pnlPct = pos.current_pnl_pct || 0;
+                        const pnlEur = pos.current_pnl_eur || 0;
+                        return `<tr>
+                            <td class="font-bold">${sym.replace('USDT','')}</td>
+                            <td><span class="${dirBadge}">${pos.direction}</span></td>
+                            <td class="font-mono">${parseFloat(pos.entry_price).toFixed(4)}</td>
+                            <td class="font-mono">${pos.current_price ? parseFloat(pos.current_price).toFixed(4) : '—'}</td>
+                            <td class="font-mono ${pnlClass(pnlEur)}">${formatEur(pnlEur)} (${formatPct(pnlPct)})</td>
+                            <td class="font-mono">${pos.bars_held || 0}d</td>
+                            <td class="text-xs text-slate-400">${pos.signal || '—'}</td>
+                            <td class="font-mono text-xs">${parseFloat(pos.stop).toFixed(4)}</td>
+                        </tr>`;
+                    }).join('');
+                }
+
+                // Trade history
+                const historyBody = document.getElementById('history-body');
+                const sortedTrades = [...trades].reverse();
+                if (sortedTrades.length === 0) {
+                    historyBody.innerHTML = '<tr><td colspan="9" class="text-center text-slate-500 py-8">No trades yet — system is monitoring for signals</td></tr>';
+                } else {
+                    historyBody.innerHTML = sortedTrades.map(t => {
+                        const dirBadge = t.direction === 'LONG' ? 'badge-long' : 'badge-short';
+                        const date = t.exit_date ? new Date(t.exit_date).toLocaleDateString('en-IE', {month: 'short', day: 'numeric'}) : '—';
+                        return `<tr>
+                            <td class="text-xs text-slate-400">${date}</td>
+                            <td class="font-bold">${(t.symbol || '').replace('USDT','')}</td>
+                            <td><span class="${dirBadge}">${t.direction}</span></td>
+                            <td class="font-mono">${parseFloat(t.entry_price).toFixed(4)}</td>
+                            <td class="font-mono">${parseFloat(t.exit_price).toFixed(4)}</td>
+                            <td class="font-mono ${pnlClass(t.pnl_pct)}">${formatPct(t.pnl_pct)}</td>
+                            <td class="font-mono ${pnlClass(t.pnl_eur)}">${formatEur(t.pnl_eur)}</td>
+                            <td class="text-xs">${t.reason || '—'}</td>
+                            <td class="font-mono text-xs">${t.bars_held || '—'}d</td>
+                        </tr>`;
+                    }).join('');
+                }
+
+                // P&L chart
+                renderPnlChart(trades);
+
+                // Token status (needs live data)
+                renderTokenStatus(dash);
+
+                // Today's signals
+                renderSignals(dash);
+
+            } catch (e) {
+                console.error('Error loading data:', e);
+                document.getElementById('signals-content').innerHTML = `<div class="text-red-400">Error loading data: ${e.message}</div>`;
+            } finally {
+                icon.classList.remove('refresh-spin');
+            }
+        }
+
+        function renderTokenStatus(dash) {
+            // Simple placeholder — will be populated by the scanner
+            document.getElementById('tokens-body').innerHTML = 
+                '<tr><td colspan="8" class="text-center text-slate-500 py-8">Token status loads with scanner data</td></tr>';
+        }
+
+        function renderSignals(dash) {
+            const entries = dash.today_entries || [];
+            const exits = dash.today_exits || [];
+            let html = '';
+            
+            if (entries.length === 0 && exits.length === 0) {
+                html = '<div class="text-slate-400 text-center py-8"><i class="fas fa-satellite-dish text-2xl mb-3 text-slate-600"></i><br>No new signals today. System is monitoring.</div>';
+            } else {
+                if (entries.length > 0) {
+                    html += '<div class="mb-4"><h3 class="text-green-400 text-sm font-semibold mb-2"><i class="fas fa-arrow-up mr-1"></i>Entry Signals</h3>';
+                    entries.forEach(e => {
+                        const dirClass = e.direction === 'LONG' ? 'text-green-400' : 'text-red-400';
+                        html += `<div class="flex items-center gap-2 py-1 text-sm">
+                            <span class="${dirClass} font-bold">${e.direction}</span>
+                            <span class="font-bold">${e.symbol.replace('USDT','')}</span>
+                            <span class="text-slate-400">@ ${parseFloat(e.price).toFixed(4)}</span>
+                            <span class="text-xs text-slate-500">${e.signal}</span>
+                            <span class="text-xs text-slate-500">BTC: ${e.btc_regime}</span>
+                        </div>`;
+                    });
+                    html += '</div>';
+                }
+                if (exits.length > 0) {
+                    html += '<div><h3 class="text-yellow-400 text-sm font-semibold mb-2"><i class="fas fa-arrow-down mr-1"></i>Exit Signals</h3>';
+                    exits.forEach(e => {
+                        html += `<div class="flex items-center gap-2 py-1 text-sm">
+                            <span class="font-bold">${e.symbol.replace('USDT','')}</span>
+                            <span class="text-slate-400">@ ${parseFloat(e.exit_price).toFixed(4)}</span>
+                            <span class="text-xs text-yellow-400">${e.reason}</span>
+                            <span class="text-xs ${pnlClass(e.pnl_eur)}">${formatEur(e.pnl_eur)}</span>
+                        </div>`;
+                    });
+                    html += '</div>';
+                }
+            }
+            document.getElementById('signals-content').innerHTML = html;
+        }
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadData, 300000);
+
+        // Initial load
+        loadData();
+    </script>
+</body>
+</html>
