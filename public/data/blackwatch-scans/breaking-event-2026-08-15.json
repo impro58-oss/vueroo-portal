@@ -1,0 +1,107 @@
+{
+  "scan_time": "2026-08-15T03:02:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner",
+  "schedule": "4h",
+  "domains_scanned": 12,
+  "queries_executed": 36,
+  "category_5_events_active": 2,
+  "new_events_detected": 0,
+  "events": [
+    {
+      "domain": "middle_east",
+      "title": "Iran War / Strait of Hormuz Crisis — ONGOING",
+      "severity": 5,
+      "category": "war_military",
+      "status": "ACTIVE",
+      "summary": "Iran resumed attacks on ships in Strait of Hormuz Aug 15. Hormuz traffic slowed. Peace talks stalled. Trump tells Americans to accept high gas prices. US Treasury threatens 'unprecedented economic measures'. Iran demands: lift naval blockade, withdraw forces, pay reparations, release frozen assets. Oil spill cleanup off Qeshm Island. Houthi threats continue.",
+      "sources": ["AP News", "CNN", "The Hindu", "Canberra Times", "ISW", "Wikipedia"],
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security", "social_cohesion"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    },
+    {
+      "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic — ONGOING, Worsening",
+      "severity": 5,
+      "category": "pandemic",
+      "status": "ACTIVE",
+      "summary": "Bundibugyo ebolavirus outbreak. 2,184 deaths (47% CFR). 'Ebola is winning' per UN — killing one person every 30 minutes. Spread to 6 of 26 DRC provinces. Uganda outbreak declared over July 28 (20 cases total). Imported cases in US (medevaced to Germany) and France. No approved vaccine for BDBV. Health worker strikes in DRC. Fastest-growing Ebola outbreak on record, second largest ever.",
+      "sources": ["UN News", "WHO", "ECDC", "The Guardian", "Wikipedia", "ReliefWeb"],
+      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    }
+  ],
+  "developing_signals": [
+    {
+      "domain": "japan",
+      "title": "US-Treasury-Coordinated Yen Intervention Fading",
+      "severity": 3,
+      "category": "sovereign_intervention",
+      "summary": "Joint US-Japan yen intervention July 31 ($36-59B) already fading. Yen back to ~159 from 157 post-intervention. Bessent signals 'whatever it takes' but Bloomberg flags limited firepower. BOJ Governor Ueda hints at Sept rate hike. PM Takaichi supportive of near-term hike. Goldman says $1T reserves allows more rounds.",
+      "sources": ["Bloomberg", "CNBC", "Fortune", "NYT", "GuruFocus"],
+      "escalate_to": ["currency", "fin_stability"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    },
+    {
+      "domain": "eu_ecb",
+      "title": "ECB Expected to Hike Rates to 2.50% in September",
+      "severity": 3,
+      "category": "emergency_rate",
+      "summary": "Reuters poll: 57/69 economists see ECB hiking deposit rate 25bps to 2.50% in September. Hawkish shift. ECB unwinding QE programmes. UK gilt yields at 5.05% (10Y) / 5.7% (30Y). Both ECB and BOJ expected to raise rates in September.",
+      "sources": ["Reuters", "FXStreet", "TMGM", "Morningstar"],
+      "escalate_to": ["europe", "fin_stability"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    },
+    {
+      "domain": "em_asia",
+      "title": "South Korean Won Sharpest Swings Since Financial Crisis",
+      "severity": 3,
+      "category": "currency_crisis",
+      "summary": "Won nears 1,400/dollar after weakening to 1,550. Sharpest swings since 2008 crisis. India lured $40B from diaspora via high-yield dollar deposits to stabilize rupee. EM Asia currency defense strategies shifting — guarding reserves rather than defending rates.",
+      "sources": ["Korea Herald", "Bloomberg"],
+      "escalate_to": ["currency", "fin_stability"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    },
+    {
+      "domain": "financial_system",
+      "title": "Private Credit Distress Rising",
+      "severity": 2,
+      "category": "market_dislocation",
+      "summary": "Boston Fed research finds growing share of private credit borrowers making PIK (payment-in-kind) — rolling interest into loan balances instead of paying cash. Sign borrowers are low on funds. Fitch default rate includes bankruptcies + deferred interest. Not imminent crisis but deteriorating.",
+      "sources": ["Axios", "Boston Fed"],
+      "escalate_to": ["fin_stability", "liquidity"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    },
+    {
+      "domain": "latam",
+      "title": "Argentina Central Bank Reform Vote Aug 19",
+      "severity": 2,
+      "category": "sovereign_crisis",
+      "summary": "Milei's BCRA charter reform pushed toward Aug 19 vote. Aims to focus BCRA solely on currency stability, ban state financing. Argentina country risk at 451bps, decoupling from regional rally. US Treasury ESF provided $2.5B lifeline to Argentina, then used for yen rescue.",
+      "sources": ["Rio Times", "Tekedia"],
+      "escalate_to": ["fin_stability", "currency"],
+      "timestamp": "2026-08-15T03:02:00Z"
+    }
+  ],
+  "domain_summaries": {
+    "us_fed": "Fed expected to hold at 3.50-3.75%. New chair signaling inflation focus. ~30% market probability of hike. No emergency action detected.",
+    "latam": "Argentina BCRA reform vote Aug 19. Country risk at 451bps. Milei pushing central bank independence. No new emergency.",
+    "eu_ecb": "ECB expected to hike to 2.50% in September (Reuters poll). Hawkish shift. QE unwinding continues. Not emergency but notable tightening.",
+    "uk": "Gilt yields at 5.05% (10Y) / 5.7% (30Y). No emergency intervention detected. BOE holding.",
+    "japan": "Joint US-Japan yen intervention (July 31, $36-59B) fading. Yen back to ~159. BOJ hints at Sept hike. Bessent 'whatever it takes' pledge. Significant but not CAT-5.",
+    "china": "PBOC conducting overnight reverse repos for liquidity. Yuan fix slightly stronger at 6.7882. No emergency detected.",
+    "em_asia": "Korean won near 1,400 — sharpest swings since 2008. India stabilizing rupee via diaspora deposits. Currency defense shifting to reserve-guarding.",
+    "middle_east": "CAT-5 ONGOING: Iran resumed ship attacks Aug 15. Hormuz traffic halted. Peace talks stalled. Oil spill off Qeshm Island.",
+    "africa": "No new coup/conflict. South Africa local elections upcoming with crime focus. Ebola in DRC (cross-listed). Chad coup belt stable.",
+    "financial_system": "Private credit PIK distress rising. AI cyber autonomy risk for banks flagged. Russia banking bankruptcies +13.7% YoY. Not systemic yet.",
+    "commodities": "Brent $82.37 (+32.91% YoY). Gold $4,449 COMEX / $4,349 spot. IEA warns deepest supply deficit in 5 years. EIA forecasts elevated prices until Hormuz normalizes.",
+    "pandemic_health": "CAT-5 ONGOING: Ebola 2,184 deaths, 47% CFR, 6 DRC provinces. 'Ebola is winning' — one death every 30 minutes. Uganda outbreak over. Imported cases US + France."
+  },
+  "assessment": {
+    "new_cat5": false,
+    "existing_cat5_escalation": true,
+    "signal_board_updated": true,
+    "dashboard_push_required": true,
+    "telegram_notify_required": true
+  }
+}
