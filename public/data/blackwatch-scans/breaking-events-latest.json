@@ -1,167 +1,108 @@
 {
-  "scan_time": "2026-08-15T07:03:33.000000+00:00",
+  "scan_time": "2026-08-15T15:03:25.261812",
   "scan_type": "breaking_event",
-  "events_detected": 8,
+  "scanner": "BlackWatch Breaking Event Scanner v1.0",
+  "domains_scanned": 12,
+  "queries_executed": 18,
+  "events_detected": 7,
+  "category_5_count": 5,
   "events": [
     {
-      "title": "Strait of Hormuz Crisis - Iran Closure Disrupting Global Oil Supply",
       "domain": "middle_east",
-      "category": "energy_shock",
+      "category": "war_military",
       "severity": 5,
-      "summary": "Iran IRGC closed Strait of Hormuz in retaliation for US/Israeli strikes. 20M barrels/day of oil traffic disrupted. Biggest global energy disruption in decades. Brent at $93+, EIA forecasts $87 avg for 2026. Saudi Arabia rerouting oil around Africa.",
-      "sources": [
-        "CNN",
-        "Al Jazeera",
-        "IEA",
-        "EIA",
-        "NYT",
-        "Wikipedia"
-      ],
+      "title": "US-Israel war on Iran: Strait of Hormuz blockade ongoing, two more ships attacked",
+      "summary": "Iran has maintained blockade of Strait of Hormuz since Feb 2026. Reuters reports Hormuz shipping traffic fell to 6 vessels (Aug 11). US warned it will step up economic pressure (Aug 14). Two more ships attacked. Oil prices surging.",
+      "source": "Reuters, NYT, Al Jazeera, Wikipedia",
+      "date": "2026-08-15",
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
-        "food_security",
-        "supply_chain"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+        "supply_chain",
+        "food_security"
+      ]
     },
     {
-      "title": "Historic US-Japan Joint Currency Intervention - Yen Rescue Unravelling",
-      "domain": "japan",
+      "domain": "us_fed",
       "category": "sovereign_intervention",
       "severity": 4,
-      "summary": "US Treasury and Japan jointly intervened to support yen (first in 15 years). US sold euros (not dollars) to buy yen, blindsiding ECB. Japan spent est. $36-59B. Yen has already erased half the gains, back to 159. BOJ hinting at September rate hike. 30Y Treasury yield at 5.2% - highest since 2007.",
-      "sources": [
-        "CNBC",
-        "Bloomberg",
-        "Fortune",
-        "Reuters",
-        "FT",
-        "Telegraph"
-      ],
+      "title": "US Treasury executed first joint FX intervention with Japan since 1998 - unravelling",
+      "summary": "US Treasury bought yen alongside Japan on July 31, 2026 - first such intervention since 1998. Used FIMA repo facility and executed in euros. Yen gains have unravelled back to ~159. 30Y Treasury yield at 5.24%, highest since 2007.",
+      "source": "Reuters, Bloomberg, NYT, PIIE, Telegraph",
+      "date": "2026-08-15",
       "escalate_to": [
         "fin_stability",
         "currency",
         "us_cycle"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+      ]
     },
     {
-      "title": "2026 Ebola Epidemic - Fastest Growing Outbreak on Record, WHO PHEIC Declared",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "title": "Yen approaching 160 again despite joint US-Japan intervention - BOJ pressured to hike rates",
+      "summary": "Joint US-Japan intervention on July 31 unravelled. Yen back near 159-160. BOJ government said to support faster rate hike (Bloomberg). PM Takaichi approval rating hurt by rising prices. Next BOJ move likely Sep/Oct.",
+      "source": "Bloomberg, Reuters, NYT, Telegraph",
+      "date": "2026-08-15",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ]
+    },
+    {
       "domain": "pandemic_health",
       "category": "pandemic",
-      "severity": 5,
-      "summary": "Bundibugyo ebolavirus outbreak in DRC/Uganda. 4,566 confirmed cases, 2,128 deaths as of Aug 11. Declared WHO Public Health Emergency of International Concern on May 17. Fastest growing Ebola outbreak on record. Existing treatments certified for Zaire species, not Bundibugyo. Deaths doubled in last 20 days.",
-      "sources": [
-        "WHO",
-        "CDC",
-        "ECDC",
-        "Washington Post",
-        "UN News",
-        "Wikipedia"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion",
-        "food_security"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
-    },
-    {
-      "title": "2026 Iran War - Active Conflict with US/Israel, Hormuz Closure",
-      "domain": "middle_east",
-      "category": "war_military",
-      "severity": 5,
-      "summary": "Active war between Iran and US/Israel. Iran launched retaliatory missile/drone strikes on US embassies, military installations, and oil infrastructure. IRGC closed Strait of Hormuz. US conducting strikes on Iran. Trump claims control of Hormuz, Iran denies. Ceasefire talks ongoing but fragile.",
-      "sources": [
-        "CNN",
-        "Britannica",
-        "Wikipedia",
-        "Fox News"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
-    },
-    {
-      "title": "Gaza War Escalation - Netanyahu Refuses Withdrawal, Ceasefire Destabilized",
-      "domain": "middle_east",
-      "category": "war_military",
       "severity": 4,
-      "summary": "Israeli airstrikes on Gaza resumed (Aug 13). Netanyahu says forces will not withdraw until Hamas genuinely disarmed. 70,000+ Gazans killed. Trump Board of Peace reached disarmament agreement July 31 but implementation stalled. Ceasefire destabilized by Israeli attacks on Hamas officials.",
-      "sources": [
-        "Al Jazeera",
-        "BBC",
-        "Britannica",
-        "Wikipedia",
-        "New Arab"
-      ],
+      "title": "2026 Ebola epidemic: 4,665 cases, 2,184 deaths - fastest growing outbreak on record",
+      "summary": "Bundibugyo ebolavirus outbreak in DRC/Uganda. 4,665 confirmed cases, 2,184 deaths as of Aug 12. Declared public health emergency. Second largest Ebola outbreak in history. Existing treatments certified for Zaire species, not Bundibugyo.",
+      "source": "ECDC, Washington Post, Wikipedia, WHO",
+      "date": "2026-08-15",
       "escalate_to": [
-        "middle_east",
-        "geopolitical",
-        "social_cohesion"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
-    },
-    {
-      "title": "UK Faces Worst Food Security Crisis in Decades - Drought",
-      "domain": "commodities",
-      "category": "food_crisis",
-      "severity": 3,
-      "summary": "Three quarters of England in drought. Soils parched, crop failures. Market analysts warn most severe food security crisis in decades. Afghanistan hunger crisis affects 14M people. Nigeria food insecurity deteriorating due to Middle East conflict and climate shocks.",
-      "sources": [
-        "Guardian",
-        "Telegraph",
-        "UN News",
-        "Action Against Hunger"
-      ],
-      "escalate_to": [
-        "food_security",
         "supply_chain",
         "social_cohesion"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+      ]
     },
     {
-      "title": "China Property Crisis - $148B Expiring Leases Time Bomb, $130B Defaults",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 4,
+      "title": "Oil prices surge 5%+ on Hormuz stalemate - gold strengthens in tandem",
+      "summary": "Hormuz talks stalled. Oil surged 5%+ in single session. EIA forecasts elevated oil prices until global flows normalize. Gold climbing as safe haven. 2026 Iran war fuel crisis creating economic divide in South America.",
+      "source": "EIA, BigGo Finance, NYT, Wikipedia",
+      "date": "2026-08-15",
+      "escalate_to": [
+        "energy",
+        "food_security",
+        "supply_chain"
+      ]
+    },
+    {
+      "domain": "eu_ecb",
+      "category": "emergency_rate",
+      "severity": 3,
+      "title": "ECB set to hike rates to 2.5% in September - 83% of economists agree",
+      "summary": "Reuters poll: 57 of 69 economists expect ECB to raise deposit rate by 25bps to 2.50% in September. Eurozone inflation rose to 2.9% in July, core to 2.5%. Middle East conflict pushing energy prices higher. Shortest tightening drive since 2011.",
+      "source": "Reuters, Morningstar, FXStreet, Vanguard",
+      "date": "2026-08-15",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
       "domain": "china",
       "category": "sovereign_crisis",
       "severity": 3,
-      "summary": "China racing to solve $148B property threat as land leases expire. Office values down 40%+ from peaks. Developers defaulted on roughly $130B of debt. PBOC pledging appropriately loose monetary stance. Overnight reverse repo operations scheduled.",
-      "sources": [
-        "Bloomberg",
-        "Firstpost",
-        "China Money Network"
-      ],
+      "title": "China racing to defuse $148B property time bomb as leases expire",
+      "summary": "Bloomberg reports China facing $148B property threat. PBOC injected 349B yuan via overnight reverse repos - first mid-month operation of this kind. Deflation war faltering. Property sector crisis ongoing since 2020.",
+      "source": "Bloomberg, Asia Times, Trading Economics",
+      "date": "2026-08-15",
       "escalate_to": [
         "china",
         "fin_stability"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
-    },
-    {
-      "title": "Private Credit Distress - Growing PIK Payments, Borrower Strain",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 3,
-      "summary": "Fed Boston research shows growing share of private credit borrowers making payments-in-kind (PIK) instead of cash. Fitch default rate includes bankruptcies and deferred interest. Highly-indebted companies ditching private credit for cheaper bank loans. Not imminent crisis but deteriorating.",
-      "sources": [
-        "Axios",
-        "Bloomberg",
-        "American Banker"
-      ],
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "timestamp": "2026-08-15T07:03:33.000000+00:00"
+      ]
     }
   ],
-  "domains_scanned": 12,
-  "queries_executed": 36,
-  "category_5_count": 5
+  "summary": "7 breaking events detected. 5 category-5 (severity 4+). Active war: Iran/US/Israel. Hormuz blocked. Ebola epidemic. US-Japan FX intervention unravelling. Oil surging. ECB rate hike incoming. China property crisis."
 }
