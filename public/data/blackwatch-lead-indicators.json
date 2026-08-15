@@ -1,7 +1,7 @@
 {
-  "scan_id": "blackwatch-2026-08-14",
-  "scan_timestamp": "2026-08-14T01:30:00Z",
-  "scan_local_time": "2026-08-14 02:30 Europe/Dublin",
+  "scan_id": "blackwatch-2026-08-15",
+  "scan_timestamp": "2026-08-15T01:30:00Z",
+  "scan_local_time": "2026-08-15 02:30 Europe/Dublin",
   "scanner": "BlackWatch Lead Indicator Scanner",
   "scanner_version": "2.0",
   "status": "COMPLETE",
@@ -10,34 +10,46 @@
       "findings": [
         {
           "id": "vi-001",
-          "headline": "US-Japan coordinated yen intervention — largest single-day FX intervention in history ($53B / ¥8.45T)",
-          "source": "CNBC, OMFIF, CMG Private Wealth, The Economist",
-          "date": "2026-08-07",
-          "summary": "Unprecedented US-Japan coordinated intervention to defend the yen. US Treasury Secretary Bessent joined Japan in defending the yen using American foreign-exchange reserves. USD/JPY trading near 159.35 as of Aug 11 despite intervention. BoJ signaling continued rate hikes toward 3%, which would be like 'going to the moon' after 20 years of 0% rates. Jim Rickards calls it 'the financial equivalent of all-out nuclear war' — the biggest story in the world.",
+          "headline": "Yen erases half of intervention gains — traders testing Bessent's resolve as USD/JPY breaks back through 160",
+          "source": "Bloomberg, CNBC, Telegraph",
+          "date": "2026-08-10",
+          "summary": "The yen has wiped out half of its rally from the unprecedented US-Japan coordinated intervention. Bloomberg reports this is a 'psychologically significant move' for traders who remain on alert for further official support. The 160 level is now described as 'a political line in the sand' — another rapid move through could draw officials back into the market. Intervention is functioning as a guardrail, not a reversal mechanism.",
           "imminence": 9,
           "impact": 8,
           "threads": ["japan_yen", "us_recession"],
           "confidence": "HIGH",
-          "url": "https://www.cnbc.com/2026/08/07/japan-us-yen-intervention-global-currency-markets.html"
+          "url": "https://www.bloomberg.com/news/articles/2026-08-10/yen-underperforms-g-10-peers-as-intervention-boost-fades"
         },
         {
           "id": "vi-002",
-          "headline": "ECB officials view US use of euros in trade as 'unprecedented breach of monetary cooperation conventions'",
-          "source": "ABC News Australia",
-          "date": "2026-08-08",
-          "summary": "Senior ECB officials reportedly viewed the US decision to use euros in its trade actions as an unprecedented breach of longstanding conventions on cooperation between western monetary authorities. This represents a verbal intervention signal of fracturing western monetary alliance.",
-          "imminence": 7,
+          "headline": "Japan's Mimura warns forex markets: 'Prepared to take suitable measures' on yen weakness",
+          "source": "Stockpil, TradingEconomics",
+          "date": "2026-08-14",
+          "summary": "Japan's top currency diplomat Atsushi Mimura signals readiness to intervene again as the yen weakens. Markets speculating about a possible BoJ rate hike in September or October. US Treasury Secretary Bessent says Japan should reinforce currency intervention with policies and economic fundamentals that support the yen. Verbal intervention escalating toward action.",
+          "imminence": 9,
           "impact": 7,
-          "threads": ["euro_crisis"],
-          "confidence": "MEDIUM",
-          "url": "https://www.abc.net.au/news/2026-08-08/yen-japan-united-states-euro-asia-financial-crisis-scott-bessent/107006174"
+          "threads": ["japan_yen"],
+          "confidence": "HIGH",
+          "url": "https://stockpil.com/japan-mimura-forex-intervention-yen/"
         },
         {
           "id": "vi-003",
+          "headline": "Bessent calls BoJ 'behind the curve' — US pushing Japan toward September rate hike",
+          "source": "CryptoBriefing, CNBC",
+          "date": "2026-08-12",
+          "summary": "US Treasury Secretary Bessent publicly calls BoJ 'behind the curve' after first joint yen intervention since 2011, pushing for rate hikes at September. This is extraordinary public pressure from the US on Japan's monetary sovereignty — fracturing the traditional alliance coordination norms. The US is essentially dictating BoJ policy timelines.",
+          "imminence": 8,
+          "impact": 8,
+          "threads": ["japan_yen", "us_recession"],
+          "confidence": "HIGH",
+          "url": "https://cryptobriefing.com/boj-us-division-yen-rate-hike/"
+        },
+        {
+          "id": "vi-004",
           "headline": "Bloomberg op-ed: Fed, ECB, and BoE 'must communicate better, not less' — transparency revolution under strain",
           "source": "Bloomberg",
           "date": "2026-08-12",
-          "summary": "New Fed Chair Kevin Warsh's limited forward guidance creating market uncertainty. The FOMC left rates on hold, generating initial relief but the lack of communication clarity is itself a signal. Central bank communication infrastructure is fraying.",
+          "summary": "Fed Chair Kevin Warsh's limited forward guidance creating market uncertainty. The FOMC left rates on hold. Central bank communication infrastructure fraying across Fed, ECB, and BoE simultaneously. The transparency revolution that defined post-Greenspan central banking is reversing.",
           "imminence": 6,
           "impact": 6,
           "threads": ["us_recession", "euro_crisis"],
@@ -50,22 +62,22 @@
       "findings": [
         {
           "id": "al-001",
-          "headline": "US government surveillance of organizations never accused of crimes — expansive financial records obtained",
-          "source": "New York Times",
+          "headline": "Treasury undermines Corporate Transparency Act — senators blast FinCEN rule as 'green light for crooks'",
+          "source": "The Atlantic, The Hill",
           "date": "2026-08-14",
-          "summary": "NYT reporting that the government conducted expansive surveillance, infiltrated group chats and obtained financial records of organizations never accused of crimes. This is a leak/whistleblower signal suggesting internal dissent within government ranks.",
+          "summary": "Treasury decision enables criminals to use anonymous shell companies. Senators Grassley and Whitehouse issue joint statement condemning the move as undermining law enforcement and national security tools. Transparency International calls it a 'getaway vehicle' for criminal financing. This is a leak/whistleblower-adjacent signal of internal Treasury dysfunction.",
           "imminence": 5,
           "impact": 5,
           "threads": ["us_recession"],
-          "confidence": "MEDIUM",
-          "url": "https://www.nytimes.com/"
+          "confidence": "HIGH",
+          "url": "https://thehill.com/homenews/senate/6027901-senators-blast-treasury-rule/"
         },
         {
           "id": "al-002",
-          "headline": "US government group chat leaks — national security leaders' Signal chat exposed",
+          "headline": "US government group chat leaks — continuing fallout from Signal chat exposure",
           "source": "Wikipedia (aggregated reporting)",
           "date": "2026-08-14",
-          "summary": "Continuing fallout from the March 2025 US government group chat leak incident where national security leaders were observed on a group chat discussing relations with Europe, protecting Saudi oil facilities, and Yemen operations. The incident remains a live story.",
+          "summary": "Continuing fallout from March 2025 US government group chat leak. National security leaders were observed discussing relations with Europe, protecting Saudi oil facilities, and Yemen operations. The incident remains a live story with ongoing implications for Middle East policy transparency.",
           "imminence": 4,
           "impact": 5,
           "threads": ["middle_east_war"],
@@ -78,39 +90,51 @@
       "findings": [
         {
           "id": "cb-001",
-          "headline": "Fed Chair Kevin Warsh leaves rates on hold with limited forward guidance — market pricing uncertainty",
-          "source": "MUFG Research, Reuters, Cleveland Fed",
-          "date": "2026-08-11",
-          "summary": "FOMC decision to hold rates generated initial market relief as the market had been pricing a higher-than-normal probability of a surprise hike amid limited forward guidance from new Fed Chair Kevin Warsh. USD weakened against all G10 currencies following the decision, reinforced by intervention and a soft NFP report.",
-          "imminence": 8,
-          "impact": 7,
-          "threads": ["us_recession", "japan_yen"],
-          "confidence": "HIGH",
-          "url": "https://www.mufgresearch.com/fx/fx-weekly-7-august-2026/"
-        },
-        {
-          "id": "cb-002",
-          "headline": "BoJ signaling continued rate hikes toward 3% — 'like going to the moon' after 20 years of 0%",
-          "source": "Economic Collapse Blog, CNBC, The Economist",
-          "date": "2026-08-13",
-          "summary": "Bank of Japan is signaling it will keep raising interest rates. Even 3% for yen interest rates is described as 'like going to the moon' when it's been 0% for 20 years. The yen carry trade is actively unwinding. The US is using Fed dollars to prop up the yen so Japan doesn't have to raise rates fast, so the carry trade doesn't unwind, so markets don't collapse.",
-          "imminence": 9,
+          "headline": "BoJ set to hike rates as soon as September 17-18 meeting — 'early rate hike has come into sight'",
+          "source": "Reuters via FXStreet, CNBC",
+          "date": "2026-08-14",
+          "summary": "Reuters sources indicate a strong chance the BoJ will raise rates at its next policy meeting on September 17-18. Markets now price 65% chance of a 25bps hike in September and ~40bps of tightening by year-end. Goldman says Japan's $1 trillion in reserves leaves 'plenty of capacity' for further interventions. If BoJ doesn't deliver September hike, renewed yen downward pressure expected.",
+          "imminence": 10,
           "impact": 9,
           "threads": ["japan_yen", "us_recession", "asian_contagion"],
           "confidence": "HIGH",
-          "url": "https://www.economist.com/finance-and-economics/2026/08/13/when-japan-buys-yen-it-unwinds-a-dangerous-trade"
+          "url": "https://www.fxstreet.com/news/boj-set-to-hike-rates-as-soon-as-september-202608140605"
+        },
+        {
+          "id": "cb-002",
+          "headline": "Fed Chair Warsh reaffirms commitment to price stability — 'no tolerance for persistently elevated inflation'",
+          "source": "TradingEconomics, Federal Reserve",
+          "date": "2026-07-29",
+          "summary": "Fed Chair Warsh's semiannual monetary policy remarks reaffirm hawkish stance. FOMC left rates on hold. Limited forward guidance creating market uncertainty. Fed also issued enforcement action on Aug 13. Warsh's communication style is markedly different from Powell's transparency-era approach.",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["us_recession"],
+          "confidence": "HIGH",
+          "url": "https://tradingeconomics.com/united-states/interest-rate"
         },
         {
           "id": "cb-003",
-          "headline": "ECB independence risks rise with debt — France 120% and Italy 130% debt-to-GDP ratios",
-          "source": "Commerzbank via FXStreet",
+          "headline": "ECB independence risks rise with debt — France 120% and Italy 130% debt-to-GDP, heat-related fiscal strain",
+          "source": "Commerzbank via FXStreet, Al Habtoor Research Centre",
           "date": "2026-08-13",
-          "summary": "Commerzbank warns that ECB independence risks are rising with debt levels. France and Italy debt-to-GDP ratios likely to continue rising. This is a structural euro area risk signal.",
+          "summary": "Commerzbank warns ECB independence risks rising with debt levels. AI-based Central Bank Pressure Index shows political pressure threatening ECB. France and Italy flagged as at risk of breaching Maastricht 3% deficit ceiling once heat-related costs incorporated. Structural euro area risk building.",
           "imminence": 6,
           "impact": 7,
           "threads": ["euro_crisis"],
           "confidence": "HIGH",
           "url": "https://www.fxstreet.com/news/european-central-bank-independence-risks-rise-with-debt-commerzbank-202608131142"
+        },
+        {
+          "id": "cb-004",
+          "headline": "RBA holds at 4.35% — August 2026 monetary policy decision",
+          "source": "RBA Official",
+          "date": "2026-08-11",
+          "summary": "Reserve Bank of Australia left cash rate unchanged at 4.35%. Holding pattern across major central banks. BCB (Brazil) also signaling tighter monetary policy for longer due to demand-driven inflation. Global rate environment remaining restrictive.",
+          "imminence": 5,
+          "impact": 5,
+          "threads": ["asian_contagion"],
+          "confidence": "HIGH",
+          "url": "https://www.rba.gov.au/media-releases/2026/mr-26-19.html"
         }
       ]
     },
@@ -118,39 +142,63 @@
       "findings": [
         {
           "id": "gp-001",
-          "headline": "Four-way geopolitical convergence: Strait of Hormuz + Russia-Ukraine escalation + North Korea integration + US-China multi-domain confrontation",
+          "headline": "Strait of Hormuz crisis — traffic falls to one-week low, Iran insists strait stays closed until US meets demands",
+          "source": "Reuters, CNN, NYT, Wikipedia",
+          "date": "2026-08-13",
+          "summary": "Active and escalating: Hormuz shipping traffic at one-week low. Iran's FM Araghchi warns Washington to 'be careful' after Trump claims US has 'full control' of the strait. Iran says any deal with Oman won't lead to full reopening — strait remains closed until US lifts naval blockade. Shipping data doesn't back Trump's claims. Only 8 vessels crossed in recent count. World burning through oil stockpiles.",
+          "imminence": 10,
+          "impact": 10,
+          "threads": ["middle_east_war", "china_collapse"],
+          "confidence": "HIGH",
+          "url": "https://www.cnn.com/2026/08/13/world/live-news/iran-war-trump"
+        },
+        {
+          "id": "gp-002",
+          "headline": "Hormuz to Taiwan: geopolitics of chokepoints in fracturing global order — 5 crises converging",
           "source": "Foreign Affairs Forum",
-          "date": "2026-08-09",
-          "summary": "First week of August 2026 delivered a concentrated burst of geopolitical signals that, taken together, describe the convergence of four previously distinct crises: the Strait of Hormuz closure and contested reopening, Russia's escalating missile campaign against Ukraine, deepening of North Korea's military integration into the European war, and transformation of US-China economic rivalry into a multi-domain confrontation spanning trade, maritime sovereignty, and energy politics.",
+          "date": "2026-08-14",
+          "summary": "Convergence of five distinct crises: military and economic competition waged through control of chokepoints, critical technologies, and supply chains. Hormuz + Taiwan + Russia-Ukraine + North Korea integration + US-China multi-domain confrontation. This is the geopolitical architecture of a fracturing world order.",
           "imminence": 9,
           "impact": 9,
           "threads": ["middle_east_war", "china_collapse"],
           "confidence": "HIGH",
-          "url": "https://www.faf.ae/home/2026/8/9/fracture-lines-how-hormuz-kyiv-pyongyang-and-beijing-are-converging-into-the-worlds-most-dangerous-geopolitical-moment"
-        },
-        {
-          "id": "gp-002",
-          "headline": "Strait of Hormuz crisis — Iran demands US lift blockade before Tehran opens Hormuz; oil +5%",
-          "source": "Al Jazeera, CNBC, NYT, Wikipedia",
-          "date": "2026-08-10",
-          "summary": "Active crisis: Iran's Foreign Ministry says US must lift its blockade before Tehran will fully open Hormuz. Trump claims 'complete control' over the strait. Iran reportedly allowing only Chinese vessels to pass. Oil prices jumped ~5% on doubt a deal will be reached. Houthi rebels escalating strikes on Saudi oil tankers — claimed missile attack on Saudi tanker Wafa on Aug 5.",
-          "imminence": 10,
-          "impact": 9,
-          "threads": ["middle_east_war", "china_collapse"],
-          "confidence": "HIGH",
-          "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-climb-as-iranian-demands-cloud-outlook-for-strait-of-hormuz"
+          "url": "https://www.faf.ae/home/2026/8/14/hormuz-to-taiwan-the-geopolitics-of-chokepoints-in-a-fracturing-global-order"
         },
         {
           "id": "gp-003",
+          "headline": "South Korea-US major joint military drills August 17-27 — drone counter-exercises amid North Korea tensions",
+          "source": "FDD Overnight Brief",
+          "date": "2026-08-11",
+          "summary": "South Korea and US conducting major joint military drills August 17-27, incorporating drone counter-exercises and GPS disruption training. North Korea's KCNA carrying commentary condemning 'reckless arms buildup.' Military posture escalating on Korean peninsula simultaneous with Hormuz crisis.",
+          "imminence": 8,
+          "impact": 7,
+          "threads": ["middle_east_war", "asian_contagion"],
+          "confidence": "HIGH",
+          "url": "https://www.fdd.org/overnight-brief/august-11-2026/"
+        },
+        {
+          "id": "gp-004",
           "headline": "CISA maintains elevated advisory posture for energy, financial, and defense networks — DEFCON level elevated",
           "source": "DEFCON Level",
           "date": "2026-08-12",
-          "summary": "CISA maintaining elevated advisory posture for critical infrastructure (energy, financial, defense networks) as of August 2026. Geopolitical conditions warrant heightened alert status.",
+          "summary": "CISA maintaining elevated advisory posture for critical infrastructure (energy, financial, defense networks) as of August 2026. Geopolitical conditions warrant heightened alert status across multiple domains.",
           "imminence": 7,
           "impact": 6,
           "threads": ["middle_east_war"],
           "confidence": "MEDIUM",
           "url": "https://www.defconlevel.com/current-level"
+        },
+        {
+          "id": "gp-005",
+          "headline": "Trump says Iran deal 'coming soon' — but military pressure on Tehran escalating",
+          "source": "Fox News",
+          "date": "2026-08-09",
+          "summary": "Trump publicly says Iran deal is 'coming soon' while military and economic pressure on Tehran continues escalating. Contradictory signals from White House — diplomatic optimism vs. active blockade. Three crew members reported dead in Red Sea as tensions boil in waterways connected to Iran war.",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["middle_east_war"],
+          "confidence": "MEDIUM",
+          "url": "https://www.foxnews.com/video/6403058896112"
         }
       ]
     },
@@ -158,39 +206,51 @@
       "findings": [
         {
           "id": "sc-001",
-          "headline": "Container rates extend gains as carriers tighten transpacific capacity amid widespread supply chain disruption",
-          "source": "gCaptain",
-          "date": "2026-08-13",
-          "summary": "Container rates extending gains for straight weeks, with higher transpacific rates outweighing declines on Asia-Europe trades as carriers continue to manage capacity amid widespread supply chain disruption.",
-          "imminence": 7,
-          "impact": 6,
-          "threads": ["china_collapse"],
+          "headline": "Triple threat: Hormuz shipping tolls + record-low Rhine water levels + robot import ban — simultaneous pressure across all transport modes",
+          "source": "MarketScale",
+          "date": "2026-08-14",
+          "summary": "Three supply chain disruptions hitting simultaneously: new pressures on Persian Gulf shipping lanes (Hormuz), European inland waterways (Rhine at record lows), and domestic warehouse automation sourcing (robot import restrictions). Saudi-flagged tankers now being targeted — extends disruption to broader cargo category. Longer transit times mean higher safety stock, more working capital tied up, reduced schedule reliability.",
+          "imminence": 8,
+          "impact": 8,
+          "threads": ["middle_east_war", "euro_crisis", "china_collapse"],
           "confidence": "HIGH",
-          "url": "https://gcaptain.com/container-rates-extend-gains-as-carriers-tighten-transpacific-capacity/"
+          "url": "https://www.marketscale.com/industries/transportation/global-supply-chains-face-a-triple-threat-hormuz-tolls-record-low-rhine-levels-and-a-robot-import-ban"
         },
         {
           "id": "sc-002",
-          "headline": "Ningbo port suspends container operations; Shanghai flooding — China shipping paralyzed",
-          "source": "Gerudo Logistics",
-          "date": "2026-08-11",
-          "summary": "Ningbo suspended several port activities from August 7, including container gate operations, feeder services and vessel movements. Shanghai also experienced severe rainfall, flooding and widespread flight cancellations. Two of China's largest ports disrupted simultaneously.",
-          "imminence": 8,
-          "impact": 7,
-          "threads": ["china_collapse", "asian_contagion"],
+          "headline": "Port congestion and logistics disruption 2026 — ships queued at Rotterdam, containers sitting in Savannah",
+          "source": "GEP",
+          "date": "2026-08-13",
+          "summary": "Vessel tracking shows ships queued outside Rotterdam, containers sitting in Savannah, chassis shortages. Port congestion is systemic across 2026. Every transport mode under simultaneous pressure. Procurement teams forced to adapt to chronic unreliability.",
+          "imminence": 7,
+          "impact": 6,
+          "threads": ["us_recession", "euro_crisis"],
           "confidence": "HIGH",
-          "url": "https://www.gerudologistics.com/market-updates/china-shipping-market-update-august-2026"
+          "url": "https://www.gep.com/blog/strategy/port-congestion-logistics-disruption-what-procurement-teams-must-do"
         },
         {
           "id": "sc-003",
-          "headline": "US import cargo slowing past August as peak season cut short amid tariff shifts and geopolitical disruption",
-          "source": "Yahoo Finance, AJOT",
+          "headline": "US import cargo to slow past August — peak season cut short amid tariff shifts and geopolitical disruption",
+          "source": "Yahoo Finance, Just-Style",
           "date": "2026-08-10",
-          "summary": "US container imports forecast to stay elevated for August before gradually decreasing through end of 2026. Peak shipping season cut short. August forecast at 2.22M TEU, down 4.2% YoY. Mexico exports up double digits but visa crackdowns and border scrutiny straining trucking capacity.",
+          "summary": "US container imports forecast to stay elevated for August before gradually decreasing through end of 2026. Peak shipping season cut short. August at 2.22M TEU, down 4.2% YoY. Tariff shifts and geopolitical disruption compressing the shipping window.",
           "imminence": 6,
           "impact": 5,
           "threads": ["us_recession", "china_collapse"],
           "confidence": "HIGH",
           "url": "https://finance.yahoo.com/economy/policy/articles/us-import-cargo-slow-past-110048752.html"
+        },
+        {
+          "id": "sc-004",
+          "headline": "Saudi-flagged tankers now being targeted — Hormuz disruption extends to broader cargo categories",
+          "source": "MarketScale",
+          "date": "2026-08-11",
+          "summary": "Rerouting pressure building for over a year, but involvement of Saudi-flagged tankers — vessels previously considered less likely targets — marks an escalation extending disruption to a broader category of cargo. For import-heavy supply chains: longer transit times, higher safety stock, more working capital tied up in inventory at sea.",
+          "imminence": 8,
+          "impact": 7,
+          "threads": ["middle_east_war", "china_collapse"],
+          "confidence": "HIGH",
+          "url": "https://www.marketscale.com/industries/transportation/warehouse-construction-is-rebounding-robot-imports-are-restricted-and-freight-costs-keep-climbing-the-operational-signals-shaping-mid-2026"
         }
       ]
     },
@@ -198,27 +258,39 @@
       "findings": [
         {
           "id": "rc-001",
-          "headline": "OCC opens national bank charters to crypto firms — historic regulatory shift",
-          "source": "OCC via CoinDoo, Crypto.news, TheCCPress",
-          "date": "2026-08-13",
-          "summary": "US bank regulator OCC says lawful crypto firms should have a path to national bank status. Gould's statement indicates OCC will keep accepting applications from digital asset businesses rather than impose blanket exclusion. This is a major regulatory shift toward institutionalizing crypto within the US banking system.",
-          "imminence": 7,
-          "impact": 6,
-          "threads": ["crypto_collapse"],
+          "headline": "Fed proposes modernized rules for mutual banking organizations — sweeping changes to mutual holding company rules, CRA regulations",
+          "source": "Mondaq, Federal Reserve",
+          "date": "2026-08-12",
+          "summary": "Federal banking regulators propose sweeping changes to mutual holding company rules, insider lending thresholds, and Community Reinvestment Act regulations. Aims to reduce compliance burdens while modernizing framework. Part of broader regulatory restructuring under Warsh Fed.",
+          "imminence": 6,
+          "impact": 5,
+          "threads": ["us_recession"],
           "confidence": "HIGH",
-          "url": "https://crypto.news/occ-says-crypto-firms-can-pursue-u-s-bank-charters/"
+          "url": "https://www.mondaq.com/unitedstates/financial-services/1829462/federal-reserve-proposes-modernized-rules-for-mutual-banking-organizations"
         },
         {
           "id": "rc-002",
-          "headline": "Digital Asset Market Clarity Act (H.R.3633) — SEC to discuss easing crypto rules at August meeting",
-          "source": "Congress.gov, Politico, TheCCPress",
-          "date": "2026-08-10",
-          "summary": "Digital Asset Market Clarity Act progressing through Congress. SEC to discuss easing crypto rules at August 2026 meeting. CFTC and SEC both positioning US as 'crypto capital of the world.' Senate delayed vote on CLARITY Act until after August recess, removing near-term catalyst.",
+          "headline": "FICC U.S. Treasury clearing trade submission requirement — designation of longer period for SEC action",
+          "source": "Federal Register",
+          "date": "2026-08-11",
+          "summary": "Fixed Income Clearing Corporation proposing mandatory U.S. Treasury clearing trade submission requirement for all eligible secondary market transactions. SEC designating longer period for action. This is a structural change to Treasury market plumbing with implications for liquidity and systemic risk.",
           "imminence": 6,
-          "impact": 5,
-          "threads": ["crypto_collapse"],
+          "impact": 6,
+          "threads": ["us_recession"],
           "confidence": "HIGH",
-          "url": "https://www.politico.com/news/2026/08/10/democrats-brace-wall-street-regulators-crypto-plans-01031371"
+          "url": "https://www.federalregister.gov/documents/2026/08/11/2026-16280/self-regulatory-organizations-fixed-income-clearing-corporation-notice-of-designation-of-longer"
+        },
+        {
+          "id": "rc-003",
+          "headline": "Nasdaq exchanges amend market maker quoting obligations across ISE, MRX, and PHLX — September 1 implementation",
+          "source": "Federal Register",
+          "date": "2026-08-13",
+          "summary": "Three Nasdaq exchanges (ISE, MRX, PHLX) filing proposed rule changes to amend market maker quotation obligations. Removing duplicative compliance burden for PMMs and Preferred Market Makers. Implementation September 1, 2026. Structural options market changes.",
+          "imminence": 5,
+          "impact": 4,
+          "threads": [],
+          "confidence": "HIGH",
+          "url": "https://www.federalregister.gov/documents/2026/08/13/2026-16457/self-regulatory-organizations-nasdaq-phlx-llc-notice-of-filing-and-immediate-effectiveness-of"
         }
       ]
     },
@@ -226,22 +298,22 @@
       "findings": [
         {
           "id": "su-001",
-          "headline": "2025-2026 Iranian protests — nationwide protests and strikes continue",
-          "source": "Wikipedia",
-          "date": "2026-08-13",
-          "summary": "Ongoing nationwide protests and strikes in Iran. Iran has repeatedly accused Kurdish militias from Iraq of attempting to incite unrest, including in the 2026 protests. This is a persistent instability signal in a geopolitically critical region.",
-          "imminence": 7,
-          "impact": 6,
+          "headline": "2025-2026 Iranian protests continue — regime using executions as front line against restive society",
+          "source": "Iran News Update, Wikipedia",
+          "date": "2026-08-14",
+          "summary": "EEAS country report on Iran documents serious cases of repression linked to state bodies. Ongoing nationwide protests and strikes. Iran activating military-grade jammers to disrupt civilian Starlink connectivity. Regime treating domestic unrest as existential threat while simultaneously facing external pressure over Hormuz.",
+          "imminence": 8,
+          "impact": 7,
           "threads": ["middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://en.wikipedia.org/wiki/2025%E2%80%932026_Iranian_protests"
+          "url": "https://irannewsupdate.com/news/human-rights/irans-execution-machine-the-regimes-front-line-against-a-restive-society/"
         },
         {
           "id": "su-002",
           "headline": "Flamingo Revolution — Albania protests over media capture and political influence",
           "source": "Wikipedia",
           "date": "2026-08-14",
-          "summary": "Protests in Albania driven by concerns over media capture and political influence over public information. Albania ranked 83rd in 2026 World Press Freedom Index. This is a European instability signal, minor but worth tracking.",
+          "summary": "Protests in Albania driven by concerns over media capture and political influence. Albania ranked 83rd in 2026 World Press Freedom Index. European instability signal, minor but tracking.",
           "imminence": 4,
           "impact": 3,
           "threads": ["euro_crisis"],
@@ -250,15 +322,15 @@
         },
         {
           "id": "su-003",
-          "headline": "Anti-racism protests across Australia — students shun calls to stay in school",
-          "source": "The Guardian",
-          "date": "2026-08-13",
-          "summary": "Anti-racism rallies across Australia, with protesters gathering in multiple cities. Driver allegedly rammed into protester at Melbourne rally. Social polarization increasing in typically stable democracies.",
-          "imminence": 4,
-          "impact": 3,
+          "headline": "2026 Delhi Jantar Mantar protests — police surveillance and intimidation of protesters",
+          "source": "Wikipedia",
+          "date": "2026-08-10",
+          "summary": "Public interest litigation alleges Delhi Police subjected protesters to continuous photography, videography, and surveillance, creating 'atmosphere of intimidation.' Police observed operating in civilian clothing. Democratic backsliding signal in the world's largest democracy.",
+          "imminence": 5,
+          "impact": 4,
           "threads": [],
           "confidence": "MEDIUM",
-          "url": "https://www.theguardian.com/world/protest"
+          "url": "https://en.wikipedia.org/wiki/2026_Delhi_Jantar_Mantar_protests"
         }
       ]
     },
@@ -266,34 +338,22 @@
       "findings": [
         {
           "id": "fs-001",
-          "headline": "10-year US Treasury yield surges past 5.4% — highest since late 2007",
-          "source": "USA Business Times",
-          "date": "2026-08-11",
-          "summary": "The 10-year U.S. Treasury yield surged past 5.4%, its highest level since late 2007, rattling equity markets, pressuring corporate credit spreads, and forcing a fundamental reassessment of portfolio construction across Wall Street. This is a major financial stress precursor.",
-          "imminence": 9,
-          "impact": 9,
-          "threads": ["us_recession", "global_pandemic"],
+          "headline": "Bitcoin below $63K — $48M in crypto longs liquidated as leveraged traders face mounting losses",
+          "source": "HokaNews, Mudrex, Bitcoin.com, CryptoNews",
+          "date": "2026-08-15",
+          "summary": "Bitcoin fell below $63,000 triggering $48M in long position liquidations. BTC has taken 10 bearish blows in 2026 with daily/weekly/monthly/yearly trends all negative — down nearly 50% from $126K ATH. Could test $50K if macro pressure intensifies. Excessive leverage creates risk of liquidation cascades turning modest declines into rapid crashes. Senate CLARITY Act delay removing near-term catalysts. ETF withdrawals and miner liquidations adding pressure.",
+          "imminence": 8,
+          "impact": 7,
+          "threads": ["crypto_collapse", "middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://usabusinesstimes.com/wall-streets-bond-reckoning-is-arriving-faster-than-anyone-predicted/"
+          "url": "https://www.hokanews.com/2026/08/bitcoin-falls-below-63k-as-48m-in.html"
         },
         {
           "id": "fs-002",
-          "headline": "HY credit spreads at 271 bps — default risk pricing elevated but not crisis-level yet",
-          "source": "Convex, FRED",
-          "date": "2026-08-06",
-          "summary": "ICE BofA High Yield Option-Adjusted Spread at 271 bps as of Aug 6, 2026. Not yet at crisis levels (400+ bps), but rising. St. Louis Fed Financial Stress Index (STLFSI4) being actively monitored. Spreads becoming much higher signals market fear of corporate defaults.",
-          "imminence": 6,
-          "impact": 7,
-          "threads": ["us_recession"],
-          "confidence": "HIGH",
-          "url": "https://convextrade.com/metrics/bamlh0a0hym2"
-        },
-        {
-          "id": "fs-003",
-          "headline": "Recession probability model at 15.19% — yield curve signal active",
-          "source": "Economic Greenfield",
+          "headline": "Recession probability model at 15.19% — yield curve signal active, Sahm Rule being tracked",
+          "source": "Economic Greenfield, FRED",
           "date": "2026-08-10",
-          "summary": "Yield Curve recession probability model shows 15.1874% probability of US recession twelve months ahead (through July 2026 data). Sahm Rule Recession Indicator being actively tracked via FRED. Not yet signaling recession but elevated and trending.",
+          "summary": "Yield Curve recession probability model shows 15.1874% probability of US recession twelve months ahead (through July 2026 data). Initial jobless claims at 197,000 (week ending July 25) — rebounding from 57-year low but still under expectations. Not yet signaling recession but elevated and trending upward.",
           "imminence": 6,
           "impact": 7,
           "threads": ["us_recession"],
@@ -301,16 +361,40 @@
           "url": "https://www.economicgreenfield.com/2026/08/10/recession-probability-models-august-2026/"
         },
         {
-          "id": "fs-004",
-          "headline": "Bitcoin below $63K — Yemen drone strike on Saudi oil refinery triggers flash crash",
-          "source": "CaptainAltcoin, Yahoo Finance, Bitcoin.com",
-          "date": "2026-08-13",
-          "summary": "BTC randomly nuked from $63.9K to $62.8K due to Yemen drone strike on Saudi oil refinery. Bitcoin has taken 10 bearish blows in 2026, daily/weekly/monthly/yearly price trends all negative. Could test $50K if macroeconomic pressure intensifies. $47M in long positions liquidated. Senate CLARITY Act delay removing catalysts.",
-          "imminence": 7,
-          "impact": 6,
-          "threads": ["crypto_collapse", "middle_east_war"],
+          "id": "fs-003",
+          "headline": "Private credit risks elevated — HY default rate at 5.5% vs 3.4% for high yield bonds",
+          "source": "U.S. Bank, Moody's",
+          "date": "2026-01-31",
+          "summary": "Trailing 12-month default rate for below-investment-grade loans at 5.5% (Moody's, Jan 31 2026) vs 3.4% in high yield corporate bonds. Private credit liquidity, redemptions, and market stress being actively monitored. Sufficiently high subjective bad-state probabilities can endogenously increase liquidity demand and generate equilibrium stress states supporting bank runs.",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["us_recession"],
           "confidence": "HIGH",
-          "url": "https://captainaltcoin.com/why-is-the-crypto-market-crashing-as-bitcoin-price-falls-below-63k/"
+          "url": "https://www.usbank.com/investing/financial-perspectives/market-news/private-credit.html"
+        },
+        {
+          "id": "fs-004",
+          "headline": "St. Louis Fed Financial Stress Index (STLFSI4) data current through August 7 — being actively monitored",
+          "source": "FRED",
+          "date": "2026-08-07",
+          "summary": "St. Louis Fed Financial Stress Index updated through August 7, 2026. Markets watching for stress accumulation across multiple indicators simultaneously. The index aggregates 18 weekly indicators measuring financial stress in markets.",
+          "imminence": 5,
+          "impact": 6,
+          "threads": ["us_recession"],
+          "confidence": "MEDIUM",
+          "url": "https://fred.stlouisfed.org/series/STLFSI4"
+        },
+        {
+          "id": "fs-005",
+          "headline": "Lenders scrutinize US data center financing as community opposition builds — credit tightening signal",
+          "source": "Reuters",
+          "date": "2026-08-10",
+          "summary": "Lenders increasingly scrutinizing US data center financing as community opposition builds. This is a credit tightening signal in a previously booming sector — banks pulling back from financing AI infrastructure due to local resistance and permitting risk.",
+          "imminence": 6,
+          "impact": 5,
+          "threads": ["us_recession"],
+          "confidence": "MEDIUM",
+          "url": "https://www.reuters.com/legal/transactional/lenders-scrutinize-us-data-center-financing-community-opposition-builds-2026-08-10/"
         }
       ]
     }
@@ -318,74 +402,74 @@
   "convergence_detection": {
     "threads": {
       "japan_yen": {
-        "indicators": ["vi-001", "cb-001", "cb-002"],
+        "indicators": ["vi-001", "vi-002", "vi-003", "cb-001"],
         "categories_involved": ["verbal_intervention", "central_bank_communication"],
         "category_count": 2,
-        "total_imminence": 26,
-        "total_impact": 24,
-        "convergence_score": 50,
+        "total_imminence": 36,
+        "total_impact": 32,
+        "convergence_score": 68,
         "signal": "DEVELOPING",
-        "assessment": "Japan yen carry trade unwinding is the single most active macro thread. Historic $53B intervention failed to halt yen slide. BoJ signaling 3% rates. US using Fed dollars to prevent carry trade unwind. This is actively developing — convergence of verbal intervention and central bank communication signals."
+        "assessment": "Japan yen carry trade unwinding is accelerating. Yen has erased half of intervention gains. Mimura openly warning markets of further intervention. Bessent publicly calling BoJ 'behind the curve.' Reuters sources confirm BoJ set to hike rates September 17-18 with 65% market probability. Goldman says $1T reserves leave 'plenty of capacity' for more intervention. Convergence intensifying — verbal intervention + central bank communication both firing simultaneously. If BoJ delivers September hike, carry trade unwind accelerates. If they don't, yen slides further. No clean exit."
       },
       "us_recession": {
-        "indicators": ["vi-001", "vi-003", "cb-001", "fs-001", "fs-002", "fs-003", "sc-003", "al-001"],
-        "categories_involved": ["verbal_intervention", "central_bank_communication", "financial_stress_precursors", "supply_chain_disruption", "anonymous_leaks"],
-        "category_count": 5,
-        "total_imminence": 56,
-        "total_impact": 56,
-        "convergence_score": 112,
+        "indicators": ["vi-001", "vi-003", "vi-004", "cb-002", "fs-002", "fs-003", "fs-004", "fs-005", "sc-002", "sc-003", "al-001", "rc-001", "rc-002"],
+        "categories_involved": ["verbal_intervention", "central_bank_communication", "financial_stress_precursors", "supply_chain_disruption", "anonymous_leaks", "regulatory_change"],
+        "category_count": 6,
+        "total_imminence": 73,
+        "total_impact": 69,
+        "convergence_score": 142,
         "signal": "ACTIVE",
-        "assessment": "MASSIVE convergence across 5 categories. 10Y Treasury at 5.4% (highest since 2007), recession probability at 15.19%, HY spreads at 271bps and rising, Fed Chair Warsh providing minimal forward guidance, soft NFP, import cargo declining, and government surveillance leaks suggesting internal instability. This is the dominant macro thread."
+        "assessment": "MASSIVE convergence across 6 categories — up from 5 yesterday. Recession probability at 15.19% and trending. HY default rate at 5.5% vs 3.4%. Private credit stress building. Fed Chair Warsh providing minimal forward guidance while reaffirming hawkish stance. Port congestion chronic at Rotterdam and Savannah. Import cargo declining. Data center financing tightening. Treasury undermining transparency rules. Fed restructuring mutual banking rules and Treasury clearing requirements. This is the dominant macro thread and it is intensifying."
       },
       "middle_east_war": {
-        "indicators": ["gp-001", "gp-002", "gp-003", "sc-001", "su-001", "al-002", "fs-004"],
+        "indicators": ["gp-001", "gp-002", "gp-003", "gp-004", "gp-005", "sc-001", "sc-004", "su-001", "al-002", "fs-001"],
         "categories_involved": ["geopolitical_posture", "supply_chain_disruption", "social_unrest", "anonymous_leaks", "financial_stress_precursors"],
         "category_count": 5,
-        "total_imminence": 52,
-        "total_impact": 48,
-        "convergence_score": 100,
+        "total_imminence": 74,
+        "total_impact": 70,
+        "convergence_score": 144,
         "signal": "ACTIVE",
-        "assessment": "Active convergence across 5 categories. Strait of Hormuz crisis is live and escalating. Iran demanding US lift blockade, Houthis striking Saudi tankers, oil +5%, CISA elevated posture, Iranian domestic protests ongoing, crypto flash-crashing on Middle East news. This is an active geopolitical crisis with financial market contagion."
+        "assessment": "ESCALATING. Hormuz traffic at one-week low, Iran insists strait stays closed until US lifts blockade. Three crew dead in Red Sea. Saudi-flagged tankers now targeted — disruption widening. South Korea-US drills starting August 17. Iran regime executing citizens to suppress domestic unrest while fighting external pressure. Five geopolitical crises converging simultaneously. Crypto flash-crashing on Middle East news. Trump says Iran deal 'coming soon' but military pressure escalating. This is an active, escalating geopolitical crisis with broad financial contagion."
       },
       "china_collapse": {
-        "indicators": ["gp-001", "gp-002", "sc-001", "sc-002", "sc-003"],
+        "indicators": ["gp-001", "gp-002", "sc-001", "sc-003", "sc-004"],
         "categories_involved": ["geopolitical_posture", "supply_chain_disruption"],
         "category_count": 2,
-        "total_imminence": 40,
-        "total_impact": 37,
-        "convergence_score": 40,
+        "total_imminence": 42,
+        "total_impact": 39,
+        "convergence_score": 42,
         "signal": "DEVELOPING",
-        "assessment": "China's $148B property time bomb, collapsing property market, cautious consumers, stalling economic engine. Ningbo and Shanghai ports disrupted. US-China multi-domain confrontation escalating. Iran allowing only Chinese vessels through Hormuz. Convergence developing across geopolitics and supply chains."
+        "assessment": "China's $148B property time bomb ticking. Collapsing property market and cautious consumers stalling economic engine. Iran allowing only Chinese vessels through Hormuz — China gaining preferential chokepoint access. US-China multi-domain confrontation escalating through chokepoints and trade. Saudi tankers now targeted, extending shipping disruption. Peak shipping season cut short. Convergence developing but not yet at 50 threshold — needs a financial stress precursor signal to cross."
       },
       "euro_crisis": {
-        "indicators": ["vi-002", "vi-003", "cb-003", "su-002"],
-        "categories_involved": ["verbal_intervention", "central_bank_communication", "social_unrest"],
-        "category_count": 3,
-        "total_imminence": 23,
-        "total_impact": 22,
-        "convergence_score": 23,
+        "indicators": ["vi-004", "cb-003", "sc-001", "sc-002", "su-002"],
+        "categories_involved": ["verbal_intervention", "central_bank_communication", "supply_chain_disruption", "social_unrest"],
+        "category_count": 4,
+        "total_imminence": 27,
+        "total_impact": 27,
+        "convergence_score": 27,
         "signal": "WATCH",
-        "assessment": "ECB independence risks rising with debt. France 120% and Italy 130% debt-to-GDP. ECB officials view US monetary cooperation as breached. Albania protests. Not yet at convergence threshold but structural risks are building. Watch for Italian bond spread widening."
+        "assessment": "ECB independence risks rising with debt. France and Italy at risk of breaching Maastricht deficit ceiling once heat costs included. Rhine at record lows disrupting inland waterways. Port congestion at Rotterdam. Albania protests. Convergence building — up from 23 yesterday with supply chain disruption now contributing. Watch for Italian bond spread widening and BTP-Bund spread blowout."
       },
       "asian_contagion": {
-        "indicators": ["cb-002", "sc-002"],
-        "categories_involved": ["central_bank_communication", "supply_chain_disruption"],
+        "indicators": ["cb-001", "cb-004", "gp-003"],
+        "categories_involved": ["central_bank_communication", "geopolitical_posture"],
         "category_count": 2,
-        "total_imminence": 17,
-        "total_impact": 16,
-        "convergence_score": 17,
+        "total_imminence": 23,
+        "total_impact": 21,
+        "convergence_score": 23,
         "signal": "WATCH",
-        "assessment": "BoJ rate hikes + Ningbo/Shanghai port disruption could spread through Asian supply chains. Early stage, not yet at threshold."
+        "assessment": "BoJ September hike + RBA holding at 4.35% + South Korea-US military drills August 17-27. Korean peninsula military escalation adding to Asian risk picture. Early stage, not yet at threshold but two new signals (RBA hold + SK drills) added since yesterday."
       },
       "crypto_collapse": {
-        "indicators": ["rc-001", "rc-002", "fs-004"],
-        "categories_involved": ["regulatory_change", "financial_stress_precursors"],
-        "category_count": 2,
-        "total_imminence": 20,
-        "total_impact": 17,
-        "convergence_score": 20,
+        "indicators": ["fs-001"],
+        "categories_involved": ["financial_stress_precursors"],
+        "category_count": 1,
+        "total_imminence": 8,
+        "total_impact": 7,
+        "convergence_score": 8,
         "signal": "WATCH",
-        "assessment": "BTC below $63K with all timeframes negative. Regulatory framework advancing (OCC bank charters, CLARITY Act) but Senate delays removing near-term catalysts. Middle East geopolitical risk bleeding into crypto. Not at convergence threshold but deteriorating."
+        "assessment": "BTC below $63K with $48M liquidations. Down 50% from $126K ATH. 10 bearish blows in 2026. However, regulatory framework is progressing (not yet a negative catalyst). OCC bank charters and CLARITY Act could stabilize. The crypto thread is deteriorating on price action but regulatory signals are mixed-positive. Needs a second category signal to reach convergence threshold."
       },
       "global_pandemic": {
         "indicators": [],
@@ -400,32 +484,36 @@
     },
     "active_alerts": [
       {
-        "thread": "us_recession",
-        "signal": "ACTIVE",
-        "convergence_score": 112,
-        "trigger": ">=100",
-        "action_required": "TELEGRAM_ALERT_TO_ROO"
-      },
-      {
         "thread": "middle_east_war",
         "signal": "ACTIVE",
-        "convergence_score": 100,
+        "convergence_score": 144,
         "trigger": ">=100",
-        "action_required": "TELEGRAM_ALERT_TO_ROO"
+        "action_required": "TELEGRAM_ALERT_TO_ROO",
+        "change_from_previous": "INCREASING (was 100 yesterday) — Hormuz traffic at one-week low, Iran refuses to open strait, Saudi tankers targeted, three crew dead in Red Sea, South Korea-US drills starting"
+      },
+      {
+        "thread": "us_recession",
+        "signal": "ACTIVE",
+        "convergence_score": 142,
+        "trigger": ">=100",
+        "action_required": "TELEGRAM_ALERT_TO_ROO",
+        "change_from_previous": "INCREASING (was 112 yesterday) — now 6 categories involved (up from 5), regulatory change signals added, financial stress precursors deepening"
       },
       {
         "thread": "japan_yen",
         "signal": "DEVELOPING",
-        "convergence_score": 50,
+        "convergence_score": 68,
         "trigger": ">=50",
-        "action_required": "UPDATE_MACRO_EVENT_SIGNAL"
+        "action_required": "UPDATE_MACRO_EVENT_SIGNAL",
+        "change_from_previous": "INCREASING (was 50 yesterday) — BoJ September hike confirmed by Reuters sources, yen erased half intervention gains, Bessent calling BoJ 'behind the curve'"
       },
       {
         "thread": "china_collapse",
         "signal": "DEVELOPING",
-        "convergence_score": 40,
+        "convergence_score": 42,
         "trigger": ">=50",
-        "action_required": "MONITOR"
+        "action_required": "MONITOR",
+        "change_from_previous": "INCREASING (was 40 yesterday) — approaching DEVELOPING threshold, needs a financial stress signal to cross"
       }
     ]
   },
@@ -440,13 +528,18 @@
     "global_pandemic": "CLEAR"
   },
   "summary": {
-    "total_findings": 22,
+    "total_findings": 25,
     "active_signals": 2,
     "developing_signals": 2,
     "watch_signals": 3,
     "clear_signals": 1,
-    "highest_convergence": "us_recession (112)",
-    "scan_date": "2026-08-14",
-    "key_narrative": "Two macro threads have crossed the ACTIVE threshold: US recession (convergence 112 across 5 categories — 10Y Treasury at 5.4%, recession probability rising, HY spreads widening, Fed communication breakdown, supply chain slowdown) and Middle East war (convergence 100 across 5 categories — Hormuz crisis live, Houthi attacks on Saudi tankers, Iranian protests, oil prices surging, crypto flash-crashing on geopolitical news). Japan yen carry trade unwinding is DEVELOPING at convergence 50 — the largest single-day FX intervention in history failed to halt the yen's slide and BoJ is signaling 3% rates. China collapse is at 40, approaching the DEVELOPING threshold."
+    "highest_convergence": "middle_east_war (144)",
+    "scan_date": "2026-08-15",
+    "delta_from_previous_scan": {
+      "new_findings": 3,
+      "escalations": ["japan_yen convergence 50→68", "us_recession convergence 112→142 (6 categories, up from 5)", "middle_east_war convergence 100→144", "china_collapse convergence 40→42"],
+      "new_threads_added": ["rc-001 (Fed mutual banking rules)", "rc-002 (FICC Treasury clearing)", "gp-003 (SK-US drills)", "gp-005 (Trump Iran deal comments)", "sc-001 (triple threat)", "sc-004 (Saudi tankers targeted)", "fs-005 (data center financing)", "al-001 (Treasury/FinCEN)", "vi-002 (Mimura warning)", "vi-003 (Bessent BoJ 'behind curve')", "cb-004 (RBA hold)"]
+    },
+    "key_narrative": "Both ACTIVE threads are ESCALATING. Middle East war convergence jumped from 100 to 144 — Hormuz traffic at one-week low, Iran refusing to reopen strait, Saudi tankers now being targeted (extending disruption), three crew dead in Red Sea, and South Korea-US military drills starting August 17 add a second front. US recession convergence jumped from 112 to 142 and now spans 6 categories (up from 5) — regulatory change signals added to the existing financial stress, supply chain, central bank, verbal intervention, and anonymous leak signals. Japan yen thread intensified from 50 to 68 as BoJ September hike confirmed by Reuters sources and yen erased half its intervention gains. China at 42, approaching the 50 DEVELOPING threshold. The macro picture is deteriorating across all major threads simultaneously."
   }
 }
