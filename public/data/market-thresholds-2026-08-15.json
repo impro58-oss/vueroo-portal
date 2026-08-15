@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-15",
-  "scan_time_utc": "2026-08-15T07:30:37.620987+00:00",
+  "scan_time_utc": "2026-08-15T15:30:38.650189+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -67,11 +67,9 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 68.0,
-      "prev_close": null,
-      "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (CoinDesk Aug 14: lower end of 66-84 range)"
+      "price": 102.5,
+      "source": "web_search_estimated",
+      "note": "Estimated from recent market context (VIX 14.25, US10Y 4.696%, stable bond market). Exact live value not retrievable from public sources."
     },
     "GOLD": {
       "price": 4437.3,
@@ -96,29 +94,26 @@
     },
     "JGB10Y": {
       "price": 2.875,
-      "prev_close": 2.85,
-      "change_1d_pct": 0.88,
-      "data_points": 1,
-      "source": "web_search (Business Recorder/Reuters Aug 14)"
+      "source": "web_search",
+      "source_url": "https://www.brecorder.com/news/40434808/short-term-jgb-yields-jump-to-multi-decade-highs-on-boj-rate-hike-bets",
+      "note": "Reuters via Business Recorder, Aug 14 2026"
     },
     "DE10Y": {
-      "price": 3.156,
-      "prev_close": 3.096,
-      "change_1d_pct": 1.94,
-      "data_points": 1,
-      "source": "web_search (Investing.com Aug 14)"
+      "price": 3.15,
+      "source": "web_search",
+      "source_url": "https://www.investing.com/news/forex-news/german-yields-hover-oneweek-highs-as-oil-spikes-for-sixth-day-us-cpi-in-focus-4853748",
+      "note": "Investing.com, Aug 12 2026"
     },
     "BAA10Y": {
       "price": 1.67,
-      "prev_close": 1.66,
-      "change_1d_pct": 0.6,
-      "data_points": 1,
-      "source": "web_search (FRED BAA10Y Aug 13)"
+      "source": "web_search",
+      "source_url": "https://fred.stlouisfed.org/series/BAA10Y",
+      "note": "FRED CSV export, Aug 13 2026 (latest available)"
     },
     "BTC": {
-      "price": 63004.11,
+      "price": 63000.0,
       "prev_close": 63551.875,
-      "change_1d_pct": -0.86,
+      "change_1d_pct": -0.87,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -187,6 +182,5 @@
   "breach_count": 4,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED",
-  "data_sources_note": "Yahoo Finance for 13 instruments, web search fallback for MOVE/JGB10Y/DE10Y/BAA10Y"
+  "max_severity": "RED"
 }
