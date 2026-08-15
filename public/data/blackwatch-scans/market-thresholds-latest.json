@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-15",
-  "scan_time_utc": "2026-08-15T03:30:38.446320+00:00",
+  "scan_time_utc": "2026-08-15T07:30:37.620987+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -32,9 +32,9 @@
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1416.48,
+      "price": 1412.0,
       "prev_close": 1407.0,
-      "change_1d_pct": 0.67,
+      "change_1d_pct": 0.36,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,21 +67,20 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 68.0,
-      "source": "web_search (CoinDesk Aug 14 - lower end of 66-84 range)",
-      "note": "MOVE Index hovering near lower end of multi-month range"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "GOLD": {
-      "price": 4432.0,
+      "price": 4437.3,
       "prev_close": 4361.8,
-      "change_1d_pct": 1.61,
+      "change_1d_pct": 1.73,
       "data_points": 5,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 88.59,
+      "price": 88.52,
       "prev_close": 87.72,
-      "change_1d_pct": 0.99,
+      "change_1d_pct": 0.91,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -93,25 +92,22 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.875,
-      "source": "web_search (Reuters/Business Recorder Aug 14)",
-      "note": "Japan 10Y JGB yield climbed 0.5bp to 2.875%"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "DE10Y": {
-      "price": 3.198,
-      "source": "web_search (Business Recorder Aug 11)",
-      "note": "German 10Y bund yield rose 2bp to 3.198%"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BAA10Y": {
-      "price": 1.67,
-      "source": "web_search (FRED CSV Aug 13)",
-      "note": "BAA-10Y corporate spread at 1.67%"
+      "error": "Requires web search fallback",
+      "source": "manual"
     },
     "BTC": {
-      "price": 63023.75,
+      "price": 63004.11,
       "prev_close": 63551.875,
-      "change_1d_pct": -0.83,
-      "data_points": 4,
+      "change_1d_pct": -0.86,
+      "data_points": 5,
       "source": "yahoo"
     }
   },
@@ -120,7 +116,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4432.0,
+      "current": 4437.3,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -129,22 +125,7 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.63
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.875,
-      "threshold": 1.5,
-      "direction": "above",
-      "severity": "RED",
-      "meaning": "JGB yield spiral - Japan fiscal crisis, BOJ losing control",
-      "escalate": [
-        "japan_sovereign",
-        "fin_stability"
-      ],
-      "distance_pct": 91.67
+      "distance_pct": 26.78
     },
     {
       "key": "USDJPY",
@@ -180,7 +161,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4432.0,
+      "current": 4437.3,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -188,39 +169,10 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 47.73
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.875,
-      "threshold": 1.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "JGB under pressure - BOJ yield curve control stress",
-      "escalate": [
-        "japan_sovereign"
-      ],
-      "distance_pct": 187.5
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10-Year (Bund)",
-      "category": "rates",
-      "current": 3.198,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "European fiscal stress - periphery spreads widening",
-      "escalate": [
-        "europe",
-        "fin_stability"
-      ],
-      "distance_pct": 6.6
+      "distance_pct": 47.91
     }
   ],
-  "breach_count": 7,
+  "breach_count": 4,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
