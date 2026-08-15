@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-15T23:33:37.000000+00:00",
+    "last_update": "2026-08-15T23:35:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "4 thresholds breached (1 RED, 3 AMBER). Manual data: MOVE~118, JGB10Y=2.875%, DE10Y=3.156%, BAA10Y=1.67%"
   },
   "signals": {
     "fin_stability": {
@@ -209,14 +209,14 @@
       "domain": "Currency",
       "value": 4437.3,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 75.5,
-      "description": "Gold Futures (GC=F): $4,437.30 (+1.73%)",
+      "description": "Gold Futures (GC=F): $4,437.30 (+1.73%) \u2014 RED threshold breach (>3500)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-15",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "note": "THRESHOLD BREACH: Gold above 3500 (current: 4437.3, +26.78%). Currency crisis or war premium. Escalated from green to red.",
       "timestamp": "2026-08-15T23:21:54.228716+00:00"
     },
     "crypto": {
@@ -314,9 +314,9 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 509,
-    "red_count": 7,
-    "amber_count": 8,
-    "green_count": 4,
+    "red_count": 8,
+    "amber_count": 7,
+    "green_count": 3,
     "manual_count": 1,
     "timestamp": "2026-08-15T23:22:11.551318+00:00"
   },
