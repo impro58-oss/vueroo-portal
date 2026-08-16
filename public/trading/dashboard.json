@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T12:00:29.814485",
+  "timestamp": "2026-08-16T15:00:28.849727",
   "version": "5.3.1-A1",
   "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
   "parameters": {
@@ -29,15 +29,46 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 49.12,
-    "unrealized_pnl_eur": 0,
+    "unrealized_pnl_eur": 0.0,
     "total_pnl_eur": 49.12,
-    "open_positions": 0,
+    "open_positions": 2,
     "closed_trades": 177,
     "wins": 69,
     "losses": 108,
     "win_rate": 39.0
   },
-  "open_positions": {},
+  "open_positions": {
+    "PENDLEUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-16T15:00:28.849727",
+      "entry_price": 1.283,
+      "atr": 0.05264285714285718,
+      "stop": null,
+      "highest": 1.283,
+      "lowest": 1.283,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-16T15:00:28.849727",
+      "entry_price": 1.1571,
+      "atr": 0.003171428571428555,
+      "stop": null,
+      "highest": 1.1571,
+      "lowest": 1.1571,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    }
+  },
   "recent_trades": [
     {
       "symbol": "EURIUSDT",
@@ -305,15 +336,15 @@
   "h4_tokens_scanned": 50,
   "blacklisted": [
     "USD1USDT",
-    "XAUTUSDT",
-    "UUSDT",
     "PAXGUSDT",
     "USDEUSDT",
-    "XUSDUSDT",
-    "BFUSDUSDT",
-    "RLUSDUSDT",
-    "ZECUSDT",
     "KASUSDT",
-    "EURUSDT"
+    "UUSDT",
+    "EURUSDT",
+    "BFUSDUSDT",
+    "XUSDUSDT",
+    "ZECUSDT",
+    "XAUTUSDT",
+    "RLUSDUSDT"
   ]
 }
