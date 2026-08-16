@@ -2,26 +2,28 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-16T17:03:55.363855+00:00",
+    "last_update": "2026-08-16T17:10:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "ACTIVE: Hormuz MOU expires Monday, Ebola deadliest-ever trajectory, PBOC $52B emergency liquidity, UK 75% drought, hedge fund Treasury leverage $2.4T at 100x",
+    "last_scan": "breaking-event-2026-08-16-17.json"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "",
-      "timestamp": "2026-08-16T17:03:49.424126+00:00"
+      "note": "ESCALATED by breaking event scanner: Hedge fund Treasury holdings at $2.4T (up from $600B a decade ago) with 100x leverage. BOE warns central bank backstops fueling leverage. FSB consensus blocked by US deregulation. Central banks in rinse-and-repeat crisis cycle.",
+      "timestamp": "2026-08-16T17:10:00Z"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -72,16 +74,16 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.63,
-      "status": "green",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.08,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-13",
-      "note": "Proxy indicator — GDELT API integration in Phase 2",
-      "timestamp": "2026-08-16T17:03:50.847137+00:00"
+      "note": "ESCALATED by breaking event scanner: Active Iran-US war Day 169. Hormuz blockade. MOU expires Monday. Multiple tanker attacks this week.",
+      "timestamp": "2026-08-16T17:10:00Z"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -118,15 +120,15 @@
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "improving",
-      "confidence": 3,
+      "trend": "deteriorating",
+      "confidence": 5,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-16T17:03:51.533284+00:00"
+      "note": "ESCALATED by breaking event scanner: UK drought declared in ~75% of England. 26M+ under hosepipe bans. Irrigation restrictions on farmers. Government supports water surge pricing. Hormuz disruptions hitting food/fertilizer re-exports.",
+      "timestamp": "2026-08-16T17:10:00Z"
     },
     "climate": {
       "name": "Climate Stress",
@@ -149,14 +151,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-16T17:03:52.383525+00:00"
+      "note": "ESCALATED by breaking event scanner: UK 26M+ under hosepipe bans, government backing water surge pricing. Reform UK blaming immigration. Ebola killing one person every 30 minutes. Public trust eroding.",
+      "timestamp": "2026-08-16T17:10:00Z"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -282,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy - ACTIVE WAR Day 169",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-16T17:03:54.925763+00:00"
+      "note": "ESCALATED by breaking event scanner: Hormuz empirically closed (1% pre-war traffic). US-Iran shipping MOU expires Monday Aug 17. 2 ADNOC tankers attacked + bulk carrier struck. Iran parliament bill to control Hormuz. Qatar-Iran pilot rift. CENTCOM morale concerns.",
+      "timestamp": "2026-08-16T17:10:00Z"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,12 +314,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
+    "score": 545,
+    "red_count": 9,
     "amber_count": 8,
-    "green_count": 4,
+    "green_count": 3,
     "manual_count": 1,
-    "timestamp": "2026-08-16T17:03:55.363855+00:00"
+    "timestamp": "2026-08-16T17:10:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -403,16 +405,22 @@
         "stress_level": 6
       },
       {
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 4
+      },
+      {
         "domain": "Financial",
         "red": 1,
         "amber": 1,
-        "stress_level": 3
+        "stress_level": 4
       },
       {
         "domain": "Food",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Climate",
@@ -425,8 +433,14 @@
         "red": 1,
         "amber": 0,
         "stress_level": 2
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-16T17:03:55.363855+00:00"
+    "timestamp": "2026-08-16T17:10:00.000000+00:00"
   }
 }

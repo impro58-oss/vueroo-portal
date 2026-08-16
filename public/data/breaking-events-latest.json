@@ -1,109 +1,134 @@
 {
-  "scan_time": "2026-08-15T11:03:22.000000+00:00",
-  "scan_type": "breaking-event-scanner-4h",
+  "scan_time": "2026-08-16T17:10:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner",
   "domains_scanned": 12,
-  "category_5_events_found": 2,
+  "queries_executed": 36,
+  "events_detected": 8,
+  "risk_level": "CRITICAL",
+  "top_event": "Strait of Hormuz Active War - MOU Expires Monday + New Tanker Strikes",
   "events": [
     {
-      "id": "iran-war-hormuz-crisis",
-      "category": "war_military",
-      "severity": "CAT-5",
       "domain": "middle_east",
-      "title": "2026 Iran War / Strait of Hormuz Crisis",
-      "status": "ONGOING - ESCALATING",
-      "started": "2026-02-28",
-      "summary": "Active war US/Israel vs Iran + Axis of Resistance. Hormuz effectively closed since Feb 28. Iran rejected US 15-point peace plan. Iran says no decision on return to talks. Trump says Hormuz = US territory. Ship traffic at 3-month low (5-day avg ~13). EIA calls largest oil supply disruption in history. Brent at \\.52.",
-      "escalated_signals": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "food_security"
-      ],
-      "sources": [
-        "Wikipedia: 2026 Iran war",
-        "Al Jazeera",
-        "CNN",
-        "CFR Global Conflict Tracker",
-        "EIA STEO",
-        "Bloomberg",
-        "NYT",
-        "ABC News"
-      ],
-      "confidence": 9,
-      "timestamp": "2026-08-15T11:03:22.000000+00:00",
-      "new_developments_24h": [
-        "Iran rejected US 15-point peace plan (Aug 15)",
-        "Iran says no decision yet on return to talks (Al Jazeera Aug 15)",
-        "Trump says he will declare Strait of Hormuz US territory (ABC News)",
-        "Hormuz talks stall, oil surges 5%+ (BigGo Finance)",
-        "Ship traffic at 3-month low per Kpler data (CNBC)"
-      ]
+      "title": "Strait of Hormuz Active War - MOU Expires Monday + New Tanker Strikes",
+      "category": "war_military",
+      "severity": 5,
+      "summary": "Day 169 of Iran-US war. Hormuz empirically closed: 1 vessel transiting (1% pre-war), 0 tankers (0% pre-war). This week: 2 UAE/ADNOC tankers attacked, bulk carrier struck Saturday. US-Iran shipping MOU expires Monday Aug 17. Iran parliament advancing bill to formalize Hormuz control. Qatar-Iran rift over 3 detained pilots. CENTCOM chief visited USS Abraham Lincoln amid morale concerns. Trump claims US controls strait; Iran denies. Southern Omani route = highest risk (16 of 18 projectile strikes since July 6).",
+      "sources": ["Fox News", "CNN", "Al Jazeera", "CBS News", "Wikipedia", "Iran SITREP", "HNGN"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["MOU expires Monday Aug 17", "2 ADNOC tankers attacked", "Bulk carrier struck Saturday", "Iran parliament bill to control Hormuz", "Qatar-Iran rift over detained pilots", "CENTCOM morale concerns"]
     },
     {
-      "id": "ebola-epidemic-2026",
-      "category": "pandemic_health",
-      "severity": "CAT-5",
       "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic - WHO PHEIC",
-      "status": "ONGOING - WORSENING",
-      "started": "2026-05-14",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC and Uganda. WHO PHEIC declared May 16. Deaths surpass 2,000 (UN News Aug 13). One death every 30 minutes (UN News Aug 15). 4,660+ cases. Spread to 6th DRC province (Guardian Aug 13). Uganda outbreak declared over July 28. No approved vaccine for BDBV. M23 conflict hinders response.",
-      "escalated_signals": [
-        "macro_event",
-        "social_cohesion"
-      ],
-      "sources": [
-        "Wikipedia: 2026 Ebola epidemic",
-        "ECDC",
-        "CDC",
-        "WHO",
-        "UN News",
-        "The Guardian",
-        "BNO News"
-      ],
-      "confidence": 9,
-      "timestamp": "2026-08-15T11:03:22.000000+00:00",
-      "new_developments_24h": [
-        "Deaths surpass 2,000 (UN News Aug 13)",
-        "One death every 30 minutes (UN News Aug 15)",
-        "Spread to 6th DRC province (Guardian Aug 13)",
-        "Ituri province heart of outbreak: 3,400+ of 4,660 cases",
-        "2.6 million seriously malnourished in eastern DRC"
-      ]
+      "title": "2026 Ebola Epidemic - On Track to Be Deadliest Ever",
+      "category": "pandemic",
+      "severity": 5,
+      "summary": "WHO Director-General says outbreak on track to surpass deadliest Ebola outbreak ever. Killing one person every 30 minutes (UN News). 4,665 confirmed cases, 2,184 deaths as of Aug 14. Bundibugyo ebolavirus (existing treatments certified for Zaire species only). 46% fatality rate. Spreading across DRC and Uganda. WHO PHEIC declared.",
+      "sources": ["Wikipedia", "BBC", "UN News", "Rio Times"],
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["WHO says on track to be deadliest ever", "One death every 30 minutes", "46% fatality rate confirmed"]
+    },
+    {
+      "domain": "japan",
+      "title": "Yen at 159.37 - 0.63 From Intervention Trigger, BOJ Sept Hike 76-80% Priced",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "summary": "Yen closed Friday at 159.37, only 0.63 yen from level that triggers intervention. Markets assign 76-80% probability to BOJ rate hike in September. Joint US-Japan intervention (Aug 2-3) has fully unraveled - yen back to pre-intervention levels. Takaichi government says rate decisions are BOJ's call but wants 2% inflation achieved. Hedge funds skeptical of further BOJ hikes. Carry trade unwind risk remains elevated.",
+      "sources": ["TS2.tech", "Fortune", "Financial World", "Bloomingbit", "BOOM Finance"],
+      "escalate_to": ["currency", "fin_stability"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["Yen 0.63 from intervention trigger", "76-80% Sept hike probability", "Intervention fully unraveled"]
+    },
+    {
+      "domain": "china",
+      "title": "China Property Defaults Hit $130B + PBOC $52B Emergency Liquidity Injection",
+      "category": "sovereign_crisis",
+      "severity": 4,
+      "summary": "Total defaulted debts among Chinese real estate companies now ~$130B. PBOC executed unprecedented mid-month liquidity injection via overnight reverse repos: 348B yuan ($52B). July activity data may steer yuan and Asian FX. PBOC managing fixing pressure on yuan. Deflation war faltering. No explicit emergency rate cuts but unconventional liquidity operations escalating.",
+      "sources": ["People News Today", "Rikopedia", "VT Markets", "Reuters", "Wikipedia"],
+      "escalate_to": ["china", "fin_stability"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["$130B total property defaults confirmed", "PBOC $52B emergency liquidity injection", "Unprecedented mid-month operation"]
+    },
+    {
+      "domain": "financial_system",
+      "title": "Hedge Fund Treasury Holdings at $2.4T with 100x Leverage - BOE Warns",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Federal Reserve Bank of Dallas: hedge fund US Treasury holdings reached $2.4T end of 2025, up from $600B a decade ago. Funds leveraging 100x for worthwhile returns. BOE's Pill warned central bank backstops risk fuelling leverage and future crises. BOE cited 2022 pension-fund gilt crisis as model for targeted action. FSB under Bailey failed to secure global consensus due to US deregulation focus. Livemint: central banks stuck in rinse-and-repeat cycle of crises.",
+      "sources": ["Investing.com", "Yahoo Finance UK", "Livemint", "Telegraph", "ETFDB"],
+      "escalate_to": ["fin_stability", "liquidity"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["$2.4T hedge fund Treasury holdings confirmed", "BOE warns backstops fueling leverage", "FSB consensus blocked by US deregulation"]
+    },
+    {
+      "domain": "commodities",
+      "title": "Gold Above $4,400 - Miners Catching Up, GDX +18% Monthly",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Gold cracked $4,400/oz on Aug 11. VanEck Gold Miners ETF (GDX) up 18% monthly, 53% yearly. Spot market closed weekend. Indian 24K gold at Rs15,513/gram. Safe haven demand driven by Hormuz war, Ebola, and central bank buying. CoinCodex forecasts $4,587 avg August, $5,120 September.",
+      "sources": ["24/7 Wall St", "Kitco", "Eastern Herald", "Long Forecast", "BullionVault"],
+      "escalate_to": ["energy", "food_security"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["GDX finally catching up to gold (+18% monthly)", "Miners responding to bullion rally"]
+    },
+    {
+      "domain": "commodities",
+      "title": "UK Drought: ~75% of England Declared Drought, 26M+ Under Hosepipe Ban",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Government declared drought in almost three-quarters of England. 26M+ people under hosepipe bans. Irrigation restrictions imposed on farmers. Government supporting surge pricing for water during droughts. Reform UK blaming mass immigration, promising to end bans and expand reservoirs. Years of underinvestment in water infrastructure cited. Oil: Brent at $82.40 (down from $93 last scan), up 3.52% monthly. Hormuz disruptions persist but OPEC+ additions and Saudi OSP cuts partially offsetting.",
+      "sources": ["Citizen Digital", "Telegraph", "Metro", "iNews", "London Loves Business", "Trading Economics", "Economic Times"],
+      "escalate_to": ["food_security", "supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["Drought declared in ~75% of England", "Government supports water surge pricing", "Brent dropped to $82.40 from $93"]
+    },
+    {
+      "domain": "eu_ecb",
+      "title": "ECB Rate Path Uncertain Amid US Euro Sales for Yen Intervention",
+      "category": "emergency_rate",
+      "severity": 3,
+      "summary": "ECB cut rates 8 times Jun 2024-Jun 2025, then held until June 2026. Reuters previously reported ECB set to deliver final hike. US sold euros (not dollars) for yen rescue, catching ECB off guard. UK CPI at 2.6% (above 2% target), BOE expected to continue tightening. BOE governor Bailey says 80% of cost-of-living crisis causes are global. Next ECB meeting Oct 28-29.",
+      "sources": ["House of Commons Library", "Reuters (prior)", "EU Perspectives (prior)"],
+      "escalate_to": ["europe", "fin_stability"],
+      "timestamp": "2026-08-16T17:10:00Z",
+      "new_developments": ["UK CPI at 2.6% above target", "BOE continuing tightening path"]
     }
   ],
-  "domains_clear": [
-    "us_fed",
-    "latam",
-    "eu_ecb",
-    "uk",
-    "japan",
-    "china",
-    "em_asia",
-    "africa",
-    "financial_system",
-    "commodities"
-  ],
-  "notable_observations": [
-    "US Fed: Rate at 3.50-3.75pct, markets pricing 30% chance of hike. New Fed chair signaling hawkish. Bond yields rising. No emergency action.",
-    "ECB: Set to deliver final rate hike next month (Reuters Aug 13). Not emergency. Bulgaria joined Eurozone Jan 2026.",
-    "Japan: Yen approaching 160 again. Joint intervention impact fading. Govt supports BOJ hike Sep/Oct. NYT: officials ready to intervene again if disorderly.",
-    "China: PBOC injected 349B yuan via overnight reverse repos (first mid-month operation). \\ property lease time bomb ongoing. Deflation fight faltering.",
-    "LatAm: Argentina central bank reform vote Aug 19. US Treasury ESF gave \\.5B lifeline to Argentina. Country risk 451bps.",
-    "EM Asia: India lured \\ diaspora deposits, rupee recovering. Won nears 1400 with sharpest swings since financial crisis.",
-    "Financial System: No acute bank failure. Russia bankruptcies +13.7% YoY. US markets stable (S&P at 7,781).",
-    "Commodities: Brent \\.52 (+1.67%). WTI \\.40 (+1.42%). Gold \\,375.50 (+0.60%, +31.15% YoY). Food index 131.17. EIA: oil prices elevated until Hormuz reopens.",
-    "Africa: ME conflict raising energy/fertilizer prices across Africa (BIS). Namibia cleared IMF debt. Somalia debt relief ongoing.",
-    "UK: No emergency action. Gilt operations routine. Commons Library data accessed Aug 10."
-  ],
-  "market_data": {
-    "gold": 4375.5,
-    "brent": 88.52,
-    "wti": 82.4,
-    "sp500": 7781,
-    "btc": 63066,
-    "usd_jpy": "~159-160",
-    "eur_usd": "~1.1573"
+  "domain_summaries": {
+    "us_fed": "Fed at 3.50-3.75%, 9-3 vote. Next FOMC Sep 15-16. July FOMC minutes pending. GDP forecasts 2.0-2.2% for 2026. No emergency action detected. Recession probability modest per Polymarket.",
+    "latam": "Argentina weakest major LatAm market. Brazil Lula triggered reciprocity process against US tariffs (Aug 15). Colombia bleeding from earth (mining), Brazil bleeding from market. Argentina central bank reform vote Aug 19. No acute sovereign emergency.",
+    "eu_ecb": "ECB held after 8 cuts (Jun 2024-Jun 2025). US sold euros for yen intervention, catching ECB off-guard. UK CPI 2.6% above target. Next ECB meeting Oct 28-29. No emergency action.",
+    "uk": "Drought declared in ~75% of England. 26M+ under hosepipe ban. Government supports water surge pricing. BOE at 3.75%, markets pricing increase by Nov. Burnham bank tax concerns. CPI 2.6%. No acute financial emergency but infrastructure crisis escalating.",
+    "japan": "Yen at 159.37, 0.63 from intervention trigger. Joint intervention fully unraveled. 76-80% Sept hike probability. Takaichi government deferring to BOJ on rate decisions. Carry trade unwind risk elevated.",
+    "china": "$130B property defaults. PBOC $52B emergency liquidity injection (unprecedented mid-month). July data may sway yuan. Deflation war faltering. No explicit emergency cuts but unconventional operations escalating.",
+    "em_asia": "Korean won worst-performing Asian currency H1 2026 but rallying as Kospi crash reverses. India recovering. No acute crisis. EM Asia guarding reserves via currency defense makeover.",
+    "middle_east": "ACTIVE WAR Day 169. Hormuz empirically closed (1% pre-war traffic). US-Iran shipping MOU expires Monday Aug 17. New tanker attacks (2 ADNOC, 1 bulk carrier). Iran parliament bill to control Hormuz. Qatar-Iran pilot rift. CENTCOM morale concerns.",
+    "africa": "Ebola on track to be deadliest ever (4,665 cases, 2,184 deaths, 1 death/30min). Sudan 400K facing starvation. No new sovereign emergencies detected this scan.",
+    "financial_system": "Hedge fund Treasury holdings $2.4T with 100x leverage. BOE warns backstops fueling leverage. FSB consensus blocked by US deregulation. Central banks in rinse-and-repeat crisis cycle. No credit freeze or bank run detected.",
+    "commodities": "Brent $82.40 (down from $93). Gold above $4,400, miners catching up. UK drought 75% of England. Hormuz disrupting 20% global oil/LNG. Iran proposed restricting hostile vessels. Oil climbed 2 sessions on Hormuz concerns.",
+    "pandemic_health": "WHO: Ebola on track to be deadliest ever. 4,665 cases, 2,184 deaths. Bundibugyo strain. One death every 30 minutes. WHO PHEIC active. No bioterrorism detected."
+  },
+  "changes_from_previous_scan": {
+    "previous_scan_time": "2026-08-16T13:10:00Z",
+    "new_developments": [
+      "US-Iran shipping MOU expires Monday Aug 17 - critical deadline",
+      "2 ADNOC tankers attacked + bulk carrier struck Saturday",
+      "Iran parliament advancing bill to formalize Hormuz control",
+      "Qatar-Iran rift over 3 detained pilots",
+      "CENTCOM chief visited USS Lincoln amid morale concerns",
+      "WHO says Ebola on track to be deadliest ever",
+      "Ebola killing one person every 30 minutes",
+      "PBOC $52B emergency liquidity injection (unprecedented mid-month)",
+      "China property defaults confirmed at $130B",
+      "UK drought declared in ~75% of England (escalation)",
+      "Government supports water surge pricing",
+      "Gold miners finally catching up (GDX +18%)",
+      "Brent dropped from $93 to $82.40",
+      "Yen 0.63 from intervention trigger, 76-80% Sept hike priced"
+    ],
+    "escalation_assessment": "Hormuz MOU deadline Monday is critical inflection point. Ebola mortality accelerating. PBOC unconventional liquidity operations escalating. UK drought worsening. Brent pullback temporary given Hormuz risk."
   }
 }
