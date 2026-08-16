@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T01:30:26.946816",
+  "timestamp": "2026-08-16T13:12:20.977909",
   "version": "5.3.1-WIDE-TRAILING-6ATR",
   "system": "V5.3.1 Wide Trailing 6 ATR Only \u2014 Same entries, wide trailing exit",
   "parameters": {
@@ -26,9 +26,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 0,
-    "unrealized_pnl_eur": 0.0,
-    "total_pnl_eur": 0.0,
-    "open_positions": 1,
+    "unrealized_pnl_eur": -0.06,
+    "total_pnl_eur": -0.06,
+    "open_positions": 2,
     "closed_trades": 0,
     "wins": 0,
     "losses": 0,
@@ -44,8 +44,23 @@
       "stop": null,
       "highest": 1.1577,
       "lowest": 1.1574,
-      "bars_held": 3,
+      "bars_held": 5,
       "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "PENDLEUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-16T13:12:20.977909",
+      "entry_price": 1.283,
+      "atr": 0.05264285714285718,
+      "stop": null,
+      "highest": 1.283,
+      "lowest": 1.283,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
@@ -56,16 +71,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "USDEUSDT",
+    "BFUSDUSDT",
     "USD1USDT",
     "PAXGUSDT",
     "XAUTUSDT",
-    "ZECUSDT",
+    "KASUSDT",
     "RLUSDUSDT",
     "EURUSDT",
-    "BFUSDUSDT",
-    "KASUSDT",
-    "XUSDUSDT",
     "UUSDT",
-    "USDEUSDT"
+    "XUSDUSDT",
+    "ZECUSDT"
   ]
 }
