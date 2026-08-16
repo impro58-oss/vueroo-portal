@@ -1,108 +1,59 @@
 {
-  "scan_time": "2026-08-15T15:03:25.261812",
+  "scan_time": "2026-08-16T03:04:00.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
   "domains_scanned": 12,
-  "queries_executed": 18,
-  "events_detected": 7,
-  "category_5_count": 5,
+  "events_detected": 6,
   "events": [
     {
       "domain": "middle_east",
+      "title": "Strait of Hormuz Blockade - Iran War Day 169",
       "category": "war_military",
       "severity": 5,
-      "title": "US-Israel war on Iran: Strait of Hormuz blockade ongoing, two more ships attacked",
-      "summary": "Iran has maintained blockade of Strait of Hormuz since Feb 2026. Reuters reports Hormuz shipping traffic fell to 6 vessels (Aug 11). US warned it will step up economic pressure (Aug 14). Two more ships attacked. Oil prices surging.",
-      "source": "Reuters, NYT, Al Jazeera, Wikipedia",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "supply_chain",
-        "food_security"
-      ]
-    },
-    {
-      "domain": "us_fed",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "title": "US Treasury executed first joint FX intervention with Japan since 1998 - unravelling",
-      "summary": "US Treasury bought yen alongside Japan on July 31, 2026 - first such intervention since 1998. Used FIMA repo facility and executed in euros. Yen gains have unravelled back to ~159. 30Y Treasury yield at 5.24%, highest since 2007.",
-      "source": "Reuters, Bloomberg, NYT, PIIE, Telegraph",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "us_cycle"
-      ]
-    },
-    {
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "title": "Yen approaching 160 again despite joint US-Japan intervention - BOJ pressured to hike rates",
-      "summary": "Joint US-Japan intervention on July 31 unravelled. Yen back near 159-160. BOJ government said to support faster rate hike (Bloomberg). PM Takaichi approval rating hurt by rising prices. Next BOJ move likely Sep/Oct.",
-      "source": "Bloomberg, Reuters, NYT, Telegraph",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ]
+      "source": "CBS/CNN/Iran SITREP"
     },
     {
       "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic - 2nd Largest on Record, WHO PHEIC",
       "category": "pandemic",
       "severity": 4,
-      "title": "2026 Ebola epidemic: 4,665 cases, 2,184 deaths - fastest growing outbreak on record",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC/Uganda. 4,665 confirmed cases, 2,184 deaths as of Aug 12. Declared public health emergency. Second largest Ebola outbreak in history. Existing treatments certified for Zaire species, not Bundibugyo.",
-      "source": "ECDC, Washington Post, Wikipedia, WHO",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ]
+      "source": "WHO/UN/ECDC/BBC"
+    },
+    {
+      "domain": "japan",
+      "title": "US-Japan Yen Intervention Unraveling - USD/JPY at 159",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "source": "Reuters/CNBC/NYT/Bloomberg"
+    },
+    {
+      "domain": "em_asia",
+      "title": "Korean Won at 1,400 - Sharpest Swings Since 1997",
+      "category": "market_dislocation",
+      "severity": 4,
+      "source": "Korea Herald/Chosun/BBC"
     },
     {
       "domain": "commodities",
+      "title": "Oil Elevated - Hormuz Disruption Driving Inventory Drawdown",
       "category": "energy_shock",
       "severity": 4,
-      "title": "Oil prices surge 5%+ on Hormuz stalemate - gold strengthens in tandem",
-      "summary": "Hormuz talks stalled. Oil surged 5%+ in single session. EIA forecasts elevated oil prices until global flows normalize. Gold climbing as safe haven. 2026 Iran war fuel crisis creating economic divide in South America.",
-      "source": "EIA, BigGo Finance, NYT, Wikipedia",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "energy",
-        "food_security",
-        "supply_chain"
-      ]
+      "source": "EIA/LiteFinance"
     },
     {
       "domain": "eu_ecb",
+      "title": "ECB Final Rate Hike - Shortest Tightening Since 2011",
       "category": "emergency_rate",
       "severity": 3,
-      "title": "ECB set to hike rates to 2.5% in September - 83% of economists agree",
-      "summary": "Reuters poll: 57 of 69 economists expect ECB to raise deposit rate by 25bps to 2.50% in September. Eurozone inflation rose to 2.9% in July, core to 2.5%. Middle East conflict pushing energy prices higher. Shortest tightening drive since 2011.",
-      "source": "Reuters, Morningstar, FXStreet, Vanguard",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ]
-    },
-    {
-      "domain": "china",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "title": "China racing to defuse $148B property time bomb as leases expire",
-      "summary": "Bloomberg reports China facing $148B property threat. PBOC injected 349B yuan via overnight reverse repos - first mid-month operation of this kind. Deflation war faltering. Property sector crisis ongoing since 2020.",
-      "source": "Bloomberg, Asia Times, Trading Economics",
-      "date": "2026-08-15",
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ]
+      "source": "Reuters"
     }
   ],
-  "summary": "7 breaking events detected. 5 category-5 (severity 4+). Active war: Iran/US/Israel. Hormuz blocked. Ebola epidemic. US-Japan FX intervention unravelling. Oil surging. ECB rate hike incoming. China property crisis."
+  "no_event_domains": [
+    "us_fed",
+    "latam",
+    "uk",
+    "china",
+    "africa",
+    "financial_system"
+  ],
+  "summary": "6 CAT-5 events: Hormuz blockade, Ebola PHEIC, yen intervention failure, Korean won crisis, oil elevation, ECB rate hike"
 }
