@@ -2,28 +2,26 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-16T13:12:31.000000+00:00",
+    "last_update": "2026-08-16T17:03:55.363855+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 21,
-    "threshold_breach": "6+ thresholds breached",
-    "breaking_event": "8 CAT-5 events detected: Hormuz, Ebola PHEIC, yen failure, China property, US leverage, UK food, ECB hike, gold $4437"
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "ESCALATED: US Treasury dependent on hedge fund short-term funding at 100x leverage, 30Y at 5.2%",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-16T17:03:49.424126+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -38,7 +36,7 @@
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
       "note": "",
-      "timestamp": "2026-08-16T11:03:06.126866+00:00"
+      "timestamp": "2026-08-16T17:03:49.765424+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -53,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-16T11:03:06.453571+00:00"
+      "timestamp": "2026-08-16T17:03:50.140501+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz closure disrupting 20M bbl/day, Brent ~$93, EIA raises forecast to $87 avg",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-16T17:03:50.511447+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.63,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.08,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-13",
-      "note": "ESCALATED: Iran war + Gaza disarmament stalemate + Colombia new president + Sudan famine",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Proxy indicator — GDELT API integration in Phase 2",
+      "timestamp": "2026-08-16T17:03:50.847137+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -98,52 +96,52 @@
       "series_id": null,
       "last_date": "2026-08-16",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-16T11:03:07.115219+00:00"
+      "timestamp": "2026-08-16T17:03:51.107951+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz + Red Sea + Suez all disrupted, Ukraine grain forecast cut 3-5M tonnes",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-16T17:03:51.107951+00:00"
     },
     "food_security": {
       "name": "Food Security",
       "domain": "Food",
       "value": 131.17,
       "status": "red",
-      "trend": "deteriorating",
+      "trend": "improving",
       "confidence": 3,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: UK worst food crisis in decades, Hormuz disrupting fertilizer/food re-exports, Ukraine grain exports cut 70%",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-16T17:03:51.533284+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00c2\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-16T11:03:06.477547+00:00"
+      "timestamp": "2026-08-16T17:03:50.429164+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -157,8 +155,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: UK drought + food crisis + 27M hosepipe bans, consumer sentiment deteriorating",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-16T17:03:52.383525+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -173,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-16T11:03:07.115219+00:00"
+      "timestamp": "2026-08-16T17:03:51.107951+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -188,52 +186,52 @@
       "series_id": null,
       "last_date": "2026-08-16",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-16T11:03:07.115219+00:00"
+      "timestamp": "2026-08-16T17:03:51.107951+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED: US-Japan joint intervention unraveling, yen back to 159, ECB off-guard from euro sell",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-16T17:03:52.718192+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4437.3,
+      "value": 4392.35,
       "unit": "$/oz",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": 48.23,
-      "description": "Gold spot price: $4,437.30/oz (Yahoo Finance, Aug 16)",
-      "series_id": "GC=F",
+      "change_from_last": 54.3,
+      "description": "Gold spot price (web): ,392.35/oz",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-16",
-      "note": "Threshold breach: Gold above 3500 (RED) and above 3000 (AMBER). Currency crisis or war premium.",
-      "timestamp": "2026-08-16T11:31:01.000000+00:00"
+      "note": "Updated from web search - USA Today Aug 14 2026",
+      "timestamp": "2026-08-16T17:03:00+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 62953,
+      "value": 63203,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.0,
-      "description": "BTC $62,953 (-0.0% 24h), Dominance: 75.5%",
+      "change_from_last": 0.3,
+      "description": "BTC $63,203 (+0.3% 24h), Dominance: 75.5%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-16",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-16T11:03:06.093279+00:00"
+      "timestamp": "2026-08-16T17:03:49.836643+00:00"
     },
     "china": {
       "name": "China Health",
@@ -241,29 +239,29 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "deteriorating",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "ESCALATED: $148B property lease time bomb, AMCs distressed, deflation war faltering",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
+      "timestamp": "2026-08-16T17:03:49.577687+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: ECB set to hike rates (Reuters), US sold euros for yen rescue catching ECB off-guard",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-16T17:03:54.271692+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -274,26 +272,26 @@
       "confidence": 9,
       "change_from_last": 0.03,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-14",
-      "note": "Threshold breach: EUR/USD above 1.15 (current: 1.1573) \u00e2\u20ac\u201d dollar weakness, possible Fed pivot",
-      "timestamp": "2026-08-16T11:31:01.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-16T17:03:54.583787+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Strait of Hormuz blockade active, Iran-US war day 169, tanker attacks",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-16T17:03:54.925763+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,33 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-16T11:03:10.778340+00:00"
-    },
-    "macro_event": {
-      "name": "Macro Event - Breaking",
-      "domain": "Systemic",
-      "value": "ACTIVE",
-      "unit": "",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 9,
-      "change_from_last": 0,
-      "description": "Breaking event scanner: multiple CAT-5 events active",
-      "series_id": null,
-      "last_date": "2026-08-16",
-      "note": "CAT-5: Hormuz blockade + Ebola PHEIC + yen intervention failure + China property crisis + US financial leverage risk",
-      "timestamp": "2026-08-16T13:12:31.000000+00:00"
+      "timestamp": "2026-08-16T17:03:55.350917+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 180,
-    "red_count": 16,
-    "amber_count": 4,
-    "green_count": 1,
+    "score": 509,
+    "red_count": 7,
+    "amber_count": 8,
+    "green_count": 4,
     "manual_count": 1,
-    "timestamp": "2026-08-16T13:12:31.000000+00:00"
+    "timestamp": "2026-08-16T17:03:55.363855+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -346,33 +329,9 @@
       },
       {
         "domain": "Financial",
-        "red": 2,
+        "red": 1,
         "amber": 1,
-        "stress_level": 5
-      },
-      {
-        "domain": "Currency",
-        "red": 2,
-        "amber": 0,
-        "stress_level": 4
-      },
-      {
-        "domain": "Energy",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Geopolitics",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Supply Chain",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Food",
@@ -393,25 +352,19 @@
         "stress_level": 2
       },
       {
-        "domain": "Europe",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Middle East",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Systemic",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "domain": "Energy",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
       },
       {
         "domain": "Cyber",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Supply Chain",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -423,7 +376,19 @@
         "stress_level": 1
       },
       {
+        "domain": "Europe",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
         "domain": "United States",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
+        "domain": "Middle East",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -439,33 +404,9 @@
       },
       {
         "domain": "Financial",
-        "red": 2,
+        "red": 1,
         "amber": 1,
-        "stress_level": 5
-      },
-      {
-        "domain": "Currency",
-        "red": 2,
-        "amber": 0,
-        "stress_level": 4
-      },
-      {
-        "domain": "Energy",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Geopolitics",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Supply Chain",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Food",
@@ -484,26 +425,8 @@
         "red": 1,
         "amber": 0,
         "stress_level": 2
-      },
-      {
-        "domain": "Europe",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Middle East",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Systemic",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-16T13:12:31.000000+00:00"
+    "timestamp": "2026-08-16T17:03:55.363855+00:00"
   }
 }
