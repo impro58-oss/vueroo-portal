@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV-NAM Device Naming Convention Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>DEV-NAM Device Naming Convention</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> SYS (System)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Device Naming Protocol — Mandatory Reference</h1>
+<p><strong>Created:</strong> 2026-07-23</p>
+<p><strong>Trigger:</strong> Any work involving WP/competitor device names (PPTX, reports, VOCs, strategy documents)</p>
+<p><strong>Source of truth:</strong> <code>memory/professional/MedTech-NeuroVue/AIS-Global-Strategy-Program/04-Product-Portfolio/Competitor-Device-Reference.md</code></p>
+<p><hr></p>
+<h2>Rule</h2>
+<p>Before writing ANY device name in ANY output, verify against the Competitor-Device-Reference. No exceptions.</p>
+<h2>WP Naming Convention</h2>
+<p>Lowercase &quot;p&quot; prefix + UPPERCASE product name. No spaces.</p>
+<table>
+<tr>
+<th>Correct</th>
+<th>Wrong</th>
+</tr>
+<tr>
+<td>pRESET</td>
+<td>Preset, preset, PReset</td>
+</tr>
+<tr>
+<td>pRESET LITE 3-20</td>
+<td>Preset Light 3-20</td>
+</tr>
+<tr>
+<td>pRESET 540</td>
+<td>Preset 540</td>
+</tr>
+<tr>
+<td>pRESET 650</td>
+<td>Preset 650</td>
+</tr>
+<tr>
+<td>pEGASUS</td>
+<td>Pegasus, pegasus</td>
+</tr>
+<tr>
+<td>pCONUS2</td>
+<td>pCONUS, Pconus2</td>
+</tr>
+<tr>
+<td>pNOVUS 17</td>
+<td>pNovus 17, pNOVUS17</td>
+</tr>
+<tr>
+<td>pNOVUS 21</td>
+<td>pNovus 21</td>
+</tr>
+<tr>
+<td>p64 MW</td>
+<td>p64mw, P64 MW</td>
+</tr>
+<tr>
+<td>p64 HPC</td>
+<td>p64 HPC</td>
+</tr>
+<tr>
+<td>p48</td>
+<td>P48</td>
+</tr>
+<tr>
+<td>p47 MW</td>
+<td>p47</td>
+</tr>
+<tr>
+<td>pARAGON</td>
+<td>Paragon, paragon</td>
+</tr>
+<tr>
+<td>pITA</td>
+<td>Pitta, pita</td>
+</tr>
+<tr>
+<td>pORTAL 14</td>
+<td>Portal 14</td>
+</tr>
+<tr>
+<td>pRELAX</td>
+<td>pRELACS (wrong), Prelax, prelacs</td>
+</tr>
+<tr>
+<td>ASP pHLO 71</td>
+<td>pHLO, ASP pHLO</td>
+</tr>
+<tr>
+<td>Esperance 3F</td>
+<td>esperance 3F, Esperence 3F</td>
+</tr>
+<tr>
+<td>Esperance 5F</td>
+<td></td>
+</tr>
+<tr>
+<td>Esperance 6F</td>
+<td></td>
+</tr>
+<tr>
+<td>Avenir</td>
+<td>avenir, Avenir UNO</td>
+</tr>
+<tr>
+<td>Avenir Complex</td>
+<td></td>
+</tr>
+<tr>
+<td>Avenir Soft</td>
+<td></td>
+</tr>
+<tr>
+<td>Pilote</td>
+<td>Pilote 088</td>
+</tr>
+</table>
+<h2>Key Corrections</h2>
+<ul>
+<li>pRELACS does not exist. It is <strong>pRELAX</strong> (vasospasm device).</li>
+</ul>
+<ul>
+<li>Prelux (discontinued) should be <strong>pRELUX</strong> if it followed WP convention.</li>
+</ul>
+<ul>
+<li>pitta/pITTA = balloon catheter, OEM gap product.</li>
+</ul>
+<h2>Competitor Quick Reference (common errors)</h2>
+<table>
+<tr>
+<th>Correct</th>
+<th>Wrong</th>
+</tr>
+<tr>
+<td>Balt</td>
+<td>Bolt</td>
+</tr>
+<tr>
+<td>Cereglide 71</td>
+<td>Seraguide</td>
+</tr>
+<tr>
+<td>RED 43/62/68/72 = Penumbra</td>
+<td>Not phenox, not Balt</td>
+</tr>
+<tr>
+<td>NeuroHawk = MicroPort</td>
+<td>Not Lepu</td>
+</tr>
+<tr>
+<td>FUBUKI = MicroVention + Asahi co-developed</td>
+<td>Not one company</td>
+</tr>
+<tr>
+<td>Contour = Stryker (acquired Cerus May 2023)</td>
+<td>Not independent</td>
+</tr>
+</table>
+<p><hr></p>
+<p><em>Mandatory. Read before any device name is written in any output.</em></p>
+</body>
+</html>

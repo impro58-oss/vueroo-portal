@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-014 Board Member Research Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-014 Board Member Research</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> RPT (Reporting)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>RPT-014 — Board Member Research and Knowledge Extraction Protocol</h1>
+<p><strong>Department:</strong> RPT (Reports)</p>
+<p><strong>Version:</strong> 1.1</p>
+<p><strong>Created:</strong> 2026-08-16</p>
+<p><strong>Updated:</strong> 2026-08-16 (v1.1 — added Steps 8-11: NotebookLM setup, book downloads, cron reminders, knowledge extraction)</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Any time Roo requests research and knowledge extraction for a new board member</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Define the EXACT process for researching a new board member candidate, gathering all available knowledge resources (YouTube, books, essays, PDFs, lectures), and preparing them for ingestion into NotebookLM and the Lumina brain.</p>
+<p>This protocol exists because the first run (Peter Thiel, August 2026) was done ad hoc. Future runs should follow this standard process for consistency and completeness.</p>
+<p><hr></p>
+<h2>THE PROCESS — 11 Steps</h2>
+<h3>Step 1: Web Search for All Content Categories</h3>
+<p>Run parallel web searches for the person across these categories:</p>
+<ul>
+<li>&quot;[Name] YouTube playlist lectures talks complete collection&quot;</li>
+</ul>
+<ul>
+<li>&quot;[Name] books written list all books author&quot;</li>
+</ul>
+<ul>
+<li>&quot;[Name] Stanford OR Harvard OR university lectures YouTube course&quot;</li>
+</ul>
+<ul>
+<li>&quot;[Name] essays papers PDF free download&quot;</li>
+</ul>
+<ul>
+<li>&quot;[Name] YouTube talks interviews playlist [current year]&quot;</li>
+</ul>
+<ul>
+<li>&quot;[Name] recommended books reading list&quot;</li>
+</ul>
+<p>Fire all searches simultaneously for speed. Collect ALL URLs.</p>
+<h3>Step 2: Identify Existing Compilations</h3>
+<p>Look for existing curated compilations of the person&#x27;s work:</p>
+<ul>
+<li>Startup Archive (startuparchive.org) — often has complete essay + talk lists</li>
+</ul>
+<ul>
+<li>Goodreads author page — for books written and recommended</li>
+</ul>
+<ul>
+<li>YouTube channels dedicated to compiling the person&#x27;s videos</li>
+</ul>
+<ul>
+<li>University course archives — for lecture notes</li>
+</ul>
+<ul>
+<li>Personal websites or foundation sites</li>
+</ul>
+<p>These compilations save hours of individual URL hunting. Prioritize them over individual search results.</p>
+<h3>Step 3: Catalog All Resources Found</h3>
+<p>Organize into these categories:</p>
+<p><strong>A. Books</strong> — List every book written by the person, with:</p>
+<ul>
+<li>Title and publication year</li>
+</ul>
+<ul>
+<li>Co-authors if any</li>
+</ul>
+<ul>
+<li>PDF availability (check archive.org, academia.edu, PDF repositories)</li>
+</ul>
+<ul>
+<li>Status: in print, out of print, available as PDF</li>
+</ul>
+<p><strong>B. YouTube Playlists</strong> — List every existing playlist, with:</p>
+<ul>
+<li>Playlist URL</li>
+</ul>
+<ul>
+<li>Estimated video count</li>
+</ul>
+<ul>
+<li>Theme/focus of the playlist</li>
+</ul>
+<ul>
+<li>Source (who maintains it)</li>
+</ul>
+<p><strong>C. Individual YouTube Videos</strong> — List every individual talk, interview, and lecture, organized by year (most recent first), with:</p>
+<ul>
+<li>Video URL</li>
+</ul>
+<ul>
+<li>Title</li>
+</ul>
+<ul>
+<li>Source/channel</li>
+</ul>
+<ul>
+<li>Date</li>
+</ul>
+<ul>
+<li>Duration (if known)</li>
+</ul>
+<p>Target: 50-100 total videos across all playlists and individual videos.</p>
+<p><strong>D. Lecture Notes and Course Materials</strong> — For university courses, find:</p>
+<ul>
+<li>Class-by-class notes (often on Tumblr, blogs, or university sites)</li>
+</ul>
+<ul>
+<li>Syllabus PDFs</li>
+</ul>
+<ul>
+<li>Course transcripts</li>
+</ul>
+<ul>
+<li>Podcast versions (Spotify, Apple Podcasts)</li>
+</ul>
+<p><strong>E. Essays and Writings</strong> — List every essay, article, and op-ed, with:</p>
+<ul>
+<li>Title</li>
+</ul>
+<ul>
+<li>Publication (NYT, WSJ, etc.)</li>
+</ul>
+<ul>
+<li>Date</li>
+</ul>
+<ul>
+<li>URL (prefer free/paywall-free versions)</li>
+</ul>
+<p><strong>F. Additional Resources</strong> —</p>
+<ul>
+<li>Recommended books BY the person (for understanding their influences)</li>
+</ul>
+<ul>
+<li>Comprehensive compilation sites (Bishop Rock, Startup Archive, etc.)</li>
+</ul>
+<ul>
+<li>Podcast appearances (Spotify, Apple, Castbox)</li>
+</ul>
+<ul>
+<li>Debate appearances</li>
+</ul>
+<h3>Step 4: Check Local Book Resources</h3>
+<p>Check Roo&#x27;s local book resource locations for any books by the person:</p>
+<ul>
+<li>Search in Roo&#x27;s PDF library locations</li>
+</ul>
+<ul>
+<li>Check any book download resources Roo has provided previously</li>
+</ul>
+<ul>
+<li>If books exist locally, note the file paths</li>
+</ul>
+<ul>
+<li>If not, note where they can be downloaded (archive.org, PDF repositories)</li>
+</ul>
+<h3>Step 5: Compile Master Resource File</h3>
+<p>Write a single text file containing ALL resources, organized by category. Format:</p>
+<ul>
+<li>Clear section headers with === separators</li>
+</ul>
+<ul>
+<li>Every URL on its own line with a brief description</li>
+</ul>
+<ul>
+<li>Books listed with PDF download links</li>
+</ul>
+<ul>
+<li>Videos numbered sequentially</li>
+</ul>
+<ul>
+<li>Lecture notes with individual class URLs</li>
+</ul>
+<ul>
+<li>Essays with publication source and date</li>
+</ul>
+<p><strong>File naming:</strong> [Person-Name]-Complete-Resource-List.txt</p>
+<p><strong>Location:</strong> project-bazaar/ (or relevant project folder)</p>
+<p><strong>Open in:</strong> Notepad++ (NOT Notepad, NOT default editor — always Notepad++)</p>
+<h3>Step 6: Prepare NotebookLM Strategy</h3>
+<p>At the end of the resource file, include a recommended NotebookLM strategy:</p>
+<ul>
+<li>How many notebooks to create (usually 1 per person)</li>
+</ul>
+<ul>
+<li>What to upload first (books as PDFs, then lecture notes, then essays)</li>
+</ul>
+<ul>
+<li>Which YouTube URLs to add for transcription</li>
+</ul>
+<ul>
+<li>Which recommended books to include for context on influences</li>
+</ul>
+<ul>
+<li>Suggested query topics for extraction</li>
+</ul>
+<h3>Step 7: Save Protocol Artifacts</h3>
+<p>Save the following:</p>
+<ul>
+<li>Master resource list → project folder, open in Notepad++</li>
+</ul>
+<ul>
+<li>Brain note → vault/90-System/Brain/ (documenting who was researched, when, what was found)</li>
+</ul>
+<ul>
+<li>Memory file → memory/ (for future reference on the research process)</li>
+</ul>
+<h3>Step 8: Create NotebookLM Notebooks</h3>
+<p>Using the <code>nlm</code> CLI tool (already installed and authenticated):</p>
+<ol>
+<li><strong>Check authentication:</strong> <code>nlm login --check</code></li>
+</ol>
+<ol>
+<li><strong>Create notebook(s):</strong> <code>nlm notebook create &quot;[Person Name]&quot; --json</code></li>
+</ol>
+<ul>
+<li>If total sources &gt; 50, create a second notebook: <code>nlm notebook create &quot;[Person Name] 2 — Lectures Notes Essays&quot; --json</code></li>
+</ul>
+<ul>
+<li>Split: YouTube videos in Notebook 1, lectures/essays/books in Notebook 2</li>
+</ul>
+<ul>
+<li>Record the notebook_id from each creation response</li>
+</ul>
+<ol>
+<li><strong>Add YouTube sources in batches of 25 max:</strong></li>
+</ol>
+<p><code>nlm source add &quot;[notebook-id]&quot; --youtube &quot;URL1&quot; --youtube &quot;URL2&quot; ... --json</code></p>
+<ul>
+<li>You can repeat --youtube flags for bulk upload</li>
+</ul>
+<ul>
+<li>Wait for each batch to complete before starting the next</li>
+</ul>
+<ul>
+<li>Do NOT mix --youtube and --url flags in the same command (it errors out)</li>
+</ul>
+<ol>
+<li><strong>Add essay/lecture URL sources separately:</strong></li>
+</ol>
+<p><code>nlm source add &quot;[notebook-id]&quot; --url &quot;URL1&quot; --url &quot;URL2&quot; ... --json</code></p>
+<ul>
+<li>Free/non-paywalled URLs only — NotebookLM cannot access paywalled content</li>
+</ul>
+<ul>
+<li>For paywalled essays: note them in the resource file for Roo to manually copy text</li>
+</ul>
+<ol>
+<li><strong>Add PDF books when Roo downloads them:</strong></li>
+</ol>
+<p><code>nlm source add &quot;[notebook-id]&quot; --file &quot;path/to/book.pdf&quot; --wait</code></p>
+<ul>
+<li>The --wait flag waits for processing to complete</li>
+</ul>
+<ul>
+<li>PDFs go into whichever notebook has the lectures/essays (Notebook 2)</li>
+</ul>
+<ol>
+<li><strong>Verify source count:</strong> <code>nlm source list &quot;[notebook-id]&quot;</code></li>
+</ol>
+<ul>
+<li>Target: 50+ sources per notebook, 100+ total across both</li>
+</ul>
+<p><strong>NotebookLM limitations discovered during Peter Thiel run (v1.1 — verified):</strong></p>
+<ul>
+<li>Cannot mix --youtube and --url in same command — must run separately</li>
+</ul>
+<ul>
+<li>Paywalled content (FT, NYT, WSJ, Wired, National Review) cannot be added as URL sources</li>
+</ul>
+<ul>
+<li>Some Tumblr/blog URLs work (Blake Masters CS183 notes worked)</li>
+</ul>
+<ul>
+<li>Processing time: 25 YouTube videos takes ~60-90 seconds</li>
+</ul>
+<ul>
+<li>NotebookLM has a source limit per notebook (~50 is safe, 100 may hit limits)</li>
+</ul>
+<ul>
+<li><strong>PDF uploads via nlm CLI DO NOT WORK</strong> — API returns INVALID_ARGUMENT for local file paths</li>
+</ul>
+<ul>
+<li><strong>Direct PDF URLs do NOT WORK either</strong> — archive.org and icrrd.com PDF links both rejected</li>
+</ul>
+<ul>
+<li><strong>OceanofPDF.com is behind Cloudflare</strong> — cannot be accessed programmatically, must open in Chrome</li>
+</ul>
+<ul>
+<li><strong>Archive.org detail page URLs</strong> — rejected as sources, need direct PDF download link</li>
+</ul>
+<ul>
+<li><strong>YouTube URLs are the most reliable source type</strong> — work consistently in batches of 25</li>
+</ul>
+<ul>
+<li><strong>Expect a 5-10% YouTube failure rate</strong> — some videos are age-restricted, removed, private, or region-locked. These will show as status 3 (failed) in NotebookLM. Delete them and move on — they cannot be fixed</li>
+</ul>
+<ul>
+<li><strong>Paywalled essay URLs will fail</strong> — FT, NYT, WSJ, Wired, First Things, National Review all failed. For these, Roo must copy the text manually from the article and Lumina adds it as a text source via <code>nlm source add [notebook-id] --text &quot;[article text]&quot; --title &quot;[essay title]&quot;</code></li>
+</ul>
+<ul>
+<li><strong>Tumblr blog URLs work</strong> — Blake Masters CS183 lecture notes on Tumblr all processed successfully</li>
+</ul>
+<ul>
+<li><strong>Solution for PDFs</strong>: Roo uploads manually via NotebookLM web interface (drag and drop)</li>
+</ul>
+<ul>
+<li><strong>Source status codes</strong>: status 2 = processed/working, status 3 = failed. Check with <code>nlm source list [notebook-id] --json</code> and delete failures with <code>nlm source delete [source-id] --confirm</code></li>
+</ul>
+<h3>Step 9: Book Download Assistance</h3>
+<ol>
+<li><strong>Check OceanofPDF.com</strong> — open search in Chrome: <code>https://oceanofpdf.com/?s=[Person+Name]</code></li>
+</ol>
+<ul>
+<li>OceanofPDF is behind Cloudflare so cannot be fetched programmatically — must open in browser</li>
+</ul>
+<ul>
+<li>Roo searches and downloads manually from this tab</li>
+</ul>
+<ol>
+<li><strong>Check Archive.org</strong> — <code>https://archive.org/details/[book-title]</code></li>
+</ol>
+<ul>
+<li>Archive.org can be fetched and direct download links can be opened in Chrome</li>
+</ul>
+<ol>
+<li><strong>Download PDFs programmatically when direct links are available:</strong></li>
+<pre><code>   $outputPath = &quot;$env:USERPROFILE\Downloads\[Book-Title].pdf&quot;
+   Invoke-WebRequest -Uri &quot;[direct-pdf-url]&quot; -OutFile $outputPath -TimeoutSec 120 -UseBasicParsing</code></pre>
+</ol>
+<ol>
+<li><strong>Move to reading folder and clean up filename:</strong></li>
+<pre><code>   Move-Item &quot;$env:USERPROFILE\Downloads\[raw-filename]&quot; &quot;C:\Users\impro\Documents\reading\[Clean-Book-Title].pdf&quot; -Force</code></pre>
+</ol>
+<ol>
+<li><strong>Open all download tabs in Chrome</strong> so Roo can click and download manually for OceanofPDF:</li>
+</ol>
+<p><code>Start-Process chrome.exe -ArgumentList &quot;url1&quot;,&quot;url2&quot;,&quot;url3&quot;</code></p>
+<ol>
+<li><strong>Upload PDFs to NotebookLM MANUALLY</strong> — the nlm CLI cannot upload PDF files. Roo must:</li>
+</ol>
+<ul>
+<li>Open the NotebookLM notebook in Chrome</li>
+</ul>
+<ul>
+<li>Drag and drop the PDF file into the notebook</li>
+</ul>
+<ul>
+<li>Wait for processing to complete</li>
+</ul>
+<ul>
+<li>The PDF will then be queryable alongside the YouTube and essay sources</li>
+</ul>
+<ol>
+<li><strong>Books go to BOTH NotebookLM AND the brain:</strong></li>
+</ol>
+<ul>
+<li>NotebookLM: Roo uploads PDF manually via web interface (drag and drop)</li>
+</ul>
+<ul>
+<li>Brain: Lumina reads the PDF directly using the read tool and builds persona + knowledge base</li>
+</ul>
+<ul>
+<li>If PDF is too large for read tool (&gt;50KB), read in sections using offset/limit parameters</li>
+</ul>
+<h3>Step 10: Set Knowledge Extraction Reminders (Cron)</h3>
+<p>After all sources are loaded into NotebookLM, set up automated reminders to query NotebookLM and extract knowledge into the brain.</p>
+<ol>
+<li><strong>Set a cron job for 24 hours after loading</strong> — gives NotebookLM time to process all sources:</li>
+</ol>
+<ul>
+<li>Schedule: <code>0 0 <em> </em> *</code> (midnight, 24 hours after load)</li>
+</ul>
+<ul>
+<li>Task: Query NotebookLM with extraction questions (see Step 11)</li>
+</ul>
+<ul>
+<li>The cron sends a Telegram message to Roo reminding him that NotebookLM is ready for extraction</li>
+</ul>
+<ol>
+<li><strong>Extraction query schedule</strong> — run queries in this order:</li>
+</ol>
+<ul>
+<li>Day 1 after load: Core frameworks and mental models</li>
+</ul>
+<ul>
+<li>Day 2: Decision-making patterns and voice/style</li>
+</ul>
+<ul>
+<li>Day 3: Specific applications to Roo&#x27;s portfolio</li>
+</ul>
+<ul>
+<li>Day 4: Cross-referencing and synthesis</li>
+</ul>
+<ol>
+<li><strong>Cron command format:</strong></li>
+</ol>
+<p>Use the OpenClaw cron system to schedule reminders:</p>
+<pre><code>   openclaw cron add --name &quot;[Person] NotebookLM Extraction Reminder&quot; 
+     --schedule &quot;0 18 * * *&quot; 
+     --message &quot;NotebookLM sources for [Person] should be processed. Run extraction queries now using nlm notebook query.&quot;
+     --target telegram:1018254667</code></pre>
+<ol>
+<li><strong>Set 4 daily reminders</strong> (one per extraction day) with decreasing frequency:</li>
+</ol>
+<ul>
+<li>Day 1: Full extraction — core frameworks</li>
+</ul>
+<ul>
+<li>Day 2: Voice and decision patterns</li>
+</ul>
+<ul>
+<li>Day 3: Portfolio applications</li>
+</ul>
+<ul>
+<li>Day 4: Synthesis and cross-reference</li>
+</ul>
+<ul>
+<li>After Day 4: Weekly check-in to see if Roo has new questions</li>
+</ul>
+<h3>Step 11: Knowledge Extraction and Brain Building</h3>
+<p>Once NotebookLM has processed all sources, run structured queries to extract knowledge:</p>
+<ol>
+<li><strong>Run NotebookLM queries via nlm CLI:</strong></li>
+<pre><code>   nlm notebook query &quot;[notebook-id]&quot; &quot;What are [Person]&#x27;s core frameworks and mental models?&quot;
+   nlm notebook query &quot;[notebook-id]&quot; &quot;How does [Person] make decisions? What patterns do they follow?&quot;
+   nlm notebook query &quot;[notebook-id]&quot; &quot;What is [Person]&#x27;s voice and communication style?&quot;
+   nlm notebook query &quot;[notebook-id]&quot; &quot;How would [Person] evaluate these specific companies: [list Roo&#x27;s portfolio]?&quot;
+   nlm notebook query &quot;[notebook-id]&quot; &quot;What questions would [Person] ask that other board members wouldn&#x27;t?&quot;</code></pre>
+</ol>
+<ol>
+<li><strong>Build persona file</strong> from extraction results:</li>
+</ol>
+<ul>
+<li>File: <code>memory/[person-name]-persona.md</code></li>
+</ul>
+<ul>
+<li>Include: voice map, signature phrases, how they think, what they&#x27;d never say, decision frameworks, cross-references to other board members</li>
+</ul>
+<ul>
+<li>Follow the same format as <code>alex-hormozi-persona.md</code></li>
+</ul>
+<ol>
+<li><strong>Build knowledge base</strong> from extraction results:</li>
+</ol>
+<ul>
+<li>File: <code>memory/[person-name]-knowledge-base.md</code></li>
+</ul>
+<ul>
+<li>Include: all core frameworks with formulas, specific examples, applications, cross-references</li>
+</ul>
+<ul>
+<li>Target 25-30KB (similar to Alex Hormozi KB at 27.9KB)</li>
+</ul>
+<ul>
+<li>Follow the same structure as <code>alex-hormozi-knowledge-base.md</code></li>
+</ul>
+<ol>
+<li><strong>Build mind map</strong> (RPT-012 format):</li>
+</ol>
+<ul>
+<li>File: <code>mind-maps/[Person-Name]-Board-Member-Knowledge-Map.txt</code></li>
+</ul>
+<ul>
+<li>3+ levels deep, indentation-based hierarchy</li>
+</ul>
+<ul>
+<li>Include: core identity, frameworks, what they bring, what they don&#x27;t bring, cross-references</li>
+</ul>
+<ol>
+<li><strong>Save brain note</strong> to vault:</li>
+</ol>
+<ul>
+<li>File: <code>vault/90-System/Brain/strategy/[date]-[Person-Name]-Board-Member-Build.md</code></li>
+</ul>
+<ul>
+<li>Document: who they are, why they were selected, what frameworks they bring, how they complement the board</li>
+</ul>
+<ol>
+<li><strong>Save memory file:</strong></li>
+</ol>
+<ul>
+<li>File: <code>memory/[person-name]-board-member-research-[date].md</code></li>
+</ul>
+<ul>
+<li>Document: research process, sources loaded, extraction results, files created</li>
+</ul>
+<ol>
+<li><strong>Spawn board member as persistent agent:</strong></li>
+</ol>
+<ul>
+<li>Use the persona and knowledge base files</li>
+</ul>
+<ul>
+<li>Label: &quot;[Person Name] Board Member&quot;</li>
+</ul>
+<ul>
+<li>Make available for pinning in the UI</li>
+</ul>
+<ul>
+<li>Introduce to existing board members via their knowledge maps</li>
+</ul>
+<p><hr></p>
+<h2>QUALITY BAR</h2>
+<ul>
+<li><strong>Minimum video count:</strong> 50 videos (individual + playlist). Target 100+.</li>
+</ul>
+<ul>
+<li><strong>All books by the person must be listed</strong> — no omissions</li>
+</ul>
+<ul>
+<li><strong>All essays must have working URLs</strong> — verify before listing</li>
+</ul>
+<ul>
+<li><strong>PDF links must be to free sources</strong> — don&#x27;t list paywalled PDFs</li>
+</ul>
+<ul>
+<li><strong>Lecture notes must be complete</strong> — all classes in a course, not just a few</li>
+</ul>
+<ul>
+<li><strong>File must be openable in Notepad++ without formatting issues</strong></li>
+</ul>
+<p><hr></p>
+<h2>COMMON MISTAKES TO AVOID</h2>
+<ul>
+<li>Listing paywalled content without a free alternative</li>
+</ul>
+<ul>
+<li>Missing the person&#x27;s early or less-known work (pre-fame)</li>
+</ul>
+<ul>
+<li>Not checking for existing compilations (wastes time on individual URLs)</li>
+</ul>
+<ul>
+<li>Forgetting to check for course lecture notes separately from YouTube videos</li>
+</ul>
+<ul>
+<li>Not including the person&#x27;s recommended books (critical for understanding their influences)</li>
+</ul>
+<ul>
+<li>Using Notepad instead of Notepad++ to open the file (Roo&#x27;s preference)</li>
+</ul>
+<ul>
+<li>Putting the file in the workspace root instead of the project folder</li>
+</ul>
+<p><hr></p>
+<h2>FILE STRUCTURE</h2>
+<pre><code>project-bazaar/ (or relevant project folder)
+├── [Person-Name]-Complete-Resource-List.txt    ← Master resource file
+├── [Person-Name]-persona.md                     ← Persona file (created after knowledge extraction)
+├── [Person-Name]-knowledge-base.md              ← Knowledge base (created after NotebookLM extraction)
+├── [Person-Name]-Board-Member-Knowledge-Map.txt ← Mind map (goes in mind-maps/ folder)
+
+mind-maps/
+├── [Person-Name]-Board-Member-Knowledge-Map.txt
+
+memory/
+├── [Person-Name]-board-member-research-[date].md ← Memory file
+
+vault/90-System/Brain/
+├── [date]-[Person-Name]-Board-Member-Research.md ← Brain note</code></pre>
+<p><hr></p>
+<h2>CROSS-REFERENCES</h2>
+<ul>
+<li><strong>RPT-012</strong> (Mindomo Mind Map Format): The knowledge map file follows this format</li>
+</ul>
+<ul>
+<li><strong>RPT-013</strong> (Board Member Intelligence Build): The broader protocol for building board members</li>
+</ul>
+<ul>
+<li><strong>OPS-006</strong> (Anti-Sloppy-Work): Verify all URLs work before declaring done</li>
+</ul>
+<ul>
+<li><strong>EPS-001</strong> (Epistemic Standards): Source + vintage + confidence on all claims</li>
+</ul>
+<p><hr></p>
+<h2>WORKFLOW INTEGRATION</h2>
+<p>After this protocol completes:</p>
+<ol>
+<li>Lumina creates NotebookLM notebooks and loads all sources (Step 8)</li>
+</ol>
+<ol>
+<li>Roo downloads books from OceanofPDF/Archive.org tabs (Step 9)</li>
+</ol>
+<ol>
+<li>Lumina uploads book PDFs to NotebookLM (Step 9)</li>
+</ol>
+<ol>
+<li>Lumina sets cron reminders for extraction schedule (Step 10)</li>
+</ol>
+<ol>
+<li>Cron fires → Lumina runs NotebookLM queries (Step 11)</li>
+</ol>
+<ol>
+<li>Lumina builds persona file from extraction results (Step 11)</li>
+</ol>
+<ol>
+<li>Lumina builds knowledge base from extraction results (Step 11)</li>
+</ol>
+<ol>
+<li>Lumina builds mind map (RPT-012 format) for the board member (Step 11)</li>
+</ol>
+<ol>
+<li>Lumina saves brain note + memory file (Step 11)</li>
+</ol>
+<ol>
+<li>Board member is spawned as persistent agent with persona + knowledge base</li>
+</ol>
+<ol>
+<li>Board member is introduced to existing board members via knowledge maps</li>
+</ol>
+<ol>
+<li>Board member reviews opportunities and provides strategic input</li>
+</ol>
+<ol>
+<li>Board member can be messaged directly through the UI at any time</li>
+</ol>
+<p><hr></p>
+<p><em>Protocol Version 1.1 — Created 2026-08-16 by Lumina following the Peter Thiel research run. Updated same day with NotebookLM steps (8-11) after successful Thiel notebook loading and book download workflow.</em></p>
+</body>
+</html>

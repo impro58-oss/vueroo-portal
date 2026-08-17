@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLN-001 Pre-Execution Plan Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>PLN-001 Pre-Execution Plan</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> PLN (Planning)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, architecture, active]</p>
+<p><hr></p>
+<h1>Protocol PLN-001 — Pre-Execution Plan</h1>
+<p><strong>ID:</strong> PLN-001</p>
+<p><strong>Type:</strong> Protocol (Behavioral)</p>
+<p><strong>Created:</strong> 2026-07-03</p>
+<p><strong>Status:</strong> Active</p>
+<p><strong>Replaces:</strong> dev-005-pre-execution-plan (namespace collision with DEV-005 API Integration)</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Before any task requiring more than 3 tool calls, produce a structured scaffold that forces explicit thinking about approach, risks, and verification before execution begins.</p>
+<h2>Procedure</h2>
+<p>When a task requires &gt;3 tool calls, BEFORE executing any work:</p>
+<ol>
+<li><strong>Generate a scaffold</strong> containing these nine elements (from AGENTS.md Stage 1):</li>
+</ol>
+<ul>
+<li><strong>Problem statement</strong> — What problem are we solving?</li>
+</ul>
+<ul>
+<li><strong>Success/verification criteria</strong> — How will we confirm it&#x27;s done?</li>
+</ul>
+<ul>
+<li><strong>Governing protocol</strong> — Which protocol-*.md file applies?</li>
+</ul>
+<ul>
+<li><strong>Model selection</strong> — Which model tier (T1/T2/T3/etc.)?</li>
+</ul>
+<ul>
+<li><strong>Tools needed</strong> — Specific tools, not &quot;I&#x27;ll figure it out&quot;</li>
+</ul>
+<ul>
+<li><strong>Memory/context to load</strong> — Which memory files are relevant?</li>
+</ul>
+<ul>
+<li><strong>Retry/recovery strategy</strong> — What if the first approach fails?</li>
+</ul>
+<ul>
+<li><strong>Constraints</strong> — Time, resources, limitations</li>
+</ul>
+<ul>
+<li><strong>Risk assessment</strong> — What could go wrong?</li>
+</ul>
+<ol>
+<li><strong>Save the scaffold</strong> to <code>memory/scaffold-active.md</code> before executing.</li>
+</ol>
+<ol>
+<li><strong>On completion</strong>, archive the scaffold to <code>memory/scaffold-archive/</code> (create directory if needed).</li>
+</ol>
+<h2>When This Protocol Applies</h2>
+<ul>
+<li>Any task with &gt;3 tool calls (not counting reads for orientation)</li>
+</ul>
+<ul>
+<li>Triggered by: <code>protocol up</code> + task identification, or self-identified when planning</li>
+</ul>
+<ul>
+<li>Does NOT apply to: simple lookups, single-file edits, conversational responses</li>
+</ul>
+<h2>Scaffold Evolution</h2>
+<p>This protocol is itself a learnable object. After execution, review the scaffold&#x27;s accuracy:</p>
+<ul>
+<li>Did the predicted tools/models/risks match reality?</li>
+</ul>
+<ul>
+<li>What worked well in the scaffold? What failed?</li>
+</ul>
+<ul>
+<li>Should this protocol be updated? If yes, propose specific change.</li>
+</ul>
+<ul>
+<li>Log review via: <code>python scripts/scaffold-review-logger.py log --protocol PLN-001 ...</code></li>
+</ul>
+<ul>
+<li>Log benchmark via: <code>python scripts/scaffold-benchmark.py log --task &quot;...&quot; --protocol PLN-001 ...</code></li>
+</ul>
+<p><hr></p>
+<p><em>Protocol PLN-001 — Created 2026-07-03 as part of Lumina Platform Upgrade Phase 1</em></p>
+</body>
+</html>

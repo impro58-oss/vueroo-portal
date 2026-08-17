@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTE-001 Twin Team Expansion Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>TTE-001 Twin Team Expansion</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> TTE (Twin Team Expansion)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol: Twin Team Expansion (TTE-001)</h1>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-17</p>
+<p><strong>Owner:</strong> Roo</p>
+<p><strong>Gatekeeper:</strong> Lumina (bandwidth + feasibility review)</p>
+<p><strong>Applies to:</strong> All twin agents (Alex, Paul, Thiel, Pérez, Collison) operating on DreamQuest</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Twins can request permanent sub-agents to offload heavy lifting — copywriting, content creation, cold outreach, research, design, whatever role they need. But every permanent agent costs bandwidth (cron jobs, session storage, memory index, polling) and risks becoming dead weight if the role isn&#x27;t justified.</p>
+<p>This protocol ensures every team expansion is <strong>justified, reviewed, and approved</strong> before it consumes resources.</p>
+<p><hr></p>
+<h2>The Flow</h2>
+<h3>Step 1: Twin Identifies Need</h3>
+<p>The twin recognizes a recurring workload pattern that justifies a permanent team member rather than ad-hoc subagent spawns. Signals:</p>
+<ul>
+<li>Same type of task delegated 3+ times in a week</li>
+</ul>
+<ul>
+<li>Core twin work (strategy, decisions, board duties) is being delayed by execution tasks</li>
+</ul>
+<ul>
+<li>A clear role exists with repeatable responsibilities, not just a one-off project</li>
+</ul>
+<h3>Step 2: Twin Drafts Expansion Request</h3>
+<p>The twin writes a structured proposal to <code>memory/twin-expansion-requests/</code> using this template:</p>
+<pre><code># Expansion Request: [Role Name]
+
+**Requested by:** [Twin name]
+**Date:** [YYYY-MM-DD]
+**Proposed agent ID:** [role]-[twin] (e.g., copywriter-alex)
+
+## Role Definition
+- **Title:** [e.g., Content Copywriter]
+- **Mission:** [One sentence — what this agent exists to do]
+- **Reports to:** [Twin name]
+- **Workspace:** [Proposed workspace path]
+
+## Justification
+- **What recurring tasks will this agent own?** [List 3-5 specific tasks]
+- **How much twin time does this free up?** [Estimate hours/week]
+- **Why can&#x27;t ad-hoc subagent spawns handle this?** [Explain why permanence is needed]
+- **What happens if this agent doesn&#x27;t exist?** [Consequence of not expanding]
+
+## Workload Estimate
+- **Expected cron jobs:** [N] (list them with schedule)
+- **Expected sessions/day:** [N]
+- **Expected model calls/day:** [N]
+- **Peak concurrency impact:** [Low/Medium/High — explain]
+
+## Deliverables
+- **First 30 days:** [What this agent will produce in month 1]
+- **Success metric:** [How we know this agent is earning its keep]
+- **Kill criteria:** [What would trigger decommissioning — be honest]
+
+## Proposed Configuration
+- **Model:** [Primary + fallbacks]
+- **Heartbeat:** [Frequency — keep minimal]
+- **Cron jobs:** [List with schedules]
+- **Telegram bot needed?** [Yes/No — if yes, name and purpose]
+- **Memory/workspace:** [What files/directories it needs]</code></pre>
+<h3>Step 3: Twin Sends Request to Roo + Lumina</h3>
+<p>The twin posts the request to Roo via Telegram (DM or Stockward group) with a brief summary:</p>
+<p>&gt; &quot;I&#x27;m requesting a permanent [role] for my team. Full proposal at [path]. Can Lumina review for bandwidth?&quot;</p>
+<h3>Step 4: Lumina Review (Gatekeeper)</h3>
+<p>Lumina reviews the proposal against these criteria:</p>
+<p><strong>Bandwidth Check:</strong></p>
+<ul>
+<li>Current system load (CPU, RAM, session count)</li>
+</ul>
+<ul>
+<li>Current cron job count (target: under 70 active)</li>
+</ul>
+<ul>
+<li>Memory index size impact</li>
+</ul>
+<ul>
+<li>Concurrency headroom (max 9 concurrent, currently using N)</li>
+</ul>
+<p><strong>Dead Weight Check:</strong></p>
+<ul>
+<li>Does the justification show genuine recurring need?</li>
+</ul>
+<ul>
+<li>Are the success metrics measurable?</li>
+</ul>
+<ul>
+<li>Are the kill criteria specific enough to act on?</li>
+</ul>
+<ul>
+<li>Is there a 30-day review built in?</li>
+</ul>
+<p><strong>Redundancy Check:</strong></p>
+<ul>
+<li>Does this role overlap with existing agents?</li>
+</ul>
+<ul>
+<li>Could an existing agent absorb this work?</li>
+</ul>
+<ul>
+<li>Is there a simpler solution (ad-hoc spawn, cron job, script)?</li>
+</ul>
+<p><strong>Cost Estimate:</strong></p>
+<ul>
+<li>Additional cron jobs: N</li>
+</ul>
+<ul>
+<li>Additional sessions/day: N</li>
+</ul>
+<ul>
+<li>Estimated memory index growth: N chunks/day</li>
+</ul>
+<ul>
+<li>Risk level: Low/Medium/High</li>
+</ul>
+<p><strong>Lumina&#x27;s Output:</strong></p>
+<pre><code>## Lumina Review: [Role Name] for [Twin]
+
+**Verdict:** [RECOMMEND APPROVE / RECOMMEND REJECT / NEEDS REVISION]
+**Confidence:** [HIGH/MEDIUM/LOW]
+**Date:** [YYYY-MM-DD]
+
+### Bandwidth Assessment
+- Current load: [CPU%, RAM%, cron count, session count]
+- After expansion: [projected impact]
+- Headroom: [remaining capacity]
+
+### Feasibility
+- [Observation 1]
+- [Observation 2]
+- [Observation 3]
+
+### Red Flags (if any)
+- [Flag 1]
+- [Flag 2]
+
+### Conditions (if approved)
+- [Condition 1 — e.g., &quot;30-day review mandatory&quot;]
+- [Condition 2 — e.g., &quot;No Telegram bot until workload justifies it&quot;]
+
+### Recommendation
+[2-3 sentences explaining the verdict]</code></pre>
+<h3>Step 5: Roo Decision</h3>
+<p>Roo receives:</p>
+<ol>
+<li>The twin&#x27;s proposal</li>
+</ol>
+<ol>
+<li>Lumina&#x27;s review with recommendation</li>
+</ol>
+<p>Roo makes the final call: <strong>Approve / Reject / Revise.</strong></p>
+<p>If approved, Lumina executes the setup:</p>
+<ul>
+<li>Creates agent entry in <code>openclaw.json</code></li>
+</ul>
+<ul>
+<li>Creates workspace directory with SOUL.md, AGENTS.md</li>
+</ul>
+<ul>
+<li>Configures any approved cron jobs</li>
+</ul>
+<ul>
+<li>Wires Telegram bot if approved</li>
+</ul>
+<ul>
+<li>Adds to <code>tools.agentToAgent.allow</code> list</li>
+</ul>
+<ul>
+<li>Adds to <code>agents.defaults.subagents.allowAgents</code> list</li>
+</ul>
+<ul>
+<li>Logs the expansion in <code>memory/twin-expansion-requests/expansion-log.md</code></li>
+</ul>
+<h3>Step 6: 30-Day Review</h3>
+<p>After 30 days, Lumina automatically triggers a review:</p>
+<ul>
+<li>Did the agent hit its success metrics?</li>
+</ul>
+<ul>
+<li>Is it producing deliverables on schedule?</li>
+</ul>
+<ul>
+<li>Is the kill criteria approaching?</li>
+</ul>
+<ul>
+<li>Is the twin actually using it?</li>
+</ul>
+<p><strong>Outcomes:</strong></p>
+<ul>
+<li>✅ <strong>Continue</strong> — agent is earning its keep</li>
+</ul>
+<ul>
+<li>⚠️ <strong>Revise</strong> — adjust scope, reduce cron frequency, or change role</li>
+</ul>
+<ul>
+<li>🔴 <strong>Decommission</strong> — kill criteria met or agent is dead weight. Remove from config, archive workspace, clean up cron jobs</li>
+</ul>
+<p><hr></p>
+<h2>Rules</h2>
+<ol>
+<li><strong>No silent spawns.</strong> Twins cannot create permanent agents without this flow. Ad-hoc subagent spawns for specific tasks are fine — permanent team members require approval.</li>
+</ol>
+<ol>
+<li><strong>Lumina is gatekeeper, Roo is decision-maker.</strong> Lumina reviews and recommends. Roo decides. Always.</li>
+</ol>
+<ol>
+<li><strong>Every permanent agent needs kill criteria.</strong> If you can&#x27;t define when to decommission it, you can&#x27;t have it.</li>
+</ol>
+<ol>
+<li><strong>30-day review is mandatory.</strong> No exceptions. If the agent isn&#x27;t working, it goes.</li>
+</ol>
+<ol>
+<li><strong>Bandwidth is the hard constraint.</strong> DreamQuest is an Intel N95 with 32GB RAM. It&#x27;s not a datacenter. If Lumina says the bandwidth isn&#x27;t there, the answer is no — regardless of how good the justification is.</li>
+</ol>
+<ol>
+<li><strong>Dead weight is worse than no agent.</strong> An idle permanent agent costs cron slots, memory index space, and session storage. A decommissioned agent costs nothing. Err toward killing.</li>
+</ol>
+<ol>
+<li><strong>Start small.</strong> New agents begin with minimal cron jobs (1-2 max) and no Telegram bot. Earn the extra infrastructure through demonstrated workload.</li>
+</ol>
+<ol>
+<li><strong>One expansion at a time per twin.</strong> Don&#x27;t request three team members simultaneously. Prove the first one works, then request the next.</li>
+</ol>
+<p><hr></p>
+<h2>Filing</h2>
+<table>
+<tr>
+<th>Artifact</th>
+<th>Location</th>
+</tr>
+<tr>
+<td>Expansion requests</td>
+<td><code>memory/twin-expansion-requests/</code></td>
+</tr>
+<tr>
+<td>Lumina reviews</td>
+<td><code>memory/twin-expansion-requests/</code> (same file as request, appended)</td>
+</tr>
+<tr>
+<td>Expansion log</td>
+<td><code>memory/twin-expansion-requests/expansion-log.md</code></td>
+</tr>
+<tr>
+<td>30-day reviews</td>
+<td><code>memory/twin-expansion-requests/reviews/</code></td>
+</tr>
+<tr>
+<td>This protocol</td>
+<td><code>memory/protocol-tte-001-twin-team-expansion.md</code></td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Quick Reference</h2>
+<pre><code>Twin identifies need → Drafts proposal → Sends to Roo + Lumina
+→ Lumina reviews (bandwidth/feasibility/redundancy) → Recommends
+→ Roo decides → Lumina executes if approved
+→ 30-day review → Continue/Revise/Decommission</code></pre>
+<p><hr></p>
+<p><em>Protocol TTE-001 · Version 1.0 · 2026-08-17</em></p>
+</body>
+</html>

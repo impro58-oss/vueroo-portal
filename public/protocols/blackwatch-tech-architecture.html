@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BW-TECH BlackWatch Technical Architecture Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>BW-TECH BlackWatch Technical Architecture</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> BW (BlackWatch)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, architecture, blackwatch, active]</p>
+<p><hr></p>
+<h1>BLACKWATCH — Technical Architecture Document</h1>
+<h2>Version 1.0 — 2026-07-14</h2>
+<p><strong>Author:</strong> Lumina</p>
+<p><strong>Sponsor:</strong> Roo (Field Architect)</p>
+<p><strong>Status:</strong> In Development</p>
+<p><strong>Repository:</strong> <code>vueroo-portal</code> (public/blackwatch/)</p>
+<p><strong>Protocol:</strong> <code>memory/protocol-blackwatch-001.md</code></p>
+<p><strong>Cron:</strong> BlackWatch Signal Refresh — 6h</p>
+<p><strong>Related:</strong> [[000-master-index|Protocol Master Index]] · [[DSN-003|Agent Architecture (Mesh)]] · [[DEV-001|Agent Build Standard]]</p>
+<p><hr></p>
+<h2>TABLE OF CONTENTS</h2>
+<ol>
+<li>Purpose &amp; Scope</li>
+</ol>
+<ol>
+<li>System Architecture</li>
+</ol>
+<ol>
+<li>Data Flow Diagram</li>
+</ol>
+<ol>
+<li>Component Specification</li>
+</ol>
+<ol>
+<li>Signal Board Schema</li>
+</ol>
+<ol>
+<li>Dashboard Specification</li>
+</ol>
+<ol>
+<li>Implementation Phases (Start → Middle → End)</li>
+</ol>
+<ol>
+<li>Failure Modes &amp; Recovery</li>
+</ol>
+<ol>
+<li>Monitoring &amp; Self-Healing</li>
+</ol>
+<ol>
+<li>Testing &amp; Validation</li>
+</ol>
+<ol>
+<li>Maintenance Schedule</li>
+</ol>
+<ol>
+<li>Glossary</li>
+</ol>
+<p><hr></p>
+<h2>1. PURPOSE &amp; SCOPE</h2>
+<h3>What BlackWatch Is</h3>
+<p>BlackWatch is a continuous global intelligence system that monitors 20 domains (financial, geopolitical, cyber, energy, social, etc.), detects convergence patterns where multiple domains reinforce each other, and produces structured situational awareness for decision support.</p>
+<h3>What BlackWatch Is Not</h3>
+<ul>
+<li>Not a prediction system</li>
+</ul>
+<ul>
+<li>Not a trading signal generator</li>
+</ul>
+<ul>
+<li>Not an automated decision maker</li>
+</ul>
+<ul>
+<li>Not a news aggregator</li>
+</ul>
+<ul>
+<li>Not a replacement for human judgment</li>
+</ul>
+<h3>Scope Boundaries</h3>
+<ul>
+<li><strong>In scope:</strong> Data collection, signal processing, convergence detection, dashboard rendering, scan generation, memory evolution</li>
+</ul>
+<ul>
+<li><strong>Out of scope:</strong> Automated trading, external messaging, financial transactions, autonomous action on findings</li>
+</ul>
+<p><hr></p>
+<h2>2. SYSTEM ARCHITECTURE</h2>
+<h3>High-Level Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────┐
+│                   DATA SOURCES                       │
+│  FRED API │ GDELT │ NewsAPI │ CoinGecko │ Manual    │
+└──────┬──────────┬──────────┬──────────┬────────┬─────┘
+       │          │          │          │        │
+       ▼          ▼          ▼          ▼        ▼
+┌─────────────────────────────────────────────────────┐
+│              CONNECTOR LAYER (Python)                │
+│  blackwatch-fred-connector.py                        │
+│  blackwatch-news-connector.py (Phase 2)              │
+│  blackwatch-geopolitical-connector.py (Phase 2)      │
+│  blackwatch-crypto-connector.py (Phase 2)            │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│              DATA LAYER (JSON)                       │
+│  vueroo-portal/public/data/blackwatch-signals.json   │
+│  data/blackwatch-signals.json (workspace copy)        │
+│  data/blackwatch-scans/ (scan history)               │
+│  data/blackwatch-retrospective/ (monthly audits)     │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│           CRON SCHEDULER (OpenClaw)                  │
+│  6h: Signal refresh (FRED + APIs)                    │
+│  Daily 06:30: Morning Echo scan                      │
+│  Weekly Sunday: Deep scan                            │
+│  Monthly 1st: Retrospective                          │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│           DASHBOARD (static HTML + JS)              │
+│  vueroo-portal/public/blackwatch/index.html          │
+│  Served at: /blackwatch and /dashboard/blackwatch    │
+│  vueroo-portal/app/dashboard/blackwatch/page.tsx     │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│              CONSUMER (Roo + Lumina)                 │
+│  Visual dashboard monitoring                         │
+│  Alert-triggered scans                               │
+│  Monthly retrospective review                        │
+│  Quarterly framework calibration                     │
+└─────────────────────────────────────────────────────┘</code></pre>
+<h3>Technology Stack</h3>
+<table>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Rationale</th>
+</tr>
+<tr>
+<td>Data collection</td>
+<td>Python 3.11 + urllib</td>
+<td>Minimal dependencies, runs anywhere</td>
+</tr>
+<tr>
+<td>Data format</td>
+<td>JSON</td>
+<td>Human-readable, browser-native, no DB needed</td>
+</tr>
+<tr>
+<td>Scheduling</td>
+<td>OpenClaw cron</td>
+<td>Already running, proven, 6h cadence</td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td>Static HTML + Tailwind CSS + Vanilla JS</td>
+<td>Same as CycleVue, proven pattern</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Vercel (vueroo-portal)</td>
+<td>Already deployed, CDN, auto-build on git push</td>
+</tr>
+<tr>
+<td>Rendering</td>
+<td>D3.js (optional for Phase 2)</td>
+<td>For convergence visualization</td>
+</tr>
+<tr>
+<td>State</td>
+<td>File-based JSON</td>
+<td>No database — simple, portable, debuggable</td>
+</tr>
+</table>
+<h3>Why No Database</h3>
+<p>BlackWatch produces ~50KB of JSON per refresh. A database adds operational complexity without value at this scale. JSON files are:</p>
+<ul>
+<li>Human-readable (can inspect in text editor)</li>
+</ul>
+<ul>
+<li>Git-trackable (version history of signal data)</li>
+</ul>
+<ul>
+<li>Instantly deployable (push to Vercel, CDN serves)</li>
+</ul>
+<ul>
+<li>Debuggable (no query layer between data and inspection)</li>
+</ul>
+<p>If signal volume grows beyond 10MB per scan (unlikely before 2027), migrate to SQLite.</p>
+<p><hr></p>
+<h2>3. DATA FLOW DIAGRAM</h2>
+<h3>Signal Refresh Flow (every 6 hours)</h3>
+<pre><code>Cron fires (0 */6 * * *)
+    │
+    ▼
+OpenClaw spawns isolated agent session
+    │
+    ▼
+Agent runs: python scripts/blackwatch-fred-connector.py
+    │
+    ├──► Fetches 20 indicators from FRED API
+    │    ├── 11 with FRED series (auto)
+    │    └── 9 without FRED series (marked manual)
+    │
+    ├──► Calculates status (green/amber/red) per indicator
+    ├──► Calculates trend (improving/stable/deteriorating)
+    ├──► Calculates confidence (based on data freshness)
+    ├──► Detects convergence (3+ domains under stress)
+    └──► Calculates overall risk level
+    │
+    ▼
+Writes JSON to two locations:
+    ├── vueroo-portal/public/data/blackwatch-signals.json (deployed)
+    └── data/blackwatch-signals.json (workspace copy)
+    │
+    ▼
+Agent commits + pushes to GitHub
+    │
+    ▼
+Vercel auto-deploys → CDN serves new JSON
+    │
+    ▼
+Dashboard fetches new JSON on next load/refresh</code></pre>
+<h3>Daily Morning Echo Flow (06:30 IST)</h3>
+<pre><code>Cron fires (30 6 * * *)
+    │
+    ▼
+OpenClaw spawns isolated agent session with prompt:
+  &quot;Run BlackWatch Morning Echo scan&quot;
+    │
+    ├──► Reads latest signal board data
+    ├──► Fetches overnight news (web_search)
+    ├──► Checks for signal flips (green→amber, amber→red)
+    ├──► Generates structured scan output (Section 4 format)
+    ├──► Checks for convergence events
+    ├──► Generates opportunity assessment
+    └──► Self-grades with Recursive Intelligence Score
+    │
+    ▼
+Writes scan to: data/blackwatch-scans/YYYY-MM-DD-echo.md
+    │
+    ▼
+Agent reports summary (under 200 words) to Roo</code></pre>
+<h3>Dashboard Load Flow</h3>
+<pre><code>Browser loads /blackwatch/index.html
+    │
+    ├──► HTML renders with placeholder data
+    ├──► JS loads: blackwatch-signals.json?t=timestamp
+    │    ├── If success: render signal board, risk level, convergence
+    │    └── If fail: show &quot;Signal data unavailable&quot; + last cached
+    │
+    ├──► JS loads: blackwatch-scans/latest-echo.md (Phase 2)
+    │    └── Renders scan summary
+    │
+    └──► Auto-refresh every 15 minutes</code></pre>
+<p><hr></p>
+<h2>4. COMPONENT SPECIFICATION</h2>
+<h3>4.1 Connector Layer</h3>
+<h3>blackwatch-fred-connector.py</h3>
+<ul>
+<li><strong>Input:</strong> FRED API key (from environment or hardcoded)</li>
+</ul>
+<ul>
+<li><strong>Output:</strong> <code>blackwatch-signals.json</code></li>
+</ul>
+<ul>
+<li><strong>Run cadence:</strong> Every 6 hours via cron</li>
+</ul>
+<ul>
+<li><strong>Timeout:</strong> 300 seconds (5 min)</li>
+</ul>
+<ul>
+<li><strong>Dependencies:</strong> Python standard library only (urllib, json, os, datetime)</li>
+</ul>
+<ul>
+<li><strong>Failure mode:</strong> If FRED API is down, outputs last-known-good data with stale flag</li>
+</ul>
+<h3>blackwatch-news-connector.py (Phase 2)</h3>
+<ul>
+<li><strong>Input:</strong> NewsAPI key, GDELT API</li>
+</ul>
+<ul>
+<li><strong>Output:</strong> <code>blackwatch-news.json</code> (event log + sentiment)</li>
+</ul>
+<ul>
+<li><strong>Run cadence:</strong> Every 6 hours</li>
+</ul>
+<ul>
+<li><strong>Purpose:</strong> Geopolitical events, social sentiment, cyber incidents</li>
+</ul>
+<h3>blackwatch-crypto-connector.py (Phase 2)</h3>
+<ul>
+<li><strong>Input:</strong> CoinGecko API (no key needed)</li>
+</ul>
+<ul>
+<li><strong>Output:</strong> <code>blackwatch-crypto.json</code></li>
+</ul>
+<ul>
+<li><strong>Run cadence:</strong> Every 6 hours</li>
+</ul>
+<ul>
+<li><strong>Purpose:</strong> BTC dominance, stablecoin flows, DeFi TVL</li>
+</ul>
+<h3>4.2 Data Layer</h3>
+<h3>Signal Board Schema (<code>blackwatch-signals.json</code>)</h3>
+<pre><code>{
+  &quot;metadata&quot;: {
+    &quot;source&quot;: &quot;FRED API + manual assessment&quot;,
+    &quot;system&quot;: &quot;BlackWatch Signal Board&quot;,
+    &quot;last_update&quot;: &quot;2026-07-14T20:36:04Z&quot;,
+    &quot;signals_auto&quot;: 11,
+    &quot;signals_manual&quot;: 9,
+    &quot;signals_total&quot;: 20
+  },
+  &quot;signals&quot;: {
+    &quot;fin_stability&quot;: {
+      &quot;name&quot;: &quot;Financial Stability&quot;,
+      &quot;domain&quot;: &quot;Financial&quot;,
+      &quot;value&quot;: 2.69,
+      &quot;unit&quot;: &quot;%&quot;,
+      &quot;status&quot;: &quot;green&quot;,
+      &quot;trend&quot;: &quot;stable&quot;,
+      &quot;confidence&quot;: 9,
+      &quot;change_from_last&quot;: 0.05,
+      &quot;description&quot;: &quot;US High Yield OAS Spread&quot;,
+      &quot;series_id&quot;: &quot;BAMLH0A0HYM2&quot;,
+      &quot;last_date&quot;: &quot;2026-07-13&quot;,
+      &quot;timestamp&quot;: &quot;2026-07-14T20:36:04Z&quot;
+    }
+    // ... 19 more signals
+  },
+  &quot;overall_risk&quot;: {
+    &quot;level&quot;: &quot;RED&quot;,
+    &quot;color&quot;: &quot;red&quot;,
+    &quot;score&quot;: 48,
+    &quot;red_count&quot;: 4,
+    &quot;amber_count&quot;: 4,
+    &quot;green_count&quot;: 3,
+    &quot;manual_count&quot;: 9
+  },
+  &quot;convergence&quot;: {
+    &quot;stressed_domains&quot;: [...],
+    &quot;convergence_active&quot;: true,
+    &quot;convergence_domains&quot;: [...]
+  }
+}</code></pre>
+<h3>Scan History Schema (<code>data/blackwatch-scans/</code>)</h3>
+<p>Each scan is a markdown file: <code>YYYY-MM-DD-echo.md</code> or <code>YYYY-MM-DD-deep.md</code></p>
+<pre><code># BLACKWATCH ECHO — 2026-07-15 — Scan #001
+Confidence: 7/10 | Risk Level: RED
+
+## SIGNAL BOARD SNAPSHOT
+[20 indicators with status, trend, confidence, change]
+
+## CONVERGENCE ALERTS
+[Where 3+ domains reinforce]
+
+## CURRENT STATE
+[Tagged observations: OBSERVABLE / STRONG INFERENCE / WEAK SIGNAL / SYMBOLIC / UNKNOWN]
+
+## PRIMARY DRIVERS
+[Top 5 forces]
+
+## EMERGING WEAK SIGNALS
+[Patterns with limited evidence]
+
+## SCENARIOS (3-5)
+For each: description, probability, confidence, inverse scenario, triggers
+
+## OPPORTUNITY ASSESSMENT
+[For every risk: what benefits]
+
+## RISK ASSESSMENT
+[Ranked risks with confidence]
+
+## RECOMMENDED PREPARATIONS
+[Specific, actionable]
+
+## UNKNOWN VARIABLES
+[What we don&#x27;t know]
+
+## ADVERSARIAL CHALLENGE
+[What would make this scan wrong?]
+
+## RECURSIVE INTELLIGENCE SCORE
+| Metric | Score |
+|--------|-------|
+| Evidence quality | 7/10 |
+| Logical consistency | 8/10 |
+| Blind spot detection | 5/10 |
+| Alternative hypothesis testing | 6/10 |
+| Predictive usefulness | 7/10 |
+| Actionability | 8/10 |
+
+Lowest: Blind spot detection (5/10) → Next scan must improve.</code></pre>
+<h3>Retrospective Schema (<code>data/blackwatch-retrospective/</code>)</h3>
+<p>Monthly file: <code>YYYY-MM-retrospective.md</code></p>
+<pre><code># BlackWatch Monthly Retrospective — July 2026
+
+## Predictions Graded
+| Signal | Prediction | Outcome | Score |
+|--------|-----------|---------|-------|
+| Sovereign debt | Stress rising | Confirmed | +1 |
+| Cyber | Major event likely | No major event | 0 |
+| ... | ... | ... | ... |
+
+## Accuracy Metrics
+- Correct: X
+- Partial: Y
+- Wrong: Z
+- Missed: N
+
+## Domain Weight Adjustments
+[Recommendations for next month]
+
+## Source Reliability Updates
+[Promote/demote sources based on performance]
+
+## Framework Changes
+[Any structural changes to the protocol]</code></pre>
+<h3>4.3 Dashboard Layer</h3>
+<h3>File Structure</h3>
+<pre><code>vueroo-portal/
+  public/
+    blackwatch/
+      index.html          ← Main dashboard (standalone)
+      blackwatch.js       ← Signal board rendering logic
+      blackwatch.css      ← Custom styles (optional)
+    data/
+      blackwatch-signals.json  ← Live data (served by Vercel CDN)
+  app/
+    dashboard/
+      blackwatch/
+        page.tsx          ← Next.js route (iframe wrapper)</code></pre>
+<h3>Dashboard Sections (top to bottom)</h3>
+<table>
+<tr>
+<th>#</th>
+<th>Section</th>
+<th>Data Source</th>
+<th>Refresh</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Header Bar (sigil, risk level, confidence)</td>
+<td>blackwatch-signals.json</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Signal Board (20 tiles in 5×4 grid)</td>
+<td>blackwatch-signals.json</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Convergence Map</td>
+<td>blackwatch-signals.json → convergence</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Current State Summary</td>
+<td>Latest scan markdown</td>
+<td>On load</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Scenario Panel (3-5 cards)</td>
+<td>Latest scan markdown</td>
+<td>On load</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Opportunity Panel</td>
+<td>Latest scan markdown</td>
+<td>On load</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Risk Timeline (historical chart)</td>
+<td>blackwatch-signals.json history</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Recursive Intelligence Score</td>
+<td>Latest scan markdown</td>
+<td>On load</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Memory Evolution Log</td>
+<td>Retrospective files</td>
+<td>On load</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Action Dashboard</td>
+<td>Latest scan markdown</td>
+<td>On load</td>
+</tr>
+</table>
+<h3>4.4 Cron Layer</h3>
+<table>
+<tr>
+<th>Job Name</th>
+<th>Schedule</th>
+<th>Purpose</th>
+<th>Timeout</th>
+</tr>
+<tr>
+<td>BlackWatch Signal Refresh — 6h</td>
+<td><code>0 <em>/6 </em> <em> </em></code> (IST)</td>
+<td>FRED data fetch + JSON write + git push</td>
+<td>300s</td>
+</tr>
+<tr>
+<td>BlackWatch Morning Echo</td>
+<td><code>30 6 <em> </em> *</code> (IST)</td>
+<td>Daily scan generation</td>
+<td>300s</td>
+</tr>
+<tr>
+<td>BlackWatch Weekly Deep Scan</td>
+<td><code>0 10 <em> </em> 0</code> (IST)</td>
+<td>Full 20-domain analysis</td>
+<td>600s</td>
+</tr>
+<tr>
+<td>BlackWatch Monthly Retrospective</td>
+<td><code>0 20 1 <em> </em></code> (IST)</td>
+<td>Accuracy audit + calibration</td>
+<td>600s</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>5. IMPLEMENTATION PHASES</h2>
+<h3>START — Phase 1: Foundation (Tonight, 2026-07-14)</h3>
+<p><strong>Goal:</strong> Protocol written, FRED connector working, initial data captured, cron scheduled.</p>
+<table>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Status</th>
+<th>Verification</th>
+</tr>
+<tr>
+<td>1.1</td>
+<td>Write protocol document</td>
+<td>✅ Done</td>
+<td><code>memory/protocol-blackwatch-001.md</code> exists</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>Copy to Obsidian vault</td>
+<td>✅ Done</td>
+<td>Vault protocols directory</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>Write FRED connector script</td>
+<td>✅ Done</td>
+<td><code>scripts/blackwatch-fred-connector.py</code></td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>Run connector — initial data</td>
+<td>✅ Done</td>
+<td>11/20 signals fetched from FRED</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>Write technical document</td>
+<td>✅ This file</td>
+<td></td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>Create cron job for 6h refresh</td>
+<td>Pending</td>
+<td></td>
+</tr>
+<tr>
+<td>1.7</td>
+<td>Fix failed FRED series (Baltic Dry, Gold, China PMI)</td>
+<td>Pending</td>
+<td></td>
+</tr>
+<tr>
+<td>1.8</td>
+<td>Commit + push initial data</td>
+<td>Pending</td>
+<td></td>
+</tr>
+</table>
+<p><strong>Phase 1 Exit Criteria:</strong></p>
+<ul>
+<li>Protocol document exists in workspace + vault</li>
+</ul>
+<ul>
+<li>FRED connector runs without errors</li>
+</ul>
+<ul>
+<li>15+ signals return live data (rest marked manual)</li>
+</ul>
+<ul>
+<li>Cron job scheduled and verified</li>
+</ul>
+<ul>
+<li>JSON deployed to Vercel</li>
+</ul>
+<p><hr></p>
+<h3>MIDDLE — Phase 2: Dashboard Build (Next session)</h3>
+<p><strong>Goal:</strong> Full dashboard at <code>/blackwatch</code> with live signal board, convergence map, risk timeline.</p>
+<table>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Verification</th>
+</tr>
+<tr>
+<td>2.1</td>
+<td>Create <code>public/blackwatch/index.html</code> — standalone page</td>
+<td>Page loads at /blackwatch</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Build signal board grid (20 tiles, 5×4)</td>
+<td>All 20 tiles render with correct colors</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>Build header bar (sigil, risk level, confidence)</td>
+<td>Risk level matches JSON data</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>Build convergence map section</td>
+<td>Convergence domains displayed when active</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>Build risk timeline (historical chart)</td>
+<td>Line graph shows risk score over time</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>Add Next.js route at <code>/dashboard/blackwatch</code></td>
+<td>Loads in iframe within dashboard shell</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td>Add auto-refresh (15 min)</td>
+<td>Page updates without manual refresh</td>
+</tr>
+<tr>
+<td>2.8</td>
+<td>Fix remaining FRED series (4 connectors)</td>
+<td>15+ auto signals</td>
+</tr>
+<tr>
+<td>2.9</td>
+<td>Build news/GDELT connector (geopolitical + social)</td>
+<td>17+ auto signals</td>
+</tr>
+<tr>
+<td>2.10</td>
+<td>Build crypto connector (CoinGecko)</td>
+<td>18+ auto signals</td>
+</tr>
+<tr>
+<td>2.11</td>
+<td>Deploy to Vercel</td>
+<td>Live at vueroo.com/blackwatch</td>
+</tr>
+</table>
+<p><strong>Phase 2 Exit Criteria:</strong></p>
+<ul>
+<li>Dashboard renders at /blackwatch with all sections</li>
+</ul>
+<ul>
+<li>17+ signals auto-fetched (3 or fewer manual)</li>
+</ul>
+<ul>
+<li>Convergence detection visual</li>
+</ul>
+<ul>
+<li>Auto-refresh working</li>
+</ul>
+<ul>
+<li>Deployed to production</li>
+</ul>
+<p><hr></p>
+<h3>MIDDLE — Phase 3: Scan Engine (Following session)</h3>
+<p><strong>Goal:</strong> Automated daily scans, weekly deep scans, memory evolution system.</p>
+<table>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Verification</th>
+</tr>
+<tr>
+<td>3.1</td>
+<td>Create Morning Echo cron job (06:30 daily)</td>
+<td>First scan produced</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Define scan generation prompt for agent</td>
+<td>Scan follows Section 4 format</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Create Weekly Deep Scan cron (Sunday 10:00)</td>
+<td>Full 20-domain analysis produced</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>Build scan archive structure</td>
+<td><code>data/blackwatch-scans/</code> populated</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>Build scan rendering in dashboard</td>
+<td>Scans visible on dashboard</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>Create Monthly Retrospective cron (1st of month)</td>
+<td>First retrospective produced</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>Build accuracy tracking system</td>
+<td>Predictions graded in retrospective</td>
+</tr>
+<tr>
+<td>3.8</td>
+<td>Implement Recursive Intelligence Score tracking</td>
+<td>Score trends visible on dashboard</td>
+</tr>
+</table>
+<p><strong>Phase 3 Exit Criteria:</strong></p>
+<ul>
+<li>Daily scans auto-generated and archived</li>
+</ul>
+<ul>
+<li>Weekly deep scans running</li>
+</ul>
+<ul>
+<li>Monthly retrospectives grading accuracy</li>
+</ul>
+<ul>
+<li>Recursive Intelligence Score tracked across scans</li>
+</ul>
+<ul>
+<li>Scans visible on dashboard</li>
+</ul>
+<p><hr></p>
+<h3>END — Phase 4: Full Automation &amp; Evolution (1-2 weeks out)</h3>
+<p><strong>Goal:</strong> Fully automated intelligence system with self-improving framework.</p>
+<table>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Verification</th>
+</tr>
+<tr>
+<td>4.1</td>
+<td>Event-triggered scans (signal flip → immediate scan)</td>
+<td>Red flip triggers alert scan</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Domain weight auto-calibration</td>
+<td>Weights adjusted based on accuracy</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>Source reliability scoring</td>
+<td>Sources promoted/demoted automatically</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>Indicator retirement/promotion system</td>
+<td>Weak indicators replaced</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>Backtesting system for scenarios</td>
+<td>Historical accuracy measured</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td>Opportunity engine integrated into scans</td>
+<td>Every risk has opportunity counterpart</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td>Manual input interface for non-FRED domains</td>
+<td>9 manual signals can be updated via dashboard</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td>Mobile-responsive dashboard</td>
+<td>Works on phone/tablet</td>
+</tr>
+<tr>
+<td>4.9</td>
+<td>Alert system (signal flip → notification)</td>
+<td>Roo gets notified on Red flip</td>
+</tr>
+<tr>
+<td>4.10</td>
+<td>Full memory evolution cycle</td>
+<td>System improves measurably month over month</td>
+</tr>
+</table>
+<p><strong>Phase 4 Exit Criteria:</strong></p>
+<ul>
+<li>All 20 signals have data sources (0 manual)</li>
+</ul>
+<ul>
+<li>Event-triggered scans working</li>
+</ul>
+<ul>
+<li>Monthly accuracy &gt; 60% (correct + partial)</li>
+</ul>
+<ul>
+<li>Framework auto-calibrates weights quarterly</li>
+</ul>
+<ul>
+<li>Roo receives alerts on signal flips</li>
+</ul>
+<ul>
+<li>Dashboard mobile-responsive</li>
+</ul>
+<p><hr></p>
+<h3>POST-END — Phase 5: Advanced Capabilities (Future)</h3>
+<table>
+<tr>
+<th>Step</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>5.1</td>
+<td>D3.js convergence visualization (network graph)</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>Scenario probability tracking (Bayesian updating)</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>Correlation matrix between domains over time</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>Anomaly detection (statistical outlier flagging)</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td>Natural language scan generation (full agent-written analysis)</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td>Export to Obsidian vault (daily note integration)</td>
+</tr>
+<tr>
+<td>5.7</td>
+<td>API endpoint for other systems to query signal board</td>
+</tr>
+<tr>
+<td>5.8</td>
+<td>Multi-user access (team intelligence sharing)</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>6. FAILURE MODES &amp; RECOVERY</h2>
+<h3>6.1 FRED API Down</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>HTTP timeout or 5xx from FRED</td>
+<td>Connector catches exception, logs error</td>
+<td>Uses last-known-good JSON (stale flag set)</td>
+</tr>
+<tr>
+<td>Rate limited (429)</td>
+<td>Connector catches HTTP 429</td>
+<td>Waits 60s, retries once, then fails gracefully</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Connector writes <code>{&quot;stale&quot;: true}</code> flag to JSON</li>
+</ol>
+<ol>
+<li>Dashboard shows &quot;STALE DATA&quot; badge on signal tiles</li>
+</ol>
+<ol>
+<li>Next cron run retries automatically</li>
+</ol>
+<ol>
+<li>If FRED down &gt; 12h (2 missed runs), Lumina alerts Roo</li>
+</ol>
+<h3>6.2 Vercel Deployment Fails</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>Git push succeeds but Vercel build fails</td>
+<td>Vercel webhook (Phase 4) or manual check</td>
+<td>Previous deployment remains live</td>
+</tr>
+<tr>
+<td>JSON not served (404)</td>
+<td>Dashboard fetch fails</td>
+<td>Dashboard shows cached data with warning</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Vercel keeps previous deployment live — no downtime</li>
+</ol>
+<ol>
+<li>Check Vercel dashboard for build errors</li>
+</ol>
+<ol>
+<li>Fix code, push again</li>
+</ol>
+<ol>
+<li>Verify new deployment at /blackwatch</li>
+</ol>
+<h3>6.3 Cron Job Fails</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>Agent session times out</td>
+<td>OpenClaw cron logs show failure</td>
+<td>Next cron run retries</td>
+</tr>
+<tr>
+<td>Script error (Python crash)</td>
+<td>Agent reports error</td>
+<td>Fix script, run manually, then let cron resume</td>
+</tr>
+<tr>
+<td>FRED API key invalid</td>
+<td>All fetches fail</td>
+<td>Rotate API key, update script</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Check <code>cron list</code> for last-run status</li>
+</ol>
+<ol>
+<li>Read cron run logs for error details</li>
+</ol>
+<ol>
+<li>Fix root cause</li>
+</ol>
+<ol>
+<li>Run script manually: <code>python scripts/blackwatch-fred-connector.py</code></li>
+</ol>
+<ol>
+<li>Verify JSON output</li>
+</ol>
+<ol>
+<li>Let cron resume on next schedule</li>
+</ol>
+<h3>6.4 Dashboard JavaScript Error</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>Blank section or broken rendering</td>
+<td>Browser console shows JS error</td>
+<td>Fix code, push to git</td>
+</tr>
+<tr>
+<td>Data not loading (fetch fails)</td>
+<td>Console shows 404 or CORS error</td>
+<td>Check Vercel routing + JSON path</td>
+</tr>
+<tr>
+<td>Stale data (not refreshing)</td>
+<td>Data timestamp old</td>
+<td>Check cron job status</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Open browser console (F12) on /blackwatch</li>
+</ol>
+<ol>
+<li>Identify error from console output</li>
+</ol>
+<ol>
+<li>Fix in local files</li>
+</ol>
+<ol>
+<li><code>node -c</code> syntax check</li>
+</ol>
+<ol>
+<li>Git commit + push</li>
+</ol>
+<ol>
+<li>Hard refresh browser</li>
+</ol>
+<h3>6.5 Data Corruption</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>JSON parse error</td>
+<td>Dashboard JS catches and logs</td>
+<td>Re-run connector</td>
+</tr>
+<tr>
+<td>Impossible values (e.g., VIX = -5)</td>
+<td>Validation in connector</td>
+<td>Connector validates ranges</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Delete corrupted JSON</li>
+</ol>
+<ol>
+<li>Re-run connector: <code>python scripts/blackwatch-fred-connector.py</code></li>
+</ol>
+<ol>
+<li>Verify output: <code>python -c &quot;import json; d=json.load(open(&#x27;data/blackwatch-signals.json&#x27;)); print(d[&#x27;metadata&#x27;])&quot;</code></li>
+</ol>
+<ol>
+<li>Git push</li>
+</ol>
+<h3>6.6 Signal Drift (Indicators Stop Updating)</h3>
+<table>
+<tr>
+<th>Symptom</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+<tr>
+<td>FRED series discontinued</td>
+<td>Last date &gt; 30 days old</td>
+<td>Find replacement series on FRED</td>
+</tr>
+<tr>
+<td>Manual signals never updated</td>
+<td>Manual signals show 0 confidence for &gt; 7 days</td>
+<td>Prompt Roo for assessment</td>
+</tr>
+</table>
+<p><strong>Recovery procedure:</strong></p>
+<ol>
+<li>Check FRED series page — is it still active?</li>
+</ol>
+<ol>
+<li>Search FRED for replacement series</li>
+</ol>
+<ol>
+<li>Update <code>SIGNALS</code> dict in connector script</li>
+</ol>
+<ol>
+<li>Test fetch</li>
+</ol>
+<ol>
+<li>Update dashboard if series_id display changes</li>
+</ol>
+<p><hr></p>
+<h2>7. MONITORING &amp; SELF-HEALING</h2>
+<h3>Self-Healing Rules</h3>
+<table>
+<tr>
+<th>Condition</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>FRED API timeout</td>
+<td>Retry once after 60s, then use cached data</td>
+</tr>
+<tr>
+<td>FRED series discontinued</td>
+<td>Log warning, mark signal as &quot;stale&quot;, alert on next scan</td>
+</tr>
+<tr>
+<td>JSON write fails</td>
+<td>Retry with fallback path (workspace only)</td>
+</tr>
+<tr>
+<td>Git push fails</td>
+<td>Log error, data still written locally, next cron will retry push</td>
+</tr>
+<tr>
+<td>Dashboard fetch fails</td>
+<td>Show cached data with &quot;STALE&quot; badge, auto-retry in 60s</td>
+</tr>
+<tr>
+<td>Cron job fails 3x consecutive</td>
+<td>Lumina alerts Roo in next session</td>
+</tr>
+</table>
+<h3>Health Check Endpoints</h3>
+<table>
+<tr>
+<th>Check</th>
+<th>URL</th>
+<th>Expected</th>
+<th>Frequency</th>
+</tr>
+<tr>
+<td>Signal JSON live</td>
+<td>https://www.vueroo.com/data/blackwatch-signals.json</td>
+<td>200 + valid JSON</td>
+<td>Each dashboard load</td>
+</tr>
+<tr>
+<td>Dashboard HTML</td>
+<td>https://www.vueroo.com/blackwatch/index.html</td>
+<td>200 + HTML</td>
+<td>Weekly</td>
+</tr>
+<tr>
+<td>Cron job status</td>
+<td><code>cron list</code> in OpenClaw</td>
+<td>All jobs enabled + last-run OK</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td>Data freshness</td>
+<td>JSON metadata.last_update</td>
+<td>&lt; 12h old</td>
+<td>Each dashboard load</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>8. TESTING &amp; VALIDATION</h2>
+<h3>Pre-Deployment Checklist</h3>
+<ul>
+<li>[ ] <code>python scripts/blackwatch-fred-connector.py</code> runs without errors</li>
+</ul>
+<ul>
+<li>[ ] Output JSON is valid (<code>python -c &quot;import json; json.load(open(...))&quot;</code>)</li>
+</ul>
+<ul>
+<li>[ ] Dashboard HTML loads locally (<code>open public/blackwatch/index.html</code>)</li>
+</ul>
+<ul>
+<li>[ ] No JavaScript console errors</li>
+</ul>
+<ul>
+<li>[ ] All 20 signal tiles render (auto or manual)</li>
+</ul>
+<ul>
+<li>[ ] Signal colors match status (green/amber/red)</li>
+</ul>
+<ul>
+<li>[ ] Convergence detection displays when active</li>
+</ul>
+<ul>
+<li>[ ] Risk level in header matches JSON</li>
+</ul>
+<ul>
+<li>[ ] Auto-refresh works (wait 15 min, verify update)</li>
+</ul>
+<ul>
+<li>[ ] Mobile responsive (check on phone width)</li>
+</ul>
+<h3>Post-Deployment Verification</h3>
+<ul>
+<li>[ ] <code>https://www.vueroo.com/blackwatch</code> loads</li>
+</ul>
+<ul>
+<li>[ ] <code>https://www.vueroo.com/data/blackwatch-signals.json</code> returns 200</li>
+</ul>
+<ul>
+<li>[ ] No 404s in browser console</li>
+</ul>
+<ul>
+<li>[ ] Data timestamp &lt; 12h old</li>
+</ul>
+<ul>
+<li>[ ] Cron job shows &quot;ok&quot; status after first run</li>
+</ul>
+<h3>Regression Tests (after each change)</h3>
+<ul>
+<li>[ ] Existing CycleVue dashboard still works</li>
+</ul>
+<ul>
+<li>[ ] Europe Impact section still renders</li>
+</ul>
+<ul>
+<li>[ ] No new console errors</li>
+</ul>
+<ul>
+<li>[ ] Vercel build succeeds</li>
+</ul>
+<ul>
+<li>[ ] Git push succeeds</li>
+</ul>
+<p><hr></p>
+<h2>9. MAINTENANCE SCHEDULE</h2>
+<table>
+<tr>
+<th>Frequency</th>
+<th>Task</th>
+<th>Owner</th>
+</tr>
+<tr>
+<td>Daily</td>
+<td>Check morning echo scan produced</td>
+<td>Lumina (automated)</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>Verify all cron jobs running</td>
+<td>Lumina (automated via integrity scan)</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Run retrospective</td>
+<td>Lumina (automated)</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Check FRED series still active</td>
+<td>Lumina (manual check)</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>Calibrate domain weights</td>
+<td>Lumina + Roo review</td>
+</tr>
+<tr>
+<td>Quarterly</td>
+<td>Review indicator relevance</td>
+<td>Lumina + Roo review</td>
+</tr>
+<tr>
+<td>Bi-annually</td>
+<td>Full framework review</td>
+<td>Roo + Lumina</td>
+</tr>
+<tr>
+<td>Annually</td>
+<td>Complete system audit</td>
+<td>Roo + Lumina</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>10. KEY FILE INVENTORY</h2>
+<table>
+<tr>
+<th>File</th>
+<th>Location</th>
+<th>Purpose</th>
+<th>Created</th>
+</tr>
+<tr>
+<td>Protocol</td>
+<td><code>memory/protocol-blackwatch-001.md</code></td>
+<td>Operating protocol</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>Protocol (vault)</td>
+<td><code>quest vault/10-Projects/Lumina-System/Protocols/protocol-blackwatch-001.md</code></td>
+<td>Source of truth</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>Technical doc</td>
+<td><code>memory/blackwatch-technical-architecture.md</code></td>
+<td>This document</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>FRED connector</td>
+<td><code>scripts/blackwatch-fred-connector.py</code></td>
+<td>Live data fetcher</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>Signal data</td>
+<td><code>vueroo-portal/public/data/blackwatch-signals.json</code></td>
+<td>Deployed data</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>Signal data (local)</td>
+<td><code>data/blackwatch-signals.json</code></td>
+<td>Workspace copy</td>
+<td>2026-07-14</td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td><code>vueroo-portal/public/blackwatch/index.html</code></td>
+<td>Main dashboard</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Next.js route</td>
+<td><code>vueroo-portal/app/dashboard/blackwatch/page.tsx</code></td>
+<td>Auth wrapper</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>News connector</td>
+<td><code>scripts/blackwatch-news-connector.py</code></td>
+<td>News/GDELT feed</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Crypto connector</td>
+<td><code>scripts/blackwatch-crypto-connector.py</code></td>
+<td>CoinGecko feed</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>Scans archive</td>
+<td><code>data/blackwatch-scans/</code></td>
+<td>Scan history</td>
+<td>Phase 3</td>
+</tr>
+<tr>
+<td>Retrospectives</td>
+<td><code>data/blackwatch-retrospective/</code></td>
+<td>Monthly audits</td>
+<td>Phase 3</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>11. GLOSSARY</h2>
+<table>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+<tr>
+<td>Signal Board</td>
+<td>20-indicator grid showing status of each monitored domain</td>
+</tr>
+<tr>
+<td>Convergence</td>
+<td>When 3+ domains show stress simultaneously — major disruption risk</td>
+</tr>
+<tr>
+<td>Echo Scan</td>
+<td>Daily morning situational assessment</td>
+</tr>
+<tr>
+<td>Deep Scan</td>
+<td>Weekly full 20-domain analysis</td>
+</tr>
+<tr>
+<td>Retrospective</td>
+<td>Monthly accuracy audit of previous scans</td>
+</tr>
+<tr>
+<td>Recursive Intelligence Score</td>
+<td>Self-grade of scan quality across 6 metrics</td>
+</tr>
+<tr>
+<td>Epistemic Tag</td>
+<td>Classification of conclusion certainty (OBSERVABLE / STRONG INFERENCE / WEAK SIGNAL / SYMBOLIC / UNKNOWN)</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>One of 20 monitored systems (Financial, Geopolitical, Cyber, etc.)</td>
+</tr>
+<tr>
+<td>Signal Flip</td>
+<td>When an indicator changes status (green→amber, amber→red)</td>
+</tr>
+<tr>
+<td>Manual Signal</td>
+<td>Indicator without live data source — requires human assessment</td>
+</tr>
+<tr>
+<td>Auto Signal</td>
+<td>Indicator with live FRED/API data source — fully automated</td>
+</tr>
+</table>
+<p><hr></p>
+<p><em>Document Version: 1.0</em></p>
+<p><em>Created: 2026-07-14</em></p>
+<p><em>Author: Lumina</em></p>
+<p><em>Status: Living document — update as system evolves</em></p>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBS-001 Channel-Brain Sync Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>CBS-001 Channel-Brain Sync</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> CBS (Channel-Brain Sync)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol — Channel Brain Sync (CBS-001)</h1>
+<p><strong>Created:</strong> 2026-08-16 02:40 IST</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Every Telegram channel linked to Lumina&#x27;s brain automatically syncs conversation data to the correct brain domain. No manual trigger required. Works for all mapped channels.</p>
+<h2>Architecture — Three Layers</h2>
+<h3>Layer 1: Rolling Update (Real-Time)</h3>
+<p><strong>When:</strong> Every time Lumina replies in a mapped channel.</p>
+<p><strong>What:</strong> Append the exchange (user message + Lumina reply summary) to the channel&#x27;s conversation log.</p>
+<p><strong>Where:</strong> <code>memory/channel-conversations/&lt;channel-slug&gt;-log.md</code></p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>After composing a reply but before sending, Lumina appends to the conversation log:</li>
+</ol>
+<ul>
+<li>Message number (sequential)</li>
+</ul>
+<ul>
+<li>Timestamp</li>
+</ul>
+<ul>
+<li>Sender</li>
+</ul>
+<ul>
+<li>Content summary (not full text — key points, decisions, topics discussed)</li>
+</ul>
+<ul>
+<li>Any files created/modified</li>
+</ul>
+<ol>
+<li>This happens as part of the reply flow, not as a separate step.</li>
+</ol>
+<p><strong>Rule:</strong> If a channel has a mapping file in <code>memory/channel-mappings/</code>, rolling updates are ON. If no mapping file exists, the channel is unmapped and no logging occurs.</p>
+<h3>Layer 2: Cron Safety Net (Passive Sweep)</h3>
+<p><strong>When:</strong> Every 4 hours (6x per day)</p>
+<p><strong>What:</strong> Scan all mapped channels for conversation gaps. Pull recent session history and append any exchanges not yet logged.</p>
+<p><strong>Where:</strong> Cron job, script at <code>scripts/channel-brain-sync.py</code></p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>List all mapping files in <code>memory/channel-mappings/</code></li>
+</ol>
+<ol>
+<li>For each mapped channel:</li>
+</ol>
+<p>a. Read the mapping file → get channel ID, session key, log file path</p>
+<p>b. Pull recent session history (last 50 messages)</p>
+<p>c. Read the current conversation log</p>
+<p>d. Compare — find any messages in history not yet in the log</p>
+<p>e. Append missing exchanges with summaries</p>
+<p>f. Sync updated log to vault (if vault path specified in mapping)</p>
+<ol>
+<li>Log run status to <code>memory/channel-sync-status.md</code></li>
+</ol>
+<p><strong>Why:</strong> Catches anything missed by Layer 1 — session crashes, mid-conversation interruptions, messages where Lumina replied with NO_REPLY, etc.</p>
+<h3>Layer 3: Session Start Replay</h3>
+<p><strong>When:</strong> When Lumina wakes in a mapped channel (first message of a new session)</p>
+<p><strong>What:</strong> Read the conversation log + mapping file → load context → summarize last N exchanges in the log as internal context.</p>
+<p><strong>Where:</strong> Part of the boot sequence defined in each channel mapping file.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Detect channel ID from inbound metadata</li>
+</ol>
+<ol>
+<li>Check <code>memory/channel-mappings/</code> for a matching file</li>
+</ol>
+<ol>
+<li>If found:</li>
+</ol>
+<p>a. Read mapping file → identify brain domain, mode, context files</p>
+<p>b. Read conversation log → get last 10-20 exchanges</p>
+<p>c. Load context files specified in mapping</p>
+<p>d. Enter the correct mode</p>
+<p>e. Internal summary: &quot;Continuing from [date] — last topic was [X], key decisions were [Y]&quot;</p>
+<ol>
+<li>If no mapping found: default mode, no special context loading</li>
+</ol>
+<h2>File Structure</h2>
+<pre><code>memory/
+├── channel-mappings/
+│   ├── human-design-talk.md          # Per-channel mapping
+│   ├── [future-channel].md           # One per channel
+│   └── ...
+├── channel-conversations/
+│   ├── human-design-talk-log.md      # Per-channel running log
+│   ├── [future-channel]-log.md       # One per channel
+│   └── ...
+└── channel-sync-status.md            # Cron run log (shared)</code></pre>
+<h2>Mapping File Template</h2>
+<p>Each channel mapping file follows this structure:</p>
+<pre><code># Channel Mapping — [Channel Name]
+
+**Channel ID:** `[telegram channel id]`
+**Telegram Label:** [label]
+**Session Key:** `agent:main:telegram:group:[channel id]`
+**Created:** [date]
+
+## Purpose
+[What this channel is for]
+
+## Boot Sequence
+1. Read this mapping file
+2. Load [context files]
+3. Check conversation log for continuity
+4. Enter [mode] mode
+
+## Mode
+[Mode description]
+
+## Brain Domains Linked
+| Domain | Location | Content |
+|--------|----------|---------|
+| ... | ... | ... |
+
+## Context Files (load on wake)
+- [file paths]
+
+## Rules
+- [Channel-specific rules]
+
+## Vault Sync Path
+[Where to sync in Obsidian vault, if applicable]</code></pre>
+<h2>Conversation Log Format</h2>
+<pre><code># [Channel Name] — Conversation Log
+
+**Channel ID:** `[id]`
+**Started:** [date]
+**Status:** ACTIVE
+
+---
+
+## Session N — [Date] (HH:MM IST onwards)
+
+### Msg 1 — Sender (HH:MM) #telegram_msg_id
+Content summary. Key points. Decisions made. Files created.
+
+### Msg 2 — Sender (HH:MM) #telegram_msg_id
+...
+
+---
+
+*[Append new messages below — newest at bottom]*</code></pre>
+<h2>Cron Job Specification</h2>
+<p><strong>Name:</strong> <code>channel-brain-sync</code></p>
+<p><strong>Schedule:</strong> Every 4 hours (0 <em>/4 </em> <em> </em>)</p>
+<p><strong>Script:</strong> <code>scripts/channel-brain-sync.py</code></p>
+<p><strong>Log:</strong> <code>memory/channel-sync-status.md</code></p>
+<h2>Adding a New Channel</h2>
+<ol>
+<li>Create <code>memory/channel-mappings/&lt;channel-slug&gt;.md</code> using the template</li>
+</ol>
+<ol>
+<li>Create <code>memory/channel-conversations/&lt;channel-slug&gt;-log.md</code> with header</li>
+</ol>
+<ol>
+<li>Sync both to vault (if vault path specified)</li>
+</ol>
+<ol>
+<li>The cron job automatically picks up new mappings — no config change needed</li>
+</ol>
+<ol>
+<li>Rolling updates automatically activate — no flag to set</li>
+</ol>
+<h2>Rules</h2>
+<ul>
+<li>Conversation logs store SUMMARIES, not full message text. Full text lives in session history.</li>
+</ul>
+<ul>
+<li>If a channel has no mapping file, it&#x27;s ignored by all three layers.</li>
+</ul>
+<ul>
+<li>Vault sync is optional per channel (specified in mapping file).</li>
+</ul>
+<ul>
+<li>The cron script reads mapping files dynamically — adding a new mapping file is all that&#x27;s needed.</li>
+</ul>
+<ul>
+<li>Conversation logs are append-only. Never rewrite history. If a correction is needed, add a new entry noting the correction.</li>
+</ul>
+<p><hr></p>
+<p><em>This protocol is universal. It works for any channel that has a mapping file. No per-channel setup beyond creating the mapping file itself.</em></p>
+</body>
+</html>

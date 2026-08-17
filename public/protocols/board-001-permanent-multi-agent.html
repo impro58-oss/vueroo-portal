@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOARD-001 Permanent Multi-Agent Board Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>BOARD-001 Permanent Multi-Agent Board</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> BOARD (Board Governance)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>PROTOCOL-BOARD-001 — Permanent Multi-Agent Board Deployment</h1>
+<p><strong>Department:</strong> BOARD</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-17</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Setting up permanent AI board members as isolated OpenClaw agents</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Deploy synthetic board members as permanent, always-on OpenClaw agents — not ephemeral subagents. Each twin gets its own workspace, session store, Telegram bot, heartbeat, and cron schedule. They communicate via <code>sessions_send</code> and shared context files. This protocol is replicable for any future board expansion.</p>
+<p><hr></p>
+<h2>Prerequisites</h2>
+<ul>
+<li>OpenClaw installed and running (gateway on port 18001)</li>
+</ul>
+<ul>
+<li>Telegram bot tokens for each twin (created via BotFather)</li>
+</ul>
+<ul>
+<li>Telegram supergroup with topic channels (one per twin + one for board-wide)</li>
+</ul>
+<ul>
+<li><code>agentToAgent</code> messaging enabled in config</li>
+</ul>
+<ul>
+<li>Shared context files created (BOARD-STATE.md, DECISION-LOG.md, THESIS.md)</li>
+</ul>
+<p><hr></p>
+<h2>Architecture</h2>
+<pre><code>┌─────────────────────────────────────────────────────┐
+│                    Roo (Human)                       │
+│              Telegram Supergroup                     │
+│         ┌──────────┬──────────┬──────────┐          │
+│         │  Board   │ Thiel    │ Alex     │          │
+│         │  Topic   │ Topic    │ Topic    │          │
+│         ├──────────┼──────────┼──────────┤          │
+│         │ Paul     │ Pérez    │ Collison │          │
+│         │ Topic    │ Topic    │ Topic    │          │
+│         └──────────┴──────────┴──────────┘          │
+└─────────────────────────────────────────────────────┘
+         │            │           │
+    ┌────▼────┐ ┌────▼────┐ ┌───▼─────┐
+    │ Thiel   │ │ Alex    │ │ Paul    │
+    │ Agent   │ │ Agent   │ │ Agent   │
+    │ L4 Strat│ │ L2 Grow │ │ Gatekeep│
+    └────┬────┘ └────┬────┘ └────┬────┘
+         │           │           │
+    ┌────▼────┐ ┌────▼────┐      │
+    │ Pérez   │ │ Collison│      │
+    │ Agent   │ │ Agent   │      │
+    │ L3 Cycle│ │ L1 Ops  │      │
+    └─────────┘ └─────────┘      │
+         │           │           │
+         └───────────┴───────────┘
+                     │
+           ┌─────────▼─────────┐
+           │  Shared Context    │
+           │  BOARD-STATE.md    │
+           │  DECISION-LOG.md   │
+           │  THESIS.md         │
+           │  (in each workspace│
+           │   via symlink or   │
+           │   copy)            │
+           └───────────────────┘</code></pre>
+<h2>4D Chess Operating Model</h2>
+<pre><code>Layer 4 (TOP):    Thiel   — Strategy/Monopoly     — fires when Pérez confirms timing
+Layer 3:         Pérez   — Cycle Timing           — fires when Alex proves growth
+Layer 2:         Alex    — Growth/Monetization    — fires when Collison ships
+Layer 1 (BOTTOM): Collison — Operations/Execution — fires FIRST
+
+Gatekeeper (all layers): Paul — Cash Protection
+Orchestrator: Lumina (main agent) — coordinates, doesn&#x27;t override twins</code></pre>
+<p><hr></p>
+<h2>Step-by-Step Deployment</h2>
+<h3>Step 1: Create Telegram Bots</h3>
+<p>For each twin, create a Telegram bot via @BotFather:</p>
+<pre><code>/newbot
+  Name: Thiel-Twin
+  Username: thiel_twin_board_bot
+  
+/newbot
+  Name: Alex-Twin
+  Username: alex_twin_board_bot
+  
+/newbot
+  Name: Paul-Twin
+  Username: paul_twin_board_bot
+  
+/newbot
+  Name: Pérez-Twin
+  Username: perez_twin_board_bot
+  
+/newbot
+  Name: Collison-Twin
+  Username: collison_twin_board_bot</code></pre>
+<p>Record each bot token. Disable Privacy Mode for each bot if using in groups:</p>
+<pre><code>/setprivacy → Disable</code></pre>
+<h3>Step 2: Create Telegram Supergroup</h3>
+<ol>
+<li>Create a supergroup: &quot;Avaark Board&quot;</li>
+</ol>
+<ol>
+<li>Enable topics: Group Settings → Topics → On</li>
+</ol>
+<ol>
+<li>Create topics:</li>
+</ol>
+<ul>
+<li>&quot;Board Wide&quot; (general)</li>
+</ul>
+<ul>
+<li>&quot;Thiel — Strategy&quot;</li>
+</ul>
+<ul>
+<li>&quot;Alex — Growth&quot;</li>
+</ul>
+<ul>
+<li>&quot;Paul — Cash Protection&quot;</li>
+</ul>
+<ul>
+<li>&quot;Pérez — Cycle Timing&quot;</li>
+</ul>
+<ul>
+<li>&quot;Collison — Operations&quot;</li>
+</ul>
+<ol>
+<li>Add all 5 twin bots to the supergroup</li>
+</ol>
+<ol>
+<li>Record the supergroup chat ID (negative number)</li>
+</ol>
+<ol>
+<li>Record each topic ID</li>
+</ol>
+<h3>Step 3: Create Agent Workspaces</h3>
+<p>For each twin, create a workspace directory with bootstrap files:</p>
+<pre><code>openclaw agents add thiel --workspace ~/.openclaw/workspace-thiel --non-interactive
+openclaw agents add alex --workspace ~/.openclaw/workspace-alex --non-interactive
+openclaw agents add paul --workspace ~/.openclaw/workspace-paul --non-interactive
+openclaw agents add perez --workspace ~/.openclaw/workspace-perez --non-interactive
+openclaw agents add collison --workspace ~/.openclaw/workspace-collison --non-interactive</code></pre>
+<h3>Step 4: Write Each Twin&#x27;s SOUL.md</h3>
+<p>Each twin workspace gets a SOUL.md defining their persona, role, layer, operating constraints, and what files to read on startup.</p>
+<h3>Step 5: Write Each Twin&#x27;s AGENTS.md</h3>
+<p>Each twin workspace gets an AGENTS.md with their operating protocol — how they work, what they can do, decision authority, escalation rules.</p>
+<h3>Step 6: Create Shared Context Files</h3>
+<p>Create these files in EACH twin workspace (copy or symlink to the master versions in the main workspace):</p>
+<ul>
+<li><code>board/BOARD-STATE.md</code> — living state (updated after every interaction)</li>
+</ul>
+<ul>
+<li><code>board/DECISION-LOG.md</code> — append-only decision history</li>
+</ul>
+<ul>
+<li><code>board/THESIS.md</code> — the Avaark thesis (north star for all agents)</li>
+</ul>
+<h3>Step 7: Configure openclaw.json</h3>
+<p>Add to <code>agents.list</code>:</p>
+<pre><code>{
+  id: &quot;thiel&quot;,
+  workspace: &quot;~/.openclaw/workspace-thiel&quot;,
+  model: { primary: &quot;ollama/glm-5.2:cloud&quot;, fallbacks: [&quot;ollama/glm-5.1:cloud&quot;] },
+  heartbeat: {
+    every: &quot;4h&quot;,
+    prompt: &quot;Read board/BOARD-STATE.md and board/DECISION-LOG.md. Check your layer (L4 Strategy). If nothing needs attention, reply HEARTBEAT_OK.&quot;,
+    target: &quot;none&quot;,
+    isolatedSession: true
+  },
+  identity: { name: &quot;Thiel-Twin&quot;, emoji: &quot;♟️&quot; }
+}</code></pre>
+<p>Repeat for each twin with appropriate model, heartbeat interval, and identity.</p>
+<h3>Step 8: Enable Agent-to-Agent Communication</h3>
+<pre><code>{
+  tools: {
+    agentToAgent: {
+      enabled: true,
+      allow: [&quot;main&quot;, &quot;thiel&quot;, &quot;alex&quot;, &quot;paul&quot;, &quot;perez&quot;, &quot;collison&quot;]
+    }
+  }
+}</code></pre>
+<h3>Step 9: Configure Telegram Bindings</h3>
+<p>Add each twin&#x27;s bot token and bind it to the supergroup topics:</p>
+<pre><code>{
+  channels: {
+    telegram: {
+      accounts: {
+        default: { botToken: &quot;EXISTING_TOKEN&quot; },
+        thiel: { botToken: &quot;THIEL_BOT_TOKEN&quot; },
+        alex: { botToken: &quot;ALEX_BOT_TOKEN&quot; },
+        paul: { botToken: &quot;PAUL_BOT_TOKEN&quot; },
+        perez: { botToken: &quot;PEREZ_BOT_TOKEN&quot; },
+        collison: { botToken: &quot;COLLISON_BOT_TOKEN&quot; }
+      }
+    }
+  },
+  bindings: [
+    { agentId: &quot;thiel&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;thiel&quot; } },
+    { agentId: &quot;alex&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;alex&quot; } },
+    { agentId: &quot;paul&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;paul&quot; } },
+    { agentId: &quot;perez&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;perez&quot; } },
+    { agentId: &quot;collison&quot;, match: { channel: &quot;telegram&quot;, accountId: &quot;collison&quot; } }
+  ]
+}</code></pre>
+<h3>Step 10: Set Up Heartbeats and Cron Schedules</h3>
+<p>Each twin gets a heartbeat appropriate to their layer:</p>
+<table>
+<tr>
+<th>Twin</th>
+<th>Heartbeat</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td>Collison</td>
+<td>Every 2h</td>
+<td>Check build status, Snodo health, pending engineering tasks</td>
+</tr>
+<tr>
+<td>Alex</td>
+<td>Every 4h</td>
+<td>Check growth metrics, outreach pipeline, market signals</td>
+</tr>
+<tr>
+<td>Paul</td>
+<td>Every 6h</td>
+<td>Check financial signals, tax deadlines, cash position</td>
+</tr>
+<tr>
+<td>Pérez</td>
+<td>Daily 08:00</td>
+<td>Cycle timing check, market phase assessment</td>
+</tr>
+<tr>
+<td>Thiel</td>
+<td>Daily 09:00</td>
+<td>Strategic watch, competitive landscape, monopoly vector check</td>
+</tr>
+</table>
+<h3>Step 11: Verify</h3>
+<pre><code>openclaw agents list --bindings
+openclaw gateway restart
+# Send a test message to each twin via Telegram
+# Verify each twin responds in its topic channel
+# Verify agentToAgent messaging works</code></pre>
+<p><hr></p>
+<h2>Shared Context File Maintenance</h2>
+<h3>BOARD-STATE.md</h3>
+<ul>
+<li><strong>Updated by:</strong> Lumina (main agent) after every board interaction</li>
+</ul>
+<ul>
+<li><strong>Read by:</strong> All twins on startup and heartbeat</li>
+</ul>
+<ul>
+<li><strong>Purpose:</strong> Current state of each member, fuel company, open question, and decision</li>
+</ul>
+<h3>DECISION-LOG.md</h3>
+<ul>
+<li><strong>Updated by:</strong> Lumina (main agent) — append-only, every decision timestamped</li>
+</ul>
+<ul>
+<li><strong>Read by:</strong> All twins on startup and heartbeat</li>
+</ul>
+<ul>
+<li><strong>Purpose:</strong> Complete decision history. If it&#x27;s not here, it hasn&#x27;t been decided.</li>
+</ul>
+<h3>THESIS.md</h3>
+<ul>
+<li><strong>Updated by:</strong> Roo (human) only — this is the north star</li>
+</ul>
+<ul>
+<li><strong>Read by:</strong> All twins on startup</li>
+</ul>
+<ul>
+<li><strong>Purpose:</strong> The Avaark mission, fuel strategy, and founding principles</li>
+</ul>
+<p><hr></p>
+<h2>Inter-Agent Communication Protocol</h2>
+<p>Twins communicate via <code>sessions_send</code>:</p>
+<pre><code>sessions_send(agentId=&quot;alex&quot;, message=&quot;HANDOFF\nfrom: collison\nto: alex\ntask_id: snodo-launch\nsummary: Snodo build complete, ready for growth plan\ncontext: platform live at snodo.app, 0 users\ndone_when:\n- 10 builders signed up\n- first paid transaction processed&quot;)</code></pre>
+<h3>Handoff Format (from multi-agent-kit)</h3>
+<pre><code>HANDOFF
+from: &lt;agent-id&gt;
+to: &lt;agent-id&gt;
+task_id: &lt;unique-id&gt;
+priority: P1|P2|P3
+summary: &lt;one line&gt;
+context: &lt;relevant details&gt;
+deliver_to: &lt;telegram chat:topic&gt;
+deadline: &lt;asap|date&gt;
+done_when:
+- &lt;criteria 1&gt;
+- &lt;criteria 2&gt;</code></pre>
+<h3>Escalation Rules</h3>
+<ul>
+<li>Any twin can escalate to Lumina (main) via <code>sessions_send(agentId=&quot;main&quot;, ...)</code></li>
+</ul>
+<ul>
+<li>Paul can block any spending recommendation from any twin</li>
+</ul>
+<ul>
+<li>Thiel can escalate strategic concerns to Roo via Lumina</li>
+</ul>
+<ul>
+<li>Twins do NOT communicate directly with Roo — they go through Lumina</li>
+</ul>
+<p><hr></p>
+<h2>Per-Agent Configuration Reference</h2>
+<table>
+<tr>
+<th>Agent</th>
+<th>ID</th>
+<th>Layer</th>
+<th>Model</th>
+<th>Heartbeat</th>
+<th>Role</th>
+</tr>
+<tr>
+<td>Thiel-Twin</td>
+<td>thiel</td>
+<td>L4</td>
+<td>glm-5.2:cloud</td>
+<td>Daily 09:00</td>
+<td>Strategy &amp; Monopoly</td>
+</tr>
+<tr>
+<td>Alex-Twin</td>
+<td>alex</td>
+<td>L2</td>
+<td>glm-5.2:cloud</td>
+<td>Every 4h</td>
+<td>Growth &amp; Monetization</td>
+</tr>
+<tr>
+<td>Paul-Twin</td>
+<td>paul</td>
+<td>Gate</td>
+<td>glm-5.2:cloud</td>
+<td>Every 6h</td>
+<td>Cash Protection / Gatekeeper</td>
+</tr>
+<tr>
+<td>Pérez-Twin</td>
+<td>perez</td>
+<td>L3</td>
+<td>glm-5.2:cloud</td>
+<td>Daily 08:00</td>
+<td>Cycle Timing &amp; Institutional</td>
+</tr>
+<tr>
+<td>Collison-Twin</td>
+<td>collison</td>
+<td>L1</td>
+<td>glm-5.2:cloud</td>
+<td>Every 2h</td>
+<td>Operational Execution</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Rollout Checklist</h2>
+<ul>
+<li>[ ] 5 Telegram bot tokens created</li>
+</ul>
+<ul>
+<li>[ ] Telegram supergroup created with 6 topics</li>
+</ul>
+<ul>
+<li>[ ] 5 twin workspaces created</li>
+</ul>
+<ul>
+<li>[ ] 5 SOUL.md files written</li>
+</ul>
+<ul>
+<li>[ ] 5 AGENTS.md files written</li>
+</ul>
+<ul>
+<li>[ ] Shared context files created in each workspace</li>
+</ul>
+<ul>
+<li>[ ] openclaw.json updated (agents, accounts, bindings, agentToAgent)</li>
+</ul>
+<ul>
+<li>[ ] Gateway restarted</li>
+</ul>
+<ul>
+<li>[ ] Each twin responds to test message</li>
+</ul>
+<ul>
+<li>[ ] agentToAgent messaging verified</li>
+</ul>
+<ul>
+<li>[ ] Heartbeats verified</li>
+</ul>
+<ul>
+<li>[ ] Protocol synced to vault</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol Version 1.0 — Created 2026-08-17 by Lumina</em></p>
+<p><em>Replicable for any future board expansion</em></p>
+</body>
+</html>

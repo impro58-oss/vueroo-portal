@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-012 Mindomo Mindmap Format Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-012 Mindomo Mindmap Format</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> RPT (Reporting)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>RPT-012 — Mindomo Mind Map Text Format Protocol</h1>
+<p><strong>Department:</strong> RPT (Reports)</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-15</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Any time Roo requests a mind map file for Mindomo, or a navigable knowledge structure</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Define the EXACT text format for files that Roo uploads to <strong>Mindomo</strong> (mind map tool). This protocol exists because the format was done incorrectly before (hashtag/dash-based) and Roo had to correct it. The correct format is <strong>indentation-based</strong>, matching the VOC Question Database file Roo provided as the reference.</p>
+<p><hr></p>
+<h2>THE FORMAT — Indentation-Based Hierarchy</h2>
+<p><strong>NO hashtags. NO dashes. NO asterisks. NO plus signs. NO commas. NO ampersands. NO bullet junk.</strong></p>
+<p>Hierarchy is shown <strong>purely by leading spaces (indentation)</strong>.</p>
+<table>
+<tr>
+<th>Level</th>
+<th>Indentation</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>Main topic (root)</td>
+<td>0 spaces</td>
+<td><code>Paul Overy Irish Wealth and Tax Knowledge</code></td>
+</tr>
+<tr>
+<td>Subtopic (level 1)</td>
+<td>1 space</td>
+<td><code> Core Philosophy and Framework</code></td>
+</tr>
+<tr>
+<td>Sub-subtopic (level 2)</td>
+<td>2 spaces</td>
+<td><code>  Financial Freedom Number</code></td>
+</tr>
+<tr>
+<td>Deeper (level 3+)</td>
+<td>3+ spaces</td>
+<td><code>   Question or detail text</code></td>
+</tr>
+</table>
+<h3>Reference Example (from Roo&#x27;s VOC file)</h3>
+<pre><code>VOC Question Database -- NeuroInterventional (624 Questions)
+ Dr Catapano (UPENN) (191 questions)
+  Ischemic (138)
+   Can you Describe a couple times when you weren&#x27;t happy...
+  Hemorrhagic (1)
+   Obviously I don&#x27;t think your float average are probably long enough...
+  General / Cross-domain (52)
+   What are your most common use cases for radial access catheters?
+ Dr Nayka (UK) (247 questions)
+  Ischemic (112)
+   How do you see the balance between mechanical thrombectomy...</code></pre>
+<p><hr></p>
+<h2>RULES</h2>
+<ol>
+<li><strong>Main topic</strong> = the root node. Plain text, no marker, at the left margin (0 spaces).</li>
+</ol>
+<ol>
+<li><strong>Subtopics</strong> = indented by 1 space per level. Level 1 = 1 space, Level 2 = 2 spaces, etc.</li>
+</ol>
+<ol>
+<li><strong>No punctuation junk</strong>: Do NOT use dashes, commas, ampersands, hashtags, asterisks, or plus signs as markers. Write clean text.</li>
+</ol>
+<ol>
+<li><strong>Keep topic labels short and clean</strong> — a topic is a node label, not a sentence.</li>
+</ol>
+<ol>
+<li><strong>Blank lines</strong> separate major branches (optional, for readability — Mindomo ignores them).</li>
+</ol>
+<ol>
+<li><strong>File extension</strong>: <code>.txt</code> (Mindomo Import → Plain Text, or upload the .txt file).</li>
+</ol>
+<ol>
+<li><strong>Encoding</strong>: UTF-8.</li>
+</ol>
+<ol>
+<li><strong>Filename</strong>: Use NO spaces in the filename (e.g. <code>Paul-Overy-Knowledge-Mindmap.txt</code>). Spaces get URL-encoded as <code>%20</code> when the file is opened/downloaded, which corrupts the name. Underscores or hyphens are safe.</li>
+</ol>
+<h2>MINIMUM DEPTH EXPECTATION (DEFAULT)</h2>
+<p>A mind map is NOT acceptable with only bare headings. The default minimum is <strong>THREE levels of depth</strong>:</p>
+<table>
+<tr>
+<th>Level</th>
+<th>Indentation</th>
+<th>Content</th>
+</tr>
+<tr>
+<td>Main topic</td>
+<td>0 spaces</td>
+<td>The overall subject (root node)</td>
+</tr>
+<tr>
+<td>Module</td>
+<td>1 space</td>
+<td>The major category (e.g. Pensions)</td>
+</tr>
+<tr>
+<td>Subtopic</td>
+<td>2 spaces</td>
+<td>The specific topic (e.g. Why Pensions Win)</td>
+</tr>
+<tr>
+<td>Guidance</td>
+<td>3 spaces</td>
+<td>A short note on what it means + an &quot;Ask Paul&quot; question</td>
+</tr>
+</table>
+<p><strong>Every subtopic MUST have a guidance line beneath it</strong> (level 3) that:</p>
+<ol>
+<li>States in one line what the topic means / the key fact.</li>
+</ol>
+<ol>
+<li>Includes an &quot;Ask Paul: ...&quot; prompt so Roo has a ready question to develop.</li>
+</ol>
+<p>This is the approved format (2026-08-15). Bare two-level maps are rejected.</p>
+<p><hr></p>
+<h2>WORKFLOW</h2>
+<ol>
+<li>Roo requests a mind map for a knowledge domain.</li>
+</ol>
+<ol>
+<li>Identify the main topic (root node) — the overall subject.</li>
+</ol>
+<ol>
+<li>Identify the main branches (level 1 subtopics) — the major categories.</li>
+</ol>
+<ol>
+<li>Identify the sub-branches (level 2+) — the specific topics under each category.</li>
+</ol>
+<ol>
+<li>Write the file with indentation showing hierarchy. NO markers.</li>
+</ol>
+<ol>
+<li>Save to the relevant <code>memory/</code> folder.</li>
+</ol>
+<ol>
+<li>Open the folder for Roo so they can upload the file to Mindomo.</li>
+</ol>
+<ol>
+<li>VERIFY: Read the file back and confirm the indentation hierarchy is correct before declaring done.</li>
+</ol>
+<p><hr></p>
+<h2>COMMON MISTAKES TO AVOID</h2>
+<ul>
+<li>❌ Using <code>#</code> hashtags (Mindomo&#x27;s Markdown import uses these, but Roo&#x27;s preferred format is indentation)</li>
+</ul>
+<ul>
+<li>❌ Using <code>-</code> dashes or <code>*</code> asterisks as bullet markers</li>
+</ul>
+<ul>
+<li>❌ Using commas or ampersands in topic labels</li>
+</ul>
+<ul>
+<li>❌ Putting long sentences as topic labels (keep them short)</li>
+</ul>
+<ul>
+<li>❌ Mixing formats (indentation + markers) — pick indentation ONLY</li>
+</ul>
+<p><hr></p>
+<h2>CROSS-REFERENCES</h2>
+<ul>
+<li><strong>RPT-009-EXT</strong> (VOC Output Modes): The VOC Question Database file is the canonical reference for this format</li>
+</ul>
+<ul>
+<li><strong>OPS-006</strong> (Anti-Sloppy-Work): Verify the file exists and the hierarchy is correct before declaring done</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol Version 1.0 — Created 2026-08-15 by Lumina following Roo&#x27;s correction on the Paul Overy mind map format.</em></p>
+</body>
+</html>

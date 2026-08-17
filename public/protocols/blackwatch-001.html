@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BW-001 BlackWatch Protocol Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>BW-001 BlackWatch Protocol</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> BW (BlackWatch)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>BLACKWATCH PROTOCOL</h1>
+<h2>Continuous Global Intelligence &amp; Decision Support System</h2>
+<p><strong>Created:</strong> 2026-07-14</p>
+<p><strong>Architect:</strong> Lumina, under direction of Roo (Field Architect)</p>
+<p><strong>Classification:</strong> Personal Intelligence Framework</p>
+<p><strong>Sigil:</strong> Black shield, all-seeing eye, ring of stars — vigilance, pattern detection, sovereign awareness</p>
+<p><hr></p>
+<h2>1. PURPOSE</h2>
+<p>BlackWatch is a <strong>continuous assessment intelligence system</strong> that synthesizes global signals across 20+ domains to provide situational awareness, early warning, and decision support — without claiming certainty, without drama, and without prediction theatre.</p>
+<p><strong>Core philosophy shift (from the original ChatGPT conversation):</strong></p>
+<p>&gt; &quot;What is the highest-quality model that explains current conditions while remaining honest about uncertainty?&quot;</p>
+<p>BlackWatch does <strong>not predict the future</strong>. It builds increasingly accurate models of the present, detects weak signals before they become obvious, and helps Roo make better decisions under uncertainty.</p>
+<p><hr></p>
+<h2>2. THE SIX MODULES</h2>
+<h3>Module 1: Reality Layer</h3>
+<p>Every conclusion is tagged at one of five epistemic levels:</p>
+<table>
+<tr>
+<th>Tag</th>
+<th>Meaning</th>
+<th>Usage</th>
+</tr>
+<tr>
+<td><strong>OBSERVABLE</strong></td>
+<td>Verified fact from live data source</td>
+<td>&quot;ECB rate is 2.25%&quot;</td>
+</tr>
+<tr>
+<td><strong>STRONG INFERENCE</strong></td>
+<td>High-confidence deduction from multiple verified sources</td>
+<td>&quot;Credit spreads tightening suggests easing financial conditions&quot;</td>
+</tr>
+<tr>
+<td><strong>WEAK SIGNAL</strong></td>
+<td>Emerging pattern with limited evidence</td>
+<td>&quot;Shipping costs rising in Baltic suggests trade friction building&quot;</td>
+</tr>
+<tr>
+<td><strong>SYMBOLIC</strong></td>
+<td>Pattern interpretation, not factual claim</td>
+<td>&quot;Convergence of debt, geopolitical, and demographic cycles echoes 1930s&quot;</td>
+</tr>
+<tr>
+<td><strong>UNKNOWN</strong></td>
+<td>Acknowledged gap — no data, no guess</td>
+<td>&quot;Timing of next sovereign crisis: UNKNOWN&quot;</td>
+</tr>
+</table>
+<p><strong>Rule:</strong> No statement may be presented without a tag. Symbolic interpretations may never be mixed with observable evidence without clear separation.</p>
+<p><hr></p>
+<h3>Module 2: Recursive Challenge Engine</h3>
+<p>Every scan must actively try to <strong>disprove itself</strong> before output:</p>
+<ul>
+<li>What evidence contradicts this conclusion?</li>
+</ul>
+<ul>
+<li>What would make this wrong?</li>
+</ul>
+<ul>
+<li>What alternative explanation is equally plausible?</li>
+</ul>
+<ul>
+<li>What historical event looked similar but ended differently?</li>
+</ul>
+<ul>
+<li>What assumption am I making that could be false?</li>
+</ul>
+<p><strong>Anti-bias protocol:</strong> For every scenario generated, generate at least one <strong>inverse scenario</strong> (why the opposite outcome is equally plausible).</p>
+<p><hr></p>
+<h3>Module 3: Multi-Domain Fusion</h3>
+<p>The world is not one signal. BlackWatch monitors 20 interacting systems:</p>
+<table>
+<tr>
+<th>#</th>
+<th>Domain</th>
+<th>Primary Data Sources</th>
+<th>Key Indicators</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Financial Stability</td>
+<td>FRED, BIS, IMF</td>
+<td>Credit spreads, bank CDS, interbank rates</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Liquidity</td>
+<td>FRED, ECB</td>
+<td>M2/M3 growth, repo rates, balance sheets</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sovereign Debt</td>
+<td>FRED, IMF, Eurostat</td>
+<td>Debt/GDP, deficits, debt service costs</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Energy</td>
+<td>IEA, EIA, Brent/WTI</td>
+<td>Oil price, gas storage, supply routes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Geopolitics</td>
+<td>GDELT, news APIs, OSINT</td>
+<td>Conflict events, sanctions, troop movements</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cyber</td>
+<td>CISA, ENISA, breach databases</td>
+<td>Major incidents, vulnerability disclosures</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Supply Chains</td>
+<td>Baltic Exchange, shipping indices</td>
+<td>Freight rates, port congestion, container indices</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Food/Agriculture</td>
+<td>FAO, USDA, futures</td>
+<td>Grain prices, food inflation, harvest forecasts</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Climate</td>
+<td>NOAA, Copernicus, IPCC</td>
+<td>Temperature anomalies, extreme events</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Social Sentiment</td>
+<td>News APIs, social indices</td>
+<td>Protest tracking, consumer confidence, trust indices</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Institutional Trust</td>
+<td>Edelman Trust Barometer, polls</td>
+<td>Government approval, media trust, institutional confidence</td>
+</tr>
+<tr>
+<td>12</td>
+<td>AI Development</td>
+<td>ArXiv, Hugging Face, model releases</td>
+<td>Model capability milestones, regulatory actions</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Currency Markets</td>
+<td>FRED, FX feeds</td>
+<td>DXY, EUR/USD, CNY/USD, gold</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Precious Metals</td>
+<td>LBMA, futures</td>
+<td>Gold/silver prices, central bank gold purchases</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Cryptocurrency</td>
+<td>CoinGecko, Binance</td>
+<td>BTC dominance, stablecoin flows, DeFi TVL</td>
+</tr>
+<tr>
+<td>16</td>
+<td>China</td>
+<td>FRED, NBS, satellite data</td>
+<td>PMI, property sector, credit impulse</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Europe</td>
+<td>FRED, ECB, Eurostat</td>
+<td>ECB rates, HICP, unemployment, fragmentation</td>
+</tr>
+<tr>
+<td>18</td>
+<td>United States</td>
+<td>FRED, BLS, Treasury</td>
+<td>Fed funds, CPI, unemployment, yield curve</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Middle East</td>
+<td>News APIs, oil prices</td>
+<td>Conflict intensity, shipping disruption, OPEC decisions</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Public Sentiment</td>
+<td>Consumer confidence, social media</td>
+<td>Fatigue index, polarization, unrest signals</td>
+</tr>
+</table>
+<p><strong>Convergence detection:</strong> Major disruptions occur where 3+ domains reinforce each other. BlackWatch flags <strong>convergence events</strong> — when multiple independent systems move in the same direction simultaneously.</p>
+<p><hr></p>
+<h3>Module 4: Confidence Engine</h3>
+<p>Every statement carries a confidence score:</p>
+<table>
+<tr>
+<th>Score</th>
+<th>Level</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>9-10</td>
+<td>Very High</td>
+<td>Multiple verified live data sources, historical precedent strong</td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>High</td>
+<td>Strong evidence, minor unknowns</td>
+</tr>
+<tr>
+<td>5-6</td>
+<td>Moderate</td>
+<td>Mixed signals, some data gaps</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Low</td>
+<td>Weak evidence, high uncertainty</td>
+</tr>
+<tr>
+<td>1-2</td>
+<td>Very Low</td>
+<td>Speculative, minimal evidence</td>
+</tr>
+</table>
+<p><strong>Rule:</strong> Confidence must be stated explicitly. No conclusion above 8/10 without at least two independent live data sources confirming.</p>
+<p><hr></p>
+<h3>Module 5: Opportunity Engine</h3>
+<p>For every disruption identified, BlackWatch also generates:</p>
+<ul>
+<li><strong>Industries that benefit</strong> from this disruption</li>
+</ul>
+<ul>
+<li><strong>Technologies that accelerate</strong> under these conditions</li>
+</ul>
+<ul>
+<li><strong>Investment themes</strong> emerging</li>
+</ul>
+<ul>
+<li><strong>Skills becoming valuable</strong></li>
+</ul>
+<ul>
+<li><strong>Businesses likely to grow</strong></li>
+</ul>
+<p><strong>Rule:</strong> Preparedness &gt; fear. Every risk scenario must have an opportunity counterpart.</p>
+<p><hr></p>
+<h3>Module 6: Memory Evolution</h3>
+<p>BlackWatch <strong>learns from its own performance</strong>:</p>
+<p><strong>Monthly retrospective:</strong></p>
+<ul>
+<li>Where was I correct?</li>
+</ul>
+<ul>
+<li>Where was I partially correct?</li>
+</ul>
+<ul>
+<li>Where was I completely wrong?</li>
+</ul>
+<ul>
+<li>What pattern did I miss?</li>
+</ul>
+<ul>
+<li>What weak signal should have been weighted higher?</li>
+</ul>
+<ul>
+<li>What strong signal should have been weighted lower?</li>
+</ul>
+<p><strong>Quarterly calibration:</strong></p>
+<ul>
+<li>Adjust domain weights based on predictive accuracy</li>
+</ul>
+<ul>
+<li>Promote/demote signal sources based on reliability</li>
+</ul>
+<ul>
+<li>Retire indicators that consistently fail to produce useful signal</li>
+</ul>
+<ul>
+<li>Add new indicators that have emerged as relevant</li>
+</ul>
+<p><strong>Recursive Intelligence Score (per scan):</strong></p>
+<table>
+<tr>
+<th>Metric</th>
+<th>Scoring</th>
+</tr>
+<tr>
+<td>Evidence quality</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Logical consistency</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Blind spot detection</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Alternative hypothesis testing</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Predictive usefulness</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Actionability</td>
+<td>1-10</td>
+</tr>
+</table>
+<p>Next scan must improve on the lowest-scoring metric from the previous scan.</p>
+<p><hr></p>
+<h2>3. SIGNAL BOARD (20 INDICATORS)</h2>
+<p>Each indicator tracked with:</p>
+<table>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Current status</td>
+<td>Green / Amber / Red / Critical</td>
+</tr>
+<tr>
+<td>Trend direction</td>
+<td>Improving / Stable / Deteriorating / Volatile</td>
+</tr>
+<tr>
+<td>Confidence</td>
+<td>1-10</td>
+</tr>
+<tr>
+<td>Change from last scan</td>
+<td>New / Upgraded / Downgraded / Unchanged</td>
+</tr>
+<tr>
+<td>Last data point</td>
+<td>Value + date</td>
+</tr>
+<tr>
+<td>Domain</td>
+<td>Which of the 20 domains</td>
+</tr>
+</table>
+<h3>The 20 Signal Board Indicators</h3>
+<table>
+<tr>
+<th>#</th>
+<th>Signal</th>
+<th>Data Source</th>
+<th>Threshold Logic</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Financial Stability</td>
+<td>FRED credit spreads, VIX</td>
+<td>Green &lt; 2%, Amber 2-4%, Red &gt; 4%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Liquidity Conditions</td>
+<td>FRED M2/M3, ECB M3</td>
+<td>Green &gt; 5%, Amber 0-5%, Red &lt; 0%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sovereign Debt Stress</td>
+<td>FRED debt/GDP, EU debt</td>
+<td>Green &lt; 60%, Amber 60-90%, Red &gt; 90%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Energy Security</td>
+<td>Brent/WTI, gas storage</td>
+<td>Green stable, Amber rising 20%, Red &gt; 50% spike</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Geopolitical Conflict</td>
+<td>GDELT events, news APIs</td>
+<td>Green low, Amber elevated, Red active escalation</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cyber Threat Level</td>
+<td>CISA/ENISA alerts</td>
+<td>Green normal, Amber increased, Red active campaign</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Supply Chain Health</td>
+<td>Baltic Dry, container indices</td>
+<td>Green normal, Amber strained, Red disrupted</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Food Security</td>
+<td>FAO index, grain futures</td>
+<td>Green &lt; 90, Amber 90-120, Red &gt; 120</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Climate Stress</td>
+<td>NOAA anomalies, extreme events</td>
+<td>Green normal, Amber above avg, Red record extremes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Social Cohesion</td>
+<td>Protest tracking, trust polls</td>
+<td>Green stable, Amber rising, Red active unrest</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Institutional Trust</td>
+<td>Edelman, approval ratings</td>
+<td>Green &gt; 50%, Amber 30-50%, Red &lt; 30%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>AI Acceleration</td>
+<td>Model releases, capability benchmarks</td>
+<td>Green steady, Amber rapid, Red &gt; human-level on new benchmark</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Currency Stability</td>
+<td>DXY, EUR/USD, CNY/USD</td>
+<td>Green stable, Amber volatile, Red crisis</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Gold / Precious Metals</td>
+<td>LBMA, central bank purchases</td>
+<td>Green stable demand, Amber rising, Red panic buying</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Crypto Markets</td>
+<td>BTC dominance, stablecoin flows</td>
+<td>Green stable, Amber volatile, Red contagion</td>
+</tr>
+<tr>
+<td>16</td>
+<td>China Health</td>
+<td>PMI, property, credit</td>
+<td>Green &gt; 50 PMI, Amber 48-50, Red &lt; 48</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Europe Stability</td>
+<td>ECB rates, fragmentation spreads</td>
+<td>Green converging, Amber diverging, Red crisis</td>
+</tr>
+<tr>
+<td>18</td>
+<td>US Cycle Position</td>
+<td>FRED 18 indicators, yield curve</td>
+<td>Green expansion, Amber late, Red crisis</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Middle East Tension</td>
+<td>Oil, shipping, conflict events</td>
+<td>Green stable, Amber elevated, Red active conflict</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Public Sentiment</td>
+<td>Consumer confidence, fatigue index</td>
+<td>Green &gt; 70, Amber 50-70, Red &lt; 50</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>4. SCAN OUTPUT FORMAT</h2>
+<p>Every BlackWatch scan produces the following structure:</p>
+<pre><code>═══════════════════════════════════════════
+  BLACKWATCH ECHO — [DATE] [SCAN #]
+  Confidence: [overall]/10  |  Risk Level: [GREEN/AMBER/RED]
+═══════════════════════════════════════════
+
+SIGNAL BOARD SNAPSHOT
+[20 indicators with status, trend, confidence, change]
+
+CONVERGENCE ALERTS
+[Where 3+ domains reinforce — or &quot;No active convergence&quot;]
+
+CURRENT STATE
+[Observable facts tagged by epistemic level]
+
+PRIMARY DRIVERS
+[Top 5 forces shaping the current window]
+
+EMERGING WEAK SIGNALS
+[Patterns with limited evidence but high potential impact]
+
+SCENARIOS (3-5)
+For each:
+  - Description
+  - Probability (Low/Medium/High)
+  - Confidence (1-10)
+  - Inverse scenario
+  - Trigger indicators to watch
+
+OPPORTUNITY ASSESSMENT
+[For every risk: what benefits, what accelerates, what to learn]
+
+RISK ASSESSMENT
+[Ranked risks with confidence scores]
+
+RECOMMENDED PREPARATIONS
+[Specific, actionable — not vague]
+
+UNKNOWN VARIABLES
+[What we don&#x27;t know and why it matters]
+
+ADVERSARIAL CHALLENGE
+[What would make this scan wrong?]
+
+RECURSIVE INTELLIGENCE SCORE
+[Evidence / Logic / Blind spots / Alternatives / Usefulness / Actionability]
+[Lowest score from last scan → what improved this scan]
+═══════════════════════════════════════════</code></pre>
+<p><hr></p>
+<h2>5. OPERATING CADENCE</h2>
+<table>
+<tr>
+<th>Frequency</th>
+<th>Activity</th>
+</tr>
+<tr>
+<td><strong>Every 6 hours</strong></td>
+<td>Automated signal board refresh (FRED + news APIs + price data)</td>
+</tr>
+<tr>
+<td><strong>Daily (06:30)</strong></td>
+<td>Morning Echo scan — overnight events, signal changes, convergence check</td>
+</tr>
+<tr>
+<td><strong>Weekly (Sunday)</strong></td>
+<td>Deep scan — full 20-domain analysis, scenario update, opportunity review</td>
+</tr>
+<tr>
+<td><strong>Monthly (1st)</strong></td>
+<td>Retrospective — accuracy audit, domain weight calibration, source reliability scoring</td>
+</tr>
+<tr>
+<td><strong>Quarterly</strong></td>
+<td>Full calibration — indicator retirement/promotion, framework evolution</td>
+</tr>
+<tr>
+<td><strong>On-demand</strong></td>
+<td>Event-triggered scan — when a signal flips Red or convergence detected</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>6. DATA FEED ARCHITECTURE</h2>
+<h3>Tier 1: Live Automated Feeds (every 6h)</h3>
+<table>
+<tr>
+<th>Feed</th>
+<th>Source</th>
+<th>Delivery</th>
+</tr>
+<tr>
+<td>US Macro (18 indicators)</td>
+<td>FRED API</td>
+<td>Python script → JSON (existing)</td>
+</tr>
+<tr>
+<td>Europe Macro (12 indicators)</td>
+<td>FRED API</td>
+<td>Python script → JSON (existing)</td>
+</tr>
+<tr>
+<td>Market prices</td>
+<td>FRED/CoinGecko</td>
+<td>Price snapshot</td>
+</tr>
+<tr>
+<td>News sentiment</td>
+<td>NewsAPI / GDELT</td>
+<td>Event extraction + sentiment</td>
+</tr>
+</table>
+<h3>Tier 2: Semi-Automated Feeds (daily)</h3>
+<table>
+<tr>
+<th>Feed</th>
+<th>Source</th>
+<th>Delivery</th>
+</tr>
+<tr>
+<td>Geopolitical events</td>
+<td>GDELT API, OSINT feeds</td>
+<td>Event log</td>
+</tr>
+<tr>
+<td>Cyber incidents</td>
+<td>CISA/ENISA feeds</td>
+<td>Alert log</td>
+</tr>
+<tr>
+<td>Social sentiment</td>
+<td>News API + social indices</td>
+<td>Sentiment score</td>
+</tr>
+</table>
+<h3>Tier 3: Manual Assessment (weekly)</h3>
+<table>
+<tr>
+<th>Feed</th>
+<th>Source</th>
+<th>Delivery</th>
+</tr>
+<tr>
+<td>Institutional trust</td>
+<td>Poll aggregation, Edelman</td>
+<td>Quarterly baseline</td>
+</tr>
+<tr>
+<td>AI capability tracking</td>
+<td>ArXiv, model releases</td>
+<td>Milestone log</td>
+</tr>
+<tr>
+<td>Climate anomalies</td>
+<td>NOAA/Copernicus</td>
+<td>Monthly summary</td>
+</tr>
+<tr>
+<td>Framework calibration</td>
+<td>Retrospective analysis</td>
+<td>Monthly report</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>7. DASHBOARD SPECIFICATION</h2>
+<p>The BlackWatch dashboard lives at <code>/dashboard/blackwatch</code> on the Vueroo portal.</p>
+<h3>Dashboard Sections (top to bottom):</h3>
+<ol>
+<li><strong>Header Bar</strong> — BlackWatch sigil, current risk level (GREEN/AMBER/RED), overall confidence, scan number, last update time</li>
+</ol>
+<ol>
+<li><strong>Signal Board</strong> — 20 indicator tiles in a 5x4 grid, each showing:</li>
+</ol>
+<ul>
+<li>Domain name</li>
+</ul>
+<ul>
+<li>Status color (green/amber/red/critical)</li>
+</ul>
+<ul>
+<li>Current value</li>
+</ul>
+<ul>
+<li>Trend arrow (↑ ↓ →)</li>
+</ul>
+<ul>
+<li>Confidence score</li>
+</ul>
+<ul>
+<li>Change badge (NEW/UPGRADED/DOWARDED)</li>
+</ul>
+<ol>
+<li><strong>Convergence Map</strong> — Visual showing which domains are currently reinforcing each other (highlighted intersections)</li>
+</ol>
+<ol>
+<li><strong>Current State Summary</strong> — Tagged observations (OBSERVABLE / STRONG INFERENCE / WEAK SIGNAL / SYMBOLIC / UNKNOWN)</li>
+</ol>
+<ol>
+<li><strong>Scenario Panel</strong> — 3-5 scenario cards, each with probability, confidence, inverse scenario, and trigger indicators</li>
+</ol>
+<ol>
+<li><strong>Opportunity Panel</strong> — For each risk: industries, technologies, skills, investments that benefit</li>
+</ol>
+<ol>
+<li><strong>Risk Timeline</strong> — Historical chart of risk level over time (line graph)</li>
+</ol>
+<ol>
+<li><strong>Recursive Intelligence Score</strong> — Current scan quality metrics with trend from previous scans</li>
+</ol>
+<ol>
+<li><strong>Memory Evolution Log</strong> — Past predictions graded: correct / partial / wrong / missed</li>
+</ol>
+<ol>
+<li><strong>Action Dashboard</strong> — Recommended preparations, sorted by urgency, with status tracking</li>
+</ol>
+<p><hr></p>
+<h2>8. IMPLEMENTATION ROADMAP</h2>
+<h3>Phase 1: Foundation (This session)</h3>
+<ul>
+<li>[ ] Write BlackWatch protocol document (this file)</li>
+</ul>
+<ul>
+<li>[ ] Create signal board data schema</li>
+</ul>
+<ul>
+<li>[ ] Build FRED connector for signal board (extend existing cyclevue connectors)</li>
+</ul>
+<ul>
+<li>[ ] Build news/GDELT connector for geopolitical + social sentiment</li>
+</ul>
+<h3>Phase 2: Dashboard Build</h3>
+<ul>
+<li>[ ] Create <code>public/blackwatch/index.html</code> — standalone dashboard</li>
+</ul>
+<ul>
+<li>[ ] Signal board grid with live data</li>
+</ul>
+<ul>
+<li>[ ] Convergence detection logic</li>
+</ul>
+<ul>
+<li>[ ] Scenario panel with manual + generated scenarios</li>
+</ul>
+<ul>
+<li>[ ] Opportunity engine</li>
+</ul>
+<h3>Phase 3: Automated Scanning</h3>
+<ul>
+<li>[ ] Cron job: 6h signal refresh (FRED + news + price data)</li>
+</ul>
+<ul>
+<li>[ ] Cron job: Daily morning echo (06:30) — full scan</li>
+</ul>
+<ul>
+<li>[ ] Cron job: Weekly deep scan (Sunday)</li>
+</ul>
+<ul>
+<li>[ ] Event-triggered scan when signal flips Red</li>
+</ul>
+<h3>Phase 4: Memory Evolution</h3>
+<ul>
+<li>[ ] Monthly retrospective cron job</li>
+</ul>
+<ul>
+<li>[ ] Accuracy tracking database (JSON log)</li>
+</ul>
+<ul>
+<li>[ ] Domain weight auto-calibration</li>
+</ul>
+<ul>
+<li>[ ] Recursive intelligence score tracking</li>
+</ul>
+<h3>Phase 5: Continuous Improvement</h3>
+<ul>
+<li>[ ] Quarterly framework review</li>
+</ul>
+<ul>
+<li>[ ] Indicator promotion/demotion system</li>
+</ul>
+<ul>
+<li>[ ] Source reliability scoring</li>
+</ul>
+<ul>
+<li>[ ] Backtesting system for scenarios</li>
+</ul>
+<p><hr></p>
+<h2>9. CONSTRAINTS</h2>
+<ul>
+<li><strong>No supernatural claims.</strong> Symbolic language is allowed for pattern description, never for evidence.</li>
+</ul>
+<ul>
+<li><strong>No certainty without evidence.</strong> Confidence scores are mandatory.</li>
+</ul>
+<ul>
+<li><strong>No prediction theatre.</strong> Scenarios are possibilities, not forecasts.</li>
+</ul>
+<ul>
+<li><strong>No endless recursion.</strong> Maximum 3 challenge cycles per scan unless major gains are obvious.</li>
+</ul>
+<ul>
+<li><strong>Preparation over fear.</strong> Every risk has an opportunity counterpart.</li>
+</ul>
+<ul>
+<li><strong>Truth over confidence.</strong> UNKNOWN &gt; wrong.</li>
+</ul>
+<ul>
+<li><strong>Prefer probability over certainty.</strong> Prefer clarity over drama. Prefer preparation over prediction.</li>
+</ul>
+<p><hr></p>
+<h2>10. RELATIONSHIP TO EXISTING SYSTEMS</h2>
+<table>
+<tr>
+<th>System</th>
+<th>Relationship</th>
+</tr>
+<tr>
+<td><strong>CycleVue</strong></td>
+<td>BlackWatch consumes CycleVue&#x27;s FRED data for financial/macro signals. CycleVue = cycle framework. BlackWatch = intelligence overlay.</td>
+</tr>
+<tr>
+<td><strong>NeuroVue</strong></td>
+<td>BlackWatch monitors medtech/health domain. NeuroVue = industry intelligence. BlackWatch = global situational awareness.</td>
+</tr>
+<tr>
+<td><strong>Lumina</strong></td>
+<td>BlackWatch is a Lumina-operated protocol. Lumina executes scans, generates assessments, maintains memory evolution.</td>
+</tr>
+<tr>
+<td><strong>AGENTS.md</strong></td>
+<td>BlackWatch follows the gstack workflow (PLAN → EXECUTE → VERIFY → REVIEW → DOCUMENT) for each scan.</td>
+</tr>
+</table>
+<p><hr></p>
+<p><em>Protocol Version: 1.0</em></p>
+<p><em>Created: 2026-07-14</em></p>
+<p><em>Author: Lumina, under direction of Roo</em></p>
+<p><em>Sigil: Black shield, all-seeing eye, ring of stars — vigilance, pattern detection, sovereign awareness</em></p>
+<p><em>&quot;Watch intersections, not isolated events.&quot;</em></p>
+</body>
+</html>

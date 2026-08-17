@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSC-021 Two-Step Wiki Ingest Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RSC-021 Two-Step Wiki Ingest</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> RSC (Research)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [protocol, research, ingest, wiki, active]</p>
+<p>created: 2026-07-29</p>
+<p>version: 1.0</p>
+<p><hr></p>
+<h1>RSC-021 — Two-Step Wiki Ingest Protocol</h1>
+<p><strong>Purpose:</strong> Improve the quality of knowledge base ingests by splitting source processing into two phases — analysis, then generation — rather than single-pass reading and writing.</p>
+<p><strong>Inspired by:</strong> Karpathy&#x27;s LLM Wiki pattern + nash_su&#x27;s llm_wiki two-step chain-of-thought ingest.</p>
+<p><hr></p>
+<h2>When This Protocol Applies</h2>
+<ul>
+<li>Processing a research article (URL, PDF, LinkedIn post)</li>
+</ul>
+<ul>
+<li>Processing a VOC/VOT transcript</li>
+</ul>
+<ul>
+<li>Processing a book chapter or extraction</li>
+</ul>
+<ul>
+<li>Any task where a new source needs to be integrated into the wiki/vault</li>
+</ul>
+<p><strong>Does NOT apply to:</strong> Quick lookups, fact checks, or single-question queries that don&#x27;t produce wiki pages.</p>
+<p><hr></p>
+<h2>Phase 1 — Analysis (Read &amp; Plan)</h2>
+<p>The LLM reads the source and produces a structured analysis WITHOUT writing any wiki pages.</p>
+<h3>Step 1.1: Read Source</h3>
+<ul>
+<li>Read the full source (article, transcript, PDF)</li>
+</ul>
+<ul>
+<li>Note: key entities, concepts, arguments, data points</li>
+</ul>
+<h3>Step 1.2: Check Existing Wiki</h3>
+<ul>
+<li>Search the relevant domain for existing pages on the same topic</li>
+</ul>
+<ul>
+<li>Identify: which existing pages should be updated? which new pages should be created?</li>
+</ul>
+<ul>
+<li>Check the domain index.md for navigation</li>
+</ul>
+<h3>Step 1.3: Produce Analysis Document</h3>
+<p>Output a structured analysis (in chat or a temp file) containing:</p>
+<pre><code>## Source Analysis: [Title]
+
+### Key Entities
+- [Entity 1]: [what this source says about it]
+- [Entity 2]: [what this source says about it]
+
+### Key Concepts
+- [Concept 1]: [definition/finding from this source]
+
+### Key Data Points
+- [Metric]: [value] — [source citation]
+- [Metric]: [value] — [source citation]
+
+### Contradictions with Existing Wiki
+- [Page X] says [old claim]; this source says [new claim] — resolution: [which is more reliable?]
+- (If none: &quot;No contradictions found&quot;)
+
+### Recommended Page Updates
+- UPDATE [existing-page-1]: add [data point] to [section]
+- UPDATE [existing-page-2]: revise [claim] based on [new evidence]
+- CREATE [new-page-1]: [why this needs its own page]
+- CREATE [new-page-2]: [why]
+
+### Cross-References to Add
+- Link [page A] ↔ [page B] because [reason]
+- Link [page C] → [new source] because [reason]
+
+### Strategic Relevance
+- [How this source impacts strategy decisions]
+- [What action it suggests]</code></pre>
+<h3>Step 1.4: Review with User (if interactive)</h3>
+<ul>
+<li>Present the analysis to Roo for review</li>
+</ul>
+<ul>
+<li>Adjust based on feedback</li>
+</ul>
+<ul>
+<li>For auto-process (research article default): skip review, proceed to Phase 2</li>
+</ul>
+<p><hr></p>
+<h2>Phase 2 — Generation (Write &amp; Link)</h2>
+<p>The LLM takes the analysis and produces wiki updates.</p>
+<h3>Step 2.1: Write Source Summary Page</h3>
+<ul>
+<li>Create a source summary with YAML frontmatter (title, date, source, tags)</li>
+</ul>
+<ul>
+<li>Include: key findings, methods, data points, limitations</li>
+</ul>
+<ul>
+<li>Save to the appropriate domain folder</li>
+</ul>
+<h3>Step 2.2: Update/Create Entity &amp; Concept Pages</h3>
+<ul>
+<li>UPDATE existing pages: add new data, revise claims, add cross-references</li>
+</ul>
+<ul>
+<li>CREATE new pages: only if the concept is significant enough to warrant its own page</li>
+</ul>
+<ul>
+<li>Every page gets [[wikilinks]] to related concepts</li>
+</ul>
+<h3>Step 2.3: Update Index</h3>
+<ul>
+<li>Run <code>python scripts/wiki-index-generator.py [domain-dir]</code> to regenerate the domain index</li>
+</ul>
+<ul>
+<li>Or manually add entries to index.md if the script is unavailable</li>
+</ul>
+<h3>Step 2.4: Log the Ingest</h3>
+<ul>
+<li>Append to the domain log (or session log) with format:</li>
+</ul>
+<p><code>## [YYYY-MM-DD] ingest | [Source Title] | [pages touched]</code></p>
+<h3>Step 2.5: Flag Contradictions</h3>
+<ul>
+<li>If contradictions were found, add a &quot;⚠ Contradiction&quot; section to the affected page</li>
+</ul>
+<ul>
+<li>Note both claims, sources, and which is more recent/reliable</li>
+</ul>
+<ul>
+<li>Add to the review queue for next lint pass</li>
+</ul>
+<p><hr></p>
+<h2>Auto-Process Mode (Research Articles)</h2>
+<p>When Roo sends a research article (URL/LinkedIn) and the &quot;auto-execute all&quot; behavior is active:</p>
+<ol>
+<li><strong>Phase 1</strong> runs automatically (web_fetch → analyze → no user review)</li>
+</ol>
+<ol>
+<li><strong>Phase 2</strong> runs automatically (brain note → vault → cross-refs → index update)</li>
+</ol>
+<ol>
+<li>Telegram brief sent with summary</li>
+</ol>
+<ol>
+<li>All four default actions completed (research + brief + brain note + update D/E)</li>
+</ol>
+<p>The two-step structure improves quality because:</p>
+<ul>
+<li>Phase 1 forces the LLM to think about WHERE new information fits before writing</li>
+</ul>
+<ul>
+<li>Phase 2 executes against a plan, not from scratch</li>
+</ul>
+<ul>
+<li>Cross-referencing is systematic, not opportunistic</li>
+</ul>
+<p><hr></p>
+<h2>Quality Checks</h2>
+<ul>
+<li>[ ] Every new page has at least 2 [[wikilinks]] to existing pages</li>
+</ul>
+<ul>
+<li>[ ] Every updated page notes what changed and why</li>
+</ul>
+<ul>
+<li>[ ] Numbers include source citations (author, year, or DOI)</li>
+</ul>
+<ul>
+<li>[ ] Contradictions are flagged, not silently resolved</li>
+</ul>
+<ul>
+<li>[ ] Index.md is regenerated after ingest</li>
+</ul>
+<p><hr></p>
+<h2>Relationship to Other Protocols</h2>
+<table>
+<tr>
+<th>Protocol</th>
+<th>Relationship</th>
+</tr>
+<tr>
+<td>RSC-001 (Multi-Source Research)</td>
+<td>RSC-021 enhances RSC-001 with two-step structure</td>
+</tr>
+<tr>
+<td>RSC-002 (Medtech Literature Review)</td>
+<td>RSC-021 applies to each literature source</td>
+</tr>
+<tr>
+<td>RPT-009-EXT (VOT Extraction)</td>
+<td>RSC-021 applies to transcript processing</td>
+</tr>
+<tr>
+<td>OPS-009 (Voice Note Transcription)</td>
+<td>RSC-021 applies after transcription completes</td>
+</tr>
+</table>
+<p><hr></p>
+<p><em>Protocol version 1.0 — created 2026-07-29 based on Karpathy&#x27;s LLM Wiki pattern and nash_su&#x27;s llm_wiki implementation.</em></p>
+</body>
+</html>

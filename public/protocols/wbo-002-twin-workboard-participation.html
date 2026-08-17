@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBO-002 Twin Workboard Participation Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>WBO-002 Twin Workboard Participation</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> WBO (Workboard Operations)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol Addendum: Twin Workboard Participation (WBO-002)</h1>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-17</p>
+<p><strong>Parent Protocol:</strong> WBO-001 (Lumina Workboard Operations)</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Twins are not passive task recipients. They are active board participants — accountable for their own progress, their own improvement, and their contributions to the board. This addendum defines how twins interact with the workboard as first-class members.</p>
+<p><hr></p>
+<h2>Twin Boards</h2>
+<p>Each twin gets their own board namespace for personal projects, sidebars with Roo, and individual accountability:</p>
+<table>
+<tr>
+<th>Board</th>
+<th>ID</th>
+<th>Owner</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td>Lumina Operations</td>
+<td><code>lumina-ops</code></td>
+<td>Lumina</td>
+<td>System-wide COO work, recurring maintenance, cross-twin coordination</td>
+</tr>
+<tr>
+<td>Alex Workspace</td>
+<td><code>alex-ws</code></td>
+<td>Alex</td>
+<td>Growth projects, Hormozi domain work, sidebar projects with Roo</td>
+</tr>
+<tr>
+<td>Thiel Workspace</td>
+<td><code>thiel-ws</code></td>
+<td>Thiel</td>
+<td>Strategy projects, Thiel domain work, sidebar projects with Roo</td>
+</tr>
+<tr>
+<td>Collison Workspace</td>
+<td><code>collison-ws</code></td>
+<td>Collison</td>
+<td>Engineering projects, Collison domain work, sidebar projects with Roo</td>
+</tr>
+<tr>
+<td>Pérez Workspace</td>
+<td><code>perez-ws</code></td>
+<td>Pérez</td>
+<td>Cycle research projects, Pérez domain work, sidebar projects with Roo</td>
+</tr>
+<tr>
+<td>Paul Workspace</td>
+<td><code>paul-ws</code></td>
+<td>Paul</td>
+<td>Wealth/tax projects, Paul domain work, sidebar projects with Roo</td>
+</tr>
+<tr>
+<td>Avaark Board</td>
+<td><code>avaark</code></td>
+<td>Shared</td>
+<td>Cross-twin project work (Snodo, ComplyKeep, Avaark, Sōl)</td>
+</tr>
+</table>
+<h3>How Twins Use Their Boards</h3>
+<ol>
+<li><strong>Capture their own ideas</strong> — twins create cards on their own board when they think of something that needs doing</li>
+</ol>
+<ol>
+<li><strong>Track their own progress</strong> — twins move cards through the lifecycle themselves</li>
+</ol>
+<ol>
+<li><strong>Sidebar projects with Roo</strong> — when a twin works on a 1:1 project with Roo, the work is tracked on the twin&#x27;s personal board with cards</li>
+</ol>
+<ol>
+<li><strong>Cross-twin collaboration</strong> — cards on the <code>avaark</code> board for shared project work, each card assigned to the responsible twin</li>
+</ol>
+<h3>Twin Card Creation Authority</h3>
+<p>Twins can create cards on:</p>
+<ul>
+<li>✅ Their own workspace board (<code>&lt;twin&gt;-ws</code>)</li>
+</ul>
+<ul>
+<li>✅ The shared Avaark board (<code>avaark</code>) — for cross-twin project work</li>
+</ul>
+<p>Twins CANNOT create cards on:</p>
+<ul>
+<li>❌ <code>lumina-ops</code> — that&#x27;s Lumina&#x27;s board</li>
+</ul>
+<ul>
+<li>❌ Other twins&#x27; workspace boards</li>
+</ul>
+<h3>What Twins Put on Their Boards</h3>
+<table>
+<tr>
+<th>Type</th>
+<th>Example</th>
+<th>Status Flow</th>
+</tr>
+<tr>
+<td>Self-initiated task</td>
+<td>&quot;Research new Hormozi content from last 7 days&quot;</td>
+<td>triage → todo → running → done</td>
+</tr>
+<tr>
+<td>Sidebar project with Roo</td>
+<td>&quot;Build Sol consciousness companion — phase 1&quot;</td>
+<td>triage → todo → scheduled → running → review → done</td>
+</tr>
+<tr>
+<td>Learning output</td>
+<td>&quot;NotebookLM queries completed — brain note written&quot;</td>
+<td>ready → running → done</td>
+</tr>
+<tr>
+<td>Improvement goal</td>
+<td>&quot;Improve my cold outreach templates&quot;</td>
+<td>backlog → todo → running → review → done</td>
+</tr>
+<tr>
+<td>Escalation to Lumina</td>
+<td>&quot;Need memory search access for vault brain notes&quot;</td>
+<td>triage → blocked (Lumina picks up)</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Accountability Structure</h2>
+<h3>Weekly Self-Review</h3>
+<p>Every Sunday, each twin creates a self-review card on their own board:</p>
+<pre><code>Title: Weekly Self-Review — Week of [date]
+Status: todo → running → done
+Notes:
+- What I accomplished this week (list cards completed)
+- What I learned (from learning queries, research, web searches)
+- What I&#x27;m stuck on (blocked cards, open questions for Roo)
+- What I want to work on next week (proposed new cards)
+- Am I earning my keep? (honest self-assessment — yes/no/needs improvement + why)</code></pre>
+<p>Lumina reviews all 5 self-reviews on Sunday evening during the nightly sweep and flags any concerns to Roo.</p>
+<h3>Proof Requirements</h3>
+<p>Every <code>done</code> card must have proof attached. Acceptable proof:</p>
+<table>
+<tr>
+<th>Work Type</th>
+<th>Proof</th>
+</tr>
+<tr>
+<td>NotebookLM query</td>
+<td>Note ID saved inside notebook + brain note file path</td>
+</tr>
+<tr>
+<td>Research</td>
+<td>File path to research output + key findings summary</td>
+</tr>
+<tr>
+<td>Code/build</td>
+<td>Live URL verification or test output</td>
+</tr>
+<tr>
+<td>Writing/content</td>
+<td>File path to document</td>
+</tr>
+<tr>
+<td>Decision/recommendation</td>
+<td>File path to recommendation doc + decision logged in DECISION-LOG.md</td>
+</tr>
+</table>
+<p>Cards without proof get flagged by diagnostics (<code>missing_proof</code>) and Lumina sends them back to <code>review</code>.</p>
+<h3>Stale Card Rules</h3>
+<p>If a twin has cards that haven&#x27;t been updated:</p>
+<ul>
+<li><strong>7 days stale</strong> → Lumina comments on the card asking for status</li>
+</ul>
+<ul>
+<li><strong>14 days stale</strong> → Lumina flags to Roo in weekly summary</li>
+</ul>
+<ul>
+<li><strong>30 days stale</strong> → Card archived, twin asked to explain</li>
+</ul>
+<p><hr></p>
+<h2>Backup — Workboard History</h2>
+<h3>What Gets Backed Up</h3>
+<p>The workboard SQLite database at <code>~/.openclaw/plugins/workboard/workboard.sqlite</code> contains all boards, cards, labels, events, comments, proof, artifacts, and history. This is irreplaceable operational data.</p>
+<h3>Backup Strategy</h3>
+<ol>
+<li><strong>Daily mirror</strong> — the existing D:\Lumina Carbon Copy Sync (2:30 AM IST) already mirrors the entire <code>.openclaw</code> directory including the workboard database. So the workboard is already being backed up nightly to D:.</li>
+</ol>
+<ol>
+<li><strong>Weekly snapshot</strong> — when the weekly snapshot rotation task runs (workboard task #1), the workboard database is included in the snapshot. This gives rollback points.</li>
+</ol>
+<ol>
+<li><strong>Weekly export</strong> — every Sunday during the nightly sweep, Lumina runs a full card export to JSON as a human-readable backup:</li>
+<pre><code>   openclaw workboard list --include-archived --json &gt; board/workboard-export-YYYY-MM-DD.json</code></pre>
+</ol>
+<p>This file goes into the vault and gets synced to D: on the next mirror.</p>
+<ol>
+<li><strong>DECISION-LOG.md</strong> — all board decisions are already logged in the append-only <code>board/DECISION-LOG.md</code>. This is the human-readable audit trail that survives even if the database is lost.</li>
+</ol>
+<h3>Recovery</h3>
+<p>If the workboard database is corrupted or lost:</p>
+<ol>
+<li>Restore from D:\Lumina mirror (latest = last night)</li>
+</ol>
+<ol>
+<li>If mirror is also bad, restore from weekly snapshot</li>
+</ol>
+<ol>
+<li>If snapshots are bad, reconstruct from the JSON exports in <code>board/</code></li>
+</ol>
+<ol>
+<li>DECISION-LOG.md provides the audit trail regardless</li>
+</ol>
+<p><hr></p>
+<h2>Communication Map</h2>
+<pre><code>Roo ←→ Twin (Telegram DM or office group) — strategic discussions, decisions
+Roo ←→ Lumina (webchat/Telegram) — system direction, approvals
+Lumina → Twin (workboard dispatch) — task assignment
+Twin → Lumina (sessions_send) — task requests, escalations
+Twin → Twin (sessions_send or office group) — collaboration requests
+Lumina → Roo (webchat/Telegram) — escalations, blocked work, weekly summary
+Twin → Board (self-created cards) — self-initiated work, sidebar projects</code></pre>
+<p><hr></p>
+<h2>Twin Onboarding Checklist</h2>
+<p>When a new twin is activated:</p>
+<ul>
+<li>[ ] Twin reads <code>board/twin-workboard-briefing.md</code></li>
+</ul>
+<ul>
+<li>[ ] Twin reads this protocol (<code>memory/protocol-wbo-002-twin-workboard-participation.md</code>)</li>
+</ul>
+<ul>
+<li>[ ] Lumina creates the twin&#x27;s workspace board (<code>&lt;twin&gt;-ws</code>)</li>
+</ul>
+<ul>
+<li>[ ] Twin creates their first card: &quot;Self-introduction and first-week plan&quot;</li>
+</ul>
+<ul>
+<li>[ ] Twin confirms understanding of card lifecycle, proof requirements, and learning cycle</li>
+</ul>
+<ul>
+<li>[ ] Lumina adds twin to the <code>avaark</code> board if they&#x27;re working on shared projects</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol WBO-002 · Version 1.0 · 2026-08-17</em></p>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPS-002 Data Poisoning Defense Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>EPS-002 Data Poisoning Defense</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> EPS (Epistemic Standards)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, architecture, active, epistemic]</p>
+<p><hr></p>
+<h1>protocol-eps-002-data-poisoning-defense.md</h1>
+<h1>Data Poisoning Defense Protocol</h1>
+<p><strong>Protocol ID:</strong> eps-002</p>
+<p><strong>Status:</strong> Active</p>
+<p><strong>Scope:</strong> All research, all claims, all professional output. Especially MedTech, clinical data, competitive intelligence, and any evaluation/assessment.</p>
+<p><strong>Created:</strong> 2026-08-08</p>
+<p><strong>Updated:</strong> 2026-08-08 (v1.1 — added mandatory methodology cross-reference)</p>
+<p><strong>Trigger:</strong> Any time data is gathered, claims are stated, or evaluations are made.</p>
+<p><hr></p>
+<h2>The Problem</h2>
+<p>Data poisoning is real and accelerating. AI-generated papers with fabricated data, citation chains from compromised sources, synthetic clinical trials, manipulated statistics, and LLM hallucinations presented as fact are all increasing. In MedTech specifically, a single poisoned source can cascade through evaluations, strategy memos, and investor presentations — destroying credibility and potentially patient safety.</p>
+<p><strong>Roo&#x27;s directive (2026-08-08):</strong> When doing research, get separate points of confirmation for data we&#x27;re claiming and stating. If data poisoning is suspected or confirmed in a source, consider that source completely unusable — not partially credible, not &quot;probably fine,&quot; but DISCARDED.</p>
+<p><hr></p>
+<h2>Rules</h2>
+<h3>Rule 1: Independent Confirmation Required</h3>
+<p>Every factual claim requires <strong>at least 2 independent confirmation points</strong> before being stated as fact.</p>
+<ul>
+<li>&quot;Independent&quot; means: different authors, different institutions, different data collection methods, or different primary sources.</li>
+</ul>
+<ul>
+<li>Two articles citing the same press release = 1 confirmation point, not 2.</li>
+</ul>
+<ul>
+<li>A web search result and a peer-reviewed paper confirming the same number = 2 confirmation points.</li>
+</ul>
+<p><strong>Minimum confirmation tiers:</strong></p>
+<ul>
+<li><strong>MedTech clinical data:</strong> 3 points (trial results, market share, device specs)</li>
+</ul>
+<ul>
+<li><strong>Financial figures:</strong> 2 points (revenue, market size, growth rates)</li>
+</ul>
+<ul>
+<li><strong>Competitive intelligence:</strong> 2 points (product launches, regulatory status)</li>
+</ul>
+<ul>
+<li><strong>General knowledge:</strong> 1 point with vintage tag (established facts, public records)</li>
+</ul>
+<ul>
+<li><strong>Evaluations/assessments:</strong> 2+ supporting data points per conclusion (strategy recs, risk ratings)</li>
+</ul>
+<h3>Rule 2: Source Contamination = Total Discard</h3>
+<p>If a source is identified as poisoned (fabricated data, AI-generated papers, manipulated statistics, retracted studies, or undisclosed conflicts of interest), the entire source is <strong>unusable</strong>. Not &quot;probably fine for non-critical claims.&quot; Unusable.</p>
+<p>Actions on contamination detection:</p>
+<ol>
+<li>Flag the source with <code>[POISONED]</code> tag</li>
+</ol>
+<ol>
+<li>Trace all claims that relied on that source</li>
+</ol>
+<ol>
+<li>Re-confirm each affected claim through independent sources</li>
+</ol>
+<ol>
+<li>If independent confirmation doesn&#x27;t exist → claim becomes <code>[UNVERIFIED]</code>, not &quot;probably true&quot;</li>
+</ol>
+<ol>
+<li>Log the contamination event in the source&#x27;s metadata</li>
+</ol>
+<h3>Rule 3: Provenance Tracking</h3>
+<p>Every data point carries its chain of custody:</p>
+<pre><code>[Claim] (source: [original] | confirmed-by: [2nd source, 3rd source] | vintage: [date] | confidence: [H/M/L] | poisoned: [yes/no/unknown])</code></pre>
+<p>If <code>poisoned: unknown</code> — the claim has not been verified against contamination. Treat as lower confidence.</p>
+<h3>Rule 4: Special Scrutiny Domains</h3>
+<p>These domains get heightened verification because poisoning risk and consequence are both high:</p>
+<ul>
+<li><strong>MedTech clinical data</strong> — AI-generated papers, fabricated trial results, ghost-authored studies</li>
+</ul>
+<ul>
+<li><strong>Regulatory claims</strong> — FDA CE marks, trial statuses, approval dates (check primary sources)</li>
+</ul>
+<ul>
+<li><strong>Market sizing</strong> — numbers that cascade through investor presentations</li>
+</ul>
+<ul>
+<li><strong>Competitive intelligence</strong> — product claims from company marketing vs. independent verification</li>
+</ul>
+<ul>
+<li><strong>Pricing</strong> — company-listed prices, ASP data, reimbursement rates</li>
+</ul>
+<ul>
+<li><strong>Any AI-generated research summary</strong> — including my own output from NotebookLM, web searches, or LLM reasoning</li>
+</ul>
+<ul>
+<li><strong>NotebookLM / LLM extractions</strong> — what was SAID, not what is TRUE. Requires independent confirmation.</li>
+</ul>
+<h3>Rule 5: Confirmation Methods (Ranked by Reliability)</h3>
+<ol>
+<li><strong>Primary source verification</strong> — clinical trial registries, regulatory databases (FDA, CE), company SEC filings, published peer-reviewed papers</li>
+</ol>
+<ol>
+<li><strong>Cross-reference against independent databases</strong> — PubMed, ClinicalTrials.gov, GBD, WHO, Eurostat</li>
+</ol>
+<ol>
+<li><strong>Live web search confirmation</strong> — find the same claim reported by independent outlets</li>
+</ol>
+<ol>
+<li><strong>Expert / VOT confirmation</strong> — confirmed by someone with direct knowledge</li>
+</ol>
+<ol>
+<li><strong>Single source with strong provenance</strong> — peer-reviewed, reputable institution, recent vintage</li>
+</ol>
+<p><strong>Never acceptable as sole confirmation:</strong> LLM output, AI summaries, blog posts without primary source links, social media posts, press releases without supporting data.</p>
+<h3>Rule 6: Evaluation Integrity</h3>
+<p>When making evaluations (strategy recommendations, risk assessments, competitive ratings):</p>
+<ul>
+<li>State the data sources behind each evaluation point</li>
+</ul>
+<ul>
+<li>If a source cannot be independently confirmed, the evaluation point is marked <code>[UNCONFIRMED]</code></li>
+</ul>
+<ul>
+<li>Evaluations do NOT get a free pass because they&#x27;re &quot;subjective&quot; — every assessment must trace to verifiable data</li>
+</ul>
+<ul>
+<li>When in doubt, downgrade the confidence level. NEVER upgrade.</li>
+</ul>
+<p><hr></p>
+<h2>Mandatory Methodology Cross-Reference</h2>
+<p>When doing any evaluation, pricing, market sizing, or opportunity assessment, the correct methodology protocol MUST be activated alongside EPS-002. Data poisoning defense without proper structure is just caution — structure without verification is just process. Both together produce reliable output.</p>
+<p><strong>Task → Protocol Mapping:</strong></p>
+<ul>
+<li><strong>Market sizing (TAM/SAM/SOM):</strong> RSC-009 (Market Sizing &amp; TAM Analysis). Every dollar figure gets confirmation points. No single-source market claims.</li>
+</ul>
+<ul>
+<li><strong>Market research:</strong> RSC-004 (Market Research Protocol). Every number tagged [VERIFIED/ESTIMATE/0.1 MARKER]. Harvard citations mandatory.</li>
+</ul>
+<ul>
+<li><strong>Pricing:</strong> RSC-009 (bottom-up unit economics) + competitive pricing confirmation. Competitive pricing requires 2+ independent sources. Company-listed prices = 1 point only.</li>
+</ul>
+<ul>
+<li><strong>Opportunity valuation:</strong> STR-003 (Idea Development) + RSC-009. Each value driver needs traceable data. If data is poisoned, the valuation is invalid.</li>
+</ul>
+<ul>
+<li><strong>Competitive intelligence:</strong> RSC-004 + RSC-009. Company claims vs. independent verification. Marketing materials = 1 confirmation point, not 2.</li>
+</ul>
+<ul>
+<li><strong>Clinical/regulatory claims:</strong> RSC-004 (with primary source requirement). 3 confirmation points minimum. Primary registry (FDA, CE, ClinicalTrials.gov) always required.</li>
+</ul>
+<ul>
+<li><strong>Financial projections:</strong> RSC-009 (assumption transparency). Every assumption listed. Sensitivity analysis on poisoned-source-dependent assumptions.</li>
+</ul>
+<p><strong>Rule: No evaluation output without both (1) the correct methodology protocol activated and (2) EPS-002 confirmation applied to every data point.</strong></p>
+<p>If you&#x27;re about to produce a market sizing, pricing analysis, or opportunity assessment and you haven&#x27;t explicitly named which protocol you&#x27;re following — STOP. Name it. Follow it. Then apply EPS-002 on top.</p>
+<p><hr></p>
+<h2>Application to NotebookLM Extractions</h2>
+<p>The knowledge extracted from NotebookLM on 2026-08-07 (381 YouTube sources across 7 notebooks) captures <strong>what was said in those videos</strong>, not independently verified facts. Specific tactical claims (formulas, metrics, tools, techniques) should be treated as:</p>
+<ul>
+<li><strong>Confirmed at level 5</strong> (single source with medium provenance — YouTube creator authority varies)</li>
+</ul>
+<ul>
+<li><strong>Requires independent confirmation before professional use</strong></li>
+</ul>
+<ul>
+<li><strong>Useful for direction and strategy, NOT for citing specific numbers in investor-facing or clinical documents</strong></li>
+</ul>
+<p>The extraction IS valuable for: frameworks, system architectures, tool stacks, workflow patterns, content strategies, and tactical approaches. It is NOT reliable for: specific statistics, revenue claims, conversion rates, or market sizing without separate confirmation.</p>
+<p><hr></p>
+<h2>Interaction with EPS-001</h2>
+<p>This protocol extends EPS-001 (Epistemic Standards). Where EPS-001 defines claim metadata format and confidence levels, EPS-002 adds:</p>
+<ul>
+<li>Minimum confirmation point requirements</li>
+</ul>
+<ul>
+<li>Source contamination rules (total discard)</li>
+</ul>
+<ul>
+<li>Provenance tracking (<code>poisoned:</code> field)</li>
+</ul>
+<ul>
+<li>Special scrutiny domains</li>
+</ul>
+<ul>
+<li>Ranked confirmation methods</li>
+</ul>
+<ul>
+<li>Mandatory methodology cross-reference</li>
+</ul>
+<ul>
+<li>NotebookLM extraction guidance</li>
+</ul>
+<p>Both protocols are active. EPS-002 does not replace EPS-001 — it strengthens it.</p>
+<p><hr></p>
+<h2>Quick Reference: When You&#x27;re About to State a Fact</h2>
+<ol>
+<li>Where did this data come from?</li>
+</ol>
+<ol>
+<li>Can I confirm it from an independent source?</li>
+</ol>
+<ol>
+<li>Does it fall in a special scrutiny domain?</li>
+</ol>
+<ol>
+<li>If the source were poisoned, would I still be able to make this claim?</li>
+</ol>
+<ol>
+<li>Am I about to use NotebookLM extraction data as verified fact? → STOP. Tag it. Confirm it first.</li>
+</ol>
+<ol>
+<li>Am I about to produce an evaluation, pricing, or market sizing without activating the correct methodology protocol? → STOP. Name it. Follow it.</li>
+</ol>
+<p><hr></p>
+<p><em>Protocol Version: 1.1 | Created: 2026-08-08 | Updated: 2026-08-08 | Author: Lumina | Triggered by: Roo&#x27;s directive on data poisoning + mandatory methodology structure for all evaluations</em></p>
+</body>
+</html>

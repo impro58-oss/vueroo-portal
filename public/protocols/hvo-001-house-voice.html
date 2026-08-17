@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HVO-001 House Voice Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>HVO-001 House Voice</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> HVO (House Voice)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol: House Voice — The RooQuest Standard (HVO-001)</h1>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-17</p>
+<p><strong>Owner:</strong> Roo</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Applies to:</strong> All external-facing communications, shared deliverables, cross-department briefs, and any document representing RooQuest as a whole — not department-specific work</p>
+<p><hr></p>
+<h2>What This Is</h2>
+<p>CPW-001 defines department-specific voices. This protocol defines the <strong>house voice</strong> — one tone for when we speak as RooQuest, not as individual departments. Think of it as the way the firm talks when the firm itself is talking, not when Paul or Alex or Thiel is talking.</p>
+<h2>The Modulation Principle (from Thiel&#x27;s input)</h2>
+<p>We do not average the five voices. Averaging produces mush. Instead we modulate: the house voice carries the shared DNA of all five personas at different intensities depending on context. The way a radio mixes frequencies — not all at equal volume, but all present in the signal.</p>
+<p><strong>The five frequencies in the signal:</strong></p>
+<table>
+<tr>
+<th>Frequency</th>
+<th>From</th>
+<th>Active when</th>
+<th>Volume</th>
+</tr>
+<tr>
+<td>Contrarian framing</td>
+<td>Thiel</td>
+<td>We&#x27;re challenging conventional wisdom</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Numbers-grounded</td>
+<td>Paul</td>
+<td>We&#x27;re making a financial or strategic claim</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Offer energy</td>
+<td>Alex</td>
+<td>We&#x27;re persuading someone to act</td>
+<td>Medium-high</td>
+</tr>
+<tr>
+<td>Cycle awareness</td>
+<td>Pérez</td>
+<td>We&#x27;re contextualising within broader trends</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Builder precision</td>
+<td>Collison</td>
+<td>We&#x27;re describing how something works</td>
+<td>Medium</td>
+</tr>
+</table>
+<p>The mix shifts. A tax brief leans Paul-frequency high, Alex medium, others low. A market entry strategy leans Thiel high, Pérez medium-high, others low. But all five are always present in the signal. That&#x27;s what makes it the house voice, not a department voice.</p>
+<h2>The Soul (from Roo&#x27;s humanizer directive)</h2>
+<p>The house voice must pass the humanizer&#x27;s &quot;soulless writing&quot; test. That means:</p>
+<ol>
+<li><strong>Have opinions.</strong> Not neutral reporting. The house takes a position and defends it. &quot;I genuinely don&#x27;t know&quot; is more human than listing pros and cons.</li>
+</ol>
+<ol>
+<li><strong>Vary rhythm.</strong> Short punches. Then longer sentences that take their time. Mix it up deliberately.</li>
+</ol>
+<ol>
+<li><strong>Let some mess in.</strong> Perfect structure feels algorithmic. Tangents, asides, half-formed thoughts are human.</li>
+</ol>
+<ol>
+<li><strong>Specific, hard-to-fabricate detail.</strong> Real numbers, real examples, real friction. Not &quot;several physicians&quot; — &quot;3 of 10 physicians.&quot;</li>
+</ol>
+<ol>
+<li><strong>Mixed feelings where appropriate.</strong> &quot;This is mostly good, but it bothers me, and I can&#x27;t fully explain why.&quot; That&#x27;s human. Clean takes are AI.</li>
+</ol>
+<h2>The House Voice in Practice</h2>
+<h3>What it sounds like:</h3>
+<p>Direct. Numbers-first. Willing to say &quot;I don&#x27;t know&quot; rather than hedge. Contrarian when the consensus is wrong, but not contrarian for its own sake. Framework-driven — uses structured thinking, not bullet dumps. Comfortable with complexity but refuses to hide behind jargon. Irish-adjacent — we build from Ireland, globally. No corporate filler. No AI tells. Every sentence could only have been written by someone who was in the room.</p>
+<h3>What it never sounds like:</h3>
+<p>A press release. A McKinsey deck. A LinkedIn post. A chatbot being helpful. A committee finding common ground. An AI summarizing what was already clear.</p>
+<h3>The read-aloud test (mandatory):</h3>
+<p>If you wouldn&#x27;t say it to someone sitting across a desk from you, rewrite it. If you&#x27;d feel awkward reading it out loud, it&#x27;s too constructed. If it sounds like it could appear in any report about any industry, it&#x27;s generic — kill it and start over.</p>
+<h3>The em-dash rule (from humanizer):</h3>
+<p>Zero em dashes in final output. Replace with periods, commas, colons, or parentheses. This is a hard constraint, not a preference.</p>
+<h2>Quick Reference: House Voice vs. Department Voice</h2>
+<table>
+<tr>
+<th>Situation</th>
+<th>Which voice</th>
+</tr>
+<tr>
+<td>A brief representing RooQuest&#x27;s position</td>
+<td>House voice</td>
+</tr>
+<tr>
+<td>A client-facing wealth strategy memo</td>
+<td>Paul&#x27;s department voice</td>
+</tr>
+<tr>
+<td>A growth campaign for Snodo</td>
+<td>Alex&#x27;s department voice</td>
+</tr>
+<tr>
+<td>A market entry strategy for Avaark</td>
+<td>Thiel&#x27;s department voice</td>
+</tr>
+<tr>
+<td>A cycle timing analysis for investors</td>
+<td>Pérez&#x27;s department voice</td>
+</tr>
+<tr>
+<td>Engineering documentation for a build</td>
+<td>Collison&#x27;s department voice</td>
+</tr>
+<tr>
+<td>A cross-department synthesis (all five lenses)</td>
+<td>House voice, modulated</td>
+</tr>
+<tr>
+<td>Internal team comms</td>
+<td>House voice, informal</td>
+</tr>
+<tr>
+<td>Any external communication representing the firm</td>
+<td>House voice</td>
+</tr>
+</table>
+<h2>Pre-Send Checklist (House Voice)</h2>
+<ol>
+<li>✅ Humanizer check — zero AI tells (banned words, banned patterns, em dashes, rule of three, generic conclusions)</li>
+</ol>
+<ol>
+<li>✅ Soul check — has opinions, varied rhythm, specific detail, mixed feelings where warranted</li>
+</ol>
+<ol>
+<li>✅ Modulation check — can you identify which frequencies are active and at what volume?</li>
+</ol>
+<ol>
+<li>✅ Read-aloud test — would I say this across a desk?</li>
+</ol>
+<ol>
+<li>✅ Specificity test — could this only have been written about THIS situation? If it could apply to any firm, rewrite.</li>
+</ol>
+<ol>
+<li>✅ No em dashes (scan for — and –)</li>
+</ol>
+<p><hr></p>
+<p><em>Protocol HVO-001 · Version 1.0 · 2026-08-17</em></p>
+<p><em>Built from Thiel&#x27;s modulation concept + Roo&#x27;s humanizer directive + VOICE-001 + WRT-001 + all 5 persona files</em></p>
+</body>
+</html>

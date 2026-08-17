@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-007 Protocol Stacking & Pre-Generation Check Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-007 Protocol Stacking & Pre-Generation Check</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> OPS (Operations)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>OPS-007 Protocol Stacking &amp; Pre-Generation Check</h1>
+<p><strong>Department:</strong> OPS (Operations) — Cross-Cutting</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-07-07</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Before generating ANY deliverable (report, document, dashboard, code, presentation)</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>This protocol exists because on 2026-07-07, I generated a VOC report for Dr. Link using only RPT-009 (the content protocol) while ignoring MEDTECH-VOC-PROCEDURAL-SPECIFICATION (the visual/layout specification). The result was a simplified memo instead of the proper 9-section VOC extraction report with pain point matrices, confidence scores, and strategic conclusions. The user caught it. It should not have happened.</p>
+<p>The root cause: I treated the protocol search as &quot;find THE protocol&quot; instead of &quot;find ALL related specifications.&quot; This protocol makes the stacking check a forced step before any deliverable generation begins.</p>
+<h2>When to Apply</h2>
+<p>Before generating ANY deliverable, including but not limited to:</p>
+<ul>
+<li>VOC reports (RPT-008, RPT-009 + Procedural Specification)</li>
+</ul>
+<ul>
+<li>MedTech research reports (RPT-001)</li>
+</ul>
+<ul>
+<li>Trading analysis reports (RPT-002)</li>
+</ul>
+<ul>
+<li>Business plans (RPT-003)</li>
+</ul>
+<ul>
+<li>Presentations (RPT-004)</li>
+</ul>
+<ul>
+<li>Injury journal reports (RPT-010)</li>
+</ul>
+<ul>
+<li>Professional communications (RPT-007)</li>
+</ul>
+<ul>
+<li>Any Word document, PDF, dashboard, or code deliverable</li>
+</ul>
+<h2>The Stacking Check (MANDATORY — Execute Before Generation)</h2>
+<h3>Step 1: Identify the Deliverable Type</h3>
+<p>Determine what type of deliverable you are about to produce. Name it explicitly.</p>
+<h3>Step 2: Search for ALL Related Protocols and Specifications</h3>
+<p>Run memory_search with at least three query patterns:</p>
+<ol>
+<li><code>&quot;&lt;protocol ID&gt; protocol specification&quot;</code> (e.g., &quot;RPT-009 protocol specification&quot;)</li>
+</ol>
+<ol>
+<li><code>&quot;&lt;deliverable type&gt; specification standard format&quot;</code> (e.g., &quot;VOC report specification standard format&quot;)</li>
+</ol>
+<ol>
+<li><code>&quot;&lt;deliverable type&gt; procedural layout&quot;</code> (e.g., &quot;VOC procedural layout specification&quot;)</li>
+</ol>
+<p>Read EVERY matching file. Do not stop at the first match.</p>
+<h3>Step 3: Classify What You Found</h3>
+<p>For each file found, determine:</p>
+<ul>
+<li><strong>Content protocol</strong> — tells you WHAT to write (sections, structure, quality gates)</li>
+</ul>
+<ul>
+<li><strong>Visual specification</strong> — tells you HOW it must look (fonts, colours, margins, tables, headers/footers)</li>
+</ul>
+<ul>
+<li><strong>Style guide</strong> — tells you what LANGUAGE conventions to use (British English, tone, formatting)</li>
+</ul>
+<ul>
+<li><strong>Reference example</strong> — shows you a completed output to match against</li>
+</ul>
+<p>You need ALL applicable files before you may begin generation.</p>
+<h3>Step 4: Verify Completeness</h3>
+<p>Before starting generation, confirm:</p>
+<ul>
+<li>[ ] Content protocol loaded? (WHAT sections to write)</li>
+</ul>
+<ul>
+<li>[ ] Visual specification loaded? (HOW it must look — fonts, colours, layout)</li>
+</ul>
+<ul>
+<li>[ ] Language standard confirmed? (British English — see Language Standard below)</li>
+</ul>
+<ul>
+<li>[ ] Product name reference loaded? (if MedTech — device name normalisation)</li>
+</ul>
+<ul>
+<li>[ ] Reference example reviewed? (if one exists)</li>
+</ul>
+<ul>
+<li>[ ] OPS-006 Anti-Sloppy-Work protocol loaded? (verification steps after generation)</li>
+</ul>
+<p>If ANY item is missing, search again before proceeding. Do not assume a specification doesn&#x27;t exist just because the first search didn&#x27;t surface it.</p>
+<h3>Step 5: Document the Stack</h3>
+<p>In your first progress update, list the protocols/specifications you are following:</p>
+<pre><code>Protocol Stack:
+- Content: RPT-009 (VOC Call Notes)
+- Visual: MEDTECH-VOC-PROCEDURAL-SPECIFICATION (9-section layout, fonts, colours)
+- Language: British English (OPS-007)
+- Product Names: wp-product-names-reference.md
+- Verification: OPS-006 (Anti-Sloppy-Work)</code></pre>
+<h2>Language Standard: British English</h2>
+<p><strong>All written deliverables must use British English spelling and conventions.</strong> This applies to:</p>
+<ul>
+<li>All RPT protocols (RPT-001 through RPT-010)</li>
+</ul>
+<ul>
+<li>All VOC reports and call notes</li>
+</ul>
+<ul>
+<li>All MedTech research reports</li>
+</ul>
+<ul>
+<li>All professional communications (RPT-007)</li>
+</ul>
+<ul>
+<li>All injury journal reports (RPT-010)</li>
+</ul>
+<ul>
+<li>All trading analysis reports (RPT-002)</li>
+</ul>
+<ul>
+<li>All business plans (RPT-003)</li>
+</ul>
+<ul>
+<li>All presentations (RPT-004)</li>
+</ul>
+<ul>
+<li>All daily briefs and syntheses (RPT-005, RPT-006)</li>
+</ul>
+<h3>Key Spelling Rules</h3>
+<table>
+<tr>
+<th>British English</th>
+<th>American English (DO NOT USE)</th>
+</tr>
+<tr>
+<td>colour</td>
+<td>color</td>
+</tr>
+<tr>
+<td>behaviour</td>
+<td>behavior</td>
+</tr>
+<tr>
+<td>centre</td>
+<td>center</td>
+</tr>
+<tr>
+<td>metre</td>
+<td>meter</td>
+</tr>
+<tr>
+<td>organisation</td>
+<td>organization</td>
+</tr>
+<tr>
+<td>optimise</td>
+<td>optimize</td>
+</tr>
+<tr>
+<td>recognise</td>
+<td>recognize</td>
+</tr>
+<tr>
+<td>analyse</td>
+<td>analyze</td>
+</tr>
+<tr>
+<td>categorise</td>
+<td>categorize</td>
+</tr>
+<tr>
+<td>emphasise</td>
+<td>emphasize</td>
+</tr>
+<tr>
+<td>synthesise</td>
+<td>synthesize</td>
+</tr>
+<tr>
+<td>visualise</td>
+<td>visualize</td>
+</tr>
+<tr>
+<td>utilise</td>
+<td>utilize</td>
+</tr>
+<tr>
+<td>programme</td>
+<td>program (except in computing contexts)</td>
+</tr>
+<tr>
+<td>fibre</td>
+<td>fiber</td>
+</tr>
+<tr>
+<td>licence (noun)</td>
+<td>license (noun)</td>
+</tr>
+<tr>
+<td>defence</td>
+<td>defense</td>
+</tr>
+<tr>
+<td>practice (noun) / practise (verb)</td>
+<td>practice (both)</td>
+</tr>
+<tr>
+<td>enrolment</td>
+<td>enrollment</td>
+</tr>
+<tr>
+<td>anaesthesia</td>
+<td>anesthesia</td>
+</tr>
+<tr>
+<td>oedema</td>
+<td>edema</td>
+</tr>
+<tr>
+<td>paediatric</td>
+<td>pediatric</td>
+</tr>
+<tr>
+<td>orthopaedic</td>
+<td>orthopedic</td>
+</tr>
+<tr>
+<td>gynaecology</td>
+<td>gynecology</td>
+</tr>
+<tr>
+<td>haemorrhage</td>
+<td>hemorrhage</td>
+</tr>
+<tr>
+<td>tumour</td>
+<td>tumor</td>
+</tr>
+<tr>
+<td>labelling</td>
+<td>labeling</td>
+</tr>
+<tr>
+<td>modelling</td>
+<td>modeling</td>
+</tr>
+<tr>
+<td>travelling</td>
+<td>traveling</td>
+</tr>
+<tr>
+<td>fulfil</td>
+<td>fulfill</td>
+</tr>
+<tr>
+<td>judgement</td>
+<td>judgment (both acceptable, prefer judgement)</td>
+</tr>
+</table>
+<h3>Medical Terminology — British English</h3>
+<table>
+<tr>
+<th>British English</th>
+<th>American English (DO NOT USE)</th>
+</tr>
+<tr>
+<td>haemorrhagic stroke</td>
+<td>hemorrhagic stroke</td>
+</tr>
+<tr>
+<td>ischaemic stroke</td>
+<td>ischemic stroke</td>
+</tr>
+<tr>
+<td>oligaemia</td>
+<td>oligemia</td>
+</tr>
+<tr>
+<td>praecordium</td>
+<td>precordium</td>
+</tr>
+<tr>
+<td>tumour</td>
+<td>tumor</td>
+</tr>
+<tr>
+<td>oedema</td>
+<td>edema</td>
+</tr>
+<tr>
+<td>catheterisation</td>
+<td>catheterization</td>
+</tr>
+<tr>
+<td>cannulation</td>
+<td>cannulation (same in both)</td>
+</tr>
+<tr>
+<td>haematoma</td>
+<td>hematoma</td>
+</tr>
+<tr>
+<td>anaesthetic</td>
+<td>anesthetic</td>
+</tr>
+<tr>
+<td>gauze swab</td>
+<td>gauze sponge</td>
+</tr>
+</table>
+<h3>Punctuation and Formatting</h3>
+<ul>
+<li>Use single quotation marks for primary quotations, double for nested: &#x27;He said &quot;go&quot; and I left&#x27;</li>
+</ul>
+<ul>
+<li>Dates: 7 July 2026 (not July 7, 2026) in body text; 2026-07-07 in metadata/filenames</li>
+</ul>
+<ul>
+<li>Times: 14:30 (24-hour) or 2.30 pm (with full stop, not colon)</li>
+</ul>
+<ul>
+<li>Numbers: spell out one to nine, use figures for 10+</li>
+</ul>
+<ul>
+<li>Per cent (two words), not percent</li>
+</ul>
+<ul>
+<li>While (meaning &quot;although&quot;), not whilst</li>
+</ul>
+<h3>Tone</h3>
+<p>Professional, clinical, precise. No Americanisms. No colloquialisms unless quoting verbatim. When quoting a speaker who uses American English, preserve their exact words in the quote but use British English in all surrounding prose.</p>
+<h2>Protocol Stack Reference Table</h2>
+<table>
+<tr>
+<th>Deliverable</th>
+<th>Content Protocol</th>
+<th>Visual Specification</th>
+<th>Additional References</th>
+</tr>
+<tr>
+<td>VOC Report</td>
+<td>RPT-009</td>
+<td>MEDTECH-VOC-PROCEDURAL-SPECIFICATION</td>
+<td>wp-product-names-reference, VOC-VOT-Classification</td>
+</tr>
+<tr>
+<td>VOC Interview Prep</td>
+<td>RPT-008</td>
+<td>(same as RPT-009)</td>
+<td>wp-product-names-reference</td>
+</tr>
+<tr>
+<td>MedTech Research Report</td>
+<td>RPT-001</td>
+<td>(within protocol)</td>
+<td>NeuroNews, PubMed</td>
+</tr>
+<tr>
+<td>Trading Analysis</td>
+<td>RPT-002</td>
+<td>(within protocol)</td>
+<td>data/paper_trading/</td>
+</tr>
+<tr>
+<td>Business Plan</td>
+<td>RPT-003</td>
+<td>(within protocol)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>RPT-004</td>
+<td>(within protocol)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Daily Brief</td>
+<td>RPT-005</td>
+<td>(within protocol)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Weekly Synthesis</td>
+<td>RPT-006</td>
+<td>(within protocol)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Professional Comms</td>
+<td>RPT-007</td>
+<td>(within protocol)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Injury Journal</td>
+<td>RPT-010</td>
+<td>(within protocol — canonical format)</td>
+<td>NYC accident folder</td>
+</tr>
+</table>
+<h2>Enforcement</h2>
+<p>This protocol is enforced by the Pre-Generation Check. No deliverable may be generated until the stacking check is complete and documented. If a deliverable is produced without the stacking check, it is a violation of OPS-006 (Anti-Sloppy-Work) as well as OPS-007.</p>
+<h2>References</h2>
+<ul>
+<li>OPS-006 (Anti-Sloppy-Work) — verification after generation</li>
+</ul>
+<ul>
+<li>Learning: <code>memory/2026-07-07-learning-voc-protocol-stacking.md</code></li>
+</ul>
+<ul>
+<li>RPT-009 + MEDTECH-VOC-PROCEDURAL-SPECIFICATION — the case that triggered this protocol</li>
+</ul>
+<h2>Revision History</h2>
+<table>
+<tr>
+<th>Date</th>
+<th>Version</th>
+<th>Changes</th>
+</tr>
+<tr>
+<td>2026-07-07</td>
+<td>1.0</td>
+<td>Initial protocol created after VOC protocol stacking failure</td>
+</tr>
+</table>
+</body>
+</html>

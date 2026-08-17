@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-013 Board Member Intelligence Build Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-013 Board Member Intelligence Build</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> RPT (Reporting)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>RPT-013 — Board Member Intelligence Build Protocol</h1>
+<p><strong>Department:</strong> RPT (Reports) / Board Architecture</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-15</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Any time a new board member (subject-matter expert advisor) is added to Roo&#x27;s company board structure, or an existing board member&#x27;s knowledge is upgraded.</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Define the EXACT, repeatable process for building each board member as a &quot;body of intelligence&quot; — a unique, individual advisor with its own persona, knowledge base, mind map, and brain linking. This protocol is modelled on the <strong>Paul Overy (Irish Wealth Expert)</strong> build, which is the proven template. Every board member is built the same way, so improvements made to one can be applied back to all.</p>
+<p><strong>Board concept:</strong> Roo is building a company board structure. Each board member is an individual, unique advisor giving advice from their own standpoint. Subject-matter experts are the guiding light; other board members give their angles and foresight. A board meeting = Roo + Lumina + N agents, each with the personality of a board member, sharing a synaptic mind (linked into the brain).</p>
+<p><hr></p>
+<h2>THE PAUL TEMPLATE (Source of Truth)</h2>
+<p>The Paul Overy build is the canonical example. Every board member replicates this structure:</p>
+<table>
+<tr>
+<th>Component</th>
+<th>Paul&#x27;s File</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td>Persona</td>
+<td><code>memory/irish-wealth-advisor-persona.md</code></td>
+<td>Voice, beliefs, how they answer</td>
+</tr>
+<tr>
+<td>Knowledge Base</td>
+<td><code>memory/irish-wealth-expert-knowledge-base.md</code></td>
+<td>Domain expertise, structured sections</td>
+</tr>
+<tr>
+<td>Agent Script</td>
+<td><code>scripts/irish_wealth_advisor.py</code></td>
+<td>CLI to query the agent</td>
+</tr>
+<tr>
+<td>Mind Map</td>
+<td><code>memory/research/paul-notebooklm-extraction/Paul-Overy-Knowledge-Mindmap.txt</code></td>
+<td>Navigable knowledge tree for Roo</td>
+</tr>
+<tr>
+<td>Brain Note</td>
+<td><code>90-System/Brain/wealth-planning/2026-08-02-Irish-Wealth-Expert-Agent.md</code></td>
+<td>Links knowledge into the brain for search/connection</td>
+</tr>
+<tr>
+<td>Vault Mirror</td>
+<td><code>20-Areas/Wealth/Irish-Wealth/</code></td>
+<td>Obsidian vault copy (source of truth)</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>THE 6-STEP BUILD PROCESS</h2>
+<p>Every board member goes through these 6 steps, in order. Do NOT skip any.</p>
+<h3>Step 1: EXTRACTION</h3>
+<p>Extract ALL the source knowledge (books, courses, transcripts, PDFs, websites) into raw markdown.</p>
+<ul>
+<li>Save raw extractions to <code>memory/&lt;board-member&gt;-extractions/</code></li>
+</ul>
+<ul>
+<li>Keep the full source text — do not truncate</li>
+</ul>
+<ul>
+<li>Document the source list (books, authors, dates)</li>
+</ul>
+<h3>Step 2: CROSS-QUESTIONING</h3>
+<p>Cross-question the extracted knowledge to surface depth, examples, numbers, and stories.</p>
+<ul>
+<li>Ask the source material targeted questions across every domain</li>
+</ul>
+<ul>
+<li>Pull specific figures, rates, examples, and anecdotes (not just concepts)</li>
+</ul>
+<ul>
+<li>Identify what&#x27;s missing and fill gaps</li>
+</ul>
+<ul>
+<li><strong>Target depth:</strong> The knowledge base should be comprehensive (Paul&#x27;s is ~57KB). A thin distillation (~12KB) is NOT acceptable.</li>
+</ul>
+<h3>Step 3: BUILD THE KNOWLEDGE RESOURCE</h3>
+<p>Create the structured knowledge base (<code>memory/&lt;board-member&gt;-knowledge-base.md</code>).</p>
+<ul>
+<li>Organize into numbered sections by domain</li>
+</ul>
+<ul>
+<li>Include: core premise, frameworks, specific numbers, examples, do&#x27;s/don&#x27;ts, cross-references</li>
+</ul>
+<ul>
+<li>Add a changelog section for future updates</li>
+</ul>
+<ul>
+<li>Mirror to the vault: <code>20-Areas/Wealth/&lt;Board-Member&gt;/</code></li>
+</ul>
+<h3>Step 4: PRODUCE THE MIND MAP</h3>
+<p>Create the navigable mind map for Roo (per RPT-012 Mindomo format).</p>
+<ul>
+<li><strong>Minimum 3 levels of depth:</strong> Main topic → Module → Subtopic → Guidance</li>
+</ul>
+<ul>
+<li>Every subtopic has a guidance line (what it means + an &quot;Ask &lt;Board Member&gt;: ...&quot; prompt)</li>
+</ul>
+<ul>
+<li>Clean indentation format, no markers, no spaces in filename</li>
+</ul>
+<ul>
+<li>Save to <code>memory/research/&lt;board-member&gt;-extraction/</code></li>
+</ul>
+<h3>Step 5: LINK INTO THE BRAIN</h3>
+<p>Create a brain note in <code>90-System/Brain/&lt;category&gt;/</code> so the board member&#x27;s knowledge is indexed, searchable, and connectable.</p>
+<ul>
+<li>Brain note structure (mirror Paul&#x27;s):</li>
+</ul>
+<ul>
+<li>Date, category, tags, confidence</li>
+</ul>
+<ul>
+<li>Summary</li>
+</ul>
+<ul>
+<li>Key topics covered</li>
+</ul>
+<ul>
+<li>Full knowledge base path</li>
+</ul>
+<ul>
+<li>Gap-fill updates</li>
+</ul>
+<ul>
+<li>Changelog</li>
+</ul>
+<ul>
+<li><strong>CRITICAL:</strong> The board member MUST be able to search the brain and answer from the full story. This is the &quot;synaptic mind&quot; — the linking is non-negotiable.</li>
+</ul>
+<h3>Step 6: WIRE THE AGENT</h3>
+<p>Create/update the agent script so the board member can be queried and can search the brain.</p>
+<ul>
+<li>CLI query interface (like <code>rich_dad_agent.py</code>)</li>
+</ul>
+<ul>
+<li>Loads persona + knowledge base</li>
+</ul>
+<ul>
+<li>Can search the brain for connected context</li>
+</ul>
+<ul>
+<li>Cross-references other board members where relevant</li>
+</ul>
+<p><hr></p>
+<h2>BOARD MEETING FORMAT</h2>
+<p>When Roo calls a board meeting (Roo + Lumina + N board members):</p>
+<ol>
+<li>Roo poses the subject/question.</li>
+</ol>
+<ol>
+<li>Each board member answers from their own standpoint (persona + knowledge base + brain search).</li>
+</ol>
+<ol>
+<li>Lumina synthesizes the best path, noting where the subject-matter expert is the guiding light and where other members add angles/foresight.</li>
+</ol>
+<ol>
+<li>Output: a board-meeting synthesis document.</li>
+</ol>
+<p><hr></p>
+<h2>IMPROVEMENT LOOP (Apply Back to All)</h2>
+<p>Any improvement made to one board member&#x27;s build MUST be considered for application to all others:</p>
+<ul>
+<li>New extraction technique → apply to all</li>
+</ul>
+<ul>
+<li>Better mind map format → apply to all</li>
+</ul>
+<ul>
+<li>Better brain linking → apply to all</li>
+</ul>
+<ul>
+<li>New cross-questioning method → apply to all</li>
+</ul>
+<p><strong>Rule:</strong> When a board member is upgraded, check the other board members for the same upgrade. Do not let one member fall behind the standard.</p>
+<p><hr></p>
+<h2>FILE NAMING &amp; LOCATION CONVENTIONS</h2>
+<table>
+<tr>
+<th>Item</th>
+<th>Location</th>
+</tr>
+<tr>
+<td>Raw extractions</td>
+<td><code>memory/&lt;member&gt;-extractions/</code></td>
+</tr>
+<tr>
+<td>Knowledge base</td>
+<td><code>memory/&lt;member&gt;-knowledge-base.md</code></td>
+</tr>
+<tr>
+<td>Persona</td>
+<td><code>memory/&lt;member&gt;-persona.md</code></td>
+</tr>
+<tr>
+<td>Agent script</td>
+<td><code>scripts/&lt;member&gt;_agent.py</code></td>
+</tr>
+<tr>
+<td>Mind map</td>
+<td><code>memory/research/&lt;member&gt;-extraction/&lt;Member&gt;-Knowledge-Mindmap.txt</code></td>
+</tr>
+<tr>
+<td>Brain note</td>
+<td><code>90-System/Brain/&lt;category&gt;/&lt;date&gt;-&lt;Member&gt;-Agent.md</code></td>
+</tr>
+<tr>
+<td>Vault mirror</td>
+<td><code>20-Areas/Wealth/&lt;Member&gt;/</code></td>
+</tr>
+</table>
+<p><hr></p>
+<h2>VERIFICATION (OPS-006 — before declaring done)</h2>
+<ul>
+<li>[ ] Raw extractions exist and are complete</li>
+</ul>
+<ul>
+<li>[ ] Knowledge base is comprehensive (not a thin distillation)</li>
+</ul>
+<ul>
+<li>[ ] Mind map has 3+ levels of depth in correct Mindomo format</li>
+</ul>
+<ul>
+<li>[ ] Brain note exists and links to the knowledge base</li>
+</ul>
+<ul>
+<li>[ ] Agent script works and can search the brain</li>
+</ul>
+<ul>
+<li>[ ] Vault mirror is in sync</li>
+</ul>
+<ul>
+<li>[ ] All files verified on disk (read the actual output, not just the summary)</li>
+</ul>
+<p><hr></p>
+<h2>CROSS-REFERENCES</h2>
+<ul>
+<li><strong>RPT-012</strong> (Mindomo Mind Map Format): The mind map format for Step 4</li>
+</ul>
+<ul>
+<li><strong>OPS-006</strong> (Anti-Sloppy-Work): Verification before declaring done</li>
+</ul>
+<ul>
+<li><strong>RSC-005</strong> (Book Extraction &amp; Synthesis): Extraction methodology for Step 1-2</li>
+</ul>
+<ul>
+<li><strong>EPS-001</strong> (Epistemic Standards): Source + vintage + confidence on all claims</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol Version 1.0 — Created 2026-08-15 by Lumina. Modelled on the Paul Overy (Irish Wealth Expert) build. Applies to all current and future board members.</em></p>
+</body>
+</html>

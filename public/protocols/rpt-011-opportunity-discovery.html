@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RPT-011 Opportunity Discovery Report Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>RPT-011 Opportunity Discovery Report</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> RPT (Reporting)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol: Opportunity Discovery via Mythos Engine</h1>
+<p><strong>ID:</strong> RPT-011</p>
+<p><strong>Type:</strong> Research methodology</p>
+<p><strong>Created:</strong> 2026-07-10</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Status:</strong> Active (first run in progress)</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Find online business opportunities that are proven to have demand, not yet well-served by competitors, buildable for under $2K, can run autonomously by AI, and could attract a community/marketplace dynamic. Uses Mythos Engine deep-work runtime for multi-cycle research with uncertainty tracking and claims verification.</p>
+<h2>Why This Exists</h2>
+<p>Previous reactive approach (scan marketplaces → find proven products → check if we can do better → find competitors → scrap) consistently found filled gaps because it looks where 100K+ indie hackers look. This protocol reframes the search to start from emerging behaviours, not existing products.</p>
+<p><hr></p>
+<h2>The Reframe</h2>
+<table>
+<tr>
+<th>Old Approach</th>
+<th>New Approach</th>
+</tr>
+<tr>
+<td>Marketplace → Product → Competitor → Scrap</td>
+<td>Trend → Behaviour → Need → Product</td>
+</tr>
+<tr>
+<td>Start from what exists</td>
+<td>Start from what&#x27;s emerging</td>
+</tr>
+<tr>
+<td>Reactive (find a gap in a crowded market)</td>
+<td>Proactive (find a gap that doesn&#x27;t have a market yet)</td>
+</tr>
+<tr>
+<td>Look where everyone looks</td>
+<td>Look where nobody is looking yet</td>
+</tr>
+<tr>
+<td>&quot;Can we build a better X?&quot;</td>
+<td>&quot;What new behaviour needs a tool that doesn&#x27;t exist?&quot;</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Search Vectors (Where to Look)</h2>
+<h3>1. New Technology → New Behaviour → New Need</h3>
+<p>Technology changes create behaviours that didn&#x27;t exist before:</p>
+<ul>
+<li>AI created new needs: AI content detection, prompt ownership, AI hallucination tracking, AI content licensing</li>
+</ul>
+<ul>
+<li>Platform API changes: new APIs create new possibilities (Bluesky, Telegram bots, Threads)</li>
+</ul>
+<ul>
+<li>Regulatory changes: new laws create new compliance needs</li>
+</ul>
+<ul>
+<li>Hardware shifts: AR/VR, wearables, IoT creating new interaction patterns</li>
+</ul>
+<h3>2. Emerging Communities → Underserved Tooling</h3>
+<p>Niche communities forming around new interests:</p>
+<ul>
+<li>Trading cards / TCG (Pokemon, One Piece, Lorcana, Gundam)</li>
+</ul>
+<ul>
+<li>Niche collecting (vintage tech, mechanical keyboards, sneakers, plants)</li>
+</ul>
+<ul>
+<li>New hobbies trending on TikTok/YouTube (bookbinding, aquascaping, urban sketching)</li>
+</ul>
+<ul>
+<li>Discord communities around new interests</li>
+</ul>
+<ul>
+<li>Reddit subreddits that grew 500%+ in 2025-2026</li>
+</ul>
+<h3>3. AI-Created Needs</h3>
+<p>Needs that AI itself made necessary:</p>
+<ul>
+<li>AI content detection / human verification</li>
+</ul>
+<ul>
+<li>AI asset marketplaces (agents, workflows, prompts, kits)</li>
+</ul>
+<ul>
+<li>AI hallucination tracking for brands</li>
+</ul>
+<ul>
+<li>AI content licensing and attribution</li>
+</ul>
+<ul>
+<li>Prompt ownership and provenance</li>
+</ul>
+<h3>4. Quirky / Unexpected Trends</h3>
+<p>Social scenes building around things nobody expected:</p>
+<ul>
+<li>New game/collectible trends going viral</li>
+</ul>
+<ul>
+<li>Niche sports/activities gaining community</li>
+</ul>
+<ul>
+<li>Cultural phenomena creating micro-economies</li>
+</ul>
+<p><hr></p>
+<h2>Roo&#x27;s Constraints (Filter)</h2>
+<p>Every candidate must pass ALL of these:</p>
+<ol>
+<li>✅ <strong>Proven demand</strong> — evidence people want/need this</li>
+</ol>
+<ol>
+<li>✅ <strong>Not well-served</strong> — no good competitor exists OR competitors have exploitable weaknesses</li>
+</ol>
+<ol>
+<li>✅ <strong>Buildable under $2K</strong> — actual cost to launch</li>
+</ol>
+<ol>
+<li>✅ <strong>Autonomous</strong> — AI runs it, not human labour</li>
+</ol>
+<ol>
+<li>✅ <strong>Not B2B service provider</strong> — not consulting, not agency work</li>
+</ol>
+<ol>
+<li>✅ <strong>Community/marketplace dynamic</strong> — brings people together</li>
+</ol>
+<ol>
+<li>✅ <strong>Sellable asset</strong> — can be offloaded on TrustMRR/Acquire later</li>
+</ol>
+<ol>
+<li>✅ <strong>Name available</strong> — domain and social handles not taken</li>
+</ol>
+<ol>
+<li>✅ <strong>Competitor-checked</strong> — full review search done before presenting</li>
+</ol>
+<p><hr></p>
+<h2>Mythos Engine Run Structure</h2>
+<table>
+<tr>
+<th>Cycle</th>
+<th>Action</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Reframe search methodology — stop looking where everyone looks</td>
+<td>New search approach documented</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Scan emerging behaviours, new tech needs, underserved communities across all search vectors</td>
+<td>List of 10-15 raw candidates</td>
+</tr>
+<tr>
+<td>3</td>
+<td>For each candidate: competitor search, name availability check, gap verification</td>
+<td>Filtered list with evidence</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Apply Roo&#x27;s constraints filter — only those passing ALL 9 criteria survive</td>
+<td>Final 3-6 opportunities</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Write opportunity discovery report with claims ledger and sources</td>
+<td>Deliverable report</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Competitor Check Protocol (Per Candidate)</h2>
+<p>Before presenting ANY idea to Roo, check:</p>
+<ol>
+<li><strong>Direct competitors</strong> — web search for the exact product type</li>
+</ol>
+<ol>
+<li><strong>Name availability</strong> — domain check (.com, .io, .ai), social handles, GitHub</li>
+</ol>
+<ol>
+<li><strong>Existing product</strong> — does a live website exist? Is it actually built or just parked?</li>
+</ol>
+<ol>
+<li><strong>Review quality</strong> — if competitors exist, check Trustpilot, Reddit, G2 for complaints</li>
+</ol>
+<ol>
+<li><strong>Gap assessment</strong> — is the gap real or filled? What specific weakness can we exploit?</li>
+</ol>
+<p><strong>Rule:</strong> If a competitor exists AND serves the gap well → SCRAP. If a competitor exists but has exploitable weaknesses → KEEP with notes.</p>
+<p><hr></p>
+<h2>Validation Checklist</h2>
+<ul>
+<li>[ ] Demand proven (evidence cited)</li>
+</ul>
+<ul>
+<li>[ ] Competitor check completed (all found competitors listed)</li>
+</ul>
+<ul>
+<li>[ ] Name checked (domain + social)</li>
+</ul>
+<ul>
+<li>[ ] Gap verified (real or filled — evidence provided)</li>
+</ul>
+<ul>
+<li>[ ] Build cost estimated</li>
+</ul>
+<ul>
+<li>[ ] Revenue model outlined</li>
+</ul>
+<ul>
+<li>[ ] Claims ledger in report (every claim has source + confidence)</li>
+</ul>
+<ul>
+<li>[ ] Sources cited (URLs listed)</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol version: 1.0 — created 2026-07-10. First run: mythos/runs/2026-07-10_opportunity-discovery/</em></p>
+</body>
+</html>

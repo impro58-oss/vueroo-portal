@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBO-001 Workboard Operations Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>WBO-001 Workboard Operations</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> WBO (Workboard Operations)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol: Lumina Workboard Operations (WBO-001)</h1>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-08-17</p>
+<p><strong>Owner:</strong> Lumina (COO)</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>This protocol defines how Lumina uses the OpenClaw Workboard as the single source of truth for all operational work — system maintenance, twin coordination, knowledge management, and recurring tasks. The workboard replaces holding tasks in memory (which causes context bloat and timeouts).</p>
+<p><hr></p>
+<h2>Board Structure</h2>
+<h3>Boards</h3>
+<table>
+<tr>
+<th>Board</th>
+<th>ID</th>
+<th>Purpose</th>
+</tr>
+<tr>
+<td>Lumina Operations</td>
+<td><code>lumina-ops</code></td>
+<td>System infrastructure, COO tasks, knowledge management, recurring maintenance</td>
+</tr>
+<tr>
+<td>Default</td>
+<td><code>default</code></td>
+<td>Board member intros, board-level work, manifesto tasks</td>
+</tr>
+</table>
+<p>Future boards created as needed (e.g. <code>avaark-build</code>, <code>snodo-launch</code>).</p>
+<h3>Card Lifecycle</h3>
+<p>The full Kanban flow. Each card moves left to right:</p>
+<pre><code>triage → backlog → todo → scheduled → ready → running → review → blocked → done</code></pre>
+<p><strong>Status definitions:</strong></p>
+<table>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>When to use</th>
+</tr>
+<tr>
+<td><code>triage</code></td>
+<td>Just captured, not yet scoped</td>
+<td>Quick ideas, things to evaluate</td>
+</tr>
+<tr>
+<td><code>backlog</code></td>
+<td>Scoped but not time-bound</td>
+<td>&quot;Someday&quot; work, nice-to-haves</td>
+</tr>
+<tr>
+<td><code>todo</code></td>
+<td>Ready to work, no specific time</td>
+<td>Pick up during work blocks</td>
+</tr>
+<tr>
+<td><code>scheduled</code></td>
+<td>Has a specific time window</td>
+<td>Nightly sweeps, weekly tasks, timed events</td>
+</tr>
+<tr>
+<td><code>ready</code></td>
+<td>Dependencies met, waiting for dispatch</td>
+<td>Cards that need a worker (twin or subagent)</td>
+</tr>
+<tr>
+<td><code>running</code></td>
+<td>Actively being executed</td>
+<td>Someone is working on it right now</td>
+</tr>
+<tr>
+<td><code>review</code></td>
+<td>Work complete, needs verification</td>
+<td>Done but not yet verified by Lumina</td>
+</tr>
+<tr>
+<td><code>blocked</code></td>
+<td>Cannot proceed, needs input</td>
+<td>Waiting on Roo, waiting on auth, etc.</td>
+</tr>
+<tr>
+<td><code>done</code></td>
+<td>Complete and verified</td>
+<td>Nothing more to do</td>
+</tr>
+</table>
+<h3>Priority Levels</h3>
+<table>
+<tr>
+<th>Priority</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+<tr>
+<td><code>urgent</code></td>
+<td>System down, data loss risk</td>
+<td>Gateway crashed, backup failed</td>
+</tr>
+<tr>
+<td><code>high</code></td>
+<td>Blocking other work or causing issues</td>
+<td>Memory search timeouts, extraction blocked</td>
+</tr>
+<tr>
+<td><code>normal</code></td>
+<td>Important but not blocking</td>
+<td>Brain note synthesis, twin notifications</td>
+</tr>
+<tr>
+<td><code>low</code></td>
+<td>Nice to have, do when quiet</td>
+<td>Cron cleanup, cosmetic fixes</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>How Lumina Uses the Board</h2>
+<h3>Card Creation Rules</h3>
+<ol>
+<li><strong>Every task gets a card.</strong> If it&#x27;s worth doing, it&#x27;s on the board. Nothing lives only in my head.</li>
+</ol>
+<ol>
+<li><strong>Notes are self-contained.</strong> A card&#x27;s notes must contain enough detail that I can execute it without remembering context. Include: what to do, where files are, what commands to run, what success looks like.</li>
+</ol>
+<ol>
+<li><strong>Labels are for filtering.</strong> Use consistent labels: <code>backup</code>, <code>memory</code>, <code>knowledge</code>, <code>coo</code>, <code>twins</code>, <code>cron</code>, <code>telegram</code>, <code>notebooklm</code>.</li>
+</ol>
+<ol>
+<li><strong>Position is for ordering.</strong> Lower position = higher in the queue within the same priority.</li>
+</ol>
+<h3>When to Use Each Status</h3>
+<table>
+<tr>
+<th>Situation</th>
+<th>Status</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>I capture a task during conversation</td>
+<td><code>triage</code> → scope it → <code>todo</code></td>
+<td>&quot;Fix the Telegram duplicate cleanup cron&quot;</td>
+</tr>
+<tr>
+<td>Task has a specific time window</td>
+<td><code>scheduled</code></td>
+<td>&quot;Nightly sweep at 2AM&quot;, &quot;Weekly snapshot Sunday&quot;</td>
+</tr>
+<tr>
+<td>Task is ready for a twin/subagent to execute</td>
+<td><code>ready</code></td>
+<td>&quot;Alex: run 3 NotebookLM queries&quot;</td>
+</tr>
+<tr>
+<td>I&#x27;m actively working on it</td>
+<td><code>running</code></td>
+<td>I claim it, work it, heartbeat if long</td>
+</tr>
+<tr>
+<td>Work done but needs my verification</td>
+<td><code>review</code></td>
+<td>Subagent finished extraction, I need to check quality</td>
+</tr>
+<tr>
+<td>Can&#x27;t proceed without Roo</td>
+<td><code>blocked</code></td>
+<td>&quot;Need Roo&#x27;s Telegram user ID for allowlist&quot;</td>
+</tr>
+<tr>
+<td>Verified complete</td>
+<td><code>done</code></td>
+<td>Extraction confirmed, brain notes written, quality checked</td>
+</tr>
+</table>
+<h3>Claiming and Executing</h3>
+<p>When I start working a card:</p>
+<ol>
+<li>Move to <code>running</code> (claim it)</li>
+</ol>
+<ol>
+<li>Execute the work</li>
+</ol>
+<ol>
+<li>If long-running, heartbeat to keep the claim alive</li>
+</ol>
+<ol>
+<li>When done, move to <code>review</code></li>
+</ol>
+<ol>
+<li>Verify the work (read the output file, check the result)</li>
+</ol>
+<ol>
+<li>If verified → <code>done</code> with proof (file path, command output, confirmation)</li>
+</ol>
+<ol>
+<li>If failed → <code>blocked</code> with reason</li>
+</ol>
+<h3>Recurring Tasks</h3>
+<p>For tasks that repeat (nightly sweep, weekly learning, weekly snapshot):</p>
+<ol>
+<li>Create the card with <code>scheduled</code> status and full instructions in notes</li>
+</ol>
+<ol>
+<li>When the time window arrives, move to <code>running</code></li>
+</ol>
+<ol>
+<li>Execute</li>
+</ol>
+<ol>
+<li>Move to <code>done</code> with proof</li>
+</ol>
+<ol>
+<li><strong>Immediately create the next iteration</strong> as a new <code>scheduled</code> card with the same instructions, updated date</li>
+</ol>
+<ol>
+<li>The old card stays <code>done</code> (history), the new card carries forward</li>
+</ol>
+<p>This is how recurring work cycles without cron jobs bloating the registry.</p>
+<h3>Dispatch (for twin work)</h3>
+<p>When a card needs a twin to do work:</p>
+<ol>
+<li>Create the card assigned to the twin&#x27;s <code>agentId</code> (e.g. <code>agentId: &quot;alex&quot;</code>)</li>
+</ol>
+<ol>
+<li>Write clear instructions in notes — what the twin should do, where to save output, what success looks like</li>
+</ol>
+<ol>
+<li>Move to <code>ready</code></li>
+</ol>
+<ol>
+<li>Run <code>openclaw workboard dispatch</code> — the system claims the card and starts a subagent worker for that twin</li>
+</ol>
+<ol>
+<li>The twin executes, card moves to <code>running</code> → <code>review</code> when done</li>
+</ol>
+<ol>
+<li>Lumina reviews quality → <code>done</code> or <code>blocked</code> with feedback</li>
+</ol>
+<p><hr></p>
+<h2>Communication Flows</h2>
+<h3>Lumina → Twins (task assignment)</h3>
+<ol>
+<li>Create card on <code>lumina-ops</code> board, assigned to twin&#x27;s <code>agentId</code></li>
+</ol>
+<ol>
+<li>Move to <code>ready</code></li>
+</ol>
+<ol>
+<li>Dispatch — twin receives the card context as a subagent task</li>
+</ol>
+<ol>
+<li>Twin executes and completes via workboard tools</li>
+</ol>
+<ol>
+<li>Lumina reviews → <code>done</code></li>
+</ol>
+<h3>Twins → Lumina (requesting work)</h3>
+<p>Twins cannot create cards directly. They request through:</p>
+<ul>
+<li>Telegram message to Roo (who tells Lumina)</li>
+</ul>
+<ul>
+<li>Or via <code>sessions_send</code> to Lumina&#x27;s main session</li>
+</ul>
+<ul>
+<li>Lumina creates the card on their behalf</li>
+</ul>
+<h3>Lumina → Roo (escalation)</h3>
+<ol>
+<li>Move card to <code>blocked</code> with reason</li>
+</ol>
+<ol>
+<li>Notify Roo via Telegram or webchat with: card title, what&#x27;s blocked, what I need from him</li>
+</ol>
+<ol>
+<li>Once Roo responds, unblock → <code>todo</code> or <code>running</code></li>
+</ol>
+<h3>Lumina → Self (nightly sweep)</h3>
+<p>During 2AM-6AM window:</p>
+<ol>
+<li>List all <code>todo</code> and <code>scheduled</code> cards on <code>lumina-ops</code></li>
+</ol>
+<ol>
+<li>Execute each one:</li>
+</ol>
+<ul>
+<li>Move to <code>running</code></li>
+</ul>
+<ul>
+<li>Do the work</li>
+</ul>
+<ul>
+<li>Move to <code>review</code> → verify → <code>done</code></li>
+</ul>
+<ol>
+<li>For recurring tasks, create next iteration</li>
+</ol>
+<ol>
+<li>Log the sweep in <code>board/overnight-sweep-log.md</code></li>
+</ol>
+<ol>
+<li>Leave anything needing Roo as <code>blocked</code> with clear notes</li>
+</ol>
+<p><hr></p>
+<h2>Twin Learning Cycle (Weekly)</h2>
+<p>Recurring knowledge expansion managed through workboard, not cron:</p>
+<table>
+<tr>
+<th>Day</th>
+<th>Twin</th>
+<th>Task</th>
+</tr>
+<tr>
+<td>Monday</td>
+<td>Alex</td>
+<td>Run 3 new NotebookLM queries on Alex 1-4</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>Thiel</td>
+<td>Run 3 new queries on Thiel + Thiel 2 + strategy</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>Collison</td>
+<td>Run 3 new queries on Collison + operations + engineering + ai-engineering</td>
+</tr>
+<tr>
+<td>Thursday</td>
+<td>Pérez</td>
+<td>Run 2 new queries on Perez + cycle-research + governance</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>Paul</td>
+<td>Run 2 new queries on Irish Wealth + Wealth Strategies + legal-tax</td>
+</tr>
+</table>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>Sunday night: Lumina creates 5 cards (one per twin), <code>scheduled</code> for their day</li>
+</ol>
+<ol>
+<li>On the day: card moves to <code>ready</code>, dispatch sends it to the twin</li>
+</ol>
+<ol>
+<li>Twin picks their own questions based on current work gaps</li>
+</ol>
+<ol>
+<li>Twin runs queries, saves notes inside NotebookLM, writes brain note to vault</li>
+</ol>
+<ol>
+<li>Twin completes card with proof (note IDs, brain note path)</li>
+</ol>
+<ol>
+<li>Sunday: Lumina reviews all 5, marks <code>done</code>, creates next week&#x27;s batch</li>
+</ol>
+<p><strong>Total: 13 queries/week</strong> — well within NotebookLM capacity.</p>
+<p><hr></p>
+<h2>Diagnostics I Watch</h2>
+<table>
+<tr>
+<th>Signal</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr>
+<tr>
+<td><code>stranded_ready</code></td>
+<td>Card in ready/todo not updated in 1hr</td>
+<td>Check if blocked, dispatch or escalate</td>
+</tr>
+<tr>
+<td><code>running_without_heartbeat</code></td>
+<td>Running card no update in 20min</td>
+<td>Check if worker died, reclaim or block</td>
+</tr>
+<tr>
+<td><code>blocked_too_long</code></td>
+<td>Blocked card untouched for 24hr</td>
+<td>Escalate to Roo</td>
+</tr>
+<tr>
+<td><code>repeated_failures</code></td>
+<td>2+ failures on a card</td>
+<td>Investigate root cause, don&#x27;t just retry</td>
+</tr>
+<tr>
+<td><code>missing_proof</code></td>
+<td>Done card with no proof</td>
+<td>Add proof or downgrade to review</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>File Paths</h2>
+<table>
+<tr>
+<th>Artifact</th>
+<th>Location</th>
+</tr>
+<tr>
+<td>Workboard database</td>
+<td><code>~/.openclaw/plugins/workboard/workboard.sqlite</code></td>
+</tr>
+<tr>
+<td>Board state</td>
+<td><code>board/BOARD-STATE.md</code></td>
+</tr>
+<tr>
+<td>Overnight sweep log</td>
+<td><code>board/overnight-sweep-log.md</code></td>
+</tr>
+<tr>
+<td>This protocol</td>
+<td><code>memory/protocol-wbo-001-workboard-operations.md</code></td>
+</tr>
+<tr>
+<td>Vault protocol copy</td>
+<td><code>vault/10-Projects/Lumina-System/Protocols/protocol-wbo-001-workboard-operations.md</code></td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Quick Reference</h2>
+<pre><code>CAPTURE → triage
+SCOPE → backlog → todo
+TIME-BIND → scheduled
+READY FOR WORK → ready → (dispatch) → running
+VERIFY → review → done
+STUCK → blocked → (escalate) → todo
+RECURRING → done → (create next) → scheduled</code></pre>
+<p><hr></p>
+<p><em>Protocol WBO-001 · Version 1.0 · 2026-08-17</em></p>
+</body>
+</html>

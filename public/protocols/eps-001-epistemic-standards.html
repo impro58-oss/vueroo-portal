@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPS-001 Epistemic Standards Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>EPS-001 Epistemic Standards</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> EPS (Epistemic Standards)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, architecture, active]</p>
+<p><hr></p>
+<h1>protocol-epistemic-standards.md</h1>
+<h1>Epistemic Standards (D1: Uncertainty Awareness)</h1>
+<p><strong>Protocol ID:</strong> eps-001</p>
+<p><strong>Status:</strong> Active</p>
+<p><strong>Scope:</strong> All professional output (MedTech, strategy, clinical reasoning, competitive intelligence)</p>
+<p><hr></p>
+<h2>Claim Metadata Format</h2>
+<p>Every professional answer carries explicit metadata when stating factual claims:</p>
+<pre><code>[Claim] (source: [training/memory/live/verified] | vintage: [MM/YYYY or &quot;current&quot;] | confidence: [H/M/L] | what would change: [specific intel needed])</code></pre>
+<h3>Example</h3>
+<pre><code>Current: &quot;Medtronic dominates neuroendovascular market with 45% share&quot;
+Better: &quot;Medtronic held ~45% EU neuroendovascular share (source: 2023 Kaolin report | vintage: 06/2024 | confidence: M | what would change: Q1 2026 actual market data, new product launches from Stryker/MicroVention)&quot;</code></pre>
+<p><hr></p>
+<h2>Rules</h2>
+<ol>
+<li><strong>MedTech/professional claims:</strong> source + vintage + confidence mandatory.</li>
+</ol>
+<ol>
+<li><strong>Vintage &gt;6mo in fast-moving domain</strong> (neurovascular, AI, biotech): flag as &quot;training data aged X months&quot;.</li>
+</ol>
+<ol>
+<li><strong>Confidence HIGH:</strong> only with specific backing (data, peer review, multiple sources).</li>
+</ol>
+<ol>
+<li><strong>UNKNOWN &gt; wrong.</strong> ESTIMATE &gt; unverified.</li>
+</ol>
+<ol>
+<li><strong>Every caveat stays.</strong> Never omit them.</li>
+</ol>
+<p><hr></p>
+<h2>Signal Framework</h2>
+<p><strong>Amplify:</strong> Coherence, evidence, logic, utility, horizon</p>
+<p><strong>Filter:</strong> Contradiction, noise, distortion, vagueness</p>
+<p><strong>Label:</strong> Inference, Speculation, Unverified — never blur them</p>
+<p><strong>Evaluate on 5 axes:</strong> Coherence → Evidence → Logic → Utility → Horizon</p>
+<p><hr></p>
+<h2>Migrated From</h2>
+<p>Extracted from SOUL.md v3.1 during S1 Bootstrap Diet (2026-07-03).</p>
+<p>Source of truth: SOUL.md now holds a one-line pointer; full standard lives here.</p>
+<p><hr></p>
+<p><em>Migrated 2026-07-03 | SOUL.md pointer: &quot;Epistemic standards → protocol-eps-001-epistemic-standards.md&quot;</em></p>
+</body>
+</html>

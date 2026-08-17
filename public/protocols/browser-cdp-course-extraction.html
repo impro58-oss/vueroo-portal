@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDP-001 Browser CDP Course Extraction Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>CDP-001 Browser CDP Course Extraction</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> CDP (Browser Automation)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<h1>Protocol: Browser CDP Course Extraction</h1>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Date:</strong> 2026-08-15</p>
+<p><strong>Author:</strong> Lumina</p>
+<p><strong>Applies to:</strong> Extracting video/text/PDF content from locked membership sites (Kajabi, Teachable, Thinkific, etc.) when <code>openclaw</code> CLI and bundled browser agents are non-functional.</p>
+<p><hr></p>
+<h2>When to Use This Protocol</h2>
+<p>Use this protocol when:</p>
+<ul>
+<li><code>openclaw</code> CLI hangs or fails on all commands</li>
+</ul>
+<ul>
+<li><code>agent-browser</code> bundled Chrome fails with side-by-side configuration errors (os error 14001)</li>
+</ul>
+<ul>
+<li>The target site requires a logged-in session</li>
+</ul>
+<ul>
+<li>Standard <code>openclaw browser</code> or MCP tools cannot access the content</li>
+</ul>
+<h2>Required Setup</h2>
+<ol>
+<li><strong>Google Chrome installed on the host machine</strong></li>
+</ol>
+<ol>
+<li><strong>Chrome launched with remote debugging enabled:</strong></li>
+<pre><code>   # Kill existing Chrome processes first if needed
+   Get-Process chrome | Stop-Process -Force
+
+   # Launch Chrome with remote debugging
+   &amp; &quot;C:\Program Files\Google\Chrome\Application\chrome.exe&quot; `
+     --remote-debugging-port=9222 `
+     --user-data-dir=&quot;C:\Users\YOUR_USER\ChromeDebug&quot; `
+     https://member.askaboutwealth.ie/products/mastering-your-finances</code></pre>
+</ol>
+<ol>
+<li><strong>User logged in manually to the target site</strong> in the remote-debugging Chrome window</li>
+</ol>
+<ol>
+<li><strong>CDP endpoint accessible:</strong> <code>http://127.0.0.1:9222</code></li>
+</ol>
+<h2>Tools Used</h2>
+<ul>
+<li><strong>Playwright</strong> via <code>connect_over_cdp()</code></li>
+</ul>
+<ul>
+<li><strong>Direct Wistia embed page fetching</strong> via <code>urllib</code></li>
+</ul>
+<ul>
+<li><strong>ffmpeg</strong> for video download and audio extraction</li>
+</ul>
+<ul>
+<li><strong>Python scripts</strong> for orchestration</li>
+</ul>
+<h2>Step-by-Step Procedure</h2>
+<h3>Step 1: Verify CDP Connection</h3>
+<pre><code>from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.connect_over_cdp(&quot;http://127.0.0.1:9222&quot;)
+    print(browser.contexts[0].pages[0].url)</code></pre>
+<h3>Step 2: Extract Lesson Links from Course Page</h3>
+<p>Navigate to the course page and collect all lesson links.</p>
+<p>Key selectors:</p>
+<ul>
+<li><code>a[href*=&quot;/posts/&quot;]</code> for Kajabi</li>
+</ul>
+<ul>
+<li>Expand collapsed sections if necessary by clicking expanders/accordions</li>
+</ul>
+<ul>
+<li>Scroll to bottom to load lazy content</li>
+</ul>
+<h3>Step 3: Extract Content Per Lesson</h3>
+<p>For each lesson page:</p>
+<ol>
+<li>Navigate via the existing logged-in page</li>
+</ol>
+<ol>
+<li>Wait for <code>networkidle</code></li>
+</ol>
+<ol>
+<li>Extract lesson text to markdown</li>
+</ol>
+<ol>
+<li>Extract PDF links</li>
+</ol>
+<ol>
+<li>Extract Wistia video IDs from:</li>
+</ol>
+<ul>
+<li><code>/medias/&lt;id&gt;</code></li>
+</ul>
+<ul>
+<li><code>wistia.com/embed/medias/&lt;id&gt;</code></li>
+</ul>
+<ul>
+<li><code>wistia.net/embed/iframe/&lt;id&gt;</code></li>
+</ul>
+<ul>
+<li><code>data-wistia-id=&quot;&lt;id&gt;&quot;</code></li>
+</ul>
+<ul>
+<li>iframe <code>src</code> attributes containing <code>/embed/&lt;id&gt;</code></li>
+</ul>
+<h3>Step 4: Get Direct MP4 URLs from Wistia</h3>
+<p>For each Wistia ID:</p>
+<ol>
+<li>Fetch: <code>https://fast.wistia.net/embed/iframe/{wistia_id}</code></li>
+</ol>
+<ol>
+<li>Parse <code>W.iframeInit({...}, {});</code> JSON</li>
+</ol>
+<ol>
+<li>Select best MP4 asset:</li>
+</ol>
+<ul>
+<li>Prefer <code>display_name</code> of <code>720p</code> or <code>1080p</code></li>
+</ul>
+<ul>
+<li>Otherwise highest <code>bitrate</code></li>
+</ul>
+<ol>
+<li>The <code>.bin</code> URL returned is a direct MP4 download</li>
+</ol>
+<h3>Step 5: Download Audio</h3>
+<p>Use ffmpeg to download the MP4 and extract audio:</p>
+<pre><code>ffmpeg -headers &quot;Referer: https://member.askaboutwealth.ie/&quot; \
+  -i &quot;https://embed-ssl.wistia.com/deliveries/HASH.bin&quot; \
+  -vn -c:a libmp3lame -q:a 4 \
+  -y output.mp3</code></pre>
+<h3>Step 6: Naming Convention</h3>
+<p>Use module/lesson numbering:</p>
+<pre><code>Module_01_Lesson_01_-_Lesson_Title.mp3
+Module_01_Lesson_02_-_Lesson_Title.mp3</code></pre>
+<h3>Step 7: Rate Limiting</h3>
+<ul>
+<li>Add 10-15 second delays between downloads</li>
+</ul>
+<ul>
+<li>Do not run multiple extraction scripts simultaneously</li>
+</ul>
+<ul>
+<li>Avoid parallel downloads from the same site</li>
+</ul>
+<ul>
+<li>Monitor for blocks or CAPTCHAs</li>
+</ul>
+<h2>Key Lessons Learned</h2>
+<ol>
+<li><strong>Do not rely on <code>openclaw browser</code> or bundled Chrome</strong> when they fail — use system Chrome via CDP.</li>
+</ol>
+<ol>
+<li><strong>Wistia <code>.m3u8</code> URLs may be incomplete</strong> — direct MP4 <code>.bin</code> URLs from the embed page are more reliable.</li>
+</ol>
+<ol>
+<li><strong>Course page menus may not show all modules</strong> — some modules may be locked, hidden, or in separate products.</li>
+</ol>
+<ol>
+<li><strong>Always verify the actual number of extractable lessons</strong> against the user&#x27;s expectation; sales pages may list modules not yet accessible in the member area.</li>
+</ol>
+<ol>
+<li><strong>Keep module/lesson numbering consistent</strong> to align audio with course structure.</li>
+</ol>
+<h2>Next-Time Improvements</h2>
+<ol>
+<li>Build a generic Kajabi extractor that takes a product URL and outputs:</li>
+</ol>
+<ul>
+<li><code>video_sources.json</code> with MP4 URLs</li>
+</ul>
+<ul>
+<li>Markdown per lesson</li>
+</ul>
+<ul>
+<li>PDF downloads</li>
+</ul>
+<ol>
+<li>Add automatic Chrome launch + CDP verification helper script.</li>
+</ol>
+<ol>
+<li>Add module verification step: count lessons per module and compare against user-provided list.</li>
+</ol>
+<ol>
+<li>Add retry logic for failed downloads without losing progress.</li>
+</ol>
+<ol>
+<li>Investigate locked modules by checking <code>aria-hidden</code>, <code>disabled</code>, or <code>locked</code> class markers in the course menu HTML.</li>
+</ol>
+<h2>Files Created Using This Protocol</h2>
+<ul>
+<li><code>scripts/extract_all_wistia_mp4s.py</code></li>
+</ul>
+<ul>
+<li><code>scripts/extract_missing_modules.py</code></li>
+</ul>
+<ul>
+<li><code>scripts/download_course_audio.py</code></li>
+</ul>
+<ul>
+<li><code>scripts/audit_course_lessons.py</code></li>
+</ul>
+<ul>
+<li>Output: <code>C:\Users\impro\Documents\RooQuest Data\AskAboutWealth\mastering-your-finances\</code></li>
+</ul>
+<h2>Status</h2>
+<ul>
+<li>Protocol validated on AskAboutWealth <code>mastering-your-finances</code> course</li>
+</ul>
+<ul>
+<li>40 of 48 expected lessons extracted successfully</li>
+</ul>
+<ul>
+<li>8 lessons (Modules 1, 11, 12) not accessible from current member area menu</li>
+</ul>
+</body>
+</html>

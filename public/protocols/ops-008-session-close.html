@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-008 Session Close Protocol Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-008 Session Close Protocol</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> OPS (Operations)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, infrastructure, active]</p>
+<p><hr></p>
+<h1>OPS-008 — Session Close Protocol</h1>
+<p><strong>Department:</strong> OPS (Operations)</p>
+<p><strong>Version:</strong> 1.0</p>
+<p><strong>Created:</strong> 2026-07-08</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> &quot;protocol close&quot; spoken by Roo, or end of session, or before gateway restart</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Ensure every session ends with a structured, durable record that survives memory wipes, context clearing, and gateway restarts. This protocol exists because session close was previously done from memory of past session logs — which is unreliable and fails when memory is wiped.</p>
+<p><strong>This protocol is the single source of truth for how to close a session. Do not reconstruct the procedure from session logs. Read this file. Run it.</strong></p>
+<p><hr></p>
+<h2>Prerequisites</h2>
+<ul>
+<li>Session has produced at least some work (if nothing was done, note that and exit)</li>
+</ul>
+<ul>
+<li><code>session_status</code> available for runtime metrics</li>
+</ul>
+<ul>
+<li>Write access to <code>memory/session-logs/</code></li>
+</ul>
+<p><hr></p>
+<h2>Steps</h2>
+<h3>Step 1: Capture Session Metadata</h3>
+<p>Run <code>session_status</code> to get:</p>
+<ul>
+<li>Model used</li>
+</ul>
+<ul>
+<li>Token count (in/out)</li>
+</ul>
+<ul>
+<li>Session duration</li>
+</ul>
+<ul>
+<li>Context usage</li>
+</ul>
+<p>Record:</p>
+<ul>
+<li>Session start time (approximate, from first message)</li>
+</ul>
+<ul>
+<li>Session end time (now)</li>
+</ul>
+<ul>
+<li>Protocol(s) used during session</li>
+</ul>
+<ul>
+<li>Roo&#x27;s key instructions/decisions</li>
+</ul>
+<h3>Step 2: Execute the 4-Stage Review</h3>
+<h3>Stage 1: PLAN (Recap)</h3>
+<ul>
+<li>What problem were we solving?</li>
+</ul>
+<ul>
+<li>What were the success criteria?</li>
+</ul>
+<ul>
+<li>What constraints applied?</li>
+</ul>
+<h3>Stage 2: EXECUTE (Summary)</h3>
+<ul>
+<li>What was actually done? (bullet list of concrete actions)</li>
+</ul>
+<ul>
+<li>What files were created/modified/deleted?</li>
+</ul>
+<ul>
+<li>What cron jobs were added/removed?</li>
+</ul>
+<ul>
+<li>What database changes were made?</li>
+</ul>
+<ul>
+<li>Progress notes: deviations, discoveries, adjustments</li>
+</ul>
+<h3>Stage 2.5: VERIFY</h3>
+<ul>
+<li>[ ] Does the work exist in the real environment? (not just &quot;the command ran&quot;)</li>
+</ul>
+<ul>
+<li>[ ] Are all claims verified against source files?</li>
+</ul>
+<ul>
+<li>[ ] No regressions? (existing systems still work)</li>
+</ul>
+<ul>
+<li>[ ] If you can&#x27;t verify something, write EXACTLY what&#x27;s unverified and why</li>
+</ul>
+<ul>
+<li>If deliverables exist: run appropriate verification (read file, check size, run test)</li>
+</ul>
+<h3>Stage 2.6: SCAFFOLD REVIEW</h3>
+<ul>
+<li>Was the protocol used fit for purpose?</li>
+</ul>
+<ul>
+<li>Was the pre-execution plan accurate?</li>
+</ul>
+<ul>
+<li>What worked well in the approach?</li>
+</ul>
+<ul>
+<li>What failed or was awkward?</li>
+</ul>
+<ul>
+<li>Should any protocol be updated? (if yes, note specific change)</li>
+</ul>
+<ul>
+<li>What would I do differently next time?</li>
+</ul>
+<h3>Stage 3: REVIEW (Quality)</h3>
+<ul>
+<li>Does this solve the original problem?</li>
+</ul>
+<ul>
+<li>Are there bugs or unresolved issues?</li>
+</ul>
+<ul>
+<li>Is documentation complete?</li>
+</ul>
+<ul>
+<li>Confidence level (HIGH/MEDIUM/LOW) with reasoning</li>
+</ul>
+<h3>Stage 4: DOCUMENT (Persist)</h3>
+<p>Write the session log to: <code>memory/session-logs/YYYY-MM-DD-session-log-&lt;topic&gt;.md</code></p>
+<p>Required sections in the session log:</p>
+<ol>
+<li><strong>Header:</strong> Session date/time, agent, model, protocol, status</li>
+</ol>
+<ol>
+<li><strong>Stage 1: PLAN</strong> — Problem, success criteria</li>
+</ol>
+<ol>
+<li><strong>Stage 2: EXECUTE</strong> — What was done, files created, cron changes, DB changes</li>
+</ol>
+<ol>
+<li><strong>Stage 2.5: VERIFY</strong> — Verification checklist with actual results</li>
+</ol>
+<ol>
+<li><strong>Stage 2.6: SCAFFOLD REVIEW</strong> — What worked, what failed, protocol update proposals</li>
+</ol>
+<ol>
+<li><strong>Stage 3: REVIEW</strong> — Quality check, issues found, confidence level</li>
+</ol>
+<ol>
+<li><strong>Stage 4: DOCUMENT</strong> — Files created, key findings, decisions, next steps</li>
+</ol>
+<ol>
+<li><strong>Key Decisions</strong> — Any decisions that affect future work</li>
+</ol>
+<ol>
+<li><strong>Next Steps</strong> — What should happen next (for the next session or cron)</li>
+</ol>
+<h3>Step 3: Update HEARTBEAT.md</h3>
+<p>If the session changed system state (new cron jobs, new files, DB changes, config changes), update HEARTBEAT.md:</p>
+<ul>
+<li>Add/update relevant system entries</li>
+</ul>
+<ul>
+<li>Update &quot;Last Check-in&quot; timestamp</li>
+</ul>
+<ul>
+<li>Note any new active systems or status changes</li>
+</ul>
+<h3>Step 4: Update MEMORY.md (if priorities changed)</h3>
+<p>If the session changed what&#x27;s being worked on:</p>
+<ul>
+<li>Update current priorities list</li>
+</ul>
+<ul>
+<li>Add new memory file references if created</li>
+</ul>
+<ul>
+<li>Update search hints if new topic areas were opened</li>
+</ul>
+<h3>Step 5: Identify Unfinished Work</h3>
+<p>If any work is incomplete:</p>
+<ul>
+<li>Write a handoff file: <code>memory/handoff-&lt;topic&gt;.md</code></li>
+</ul>
+<ul>
+<li>Include: current state, what&#x27;s done, what&#x27;s next, important context, files modified, blockers</li>
+</ul>
+<ul>
+<li>Reference the handoff file in the session log&#x27;s &quot;Next Steps&quot; section</li>
+</ul>
+<h3>Step 6: Cron Check</h3>
+<p>If the session set up automated work (cron jobs):</p>
+<ul>
+<li>List the jobs created/modified</li>
+</ul>
+<ul>
+<li>Confirm they are enabled</li>
+</ul>
+<ul>
+<li>Note the next run time</li>
+</ul>
+<ul>
+<li>Ensure they have proper delivery mode set</li>
+</ul>
+<ul>
+<li>Ensure they will self-replicate if part of an ongoing cycle</li>
+</ul>
+<h3>Step 7: Final Output to Roo</h3>
+<p>Present a concise summary:</p>
+<ul>
+<li>What was accomplished (2-3 bullets)</li>
+</ul>
+<ul>
+<li>What&#x27;s still pending (if anything)</li>
+</ul>
+<ul>
+<li>What automated work continues after close</li>
+</ul>
+<ul>
+<li>Any issues that need Roo&#x27;s attention</li>
+</ul>
+<ul>
+<li>Session log file path</li>
+</ul>
+<p>Keep it brief — Roo doesn&#x27;t need the full log, just the bottom line.</p>
+<p><hr></p>
+<h2>Quality Gates</h2>
+<ul>
+<li>[ ] Session log written to <code>memory/session-logs/</code></li>
+</ul>
+<ul>
+<li>[ ] Session log contains all required sections (1-9)</li>
+</ul>
+<ul>
+<li>[ ] Verification checklist completed (not skipped)</li>
+</ul>
+<ul>
+<li>[ ] HEARTBEAT.md updated if system state changed</li>
+</ul>
+<ul>
+<li>[ ] MEMORY.md updated if priorities changed</li>
+</ul>
+<ul>
+<li>[ ] Handoff file written if work is incomplete</li>
+</ul>
+<ul>
+<li>[ ] Cron jobs confirmed enabled if set up</li>
+</ul>
+<ul>
+<li>[ ] Final summary delivered to Roo</li>
+</ul>
+<p><hr></p>
+<h2>What NOT to Do</h2>
+<ul>
+<li><strong>Do NOT reconstruct the close procedure from session logs.</strong> Read THIS file.</li>
+</ul>
+<ul>
+<li><strong>Do NOT skip verification.</strong> Even if you think it&#x27;s fine, run the checks.</li>
+</ul>
+<ul>
+<li><strong>Do NOT skip the scaffold review.</strong> This is how the system learns.</li>
+</ul>
+<ul>
+<li><strong>Do NOT write a vague session log.</strong> Include specific file paths, cron job IDs, DB changes.</li>
+</ul>
+<ul>
+<li><strong>Do NOT declare done without checking files exist.</strong> Read the output, don&#x27;t trust the summary.</li>
+</ul>
+<ul>
+<li><strong>Do NOT forget to mention unfinished work.</strong> Write a handoff file.</li>
+</ul>
+<p><hr></p>
+<h2>File Paths</h2>
+<table>
+<tr>
+<th>Item</th>
+<th>Path</th>
+</tr>
+<tr>
+<td>Session logs</td>
+<td><code>memory/session-logs/YYYY-MM-DD-session-log-&lt;topic&gt;.md</code></td>
+</tr>
+<tr>
+<td>Handoff files</td>
+<td><code>memory/handoff-&lt;topic&gt;.md</code></td>
+</tr>
+<tr>
+<td>HEARTBEAT</td>
+<td><code>HEARTBEAT.md</code> (workspace root)</td>
+</tr>
+<tr>
+<td>MEMORY index</td>
+<td><code>MEMORY.md</code> (workspace root)</td>
+</tr>
+<tr>
+<td>Protocol file (vault)</td>
+<td><code>10-Projects/Lumina-System/Protocols/ops-008-session-close.md</code></td>
+</tr>
+<tr>
+<td>Protocol cache</td>
+<td><code>memory/protocol-ops-008-session-close.md</code></td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Cross-References</h2>
+<ul>
+<li><strong>OPS-006</strong> (Anti-Sloppy-Work): Verification requirements — OPS-008 extends these to session close</li>
+</ul>
+<ul>
+<li><strong>PLN-001</strong> (Pre-Execution Plan): The scaffold from Stage 1 — OPS-008 reviews whether it was accurate</li>
+</ul>
+<ul>
+<li><strong>NNR-001</strong> (Non-Negotiable Rules): Rule 2 (never fabricate) — OPS-008 enforces this in verification</li>
+</ul>
+<ul>
+<li><strong>EPS-001</strong> (Epistemic Standards): Claim metadata — OPS-008 checks claims are properly tagged</li>
+</ul>
+<ul>
+<li><strong>MYTHOS</strong> (Mythos Engine v2): For sessions run through Mythos, the close protocol runs after the final cycle</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol Version 1.0 — Created 2026-07-08 by Lumina following Roo&#x27;s instruction to formalize session close as a durable protocol.</em></p>
+</body>
+</html>

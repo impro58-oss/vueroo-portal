@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPS-009 Voice Note Transcription Protocol</title>
+<style>
+:root { --bg: #0a0e17; --surface: #111827; --surface2: #1a2332; --border: #1e2d3d; --text: #e2e8f0; --text2: #94a3b8; --accent: #6366f1; --accent2: #818cf8; --green: #22c55e; --yellow: #eab308; --red: #ef4444; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; padding: 2rem; max-width: 900px; margin: 0 auto; }
+a { color: var(--accent2); text-decoration: none; } a:hover { text-decoration: underline; }
+h1 { font-size: 1.5rem; margin: 1.5rem 0 0.5rem; color: var(--accent2); }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+h3 { font-size: 1rem; margin: 1rem 0 0.25rem; color: var(--accent); }
+p { margin: 0.5rem 0; }
+strong { color: var(--text); }
+code { background: var(--surface2); padding: 0.1rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; overflow-x: auto; margin: 0.5rem 0; }
+pre code { background: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+tr { border-bottom: 1px solid var(--border); }
+td, th { padding: 0.5rem; text-align: left; font-size: 0.85rem; }
+li { margin: 0.25rem 0; margin-left: 1.5rem; }
+ul, ol { margin: 0.5rem 0; }
+.checkitem { margin: 0.25rem 0; padding: 0.25rem 0; padding-left: 1.5rem; position: relative; }
+.checkitem::before { content: "\2610"; position: absolute; left: 0; color: var(--text2); }
+.back { display: inline-block; margin-bottom: 1.5rem; color: var(--accent2); font-size: 0.9rem; }
+.badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; }
+.badge-new { background: rgba(99,102,241,0.15); color: var(--accent2); }
+.badge-active { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.meta-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.meta-bar span { margin-right: 1.5rem; font-size: 0.82rem; color: var(--text2); }
+.meta-bar strong { color: var(--text); }
+hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+</style>
+</head>
+<body>
+<a href="/protocols/" class="back">&larr; Back to Protocol Dashboard</a>
+<h1>OPS-009 Voice Note Transcription</h1>
+<div class="meta-bar">
+<span><strong>Department:</strong> OPS (Operations)</span>
+<span><strong>Status:</strong> <span class="badge badge-new">NEW</span></span>
+</div>
+<p><hr></p>
+<p>tags: [project, lumina-system, protocol, infrastructure, active]</p>
+<p><hr></p>
+<h1>OPS-009 — Voice Note Transcription Protocol</h1>
+<p><strong>Department:</strong> OPS (Operations)</p>
+<p><strong>Version:</strong> 1.1</p>
+<p><strong>Created:</strong> 2026-07-08</p>
+<p><strong>Updated:</strong> 2026-07-20 — Added GPT-3.5-turbo extraction cost control</p>
+<p><strong>Owner:</strong> Lumina</p>
+<p><strong>Status:</strong> ACTIVE</p>
+<p><strong>Trigger:</strong> Audio file received via Telegram (voice memo, audio attachment, or forwarded audio)</p>
+<p><hr></p>
+<h2>Purpose</h2>
+<p>Standardise the transcription of voice notes and audio attachments received through Telegram into accurate text, using the most efficient and cost-effective method. This protocol exists because local Whisper on CPU failed repeatedly for long audio files, and the OpenAI Whisper API is the correct default path.</p>
+<p><strong>This protocol is the single source of truth for audio transcription. Do not attempt local Whisper for files longer than 5 minutes.</strong></p>
+<p><hr></p>
+<h2>Prerequisites</h2>
+<ul>
+<li>OpenAI API key stored at: <code>C:\Users\impro\Documents\RooQuest Data\API&#x27;s\Chat GPT API.txt</code></li>
+</ul>
+<ul>
+<li>ffmpeg installed at: <code>C:\Users\impro\AppData\Local\Programs\Python\Python311\Scripts\ffmpeg.exe</code></li>
+</ul>
+<ul>
+<li>ffprobe installed at: <code>C:\Users\impro\AppData\Local\Programs\Python\Python311\Scripts\ffprobe.exe</code></li>
+</ul>
+<ul>
+<li>Python <code>openai</code> package installed</li>
+</ul>
+<p><hr></p>
+<h2>Steps</h2>
+<h3>Step 1: Locate the Audio File</h3>
+<p>Audio files from Telegram are stored at:</p>
+<p><code>C:\Users\impro\.openclaw\media\inbound\&lt;uuid&gt;.mp3</code></p>
+<p><strong>⚠️ CRITICAL:</strong> Telegram voice memos arrive as M4A files with a <code>.mp3</code> extension. The extension is WRONG. Always verify the actual format before processing.</p>
+<h3>Step 2: Check File Format and Duration</h3>
+<p>Run ffprobe to determine the real format and duration:</p>
+<pre><code>&amp; &quot;C:\Users\impro\AppData\Local\Programs\Python\Python311\Scripts\ffprobe.exe&quot; -v error -show_entries format=format_name,duration -of default=noprint_wrappers=1:nokey=1 &quot;&lt;audio_path&gt;&quot;</code></pre>
+<p>Record:</p>
+<ul>
+<li>Actual format (e.g., <code>mov,mp4,m4a,3gp,3g2,mj2</code> = M4A)</li>
+</ul>
+<ul>
+<li>Duration in seconds (convert to minutes for cost estimation)</li>
+</ul>
+<h3>Step 3: Select Transcription Method</h3>
+<table>
+<tr>
+<th>Duration</th>
+<th>Method</th>
+<th>Reason</th>
+</tr>
+<tr>
+<td>&lt; 2 min</td>
+<td>Local Whisper (tiny/base model)</td>
+<td>Fast enough on CPU, no API cost</td>
+</tr>
+<tr>
+<td>2–5 min</td>
+<td>Local Whisper (base model)</td>
+<td>Acceptable CPU time (~1-2 min)</td>
+</tr>
+<tr>
+<td>&gt; 5 min</td>
+<td><strong>OpenAI Whisper API</strong></td>
+<td>Local CPU too slow, API cost negligible</td>
+</tr>
+<tr>
+<td>&gt; 60 min</td>
+<td><strong>OpenAI Whisper API</strong> (split if needed)</td>
+<td>API has 25MB file size limit — split with ffmpeg if larger</td>
+</tr>
+</table>
+<p><strong>Default: If unsure, use OpenAI Whisper API.</strong> Cost is $0.006/minute — a 30-minute file costs $0.18.</p>
+<p><strong>⚠️ EXTRACTION LLM COST CONTROL:</strong> After transcription, do NOT use GPT-4 for VOC extraction/analysis. Use <strong>GPT-3.5-turbo</strong> for the extraction step. GPT-4 costs ~$30/M input tokens vs GPT-3.5-turbo at ~$0.50/M input tokens — a 60x difference. A typical 30-min transcript (~5K tokens) costs ~$0.15 to extract with GPT-3.5-turbo vs ~$2.25 with GPT-4. The extraction quality difference is negligible for structured VOC analysis.</p>
+<p><strong>Total per-call cost (transcription + extraction):</strong></p>
+<table>
+<tr>
+<th>Duration</th>
+<th>Whisper</th>
+<th>GPT-3.5 Extraction</th>
+<th>Total</th>
+</tr>
+<tr>
+<td>10 min</td>
+<td>$0.06</td>
+<td>~$0.03</td>
+<td>~$0.09</td>
+</tr>
+<tr>
+<td>30 min</td>
+<td>$0.18</td>
+<td>~$0.10</td>
+<td>~$0.28</td>
+</tr>
+<tr>
+<td>45 min</td>
+<td>$0.27</td>
+<td>~$0.15</td>
+<td>~$0.42</td>
+</tr>
+<tr>
+<td>60 min</td>
+<td>$0.36</td>
+<td>~$0.20</td>
+<td>~$0.56</td>
+</tr>
+</table>
+<h3>Step 4: Convert Format if Needed</h3>
+<p>If ffprobe reports anything other than a proper MP3 (most common: M4A/MP4), convert with ffmpeg:</p>
+<pre><code>&amp; &quot;C:\Users\impro\AppData\Local\Programs\Python\Python311\Scripts\ffmpeg.exe&quot; -i &quot;&lt;input_path&gt;&quot; -ar 16000 -ac 1 -c:a libmp3lame -q:a 2 &quot;&lt;output_path&gt;.mp3&quot; -y</code></pre>
+<p>Settings:</p>
+<ul>
+<li><code>-ar 16000</code> — 16kHz sample rate (sufficient for speech, smaller file)</li>
+</ul>
+<ul>
+<li><code>-ac 1</code> — mono (voice memos are already mono)</li>
+</ul>
+<ul>
+<li><code>-c:a libmp3lame</code> — MP3 codec</li>
+</ul>
+<ul>
+<li><code>-q:a 2</code> — good quality, small size</li>
+</ul>
+<h3>Step 5: Transcribe via OpenAI Whisper API</h3>
+<pre><code>from openai import OpenAI
+
+# Read API key
+with open(r&quot;C:\Users\impro\Documents\RooQuest Data\API&#x27;s\Chat GPT API.txt&quot;, &#x27;r&#x27;) as f:
+    api_key = f.read().strip()
+
+client = OpenAI(api_key=api_key)
+
+with open(&quot;&lt;converted_mp3_path&gt;&quot;, &#x27;rb&#x27;) as f:
+    transcript = client.audio.transcriptions.create(
+        model=&#x27;whisper-1&#x27;,
+        file=f,
+        response_format=&#x27;text&#x27;
+    )
+
+# Save transcript
+with open(&quot;&lt;output_transcript_path&gt;&quot;, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as out:
+    out.write(transcript)</code></pre>
+<h3>Step 6: Verify Transcript</h3>
+<ul>
+<li>Check transcript length is non-zero</li>
+</ul>
+<ul>
+<li>Read first 500 characters to confirm content matches expected audio</li>
+</ul>
+<ul>
+<li>If transcript is empty or garbled, retry with <code>response_format=&#x27;verbose_json&#x27;</code> for debugging</li>
+</ul>
+<h3>Step 7: Route Transcript to Destination</h3>
+<p>Based on context, route the transcript to the appropriate pipeline:</p>
+<table>
+<tr>
+<th>Context</th>
+<th>Destination</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>VOC call (physician interview)</td>
+<td>VOC-Intelligence folder</td>
+<td>Run <strong>RPT-009-EXT</strong> output mode selection → present Roo with format options (quick brief / executive brief / full extraction / cross-VOC synthesis / action items)</td>
+</tr>
+<tr>
+<td>General voice memo from Roo</td>
+<td>Respond in chat</td>
+<td>Summarise or act on content</td>
+</tr>
+<tr>
+<td>Meeting recording</td>
+<td>Session log + vault</td>
+<td>Save to <code>memory/session-logs/</code> and vault</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Ask Roo</td>
+<td>Confirm where to route</td>
+</tr>
+</table>
+<p><strong>⚠️ After VOC transcription:</strong> Always present Roo with the output mode menu (see RPT-009-EXT). Default is Quick Brief (voice message) immediately, with option for Full Extraction if requested.</p>
+<h3>Step 8: Clean Up Temporary Files</h3>
+<p>After transcription is confirmed successful:</p>
+<ul>
+<li>Keep the transcript <code>.txt</code> file</li>
+</ul>
+<ul>
+<li>Keep the converted <code>.mp3</code> only if needed for re-processing</li>
+</ul>
+<ul>
+<li>The original inbound <code>.mp3</code> (actually M4A) can be left in place (OpenClaw manages media retention)</li>
+</ul>
+<p><hr></p>
+<h2>Cost Reference</h2>
+<p>OpenAI Whisper API: <strong>$0.006 per minute of audio</strong></p>
+<table>
+<tr>
+<th>Duration</th>
+<th>Cost</th>
+</tr>
+<tr>
+<td>1 min</td>
+<td>$0.006</td>
+</tr>
+<tr>
+<td>5 min</td>
+<td>$0.03</td>
+</tr>
+<tr>
+<td>10 min</td>
+<td>$0.06</td>
+</tr>
+<tr>
+<td>30 min</td>
+<td>$0.18</td>
+</tr>
+<tr>
+<td>60 min</td>
+<td>$0.36</td>
+</tr>
+</table>
+<p><strong>File size limit:</strong> 25MB per API request. For larger files, split with ffmpeg:</p>
+<pre><code>ffmpeg -i &quot;&lt;input&gt;&quot; -f segment -segment_time 1800 -c copy &quot;&lt;output_%03d.mp3&gt;&quot;</code></pre>
+<p><hr></p>
+<h2>What NOT to Do</h2>
+<ul>
+<li><strong>Do NOT attempt local Whisper (turbo model) for files &gt; 5 minutes.</strong> It takes 30+ minutes on CPU and will timeout.</li>
+</ul>
+<ul>
+<li><strong>Do NOT trust the <code>.mp3</code> file extension from Telegram.</strong> Always verify format with ffprobe first.</li>
+</ul>
+<ul>
+<li><strong>Do NOT skip format conversion.</strong> OpenAI API rejects M4A files mislabelled as MP3 with a 400 error.</li>
+</ul>
+<ul>
+<li><strong>Do NOT use <code>response_format=&#x27;text&#x27;</code> for debugging.</strong> Use <code>&#x27;verbose_json&#x27;</code> if you need segment-level timestamps or confidence scores.</li>
+</ul>
+<ul>
+<li><strong>Do NOT transcribe without checking duration first.</strong> You need duration to select the method and estimate cost.</li>
+</ul>
+<p><hr></p>
+<h2>Troubleshooting</h2>
+<table>
+<tr>
+<th>Error</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+<tr>
+<td><code>BadRequestError: Invalid file format</code></td>
+<td>File is M4A/MP4, not MP3</td>
+<td>Convert with ffmpeg (Step 4)</td>
+</tr>
+<tr>
+<td>Local Whisper timeout/hang</td>
+<td>CPU too slow for long audio</td>
+<td>Use OpenAI API (Step 5)</td>
+</tr>
+<tr>
+<td>Empty transcript</td>
+<td>Audio too quiet or wrong language</td>
+<td>Add <code>language=&#x27;en&#x27;</code> parameter</td>
+</tr>
+<tr>
+<td><code>File too large</code> (&gt;25MB)</td>
+<td>Audio exceeds API limit</td>
+<td>Split with ffmpeg segment command</td>
+</tr>
+<tr>
+<td>ffmpeg not found in PATH</td>
+<td>Binary in Python Scripts folder</td>
+<td>Use full path to ffmpeg.exe</td>
+</tr>
+</table>
+<p><hr></p>
+<h2>Cross-References</h2>
+<ul>
+<li><strong>RPT-009</strong> (VOC Call Notes): When audio is a VOC call, route transcript to VOC extraction pipeline</li>
+</ul>
+<ul>
+<li><strong>OPS-006</strong> (Anti-Sloppy-Work): Verify transcript exists and is non-empty before using it</li>
+</ul>
+<ul>
+<li><strong>OPS-008</strong> (Session Close): Log transcription work in session close</li>
+</ul>
+<ul>
+<li><strong>DEV-005</strong> (API Integration): OpenAI API key management</li>
+</ul>
+<p><hr></p>
+<p><em>Protocol Version 1.0 — Created 2026-07-08 by Lumina following Roo&#x27;s instruction to standardise voice note handling after discovering Telegram M4A mislabelling and local Whisper CPU limitations.</em></p>
+</body>
+</html>
