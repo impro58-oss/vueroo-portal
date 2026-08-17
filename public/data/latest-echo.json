@@ -1,96 +1,11 @@
 {
-  "scan_time": "2026-08-17T09:10:00.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner (cron 85bd4029)",
-  "domains_scanned": 12,
-  "queries_executed": 36,
-  "category_5_events_detected": 3,
-  "events": [
-    {
-      "id": "EVT-2026-08-17-001",
-      "domain": "middle_east",
-      "category": "war_military",
-      "severity": 5,
-      "title": "US-Iran MoU expires midnight Aug 17 — Strait of Hormuz shipping grinds to halt",
-      "summary": "The US-Iran memorandum of understanding ceasefire expires Monday Aug 17 at midnight with no replacement deal. Zero tanker transits tracked through the Strait of Hormuz on Sunday. Iran's new national security chief Mohsen Rezaie demands Washington accept Iran's conditions (unfreezing assets, end Israel's wars in Gaza and Lebanon) before Hormuz reopens. Brent crude at $89.20/barrel, up 6% last week. Trump vows to 'make Hormuz US territory'. Active war status: Day 171.",
-      "sources": ["CNBC", "CBS News", "Al Jazeera", "CNN", "IranSITREP", "Wikipedia"],
-      "detected_triggers": ["military action", "Hormuz", "war declaration", "oil disruption", "sanctions"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"],
-      "impact_regions": ["Middle East", "Global Energy", "Shipping"],
-      "timestamp": "2026-08-17T09:10:00Z"
-    },
-    {
-      "id": "EVT-2026-08-17-002",
-      "domain": "pandemic_health",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "title": "Ebola outbreak in DRC becomes deadliest in country's history — 2,325 deaths, 4,945 cases, WHO PHEIC declared",
-      "summary": "The 2026 Ebola epidemic (Bundibugyo virus) in Democratic Republic of Congo has surpassed the 2018-2020 outbreak to become the deadliest in DRC history. 4,945 confirmed cases, 2,325 deaths (47% fatality rate), 101 new cases in 24 hours as of Aug 16. No approved vaccine for Bundibugyo species. WHO warns crisis could rival West Africa 2014-2016 disaster. WHO Director-General declares Public Health Emergency of International Concern (PHEIC).",
-      "sources": ["The Guardian", "CNN", "WHO", "ECDC", "UPI", "Wikipedia"],
-      "detected_triggers": ["pandemic", "WHO emergency", "outbreak", "epidemic"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "impact_regions": ["Central Africa", "Global Health"],
-      "timestamp": "2026-08-17T09:10:00Z"
-    },
-    {
-      "id": "EVT-2026-08-17-003",
-      "domain": "em_asia",
-      "category": "market_dislocation",
-      "severity": 3,
-      "title": "South Korean won record volatility — sharpest swings since 2009 financial crisis",
-      "summary": "Korean won experienced record volatility, swinging from 1,555 to 1,400s against USD in just over a month. Volatility highest since 2009 global financial crisis. Won has gained ~140 per dollar since early July on bargain buying, but instability persists. India deploying $41B currency defense mechanism. EM Asia currencies under pressure from global dollar strength and geopolitical risk flows.",
-      "sources": ["Korea Herald", "Chosun", "UPI", "Seoul Economic Daily"],
-      "detected_triggers": ["currency crisis", "intervention", "contagion"],
-      "escalate_to": ["currency", "fin_stability"],
-      "impact_regions": ["South Korea", "EM Asia", "India"],
-      "timestamp": "2026-08-17T09:10:00Z"
-    }
-  ],
-  "watch_items": [
-    {
-      "domain": "japan",
-      "title": "BOJ Governor Ueda signals September rate hike; joint US-Japan yen intervention aftermath",
-      "severity": 2,
-      "note": "Goldman says Japan has $1T reserves for further intervention. Rate hike expected Sept. Post-intervention equilibrium fragile."
-    },
-    {
-      "domain": "eu_ecb",
-      "title": "ECB set to deliver final rate hike — shortest tightening drive since 2011",
-      "severity": 2,
-      "note": "Reuters reports ECB poised for final hike next month. Rates left unchanged June 2026 after 8 cuts."
-    },
-    {
-      "domain": "us_fed",
-      "title": "Fed at 3.50-3.75% — benign inflation but 30% probability of hike priced",
-      "severity": 2,
-      "note": "CPI data offered reprieve. Markets assigning 30% probability to rate hike. FOMC patient but debate unresolved."
-    },
-    {
-      "domain": "china",
-      "title": "PBOC conducting overnight reverse repos Aug 14-19; pledges timely new policy rollout",
-      "severity": 2,
-      "note": "PBOC liquidity operations scheduled through Aug 19. Reuters reports new policy rollout pledged."
-    },
-    {
-      "domain": "latam",
-      "title": "Argentina central bank reform vote Aug 19; regional currency pressure",
-      "severity": 2,
-      "note": "Milei's BCRA charter reform aims for currency stability focus. Brazil, Colombia also under pressure."
-    }
-  ],
-  "no_events_domains": ["uk", "africa", "financial_system"],
-  "scan_summary": {
-    "category_5_count": 3,
-    "max_severity": 5,
-    "overall_threat_level": "CRITICAL",
-    "key_threat": "US-Iran ceasefire expiry + Hormuz shutdown + Ebola PHEIC + EM Asia currency dislocation",
-    "recommended_actions": [
-      "Escalate middle_east signal to RED (Hormuz ceasefire expiry imminent)",
-      "Escalate energy signal to RED (Brent at $89.20, Hormuz shipping halted)",
-      "Escalate geopolitical to RED (active war, Day 171)",
-      "Escalate supply_chain to RED (Ebola PHEIC + Hormuz shipping halt)",
-      "Escalate currency to RED (Korean won crisis + India $41B defense)",
-      "Activate macro_event signal to ACTIVE/RED"
-    ]
-  }
+  "timestamp": "2026-08-16T13:10:00.000000+00:00",
+  "scanner": "breaking_event",
+  "events_count": 8,
+  "top_event": "Strait of Hormuz Blockade + Ebola PHEIC + Yen Intervention Failure",
+  "risk_level": "CRITICAL",
+  "summary": "8 CAT-5 events: Hormuz blockade (war), Ebola PHEIC (4665 cases/2184 deaths), US-Japan FX intervention unraveling, China property $148B time bomb, US Treasury hedge fund leverage risk, gold $4437, UK food crisis, ECB rate hike imminent",
+  "signals_updated": "16 red, 4 amber, 1 green (21 total)",
+  "macro_event": "ACTIVE",
+  "new_escalations": ["middle_east", "energy", "geopolitical", "food_security", "supply_chain", "china", "currency", "fin_stability", "social_cohesion", "europe"]
 }

@@ -1,96 +1,167 @@
 {
-  "scan_time": "2026-08-17T09:10:00.000000+00:00",
+  "scan_time": "2026-08-17T13:10:00.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner (cron 85bd4029)",
+  "scanner": "BlackWatch Breaking Event Scanner (4h cron)",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "category_5_events_detected": 3,
-  "events": [
+  "events_detected": [
     {
-      "id": "EVT-2026-08-17-001",
+      "id": "BW-2026-08-17-001",
+      "title": "2026 Iran War — Strait of Hormuz Crisis ACTIVE",
       "domain": "middle_east",
       "category": "war_military",
       "severity": 5,
-      "title": "US-Iran MoU expires midnight Aug 17 — Strait of Hormuz shipping grinds to halt",
-      "summary": "The US-Iran memorandum of understanding ceasefire expires Monday Aug 17 at midnight with no replacement deal. Zero tanker transits tracked through the Strait of Hormuz on Sunday. Iran's new national security chief Mohsen Rezaie demands Washington accept Iran's conditions (unfreezing assets, end Israel's wars in Gaza and Lebanon) before Hormuz reopens. Brent crude at $89.20/barrel, up 6% last week. Trump vows to 'make Hormuz US territory'. Active war status: Day 171.",
-      "sources": ["CNBC", "CBS News", "Al Jazeera", "CNN", "IranSITREP", "Wikipedia"],
-      "detected_triggers": ["military action", "Hormuz", "war declaration", "oil disruption", "sanctions"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"],
-      "impact_regions": ["Middle East", "Global Energy", "Shipping"],
-      "timestamp": "2026-08-17T09:10:00Z"
+      "confidence": 10,
+      "description": "Ongoing Iran-US war. IRGC closed Strait of Hormuz. Oil infrastructure under attack. Vessels reporting explosions southeast of Kumzar (Aug 5). Oil residue from attacked vessels on Qeshm Island (Aug 13). Trump claims 'complete control' of Hormuz; Iran refutes. 20M barrels/day shipping disrupted. Biggest global energy disruption in decades.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+        "https://www.britannica.com/event/2026-Iran-war",
+        "https://www.cbsnews.com/live-updates/iran-war-donald-trump-strait-of-hormuz-uae-accuses-attacks-vance-oil-gas/",
+        "https://www.cnn.com/2026/08/12/world/live-news/iran-war-trump",
+        "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-06-19",
+      "impact_regions": ["Middle East", "Global Energy", "Global Shipping", "US", "Iran", "Israel", "Gulf States"],
+      "escalate_to": ["middle_east", "energy", "geopolitical", "fin_stability", "supply_chain", "food_security"],
+      "status": "ESCALATING"
     },
     {
-      "id": "EVT-2026-08-17-002",
+      "id": "BW-2026-08-17-002",
+      "title": "2026 Ebola Epidemic — WHO PHEIC, Fastest-Growing Outbreak on Record",
       "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 5,
+      "confidence": 10,
+      "description": "Bundibugyo ebolavirus outbreak in DRC and Uganda. 4,665 confirmed cases, 2,184 deaths (as of Aug 12). Fastest-growing Ebola outbreak on record, second-largest ever. WHO declared Public Health Emergency of International Concern (PHEIC) on May 17, 2026. Existing treatments certified for Zaire species, not Bundibugyo — complicating response. Cases surging, spreading faster than health workers can contain.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic",
+        "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda",
+        "https://www.who.int/news/item/17-05-2026-epidemic-of-ebola-disease-in-the-democratic-republic-of-the-congo-and-uganda-determined-a-public-health-emergency-of-international-concern",
+        "https://news.un.org/en/story/2026/08/1168117",
+        "https://www.ibtimes.co.uk/ebola-outbreak-congo-race-against-time-1814088"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-05-15",
+      "impact_regions": ["DRC", "Uganda", "Central Africa", "Global Health"],
+      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
+      "status": "ESCALATING"
+    },
+    {
+      "id": "BW-2026-08-17-003",
+      "title": "US-Japan Joint Currency Intervention — Unraveling",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "confidence": 10,
+      "description": "First joint US-Japan FX intervention in ~15 years (July 31, 2026). US Treasury sold euros (not dollars) to buy yen, avoiding Treasury market disruption. Japan spent estimated $36-59B. Yen rallied to 157 then unwound to 159 by Aug 11 — half the gains lost. 30Y Treasury yield at 5.2% (highest since 2007). ECB not consulted on euro-side intervention. BOJ pressured toward rate hike (Sep/Oct). JGB 10Y at highest since 1996.",
+      "sources": [
+        "https://fortune.com/2026/08/12/us-japan-yen-intervention-unraveling-weak-yen-causes/",
+        "https://www.cnbc.com/2026/08/12/japan-yen-us-dollar-intervention-.html",
+        "https://www.goldmansachs.com/insights/goldman-sachs-exchanges/what-the-us-japan-currency-intervention-means-for-the-yen-rates-and-the-dollar",
+        "https://www.bloomberg.com/news/newsletters/2026-08-13/japan-supports-faster-rate-hike-to-bolster-yen-as-us-intervention-impact-fades",
+        "https://www.telegraph.co.uk/business/2026/08/10/yen-sinks-as-us-japan-intervention-unravels/"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-07-31",
+      "impact_regions": ["Japan", "US", "Eurozone", "Global Currency Markets"],
+      "escalate_to": ["japan_sovereign", "currency", "fin_stability", "europe"],
+      "status": "DETERIORATING"
+    },
+    {
+      "id": "BW-2026-08-17-004",
+      "title": "China $148B Commercial Property Crisis — Expiring Land Leases",
+      "domain": "china",
       "category": "sovereign_crisis",
       "severity": 4,
-      "title": "Ebola outbreak in DRC becomes deadliest in country's history — 2,325 deaths, 4,945 cases, WHO PHEIC declared",
-      "summary": "The 2026 Ebola epidemic (Bundibugyo virus) in Democratic Republic of Congo has surpassed the 2018-2020 outbreak to become the deadliest in DRC history. 4,945 confirmed cases, 2,325 deaths (47% fatality rate), 101 new cases in 24 hours as of Aug 16. No approved vaccine for Bundibugyo species. WHO warns crisis could rival West Africa 2014-2016 disaster. WHO Director-General declares Public Health Emergency of International Concern (PHEIC).",
-      "sources": ["The Guardian", "CNN", "WHO", "ECDC", "UPI", "Wikipedia"],
-      "detected_triggers": ["pandemic", "WHO emergency", "outbreak", "epidemic"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "impact_regions": ["Central Africa", "Global Health"],
-      "timestamp": "2026-08-17T09:10:00Z"
+      "confidence": 8,
+      "description": "China racing to address $148B (1T+ yuan) commercial real estate threat from expiring land leases. Office values in major cities down 40%+ from peaks. Developers defaulted on ~$130B of debt. Foreign Affairs warns cascading defaults could hit Pakistan, Ecuador, Zambia if Beijing forced to address domestic crisis. PBOC maintaining 'appropriately loose' stance, promising 'practical measures as needed'.",
+      "sources": [
+        "https://www.bloomberg.com/news/articles/2026-08-11/china-s-real-estate-market-races-to-defuse-a-148-billion-time-bomb",
+        "https://www.firstpost.com/business/china-property-crisis-expiring-land-leases-14037596.html",
+        "https://www.chinamoneynetwork.com/2026/08/12/china-confronts-looming-property-crisis-due-to-expired-leases",
+        "https://www.foreignaffairs.com/china/next-global-economic-crisis-made-china-michael-fromon",
+        "https://www.reuters.com/markets/us/chinas-central-bank-pledges-timely-new-policy-rollout-2026-08-12/"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-08-11",
+      "impact_regions": ["China", "Developing World (Belt & Road)", "Global Real Estate"],
+      "escalate_to": ["china", "fin_stability"],
+      "status": "DEVELOPING"
     },
     {
-      "id": "EVT-2026-08-17-003",
-      "domain": "em_asia",
+      "id": "BW-2026-08-17-005",
+      "title": "UK Food Security Crisis — Worst in Decades + Wildfire Emergency",
+      "domain": "uk",
       "category": "market_dislocation",
       "severity": 3,
-      "title": "South Korean won record volatility — sharpest swings since 2009 financial crisis",
-      "summary": "Korean won experienced record volatility, swinging from 1,555 to 1,400s against USD in just over a month. Volatility highest since 2009 global financial crisis. Won has gained ~140 per dollar since early July on bargain buying, but instability persists. India deploying $41B currency defense mechanism. EM Asia currencies under pressure from global dollar strength and geopolitical risk flows.",
-      "sources": ["Korea Herald", "Chosun", "UPI", "Seoul Economic Daily"],
-      "detected_triggers": ["currency crisis", "intervention", "contagion"],
-      "escalate_to": ["currency", "fin_stability"],
-      "impact_regions": ["South Korea", "EM Asia", "India"],
-      "timestamp": "2026-08-17T09:10:00Z"
-    }
-  ],
-  "watch_items": [
-    {
-      "domain": "japan",
-      "title": "BOJ Governor Ueda signals September rate hike; joint US-Japan yen intervention aftermath",
-      "severity": 2,
-      "note": "Goldman says Japan has $1T reserves for further intervention. Rate hike expected Sept. Post-intervention equilibrium fragile."
+      "confidence": 8,
+      "description": "UK facing worst food security crisis in decades due to drought and scorched fields. 75% of England in drought. Government issued national wildfire emergency alert. 10Y gilt yields above 5%, 30Y at 5.7%. BOE rate at 3.75% (7-2 vote to hold). Analysts see markets pricing rate hike by November.",
+      "sources": [
+        "https://www.theguardian.com/commentisfree/2026/aug/13/britain-food-crisis-government-summer-weather-war-stockpiles",
+        "https://www.telegraph.co.uk/business/2026/08/11/britain-faces-worst-food-security-crisis-in-decades/",
+        "https://www.bbc.co.uk/news/live/cmdx7p1q02yrt",
+        "https://commonslibrary.parliament.uk/research-briefings/cbp-10842/"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-08-11",
+      "impact_regions": ["UK", "Europe"],
+      "escalate_to": ["europe", "fin_stability", "food_security"],
+      "status": "DEVELOPING"
     },
     {
+      "id": "BW-2026-08-17-006",
+      "title": "ECB Set to Deliver Final Rate Hike — Shortest Tightening Drive Since 2011",
       "domain": "eu_ecb",
-      "title": "ECB set to deliver final rate hike — shortest tightening drive since 2011",
-      "severity": 2,
-      "note": "Reuters reports ECB poised for final hike next month. Rates left unchanged June 2026 after 8 cuts."
+      "category": "emergency_rate",
+      "severity": 3,
+      "confidence": 8,
+      "description": "Reuters poll: ECB set to deliver final rate hike next month in shortest tightening drive since 2011. ECB cut rates 8x Jun 2024-Jun 2025, then held until June 2026 when they hiked. Lagarde monitoring 'second-round effects' of inflation. ECB was not consulted on US euro-side intervention for yen, creating diplomatic tension.",
+      "sources": [
+        "https://www.reuters.com/business/ecb-set-deliver-final-rate-hike-next-month-shortest-tightening-drive-since-2011-2026-08-13/",
+        "https://www.morningstar.com/economy/will-ecb-raise-interest-rates-again-2026-cut-them-2027",
+        "https://euperspectives.eu/2026/08/us-threw-the-euro-under-the-bus/",
+        "https://cryptobriefing.com/us-sells-euros-stabilize-yen-intervention/"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-08-13",
+      "impact_regions": ["Eurozone", "EU"],
+      "escalate_to": ["europe", "fin_stability"],
+      "status": "DEVELOPING"
     },
     {
-      "domain": "us_fed",
-      "title": "Fed at 3.50-3.75% — benign inflation but 30% probability of hike priced",
-      "severity": 2,
-      "note": "CPI data offered reprieve. Markets assigning 30% probability to rate hike. FOMC patient but debate unresolved."
-    },
-    {
-      "domain": "china",
-      "title": "PBOC conducting overnight reverse repos Aug 14-19; pledges timely new policy rollout",
-      "severity": 2,
-      "note": "PBOC liquidity operations scheduled through Aug 19. Reuters reports new policy rollout pledged."
-    },
-    {
-      "domain": "latam",
-      "title": "Argentina central bank reform vote Aug 19; regional currency pressure",
-      "severity": 2,
-      "note": "Milei's BCRA charter reform aims for currency stability focus. Brazil, Colombia also under pressure."
+      "id": "BW-2026-08-17-007",
+      "title": "Saudi Oil Trade Shifts — US Imports at Zero, Rerouting Around Hormuz",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 4,
+      "confidence": 9,
+      "description": "Saudi Arabia cutting September oil price differential for Asia. US imports of Saudi oil fall to zero. Saudi rerouting oil exports through Mediterranean pipeline to avoid Red Sea/Houthi attacks. Tankers forced on 25-day longer journey around Africa. EIA forecasts Brent averaging $87/barrel in 2026. 0.6M barrels/day disruption expected through end of 2027. US/Gulf states pursuing new routes to bypass Hormuz and Bab el-Mandeb.",
+      "sources": [
+        "https://meobserver.news/energy/2026/08/11/saudi-oil-trade-shifts-east-asian-prices-fall-us-imports-dry-up/",
+        "https://www.eia.gov/outlooks/steo/",
+        "https://www.cnbc.com/2026/08/12/saudi-arabia-iran-oil-red-sea-houthi-suez-canal-strait-hormuz.html",
+        "https://oilprice.com/Energy/Energy-General/Inside-the-Secret-USIsraelSaudi-Plan-to-Cut-Iran-Out-of-the-Global-Oil-Suppl.html",
+        "https://www.aljazeera.com/economy/2026/8/12/oil-prices-rise-as-attacks-dent-hopes-for-strait-of-hormuz-reopening"
+      ],
+      "date_detected": "2026-08-17T13:10:00Z",
+      "date_started": "2026-07-12",
+      "impact_regions": ["Middle East", "Global Energy", "US", "Asia"],
+      "escalate_to": ["energy", "supply_chain", "food_security", "geopolitical"],
+      "status": "ONGOING"
     }
   ],
-  "no_events_domains": ["uk", "africa", "financial_system"],
-  "scan_summary": {
-    "category_5_count": 3,
-    "max_severity": 5,
-    "overall_threat_level": "CRITICAL",
-    "key_threat": "US-Iran ceasefire expiry + Hormuz shutdown + Ebola PHEIC + EM Asia currency dislocation",
-    "recommended_actions": [
-      "Escalate middle_east signal to RED (Hormuz ceasefire expiry imminent)",
-      "Escalate energy signal to RED (Brent at $89.20, Hormuz shipping halted)",
-      "Escalate geopolitical to RED (active war, Day 171)",
-      "Escalate supply_chain to RED (Ebola PHEIC + Hormuz shipping halt)",
-      "Escalate currency to RED (Korean won crisis + India $41B defense)",
-      "Activate macro_event signal to ACTIVE/RED"
-    ]
+  "summary": {
+    "total_events": 7,
+    "category_5_count": 2,
+    "category_4_count": 3,
+    "category_3_count": 2,
+    "highest_severity": 5,
+    "macro_event_activated": true,
+    "new_events_this_scan": 2,
+    "escalating_events": 3,
+    "domains_with_events": ["middle_east", "pandemic_health", "japan", "china", "uk", "eu_ecb", "commodities"],
+    "clean_domains": ["us_fed", "latam", "em_asia", "africa", "financial_system"],
+    "assessment": "TWO category-5 events active simultaneously: Iran War/Hormuz closure (war_military) + Ebola PHEIC (pandemic). US-Japan intervention unraveling adds sovereign/currency stress. China property crisis adds financial systemic risk. Multiple convergence vectors: energy + health + currency + geopolitical + financial stability. Overall risk: CRITICAL."
   }
 }
