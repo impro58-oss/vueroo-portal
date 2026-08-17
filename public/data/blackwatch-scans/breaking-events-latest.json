@@ -1,161 +1,189 @@
 {
-  "scan_time": "2026-08-17T01:12:09.310848",
-  "scan_type": "breaking_event_4h",
-  "scanner": "BlackWatch Breaking Event Scanner",
+  "scan_time": "2026-08-17T19:03:37.191696",
+  "scan_type": "breaking_event",
+  "scanner_version": "1.0",
+  "domains_scanned": 12,
+  "queries_executed": 36,
+  "category_5_events_detected": 4,
   "events": [
     {
-      "id": "BW-2026-08-17-0101",
-      "title": "US-Iran ceasefire EXPIRED \u2014 Hormuz stalemate, no negotiations",
-      "severity": 5,
-      "is_new": false,
-      "updated": true,
+      "id": "BE-2026-08-17-001",
+      "title": "Strait of Hormuz Crisis \u00e2\u20ac\u201d Ongoing Energy Shock",
       "domain": "middle_east",
-      "category": "war_military",
-      "summary": "60-day ceasefire deadline expired Aug 16. Both sides at impasse. Iran FM: no negotiations. IRGC striking ships. Kushner meeting Hamas in Cairo, Netanyahu in Israel Aug 17. 8-nation coalition condemns Israel Gaza plan rejection.",
+      "category": [
+        "war_military",
+        "energy_shock",
+        "sovereign_intervention"
+      ],
+      "severity": 5,
+      "status": "ACTIVE",
+      "summary": "Iran-US-Israel war ongoing since Feb 28, 2026. Strait of Hormuz largely blocked. 25% of world's seaborne oil trade disrupted. Brent crude at $88-91/bbl. EIA reports 5.5M b/d production shut-ins in July. 20,000 mariners stranded. US naval blockade April-May. Renewed tanker attacks in July. Islamabad Memorandum signed. Kushner traveling in region for diplomacy. UPDATE Aug 17 19:02 UTC: Iran and Oman reached agreement on plan for ships to transit Strait of Hormuz, working to finalize details for joint statement. Trump threatens Oman if deal proceeds. Potential de-escalation signal.",
       "sources": [
-        "The National",
-        "Al Jazeera",
-        "ABC News",
-        "Haaretz",
-        "CNN",
-        "Chosun"
+        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+        "https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran",
+        "https://www.eia.gov/outlooks/steo/report/global_oil.php",
+        "https://abcnews.com/International/live-updates/iran-live-updates-negotiations-us-messages-exchanged-tehran/",
+        "https://apnews.com/article/iran-us-israel-lebanon-gaza-hormuz-august-17-2026-53ae10812e472a4e5bb228b9f318a5fc"
+      ],
+      "impact_regions": [
+        "Middle East",
+        "Global Energy",
+        "Global Shipping"
       ],
       "escalate_to": [
-        "middle_east",
-        "geopolitical",
         "energy",
-        "supply_chain"
-      ],
-      "confidence": 10
-    },
-    {
-      "id": "BW-2026-08-17-0102",
-      "title": "Ebola deadliest in DRC history \u2014 2,325 deaths, surpassing 2018-2020",
-      "severity": 5,
-      "is_new": true,
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "summary": "Ebola outbreak killed 2,325 people (Aug 16 gov data), surpassing 2018-2020 outbreak as deadliest in DRC history. Bundibugyo strain, no approved treatments. Deaths outside known transmission chains. WHO says on pace to eclipse 2014-2016 (11,000 deaths).",
-      "sources": [
-        "CNN",
-        "Reuters",
-        "Xinhua",
-        "ABC Australia",
-        "Washington Post"
-      ],
-      "escalate_to": [
-        "social_cohesion",
-        "food_security",
-        "supply_chain"
-      ],
-      "confidence": 10
-    },
-    {
-      "id": "BW-2026-08-17-0103",
-      "title": "Kushner meets Hamas leadership in Cairo, lands in Israel Aug 17",
-      "severity": 4,
-      "is_new": true,
-      "domain": "middle_east",
-      "category": "sovereign_intervention",
-      "summary": "Jared Kushner met Hamas leadership in Cairo with Qatar/Egypt/Turkey officials. Landed in Israel Monday to meet Netanyahu. Accompanied by Mladenov and Tony Blair. Working to advance Gaza ceasefire plan rejected by Israel. 8 nations condemn Israeli rejection.",
-      "sources": [
-        "Haaretz",
-        "ABC News",
-        "CNN",
-        "Yahoo News"
-      ],
-      "escalate_to": [
         "middle_east",
-        "geopolitical"
+        "supply_chain",
+        "geopolitical",
+        "food_security"
       ],
-      "confidence": 9
+      "detected_at": "2026-08-17T17:15:00Z"
     },
     {
-      "id": "BW-2026-08-17-0104",
-      "title": "USS Abraham Lincoln morale crisis \u2014 CENTCOM chief visits, 260+ days deployed",
-      "severity": 3,
-      "is_new": true,
-      "domain": "us_fed",
-      "category": "military_stress",
-      "summary": "CENTCOM chief Brad Cooper visited USS Lincoln amid reports of food shortages, broken plumbing, mental health crises. Sailor went overboard earlier this month. 260+ days at sea, 10,000 aircraft flights, 1.5M lbs ordnance expended. Ship preparing to return to US.",
+      "id": "BE-2026-08-17-002",
+      "title": "2026 Ebola Epidemic \u00e2\u20ac\u201d WHO PHEIC, Fastest-Growing on Record",
+      "domain": "pandemic_health",
+      "category": [
+        "pandemic"
+      ],
+      "severity": 5,
+      "status": "ACTIVE",
+      "summary": "Bundibugyo ebolavirus outbreak in DRC declared WHO PHEIC on May 16, 2026. As of Aug 16: 4,945 confirmed cases, 2,325 deaths (46.86% fatality rate). Fastest-growing Ebola outbreak on record, second-largest ever. Spread to 6 provinces in DRC + Uganda (declared over July 28). No approved vaccine for Bundibugyo species. Armed conflict (M23) hindering response. True scale likely exceeds confirmed numbers.",
       "sources": [
-        "CBS News",
-        "CNN",
-        "Republic World",
-        "NewsBreak"
+        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic",
+        "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda",
+        "https://www.techtimes.com/articles/324687/20260817/drc-ebola-sets-deadliest-record-fatality-rate-doubles-46-percent-since-june.htm"
+      ],
+      "impact_regions": [
+        "Central Africa",
+        "Global Health"
       ],
       "escalate_to": [
-        "geopolitical",
+        "supply_chain",
         "social_cohesion"
       ],
-      "confidence": 8
+      "detected_at": "2026-08-17T17:16:00Z"
     },
     {
-      "id": "BW-2026-08-17-0105",
-      "title": "Yen intervention unraveling \u2014 USD/JPY at 159.32, half gains erased",
-      "severity": 4,
-      "is_new": false,
-      "updated": true,
+      "id": "BE-2026-08-17-003",
+      "title": "US Treasury ESF Yen Intervention \u00e2\u20ac\u201d First in 15 Years",
       "domain": "japan",
-      "category": "sovereign_intervention",
-      "summary": "Joint US-Japan 88B intervention unraveling. USD/JPY back to 159.32 from 155 intervention low. US ESF sold euros (first since 1998). BOJ supporting faster rate hikes (Sept/Oct). JGB 10Y at 2.8%, 30Y near 4%. Sen. Warren demanding justification.",
+      "category": [
+        "sovereign_intervention"
+      ],
+      "severity": 4,
+      "status": "ACTIVE",
+      "summary": "On July 31, 2026, US Treasury sold euros from Exchange Stabilization Fund to buy yen alongside Japan. First US yen intervention in 15 years. Japan's intervention estimated at $30-36B. Yen initially strengthened but gains unraveling by Aug 10 (back to 159/dollar). BOJ pressured to accelerate rate hikes (Sept/Oct). Takaichi government supportive. Bessent pledged open-ended yen support but ESF arsenal constrained.",
       "sources": [
-        "Fortune",
-        "WSWS",
-        "Andersen Institute",
-        "Reuters",
-        "NST",
-        "ExchangeRates.org.uk"
+        "https://www.riotimesonline.com/the-fund-that-steadied-buenos-aires-then-tokyo-washington-rediscovers-intervention/",
+        "https://www.piie.com/blogs/realtime-economics/2026/trying-prop-yen-us-wants-have-its-cake-and-eat-it-too",
+        "https://www.bloomberg.com/news/articles/2026-08-13/japan-s-government-is-said-to-support-faster-boj-rate-hike",
+        "https://www.telegraph.co.uk/business/2026/08/10/yen-sinks-as-us-japan-intervention-unravels/"
+      ],
+      "impact_regions": [
+        "Japan",
+        "United States",
+        "Global Currency Markets"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ],
+      "detected_at": "2026-08-17T17:17:00Z"
+    },
+    {
+      "id": "BE-2026-08-17-004",
+      "title": "South Korean Won Crisis \u00e2\u20ac\u201d Sharpest Swings Since 2008",
+      "domain": "em_asia",
+      "category": [
+        "market_dislocation"
+      ],
+      "severity": 4,
+      "status": "ACTIVE",
+      "summary": "Korean won weakened from ~1,300 to 1,550/dollar in just over a month, now near 1,400. Volatility highest since 2009 financial crisis. India lured $40B from diaspora via high-yield dollar deposits to stabilize rupee. Emerging Asia guarding reserves with renewed currency defense strategies. Bloomberg reports currency defense 'makeover' across region.",
+      "sources": [
+        "https://www.koreaherald.com/article/10836205",
+        "https://www.chosun.com/english/market-money-en/2026/08/09/POJJ3S53EZGMPHCJSO6QOUYY6A/",
+        "https://www.bloomberg.com/news/articles/2026-08-09/currency-defense-gets-makeover-as-emerging-asia-guards-reserves",
+        "https://finance.biggo.com/news/b5d19623-fff0-4271-967d-a40f8dacd5d1"
+      ],
+      "impact_regions": [
+        "South Korea",
+        "India",
+        "Emerging Asia"
       ],
       "escalate_to": [
         "currency",
         "fin_stability"
       ],
-      "confidence": 9
-    },
-    {
-      "id": "BW-2026-08-17-0106",
-      "title": "Oil at 88.52 \u2014 Hormuz closure keeps prices elevated, SPR at multi-decade low",
-      "severity": 4,
-      "is_new": false,
-      "updated": true,
-      "domain": "commodities",
-      "category": "energy_shock",
-      "summary": "Brent at 88.52, up from prior week. EIA forecasts elevated prices until Hormuz flows normalize. Global inventories drew down sharply. SPR at 304.8 mbbl (multi-decade low). Hormuz: 20% of global oil/LNG normally transits.",
-      "sources": [
-        "EIA",
-        "TS2.tech",
-        "CBS News",
-        "TradingEconomics",
-        "Bloomberg"
-      ],
-      "escalate_to": [
-        "energy",
-        "supply_chain",
-        "fin_stability"
-      ],
-      "confidence": 9
-    },
-    {
-      "id": "BW-2026-08-17-0107",
-      "title": "China 148B property time bomb \u2014 PBOC eases, deflation war faltering",
-      "severity": 3,
-      "is_new": false,
-      "updated": true,
-      "domain": "china",
-      "category": "sovereign_crisis",
-      "summary": "Beijing eased property purchase restrictions Aug 7 (3rd time). 148B in property leases expiring. PBOC pledges timely new policy rollout. Deflation war faltering in real time. Stable currency to avoid devaluation tensions with Washington.",
-      "sources": [
-        "Bloomberg",
-        "Asia Times",
-        "Reuters",
-        "BigGo Finance"
-      ],
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ],
-      "confidence": 8
+      "detected_at": "2026-08-17T17:18:00Z"
     }
-  ]
+  ],
+  "domains_summary": {
+    "us_fed": {
+      "status": "monitoring",
+      "notes": "Fed expected to hold at 3.50-3.75%. 30% probability of hike. Benign CPI data. No emergency action."
+    },
+    "latam": {
+      "status": "monitoring",
+      "notes": "Argentina central bank reform vote Aug 19. Brazil market pressure. US ESF $2.5B lifeline to Argentina. No acute crisis."
+    },
+    "eu_ecb": {
+      "status": "monitoring",
+      "notes": "ECB set to deliver final rate hike next month (Reuters). Yield dispersion at historically low levels. No emergency action."
+    },
+    "uk": {
+      "status": "elevated",
+      "notes": "UK 10Y borrowing ~5.05%, 30Y ~5.7%. BOE held at 3.75% July 30. Mortgage rates nudging up. Hedge fund gilt leverage flagged. No emergency action."
+    },
+    "japan": {
+      "status": "ESCALATED",
+      "notes": "US-Treasury joint yen intervention July 31. BOJ pressured to hike Sept/Oct. Yen gains unraveling."
+    },
+    "china": {
+      "status": "monitoring",
+      "notes": "PBOC pledges timely new policy rollout. Yuan strengthening slightly (6.74). No emergency devaluation. Property sector still stressed but no acute event."
+    },
+    "em_asia": {
+      "status": "ESCALATED",
+      "notes": "KRW crisis \u00e2\u20ac\u201d sharpest swings since 2008. India rupee recovery via diaspora deposits. Regional currency defense makeover."
+    },
+    "middle_east": {
+      "status": "ESCALATED",
+      "notes": "Iran war ongoing. Hormuz blocked. NEW: Iran-Oman agreement on transit plan - potential de-escalation. Trump threatens Oman. Kushner diplomatic travel."
+    },
+    "africa": {
+      "status": "elevated",
+      "notes": "DRC Ebola: 4,945 cases, 2,325 deaths (Aug 16). Fatality rate 46%. AU Harare Declaration on debt (July 2026). Sudan civil war ongoing. No new coups."
+    },
+    "financial_system": {
+      "status": "monitoring",
+      "notes": "No acute bank failures. Credit bubble terminal phase per analysts. UK gilt leverage concerns. 30Y Treasury at 5.2% (highest since 2007). Systemic risk elevated."
+    },
+    "commodities": {
+      "status": "ESCALATED",
+      "notes": "Brent at $82.40/bbl (Aug 14, +3.52% month). Global supply projected to decline 4.3 mb/d in 2026. Gold at $4,480/oz. Hormuz disruption keeping prices elevated."
+    },
+    "pandemic_health": {
+      "status": "ESCALATED",
+      "notes": "2026 Ebola epidemic \u00e2\u20ac\u201d WHO PHEIC. Fastest-growing on record. 46.86% fatality rate. No approved vaccine for Bundibugyo species."
+    }
+  },
+  "signal_board_changes": {
+    "macro_event": "ACTIVATED (red)",
+    "escalated_signals": [
+      "energy",
+      "middle_east",
+      "fin_stability",
+      "supply_chain",
+      "food_security",
+      "currency",
+      "geopolitical",
+      "social_cohesion"
+    ],
+    "new_red_count": 13,
+    "new_amber_count": 6,
+    "new_green_count": 2,
+    "previous_red_count": 7
+  }
 }
