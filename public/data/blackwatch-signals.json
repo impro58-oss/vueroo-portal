@@ -15,14 +15,14 @@
       "value": 2.71,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.0,
       "unit": "%",
-      "description": "US High Yield OAS Spread",
+      "description": "US High Yield OAS Spread + Gold RED breach",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "Threshold breach: Gold above 3500 (current: 4453.2)",
-      "timestamp": "2026-08-17T07:30:39.000000+00:00"
+      "note": "ESCALATED: Gold above $3,500 (current: $4,453.20, +27.2% above tripwire). HY OAS at 2.71%. BAA10Y spread at 1.67% (widening). Currency crisis / war premium signal active.",
+      "timestamp": "2026-08-17T07:31:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -75,14 +75,14 @@
       "value": 14.63,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.08,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-13",
-      "note": "Threshold breach: Gold above 3500 (current: 4453.2)",
-      "timestamp": "2026-08-17T07:30:39.000000+00:00"
+      "note": "ESCALATED: Gold RED breach ($4,453.20, +27.2% above $3,500 tripwire) confirms geopolitical war premium. VIX low at 14.98 suggests complacency — divergence is itself a signal.",
+      "timestamp": "2026-08-17T07:31:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -108,10 +108,10 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
       "timestamp": "2026-08-17T05:34:10.906165+00:00"
     },
     "food_security": {
@@ -133,12 +133,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -201,23 +201,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 158.898)",
+      "note": "Threshold breach: USD/JPY above 158.0 (current: 158.898). EUR/USD above 1.15 (current: 1.161). Dollar weakness accelerating.",
       "timestamp": "2026-08-17T07:30:39.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4452.5,
+      "value": 4453.2,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 43.6,
-      "description": "Gold Futures (GC=F): $4,452.50 (+0.99%)",
+      "change_from_last": 44.3,
+      "description": "Gold Futures (GC=F): $4,453.20 (+1.00%) — RED threshold breach: above $3,500",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-17",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-17T05:34:09.303543+00:00"
+      "note": "ESCALATED from green to red: Gold above $3,500 threshold (27.2% above tripwire). Currency crisis or war premium signal.",
+      "timestamp": "2026-08-17T07:31:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -273,7 +273,7 @@
       "confidence": 9,
       "change_from_last": 0.03,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-14",
       "note": "",
@@ -291,7 +291,7 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
       "timestamp": "2026-08-17T05:34:14.195537+00:00"
     },
     "public_sentiment": {
@@ -313,12 +313,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
+    "score": 514,
+    "red_count": 8,
     "amber_count": 8,
-    "green_count": 4,
+    "green_count": 3,
     "manual_count": 1,
-    "timestamp": "2026-08-17T05:34:14.603851+00:00"
+    "timestamp": "2026-08-17T07:31:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
