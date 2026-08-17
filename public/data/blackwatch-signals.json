@@ -15,14 +15,14 @@
       "value": 2.71,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "Threshold breach: Gold above 3500 (current: 4458.0)",
-      "timestamp": "2026-08-17T11:30:39.000000+00:00"
+      "note": "Escalated: Gold RED breach ($4,458 above $3,500) + BAA10Y spread widening (1.62 to 1.67 over 4 days) + JGB 10Y at 30-year high (2.925%). Multiple financial stability signals flashing.",
+      "timestamp": "2026-08-17T11:30:37.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -81,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-13",
-      "note": "Threshold breach: Gold above 3500 (current: 4458.0)",
-      "timestamp": "2026-08-17T11:30:39.000000+00:00"
+      "note": "Escalated: Gold RED breach ($4,458 above $3,500) signals war premium/currency crisis. Middle East tensions + JGB 30-year high confirm geopolitical stress.",
+      "timestamp": "2026-08-17T11:30:37.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -207,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4453.8,
+      "value": 4458.0,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 44.9,
-      "description": "Gold Futures (GC=F): $4,453.80 (+1.02%)",
+      "change_from_last": 49.1,
+      "description": "Gold Futures (GC=F): $4,458.00 (+1.11%) RED THRESHOLD BREACH: above 3500",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-17",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-17T11:04:09.797793+00:00"
+      "note": "RED threshold breach: Gold above 3500 (current: 4458, +27.4% above threshold). Currency crisis or war premium. Escalated from green to red by threshold scanner.",
+      "timestamp": "2026-08-17T11:30:37.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -313,12 +313,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
+    "score": 519,
+    "red_count": 8,
     "amber_count": 8,
-    "green_count": 4,
+    "green_count": 3,
     "manual_count": 1,
-    "timestamp": "2026-08-17T11:04:43.654557+00:00"
+    "timestamp": "2026-08-17T11:30:37.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
