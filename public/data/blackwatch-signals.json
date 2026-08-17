@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-17T05:03:06.912610+00:00",
+    "last_update": "2026-08-17T05:11:58.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "05:15 UTC scan: Hormuz tanker traffic collapsed, China credit contraction -340B, Kushner in Israel, Ebola 2325 deaths"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.71,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-13",
-      "note": "",
-      "timestamp": "2026-08-17T05:03:01.494271+00:00"
+      "note": "Gold 4452, yen 159-160, 30Y UST 5.2% (highest since 2007). ESF sold euros (first since 1998).",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -56,32 +57,32 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 7,
+      "value": 88.72,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-17T05:03:02.717683+00:00"
+      "note": "Brent 88.72, Hormuz shipping collapsed. OPEC cut demand estimate to 580kbpd. SPR at 304.8 mbbl.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.63,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.08,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-13",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-17T05:03:03.137986+00:00"
+      "note": "Hormuz crisis active. Kushner-Hamas meeting unprecedented. 8-nation coalition formed. Houthis threaten Bahrain/UAE.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,15 +104,15 @@
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-17T05:03:02.717683+00:00"
+      "note": "Hormuz: 5 tankers Sat, 0 Sun vs 31 prior weekend. 20% global oil/LNG transits blocked.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -119,14 +120,14 @@
       "value": 131.17,
       "status": "red",
       "trend": "improving",
-      "confidence": 3,
+      "confidence": 7,
       "change_from_last": -4.92,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-17T05:03:03.842308+00:00"
+      "note": "Ebola + Hormuz disruption impacting food systems. 2,325 deaths, outbreak accelerating.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -149,14 +150,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-17T05:03:04.230820+00:00"
+      "note": "Ebola deadliest in DRC history. Military morale crisis (USS Lincoln). Consumer sentiment deteriorating.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 119.06,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -0.45,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-17T05:03:04.693709+00:00"
+      "note": "USD/JPY 159-160 range. 85B intervention half erased. BofA warns 160 break could hit 165. BOJ Sept hike 80% priced.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -239,35 +240,35 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
-      "confidence": 7,
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-17T05:03:01.490762+00:00"
+      "note": "July new loans NEGATIVE (-340B yuan), first on record. PBOC injected 52B unusual liquidity. Property crisis + credit contraction.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-14",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-17T05:03:05.844673+00:00"
+      "note": "ESCALATED: France EUR107B deficit, 8% deficit ratio. ECB pricing 40bps hikes",
+      "timestamp": "2026-08-17T05:11:41.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.51,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.03,
@@ -275,23 +276,23 @@
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-14",
-      "note": "",
-      "timestamp": "2026-08-17T05:03:06.174114+00:00"
+      "note": "ESCALATED: Fed held at 3.5-3.75%, 30Y yield highest since 2007, inflation reaccelerating",
+      "timestamp": "2026-08-17T05:11:41.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 7,
+      "value": 88.72,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-17T05:03:06.499310+00:00"
+      "note": "Hormuz tanker traffic collapsed: 5 Sat, 0 Sun vs 31 prior weekend. ADNOC vessel attacked (3rd). Kushner landed Israel meeting Netanyahu. Iran FM: no negotiations.",
+      "timestamp": "2026-08-17T05:11:58.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,32 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-17T05:03:06.896636+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Status",
+      "domain": "System",
+      "value": "ACTIVE - 3 Cat-5 Events",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0,
+      "unit": "",
+      "description": "3 active category-5 events: US-Japan FX intervention, Hormuz/Iran war, Ebola PHEIC. Plus 2 category-4: China property crash, France fiscal crisis.",
+      "series_id": null,
+      "last_date": "2026-08-07",
+      "note": "Breaking event scanner: multi-domain convergence. Hormuz closure + yen intervention + Ebola PHEIC = systemic risk elevation.",
+      "timestamp": "2026-08-17T05:11:41.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 509,
-    "red_count": 7,
-    "amber_count": 8,
-    "green_count": 4,
-    "manual_count": 1,
-    "timestamp": "2026-08-17T05:03:06.912610+00:00"
+    "score": 1685,
+    "red_count": 16,
+    "amber_count": 3,
+    "green_count": 2,
+    "manual_count": 0,
+    "timestamp": "2026-08-17T05:11:58.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
