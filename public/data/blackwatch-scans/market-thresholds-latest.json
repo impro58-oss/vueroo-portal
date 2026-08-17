@@ -1,40 +1,40 @@
 {
-  "scan_date": "2026-08-16",
-  "scan_time_utc": "2026-08-16T23:34:18.340950+00:00",
+  "scan_date": "2026-08-17",
+  "scan_time_utc": "2026-08-17T03:34:17.882624+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.215,
+      "price": 159.099,
       "prev_close": 159.156,
-      "change_1d_pct": 0.04,
+      "change_1d_pct": -0.04,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1578,
+      "price": 1.1583,
       "prev_close": 1.1546,
-      "change_1d_pct": 0.28,
+      "change_1d_pct": 0.32,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3544,
+      "price": 1.355,
       "prev_close": 1.3511,
-      "change_1d_pct": 0.24,
+      "change_1d_pct": 0.29,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7322,
+      "price": 6.7412,
       "prev_close": 6.7474,
-      "change_1d_pct": -0.23,
+      "change_1d_pct": -0.09,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1416.48,
+      "price": 1414.03,
       "prev_close": 1417.31,
-      "change_1d_pct": -0.06,
+      "change_1d_pct": -0.23,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,16 +46,16 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 68713.8,
-      "prev_close": 65606.71,
-      "change_1d_pct": 4.74,
+      "price": 68721.44,
+      "prev_close": 66970.22,
+      "change_1d_pct": 2.61,
       "data_points": 5,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25116.85,
-      "prev_close": 25668.03,
-      "change_1d_pct": -2.15,
+      "price": 25513.09,
+      "prev_close": 25937.49,
+      "change_1d_pct": -1.64,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -71,9 +71,9 @@
       "source": "manual"
     },
     "GOLD": {
-      "price": 4431.9,
+      "price": 4446.9,
       "prev_close": 4383.0,
-      "change_1d_pct": 1.12,
+      "change_1d_pct": 1.46,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -104,10 +104,10 @@
       "source": "manual"
     },
     "BTC": {
-      "price": 62770.23,
-      "prev_close": 63402.434,
-      "change_1d_pct": -1.0,
-      "data_points": 5,
+      "price": 63288.58,
+      "prev_close": 63402.17,
+      "change_1d_pct": -0.18,
+      "data_points": 4,
       "source": "yahoo"
     }
   },
@@ -116,7 +116,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4431.9,
+      "current": 4446.9,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -125,13 +125,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.63
+      "distance_pct": 27.05
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.215,
+      "current": 159.099,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -140,13 +140,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 0.77
+      "distance_pct": 0.7
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1578,
+      "current": 1.1583,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -155,13 +155,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.68
+      "distance_pct": 0.72
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4431.9,
+      "current": 4446.9,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -169,7 +169,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 47.73
+      "distance_pct": 48.23
     }
   ],
   "breach_count": 4,
