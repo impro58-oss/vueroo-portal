@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-17T23:12:00.000000+00:00",
+    "last_update": "2026-08-17T23:44:00.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20,
-    "breaking_event": "12-domain scan complete 2026-08-17T23:12 UTC. No NEW cat-5 events. 4 ongoing: Hormuz crisis (Iran-US exchanges continue, tanker explosions Aug 5, Kushner diplomacy Aug 16, EIA Brent $87 avg 2026), yen intervention unraveling (yen back to ~159, JGB 2Y at 1.65% highest since 1995, 10Y highest since 1996), Ebola PHEIC (4,945 cases/2,325 deaths, Bundibugyo species, fastest-growing on record), China property ($148B expiring lease bomb, $130B developer defaults, PBOC loose stance). New developments: ECB final hike next month (Reuters poll), UK drought/wildfire emergency (75% of England), SK proposes end-of-war talks with North (de-escalating), private credit PIK distress building, Dodd-Frank rollback advancing, US household delinquencies at decade high, gold $4,395 (+31.9% YoY)."
+    "signals_manual": 2,
+    "signals_total": 22,
+    "breaking_event": "THRESHOLD SCAN 2026-08-17T23:44 UTC. 7 breaches (2 RED, 5 AMBER). NEW: JGB 10Y at 2.93% \u00e2\u20ac\u201d 30-year high (RED breach, +95% above 1.5 threshold). German Bund 10Y at 3.20% \u00e2\u20ac\u201d near 15-year highs (AMBER breach). Gold $4,477 (RED, +28% above 3500). USD/JPY 159.33 (AMBER). EUR/USD 1.1586 (AMBER). Ongoing: Hormuz crisis, yen intervention unraveling, Ebola PHEIC, China property. Gold now $4,477 (+32.5% YoY). Brent $91.17 approaching $100 AMBER threshold."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: US Treasury ESF intervention in yen (July 31). South Korean won sharpest swings since 2008. ECB final rate hike expected. UK inflation resurging.",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "note": "ESCALATED: US Treasury ESF intervention in yen (July 31). South Korean won sharpest swings since 2008. ECB final rate hike expected. UK inflation resurging. JGB 10Y at 2.93% (30-year high) \u00e2\u20ac\u201d Japan fiscal crisis deepening. German Bund at 3.20% (15-year high). Gold at $4,477 (RED threshold breach).",
+      "timestamp": "2026-08-17T23:44:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -207,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4480.9,
+      "value": 4477.0,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 72.0,
-      "description": "Gold Futures (GC=F): $4,480.90 (+1.63%)",
+      "change_from_last": 68.1,
+      "description": "Gold Futures (GC=F): ,477.00 (+1.54%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-17",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-17T17:03:36.725690+00:00"
+      "note": "ESCALATED: Gold above ,500 RED threshold \u2014 currency crisis or war premium. Safe haven demand extreme. +32.5% YoY.",
+      "timestamp": "2026-08-17T23:44:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -252,17 +252,32 @@
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
-      "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
-      "change_from_last": 0.0,
+      "value": 3.2,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 0.95,
       "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability)",
-      "series_id": "ECBDFR",
+      "description": "German 10-Year Bund Yield (threshold breach proxy)",
+      "series_id": "web_search_DE10Y",
       "last_date": "2026-08-17",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-17T17:03:41.967236+00:00"
+      "note": "ESCALATED: Bund yield at 3.20% \u00e2\u20ac\u201d near 15-year highs. Middle East war fueling inflation fears. Periphery spreads widening. ECB final hike expected.",
+      "timestamp": "2026-08-17T23:44:00.000000+00:00"
+    },
+    "japan_sovereign": {
+      "name": "Japan Sovereign Risk",
+      "domain": "Japan",
+      "value": 2.93,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
+      "unit": "%",
+      "description": "Japan 10-Year JGB Yield \u00e2\u20ac\u201d 30-year high",
+      "series_id": "web_search_JGB10Y",
+      "last_date": "2026-08-17",
+      "note": "ESCALATED: JGB 10Y at 2.93% \u00e2\u20ac\u201d highest since September 1996. BOJ losing control of yield curve. USD/JPY at 159.33 (intervention zone). JGB 2Y at 1.65% highest since 1995. BOJ pressure to accelerate tightening.",
+      "timestamp": "2026-08-17T23:44:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -329,11 +344,11 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 1620,
-    "red_count": 13,
+    "red_count": 15,
     "amber_count": 6,
-    "green_count": 2,
+    "green_count": 1,
     "manual_count": 0,
-    "timestamp": "2026-08-17T17:20:14.000000+00:00"
+    "timestamp": "2026-08-17T23:44:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
