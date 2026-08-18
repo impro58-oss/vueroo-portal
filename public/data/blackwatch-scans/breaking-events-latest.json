@@ -1,189 +1,130 @@
 {
-  "scan_time": "2026-08-17T19:03:37.191696",
-  "scan_type": "breaking_event",
-  "scanner_version": "1.0",
+  "scan_time": "2026-08-18T03:04:35.000000+00:00",
+  "scan_type": "breaking_event_4h",
+  "scanner": "BlackWatch Breaking Event Scanner",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "category_5_events_detected": 4,
-  "events": [
+  "events_detected": 6,
+  "category_5_count": 3,
+  "category_4_count": 2,
+  "category_3_count": 1,
+  "no_new_events": false,
+  "overall_assessment": "MULTI-CRISIS ACTIVE: Iran-Hormuz war (CAT 5), Yen-JGB sovereign crisis (CAT 5), Ebola PHEIC (CAT 5), China property (CAT 4), UK food security (CAT 4), ECB final hike (CAT 3). Gold at 4429 (+33.5pct YoY). Risk board CRITICAL.",
+  "category_5_events": [
     {
-      "id": "BE-2026-08-17-001",
-      "title": "Strait of Hormuz Crisis \u00e2\u20ac\u201d Ongoing Energy Shock",
+      "title": "Strait of Hormuz Crisis - Iran-US War Active",
       "domain": "middle_east",
-      "category": [
-        "war_military",
-        "energy_shock",
-        "sovereign_intervention"
-      ],
+      "category": "war_military",
       "severity": 5,
-      "status": "ACTIVE",
-      "summary": "Iran-US-Israel war ongoing since Feb 28, 2026. Strait of Hormuz largely blocked. 25% of world's seaborne oil trade disrupted. Brent crude at $88-91/bbl. EIA reports 5.5M b/d production shut-ins in July. 20,000 mariners stranded. US naval blockade April-May. Renewed tanker attacks in July. Islamabad Memorandum signed. Kushner traveling in region for diplomacy. UPDATE Aug 17 19:02 UTC: Iran and Oman reached agreement on plan for ships to transit Strait of Hormuz, working to finalize details for joint statement. Trump threatens Oman if deal proceeds. Potential de-escalation signal.",
+      "status": "ONGOING_ESCALATING",
+      "summary": "Iran-US war ongoing. IRGC closed Hormuz July 12. Tanker explosions Aug 5. Trump claims US control, Iran refutes. 20pct global oil/LNG disrupted. Brent ~87-91/bbl.",
       "sources": [
-        "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
-        "https://www.cfr.org/global-conflict-tracker/conflict/confrontation-between-united-states-and-iran",
-        "https://www.eia.gov/outlooks/steo/report/global_oil.php",
-        "https://abcnews.com/International/live-updates/iran-live-updates-negotiations-us-messages-exchanged-tehran/",
-        "https://apnews.com/article/iran-us-israel-lebanon-gaza-hormuz-august-17-2026-53ae10812e472a4e5bb228b9f318a5fc"
-      ],
-      "impact_regions": [
-        "Middle East",
-        "Global Energy",
-        "Global Shipping"
+        "Reuters",
+        "CNN",
+        "CBS",
+        "Al Jazeera",
+        "IEA",
+        "EIA"
       ],
       "escalate_to": [
-        "energy",
         "middle_east",
-        "supply_chain",
+        "energy",
         "geopolitical",
+        "supply_chain",
         "food_security"
-      ],
-      "detected_at": "2026-08-17T17:15:00Z"
+      ]
     },
     {
-      "id": "BE-2026-08-17-002",
-      "title": "2026 Ebola Epidemic \u00e2\u20ac\u201d WHO PHEIC, Fastest-Growing on Record",
-      "domain": "pandemic_health",
-      "category": [
-        "pandemic"
-      ],
+      "title": "US-Japan Yen Intervention Unraveling - JGB Yields Decades-High",
+      "domain": "japan",
+      "category": "sovereign_intervention",
       "severity": 5,
-      "status": "ACTIVE",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC declared WHO PHEIC on May 16, 2026. As of Aug 16: 4,945 confirmed cases, 2,325 deaths (46.86% fatality rate). Fastest-growing Ebola outbreak on record, second-largest ever. Spread to 6 provinces in DRC + Uganda (declared over July 28). No approved vaccine for Bundibugyo species. Armed conflict (M23) hindering response. True scale likely exceeds confirmed numbers.",
+      "status": "ACTIVE_DETERIORATING",
+      "summary": "Joint US-Japan FX intervention July 31 unraveling. Yen back to ~159. US sold euros not dollars - ECB blindsided. JGB 10Y 2.93pct 30yr high. JGB 2Y 1.65pct since 1995. BOJ pressured Sept/Oct hike.",
       "sources": [
-        "https://en.wikipedia.org/wiki/2026_Ebola_epidemic",
-        "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda",
-        "https://www.techtimes.com/articles/324687/20260817/drc-ebola-sets-deadliest-record-fatality-rate-doubles-46-percent-since-june.htm"
+        "CNBC",
+        "Fortune",
+        "NYT",
+        "Bloomberg",
+        "Reuters",
+        "Goldman"
       ],
-      "impact_regions": [
-        "Central Africa",
-        "Global Health"
+      "escalate_to": [
+        "japan_sovereign",
+        "currency",
+        "fin_stability"
+      ]
+    },
+    {
+      "title": "Ebola Epidemic - Fastest-Growing on Record (PHEIC)",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 5,
+      "status": "ACTIVE_SPREADING",
+      "summary": "DRC Ebola largest in history. 4945 cases, 2325 deaths, 730 hospitalized. Bundibugyo species - no vaccine. WHO PHEIC May 17. Spread to Uganda.",
+      "sources": [
+        "WHO",
+        "ECDC",
+        "UN News"
       ],
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
-      ],
-      "detected_at": "2026-08-17T17:16:00Z"
-    },
-    {
-      "id": "BE-2026-08-17-003",
-      "title": "US Treasury ESF Yen Intervention \u00e2\u20ac\u201d First in 15 Years",
-      "domain": "japan",
-      "category": [
-        "sovereign_intervention"
-      ],
-      "severity": 4,
-      "status": "ACTIVE",
-      "summary": "On July 31, 2026, US Treasury sold euros from Exchange Stabilization Fund to buy yen alongside Japan. First US yen intervention in 15 years. Japan's intervention estimated at $30-36B. Yen initially strengthened but gains unraveling by Aug 10 (back to 159/dollar). BOJ pressured to accelerate rate hikes (Sept/Oct). Takaichi government supportive. Bessent pledged open-ended yen support but ESF arsenal constrained.",
-      "sources": [
-        "https://www.riotimesonline.com/the-fund-that-steadied-buenos-aires-then-tokyo-washington-rediscovers-intervention/",
-        "https://www.piie.com/blogs/realtime-economics/2026/trying-prop-yen-us-wants-have-its-cake-and-eat-it-too",
-        "https://www.bloomberg.com/news/articles/2026-08-13/japan-s-government-is-said-to-support-faster-boj-rate-hike",
-        "https://www.telegraph.co.uk/business/2026/08/10/yen-sinks-as-us-japan-intervention-unravels/"
-      ],
-      "impact_regions": [
-        "Japan",
-        "United States",
-        "Global Currency Markets"
-      ],
-      "escalate_to": [
-        "fin_stability",
-        "currency"
-      ],
-      "detected_at": "2026-08-17T17:17:00Z"
-    },
-    {
-      "id": "BE-2026-08-17-004",
-      "title": "South Korean Won Crisis \u00e2\u20ac\u201d Sharpest Swings Since 2008",
-      "domain": "em_asia",
-      "category": [
-        "market_dislocation"
-      ],
-      "severity": 4,
-      "status": "ACTIVE",
-      "summary": "Korean won weakened from ~1,300 to 1,550/dollar in just over a month, now near 1,400. Volatility highest since 2009 financial crisis. India lured $40B from diaspora via high-yield dollar deposits to stabilize rupee. Emerging Asia guarding reserves with renewed currency defense strategies. Bloomberg reports currency defense 'makeover' across region.",
-      "sources": [
-        "https://www.koreaherald.com/article/10836205",
-        "https://www.chosun.com/english/market-money-en/2026/08/09/POJJ3S53EZGMPHCJSO6QOUYY6A/",
-        "https://www.bloomberg.com/news/articles/2026-08-09/currency-defense-gets-makeover-as-emerging-asia-guards-reserves",
-        "https://finance.biggo.com/news/b5d19623-fff0-4271-967d-a40f8dacd5d1"
-      ],
-      "impact_regions": [
-        "South Korea",
-        "India",
-        "Emerging Asia"
-      ],
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "detected_at": "2026-08-17T17:18:00Z"
+      ]
     }
   ],
-  "domains_summary": {
-    "us_fed": {
-      "status": "monitoring",
-      "notes": "Fed expected to hold at 3.50-3.75%. 30% probability of hike. Benign CPI data. No emergency action."
+  "category_4_events": [
+    {
+      "title": "China Property Crisis - 148B Lease Time Bomb + AMC Distress",
+      "domain": "china",
+      "category": "market_dislocation",
+      "severity": 4,
+      "status": "DEEPENING",
+      "summary": "148B expiring leases. 130B developer defaults. Office values down 40pct+. AMCs themselves distressed. PBOC loose but deflation persists.",
+      "sources": [
+        "Bloomberg",
+        "Economist",
+        "FirstPost"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ]
     },
-    "latam": {
-      "status": "monitoring",
-      "notes": "Argentina central bank reform vote Aug 19. Brazil market pressure. US ESF $2.5B lifeline to Argentina. No acute crisis."
-    },
-    "eu_ecb": {
-      "status": "monitoring",
-      "notes": "ECB set to deliver final rate hike next month (Reuters). Yield dispersion at historically low levels. No emergency action."
-    },
-    "uk": {
-      "status": "elevated",
-      "notes": "UK 10Y borrowing ~5.05%, 30Y ~5.7%. BOE held at 3.75% July 30. Mortgage rates nudging up. Hedge fund gilt leverage flagged. No emergency action."
-    },
-    "japan": {
-      "status": "ESCALATED",
-      "notes": "US-Treasury joint yen intervention July 31. BOJ pressured to hike Sept/Oct. Yen gains unraveling."
-    },
-    "china": {
-      "status": "monitoring",
-      "notes": "PBOC pledges timely new policy rollout. Yuan strengthening slightly (6.74). No emergency devaluation. Property sector still stressed but no acute event."
-    },
-    "em_asia": {
-      "status": "ESCALATED",
-      "notes": "KRW crisis \u00e2\u20ac\u201d sharpest swings since 2008. India rupee recovery via diaspora deposits. Regional currency defense makeover."
-    },
-    "middle_east": {
-      "status": "ESCALATED",
-      "notes": "Iran war ongoing. Hormuz blocked. NEW: Iran-Oman agreement on transit plan - potential de-escalation. Trump threatens Oman. Kushner diplomatic travel."
-    },
-    "africa": {
-      "status": "elevated",
-      "notes": "DRC Ebola: 4,945 cases, 2,325 deaths (Aug 16). Fatality rate 46%. AU Harare Declaration on debt (July 2026). Sudan civil war ongoing. No new coups."
-    },
-    "financial_system": {
-      "status": "monitoring",
-      "notes": "No acute bank failures. Credit bubble terminal phase per analysts. UK gilt leverage concerns. 30Y Treasury at 5.2% (highest since 2007). Systemic risk elevated."
-    },
-    "commodities": {
-      "status": "ESCALATED",
-      "notes": "Brent at $82.40/bbl (Aug 14, +3.52% month). Global supply projected to decline 4.3 mb/d in 2026. Gold at $4,480/oz. Hormuz disruption keeping prices elevated."
-    },
-    "pandemic_health": {
-      "status": "ESCALATED",
-      "notes": "2026 Ebola epidemic \u00e2\u20ac\u201d WHO PHEIC. Fastest-growing on record. 46.86% fatality rate. No approved vaccine for Bundibugyo species."
+    {
+      "title": "UK Food Security Crisis - Worst in Decades",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 4,
+      "status": "EMERGING",
+      "summary": "UK worst food security crisis in decades. 75pct England in drought. Wildfire emergency alerts. Milk production hit.",
+      "sources": [
+        "Guardian",
+        "Telegraph",
+        "BBC"
+      ],
+      "escalate_to": [
+        "food_security",
+        "social_cohesion"
+      ]
     }
-  },
-  "signal_board_changes": {
-    "macro_event": "ACTIVATED (red)",
-    "escalated_signals": [
-      "energy",
-      "middle_east",
-      "fin_stability",
-      "supply_chain",
-      "food_security",
-      "currency",
-      "geopolitical",
-      "social_cohesion"
-    ],
-    "new_red_count": 13,
-    "new_amber_count": 6,
-    "new_green_count": 2,
-    "previous_red_count": 7
-  }
+  ],
+  "category_3_events": [
+    {
+      "title": "ECB Final Rate Hike Expected Sept",
+      "domain": "eu_ecb",
+      "category": "emergency_rate",
+      "severity": 3,
+      "status": "UPCOMING",
+      "summary": "Reuters poll: ECB hike next month. Energy prices pushing inflation from 2pct target. Bund 3.20pct near 15yr highs.",
+      "sources": [
+        "Reuters",
+        "Morningstar"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    }
+  ]
 }

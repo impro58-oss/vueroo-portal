@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-17T23:44:00.000000+00:00",
+    "last_update": "2026-08-18T03:04:35.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 2,
     "signals_total": 22,
-    "breaking_event": "THRESHOLD SCAN 2026-08-17T23:44 UTC. 7 breaches (2 RED, 5 AMBER). NEW: JGB 10Y at 2.93% \u00e2\u20ac\u201d 30-year high (RED breach, +95% above 1.5 threshold). German Bund 10Y at 3.20% \u00e2\u20ac\u201d near 15-year highs (AMBER breach). Gold $4,477 (RED, +28% above 3500). USD/JPY 159.33 (AMBER). EUR/USD 1.1586 (AMBER). Ongoing: Hormuz crisis, yen intervention unraveling, Ebola PHEIC, China property. Gold now $4,477 (+32.5% YoY). Brent $91.17 approaching $100 AMBER threshold."
+    "breaking_event": "BREAKING EVENT SCAN 2026-08-18T03:02 UTC. 6 events: 3 CAT-5, 2 CAT-4, 1 CAT-3. Gold 4429. JGB 2.93pct. Brent ~91."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: US Treasury ESF intervention in yen (July 31). South Korean won sharpest swings since 2008. ECB final rate hike expected. UK inflation resurging. JGB 10Y at 2.93% (30-year high) \u00e2\u20ac\u201d Japan fiscal crisis deepening. German Bund at 3.20% (15-year high). Gold at $4,477 (RED threshold breach).",
-      "timestamp": "2026-08-17T23:44:00.000000+00:00"
+      "note": "US Treasury ESF yen intervention via euro sales. JGB 10Y 2.93pct. Bund 3.20pct. ECB final hike Sept. China AMCs distressed. UK 30Y gilt 5.7pct. US 30Y Treasury 5.2pct since 2007. Gold 4429.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -67,7 +67,7 @@
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
       "note": "ESCALATED: Strait of Hormuz crisis ongoing. Brent ~88-91/bbl. EIA forecasts elevated prices through August. 5.5M b/d production shut-ins in July.",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,7 +82,7 @@
       "series_id": "VIXCLS",
       "last_date": "2026-08-14",
       "note": "ESCALATED: Iran war active. US-Iran exchanges ongoing. Iran-Oman Hormuz transit deal emerging. 8-country joint statement condemning. Trump threatens Oman. UPDATE Aug 17: Kushner meets regional leaders. Tanker explosions Aug 5 near Kumzar. Oil residue on Qeshm Island. EIA: Brent $87 avg 2026, 0.6M b/d disruptions through end 2027.",
-      "timestamp": "2026-08-17T23:12:00.000000+00:00"
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -112,7 +112,7 @@
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
       "note": "ESCALATED: Hormuz shipping near-zero. 20,000 mariners stranded. Bab el-Mandeb also threatened. Saudi re-routing via Red Sea pipeline.",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,7 +127,7 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-06-01",
       "note": "ESCALATED: Energy costs from Hormuz crisis driving food prices. IMF Food Price Index already at 131.17 (red).",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -156,8 +156,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC + fuel crisis + cost of living = compounding social pressure.",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "note": "Ebola PHEIC + UK food crisis (worst in decades) + fuel costs = compounding pressure. UK wildfire emergency alerts.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -201,23 +201,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "ESCALATED: US Treasury bought yen via ESF (first in 15 years). KRW near 1,400 with record volatility. BOJ pressure to hike rates.",
-      "timestamp": "2026-08-17T17:20:14.000000+00:00"
+      "note": "US-Japan intervention unraveling. Yen ~159. US sold euros. KRW 10mo high. India rupee 95.60 RBI intervening.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4477.0,
+      "value": 4429.0,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 68.1,
-      "description": "Gold Futures (GC=F): ,477.00 (+1.54%)",
+      "description": "Gold at 4429/oz (+0.30pct daily, +10.52pct monthly, +33.53pct YoY)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Gold above ,500 RED threshold \u2014 currency crisis or war premium. Safe haven demand extreme. +32.5% YoY.",
-      "timestamp": "2026-08-17T23:44:00.000000+00:00"
+      "note": "Gold 4429 - extreme safe haven. 9pct August rebound. +33.5pct YoY.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -246,8 +246,8 @@
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-17T17:03:37.092399+00:00"
+      "note": "148B expiring leases. 130B developer defaults. Office values -40pct+. AMCs distressed. Deflation persists.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -261,8 +261,8 @@
       "description": "German 10-Year Bund Yield (threshold breach proxy)",
       "series_id": "web_search_DE10Y",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Bund yield at 3.20% \u00e2\u20ac\u201d near 15-year highs. Middle East war fueling inflation fears. Periphery spreads widening. ECB final hike expected.",
-      "timestamp": "2026-08-17T23:44:00.000000+00:00"
+      "note": "Bund 3.20pct near 15yr highs. ECB final hike Sept. US sold euros for yen - ECB blindsided. UK 30Y gilt 5.7pct. EU banking supervision warns fragmentation risk.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "japan_sovereign": {
       "name": "Japan Sovereign Risk",
@@ -276,8 +276,8 @@
       "description": "Japan 10-Year JGB Yield \u00e2\u20ac\u201d 30-year high",
       "series_id": "web_search_JGB10Y",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: JGB 10Y at 2.93% \u00e2\u20ac\u201d highest since September 1996. BOJ losing control of yield curve. USD/JPY at 159.33 (intervention zone). JGB 2Y at 1.65% highest since 1995. BOJ pressure to accelerate tightening.",
-      "timestamp": "2026-08-17T23:44:00.000000+00:00"
+      "note": "JGB 10Y 2.93pct 30yr high. JGB 2Y 1.65pct since 1995. JGB 5Y all-time high. BOJ pressured Sept/Oct. Yen intervention unraveling back to 159. US sold euros - ECB blindsided.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -307,7 +307,7 @@
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
       "note": "ESCALATED: 2026 Iran war - US/Israel vs Iran. Hormuz blocked since Feb 28. NEW Aug 17: Iran-Oman transit agreement - potential de-escalation. Trump threatens Oman. Kushner in region.",
-      "timestamp": "2026-08-17T19:03:37.191696"
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -336,19 +336,19 @@
       "description": "Multiple category-5 events active: Hormuz crisis (de-escalation signal emerging), Ebola PHEIC, US yen intervention unraveling, KRW crisis",
       "series_id": null,
       "last_date": "2026-08-17",
-      "note": "BREAKING EVENT SCANNER: 4 category-5 events detected in 12-domain scan",
-      "timestamp": "2026-08-17T19:03:37.191696"
+      "note": "BREAKING EVENT SCAN 2026-08-18T03:02 UTC. 6 events: 3 CAT-5 (Hormuz, Yen/JGB, Ebola), 2 CAT-4 (China property, UK food), 1 CAT-3 (ECB hike). Gold 4429. JGB 10Y 2.93pct. Brent ~91.",
+      "timestamp": "2026-08-18T03:04:35.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 1620,
-    "red_count": 15,
-    "amber_count": 6,
+    "score": 1651,
+    "red_count": 16,
+    "amber_count": 5,
     "green_count": 1,
     "manual_count": 0,
-    "timestamp": "2026-08-17T23:44:00.000000+00:00"
+    "timestamp": "2026-08-18T03:04:35.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
