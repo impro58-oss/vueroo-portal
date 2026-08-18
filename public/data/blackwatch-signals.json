@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T03:04:35.000000+00:00",
+    "last_update": "2026-08-18T03:44:32.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 2,
     "signals_total": 22,
-    "breaking_event": "BREAKING EVENT SCAN 2026-08-18T03:02 UTC. 6 events: 3 CAT-5, 2 CAT-4, 1 CAT-3. Gold 4429. JGB 2.93pct. Brent ~91."
+    "breaking_event": "THRESHOLD SCAN 2026-08-18T03:43 UTC. 4 breaches: 1 RED (Gold >3500 at 4452), 3 AMBER (USD/JPY >158 at 159.5, EUR/USD >1.15 at 1.1575, Gold >3000). Brent 91.42. JGB 2.93pct. Bund 3.21pct."
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-14",
-      "note": "US Treasury ESF yen intervention via euro sales. JGB 10Y 2.93pct. Bund 3.20pct. ECB final hike Sept. China AMCs distressed. UK 30Y gilt 5.7pct. US 30Y Treasury 5.2pct since 2007. Gold 4429.",
-      "timestamp": "2026-08-18T03:04:35.000000+00:00"
+      "note": "GOLD RED BREACH 4452 (above 3500). JGB 2.93pct 30yr high. Bund 3.21pct 15yr high. US 30Y 5.29pct since 2007. BAA10Y spread 1.67pct. Brent 91.42. US-Japan intervention unraveling. ECB hike Sept 85% odds.",
+      "timestamp": "2026-08-18T03:44:32.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -57,7 +57,7 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 93.26,
+      "value": 91.42,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 7,
@@ -66,8 +66,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Strait of Hormuz crisis ongoing. Brent ~88-91/bbl. EIA forecasts elevated prices through August. 5.5M b/d production shut-ins in July.",
-      "timestamp": "2026-08-18T03:04:35.000000+00:00"
+      "note": "Brent 91.42 (+2.74%). Hormuz crisis ongoing. EIA: Brent \\ avg 2026. Iran-Oman transit deal emerging de-escalation signal.",
+      "timestamp": "2026-08-18T03:44:32.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -201,23 +201,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-07",
-      "note": "US-Japan intervention unraveling. Yen ~159. US sold euros. KRW 10mo high. India rupee 95.60 RBI intervening.",
-      "timestamp": "2026-08-18T03:04:35.000000+00:00"
+      "note": "USD/JPY 159.5 AMBER BREACH above 158.0. EUR/USD 1.1575 AMBER BREACH above 1.15. Intervention unraveling. KRW 1411. US sold euros for yen.",
+      "timestamp": "2026-08-18T03:44:32.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4429.0,
+      "value": 4452.4,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 68.1,
-      "description": "Gold at 4429/oz (+0.30pct daily, +10.52pct monthly, +33.53pct YoY)",
+      "description": "Gold at 4452/oz (+0.99% daily, +33.6% YoY) - RED threshold breach above 3500",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-08-17",
-      "note": "Gold 4429 - extreme safe haven. 9pct August rebound. +33.5pct YoY.",
-      "timestamp": "2026-08-18T03:04:35.000000+00:00"
+      "last_date": "2026-08-18",
+      "note": "GOLD RED BREACH: 4452 above 3500 threshold (+27.2%). Currency crisis or war premium. Also above 3000 AMBER (+48.4%). Gold mania accelerating.",
+      "timestamp": "2026-08-18T03:44:32.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -336,8 +336,8 @@
       "description": "Multiple category-5 events active: Hormuz crisis (de-escalation signal emerging), Ebola PHEIC, US yen intervention unraveling, KRW crisis",
       "series_id": null,
       "last_date": "2026-08-17",
-      "note": "BREAKING EVENT SCAN 2026-08-18T03:02 UTC. 6 events: 3 CAT-5 (Hormuz, Yen/JGB, Ebola), 2 CAT-4 (China property, UK food), 1 CAT-3 (ECB hike). Gold 4429. JGB 10Y 2.93pct. Brent ~91.",
-      "timestamp": "2026-08-18T03:04:35.000000+00:00"
+      "note": "THRESHOLD SCAN Aug 18 03:43 UTC. 4 breaches: 1 RED (Gold >3500), 3 AMBER (USD/JPY >158, EUR/USD >1.15, Gold >3000). Gold 4452. JGB 2.93pct. Bund 3.21pct. Brent 91.42. BTC 64098. VIX 15.19.",
+      "timestamp": "2026-08-18T03:44:32.000000+00:00"
     }
   },
   "overall_risk": {
