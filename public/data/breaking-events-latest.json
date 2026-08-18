@@ -1,90 +1,147 @@
 {
-  "scan_time": "2026-08-17T23:12:00.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1",
+  "scan_time": "2026-08-18T07:05:31.000000+00:00",
+  "scan_type": "breaking_event_4h",
+  "scanner": "BlackWatch Breaking Event Scanner",
+  "scanner_version": "2.0",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "new_cat5_events": 0,
-  "ongoing_cat5_events": 4,
-  "events": [
+  "events_detected": 6,
+  "category_5_count": 3,
+  "category_4_count": 2,
+  "category_3_count": 1,
+  "no_new_events": false,
+  "overall_assessment": "MULTI-CRISIS ACTIVE: Iran-Hormuz war (CAT 5 ONGOING), Ebola PHEIC fastest-growing on record (CAT 5 SPREADING), Yen intervention unraveling (CAT 5 DETERIORATING), China property (CAT 4), UK cost-of-living (CAT 4), ECB final hike Sept (CAT 3). Gold at 4451. Risk board CRITICAL.",
+  "category_5_events": [
     {
+      "title": "Strait of Hormuz Crisis - Iran-US War Ongoing",
       "domain": "middle_east",
-      "title": "Hormuz crisis ongoing — Iran-US exchanges continue",
+      "category": "war_military",
       "severity": 5,
-      "category": ["war_military", "energy_shock"],
-      "status": "ONGOING",
-      "details": "IRGC closed Hormuz July 12. Tanker explosions Aug 5 near Kumzar. Oil residue on Qeshm Island Aug 13. Trump claims 'complete control' Aug 12. Kushner meets regional leaders Aug 16. EIA: Brent $87 avg 2026, 0.6M b/d disruptions through end 2027. Saudi cuts Asian prices, US imports of Saudi oil at zero.",
-      "sources": ["CNN", "CBS News", "Al Jazeera", "IEA", "EIA", "Reuters", "CNBC"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"]
+      "status": "ONGOING_ESCALATING",
+      "summary": "Iran-US war ongoing since Feb 2026. IRGC closed Hormuz. 25% global seaborne oil + 20% LNG disrupted. Oil residue in coastal waters. CENTCOM morale concerns. Houthi warnings. EIA: largest oil supply disruption in history.",
+      "sources": [
+        "Reuters",
+        "NYT",
+        "CBS",
+        "ABC News",
+        "EIA",
+        "IEA",
+        "Wikipedia",
+        "Britannica"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ],
+      "updated": true,
+      "change_from_last": "Oil residue documented. CENTCOM morale reports. Houthi escalation warnings. EIA confirms 0.6M bbl/day ongoing disruption."
     },
     {
+      "title": "US-Japan Yen Intervention Unraveling",
       "domain": "japan",
-      "title": "US-Japan yen intervention unraveling — JGB yields surge",
-      "severity": 4,
-      "category": ["sovereign_intervention", "market_dislocation"],
-      "status": "ONGOING",
-      "details": "Joint US-Japan intervention July 31 (~$36-59B spent). Yen erased half gains, back to ~159. US sold euros (not dollars) to avoid Treasury disruption — ECB not warned. 30Y Treasury at 5.2% (highest since 2007). JGB 2Y at 1.65% (highest since 1995), 10Y highest since 1996. BOJ pressured for more hikes. Takata dissented for 1.25% rate.",
-      "sources": ["CNBC", "Fortune", "NYT", "Reuters", "Bloomberg", "Crypto Briefing"],
-      "escalate_to": ["currency", "fin_stability"]
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "status": "ACTIVE_DETERIORATING",
+      "summary": "Joint US-Japan FX intervention July 31 ($59B) unraveling. Yen approaching 160. ESF euros deployed. FIMA repo $60B. Bessent open-ended pledge. Warren demanding justification. BOJ pressured for hike.",
+      "sources": [
+        "CNBC",
+        "Fortune",
+        "NYT",
+        "Reuters",
+        "Goldman",
+        "Japan Times",
+        "Private Banker"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "updated": true,
+      "change_from_last": "Yen continues sliding. Approaching 160 trigger. ESF constraints exposed. Political pressure mounting."
     },
     {
+      "title": "Ebola Epidemic - Fastest-Growing on Record (PHEIC)",
       "domain": "pandemic_health",
-      "title": "Ebola PHEIC — fastest-growing outbreak on record",
-      "severity": 4,
-      "category": ["pandemic"],
-      "status": "ONGOING",
-      "details": "DRC: 4,945 confirmed cases, 2,325 deaths (as of Aug 15). 730 hospitalized. Bundibugyo ebolavirus — existing treatments certified for Zaire species only. WHO PHEIC declared May 17. PPE shortages, healthcare worker infections. CDC warns of violence against HCWs.",
-      "sources": ["ECDC", "WHO", "UN News", "CDC", "Wikipedia"],
-      "escalate_to": ["supply_chain", "social_cohesion"]
-    },
-    {
-      "domain": "china",
-      "title": "China property crisis — $148B expiring lease time bomb",
-      "severity": 4,
-      "category": ["sovereign_crisis"],
-      "status": "ONGOING",
-      "details": "Bloomberg: $148B commercial real estate expiring lease threat. Office values down 40%+ from peaks. $130B developer defaults. PBOC pledges 'appropriately loose' stance Aug 12 but no explicit rate/RRR cuts. Yuan at 3.5-year high (6.79). National team reactivated for capital outflows. Foreign Affairs: next global crisis could be made in China — cascading to Pakistan, Ecuador, Zambia.",
-      "sources": ["Bloomberg", "Reuters", "FirstPost", "China Money Network", "Foreign Affairs", "Asia Times"],
-      "escalate_to": ["china", "fin_stability"]
+      "category": "pandemic",
+      "severity": 5,
+      "status": "ACTIVE_SPREADING",
+      "summary": "DRC Ebola largest/fastest in history. 4,966 cases, 2,327 deaths (46.86% CFR), 730 hospitalized. Bundibugyo species - no vaccine. WHO PHEIC May 16. Spread to Uganda. Armed conflict hampering response.",
+      "sources": [
+        "WHO",
+        "ECDC",
+        "UN News",
+        "Wikipedia",
+        "GBC Ghana"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "updated": true,
+      "change_from_last": "ECDC: 4,945 cases as of Aug 15. 2,325 DRC deaths + 2 Uganda. Fastest-growing Ebola confirmed."
     }
   ],
-  "new_developments": [
+  "category_4_events": [
     {
-      "domain": "eu_ecb",
-      "title": "ECB set to deliver final rate hike next month",
-      "severity": 3,
-      "details": "Reuters poll: shortest tightening drive since 2011. ECB not warned about US euro-funded yen intervention — 'shocking breakdown of central bank etiquette' (Telegraph)."
+      "title": "China Property Crisis - Ongoing Structural Collapse",
+      "domain": "china",
+      "category": "market_dislocation",
+      "severity": 4,
+      "status": "DEEPENING",
+      "summary": "China property distress ongoing. Yuan at 6.74 (highest since Feb 2023). PBOC loose but deflation persists.",
+      "sources": [
+        "Trading Economics",
+        "Vanguard"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ],
+      "updated": false,
+      "change_from_last": "No significant change since last scan."
     },
     {
+      "title": "UK Cost-of-Living Crisis - Energy Bills Surging",
       "domain": "uk",
-      "title": "UK national wildfire emergency alert — 75% of England in drought",
+      "category": "energy_shock",
+      "severity": 4,
+      "status": "EMERGING",
+      "summary": "UK cost-of-living crisis returning. Energy bills soaring. BOE considering Sept hike. CPI 2.6%. Gilt leverage risks flagged.",
+      "sources": [
+        "Guardian",
+        "Telegraph",
+        "House of Commons Library"
+      ],
+      "escalate_to": [
+        "food_security",
+        "social_cohesion"
+      ],
+      "updated": true,
+      "change_from_last": "Guardian: BOE considering Sept hike. Energy bills driving inflation. FSA gilt leverage warning."
+    }
+  ],
+  "category_3_events": [
+    {
+      "title": "ECB Final Rate Hike Expected September - 83% Consensus",
+      "domain": "eu_ecb",
+      "category": "emergency_rate",
       "severity": 3,
-      "details": "Government sent national mobile emergency alert Aug 14. Worst food security crisis in decades (Guardian/Telegraph). 10Y gilts at 5.05%, 30Y at 5.7%. Starmer resigned June, Burnham now PM."
-    },
-    {
-      "domain": "em_asia",
-      "title": "South Korea proposes end-of-war talks with North",
-      "severity": 2,
-      "details": "President Lee Jae-myung proposed talks Aug 15. Potentially de-escalating Korean peninsula tensions.",
-      "de_escalation": true
-    },
-    {
-      "domain": "financial_system",
-      "title": "Private credit PIK distress + Dodd-Frank rollback advancing",
-      "severity": 3,
-      "details": "Boston Fed: growing PIK usage in private credit. House advancing Dodd-Frank rollback legislation (Aug 14). US household loan delinquencies at decade high (NY Fed Q2). IMF: US deficit 7.4% GDP through 2031."
-    },
-    {
-      "domain": "commodities",
-      "title": "Gold at $4,395 — up 31.9% YoY",
-      "severity": 2,
-      "details": "Safe haven demand persisting from geopolitical tensions. Silver not spiking — no panic phase yet."
-    },
-    {
-      "domain": "africa",
-      "title": "Sudan civil war continues, South Africa xenophobic deportations",
-      "severity": 2,
-      "details": "Sudan: 20 civilians killed in Blue Nile State clashes (Aug 9). South Africa seeking deportation cost refunds from Nigeria, Malawi, Ethiopia. 83 Nigerians returning Aug 19 amid xenophobic attacks."
+      "status": "UPCOMING",
+      "summary": "Reuters poll: 57/69 economists expect ECB hike to 2.50% Sept. Energy-driven inflation. Bund yields 15yr highs.",
+      "sources": [
+        "Reuters",
+        "Morningstar",
+        "FXStreet"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ],
+      "updated": true,
+      "change_from_last": "Confirmed 83% consensus for Sept hike. Some expect more hikes after Sept."
     }
   ]
 }
