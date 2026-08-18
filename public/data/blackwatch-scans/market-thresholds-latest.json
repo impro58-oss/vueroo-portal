@@ -1,40 +1,40 @@
 {
-  "scan_date": "2026-08-17",
-  "scan_time_utc": "2026-08-17T23:43:59.613808+00:00",
+  "scan_date": "2026-08-18",
+  "scan_time_utc": "2026-08-18T03:43:40.635179+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.333,
+      "price": 159.547,
       "prev_close": 159.265,
-      "change_1d_pct": 0.04,
+      "change_1d_pct": 0.18,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1586,
+      "price": 1.1575,
       "prev_close": 1.1544,
-      "change_1d_pct": 0.36,
+      "change_1d_pct": 0.27,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3551,
+      "price": 1.3536,
       "prev_close": 1.351,
-      "change_1d_pct": 0.3,
+      "change_1d_pct": 0.19,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7394,
+      "price": 6.742,
       "prev_close": 6.745,
-      "change_1d_pct": -0.08,
-      "data_points": 4,
+      "change_1d_pct": -0.04,
+      "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1415.09,
+      "price": 1411.87,
       "prev_close": 1412.18,
-      "change_1d_pct": 0.21,
+      "change_1d_pct": -0.02,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,16 +46,16 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 69220.25,
-      "prev_close": 66970.22,
-      "change_1d_pct": 3.36,
+      "price": 68098.54,
+      "prev_close": 67524.06,
+      "change_1d_pct": 0.85,
       "data_points": 4,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25453.23,
-      "prev_close": 25937.49,
-      "change_1d_pct": -1.87,
+      "price": 25279.45,
+      "prev_close": 25652.82,
+      "change_1d_pct": -1.46,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -71,16 +71,16 @@
       "source": "manual"
     },
     "GOLD": {
-      "price": 4477.0,
+      "price": 4452.4,
       "prev_close": 4408.9,
-      "change_1d_pct": 1.54,
+      "change_1d_pct": 0.99,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 91.17,
+      "price": 91.42,
       "prev_close": 88.98,
-      "change_1d_pct": 2.46,
+      "change_1d_pct": 2.74,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -104,10 +104,10 @@
       "source": "manual"
     },
     "BTC": {
-      "price": 64424.81,
-      "prev_close": 63402.17,
-      "change_1d_pct": 1.61,
-      "data_points": 5,
+      "price": 64098.19,
+      "prev_close": 62975.594,
+      "change_1d_pct": 1.78,
+      "data_points": 4,
       "source": "yahoo"
     }
   },
@@ -116,7 +116,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4477.0,
+      "current": 4452.4,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -125,13 +125,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 27.91
+      "distance_pct": 27.21
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.333,
+      "current": 159.547,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -140,13 +140,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 0.84
+      "distance_pct": 0.98
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1586,
+      "current": 1.1575,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -155,13 +155,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.75
+      "distance_pct": 0.65
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4477.0,
+      "current": 4452.4,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -169,7 +169,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 49.23
+      "distance_pct": 48.41
     }
   ],
   "breach_count": 4,
