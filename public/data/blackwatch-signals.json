@@ -2,42 +2,41 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T19:05:13.000000+00:00",
-    "signals_auto": 19,
-    "signals_manual": 2,
-    "signals_total": 21,
-    "breaking_event": "7 events detected: Treasury emergency, global bond sell-off, Hormuz, Ebola PHEIC, yen intervention, China debt, UK gilts"
+    "last_update": "2026-08-18T23:03:10.913716+00:00",
+    "signals_auto": 20,
+    "signals_manual": 0,
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": 0.03,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: US Treasury emergency bond buy + global bond sell-off. 30Y yield at 5.29% (19-year high). Japan 10Y at 30-year high.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-18T23:03:04.690189+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "ESCALATED: Treasury emergency intervention signals liquidity stress. Global bond sell-off tightening financial conditions.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-18T23:03:05.236637+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -52,28 +51,28 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-18T17:03:34.268928+00:00"
+      "timestamp": "2026-08-18T23:03:05.604170+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
       "value": 93.26,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz disruption. Brent above 93, up 50% YTD. IEA slashes 2026 demand by 1.6M bpd. OPEC+ adding 206K bpd.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-18T23:03:05.937045+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.19,
-      "status": "red",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.94,
@@ -81,8 +80,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Iran-US war active. Hormuz blocked. Ebola PHEIC. Multiple simultaneous geopolitical crises.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-18T23:03:06.368433+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -97,22 +96,22 @@
       "series_id": null,
       "last_date": "2026-08-18",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-18T11:03:28.545793+00:00"
+      "timestamp": "2026-08-18T23:03:06.181983+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz oil disruption + Ebola PHEIC affecting DRC/Uganda supply chains. Oil above 90 straining global logistics costs.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-18T23:03:06.181983+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,21 +126,22 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-08-18T17:03:36.184194+00:00"
+      "timestamp": "2026-08-18T23:03:07.065274+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
-      "value": null,
-      "status": "manual",
-      "trend": "stable",
-      "confidence": 0,
-      "change_from_last": 0,
-      "unit": "anomaly",
-      "description": "No FRED feed \u2014 NOAA/Copernicus manual assessment",
-      "note": "Manual assessment \u2014 NOAA integration in Phase 2",
-      "last_date": null,
-      "timestamp": "2026-08-18T17:03:36.184194+00:00"
+      "value": 1.11,
+      "unit": "\u00b0C",
+      "status": "red",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.15,
+      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "series_id": "NOAA NCEI",
+      "last_date": "2026",
+      "note": "Live from NOAA climate API",
+      "timestamp": "2026-08-18T23:03:05.304696+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -155,8 +155,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC + bond market stress + energy costs eroding consumer sentiment. Multiple crisis overlay.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-18T23:03:07.404185+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -171,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-18T11:03:28.545793+00:00"
+      "timestamp": "2026-08-18T23:03:06.181983+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -186,52 +186,52 @@
       "series_id": null,
       "last_date": "2026-08-18",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-18T11:03:28.545793+00:00"
+      "timestamp": "2026-08-18T23:03:06.181983+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.9,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: US-Japan yen intervention (36-59B) unraveling. Yen back at 159. BOJ government supporting faster rate hikes. Global bond sell-off pressuring all currencies.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-18T23:03:07.912072+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4429.49,
+      "value": 4387.3,
       "unit": "$/oz",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": -88.59,
-      "description": "Gold Spot Price: 4429.49/oz (TradingEconomics)",
-      "series_id": "BullionVault Spot",
+      "change_from_last": 23.7,
+      "description": "Gold Futures (GC=F): $4,387.30 (+0.54%)",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-18",
-      "note": "Safe haven spike: Gold up 9% in August, 33.5% YoY. Bond market panic driving inflows.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-18T23:03:03.862536+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 64143,
+      "value": 64594,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 0.8,
-      "description": "BTC $64,143 (+0.8% 24h), Dominance: 75.8%",
+      "change_from_last": 0.5,
+      "description": "BTC $64,594 (+0.5% 24h), Dominance: 75.8%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-18",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-18T11:03:12.192961+00:00"
+      "timestamp": "2026-08-18T23:03:04.912077+00:00"
     },
     "china": {
       "name": "China Health",
@@ -246,52 +246,52 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-18T11:03:11.951906+00:00"
+      "timestamp": "2026-08-18T23:03:04.492304+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: UK 10Y at 5.05%, 30Y at 5.7%. Markets pricing hikes not cuts. ECB set to hike again next month. Global bond sell-off hitting EU.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-18T23:03:09.644431+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
-      "value": 0.53,
-      "status": "red",
-      "trend": "deteriorating",
+      "value": 0.52,
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": 0.02,
+      "change_from_last": -0.01,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
-      "last_date": "2026-08-17",
-      "note": "ESCALATED: 30Y Treasury yield at 5.29% (highest since 2007). Emergency Treasury intervention. Yield curve recession signal active.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "last_date": "2026-08-18",
+      "note": "",
+      "timestamp": "2026-08-18T23:03:09.981897+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 93.26,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "ESCALATED: Strait of Hormuz blocked since Feb 28. Active Iran-US-Israel war. Oman mediating transit deal. 20% of global oil/LNG flow disrupted.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-18T23:03:10.389436+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -306,35 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-18T17:03:40.220658+00:00"
-    },
-    "macro_event": {
-      "name": "Macro Event Alert",
-      "domain": "Systemic",
-      "value": "ACTIVE",
-      "unit": "",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "change_from_last": 0,
-      "description": "MULTIPLE CATEGORY-5 EVENTS: US Treasury emergency bond buy, global bond sell-off, Hormuz crisis, Ebola PHEIC, yen intervention unraveling",
-      "series_id": null,
-      "last_date": "2026-08-18",
-      "note": "Breaking event scanner detected 7 events (2x sev5, 3x sev4, 2x sev3). US Treasury emergency intervention + Hormuz blockade + Ebola PHEIC active simultaneously.",
-      "timestamp": "2026-08-18T19:05:13.000000+00:00"
+      "timestamp": "2026-08-18T23:03:10.899689+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 619,
-    "red_count": 17,
-    "amber_count": 2,
-    "green_count": 1,
+    "score": 526,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 3,
     "manual_count": 1,
-    "info_count": 0,
-    "timestamp": "2026-08-18T19:05:13.000000+00:00",
-    "note": "BREAKING EVENT ESCALATION: 11 red signals (was 6). Multiple category-5 events active."
+    "timestamp": "2026-08-18T23:03:10.912713+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -352,6 +335,12 @@
       },
       {
         "domain": "Food",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Climate",
         "red": 1,
         "amber": 0,
         "stress_level": 2
@@ -388,12 +377,6 @@
       },
       {
         "domain": "Technology",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Currency",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -438,12 +421,18 @@
         "stress_level": 2
       },
       {
+        "domain": "Climate",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-18T17:03:40.236334+00:00"
+    "timestamp": "2026-08-18T23:03:10.913716+00:00"
   }
 }
