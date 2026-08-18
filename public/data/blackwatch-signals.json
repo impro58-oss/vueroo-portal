@@ -2,41 +2,42 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T23:03:10.913716+00:00",
+    "last_update": "2026-08-18T23:10:00.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20
+    "signals_manual": 1,
+    "signals_total": 21,
+    "breaking_event": "BREAKING: 8 events detected - US Treasury emergency bond buy, Hormuz closed, yen intervention unraveling, Ebola global emergency"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.03,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "",
-      "timestamp": "2026-08-18T23:03:04.690189+00:00"
+      "note": "ESCALATED: US Treasury emergency bond buy, 30Y yield at 5.29% (highest since 2007). Bond sell-off to multi-decade highs.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "",
-      "timestamp": "2026-08-18T23:03:05.236637+00:00"
+      "note": "ESCALATED: Treasury emergency intervention signals liquidity stress. Warsh Fed uncertainty.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -56,23 +57,23 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 7,
-      "change_from_last": 0.52,
+      "value": 90.96,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 2.05,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price - Hormuz closure ongoing",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-18T23:03:05.937045+00:00"
+      "last_date": "2026-08-18",
+      "note": "ESCALATED: Strait of Hormuz remains closed. Brent $90.96 (+2.05%). Diesel +53.8% YTD.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.19,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.94,
@@ -80,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-17",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-18T23:03:06.368433+00:00"
+      "note": "ESCALATED: Iran-Hormuz crisis, Trump cuts Korea drills, Israel-Gaza fluid, Africa coups.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,15 +104,15 @@
       "domain": "Supply Chain",
       "value": 93.26,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-18T23:03:06.181983+00:00"
+      "last_date": "2026-08-18",
+      "note": "ESCALATED: Hormuz closure disrupting global shipping. Saudi rerouting around Africa (+25 days). Ebola threatening African supply chains.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -155,8 +156,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-18T23:03:07.404185+00:00"
+      "note": "ESCALATED: Ebola global emergency + bond market stress + energy prices compounding social stress.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -192,16 +193,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.9,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-18T23:03:07.912072+00:00"
+      "note": "ESCALATED: US-Japan yen intervention unraveling. Biggest FX intervention in 15 years failing. RBI defending rupee.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -245,53 +246,53 @@
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-18T23:03:04.492304+00:00"
+      "note": "ESCALATED: $148B property time bomb - expiring land leases, AMC distress. Developers defaulted on ~$130B debt.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-18T23:03:09.644431+00:00"
+      "note": "ESCALATED: ECB set to hike rates again in Sept as energy inflation persists. Shortest tightening since 2011.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.52,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.01,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-18",
-      "note": "",
-      "timestamp": "2026-08-18T23:03:09.981897+00:00"
+      "note": "ESCALATED: 30Y Treasury yield at 5.29% (highest since 2007). Treasury emergency bond buy. FOMC minutes tomorrow with 3 dissents.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 7,
-      "change_from_last": 0.52,
+      "value": 90.96,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 2.05,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy - Hormuz crisis live",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-18T23:03:10.389436+00:00"
+      "last_date": "2026-08-18",
+      "note": "ESCALATED: Hormuz remains closed. Iran targeting vessels. Trump claims control but oil flows below pre-war.",
+      "timestamp": "2026-08-18T23:10:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,12 +313,13 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 526,
-    "red_count": 7,
-    "amber_count": 9,
-    "green_count": 3,
+    "score": 560,
+    "red_count": 11,
+    "amber_count": 6,
+    "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-18T23:03:10.912713+00:00"
+    "timestamp": "2026-08-18T23:10:00.000000+00:00",
+    "breaking_event_active": true
   },
   "convergence": {
     "stressed_domains": [

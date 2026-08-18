@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T18:00:10.491535",
+  "timestamp": "2026-08-19T00:00:10.835281",
   "version": "5.3.1-A1",
   "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
   "parameters": {
@@ -28,31 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": 5.33,
-    "unrealized_pnl_eur": 2.02,
-    "total_pnl_eur": 7.35,
+    "realized_pnl_eur": 6.57,
+    "unrealized_pnl_eur": 4.61,
+    "total_pnl_eur": 11.18,
     "open_positions": 6,
-    "closed_trades": 181,
-    "wins": 70,
+    "closed_trades": 182,
+    "wins": 71,
     "losses": 111,
-    "win_rate": 38.7
+    "win_rate": 39.0
   },
   "open_positions": {
-    "FETUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-17T03:05:19.464999",
-      "entry_price": 0.1206,
-      "atr": 0.005685714285714281,
-      "stop": null,
-      "highest": 0.1206,
-      "lowest": 0.1192,
-      "bars_held": 13,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "NMRUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -62,7 +47,7 @@
       "stop": null,
       "highest": 7.99,
       "lowest": 7.83,
-      "bars_held": 8,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -77,7 +62,7 @@
       "stop": null,
       "highest": 2.202,
       "lowest": 2.16,
-      "bars_held": 8,
+      "bars_held": 10,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -92,7 +77,7 @@
       "stop": null,
       "highest": 0.1532,
       "lowest": 0.1524,
-      "bars_held": 2,
+      "bars_held": 4,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -107,7 +92,7 @@
       "stop": null,
       "highest": 0.01181,
       "lowest": 0.0116,
-      "bars_held": 1,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -120,29 +105,31 @@
       "entry_price": 1.487,
       "atr": 0.03535714285714288,
       "stop": null,
-      "highest": 1.487,
+      "highest": 1.525,
       "lowest": 1.487,
-      "bars_held": 0,
+      "bars_held": 2,
       "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "SPKUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-08-19T00:00:10.835281",
+      "entry_price": 0.013251,
+      "atr": 0.0005486428571428571,
+      "stop": null,
+      "highest": 0.013251,
+      "lowest": 0.013251,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
     }
   },
   "recent_trades": [
-    {
-      "symbol": "EURIUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-05T09:00:31.608392",
-      "exit_date": "2026-08-07T06:00:15.172334",
-      "entry_price": 1.1542,
-      "exit_price": 1.1529,
-      "pnl_pct": -0.11,
-      "pnl_eur": -0.28,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "PEOPLEUSDT",
       "direction": "LONG",
@@ -389,22 +376,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "FETUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-17T03:05:19.464999",
+      "exit_date": "2026-08-19T00:00:10.835281",
+      "entry_price": 0.1206,
+      "exit_price": 0.12,
+      "pnl_pct": 0.5,
+      "pnl_eur": 1.24,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "NEUTRAL",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
-    "EURUSDT",
-    "ZECUSDT",
-    "UUSDT",
-    "XAUTUSDT",
-    "BFUSDUSDT",
-    "XUSDUSDT",
-    "RLUSDUSDT",
     "KASUSDT",
     "USDEUSDT",
-    "PAXGUSDT"
+    "RLUSDUSDT",
+    "XAUTUSDT",
+    "EURUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT",
+    "UUSDT",
+    "USD1USDT",
+    "BFUSDUSDT",
+    "ZECUSDT"
   ]
 }
