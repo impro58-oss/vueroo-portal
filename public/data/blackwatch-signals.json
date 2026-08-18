@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T07:05:31.000000+00:00",
+    "last_update": "2026-08-18T07:43:43.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner 4h: 3 CAT-5, 2 CAT-4, 1 CAT-3."
+    "breaking_event": "Breaking event scanner 4h: 3 CAT-5, 2 CAT-4, 1 CAT-3.",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.67,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.04,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-14",
-      "note": "ECB hiking to 2.50% Sept. BOE considering hike. JGB yields decades-high. Global bond sell-off.",
-      "timestamp": "2026-08-18T07:05:31.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4455.9)",
+      "timestamp": "2026-08-18T07:43:43.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
