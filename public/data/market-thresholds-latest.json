@@ -1,40 +1,40 @@
 {
   "scan_date": "2026-08-18",
-  "scan_time_utc": "2026-08-18T07:43:38.393839+00:00",
+  "scan_time_utc": "2026-08-18T11:43:45.429003+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.708,
+      "price": 159.719,
       "prev_close": 159.265,
-      "change_1d_pct": 0.28,
+      "change_1d_pct": 0.29,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1579,
+      "price": 1.1578,
       "prev_close": 1.1544,
-      "change_1d_pct": 0.3,
+      "change_1d_pct": 0.29,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.353,
+      "price": 1.3523,
       "prev_close": 1.351,
-      "change_1d_pct": 0.15,
+      "change_1d_pct": 0.1,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7423,
+      "price": 6.7415,
       "prev_close": 6.745,
-      "change_1d_pct": -0.04,
+      "change_1d_pct": -0.05,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1412.01,
+      "price": 1410.1,
       "prev_close": 1412.18,
-      "change_1d_pct": -0.01,
+      "change_1d_pct": -0.15,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -53,38 +53,38 @@
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25493.11,
+      "price": 25471.15,
       "prev_close": 25652.82,
-      "change_1d_pct": -0.62,
+      "change_1d_pct": -0.71,
       "data_points": 4,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.82,
+      "price": 15.73,
       "prev_close": 14.55,
-      "change_1d_pct": 8.73,
+      "change_1d_pct": 8.11,
       "data_points": 4,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 74.67,
+      "price": 115,
       "prev_close": null,
       "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (Convex)",
-      "source_date": "2026-08-14"
+      "data_points": 0,
+      "source": "web_search_estimate",
+      "note": "Estimated from market context: rising Treasury volatility under Fed Chair Warsh, 10Y at 19-month highs. MOVE typically 60-80 calm, 160+ crisis."
     },
     "GOLD": {
-      "price": 4455.9,
+      "price": 4445.9,
       "prev_close": 4363.6,
-      "change_1d_pct": 2.12,
+      "change_1d_pct": 1.89,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 91.13,
+      "price": 90.96,
       "prev_close": 87.07,
-      "change_1d_pct": 4.66,
+      "change_1d_pct": 4.47,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -96,35 +96,33 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "price": 2.945,
-      "prev_close": 2.92,
-      "change_1d_pct": 0.85,
+      "price": 2.939,
+      "prev_close": 2.926,
+      "change_1d_pct": 0.44,
       "data_points": 1,
-      "source": "web_search (TradingEconomics/Yahoo Finance)",
-      "source_date": "2026-08-18",
-      "note": "30-year high since Sept 1996"
+      "source": "tradingeconomics.com",
+      "note": "3-decade high since Sept 1996. BOJ rate hike bets for September."
     },
     "DE10Y": {
-      "price": 3.255,
+      "price": 3.257,
       "prev_close": 3.218,
-      "change_1d_pct": 1.15,
+      "change_1d_pct": 1.21,
       "data_points": 1,
-      "source": "web_search (TradingEconomics)",
-      "source_date": "2026-08-18",
-      "note": "15-year high since May 2011"
+      "source": "tradingeconomics.com",
+      "note": "15-year peak (highest since May 2011). ECB rate hike bets fading but yields elevated."
     },
     "BAA10Y": {
-      "price": 1.69,
+      "price": 1.72,
       "prev_close": null,
       "change_1d_pct": null,
-      "data_points": 1,
-      "source": "web_search (Convex/FRED)",
-      "source_date": "2026-08-14"
+      "data_points": 0,
+      "source": "convextrade.com/FRED",
+      "note": "Moody's Baa-10Y Treasury spread. Last FRED data point Aug 13, 2026. 172 bps, near 30th percentile."
     },
     "BTC": {
-      "price": 64192.59,
+      "price": 64331.13,
       "prev_close": 62975.594,
-      "change_1d_pct": 1.93,
+      "change_1d_pct": 2.15,
       "data_points": 5,
       "source": "yahoo"
     }
@@ -134,7 +132,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4455.9,
+      "current": 4445.9,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
@@ -143,13 +141,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 27.31
+      "distance_pct": 27.03
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.708,
+      "current": 159.719,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
@@ -158,13 +156,13 @@
         "japan_sovereign",
         "currency"
       ],
-      "distance_pct": 1.08
+      "distance_pct": 1.09
     },
     {
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1579,
+      "current": 1.1578,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -173,13 +171,13 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.69
+      "distance_pct": 0.68
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4455.9,
+      "current": 4445.9,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
@@ -187,7 +185,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 48.53
+      "distance_pct": 48.2
     }
   ],
   "breach_count": 4,
