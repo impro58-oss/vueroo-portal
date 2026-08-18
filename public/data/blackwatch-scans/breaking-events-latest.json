@@ -1,119 +1,163 @@
 {
-  "scan_time": "2026-08-18T11:03:00.000000+00:00",
+  "scan_time": "2026-08-18T15:04:01.000000+00:00",
   "scan_type": "breaking_event_4h",
-  "scanner": "BlackWatch Breaking Event Scanner",
-  "scanner_version": "2.0",
+  "scanner": "Lumina BlackWatch",
   "domains_scanned": 12,
-  "queries_executed": 39,
-  "events_detected": 7,
-  "category_5_count": 3,
-  "category_4_count": 3,
-  "category_3_count": 1,
-  "no_new_events": false,
-  "new_developments": true,
-  "overall_assessment": "MULTI-CRISIS ACTIVE + ESCALATION: Iran ceasefire deadline EXPIRED Aug 18 — Iran declares 'fully offensive' posture, US rules out extension. Hormuz war entering new phase. Yen tests 160 intervention line (159.46). Ebola deadliest in DRC history (4,945 cases, 2,325 deaths). China property $148B land lease bomb. UK gilts 5.05%/5.7%. ECB final hike Sept. Gold $4,449. Risk board CRITICAL.",
-  "new_since_last_scan": [
-    "Iran ceasefire deadline EXPIRED today (Aug 18). Iran declares 'fully offensive' military posture. US rules out extending ceasefire. War entering new escalation phase.",
-    "Yen at 159.46 — testing 160 intervention trigger line. BOJ considering more aggressive hikes next month.",
-    "Ebola deaths cross 2,300 — now deadliest in DRC history. 4,945 cases, 730 hospitalized.",
-    "China property: $148B in non-residential assets with 20 years or less on land leases — new 'hidden bomb'.",
-    "ECB Reuters poll: 83% consensus for final hike to 2.50% in September."
-  ],
-  "category_5_events": [
+  "queries_executed": 36,
+  "events_detected": [
     {
-      "title": "Iran-US Ceasefire Collapsed — 'Fully Offensive' Posture Declared",
-      "domain": "middle_east",
-      "category": "war_military",
+      "id": "EVT-20260818-1503-001",
+      "title": "GLOBAL BOND MARKET SELLOFF",
+      "category": "market_dislocation",
       "severity": 5,
-      "status": "ESCALATING_NEW_PHASE",
-      "summary": "60-day ceasefire negotiating window expired Aug 18 without a deal. Iran declares 'fully offensive' military posture. Washington rules out extending temporary ceasefire. Strait of Hormuz remains primary flashpoint. Houthi attacks shutting down Yemen ports. EIA: largest oil supply disruption in history.",
-      "sources": ["RTE", "CNN", "India Today", "ABC News", "Al Jazeera", "CBS", "Wikipedia"],
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
-      "updated": true,
-      "change_from_last": "NEW: Ceasefire deadline expired today. Iran 'fully offensive' posture. US rules out extension. War entering escalation phase.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
+      "domain": "financial_system",
+      "source": "Reuters, BNN Bloomberg, CNN (Aug 18, 2026)",
+      "description": "Long-term borrowing costs from US to Japan to Germany hit multi-decade highs. US 30Y Treasury >5%, Japan 10Y JGB at 2.95%, spilling across all developed markets. Renewed inflation worries + fiscal deficit concerns.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "europe",
+        "currency"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": true
     },
     {
-      "title": "US-Japan Yen Intervention Unraveling — Testing 160 Line",
-      "domain": "japan",
+      "id": "EVT-20260818-1503-002",
+      "title": "TRUMP ORDERS PENTAGON TO REDUCE KOREA MILITARY EXERCISES",
       "category": "sovereign_intervention",
-      "severity": 5,
-      "status": "ACTIVE_CRITICAL",
-      "summary": "Joint US-Japan FX intervention ($59B) unraveling. Yen at 159.46, testing 160 intervention trigger. BOJ considering more aggressive hikes next month. 30Y Treasury at 5.2% (highest since 2007).",
-      "sources": ["CNBC", "Fortune", "NYT", "Reuters", "Goldman", "FXStreet", "DBS", "Barchart"],
-      "escalate_to": ["currency", "fin_stability"],
-      "updated": true,
-      "change_from_last": "Yen at 159.46, closer to 160 trigger. BOJ considering more aggressive hikes.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
+      "severity": 4,
+      "domain": "em_asia",
+      "source": "NYT, Washington Post, AP, NBC (Aug 16-17, 2026)",
+      "description": "Trump directed Pentagon to substantially reduce Ulchi Freedom Shield exercises with South Korea, citing cost and good ties with Kim Jong Un.",
+      "escalate_to": [
+        "geopolitical",
+        "currency"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": true
     },
     {
-      "title": "Ebola Epidemic — Deadliest in DRC History, Deaths Cross 2,300",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 5,
-      "status": "ACTIVE_SPREADING",
-      "summary": "DRC Ebola now deadliest in nation's history. 4,945 cases, 2,325 deaths (46.96% CFR), 730 hospitalized. Bundibugyo species — no vaccine. WHO PHEIC May 16. Spread to Uganda. Second-most lethal on record globally.",
-      "sources": ["ECDC", "WHO", "CDC", "Wikipedia", "The Hindu", "IBTimes"],
-      "escalate_to": ["supply_chain", "social_cohesion", "food_security"],
-      "updated": true,
-      "change_from_last": "Deaths crossed 2,300. Now deadliest in DRC history. Second-most lethal globally.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
-    }
-  ],
-  "category_4_events": [
+      "id": "EVT-20260818-1503-003",
+      "title": "KUSHNER-GAZA NEGOTIATIONS STALLED",
+      "category": "war_military",
+      "severity": 4,
+      "domain": "middle_east",
+      "source": "Reuters, NYT, Washington Post (Aug 17, 2026)",
+      "description": "Kushner met Netanyahu after 2-hour meeting with Hamas. Netanyahu rejected 15-point US-backed road map. Israel allowed to continue targeted strikes in Gaza.",
+      "escalate_to": [
+        "middle_east",
+        "geopolitical",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": true
+    },
     {
-      "title": "China Property $148B Land Lease Time Bomb",
-      "domain": "china",
+      "id": "EVT-20260818-1503-004",
+      "title": "IRAN/HORMUZ CRISIS ONGOING",
+      "category": "energy_shock",
+      "severity": 5,
+      "domain": "middle_east",
+      "source": "CBS News, Wikipedia, Britannica, Windward (Aug 18, 2026)",
+      "description": "Strait of Hormuz remains disrupted. Tanker drone strikes. Oil residue on Qeshm Island. 20M barrels/day impacted. EIA: largest oil disruption in history.",
+      "escalate_to": [
+        "energy",
+        "supply_chain",
+        "food_security",
+        "geopolitical"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": false,
+      "status": "ongoing"
+    },
+    {
+      "id": "EVT-20260818-1503-005",
+      "title": "EBOLA EPIDEMIC DEADLIEST IN DRC HISTORY",
+      "category": "pandemic_health",
+      "severity": 5,
+      "domain": "pandemic_health",
+      "source": "WHO, ECDC, UN News, CDC (Aug 16-18, 2026)",
+      "description": "Bundibugyo ebolavirus: 4,945 cases, 2,325 deaths, 730 hospitalized. Fastest-growing Ebola outbreak on record. Spreading to Uganda.",
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": false,
+      "status": "ongoing"
+    },
+    {
+      "id": "EVT-20260818-1503-006",
+      "title": "YEN INTERVENTION UNRAVELING",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "domain": "japan",
+      "source": "CNBC, Fortune, NYT, Reuters (Aug 12-18, 2026)",
+      "description": "Historic US-Japan yen intervention unraveling. Yen at 159, approaching 160 intervention line. JGB 10Y at 2.95% (3-decade high). BOJ divided 8-1 on rate hikes.",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": false,
+      "status": "ongoing"
+    },
+    {
+      "id": "EVT-20260818-1503-007",
+      "title": "CHINA PROPERTY  TIME BOMB",
       "category": "sovereign_crisis",
       "severity": 4,
-      "status": "ACTIVE_DETERIORATING",
-      "summary": "$148B in non-residential assets with 20 years or less remaining on land leases. Evergrande cascade continues. New 'hidden bomb' beyond developer debt.",
-      "sources": ["Bloomberg", "Wikipedia", "FirstPost", "People News Today"],
-      "escalate_to": ["china", "fin_stability"],
-      "updated": true,
-      "change_from_last": "New: $148B land lease expiration crisis identified.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
+      "domain": "china",
+      "source": "Bloomberg, Economist, Firstpost (Aug 11-15, 2026)",
+      "description": "China racing to solve  expiring land lease time bomb. Developers defaulted on ~ debt. AMCs themselves distressed. Deflation persisting.",
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": false,
+      "status": "ongoing"
     },
     {
-      "title": "UK Gilt Market Stress — 30Y at 5.7%, Hedge Fund Leverage Risk",
+      "id": "EVT-20260818-1503-008",
+      "title": "UK DROUGHT + FOOD SECURITY CRISIS",
+      "category": "sovereign_crisis",
+      "severity": 3,
       "domain": "uk",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "ACTIVE",
-      "summary": "UK 10Y gilts 5.05%, 30Y 5.7%. Hedge fund leverage risk flagged. FSB stalemate. SONIA compression signals funding stress.",
-      "sources": ["House of Commons Library", "Telegraph", "Ghandley Substack"],
-      "escalate_to": ["europe", "fin_stability"],
-      "updated": true,
-      "change_from_last": "Gilts 5.05%/5.7%. Hedge fund leverage risk. FSB stalemate.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
+      "source": "Telegraph, Guardian, BBC (Aug 11-14, 2026)",
+      "description": "75% of England in drought. Worst food security crisis in decades. Gilts at 5.05%/5.7% (10Y/30Y). Wildfire emergency alerts.",
+      "escalate_to": [
+        "europe",
+        "fin_stability",
+        "food_security"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": false,
+      "status": "ongoing"
     },
     {
-      "title": "Global Credit Bubble 'Terminal Phase' — Systemic Risk Rising",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "ACTIVE",
-      "summary": "Credit bubble 'terminal phase'. 30Y Treasury 5.2% (highest since 2007). EM banking risk rising. AI cyber systemic risk flagged.",
-      "sources": ["TalkMarkets", "Seeking Alpha", "LLRX"],
-      "escalate_to": ["fin_stability", "liquidity"],
-      "updated": true,
-      "change_from_last": "Credit bubble 'terminal phase' warning. 30Y Treasury 5.2%.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
+      "id": "EVT-20260818-1503-009",
+      "title": "NIGERIA-SOUTH AFRICA DIPLOMATIC CRISIS",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "domain": "africa",
+      "source": "Punch NG, PM News, Firstpost Africa (Aug 18, 2026)",
+      "description": "83 more Nigerians evacuated from South Africa amid xenophobic attacks. Diplomatic confrontation at Commonwealth conference.",
+      "escalate_to": [
+        "geopolitical"
+      ],
+      "timestamp": "2026-08-18T15:04:01.000000+00:00",
+      "is_new": true
     }
   ],
-  "category_3_events": [
-    {
-      "title": "ECB Final Rate Hike September — Shortest Tightening Since 2011",
-      "domain": "eu_ecb",
-      "category": "emergency_rate",
-      "severity": 3,
-      "status": "CONFIRMED",
-      "summary": "Reuters poll: ECB final hike Sept, 83% consensus. Deposit rate 2.25% → 2.50%. Shortest tightening since 2011. Bund yields 15-year highs.",
-      "sources": ["Reuters", "US News", "FRED"],
-      "escalate_to": ["europe", "fin_stability"],
-      "updated": true,
-      "change_from_last": "Reuters poll confirms 83% consensus for Sept hike.",
-      "timestamp": "2026-08-18T11:03:00.000000+00:00"
-    }
-  ]
+  "summary": {
+    "cat_5_count": 3,
+    "cat_4_count": 3,
+    "cat_3_count": 3,
+    "new_events": 4,
+    "ongoing_events": 5,
+    "max_severity": "CAT-5",
+    "headline": "NEW: Global bond market selloff. Trump reduces Korea exercises. Kushner-Gaza stalled. Nigeria-SA crisis. ONGOING: Hormuz, Ebola, yen, China property."
+  }
 }
