@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T23:10:00.000000+00:00",
+    "last_update": "2026-08-18T23:44:29.662581+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "breaking_event": "BREAKING: 8 events detected - US Treasury emergency bond buy, Hormuz closed, yen intervention unraveling, Ebola global emergency"
+    "breaking_event": "Gold RED threshold breach ($4,380 > $3,500) \u2014 currency crisis/war premium. USD/JPY AMBER (159.59). Brent surging (+4.95% to $91.38)."
   },
   "signals": {
     "fin_stability": {
@@ -201,23 +201,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: US-Japan yen intervention unraveling. Biggest FX intervention in 15 years failing. RBI defending rupee.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: US-Japan yen intervention unraveling. Biggest FX intervention in 15 years failing. RBI defending rupee. THRESHOLD: USD/JPY at 159.59 (AMBER, >158). EUR/USD at 1.1577 (AMBER, >1.15).",
+      "timestamp": "2026-08-18T23:44:29.662581+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4387.3,
+      "value": 4380.2,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 23.7,
-      "description": "Gold Futures (GC=F): $4,387.30 (+0.54%)",
+      "description": "Gold Futures (GC=F): $4,380.20 (+0.38%) \u2014 RED threshold breach",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-18",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-18T23:03:03.862536+00:00"
+      "note": "THRESHOLD ESCALATION: Gold above $3,500 RED threshold (+25.15%). Currency crisis or war premium. Safe haven demand at extreme levels.",
+      "timestamp": "2026-08-18T23:44:29.662581+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -313,12 +313,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 560,
-    "red_count": 11,
-    "amber_count": 6,
-    "green_count": 2,
+    "score": 830,
+    "red_count": 15,
+    "amber_count": 4,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-18T23:10:00.000000+00:00",
+    "timestamp": "2026-08-18T23:44:29.662581+00:00",
     "breaking_event_active": true
   },
   "convergence": {
