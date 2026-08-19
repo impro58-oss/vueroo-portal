@@ -1,0 +1,139 @@
+{
+  "scan_time": "2026-08-19T15:04:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner — 4h cycle",
+  "domains_scanned": 12,
+  "queries_executed": 17,
+  "events_detected": [
+    {
+      "id": "BW-2026-08-19-1600-001",
+      "domain": "middle_east",
+      "category": "war_military",
+      "title": "Trump declares Strait of Hormuz 'US territory' after 60-day Iran deal deadline expires",
+      "summary": "President Trump posted a map labeling the Strait of Hormuz as 'new U.S. territory' after the 60-day deadline for a US-Iran deal expired. Iran rejected the declaration, saying the waterway 'will remain Iranian'. No talks are planned. US agreed to end naval blockade within 30 days of a signed agreement but no agreement was reached. Hormuz remains effectively closed.",
+      "sources": ["Forbes", "CNN", "Al Jazeera", "Middle East Eye", "AP News"],
+      "severity": 5,
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Trump formally labels Hormuz as US territory — escalation from previous status. No diplomatic path visible.",
+      "previous_status": "Hormuz closed, 60-day deadline pending"
+    },
+    {
+      "id": "BW-2026-08-19-1600-002",
+      "domain": "pandemic_health",
+      "category": "sovereign_crisis",
+      "title": "Ebola outbreak in DRC passes 5,000 cases, remains global health emergency (WHO)",
+      "summary": "The 2026 Ebola epidemic (Bundibugyo ebolavirus) has become the fastest-growing Ebola outbreak on record, now the second largest. Over 2,000 dead. WHO warns more resources needed. PHEIC declared. Existing treatments certified for Zaire ebolavirus, complicating response.",
+      "sources": ["Wikipedia", "Al Jazeera", "WHO Africa", "Whatfinger"],
+      "severity": 5,
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Cases passed 5,000 milestone — continues accelerating. No containment timeline.",
+      "previous_status": "PHEIC declared, ~2,000 dead"
+    },
+    {
+      "id": "BW-2026-08-19-1600-003",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "title": "Japan bond rout pushes fiscal plans to risk — BOJ running low on options",
+      "summary": "Reuters analysis (Aug 19): Japan running low on options to fight bond rout. 10-year JGB yield near 3%, has more than tripled in two years. PM Takaichi's spending agenda hostage to bond market forces. USD/JPY at 159.65. BOJ hiked to 1.0% (8-1 vote), 80% probability of September hike. Standard Chartered projects terminal rate 1.75%. FX intervention risk remains elevated.",
+      "sources": ["Reuters", "Investing.com", "Yahoo Finance", "Tradingpedia", "ADMISI"],
+      "severity": 4,
+      "escalate_to": ["currency", "fin_stability", "japan_sovereign"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Reuters explicit analysis that Japan is 'running low on options' — fiscal crisis narrative now mainstream. Yen at 159.65, weakening from 159.15.",
+      "previous_status": "JGB 2.95%, USD/JPY 159.15"
+    },
+    {
+      "id": "BW-2026-08-19-1600-004",
+      "domain": "financial_system",
+      "category": "market_dislocation",
+      "title": "Global bond sell-off deepens — 30-year US Treasury hits 5.34%, highest since 2007",
+      "summary": "Global bond sell-off accelerated Aug 18-19. 30-year US Treasury yield hit 5.34% (highest since 2007). 10-year UK gilts at ~4.97-5.05%. German Bund at 3.26% (highest since 2011). Japanese JGB near 3%. Investors demanding higher returns to hold government debt. Oil-linked inflation fears driving the sell-off. Stock markets rattled.",
+      "sources": ["NYT", "CNN", "Global Banking & Finance", "Brussels Morning", "NBC"],
+      "severity": 4,
+      "escalate_to": ["fin_stability", "liquidity", "europe", "us_cycle"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "30-year Treasury at 5.34% — 19-year high. This is a significant escalation from the previous scan. Multiple major economies hitting decade-plus yield highs simultaneously.",
+      "previous_status": "German Bund 3.26%, JGB 2.95%, UK gilts under pressure"
+    },
+    {
+      "id": "BW-2026-08-19-1600-005",
+      "domain": "uk",
+      "category": "market_dislocation",
+      "title": "UK gilts disproportionately exposed to global bond sell-off — BOE facing impossible dilemma",
+      "summary": "UK 10-year gilt yield at ~4.97-5.05%, 30-year at ~5.7%. Markets swung from pricing cuts to pricing hikes within months. Two-thirds of gilt yield jump stems from investors demanding greater compensation to hold UK debt (vs US or Germany). BOE forced to tighten into slowing economy. Government with almost no fiscal headroom. CPI inflation at 2.6% (above target).",
+      "sources": ["Sharecafe", "Finance News Network", "House of Commons Library", "Trading Economics"],
+      "severity": 4,
+      "escalate_to": ["europe", "fin_stability"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "30-year gilts at 5.7% — extreme levels. BOE may be forced to hike despite slowing economy. UK-specific premium widening vs other sovereigns.",
+      "previous_status": "UK gilts hit hard in global sell-off"
+    },
+    {
+      "id": "BW-2026-08-19-1600-006",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "title": "Gold eases below $4,400 but remains in RED territory — Brent holds above $90",
+      "summary": "Gold pulled back to ~$4,390-4,400 from $4,424 peak, still well above RED threshold of $3,500. Silver at $65.65. Brent crude held above $90 (Trading Economics shows $84.92 on Aug 18 CFD, but Hormuz disruption keeping physical premiums elevated). EIA forecasts oil prices remain elevated until global flows normalize. Ongoing Hormuz attacks on vessels continue.",
+      "sources": ["Trading Economics", "Kitco", "EIA"],
+      "severity": 4,
+      "escalate_to": ["energy", "supply_chain", "geopolitical"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Gold pulling back slightly ($4,424 → $4,390) but remains deep in RED. EIA explicitly forecasts prolonged elevated oil prices. Physical oil markets tighter than paper prices suggest.",
+      "previous_status": "Gold $4,424, Brent $91.69"
+    },
+    {
+      "id": "BW-2026-08-19-1600-007",
+      "domain": "africa",
+      "category": "sovereign_crisis",
+      "title": "Nigeria evacuates 83 more citizens from South Africa amid rising afrophobic tensions",
+      "summary": "Nigeria's Federal Government evacuating 83 more citizens from South Africa on August 19, 2026, amid persistent afrophobic/xenophobic attacks. Nigeria formally told South Africa to stop 'deliberate targeting of Africans'. Thousands of Nigerians have fled. Diplomatic crisis escalating between Africa's two largest economies.",
+      "sources": ["ThisDay Live", "QNC News", "Platform Times", "Businessday NG", "Heritage Times"],
+      "severity": 3,
+      "escalate_to": ["geopolitical", "social_cohesion"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Evacuation happening TODAY (Aug 19). Nigeria formally accusing South Africa of 'deliberate targeting' — diplomatic language hardening.",
+      "previous_status": "Nigeria-SA diplomatic crisis ongoing"
+    },
+    {
+      "id": "BW-2026-08-19-1600-008",
+      "domain": "latam",
+      "category": "sovereign_crisis",
+      "title": "Argentina sovereign risk premium widening — Q2 output expected to have fallen",
+      "summary": "S&P MERVAL eased 1.89%. Argentina's sovereign risk premium widening — market gauge of debt trouble. Economists expect Q2 output to have fallen. Chile reporting 0.2% annual contraction (mining sector drag). Brazil pursuing urgent fiscal reforms — Finance Minister warns of 'painful final mile' of fiscal restructuring. Venezuela: Maduro seized by US special forces in Jan 2026, twin earthquakes killed 5,500+ in June, humanitarian crisis deepening.",
+      "sources": ["Rio Times Online", "Shafaqna", "CFR"],
+      "severity": 3,
+      "escalate_to": ["fin_stability", "geopolitical"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Argentina sovereign risk premium actively widening today. Brazil's 'painful final mile' language from Finance Minister is new. Venezuela humanitarian crisis from earthquakes compounding.",
+      "previous_status": "Not specifically tracked in previous scan"
+    },
+    {
+      "id": "BW-2026-08-19-1600-009",
+      "domain": "us_fed",
+      "category": "emergency_rate",
+      "title": "Fed held rates unchanged in July but multiple members voted to hike — September hike expectations building",
+      "summary": "Fed left rates unchanged at July 2026 meeting, but a handful of committee members voted to increase by 25bps. Forbes reports mortgage rates trending downward before recent bond sell-off. Markets now pricing September hike probability. 30-year Treasury at 5.34% creates pressure. FedWatch shows market expecting year-end rate higher than current.",
+      "sources": ["Forbes", "FRED", "MacroMicro", "CNBC"],
+      "severity": 3,
+      "escalate_to": ["us_cycle", "fin_stability"],
+      "timestamp": "2026-08-19T15:04:00+00:00",
+      "new_development": "Dissenting votes to hike at July meeting — not just one dissenter but 'a handful'. Combined with global bond sell-off, September hike is now in play. 30-year at 5.34% is itself a tightening mechanism.",
+      "previous_status": "Fed on hold"
+    }
+  ],
+  "no_new_events": ["eu_ecb", "china", "em_asia"],
+  "scan_summary": {
+    "total_events": 9,
+    "category_5_count": 2,
+    "severity_4_count": 4,
+    "severity_3_count": 3,
+    "new_vs_previous": {
+      "new_events": ["BW-2026-08-19-1600-001 (Trump Hormuz territory declaration)", "BW-2026-08-19-1600-004 (30Y Treasury 5.34% 19yr high)", "BW-2026-08-19-1600-005 (UK 30Y gilts 5.7%)", "BW-2026-08-19-1600-008 (LatAm sovereign risk widening)", "BW-2026-08-19-1600-009 (Fed dissenting votes to hike)"],
+      "escalated_events": ["BW-2026-08-19-1600-002 (Ebola 5,000+ cases)", "BW-2026-08-19-1600-003 (Japan bond rout mainstream)", "BW-2026-08-19-1600-006 (Gold/Brent elevated)", "BW-2026-08-19-1600-007 (Nigeria evacuation today)"],
+      "unchanged_domains": ["eu_ecb", "china", "em_asia"]
+    },
+    "overall_assessment": "CRITICAL — situation deteriorating. Global bond sell-off intensifying with 30Y Treasury at 19-year high. Trump-Hormuz escalation removes diplomatic off-ramp. Japan fiscal crisis now mainstream Reuters narrative. Multiple simultaneous flashpoints with no signs of de-escalation."
+  }
+}
