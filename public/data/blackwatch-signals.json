@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-19T07:04:48.000000+00:00",
+    "last_update": "2026-08-19T07:43:49.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 7 cat-5 events. Ceasefire collapse + bond crisis + Ebola + yen failure."
+    "breaking_event": "Breaking event scanner: 7 cat-5 events. Ceasefire collapse + bond crisis + Ebola + yen failure.",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.03,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: 30Y Treasury at 5.34pct 19-year high. Global bond sell-off. UK gilts weakest link. Credit bubble terminal phase.",
-      "timestamp": "2026-08-19T07:04:48.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4413.5)",
+      "timestamp": "2026-08-19T07:43:49.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
