@@ -67,8 +67,9 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 125.0,
+      "source": "web_search_estimated",
+      "note": "Estimated from context - July ended at highest since May spike. Below 130 threshold."
     },
     "GOLD": {
       "price": 4415.7,
@@ -92,16 +93,19 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.95,
+      "source": "web_search",
+      "note": "TradingEconomics Aug 18 - three-decade high, 2.95%"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.255,
+      "source": "web_search",
+      "note": "Economic Times Aug 18 - highest since May 2011, 3.255%"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.69,
+      "source": "FRED_CSV",
+      "note": "FRED BAA10Y Aug 17 latest value, 1.69%"
     },
     "BTC": {
       "price": 64316.49,
@@ -126,6 +130,21 @@
         "geopolitical"
       ],
       "distance_pct": 26.16
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.95,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral - Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 96.67
     },
     {
       "key": "USDJPY",
@@ -170,10 +189,41 @@
         "fin_stability"
       ],
       "distance_pct": 47.19
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.95,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure - BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 195.0
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.255,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress - periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 8.5
     }
   ],
-  "breach_count": 4,
+  "breach_count": 7,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_data_filled": true,
+  "manual_data_time": "2026-08-19T07:51:10.257514+00:00"
 }

@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-19T07:43:49.000000+00:00",
+    "last_update": "2026-08-19T07:51:33.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
     "breaking_event": "Breaking event scanner: 7 cat-5 events. Ceasefire collapse + bond crisis + Ebola + yen failure.",
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "7 thresholds breached (2 RED, 5 AMBER) \u2014 Gold, JGB10Y, USDJPY, EURUSD, DE10Y"
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "Threshold breach: Gold above 3500 (current: 4413.5)",
-      "timestamp": "2026-08-19T07:43:49.000000+00:00"
+      "note": "THRESHOLD RED: Gold above 3500 ($4,415). JGB 10Y at 2.95% (RED, 3-decade high). German Bund at 3.255% (AMBER, highest since 2011). Global synchronized bond sell-off.",
+      "timestamp": "2026-08-19T07:51:33.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -202,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: Yen intervention fading, USD/JPY at 159.10. Dollar under pressure from bond sell-off.",
-      "timestamp": "2026-08-19T07:04:48.000000+00:00"
+      "note": "THRESHOLD AMBER: USD/JPY at 159.16, above 158 intervention zone. EUR/USD at 1.1597, above 1.15 (dollar weakness). Yen intervention failing, BOJ rate hike expected Sept.",
+      "timestamp": "2026-08-19T07:51:33.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4395.8,
+      "value": 4415.7,
       "unit": "$/oz",
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 15.4,
       "description": "Gold spot ~$4,395-4,440/oz, web-verified via Forbes/TradingEconomics Aug 19 2026",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-19",
-      "note": "ESCALATED: Gold at 4339-4397/oz, +29.72pct YoY. War premium plus currency crisis plus bond sell-off driving safe haven.",
-      "timestamp": "2026-08-19T07:04:48.000000+00:00"
+      "note": "THRESHOLD RED: Gold at $4,415/oz, above 3500 RED tripwire (+26%). Currency crisis + war premium + bond sell-off driving safe haven demand.",
+      "timestamp": "2026-08-19T07:51:33.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -262,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: UK gilts weakest link in global bond sell-off. BOE may raise rates Sept. ECB final hike. Hedge fund leverage risk.",
-      "timestamp": "2026-08-19T07:04:48.000000+00:00"
+      "note": "THRESHOLD AMBER: German 10Y Bund at 3.255%, above 3.0 tripwire. Highest since May 2011. European fiscal stress \u2014 periphery spreads widening. UK gilts above 5% for longest stretch in two decades.",
+      "timestamp": "2026-08-19T07:51:33.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
