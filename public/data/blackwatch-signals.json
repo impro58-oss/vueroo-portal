@@ -6,7 +6,8 @@
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "4 thresholds breached (1 RED, 3 AMBER) — Gold escalated to red, fin_stability + geopolitical escalated",
+    "scan_type": "4h threshold scan with web search fallback for MOVE/JGB10Y/DE10Y/BAA10Y"
   },
   "signals": {
     "fin_stability": {
@@ -21,7 +22,7 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-18",
-      "note": "Threshold breach: Gold above 3500 (current: 4562.3)",
+      "note": "ESCALATED — Gold RED breach: $4,562.30 above $3,500 threshold (+30.4%). Currency crisis or war premium. JGB10Y at 2.945% (three-decade peak), DE10Y at 3.26% (15-year high). Brent at $91.30 (+3.14%). Nikkei -4.37%.",
       "timestamp": "2026-08-19T19:32:38.000000+00:00"
     },
     "liquidity": {
@@ -81,7 +82,7 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-18",
-      "note": "Threshold breach: Gold above 3500 (current: 4562.3)",
+      "note": "ESCALATED — Gold RED breach $4,562 (+30.4% above threshold). Strait of Hormuz unresolved. Brent $91.30. Nikkei -4.37%. Multiple converging risk vectors.",
       "timestamp": "2026-08-19T19:32:38.000000+00:00"
     },
     "cyber": {
@@ -201,38 +202,38 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 158.149)",
+      "note": "ESCALATED — USD/JPY at 158.149 (AMBER, intervention zone). JGB10Y at 2.945% (three-decade peak). Nikkei -4.37%. Joint intervention failing. EUR/USD at 1.1681 (AMBER, dollar weakness).",
       "timestamp": "2026-08-19T19:32:38.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4496.6,
+      "value": 4562.3,
       "unit": "$/oz",
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": 116.2,
-      "description": "Gold Spot: $4,496.60/oz (Kitco, Aug 19 2026)",
-      "series_id": "Kitco Spot Gold",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 181.7,
+      "description": "Gold Spot: $4,562.30/oz (Yahoo Finance, Aug 19 2026 — RED threshold breach above $3,500)",
+      "series_id": "Yahoo GC=F",
       "last_date": "2026-08-19",
-      "note": "Live from Kitco spot gold price",
-      "timestamp": "2026-08-19T17:03:06.750711+00:00"
+      "note": "RED BREACH: Gold above $3,500 threshold (+30.4%). Safe haven demand extreme. Currency crisis or war premium.",
+      "timestamp": "2026-08-19T19:32:38.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 68429,
+      "value": 68233.78,
       "unit": "$",
       "status": "amber",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 5.7,
-      "description": "BTC $68,429 (+5.7% 24h), Dominance: 75.9%",
-      "series_id": "CoinGecko API",
+      "change_from_last": 8.27,
+      "description": "BTC $68,234 (+8.27% 24h) — Yahoo Finance",
+      "series_id": "Yahoo BTC-USD",
       "last_date": "2026-08-19",
-      "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-19T17:03:07.408469+00:00"
+      "note": "Updated from threshold scanner",
+      "timestamp": "2026-08-19T19:32:38.000000+00:00"
     },
     "china": {
       "name": "China Health",
