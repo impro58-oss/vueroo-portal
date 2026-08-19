@@ -2,17 +2,17 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-18T23:44:29.662581+00:00",
+    "last_update": "2026-08-19T03:05:34.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "breaking_event": "Gold RED threshold breach ($4,380 > $3,500) \u2014 currency crisis/war premium. USD/JPY AMBER (159.59). Brent surging (+4.95% to $91.38)."
+    "breaking_event": "6 CATEGORY-5 EVENTS: Iran deadline expired + 30Y yield 5.34% (19yr high) + Gold $4,369 + Ebola PHEIC (4,945 cases) + Yen intervention failing + BOE rate hike threat"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
-      "value": 2.7,
+      "value": 5.34,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
@@ -20,9 +20,9 @@
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-08-17",
-      "note": "ESCALATED: US Treasury emergency bond buy, 30Y yield at 5.29% (highest since 2007). Bond sell-off to multi-decade highs.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "last_date": "2026-08-18",
+      "note": "ESCALATED: 30Y Treasury yield at 5.34% (19-year high, since 2007). Global bond sell-off. FOMC minutes with 3 dissents pending. Warsh Fed uncertainty.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -36,8 +36,8 @@
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "ESCALATED: Treasury emergency intervention signals liquidity stress. Warsh Fed uncertainty.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: Global bond sell-off accelerating. 30Y at 5.34%. PBOC injected 349B yuan. IMF credit at record $166.6B.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -57,7 +57,7 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 90.96,
+      "value": 84.92,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
@@ -66,8 +66,8 @@
       "description": "Brent Crude Oil Price - Hormuz closure ongoing",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Strait of Hormuz remains closed. Brent $90.96 (+2.05%). Diesel +53.8% YTD.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: Hormuz remains closed. Trump threatens Oman after Iran deal deadline expired. Brent at $84.92. Houthi threats to Bahrain/UAE.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Iran-Hormuz crisis, Trump cuts Korea drills, Israel-Gaza fluid, Africa coups.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: Iran war stalemate + Trump threatens Oman. Ebola PHEIC. Yen intervention failing. Global bond sell-off. UK inflation resurging.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -111,8 +111,8 @@
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz closure disrupting global shipping. Saudi rerouting around Africa (+25 days). Ebola threatening African supply chains.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: Hormuz closure ongoing. Ebola PHEIC - 4,945 cases, 2,325 deaths. DRC/Uganda spread threatening African supply chains.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -156,8 +156,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola global emergency + bond market stress + energy prices compounding social stress.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: Ebola PHEIC + Iran war escalation + bond market stress + energy prices. Trump threatening allies. Social mood deteriorating.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -201,13 +201,13 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: US-Japan yen intervention unraveling. Biggest FX intervention in 15 years failing. RBI defending rupee. THRESHOLD: USD/JPY at 159.59 (AMBER, >158). EUR/USD at 1.1577 (AMBER, >1.15).",
-      "timestamp": "2026-08-18T23:44:29.662581+00:00"
+      "note": "ESCALATED: Yen intervention failing - USD/JPY at 159.08, approaching 160. BOJ held at 1.0% (Takata dissented for 1.25%). Takaichi supports faster hikes. EUR/USD at 1.1577 (AMBER).",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4380.2,
+      "value": 4369.08,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
@@ -215,9 +215,9 @@
       "change_from_last": 23.7,
       "description": "Gold Futures (GC=F): $4,380.20 (+0.38%) \u2014 RED threshold breach",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-08-18",
-      "note": "THRESHOLD ESCALATION: Gold above $3,500 RED threshold (+25.15%). Currency crisis or war premium. Safe haven demand at extreme levels.",
-      "timestamp": "2026-08-18T23:44:29.662581+00:00"
+      "last_date": "2026-08-19",
+      "note": "THRESHOLD: Gold at $4,369 (+29.7% YoY). Extreme safe haven. War premium + currency crisis + bond sell-off. Range: $3,580-$4,645.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -261,8 +261,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: ECB set to hike rates again in Sept as energy inflation persists. Shortest tightening since 2011.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: BOE may raise rates from September. Energy bills driving inflation. CPI at 2.6%. ECB final Sept hike. UK gilt hedge fund leverage flagged as systemic risk.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -276,8 +276,8 @@
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: 30Y Treasury yield at 5.29% (highest since 2007). Treasury emergency bond buy. FOMC minutes tomorrow with 3 dissents.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: 30Y Treasury at 5.34% (19yr high). Iran war deadline expired. Bond sell-off accelerating globally. FOMC minutes with 3 dissents pending.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -291,8 +291,8 @@
       "description": "Brent Oil as ME tension proxy - Hormuz crisis live",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz remains closed. Iran targeting vessels. Trump claims control but oil flows below pre-war.",
-      "timestamp": "2026-08-18T23:10:00.000000+00:00"
+      "note": "ESCALATED: 60-day Iran MoU expired Aug 17. Trump threatens to bomb Oman. Hormuz still closed. Vessel attacked. Houthi threats. Iran demanded to surrender.",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,17 +308,27 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-18T23:03:10.899689+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "description": "Breaking event scanner: category-5 events active",
+      "timestamp": "2026-08-19T03:05:34.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 830,
+    "score": 920,
     "red_count": 15,
     "amber_count": 4,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-18T23:44:29.662581+00:00",
+    "timestamp": "2026-08-19T03:05:34.000000+00:00",
     "breaking_event_active": true
   },
   "convergence": {
