@@ -2,26 +2,27 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-19T11:04:37.102654+00:00",
+    "last_update": "2026-08-19T11:06:19.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 21,
+    "breaking_event": "Breaking event scanner: 8 cat-5 events. Hormuz war + Ebola PHEIC + yen failure + bond sell-off + gold surge + UK gilt crisis + China credit contraction + Nigeria-SA crisis."
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.03,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "",
-      "timestamp": "2026-08-19T11:04:28.047788+00:00"
+      "note": "ESCALATED: Global bond sell-off (German Bund 3.255%, JGB 2.95%, UK gilts hit hard). Yen intervention failure signals Treasury market stress. Credit bubble terminal phase warning.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -56,23 +57,23 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "value": 89.53,
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "",
-      "timestamp": "2026-08-19T11:04:29.840858+00:00"
+      "note": "ESCALATED: Brent ~$89.53, up 24% since Iran war began. Strait of Hormuz closed - 20M bbl/day disrupted. Houthi attacks on Bab al-Mandeb. Saudi offering non-chokepoint cargoes.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.19,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.94,
@@ -80,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-17",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
-      "timestamp": "2026-08-19T11:04:30.584010+00:00"
+      "note": "ESCALATED: Iran war stalemate + Nigeria-SA diplomatic crisis + Houthi shipping attacks. Multiple simultaneous geopolitical flashpoints.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -101,17 +102,17 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 93.26,
+      "value": 89.53,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-11",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-19T11:04:31.470521+00:00"
+      "note": "ESCALATED: Hormuz closure (20M bbl/day) + Bab al-Mandeb Houthi attacks + Ebola outbreak disrupting DRC/Uganda. Multi-vector supply chain stress.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -206,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4369.82,
+      "value": 4339.41,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -10.93,
       "description": "Gold Spot: ,369.82/oz (BullionVault live)",
       "series_id": "BullionVault Spot",
       "last_date": "2026-08-19",
-      "note": "Live spot from BullionVault - updated during BlackWatch 6h refresh",
-      "timestamp": "2026-08-19T11:04:26.861925+00:00"
+      "note": "ESCALATED: Gold at $4,339, hit $4,450 peak. Safe haven surge on Iran war + bond sell-off. Central bank buying (China). Futures touched $4,500.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -239,29 +240,29 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-19T11:04:27.530062+00:00"
+      "note": "ESCALATED: July bank loans post record contraction. Deflation fight faltering. Property crisis ongoing. Credit demand collapsing despite PBOC easing.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
       "status": "amber",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-19T11:04:34.945431+00:00"
+      "note": "ESCALATED: German Bund at 3.255% (highest since 2011). ECB set for final rate hike. UK gilts disproportionately exposed. BOE facing impossible policy dilemma.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -281,17 +282,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 93.26,
-      "status": "amber",
-      "trend": "stable",
+      "value": 89.53,
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0.52,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-11",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-19T11:04:36.323759+00:00"
+      "note": "ESCALATED: US-Israel-Iran war active since Feb 2026. Hormuz effectively closed. Stalemate continues. Houthi attacks on shipping. Iran threatens offensive if diplomacy fails.",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,17 +308,31 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-19T11:04:37.077609+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Alert",
+      "domain": "Systemic",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
+      "unit": "alert",
+      "description": "Breaking event scanner: 8 cat-5 events detected. Hormuz crisis + Ebola PHEIC + yen intervention failure + global bond sell-off.",
+      "last_date": "2026-08-19",
+      "note": "8 events: Hormuz war (sev 5), Ebola PHEIC (sev 5), yen intervention failure (sev 4), bond sell-off (sev 4), gold surge (sev 3), UK gilt crisis (sev 3), China credit contraction (sev 3), Nigeria-SA crisis (sev 2).",
+      "timestamp": "2026-08-19T11:06:19.000000+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 526,
-    "red_count": 7,
-    "amber_count": 9,
-    "green_count": 3,
-    "manual_count": 1,
-    "timestamp": "2026-08-19T11:04:37.101654+00:00"
+    "score": 52,
+    "red_count": 13,
+    "amber_count": 6,
+    "green_count": 1,
+    "info_count": 1,
+    "timestamp": "2026-08-19T11:06:19.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -325,43 +340,61 @@
         "domain": "Social",
         "red": 3,
         "amber": 0,
-        "stress_level": 6
+        "stress_level": 9
       },
       {
         "domain": "Financial",
-        "red": 1,
+        "red": 2,
         "amber": 1,
+        "stress_level": 7
+      },
+      {
+        "domain": "Energy",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
         "stress_level": 3
       },
       {
         "domain": "Food",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Climate",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "China",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
       },
       {
-        "domain": "Geopolitics",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
+        "domain": "Systemic",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
       },
       {
         "domain": "Cyber",
@@ -370,13 +403,13 @@
         "stress_level": 1
       },
       {
-        "domain": "Supply Chain",
+        "domain": "Technology",
         "red": 0,
         "amber": 1,
         "stress_level": 1
       },
       {
-        "domain": "Technology",
+        "domain": "Currency",
         "red": 0,
         "amber": 1,
         "stress_level": 1
@@ -392,12 +425,6 @@
         "red": 0,
         "amber": 1,
         "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
       }
     ],
     "convergence_active": true,
@@ -406,33 +433,63 @@
         "domain": "Social",
         "red": 3,
         "amber": 0,
-        "stress_level": 6
+        "stress_level": 9
       },
       {
         "domain": "Financial",
-        "red": 1,
+        "red": 2,
         "amber": 1,
+        "stress_level": 7
+      },
+      {
+        "domain": "Energy",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Geopolitics",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Supply Chain",
+        "red": 1,
+        "amber": 0,
         "stress_level": 3
       },
       {
         "domain": "Food",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "Climate",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
       },
       {
         "domain": "China",
         "red": 1,
         "amber": 0,
-        "stress_level": 2
+        "stress_level": 3
+      },
+      {
+        "domain": "Middle East",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
+      },
+      {
+        "domain": "Systemic",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 3
       }
     ],
-    "timestamp": "2026-08-19T11:04:37.102654+00:00"
+    "timestamp": "2026-08-19T11:06:19.000000+00:00"
   }
 }

@@ -1,178 +1,147 @@
 {
-  "scan_time": "2026-08-19T07:05:06.398858",
+  "scan_time": "2026-08-19T11:06:19.000000+00:00",
   "scan_type": "breaking_event_4h",
-  "scanner": "BlackWatch Breaking Event Scanner",
   "domains_scanned": 12,
-  "queries_executed": 18,
-  "category_5_events": 7,
+  "events_detected": 8,
   "events": [
     {
-      "id": "BE-2026-08-19-0800-001",
-      "title": "Iran ceasefire expired - ship struck in Hormuz, Trump threatens Oman",
       "domain": "middle_east",
+      "title": "Strait of Hormuz Crisis: Iran-US-Israel Stalemate Continues",
       "category": "war_military",
       "severity": 5,
-      "confidence": 10,
-      "timestamp": "2026-08-18T00:00:00Z",
-      "source": "CNN, RTE, Wikipedia, LifeNews, BigGo Finance, Rappler",
-      "summary": "60-day US-Iran ceasefire expired Aug 17. Commercial vessel struck in Strait of Hormuz Aug 18. Trump threatened to bomb Oman if it interferes with Hormuz reopening. 230+ oil tankers waiting. Oil surging past 90. Iran firing on vessels trying to transit.",
+      "summary": "US-Israel war on Iran (since Feb 2026) continues. Strait of Hormuz effectively closed by Tehran. 20M barrels/day oil flow disrupted. Houthi attacks on Bab al-Mandeb strait killing crew members. Brent crude at ~$89.53, up 24% since war began. Iran threatens offensive action if diplomacy fails. Negotiations stalled.",
+      "sources": [
+        "Reuters 2026-08-17",
+        "Al Jazeera 2026-08-12",
+        "CNN 2026-08-15",
+        "Britannica 2026"
+      ],
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
-        "supply_chain"
-      ],
-      "url": "https://www.cnn.com/2026/08/17/world/live-news/iran-war-trump",
-      "new_this_scan": false,
-      "updated": true,
-      "change": "Ship struck in Hormuz - new attack post-ceasefire expiry. Oil surging past 90."
-    },
-    {
-      "id": "BE-2026-08-19-0800-002",
-      "title": "30Y Treasury yield hits 5.33-5.34% - 19-year high (since 2007)",
-      "domain": "us_fed",
-      "category": "market_dislocation",
-      "severity": 5,
-      "confidence": 10,
-      "timestamp": "2026-08-18T14:00:00Z",
-      "source": "CNBC, NYT, CNN, Bloomberg",
-      "summary": "30-year Treasury yield at 5.33-5.34%, highest since 2007. Global bond sell-off: Canada, Japan, Germany also at decade-high yields. CNN reports bond markets getting hammered. Strategists see scope for further selloff.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "url": "https://www.cnbc.com/2026/08/18/treasury-yields-.html",
-      "new_this_scan": false,
-      "updated": true,
-      "change": "CNN confirms bond markets getting hammered. Global scope widening."
-    },
-    {
-      "id": "BE-2026-08-19-0800-003",
-      "title": "UK gilts flagged as weakest link in global bond sell-off",
-      "domain": "uk",
-      "category": "market_dislocation",
-      "severity": 4,
-      "confidence": 9,
-      "timestamp": "2026-08-19T00:00:00Z",
-      "source": "deVere Group, Sharecafe, InvestorIdeas, Maravi Post",
-      "summary": "Nigel Green (deVere CEO) warns UK gilts could become weakest link. Collapsed Middle East ceasefire and Hormuz attack push oil above 90. Gilts pulled higher in sympathy with US Treasurys. BOE may raise rates from September. Hedge fund leverage in gilt market flagged.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "url": "https://www.sharecafe.com.au/2026/08/19/uk-gilts-face-heightened-risk-amid-global-bond-sell-off/",
-      "new_this_scan": true,
-      "updated": true,
-      "change": "ESCALATED from severity 3 to 4. Multiple sources flagging UK gilts as systemic risk point."
-    },
-    {
-      "id": "BE-2026-08-19-0800-004",
-      "title": "Gold at 4,339-4,397/oz - extreme safe haven, +29.72% YoY",
-      "domain": "commodities",
-      "category": "market_dislocation",
-      "severity": 4,
-      "confidence": 10,
-      "timestamp": "2026-08-19T07:00:00Z",
-      "source": "TradingEconomics, LiteFinance, Fortune, APMEX",
-      "summary": "Gold trading 4,339-4,397/oz. Aug 19 range expected 4,313-4,441. Record high was 5,602 in Jan 2026. +29.72% YoY. War premium, currency crisis, and bond sell-off driving demand. Analysts say handbrake released.",
-      "escalate_to": [
-        "gold",
-        "currency"
-      ],
-      "url": "https://tradingeconomics.com/commodity/gold",
-      "new_this_scan": false,
-      "updated": false,
-      "change": "Stable. Price consolidating in 4,313-4,441 range."
-    },
-    {
-      "id": "BE-2026-08-19-0800-005",
-      "title": "Ebola epidemic - deadliest in DRC history, PHEIC declared",
-      "domain": "pandemic_health",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "confidence": 10,
-      "timestamp": "2026-08-18T00:00:00Z",
-      "source": "WHO, ECDC, CDC, UN News, Wikipedia",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC/Uganda. Now deadliest in DRC history per WHO/UN. PHEIC declared May 17. Existing treatments certified for Zaire species, not Bundibugyo. Fastest-growing Ebola outbreak on record.",
-      "escalate_to": [
         "supply_chain",
-        "social_cohesion"
-      ],
-      "url": "https://news.un.org/en/story/2026/08/1168154",
-      "new_this_scan": false,
-      "updated": true,
-      "change": "UN News confirms deadliest in DRC history. WHO regional office updating."
+        "food_security"
+      ]
     },
     {
-      "id": "BE-2026-08-19-0800-006",
-      "title": "Yen intervention failing - USD/JPY at 159.10, half gains erased",
       "domain": "japan",
+      "title": "Historic US-Japan Yen Intervention FAILING - Yen Sliding Back to 160",
       "category": "sovereign_intervention",
       "severity": 4,
-      "confidence": 9,
-      "timestamp": "2026-08-17T00:00:00Z",
-      "source": "CNBC, Goldman Sachs, TradingEconomics, Vantage Markets, Fortune",
-      "summary": "Historic US-Japan intervention fading. USD/JPY at 159.10, erased half of intervention gains. BOJ held at 1.0% (8-1 vote). Markets speculating Sept/Oct hike. Bessent says Japan should reinforce with fundamentals.",
+      "summary": "Joint US-Japan currency intervention (July 31, $34B deployed) has erased half its gains within 2 weeks. Yen back near 160 level. US Treasury sold euros (not dollars) to fund intervention, signaling stress in Treasury market. FIMA repo facility upsized. BOJ under pressure to normalize rates by September. Structural forces overwhelming intervention.",
+      "sources": [
+        "CNBC 2026-08-12",
+        "Fortune 2026-08-12",
+        "NYT 2026-08-14",
+        "Goldman Sachs"
+      ],
       "escalate_to": [
+        "fin_stability",
         "currency",
-        "fin_stability"
-      ],
-      "url": "https://www.cnbc.com/2026/08/12/japan-yen-us-dollar-intervention-.html",
-      "new_this_scan": false,
-      "updated": false,
-      "change": "Stable. Yen holding 159 level, intervention effects fading."
-    },
-    {
-      "id": "BE-2026-08-19-0800-007",
-      "title": "Oil surging past 90 on Hormuz attack - WTI 84.92, Brent 93.26",
-      "domain": "commodities",
-      "category": "energy_shock",
-      "severity": 4,
-      "confidence": 9,
-      "timestamp": "2026-08-18T00:00:00Z",
-      "source": "TradingEconomics, BigGo Finance, InvestorIdeas",
-      "summary": "WTI at 84.92 (+0.49%), Brent at 93.26. Oil surging past 90 on Hormuz ship attack post-ceasefire expiry. LiteFinance range 67.93-106.74. Geopolitical tensions and potential Middle East disruptions driving prices.",
-      "escalate_to": [
-        "energy",
-        "supply_chain"
-      ],
-      "url": "https://finance.biggo.com/news/e3f135bb-0020-4ad4-ac48-b5143a7bd418",
-      "new_this_scan": true,
-      "updated": true,
-      "change": "NEW: Oil surging past 90 on Hormuz attack. Energy shock intensifying."
-    }
-  ],
-  "non_category_5_findings": [
-    {
-      "domain": "latam",
-      "finding": "Argentina debt market return delayed again. Country risk elevated. No acute crisis.",
-      "severity": 2
-    },
-    {
-      "domain": "eu_ecb",
-      "finding": "ECB set for final Sept hike. Bulgaria joined Eurozone Jan 2026. Shortest tightening since 2011.",
-      "severity": 2
-    },
-    {
-      "domain": "china",
-      "finding": "PBOC injected 349B yuan reverse repos. Deflation fight faltering. Property crisis ongoing. PBOC pledges timely new policy rollout.",
-      "severity": 2
-    },
-    {
-      "domain": "em_asia",
-      "finding": "Korean won at 1-year high. Asian FX rising as Treasury yields ease. No acute crisis.",
-      "severity": 1
-    },
-    {
-      "domain": "africa",
-      "finding": "South Africa debt crisis worsening. Nigeria-South Africa diplomatic confrontation. Coup Belt ongoing. No new acute crisis.",
-      "severity": 2
+        "us_cycle"
+      ]
     },
     {
       "domain": "financial_system",
-      "finding": "No new bank failures. Credit bubble entering terminal phase per analyst. ECB June hike weakening lending. AI systemic risk flagged.",
-      "severity": 2
+      "title": "Global Synchronized Bond Sell-Off: Credit Bubble Terminal Phase",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Global bond markets in synchronized sell-off. German Bund yields at 3.255% (highest since 2011). JGB 10Y at 2.95% (3-decade high). UK gilts disproportionately exposed - BOE facing impossible choice between rate cuts for weak growth and hikes for oil-driven inflation. Credit bubble analyst Doug Noland warns of terminal phase. ECB set for final rate hike next month.",
+      "sources": [
+        "InvestorIdeas 2026-08-18",
+        "Reuters 2026-08-13",
+        "HuffPost 2026-08-19",
+        "TalkMarkets 2026-08-15"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "europe",
+        "liquidity"
+      ]
+    },
+    {
+      "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic: Fastest-Growing Outbreak on Record, WHO PHEIC Declared",
+      "category": "pandemic",
+      "severity": 5,
+      "summary": "Bundibugyo ebolavirus outbreak in DRC now deadliest in country history. 4,945 confirmed cases, 2,325 deaths (as of Aug 15). 730 patients hospitalized. Spread to Uganda. WHO declared Public Health Emergency of International Concern. Existing Ebola treatments certified for Zaire species, not Bundibugyo - complicating response.",
+      "sources": [
+        "WHO/UN 2026-08-17",
+        "ECDC 2026-08-16",
+        "Wikipedia 2026"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ]
+    },
+    {
+      "domain": "commodities",
+      "title": "Gold at $4,339 - Safe Haven Demand Surge on Middle East Crisis",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "Gold hit fresh 2-month peak near $4,450 in early August. Currently $4,339/oz, up 8.27% past month, up 29.72% YoY. Central bank buying (especially China) + geopolitical tensions driving safe-haven demand. Futures briefly touched $4,500.",
+      "sources": [
+        "TradingEconomics 2026-08-19",
+        "IG UK 2026-08-17",
+        "Intellectia.ai 2026-08-13"
+      ],
+      "escalate_to": [
+        "gold",
+        "currency"
+      ]
+    },
+    {
+      "domain": "uk",
+      "title": "UK Gilts Disproportionately Exposed to Global Bond Sell-Off",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "summary": "UK gilts hit harder than peers in global bond sell-off. BOE facing impossible policy dilemma: weak growth demands cuts, oil-driven inflation demands hikes. Markets swung from pricing cuts to pricing hikes within months. CPI at 2.6% (above 2% target).",
+      "sources": [
+        "InvestorIdeas 2026-08-18",
+        "Finance News Network 2026-08-18",
+        "House of Commons Library"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "domain": "china",
+      "title": "China July Bank Loans Post Record Contraction - Deflation Fight Faltering",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "China bank loans contracted in July 2026 - second time on record. Credit demand faltering despite PBOC easing. Deflation fight losing ground in real time. Property crisis ongoing. PBOC maintaining stable currency to avoid devaluation triggers with Washington.",
+      "sources": [
+        "Reuters 2026-08-14",
+        "Asia Times 2026-08-13"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ]
+    },
+    {
+      "domain": "africa",
+      "title": "Nigeria-South Africa Diplomatic Crisis: Afrophobic Violence, Evacuations",
+      "category": "sovereign_crisis",
+      "severity": 2,
+      "summary": "Nigeria evacuating citizens from South Africa amid rising afrophobic tensions. 83 more citizens scheduled for evacuation Aug 19. Diplomatic confrontation at Commonwealth Parliamentary Association conference.",
+      "sources": [
+        "QNC News 2026-08-18",
+        "ThisDayLive 2026-08-19"
+      ],
+      "escalate_to": [
+        "geopolitical"
+      ]
     }
-  ]
+  ],
+  "no_events_domains": [
+    "us_fed",
+    "latam",
+    "em_asia"
+  ],
+  "summary": "8 cat-5 events detected across 12 domains. 2 severity-5 (Hormuz war, Ebola PHEIC), 2 severity-4 (yen intervention failure, bond sell-off), 3 severity-3 (gold surge, UK gilts, China credit), 1 severity-2 (Nigeria-SA). Signal board updated: macro_event added, 8 signals escalated."
 }
