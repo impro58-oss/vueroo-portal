@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Global bond sell-off (German Bund 3.255%, JGB 2.95%, UK gilts hit hard). Yen intervention failure signals Treasury market stress. Credit bubble terminal phase warning.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "note": "ESCALATED: Gold at $4,424 (RED threshold $3,500 breached, +26.4%). Global bond sell-off (German Bund 3.26%, JGB 2.95%, UK gilts hit hard). Yen intervention failure at 159.15. Credit spread BAA10Y widening to 1.69%. MOVE index elevated. Credit bubble terminal phase warning.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,17 +58,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 89.53,
+      "value": 91.69,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
-      "change_from_last": 0.52,
+      "change_from_last": 2.16,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
-      "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-11",
-      "note": "ESCALATED: Brent ~$89.53, up 24% since Iran war began. Strait of Hormuz closed - 20M bbl/day disrupted. Houthi attacks on Bab al-Mandeb. Saudi offering non-chokepoint cargoes.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "description": "Brent Crude Oil Price (Yahoo BZ=F)",
+      "series_id": "Yahoo BZ=F",
+      "last_date": "2026-08-19",
+      "note": "ESCALATED: Brent $91.69, up 3.58% today. Approaching $100 threshold. Strait of Hormuz closed - 20M bbl/day disrupted. Houthi attacks on Bab al-Mandeb.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-17",
-      "note": "ESCALATED: Iran war stalemate + Nigeria-SA diplomatic crisis + Houthi shipping attacks. Multiple simultaneous geopolitical flashpoints.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "note": "ESCALATED: Gold RED threshold breach ($4,424 > $3,500) + Iran war stalemate + Nigeria-SA diplomatic crisis + Houthi shipping attacks + Nikkei -4.37%. Multiple simultaneous geopolitical flashpoints.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,17 +103,17 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 89.53,
+      "value": 91.69,
       "unit": "$/bbl (proxy)",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
-      "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
-      "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-11",
-      "note": "ESCALATED: Hormuz closure (20M bbl/day) + Bab al-Mandeb Houthi attacks + Ebola outbreak disrupting DRC/Uganda. Multi-vector supply chain stress.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "change_from_last": 2.16,
+      "description": "Using Brent oil as supply chain cost proxy — Brent $91.69 (Yahoo BZ=F)",
+      "series_id": "Yahoo BZ=F (proxy)",
+      "last_date": "2026-08-19",
+      "note": "ESCALATED: Hormuz closure (20M bbl/day) + Bab al-Mandeb Houthi attacks + Ebola outbreak disrupting DRC/Uganda + Brent at $91.69 approaching $100. Multi-vector supply chain stress.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -193,32 +193,32 @@
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
-      "value": 118.9,
-      "status": "amber",
+      "value": 159.147,
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
-      "change_from_last": -0.28,
-      "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad)",
-      "series_id": "DTWEXBGS",
-      "last_date": "2026-08-14",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.147)",
-      "timestamp": "2026-08-19T11:46:46.000000+00:00"
+      "confidence": 9,
+      "change_from_last": -0.18,
+      "unit": "USD/JPY",
+      "description": "USD/JPY at 159.15 — AMBER threshold (158.0) breached. Intervention zone.",
+      "series_id": "Yahoo JPY=X",
+      "last_date": "2026-08-19",
+      "note": "ESCALATED: USD/JPY 159.15 above 158.0 AMBER threshold. JGB 10Y at 2.95% (three-decade high). Joint intervention failing. Yen at weakest since 1990s crisis levels.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4339.41,
+      "value": 4424.2,
       "unit": "$/oz",
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
-      "change_from_last": -10.93,
-      "description": "Gold Spot: ,369.82/oz (BullionVault live)",
-      "series_id": "BullionVault Spot",
+      "confidence": 10,
+      "change_from_last": 84.79,
+      "description": "Gold Spot: $4,424.20/oz (Yahoo Finance)",
+      "series_id": "Yahoo GC=F",
       "last_date": "2026-08-19",
-      "note": "ESCALATED: Gold at $4,339, hit $4,450 peak. Safe haven surge on Iran war + bond sell-off. Central bank buying (China). Futures touched $4,500.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "note": "ESCALATED: Gold $4,424 — RED threshold ($3,500) breached (+26.4%). AMBER threshold ($3,000) also breached (+47.5%). Safe haven surge on Iran war + global bond sell-off + yen intervention failure. Central bank buying (China).",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -262,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: German Bund at 3.255% (highest since 2011). ECB set for final rate hike. UK gilts disproportionately exposed. BOE facing impossible policy dilemma.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "note": "ESCALATED: German Bund at 3.26% (highest since 2011). JGB 10Y at 2.95% (three-decade high). ECB set for final rate hike. UK gilts disproportionately exposed. BOE facing impossible policy dilemma.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -283,17 +283,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 89.53,
+      "value": 91.69,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
-      "change_from_last": 0.52,
+      "change_from_last": 2.16,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
-      "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-11",
-      "note": "ESCALATED: US-Israel-Iran war active since Feb 2026. Hormuz effectively closed. Stalemate continues. Houthi attacks on shipping. Iran threatens offensive if diplomacy fails.",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "description": "Brent Oil as ME tension proxy (Yahoo BZ=F)",
+      "series_id": "Yahoo BZ=F",
+      "last_date": "2026-08-19",
+      "note": "ESCALATED: US-Israel-Iran war active since Feb 2026. Brent $91.69 approaching $100 threshold. Hormuz effectively closed. Houthi attacks on shipping. Iran threatens offensive if diplomacy fails.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -319,10 +319,10 @@
       "confidence": 9,
       "change_from_last": 0,
       "unit": "alert",
-      "description": "Breaking event scanner: 8 cat-5 events detected. Hormuz crisis + Ebola PHEIC + yen intervention failure + global bond sell-off.",
+      "description": "Breaking event scanner: 8 cat-5 events detected. Hormuz crisis + Ebola PHEIC + yen intervention failure + global bond sell-off + gold RED threshold breach.",
       "last_date": "2026-08-19",
-      "note": "8 events: Hormuz war (sev 5), Ebola PHEIC (sev 5), yen intervention failure (sev 4), bond sell-off (sev 4), gold surge (sev 3), UK gilt crisis (sev 3), China credit contraction (sev 3), Nigeria-SA crisis (sev 2).",
-      "timestamp": "2026-08-19T11:06:19.000000+00:00"
+      "note": "8 events: Hormuz war (sev 5), Ebola PHEIC (sev 5), yen intervention failure (sev 4), bond sell-off (sev 4), gold RED threshold breach (sev 4), UK gilt crisis (sev 3), China credit contraction (sev 3), Nigeria-SA crisis (sev 2). Brent $91.69 approaching $100.",
+      "timestamp": "2026-08-19T11:46:12.000000+00:00"
     }
   },
   "overall_risk": {

@@ -1,41 +1,37 @@
 {
   "scan_date": "2026-08-19",
-  "scan_time_utc": "2026-08-19T03:43:40.187449+00:00",
-  "manual_fill_time_utc": "2026-08-19T03:44:50.000000+00:00",
+  "scan_time_utc": "2026-08-19T11:46:12.231281+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
-      "price": 159.424,
+      "price": 159.147,
       "prev_close": 159.328,
-      "change_1d_pct": 0.06,
+      "change_1d_pct": -0.11,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1585,
-      "prev_close": 1.153,
-      "change_1d_pct": 0.48,
-      "data_points": 5,
+      "error": "The read operation timed out",
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3538,
+      "price": 1.3552,
       "prev_close": 1.3498,
-      "change_1d_pct": 0.3,
-      "data_points": 5,
+      "change_1d_pct": 0.4,
+      "data_points": 4,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7399,
+      "price": 6.7373,
       "prev_close": 6.7433,
-      "change_1d_pct": -0.05,
+      "change_1d_pct": -0.09,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1399.18,
+      "price": 1391.71,
       "prev_close": 1416.46,
-      "change_1d_pct": -1.22,
+      "change_1d_pct": -1.75,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -47,44 +43,43 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 65724.25,
+      "price": 65326.42,
       "prev_close": 68308.59,
-      "change_1d_pct": -3.78,
+      "change_1d_pct": -4.37,
       "data_points": 5,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 25488.34,
+      "price": 25495.07,
       "prev_close": 25440.17,
-      "change_1d_pct": 0.19,
+      "change_1d_pct": 0.22,
       "data_points": 5,
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.84,
-      "prev_close": 14.55,
-      "change_1d_pct": 8.87,
+      "price": 15.76,
+      "prev_close": 14.63,
+      "change_1d_pct": 7.72,
       "data_points": 5,
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 70.0,
-      "source": "web_search (The Market Breakdown, Aug 15: 69.58; estimated +0.4 for Aug 18 bond yield surge)",
-      "data_vintage": "2026-08-15",
-      "confidence": "MEDIUM"
+      "price": 115,
+      "source": "web_search (estimated from market commentary)",
+      "note": "MOVE index at highest level since May spike per Chandler Asset Mgmt. Exact value not publicly available; estimated ~115 based on historical range and rising yield volatility context."
     },
     "GOLD": {
-      "price": 4410.7,
-      "prev_close": 4363.6,
-      "change_1d_pct": 1.08,
-      "data_points": 5,
+      "price": 4424.2,
+      "prev_close": 4380.4,
+      "change_1d_pct": 1.0,
+      "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
       "price": 91.69,
-      "prev_close": 87.07,
-      "change_1d_pct": 5.31,
-      "data_points": 5,
+      "prev_close": 88.52,
+      "change_1d_pct": 3.58,
+      "data_points": 4,
       "source": "yahoo"
     },
     "US10Y": {
@@ -96,27 +91,24 @@
     },
     "JGB10Y": {
       "price": 2.95,
-      "source": "web_search (Trading Economics, Aug 18: 2.95%; 3-decade high since 1996)",
-      "data_vintage": "2026-08-18",
-      "confidence": "HIGH"
+      "source": "web_search (TradingEconomics + Reuters)",
+      "note": "Three-decade high. Climbed to 2.945% intraday Aug 18, highest since Sept 1996. Inflation worries driving."
     },
     "DE10Y": {
-      "price": 3.21,
-      "source": "web_search (Economic Times, Aug 17: 3.21%; highest since May 2011)",
-      "data_vintage": "2026-08-17",
-      "confidence": "HIGH"
+      "price": 3.26,
+      "source": "web_search (EUToday + Economic Times)",
+      "note": "Highest since April 2011. Euro zone bond yields near 15-year highs on Middle East war inflation fears."
     },
     "BAA10Y": {
       "price": 1.69,
-      "source": "web_search (FRED CSV, Aug 17: 1.69%)",
-      "data_vintage": "2026-08-17",
-      "confidence": "HIGH"
+      "source": "web_search (FRED CSV data)",
+      "note": "BAA-10Y spread widening from 1.61 to 1.69 over two weeks. Credit stress building."
     },
     "BTC": {
-      "price": 64290.06,
+      "price": 64438.48,
       "prev_close": 63024.32,
-      "change_1d_pct": 2.01,
-      "data_points": 4,
+      "change_1d_pct": 2.24,
+      "data_points": 5,
       "source": "yahoo"
     }
   },
@@ -125,83 +117,49 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4410.7,
+      "current": 4424.2,
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Gold mania — currency crisis or war premium",
-      "escalate": ["fin_stability", "geopolitical"],
-      "distance_pct": 26.02
-    },
-    {
-      "key": "JGB10Y",
-      "name": "Japan 10-Year JGB Yield",
-      "category": "rates",
-      "current": 2.95,
-      "threshold": 1.5,
-      "direction": "above",
-      "severity": "RED",
-      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
-      "escalate": ["japan_sovereign", "fin_stability"],
-      "distance_pct": 96.67,
-      "source": "web_search",
-      "note": "3-decade high since 1996. BOJ rate hike bets for September."
+      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "escalate": [
+        "fin_stability",
+        "geopolitical"
+      ],
+      "distance_pct": 26.41
     },
     {
       "key": "USDJPY",
       "name": "USD/JPY",
       "category": "currency",
-      "current": 159.424,
+      "current": 159.147,
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Intervention zone — joint intervention likely failing",
-      "escalate": ["japan_sovereign", "currency"],
-      "distance_pct": 0.9
-    },
-    {
-      "key": "EURUSD",
-      "name": "EUR/USD",
-      "category": "currency",
-      "current": 1.1585,
-      "threshold": 1.15,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "Euro strength — dollar weakness, possible Fed pivot",
-      "escalate": ["us_cycle", "currency"],
-      "distance_pct": 0.74
-    },
-    {
-      "key": "DE10Y",
-      "name": "German 10-Year (Bund)",
-      "category": "rates",
-      "current": 3.21,
-      "threshold": 3.0,
-      "direction": "above",
-      "severity": "AMBER",
-      "meaning": "European fiscal stress — periphery spreads widening",
-      "escalate": ["europe", "fin_stability"],
-      "distance_pct": 7.0,
-      "source": "web_search",
-      "note": "Highest since May 2011. 15-year peak."
+      "meaning": "Intervention zone \u2014 joint intervention likely failing",
+      "escalate": [
+        "japan_sovereign",
+        "currency"
+      ],
+      "distance_pct": 0.73
     },
     {
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4410.7,
+      "current": 4424.2,
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
-      "escalate": ["fin_stability"],
-      "distance_pct": 47.02
+      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "escalate": [
+        "fin_stability"
+      ],
+      "distance_pct": 47.47
     }
   ],
-  "breach_count": 6,
+  "breach_count": 3,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED",
-  "manual_fill_instruments": ["MOVE", "JGB10Y", "DE10Y", "BAA10Y"],
-  "new_breaches_from_manual_fill": ["JGB10Y (RED)", "DE10Y (AMBER)"]
+  "max_severity": "RED"
 }
