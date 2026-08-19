@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-19T11:06:19.000000+00:00",
+    "last_update": "2026-08-19T11:46:46.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
-    "breaking_event": "Breaking event scanner: 8 cat-5 events. Hormuz war + Ebola PHEIC + yen failure + bond sell-off + gold surge + UK gilt crisis + China credit contraction + Nigeria-SA crisis."
+    "breaking_event": "Breaking event scanner: 8 cat-5 events. Hormuz war + Ebola PHEIC + yen failure + bond sell-off + gold surge + UK gilt crisis + China credit contraction + Nigeria-SA crisis.",
+    "threshold_breach": "3 thresholds breached"
   },
   "signals": {
     "fin_stability": {
@@ -193,16 +194,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.9,
-      "status": "info",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "Stability = low volatility. Track change rate.",
-      "timestamp": "2026-08-19T11:04:32.496249+00:00"
+      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.147)",
+      "timestamp": "2026-08-19T11:46:46.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
