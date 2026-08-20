@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-20T18:20:58.000000+00:00",
+    "last_update": "2026-08-20T18:21:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "4 thresholds breached",
+    "threshold_breach": "6 thresholds breached (1 RED, 5 AMBER)",
     "breaking_event": "Breaking event scanner: 8 events detected, 5 at CAT-5 severity."
   },
   "signals": {
@@ -202,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: Yen at 160 level triggering US-Japan intervention. Dollar under pressure from Treasury buyback.",
-      "timestamp": "2026-08-20T18:20:58.000000+00:00"
+      "note": "ESCALATED: Yen at 160 level triggering US-Japan intervention. Dollar under pressure from Treasury buyback. | Threshold breach: JGB10Y above 2.5% (current: 2.85%)",
+      "timestamp": "2026-08-20T18:21:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -254,7 +254,7 @@
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
@@ -262,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-20",
-      "note": "ESCALATED: French borrowing costs highest since 2008. German yields at 2011 levels. ECB set to deliver final rate hike.",
-      "timestamp": "2026-08-20T18:20:58.000000+00:00"
+      "note": "ESCALATED: French borrowing costs highest since 2008. German yields at 2011 levels. ECB set to deliver final rate hike. | Threshold breach: German 10Y Bund above 3.0% (current: 3.21%, 15-year high)",
+      "timestamp": "2026-08-20T18:21:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
