@@ -2,7 +2,7 @@
   "metadata": {
     "source": "FRED API (St. Louis Fed)",
     "api_key": "e9104d3b...f853",
-    "last_update": "2026-08-20T18:19:06.092825+00:00",
+    "last_update": "2026-08-22T13:13:50.022112+00:00",
     "indicators_fetched": 18,
     "indicators_total": 18,
     "system": "CycleVue Pro \u2014 Live Data"
@@ -67,7 +67,7 @@
           "value": 122.59387
         }
       ],
-      "timestamp": "2026-08-20T18:18:56.468536+00:00"
+      "timestamp": "2026-08-22T13:13:41.892030+00:00"
     },
     "debt_service": {
       "name": "Federal Debt Service",
@@ -128,7 +128,7 @@
           "value": 98.7105
         }
       ],
-      "timestamp": "2026-08-20T18:18:56.944228+00:00"
+      "timestamp": "2026-08-22T13:13:42.205774+00:00"
     },
     "budget_deficit": {
       "name": "Budget Deficit / GDP",
@@ -189,7 +189,7 @@
           "value": -5.76906
         }
       ],
-      "timestamp": "2026-08-20T18:18:57.436116+00:00"
+      "timestamp": "2026-08-22T13:13:43.402883+00:00"
     },
     "current_account": {
       "name": "Current Account Balance",
@@ -250,7 +250,7 @@
           "value": -73261.0
         }
       ],
-      "timestamp": "2026-08-20T18:18:57.881027+00:00"
+      "timestamp": "2026-08-22T13:13:43.769984+00:00"
     },
     "fed_funds": {
       "name": "Federal Funds Rate",
@@ -311,26 +311,18 @@
           "value": 3.63
         }
       ],
-      "timestamp": "2026-08-20T18:18:58.349671+00:00"
+      "timestamp": "2026-08-22T13:13:44.158309+00:00"
     },
     "yield_curve": {
       "name": "Yield Curve (10Y - 2Y)",
       "series_id": "T10Y2Y",
-      "value": 0.46,
+      "value": 0.5,
       "unit": "%",
       "threshold": 0,
       "status": "good",
       "frequency": "daily",
-      "last_date": "2026-08-19",
+      "last_date": "2026-08-21",
       "history": [
-        {
-          "date": "2026-08-04",
-          "value": 0.43
-        },
-        {
-          "date": "2026-08-05",
-          "value": 0.45
-        },
         {
           "date": "2026-08-06",
           "value": 0.44
@@ -370,9 +362,17 @@
         {
           "date": "2026-08-19",
           "value": 0.46
+        },
+        {
+          "date": "2026-08-20",
+          "value": 0.5
+        },
+        {
+          "date": "2026-08-21",
+          "value": 0.5
         }
       ],
-      "timestamp": "2026-08-20T18:18:58.738179+00:00"
+      "timestamp": "2026-08-22T13:13:44.804506+00:00"
     },
     "m2_growth": {
       "name": "M2 Money Supply",
@@ -433,7 +433,7 @@
           "value": 23290.1
         }
       ],
-      "timestamp": "2026-08-20T18:18:59.123193+00:00"
+      "timestamp": "2026-08-22T13:13:45.146955+00:00"
     },
     "cpi": {
       "name": "CPI Inflation YoY",
@@ -494,7 +494,7 @@
           "value": 332.813
         }
       ],
-      "timestamp": "2026-08-20T18:19:00.971709+00:00"
+      "timestamp": "2026-08-22T13:13:45.498179+00:00"
     },
     "unemployment": {
       "name": "Unemployment Rate",
@@ -555,7 +555,7 @@
           "value": 4.1
         }
       ],
-      "timestamp": "2026-08-20T18:19:01.444005+00:00"
+      "timestamp": "2026-08-22T13:13:45.902123+00:00"
     },
     "consumer_sentiment": {
       "name": "Consumer Sentiment",
@@ -616,26 +616,18 @@
           "value": 49.5
         }
       ],
-      "timestamp": "2026-08-20T18:19:01.844535+00:00"
+      "timestamp": "2026-08-22T13:13:46.240760+00:00"
     },
     "sp500": {
       "name": "S&P 500",
       "series_id": "SP500",
-      "value": 7707.98,
+      "value": 7674.37,
       "unit": "index",
       "threshold": null,
       "status": "info",
       "frequency": "daily",
-      "last_date": "2026-08-19",
+      "last_date": "2026-08-21",
       "history": [
-        {
-          "date": "2026-08-04",
-          "value": 7736.52
-        },
-        {
-          "date": "2026-08-05",
-          "value": 7723.55
-        },
         {
           "date": "2026-08-06",
           "value": 7709.96
@@ -675,24 +667,28 @@
         {
           "date": "2026-08-19",
           "value": 7707.98
+        },
+        {
+          "date": "2026-08-20",
+          "value": 7641.16
+        },
+        {
+          "date": "2026-08-21",
+          "value": 7674.37
         }
       ],
-      "timestamp": "2026-08-20T18:19:02.322920+00:00"
+      "timestamp": "2026-08-22T13:13:46.802961+00:00"
     },
     "vix": {
       "name": "VIX Volatility Index",
       "series_id": "VIXCLS",
-      "value": 14.89,
+      "value": 16.01,
       "unit": "index",
       "threshold": 20,
-      "status": "good",
+      "status": "warning",
       "frequency": "daily",
-      "last_date": "2026-08-19",
+      "last_date": "2026-08-20",
       "history": [
-        {
-          "date": "2026-08-04",
-          "value": 16.5
-        },
         {
           "date": "2026-08-05",
           "value": 15.81
@@ -736,28 +732,24 @@
         {
           "date": "2026-08-19",
           "value": 14.89
+        },
+        {
+          "date": "2026-08-20",
+          "value": 16.01
         }
       ],
-      "timestamp": "2026-08-20T18:19:02.823579+00:00"
+      "timestamp": "2026-08-22T13:13:47.292433+00:00"
     },
     "credit_spread": {
       "name": "Credit Spread (BAA - 10Y)",
       "series_id": "BAA10Y",
-      "value": 1.68,
+      "value": 1.64,
       "unit": "%",
       "threshold": 3,
       "status": "good",
       "frequency": "daily",
-      "last_date": "2026-08-18",
+      "last_date": "2026-08-20",
       "history": [
-        {
-          "date": "2026-08-03",
-          "value": 1.61
-        },
-        {
-          "date": "2026-08-04",
-          "value": 1.64
-        },
         {
           "date": "2026-08-05",
           "value": 1.62
@@ -797,28 +789,28 @@
         {
           "date": "2026-08-18",
           "value": 1.68
+        },
+        {
+          "date": "2026-08-19",
+          "value": 1.64
+        },
+        {
+          "date": "2026-08-20",
+          "value": 1.64
         }
       ],
-      "timestamp": "2026-08-20T18:19:03.647361+00:00"
+      "timestamp": "2026-08-22T13:13:47.705760+00:00"
     },
     "treasury_10y": {
       "name": "10-Year Treasury Rate",
       "series_id": "DGS10",
-      "value": 4.71,
+      "value": 4.69,
       "unit": "%",
       "threshold": 4,
       "status": "danger",
       "frequency": "daily",
-      "last_date": "2026-08-18",
+      "last_date": "2026-08-20",
       "history": [
-        {
-          "date": "2026-08-03",
-          "value": 4.7
-        },
-        {
-          "date": "2026-08-04",
-          "value": 4.63
-        },
         {
           "date": "2026-08-05",
           "value": 4.63
@@ -858,9 +850,17 @@
         {
           "date": "2026-08-18",
           "value": 4.71
+        },
+        {
+          "date": "2026-08-19",
+          "value": 4.65
+        },
+        {
+          "date": "2026-08-20",
+          "value": 4.69
         }
       ],
-      "timestamp": "2026-08-20T18:19:04.133076+00:00"
+      "timestamp": "2026-08-22T13:13:48.051467+00:00"
     },
     "mortgage_rate": {
       "name": "30-Year Mortgage Rate",
@@ -921,7 +921,7 @@
           "value": 6.65
         }
       ],
-      "timestamp": "2026-08-20T18:19:04.846710+00:00"
+      "timestamp": "2026-08-22T13:13:48.493985+00:00"
     },
     "jobless_claims": {
       "name": "Initial Jobless Claims",
@@ -982,26 +982,18 @@
           "value": 206000.0
         }
       ],
-      "timestamp": "2026-08-20T18:19:05.262315+00:00"
+      "timestamp": "2026-08-22T13:13:48.870684+00:00"
     },
     "breakeven_inflation": {
       "name": "10-Year Breakeven Inflation",
       "series_id": "T10YIE",
-      "value": 2.3,
+      "value": 2.34,
       "unit": "%",
       "threshold": 2.5,
       "status": "warning",
       "frequency": "daily",
-      "last_date": "2026-08-19",
+      "last_date": "2026-08-21",
       "history": [
-        {
-          "date": "2026-08-04",
-          "value": 2.23
-        },
-        {
-          "date": "2026-08-05",
-          "value": 2.22
-        },
         {
           "date": "2026-08-06",
           "value": 2.26
@@ -1041,9 +1033,17 @@
         {
           "date": "2026-08-19",
           "value": 2.3
+        },
+        {
+          "date": "2026-08-20",
+          "value": 2.34
+        },
+        {
+          "date": "2026-08-21",
+          "value": 2.34
         }
       ],
-      "timestamp": "2026-08-20T18:19:05.711714+00:00"
+      "timestamp": "2026-08-22T13:13:49.683604+00:00"
     },
     "housing_index": {
       "name": "Case-Shiller Home Price Index",
@@ -1104,7 +1104,7 @@
           "value": 331.02
         }
       ],
-      "timestamp": "2026-08-20T18:19:06.092825+00:00"
+      "timestamp": "2026-08-22T13:13:50.022112+00:00"
     }
   },
   "scores": {
@@ -1112,7 +1112,7 @@
       "liquidity": 18,
       "credit": 20,
       "rates": 20,
-      "market": 20
+      "market": 18
     },
     "weights": {
       "liquidity": 0.3,
@@ -1133,14 +1133,14 @@
         "message": "Total cycle score 19/100 \u2014 Crisis conditions detected"
       }
     ],
-    "timestamp": "2026-08-20T18:19:06.092825+00:00"
+    "timestamp": "2026-08-22T13:13:50.022112+00:00"
   },
   "markets": {
-    "vix": 14.89,
-    "spx": 7707.98,
-    "treasury_10y": 4.71,
-    "yield_curve": 0.46,
-    "credit_spread": 1.68,
+    "vix": 16.01,
+    "spx": 7674.37,
+    "treasury_10y": 4.69,
+    "yield_curve": 0.5,
+    "credit_spread": 1.64,
     "fed_funds": 3.63,
     "m2_growth": 0.88,
     "cpi": 3.54,
