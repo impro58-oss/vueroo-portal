@@ -2,27 +2,26 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-23T19:59:22.000000+00:00",
+    "last_update": "2026-08-23T20:03:15.843618+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.75,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-20",
-      "note": "Threshold breach: Gold above 3500 (current: 4680.6) + JGB10Y above 1.5 (current: 2.88, three-decade high)",
-      "timestamp": "2026-08-23T19:59:22.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-23T20:03:09.945046+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -37,7 +36,7 @@
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
       "note": "",
-      "timestamp": "2026-08-22T13:26:34.789014+00:00"
+      "timestamp": "2026-08-23T20:03:10.310069+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -52,7 +51,7 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-22T13:26:35.140621+00:00"
+      "timestamp": "2026-08-23T20:03:10.662863+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -67,13 +66,13 @@
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
       "note": "",
-      "timestamp": "2026-08-22T13:26:35.575893+00:00"
+      "timestamp": "2026-08-23T20:03:11.037383+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 16.01,
-      "status": "red",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 1.12,
@@ -81,8 +80,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-20",
-      "note": "Threshold breach: Gold above 3500 (current: 4680.6)",
-      "timestamp": "2026-08-23T19:59:22.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-23T20:03:11.385081+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,9 +94,9 @@
       "change_from_last": 0,
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
-      "last_date": "2026-08-22",
+      "last_date": "2026-08-23",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-22T13:26:36.186527+00:00"
+      "timestamp": "2026-08-23T20:03:11.407162+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
@@ -112,7 +111,7 @@
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-22T13:26:36.186527+00:00"
+      "timestamp": "2026-08-23T20:03:11.407162+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,7 +126,7 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-08-22T13:26:36.679019+00:00"
+      "timestamp": "2026-08-23T20:03:12.099501+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -142,7 +141,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-22T13:26:35.489596+00:00"
+      "timestamp": "2026-08-23T20:03:10.632699+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -157,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-22T13:26:37.040897+00:00"
+      "timestamp": "2026-08-23T20:03:12.492286+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -172,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-22T13:26:36.186527+00:00"
+      "timestamp": "2026-08-23T20:03:11.407162+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -185,24 +184,24 @@
       "change_from_last": 0,
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
       "series_id": null,
-      "last_date": "2026-08-22",
+      "last_date": "2026-08-23",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-22T13:26:36.186527+00:00"
+      "timestamp": "2026-08-23T20:03:11.407162+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.9,
-      "status": "amber",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 158.993) + JGB10Y RED breach at 2.88% (three-decade high, BOJ losing control of yield curve)",
-      "timestamp": "2026-08-23T19:59:22.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-23T20:03:12.899843+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -212,27 +211,27 @@
       "status": "red",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": -76.2,
-      "description": "Gold Spot Price: \\,604.40/oz (gold-api.com live)",
+      "change_from_last": 314.6,
+      "description": "Gold spot: ,604.40/oz (gold-api.com)",
       "series_id": "gold-api.com XAU",
-      "last_date": "2026-08-22",
-      "note": "Live spot from gold-api.com",
-      "timestamp": "2026-08-22T13:26:46Z"
+      "last_date": "2026-08-23",
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-23T20:03:09.643821+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 77154,
+      "value": 77291,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 0.3,
-      "description": "BTC $77,154 (+0.3% 24h), Dominance: 76.5%",
+      "change_from_last": -0.1,
+      "description": "BTC $77,291 (-0.1% 24h), Dominance: 76.4%",
       "series_id": "CoinGecko API",
-      "last_date": "2026-08-22",
+      "last_date": "2026-08-23",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-22T13:26:34.874547+00:00"
+      "timestamp": "2026-08-23T20:03:10.254064+00:00"
     },
     "china": {
       "name": "China Health",
@@ -247,7 +246,7 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-22T13:26:34.587852+00:00"
+      "timestamp": "2026-08-23T20:03:10.152706+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -262,7 +261,7 @@
       "series_id": "ECBDFR",
       "last_date": "2026-08-21",
       "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-22T13:26:38.498096+00:00"
+      "timestamp": "2026-08-23T20:03:14.446772+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -277,7 +276,7 @@
       "series_id": "T10Y2Y",
       "last_date": "2026-08-21",
       "note": "",
-      "timestamp": "2026-08-22T13:26:38.885507+00:00"
+      "timestamp": "2026-08-23T20:03:14.995737+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -292,7 +291,7 @@
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
       "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-22T13:26:39.192026+00:00"
+      "timestamp": "2026-08-23T20:03:15.468670+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,7 +306,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-22T13:26:39.994536+00:00"
+      "timestamp": "2026-08-23T20:03:15.831529+00:00"
     }
   },
   "overall_risk": {
@@ -318,7 +317,7 @@
     "amber_count": 9,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-22T13:26:40.014887+00:00"
+    "timestamp": "2026-08-23T20:03:15.843618+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -440,6 +439,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-22T13:26:40.014887+00:00"
+    "timestamp": "2026-08-23T20:03:15.843618+00:00"
   }
 }
