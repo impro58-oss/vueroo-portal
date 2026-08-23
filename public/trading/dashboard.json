@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T14:10:57.596658",
+  "timestamp": "2026-08-23T20:59:22.062048",
   "version": "5.3.1-A1",
   "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
   "parameters": {
@@ -28,14 +28,14 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -132.53,
-    "unrealized_pnl_eur": -103.39,
-    "total_pnl_eur": -235.92,
+    "realized_pnl_eur": -321.23,
+    "unrealized_pnl_eur": -19.82,
+    "total_pnl_eur": -341.04,
     "open_positions": 5,
-    "closed_trades": 186,
+    "closed_trades": 187,
     "wins": 71,
-    "losses": 115,
-    "win_rate": 38.2
+    "losses": 116,
+    "win_rate": 38.0
   },
   "open_positions": {
     "SENTUSDT": {
@@ -47,7 +47,7 @@
       "stop": null,
       "highest": 0.01181,
       "lowest": 0.01153,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -62,23 +62,8 @@
       "stop": null,
       "highest": 1.857,
       "lowest": 1.487,
-      "bars_held": 11,
+      "bars_held": 12,
       "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
-    "SPKUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-19T00:00:10.835281",
-      "entry_price": 0.013251,
-      "atr": 0.0005486428571428571,
-      "stop": null,
-      "highest": 0.013251,
-      "lowest": 0.013006,
-      "bars_held": 9,
-      "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250
@@ -92,7 +77,7 @@
       "stop": null,
       "highest": 0.1504,
       "lowest": 0.1476,
-      "bars_held": 8,
+      "bars_held": 9,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -105,29 +90,31 @@
       "entry_price": 1.1598,
       "atr": 0.0030999999999999917,
       "stop": null,
-      "highest": 1.1724,
+      "highest": 1.22,
       "lowest": 1.1598,
-      "bars_held": 6,
+      "bars_held": 7,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250
+    },
+    "LDOUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-08-23T20:59:22.062048",
+      "entry_price": 0.4107,
+      "atr": 0.02453571428571428,
+      "stop": null,
+      "highest": 0.4107,
+      "lowest": 0.4107,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250
     }
   },
   "recent_trades": [
-    {
-      "symbol": "THEUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-09T03:10:21.726080",
-      "exit_date": "2026-08-10T09:01:59.605735",
-      "entry_price": 0.0609,
-      "exit_price": 0.06817857142857142,
-      "pnl_pct": 1.97,
-      "pnl_eur": 4.93,
-      "reason": "TRAILING_STOP",
-      "bars_held": 10,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "EDUUSDT",
       "direction": "LONG",
@@ -374,22 +361,35 @@
       "reason": "DONCHIAN_EXIT_DAILY",
       "bars_held": 8,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "SPKUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-19T00:00:10.835281",
+      "exit_date": "2026-08-23T20:59:22.062048",
+      "entry_price": 0.013251,
+      "exit_price": 0.023599,
+      "pnl_pct": -75.48,
+      "pnl_eur": -188.7,
+      "reason": "DONCHIAN_EXIT_DAILY",
+      "bars_held": 10,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "BFUSDUSDT",
+    "XAUTUSDT",
     "EURUSDT",
-    "PAXGUSDT",
-    "USD1USDT",
+    "KASUSDT",
     "ZECUSDT",
+    "PAXGUSDT",
     "UUSDT",
     "XUSDUSDT",
-    "RLUSDUSDT",
-    "KASUSDT",
-    "XAUTUSDT",
-    "BFUSDUSDT",
-    "USDEUSDT"
+    "USD1USDT",
+    "USDEUSDT",
+    "RLUSDUSDT"
   ]
 }
