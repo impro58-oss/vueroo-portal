@@ -1,134 +1,177 @@
 {
-  "scan_time": "2026-08-19T19:07:21.125666",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0",
+  "scan_time": "2026-08-23T20:06:57.981526",
+  "scan_type": "breaking_event_4h",
   "domains_scanned": 12,
-  "events_detected": 6,
-  "category_5_count": 6,
+  "events_detected": 9,
   "events": [
     {
-      "id": "EVT-2026-08-19-001",
-      "domain": "middle_east",
-      "title": "2026 Strait of Hormuz Crisis / Iran War",
-      "category": "war_military",
-      "severity": 5,
-      "description": "Strait of Hormuz effectively closed since Feb 2026. Trump wants to declare it US territory. Houthi threats to Bahrain/UAE. Iran seeking fees on passing ships.",
-      "sources": [
-        "Wikipedia: 2026 Strait of Hormuz crisis",
-        "Britannica: 2026 Iran war",
-        "CNN Aug 16",
-        "Al Jazeera Aug 16"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical"
-      ],
-      "timestamp": "2026-08-19T19:07:21.125666"
-    },
-    {
-      "id": "EVT-2026-08-19-002",
-      "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic (DRC/Uganda) - PHEIC declared",
-      "category": "pandemic",
-      "severity": 4,
-      "description": "Bundibugyo ebolavirus. 4665 cases, 2184 deaths (46.8% CFR). Fastest-growing Ebola outbreak on record. WHO PHEIC declared May 17 2026.",
-      "sources": [
-        "WHO DON615",
-        "Al Jazeera Aug 18",
-        "UN News Aug 17",
-        "ECDC",
-        "Wikipedia"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "timestamp": "2026-08-19T19:07:21.125666"
-    },
-    {
-      "id": "EVT-2026-08-19-003",
-      "domain": "japan",
-      "title": "US-Japan Joint Currency Intervention - Largest in 15 Years",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "description": "Japan sold ~, US contributed -10B. Yen already erased half the gains, approaching 160 again. Treasury doubling down on bond buybacks.",
-      "sources": [
-        "CNBC Aug 12",
-        "Goldman Sachs",
-        "Fortune Aug 12",
-        "NYT Aug 14",
-        "Axios Aug 19"
-      ],
-      "escalate_to": [
-        "fin_stability",
-        "currency",
-        "liquidity"
-      ],
-      "timestamp": "2026-08-19T19:07:21.125666"
-    },
-    {
-      "id": "EVT-2026-08-19-004",
-      "domain": "china",
-      "title": "China Property Crisis Escalation - .6T Fund Mobilized",
-      "category": "market_dislocation",
-      "severity": 4,
-      "description": "China widens use of .6 trillion fund to spur home spending. July bank loans post record contraction. Crisis spreading to commercial real estate.",
-      "sources": [
-        "Bloomberg Aug 19",
-        "Reuters Aug 14",
-        "People News Today Aug 15"
-      ],
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-19T19:07:21.125666"
-    },
-    {
-      "id": "EVT-2026-08-19-005",
-      "domain": "commodities",
-      "title": "Global Food Crisis Convergence",
-      "category": "energy_shock",
-      "severity": 4,
-      "description": "Hormuz disruption hitting fertilizer/food trade. European drought. Ukraine ports closed since July 2026. US cattle herd smallest since 1950s. JPMorgan warns of food crisis.",
-      "sources": [
-        "Guardian Aug 13",
-        "ZeroHedge Aug 15",
-        "Fox Business Aug 16"
-      ],
-      "escalate_to": [
-        "food_security",
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "timestamp": "2026-08-19T19:07:21.125666"
-    },
-    {
-      "id": "EVT-2026-08-19-006",
       "domain": "us_fed",
-      "title": "US Treasury Verbal Intervention on Bond Market",
+      "title": "US BOND CRISIS: Bessent Intervenes to Cap Yields, National Debt Crosses $40 Trillion",
       "category": "sovereign_intervention",
-      "severity": 3,
-      "description": "Treasury doubling down on buybacks to steady bond market. Fed at 3.50-3.75% with 30% probability of hike.",
+      "severity": 5,
+      "summary": "Treasury Secretary Bessent announced intention to artificially cap runaway Treasury yields, doubling government buybacks. 30-year yields hit 5.34% (highest since 2007). US national debt crossed $40T. Interest costs overtook Medicare as 2nd-largest budget item. Bond market meltdown driving fiscal crisis narrative.",
       "sources": [
-        "Axios Aug 19",
-        "NYT Aug 12",
-        "Trading Economics"
+        "Foreign Policy 2026-08-20",
+        "Daily Caller 2026-08-20",
+        "Denver Gazette 2026-08-21",
+        "India Today 2026-08-21",
+        "Reuters"
       ],
       "escalate_to": [
         "fin_stability",
         "us_cycle",
-        "liquidity"
+        "liquidity",
+        "sov_debt"
+      ]
+    },
+    {
+      "domain": "middle_east",
+      "title": "Strait of Hormuz Crisis: Oil Spill Reaches Iranian Coast, Trump Threatens Economic Warfare",
+      "category": "war_military",
+      "severity": 5,
+      "summary": "US-Iran war continues. Oil spill from projectile hitting cargo vessel reached Irans Qeshm Island mangrove ecosystems. Trump threatened economic warfare against Iran, imposed new sanctions on Hezbollah. Oil prices rose 2%+. Iran lost significant control of Hormuz but US does not fully control it either. EIA forecasts oil prices remain elevated until flows normalize.",
+      "sources": [
+        "NYT 2026-08-21",
+        "CNN 2026-08-18",
+        "CNN 2026-08-20",
+        "Reuters 2026-08-17",
+        "EIA 2026-08-21"
       ],
-      "timestamp": "2026-08-19T19:07:21.125666"
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "supply_chain",
+        "food_security"
+      ]
+    },
+    {
+      "domain": "pandemic_health",
+      "title": "2026 Ebola Epidemic: 5,290 Cases, 2,516 Deaths, WHO Says Spreading Faster Than Ability to Contain",
+      "category": "pandemic",
+      "severity": 5,
+      "summary": "Bundibugyo ebolavirus outbreak in DRC now 5,290 confirmed cases, 2,516 deaths (up from 4,945/2,325 last scan). 837 hospitalized. Spread to Uganda. Aug 23 marks 100 days since outbreak declared. WHO says outbreak spreading faster than ability to contain. MSF says communities not receiving adequate support. Diagnostic delays because tests designed for Zaire, not Bundibugyo species.",
+      "sources": [
+        "ECDC 2026-08-20",
+        "WHO/UN 2026-08-17",
+        "MSF 2026-08-21",
+        "CDC 2026-08-19",
+        "El Pais 2026-08-20"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ]
+    },
+    {
+      "domain": "japan",
+      "title": "Yen Intervention Failing: Yen Settled Near 159, Carry Trade Back On",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "summary": "Joint US-Japan currency intervention has failed to sustain gains. By Aug 23, yen settled near 159. BOJ left rates unchanged (8-1 vote, Takata dissented calling for 1.25%). CNBC reports intervention gave investors better opportunity to put carry trade back on. Morgan Stanley notes intervention provided limited support. BOJ rate at just 1%.",
+      "sources": [
+        "Fares Solution 2026-08-23",
+        "CNBC 2026-08-20",
+        "Morgan Stanley 2026-08-18",
+        "NYT 2026-08-02",
+        "TradingEconomics"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency",
+        "us_cycle"
+      ]
+    },
+    {
+      "domain": "financial_system",
+      "title": "5th US Bank Failure of 2026: Tioga-Franklin Savings Bank Collapses",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "Tioga-Franklin Savings Bank (Philadelphia, $68M assets) became 5th US bank failure of 2026 (up from 2 in all of 2025). Drip of small-bank closures continues. GOP banking deregulation in 2026 dismantling post-1929/2008 safeguards. Substack analysis warns of widening fault line could create bank crash worse than 1929.",
+      "sources": [
+        "Credit and Collection News 2026-08-22",
+        "FULR 2026",
+        "Wendy664 Substack 2026-08-20"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ]
+    },
+    {
+      "domain": "financial_system",
+      "title": "Global Bond Sell-Off: Yields Highest Since Financial Crisis, Showing Signs of Easing",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Synchronized global bond sell-off intensified during week of Aug 18, showing signs of easing by Aug 21 but concerns remain. German 10Y Bund at 3.21% (highest since 2011). French 30Y at 4.86% (highest since 2008). UK 10Y at 5.06%. US 30Y at 5.34% (highest since 2007). Reuters: selling grips bond markets across US, Japan on inflation/fiscal worries.",
+      "sources": [
+        "Reuters 2026-08-18",
+        "CNN 2026-08-18",
+        "Athens Times 2026-08-23",
+        "Private Banker 2026-08-18",
+        "TradingEconomics"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "europe",
+        "liquidity"
+      ]
+    },
+    {
+      "domain": "commodities",
+      "title": "Gold Above $4,500: Third Consecutive Weekly Gain on Safe Haven Demand",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "Gold traded above $4,500/oz on Aug 21, on course for 3rd consecutive weekly gain. Investors turning to safe-haven metals amid currency/bond volatility. Rising oil prices underscore inflationary risks. Brent crude rose 6% last week with Hormuz tanker movements limited. US crude near $84.50/bbl.",
+      "sources": [
+        "TradingEconomics 2026-08-21",
+        "Amillex 2026-08-19",
+        "IG UK 2026-08-17",
+        "TS2 Tech 2026-08-17"
+      ],
+      "escalate_to": [
+        "gold",
+        "currency",
+        "energy"
+      ]
+    },
+    {
+      "domain": "china",
+      "title": "China Property Crisis: Five-Year Downward Spiral, Bank Loans Contracting",
+      "category": "market_dislocation",
+      "severity": 3,
+      "summary": "Bloomberg reports Chinas property market in downward spiral for 5 years. Values continue to plummet, households forced to sell. PBOC leaves loan rates steady for 15th consecutive month. July bank loans contracted (2nd time on record). Deflation fight faltering.",
+      "sources": [
+        "Bloomberg 2026-08-20",
+        "Reuters 2026-08-20",
+        "Wikipedia"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ]
+    },
+    {
+      "domain": "africa",
+      "title": "Nigeria Evacuates 83 More Citizens from South Africa Amid Afrophobic Attacks",
+      "category": "sovereign_crisis",
+      "severity": 2,
+      "summary": "Nigeria evacuating another 83 citizens from South Africa on Aug 19, after nearly 1,490 already repatriated. Growing afrophobic attacks and anti-foreigner sentiments. JNIM-Islamic State conflict expanding regionally into Niger and Nigeria for first time in 2026.",
+      "sources": [
+        "Champion News 2026-08-18",
+        "Heritage Times 2026-08-18",
+        "QNC News 2026-08-17",
+        "Daily Post 2026-08-17",
+        "Africa Insight 2026-08-19"
+      ],
+      "escalate_to": [
+        "geopolitical"
+      ]
     }
   ],
-  "signal_board_update": {
-    "macro_event": "ACTIVE",
-    "signals_escalated": 12,
-    "new_red": 12,
-    "new_amber": 9,
-    "overall_risk": "CRITICAL"
-  }
+  "no_events_domains": [
+    "latam",
+    "em_asia"
+  ],
+  "summary": "9 cat-5 events detected across 12 domains. 3 severity-5 (US bond crisis, Hormuz war, Ebola PHEIC), 2 severity-4 (yen intervention failure, global bond sell-off), 3 severity-3 (5th bank failure, gold surge, China property), 1 severity-2 (Nigeria-SA). NEW since last scan: US bond crisis escalated to severity-5, 5th US bank failure, Ebola cases/deaths increased, global bond sell-off showing signs of easing but remains elevated."
 }
