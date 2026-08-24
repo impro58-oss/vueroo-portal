@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-24T15:04:06.000000+00:00",
+    "last_update": "2026-08-24T15:38:47.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 7 NEW events detected. US Treasury buyback doubling, US-Japan FX intervention (sold euros for yen), Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, AfD Euro exit call, FOMC hawkish dissents. Macro event ACTIVE \u2014 CAT-5."
+    "breaking_event": "Threshold scanner: 4 BREACHES (1 RED, 3 AMBER). Gold RED $4,732 (+5.4% 24h, +35% over threshold). USD/JPY AMBER 159.16. EUR/USD AMBER 1.167. Bund 10Y at 15-year high 3.25%. JGB 10Y at 2.83% (from 2.95% peak). BTC +9.3%. Macro event ACTIVE \u2014 CAT-5."
   },
   "signals": {
     "fin_stability": {
@@ -15,14 +15,14 @@
       "value": 2.75,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 8,
+      "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-20",
-      "note": "ESCALATED: US Treasury doubling bond buybacks (->), 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz (+5.4% 24h). Treasury buyback doubling, 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%, Bund 10Y at 15-year high 3.25%",
+      "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -75,14 +75,14 @@
       "value": 16.01,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 1.12,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-20",
-      "note": "ESCALATED: Iran-US active conflict, Russia bank run + war funding crisis",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz — war premium signal. Iran-US active conflict, Russia bank run + war funding crisis, Hormuz blocked",
+      "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -195,44 +195,44 @@
       "value": 118.9,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: Historic US-Japan coordinated FX intervention (sold euros for yen), yen back at 159 despite intervention, AfD calls for Germany to quit Euro, EUR/USD at 3-month high 1.17",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "ESCALATED BY THRESHOLD SCANNER: USD/JPY AMBER breach 159.16 (intervention failing), EUR/USD AMBER breach 1.167 (dollar weakness). Historic US-Japan coordinated FX intervention sold euros for yen, AfD calls for Germany to quit Euro",
+      "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4500,
+      "value": 4731.8,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
-      "change_from_last": -40.04,
-      "description": "Gold Spot: \\,654.66/oz (JM Bullion live, Aug 23)",
+      "confidence": 10,
+      "change_from_last": 231.8,
+      "description": "Gold Spot: $4,731.80/oz (Yahoo Finance GC=F, Aug 24)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-24",
-      "note": "Gold above ,500/oz, 3rd consecutive weekly gain. Safe haven demand from bond market volatility + geopolitical crisis.",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "🔴 THRESHOLD RED BREACH: Gold above $3,500/oz (+35.2% over threshold). +5.4% in 24h. Safe haven demand extreme — currency crisis or war premium. Bund yields at 15-year highs, JGB at 3-decade highs, dollar weakening.",
+      "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 76951,
+      "value": 79803,
       "unit": "$",
-      "status": "green",
-      "trend": "stable",
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": 0.9,
-      "description": "BTC $76,951 (+0.9% 24h), Dominance: 76.4%",
+      "change_from_last": 9.27,
+      "description": "BTC $79,803 (+9.27% 24h) — Yahoo Finance",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-24",
-      "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-24T05:34:09.516031+00:00"
+      "note": "BTC surging +9.3% — risk-on flight into crypto alongside gold. Threshold scanner update.",
+      "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "china": {
       "name": "China Health",
@@ -316,8 +316,8 @@
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "timestamp": "2026-08-24T15:04:06.000000+00:00",
-      "note": "CAT-5: US Treasury bond buyback doubling, coordinated US-Japan FX intervention (sold euros for yen), Ebola PHEIC declared, JGB at 3-decade highs, 5th US bank failure, Hormuz blocked, oil , gold ,500+. 10 active events."
+      "timestamp": "2026-08-24T15:38:47.000000+00:00",
+      "note": "CAT-5: Threshold scanner 4 breaches — Gold RED $4,732/oz, USD/JPY AMBER 159, EUR/USD AMBER 1.167. Treasury buyback doubling, coordinated US-Japan FX intervention, Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, Hormuz blocked, oil >$92, gold $4,732. 10 active events."
     }
   },
   "overall_risk": {
@@ -325,10 +325,10 @@
     "color": "red",
     "score": 1800,
     "red_count": 17,
-    "amber_count": 3,
-    "green_count": 1,
+    "amber_count": 4,
+    "green_count": 0,
     "total_count": 21,
-    "timestamp": "2026-08-24T15:04:06.000000+00:00"
+    "timestamp": "2026-08-24T15:38:47.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
