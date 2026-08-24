@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-24T03:02:49.571686",
+  "timestamp": "2026-08-24T06:01:44.802574",
   "version": "5.3.1-A1",
   "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
   "parameters": {
@@ -28,31 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -321.23,
-    "unrealized_pnl_eur": -19.93,
-    "total_pnl_eur": -341.15,
-    "open_positions": 5,
-    "closed_trades": 187,
+    "realized_pnl_eur": -351.5,
+    "unrealized_pnl_eur": 10.63,
+    "total_pnl_eur": -340.87,
+    "open_positions": 4,
+    "closed_trades": 188,
     "wins": 71,
-    "losses": 116,
-    "win_rate": 38.0
+    "losses": 117,
+    "win_rate": 37.8
   },
   "open_positions": {
-    "SENTUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-18T15:01:01.454540",
-      "entry_price": 0.01181,
-      "atr": 0.000577142857142857,
-      "stop": null,
-      "highest": 0.01181,
-      "lowest": 0.01153,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "CAKEUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -62,7 +47,7 @@
       "stop": null,
       "highest": 1.857,
       "lowest": 1.487,
-      "bars_held": 13,
+      "bars_held": 14,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -77,7 +62,7 @@
       "stop": null,
       "highest": 0.1504,
       "lowest": 0.1476,
-      "bars_held": 10,
+      "bars_held": 11,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -92,7 +77,7 @@
       "stop": null,
       "highest": 1.22,
       "lowest": 1.1598,
-      "bars_held": 8,
+      "bars_held": 9,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -107,7 +92,7 @@
       "stop": null,
       "highest": 0.4107,
       "lowest": 0.4107,
-      "bars_held": 1,
+      "bars_held": 2,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
@@ -115,19 +100,6 @@
     }
   },
   "recent_trades": [
-    {
-      "symbol": "EDUUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-09T03:10:21.726080",
-      "exit_date": "2026-08-11T00:00:11.664869",
-      "entry_price": 0.038,
-      "exit_price": 0.0379,
-      "pnl_pct": -0.26,
-      "pnl_eur": -0.66,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "PENGUUSDT",
       "direction": "LONG",
@@ -374,6 +346,19 @@
       "reason": "DONCHIAN_EXIT_DAILY",
       "bars_held": 10,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "SENTUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-18T15:01:01.454540",
+      "exit_date": "2026-08-24T06:01:44.802574",
+      "entry_price": 0.01181,
+      "exit_price": 0.01324,
+      "pnl_pct": -12.11,
+      "pnl_eur": -30.27,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
@@ -381,15 +366,15 @@
   "h4_tokens_scanned": 50,
   "blacklisted": [
     "KASUSDT",
-    "EURUSDT",
-    "RLUSDUSDT",
-    "XAUTUSDT",
-    "PAXGUSDT",
-    "BFUSDUSDT",
-    "USD1USDT",
-    "XUSDUSDT",
-    "ZECUSDT",
     "USDEUSDT",
-    "UUSDT"
+    "USD1USDT",
+    "RLUSDUSDT",
+    "UUSDT",
+    "BFUSDUSDT",
+    "XAUTUSDT",
+    "ZECUSDT",
+    "EURUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT"
   ]
 }
