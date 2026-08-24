@@ -1,147 +1,83 @@
 {
-  "scan_time": "2026-08-18T07:05:31.000000+00:00",
-  "scan_type": "breaking_event_4h",
-  "scanner": "BlackWatch Breaking Event Scanner",
-  "scanner_version": "2.0",
+  "scan_time": "2026-08-24T19:03:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v4h",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "events_detected": 6,
-  "category_5_count": 3,
-  "category_4_count": 2,
-  "category_3_count": 1,
-  "no_new_events": false,
-  "overall_assessment": "MULTI-CRISIS ACTIVE: Iran-Hormuz war (CAT 5 ONGOING), Ebola PHEIC fastest-growing on record (CAT 5 SPREADING), Yen intervention unraveling (CAT 5 DETERIORATING), China property (CAT 4), UK cost-of-living (CAT 4), ECB final hike Sept (CAT 3). Gold at 4451. Risk board CRITICAL.",
-  "category_5_events": [
+  "events_detected": [
     {
-      "title": "Strait of Hormuz Crisis - Iran-US War Ongoing",
-      "domain": "middle_east",
-      "category": "war_military",
+      "id": "BE-2026-08-24-009",
+      "title": "Operation Economic Outcast \u2014 US unveils sweeping 'economic D-Day' sanctions on Iran",
+      "domain": "us_fed",
+      "category": "sovereign_intervention",
       "severity": 5,
-      "status": "ONGOING_ESCALATING",
-      "summary": "Iran-US war ongoing since Feb 2026. IRGC closed Hormuz. 25% global seaborne oil + 20% LNG disrupted. Oil residue in coastal waters. CENTCOM morale concerns. Houthi warnings. EIA: largest oil supply disruption in history.",
       "sources": [
-        "Reuters",
-        "NYT",
-        "CBS",
-        "ABC News",
-        "EIA",
-        "IEA",
-        "Wikipedia",
-        "Britannica"
+        "washingtonpost.com",
+        "nytimes.com",
+        "npr.org",
+        "cnn.com",
+        "redstate.com"
       ],
+      "timestamp": "2026-08-24",
+      "summary": "Treasury Secretary Bessent unveiled 'Operation Economic Outcast' \u2014 sweeping new sanctions on Iran to 'tighten the noose' on every source of Iranian revenue. Trump promised an 'ECONOMIC D-DAY.' Iran's top security chief (Mohsen Rezaei) threatened to halt ALL oil movement through the Strait of Hormuz if neighbors help the US weaken Tehran's economy. New sanctions aimed at closing loopholes in the US financial dragnet around oil trade. Major escalation of the 2026 Iran war into the economic/financial domain.",
       "escalate_to": [
         "middle_east",
         "energy",
         "geopolitical",
-        "supply_chain",
-        "food_security"
+        "fin_stability"
       ],
-      "updated": true,
-      "change_from_last": "Oil residue documented. CENTCOM morale reports. Houthi escalation warnings. EIA confirms 0.6M bbl/day ongoing disruption."
+      "is_new": true
     },
     {
-      "title": "US-Japan Yen Intervention Unraveling",
+      "id": "BE-2026-08-24-002",
+      "title": "US sold euros to buy yen \u2014 first coordinated US-Japan FX intervention in a generation",
       "domain": "japan",
       "category": "sovereign_intervention",
       "severity": 5,
-      "status": "ACTIVE_DETERIORATING",
-      "summary": "Joint US-Japan FX intervention July 31 ($59B) unraveling. Yen approaching 160. ESF euros deployed. FIMA repo $60B. Bessent open-ended pledge. Warren demanding justification. BOJ pressured for hike.",
       "sources": [
-        "CNBC",
-        "Fortune",
-        "NYT",
-        "Reuters",
-        "Goldman",
-        "Japan Times",
-        "Private Banker"
+        "nytimes.com",
+        "cnbc.com",
+        "morganstanley.com",
+        "scmp.com",
+        "fairobserver.com"
       ],
+      "timestamp": "2026-08-02",
+      "summary": "US Treasury sold euros to buy yen, strengthening JPY from 164 to ~155. Yen has since weakened back to 159. Intervention aimed to prevent Japan from selling US Treasuries. First joint intervention in a generation.",
       "escalate_to": [
+        "japan_sovereign",
         "currency",
         "fin_stability"
       ],
-      "updated": true,
-      "change_from_last": "Yen continues sliding. Approaching 160 trigger. ESF constraints exposed. Political pressure mounting."
+      "is_new": false
     },
     {
-      "title": "Ebola Epidemic - Fastest-Growing on Record (PHEIC)",
+      "id": "BE-2026-08-24-006",
+      "title": "WHO declares Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases, 2,516 deaths",
       "domain": "pandemic_health",
       "category": "pandemic",
       "severity": 5,
-      "status": "ACTIVE_SPREADING",
-      "summary": "DRC Ebola largest/fastest in history. 4,966 cases, 2,327 deaths (46.86% CFR), 730 hospitalized. Bundibugyo species - no vaccine. WHO PHEIC May 16. Spread to Uganda. Armed conflict hampering response.",
       "sources": [
-        "WHO",
-        "ECDC",
-        "UN News",
-        "Wikipedia",
-        "GBC Ghana"
+        "who.int",
+        "ecdc.europa.eu",
+        "un.org",
+        "health.ec.europa.eu"
       ],
+      "timestamp": "2026-08-20",
+      "summary": "WHO declared 2026 DRC Ebola outbreak (Bundibugyo strain) a Public Health Emergency of International Concern. 5,290 confirmed cases, 2,516 deaths as of Aug 19. ECDC epidemiological update published 24 Aug 2026. No approved vaccines or treatments for Bundibugyo strain. Risk in Europe remains very low.",
       "escalate_to": [
         "supply_chain",
         "social_cohesion"
       ],
-      "updated": true,
-      "change_from_last": "ECDC: 4,945 cases as of Aug 15. 2,325 DRC deaths + 2 Uganda. Fastest-growing Ebola confirmed."
+      "is_new": false
     }
   ],
-  "category_4_events": [
-    {
-      "title": "China Property Crisis - Ongoing Structural Collapse",
-      "domain": "china",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "DEEPENING",
-      "summary": "China property distress ongoing. Yuan at 6.74 (highest since Feb 2023). PBOC loose but deflation persists.",
-      "sources": [
-        "Trading Economics",
-        "Vanguard"
-      ],
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ],
-      "updated": false,
-      "change_from_last": "No significant change since last scan."
-    },
-    {
-      "title": "UK Cost-of-Living Crisis - Energy Bills Surging",
-      "domain": "uk",
-      "category": "energy_shock",
-      "severity": 4,
-      "status": "EMERGING",
-      "summary": "UK cost-of-living crisis returning. Energy bills soaring. BOE considering Sept hike. CPI 2.6%. Gilt leverage risks flagged.",
-      "sources": [
-        "Guardian",
-        "Telegraph",
-        "House of Commons Library"
-      ],
-      "escalate_to": [
-        "food_security",
-        "social_cohesion"
-      ],
-      "updated": true,
-      "change_from_last": "Guardian: BOE considering Sept hike. Energy bills driving inflation. FSA gilt leverage warning."
-    }
-  ],
-  "category_3_events": [
-    {
-      "title": "ECB Final Rate Hike Expected September - 83% Consensus",
-      "domain": "eu_ecb",
-      "category": "emergency_rate",
-      "severity": 3,
-      "status": "UPCOMING",
-      "summary": "Reuters poll: 57/69 economists expect ECB hike to 2.50% Sept. Energy-driven inflation. Bund yields 15yr highs.",
-      "sources": [
-        "Reuters",
-        "Morningstar",
-        "FXStreet"
-      ],
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "updated": true,
-      "change_from_last": "Confirmed 83% consensus for Sept hike. Some expect more hikes after Sept."
-    }
+  "new_events_count": 1,
+  "previously_tracked_count": 2,
+  "macro_event_active": true,
+  "overall_risk": "CRITICAL",
+  "key_findings": [
+    "NEW: Operation Economic Outcast \u2014 US 'economic D-Day' sweeping sanctions on Iran; Iran threatens to halt ALL Strait of Hormuz oil movement",
+    "US-Japan coordinated FX intervention continues, yen back to 159 after intervention failed",
+    "Ebola PHEIC \u2014 ECDC update Aug 24, largest outbreak on record (5,290 cases, 2,516 deaths)"
   ]
 }

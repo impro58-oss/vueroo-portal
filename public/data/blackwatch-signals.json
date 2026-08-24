@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-24T15:38:47.000000+00:00",
+    "last_update": "2026-08-24T19:03:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Threshold scanner: 4 BREACHES (1 RED, 3 AMBER). Gold RED $4,732 (+5.4% 24h, +35% over threshold). USD/JPY AMBER 159.16. EUR/USD AMBER 1.167. Bund 10Y at 15-year high 3.25%. JGB 10Y at 2.83% (from 2.95% peak). BTC +9.3%. Macro event ACTIVE \u2014 CAT-5."
+    "breaking_event": "Breaking event scanner: Operation Economic Outcast - US sanctions on Iran (CAT-5)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-20",
-      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz (+5.4% 24h). Treasury buyback doubling, 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%, Bund 10Y at 15-year high 3.25%",
-      "timestamp": "2026-08-24T15:38:47.000000+00:00"
+      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz (+5.4% 24h). Treasury buyback doubling, 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%, Bund 10Y at 15-year high 3.25% | Operation Economic Outcast sanctions escalation",
+      "timestamp": "2026-08-24T19:03:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -66,8 +66,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Oil /bbl, Hormuz blocked since Feb, EIA forecasts elevated prices until flows normalize, OPEC+ adding 206kbpd",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "ESCALATED BY BREAKING SCANNER: Iran threatens to halt ALL Hormuz oil movement amid 'economic D-Day' sanctions. Oil sustained /bbl, Hormuz blocked since Feb.",
+      "timestamp": "2026-08-24T19:03:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,8 +81,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-20",
-      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz — war premium signal. Iran-US active conflict, Russia bank run + war funding crisis, Hormuz blocked",
-      "timestamp": "2026-08-24T15:38:47.000000+00:00"
+      "note": "ESCALATED BY BREAKING SCANNER: Operation Economic Outcast - US 'economic D-Day' sanctions on Iran. Iran threatens to halt all Hormuz oil. Iran-US war ongoing, Russia bank run, tanker seizures.",
+      "timestamp": "2026-08-24T19:03:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -216,7 +216,7 @@
       "description": "Gold Spot: $4,731.80/oz (Yahoo Finance GC=F, Aug 24)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-24",
-      "note": "🔴 THRESHOLD RED BREACH: Gold above $3,500/oz (+35.2% over threshold). +5.4% in 24h. Safe haven demand extreme — currency crisis or war premium. Bund yields at 15-year highs, JGB at 3-decade highs, dollar weakening.",
+      "note": "\u00f0\u0178\u201d\u00b4 THRESHOLD RED BREACH: Gold above $3,500/oz (+35.2% over threshold). +5.4% in 24h. Safe haven demand extreme \u00e2\u20ac\u201d currency crisis or war premium. Bund yields at 15-year highs, JGB at 3-decade highs, dollar weakening.",
       "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "crypto": {
@@ -228,10 +228,10 @@
       "trend": "improving",
       "confidence": 9,
       "change_from_last": 9.27,
-      "description": "BTC $79,803 (+9.27% 24h) — Yahoo Finance",
+      "description": "BTC $79,803 (+9.27% 24h) \u00e2\u20ac\u201d Yahoo Finance",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-24",
-      "note": "BTC surging +9.3% — risk-on flight into crypto alongside gold. Threshold scanner update.",
+      "note": "BTC surging +9.3% \u00e2\u20ac\u201d risk-on flight into crypto alongside gold. Threshold scanner update.",
       "timestamp": "2026-08-24T15:38:47.000000+00:00"
     },
     "china": {
@@ -291,8 +291,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz active disruption, Iran-US war ongoing, tanker seizures",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED BY BREAKING SCANNER: Iran vows to halt ALL Hormuz oil, US 'economic D-Day' sanctions. Iran-US war ongoing.",
+      "timestamp": "2026-08-24T19:03:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -316,8 +316,8 @@
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "timestamp": "2026-08-24T15:38:47.000000+00:00",
-      "note": "CAT-5: Threshold scanner 4 breaches — Gold RED $4,732/oz, USD/JPY AMBER 159, EUR/USD AMBER 1.167. Treasury buyback doubling, coordinated US-Japan FX intervention, Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, Hormuz blocked, oil >$92, gold $4,732. 10 active events."
+      "timestamp": "2026-08-24T19:03:00.000000+00:00",
+      "note": "CAT-5: NEW Operation Economic Outcast - US 'economic D-Day' sweeping sanctions on Iran. Iran threatens to halt ALL Hormuz oil movement. Combined with Treasury buyback doubling, US-Japan FX intervention, Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, gold $4,732. 11 active events."
     }
   },
   "overall_risk": {
