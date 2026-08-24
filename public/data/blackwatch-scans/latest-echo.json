@@ -1,11 +1,180 @@
 {
-  "timestamp": "2026-08-24T03:06:07.000000+00:00",
-  "scanner": "breaking_event",
-  "events_count": 12,
-  "top_event": "US Bond Crisis + Hormuz War + Ebola PHEIC + JGB Near 3% + UK Fiscal Crisis",
-  "risk_level": "CRITICAL",
-  "summary": "12 CAT-5 events: US bond crisis severity-5 (Bessent doubles buybacks, $40T debt, 30Y at 5.34%), Hormuz war severity-5 (Iran threatens new offensive, oil spill on coast), Ebola severity-5 (5,290 cases/2,516 deaths, fastest-growing ever), JGB near 3% severity-4 (highest since 1996, yen at 159), Israel Gaza escalation severity-4 (Netanyahu threatens new evacuations), global bond sell-off severity-4 (multi-decade highs), oil/food shock severity-4 (Brent $89, JPMorgan food crisis warning), 5th US bank failure severity-3, UK fiscal crisis severity-3 (£1.8B deficit, gilts 5%+), gold toward $4,600 severity-3, China property 5-yr spiral severity-3, Nigeria-SA evacuations severity-2. NEW: Israel Gaza escalation, JGB near 3%, UK fiscal crisis, gold $4,600, food crisis warnings.",
-  "signals_updated": "17 red, 2 amber, 1 green (20 total)",
-  "macro_event": "ACTIVE",
-  "new_escalations": ["middle_east", "energy", "geopolitical", "food_security", "supply_chain", "china", "currency", "fin_stability", "social_cohesion", "europe", "us_cycle", "liquidity", "sov_debt", "gold"]
+  "scan_time": "2026-08-24T15:04:06.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v4h",
+  "domains_scanned": 12,
+  "queries_executed": 36,
+  "events_detected": [
+    {
+      "id": "BE-2026-08-24-001",
+      "title": "US Treasury doubles long-dated bond buybacks \u2014 active market intervention",
+      "domain": "us_fed",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "sources": [
+        "foreignpolicy.com",
+        "thehill.com",
+        "cfr.org",
+        "axios.com"
+      ],
+      "timestamp": "2026-08-20",
+      "summary": "Treasury announced doubling of buybacks from  to  per operation (Sep 9-Nov 4). Intention to artificially cap runaway yields on US government debt. Bond market alarms sparked emergency buyback plan.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-002",
+      "title": "US sold euros to buy yen \u2014 first coordinated US-Japan FX intervention in a generation",
+      "domain": "japan",
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "sources": [
+        "nytimes.com",
+        "cnbc.com",
+        "morganstanley.com",
+        "scmp.com",
+        "fairobserver.com"
+      ],
+      "timestamp": "2026-08-02",
+      "summary": "US Treasury sold euros to buy yen, strengthening JPY from 164 to ~155. Yen has since weakened back to 159. Intervention aimed to prevent Japan from selling US Treasuries. First joint intervention in a generation.",
+      "escalate_to": [
+        "japan_sovereign",
+        "currency",
+        "fin_stability"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-003",
+      "title": "AfD leader calls for Germany to quit the Euro and Schengen",
+      "domain": "eu_ecb",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "sources": [
+        "clashreport.com"
+      ],
+      "timestamp": "2026-08-23",
+      "summary": "Alice Weidel publicly called for Germany to exit the Euro and Schengen. Political shock to Euro stability framework.",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-004",
+      "title": "FOMC minutes turned hawkish \u2014 multiple dissents, rate hikes may resume",
+      "domain": "us_fed",
+      "category": "emergency_rate",
+      "severity": 3,
+      "sources": [
+        "briskmarkets.com",
+        "newsquawk.com",
+        "wellsfargoadvisors.com"
+      ],
+      "timestamp": "2026-08-19",
+      "summary": "FOMC minutes (Jul 28-29) showed multiple hawkish dissents. Many policymakers believe further rate increases could become necessary if inflation fails to moderate. Current rate 3.50-3.75%.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-005",
+      "title": "5th US bank failure of 2026 \u2014 Tioga-Franklin Savings Bank, Philadelphia",
+      "domain": "financial_system",
+      "category": "market_dislocation",
+      "severity": 3,
+      "sources": [
+        "creditandcollectionnews.com"
+      ],
+      "timestamp": "2026-08-22",
+      "summary": "Tioga-Franklin Savings Bank ( assets) becomes 5th US bank failure of 2026, up from 2 in all of 2025. Small-bank closure trend accelerating.",
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-006",
+      "title": "WHO declares Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases, 2,516 deaths",
+      "domain": "pandemic_health",
+      "category": "pandemic",
+      "severity": 5,
+      "sources": [
+        "who.int",
+        "ecdc.europa.eu",
+        "un.org",
+        "health.ec.europa.eu"
+      ],
+      "timestamp": "2026-08-20",
+      "summary": "WHO declared 2026 DRC Ebola outbreak (Bundibugyo strain) a Public Health Emergency of International Concern. 5,290 confirmed cases, 2,516 deaths as of Aug 19. No approved vaccines or treatments for Bundibugyo strain. Risk in Europe remains very low.",
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-007",
+      "title": "JGB yields at 3-decade highs near 3% \u2014 Takaichi budget fears driving bond vigilantes",
+      "domain": "japan",
+      "category": "sovereign_crisis",
+      "severity": 4,
+      "sources": [
+        "asia.nikkei.com",
+        "asiatimes.com",
+        "tradingeconomics.com",
+        "faressolution.net"
+      ],
+      "timestamp": "2026-08-18",
+      "summary": "10-year JGB yield near 2.95%, highest since 1996. Finance Ministry raising assumed interest rate to 3.8% for fiscal 2027. Takaichi administration loose fiscal policy spooking bond vigilantes. Japan leading global bond selloff.",
+      "escalate_to": [
+        "japan_sovereign",
+        "currency",
+        "fin_stability"
+      ],
+      "is_new": true
+    },
+    {
+      "id": "BE-2026-08-24-008",
+      "title": "Oil at , gold above ,500 \u2014 Hormuz disruption continues, no end in sight",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 4,
+      "sources": [
+        "tradingeconomics.com",
+        "eia.gov",
+        "amillex.com"
+      ],
+      "timestamp": "2026-08-21",
+      "summary": "Crude oil just below /bbl, 2nd consecutive weekly gain of ~5%. Gold above ,500/oz, 3rd consecutive weekly gain. EIA forecasts elevated prices until Hormuz flows normalize. Global inventories drawing down.",
+      "escalate_to": [
+        "energy",
+        "food_security"
+      ],
+      "is_new": false
+    }
+  ],
+  "new_events_count": 7,
+  "previously_tracked_count": 1,
+  "macro_event_active": true,
+  "overall_risk": "CRITICAL",
+  "key_findings": [
+    "US Treasury doubling long-dated bond buybacks \u2014 active yield cap intervention",
+    "US sold euros to buy yen in first coordinated FX intervention in a generation",
+    "WHO declared Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases",
+    "JGB yields at 3-decade highs near 3%, Japan leading global bond selloff",
+    "5th US bank failure of 2026 (up from 2 in all of 2025)",
+    "AfD leader calls for Germany to quit Euro and Schengen",
+    "FOMC minutes showed hawkish dissents \u2014 rate hikes may resume",
+    "Oil at , gold above ,500 \u2014 Hormuz disruption continues"
+  ]
 }

@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-24T07:02:00.000000+00:00",
+    "last_update": "2026-08-24T15:04:06.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 8 events detected, 3 new (UK gilts, Russia bank run, Argentina sov risk). Macro event ACTIVE."
+    "breaking_event": "Breaking event scanner: 7 NEW events detected. US Treasury buyback doubling, US-Japan FX intervention (sold euros for yen), Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, AfD Euro exit call, FOMC hawkish dissents. Macro event ACTIVE \u2014 CAT-5."
   },
   "signals": {
     "fin_stability": {
@@ -15,14 +15,14 @@
       "value": 2.75,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.02,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-20",
-      "note": "ESCALATED: Hedge fund Treasury leverage .4T, UK gilt crisis, Russia bank run, global bond sell-off",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: US Treasury doubling bond buybacks (->), 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -30,14 +30,14 @@
       "value": 0.88,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "ESCALATED: Russia bank run EUR24.4B, Treasury leverage unwind risk",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: Treasury buyback intervention signals stress, 5th bank failure, FOMC hawkish dissents",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -60,14 +60,14 @@
       "value": 95.29,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 2.86,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Oil >/bbl, Hormuz disruption, EIA forecasts elevated prices",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: Oil /bbl, Hormuz blocked since Feb, EIA forecasts elevated prices until flows normalize, OPEC+ adding 206kbpd",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -106,13 +106,13 @@
       "unit": "$/bbl (proxy)",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
+      "confidence": 7,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz shipping disruption + Ebola supply chain impact",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: Ebola PHEIC + Hormuz disruption + oil  EIA forecasts elevated prices",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -150,14 +150,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC + Russia depositor panic + global bond stress",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: Ebola PHEIC declared, 5th bank failure, dollar debasement fears, AfD Euro exit call",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -195,29 +195,29 @@
       "value": 118.9,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
+      "confidence": 7,
       "change_from_last": -0.28,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-14",
-      "note": "ESCALATED: Yen intervention failing (159), Argentina sov risk widening",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: Historic US-Japan coordinated FX intervention (sold euros for yen), yen back at 159 despite intervention, AfD calls for Germany to quit Euro, EUR/USD at 3-month high 1.17",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4654.66,
+      "value": 4500,
       "unit": "$/oz",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -40.04,
       "description": "Gold Spot: \\,654.66/oz (JM Bullion live, Aug 23)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-24",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-24T05:34:08.945656+00:00"
+      "note": "Gold above ,500/oz, 3rd consecutive weekly gain. Safe haven demand from bond market volatility + geopolitical crisis.",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -261,23 +261,23 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-21",
-      "note": "ESCALATED: UK gilt crisis 10Y >5%, global bond sell-off, BOE selling into rout",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED: AfD calls for Germany to quit Euro+Schengen, UK gilts >5%, BOE selling into bond rout, EUR/USD at 3-month high, French debt 118% GDP heading to 130%",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.5,
       "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-21",
-      "note": "",
-      "timestamp": "2026-08-24T05:34:14.120582+00:00"
+      "note": "FOMC hawkish dissents, Treasury buyback intervention, 5th bank failure, dollar debasement concerns",
+      "timestamp": "2026-08-24T15:04:06.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -315,20 +315,20 @@
       "value": "ACTIVE",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 9,
-      "timestamp": "2026-08-24T07:02:00.000000+00:00",
-      "note": "8 CAT-4+ events active. See breaking event scan."
+      "confidence": 10,
+      "timestamp": "2026-08-24T15:04:06.000000+00:00",
+      "note": "CAT-5: US Treasury bond buyback doubling, coordinated US-Japan FX intervention (sold euros for yen), Ebola PHEIC declared, JGB at 3-decade highs, 5th US bank failure, Hormuz blocked, oil , gold ,500+. 10 active events."
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
     "score": 1800,
-    "red_count": 16,
-    "amber_count": 4,
+    "red_count": 17,
+    "amber_count": 3,
     "green_count": 1,
     "total_count": 21,
-    "timestamp": "2026-08-24T07:02:00.000000+00:00"
+    "timestamp": "2026-08-24T15:04:06.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [

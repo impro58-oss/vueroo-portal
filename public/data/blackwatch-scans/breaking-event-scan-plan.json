@@ -1,0 +1,301 @@
+{
+  "scan_time": "2026-08-24T15:02:46.558008",
+  "scan_type": "breaking_event",
+  "domains": {
+    "us_fed": {
+      "domain": "us_fed",
+      "name": "US Federal Reserve / Treasury",
+      "queries": [
+        "Federal Reserve emergency rate decision August 2026",
+        "US Treasury intervention emergency August 2026",
+        "FOMC surprise decision August 2026"
+      ],
+      "triggers": [
+        "emergency rate",
+        "surprise decision",
+        "Treasury intervention",
+        "swap line",
+        "discount window",
+        "emergency lending"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ]
+    },
+    "latam": {
+      "domain": "latam",
+      "name": "Latin America",
+      "queries": [
+        "Argentina Brazil currency crisis emergency August 2026",
+        "LatAm sovereign default IMF August 2026",
+        "Venezuela Colombia border crisis August 2026"
+      ],
+      "triggers": [
+        "default",
+        "devaluation",
+        "capital controls",
+        "IMF emergency",
+        "hyperinflation",
+        "sovereign crisis"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "currency"
+      ]
+    },
+    "eu_ecb": {
+      "domain": "eu_ecb",
+      "name": "ECB / European Financial",
+      "queries": [
+        "ECB emergency rate decision August 2026",
+        "European sovereign debt crisis August 2026",
+        "Euro currency intervention August 2026"
+      ],
+      "triggers": [
+        "ECB emergency",
+        "spread crisis",
+        "bailout",
+        "Euro intervention",
+        "PIGS crisis",
+        "bond yield spike"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    "uk": {
+      "domain": "uk",
+      "name": "UK / Bank of England",
+      "queries": [
+        "Bank of England emergency August 2026",
+        "UK gilt crisis August 2026",
+        "Sterling crash emergency August 2026"
+      ],
+      "triggers": [
+        "BOE emergency",
+        "gilts crisis",
+        "sterling crash",
+        "UK recession",
+        "fiscal emergency"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    "japan": {
+      "domain": "japan",
+      "name": "Japan / BOJ / MOF",
+      "queries": [
+        "Bank of Japan rate decision intervention August 2026",
+        "Japan yen intervention August 2026",
+        "JGB yield spike fiscal crisis August 2026"
+      ],
+      "triggers": [
+        "intervention",
+        "BOJ emergency",
+        "JGB spike",
+        "decisive action",
+        "FIMA repo",
+        "Treasury selling",
+        "yen crash"
+      ],
+      "escalate_to": [
+        "japan_sovereign",
+        "currency",
+        "fin_stability"
+      ]
+    },
+    "china": {
+      "domain": "china",
+      "name": "China / PBOC",
+      "queries": [
+        "China PBOC emergency policy August 2026",
+        "China currency devaluation August 2026",
+        "China property crisis default August 2026"
+      ],
+      "triggers": [
+        "PBOC emergency",
+        "devaluation",
+        "property collapse",
+        "capital flight",
+        "Evergrande",
+        "shadow banking crisis"
+      ],
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ]
+    },
+    "em_asia": {
+      "domain": "em_asia",
+      "name": "Emerging Asia",
+      "queries": [
+        "South Korea won intervention August 2026",
+        "India rupee crisis August 2026",
+        "ASEAN currency crisis August 2026"
+      ],
+      "triggers": [
+        "intervention",
+        "currency crisis",
+        "capital controls",
+        "Asian financial crisis",
+        "contagion"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ]
+    },
+    "middle_east": {
+      "domain": "middle_east",
+      "name": "Middle East / Geopolitical",
+      "queries": [
+        "Iran military action Strait Hormuz August 2026",
+        "Israel Gaza escalation war August 2026",
+        "Saudi oil policy change August 2026"
+      ],
+      "triggers": [
+        "military action",
+        "Hormuz",
+        "escalation",
+        "oil disruption",
+        "war declaration",
+        "sanctions",
+        "embargo"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ]
+    },
+    "africa": {
+      "domain": "africa",
+      "name": "Africa",
+      "queries": [
+        "Africa coup conflict August 2026",
+        "Nigeria South Africa crisis August 2026",
+        "African debt crisis IMF August 2026"
+      ],
+      "triggers": [
+        "coup",
+        "conflict",
+        "debt crisis",
+        "IMF emergency",
+        "famine",
+        "civil war"
+      ],
+      "escalate_to": [
+        "geopolitical"
+      ]
+    },
+    "financial_system": {
+      "domain": "financial_system",
+      "name": "Financial System Stress",
+      "queries": [
+        "bank failure crisis August 2026",
+        "credit freeze interbank lending August 2026",
+        "derivatives counterparty risk August 2026"
+      ],
+      "triggers": [
+        "bank failure",
+        "credit freeze",
+        "counterparty",
+        "bail-in",
+        "systemic risk",
+        "liquidity crisis",
+        "run on bank"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ]
+    },
+    "commodities": {
+      "domain": "commodities",
+      "name": "Commodities / Energy",
+      "queries": [
+        "oil price spike supply disruption August 2026",
+        "gold spike safe haven panic August 2026",
+        "food crisis shortage August 2026"
+      ],
+      "triggers": [
+        "spike",
+        "disruption",
+        "shortage",
+        "export ban",
+        "pipeline attack",
+        "OPEC emergency",
+        "food emergency"
+      ],
+      "escalate_to": [
+        "energy",
+        "food_security"
+      ]
+    },
+    "pandemic_health": {
+      "domain": "pandemic_health",
+      "name": "Pandemic / Health Emergency",
+      "queries": [
+        "pandemic outbreak WHO emergency August 2026",
+        "bioterrorism health emergency August 2026",
+        "drug shortage crisis August 2026"
+      ],
+      "triggers": [
+        "pandemic",
+        "WHO emergency",
+        "outbreak",
+        "bioterror",
+        "epidemic",
+        "quarantine",
+        "lockdown"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ]
+    }
+  },
+  "queries_to_execute": [
+    "Federal Reserve emergency rate decision August 2026",
+    "US Treasury intervention emergency August 2026",
+    "FOMC surprise decision August 2026",
+    "Argentina Brazil currency crisis emergency August 2026",
+    "LatAm sovereign default IMF August 2026",
+    "Venezuela Colombia border crisis August 2026",
+    "ECB emergency rate decision August 2026",
+    "European sovereign debt crisis August 2026",
+    "Euro currency intervention August 2026",
+    "Bank of England emergency August 2026",
+    "UK gilt crisis August 2026",
+    "Sterling crash emergency August 2026",
+    "Bank of Japan rate decision intervention August 2026",
+    "Japan yen intervention August 2026",
+    "JGB yield spike fiscal crisis August 2026",
+    "China PBOC emergency policy August 2026",
+    "China currency devaluation August 2026",
+    "China property crisis default August 2026",
+    "South Korea won intervention August 2026",
+    "India rupee crisis August 2026",
+    "ASEAN currency crisis August 2026",
+    "Iran military action Strait Hormuz August 2026",
+    "Israel Gaza escalation war August 2026",
+    "Saudi oil policy change August 2026",
+    "Africa coup conflict August 2026",
+    "Nigeria South Africa crisis August 2026",
+    "African debt crisis IMF August 2026",
+    "bank failure crisis August 2026",
+    "credit freeze interbank lending August 2026",
+    "derivatives counterparty risk August 2026",
+    "oil price spike supply disruption August 2026",
+    "gold spike safe haven panic August 2026",
+    "food crisis shortage August 2026",
+    "pandemic outbreak WHO emergency August 2026",
+    "bioterrorism health emergency August 2026",
+    "drug shortage crisis August 2026"
+  ]
+}
