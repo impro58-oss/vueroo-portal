@@ -1,14 +1,16 @@
 {
-  "timestamp": "2026-08-24T15:00:25.187062",
-  "version": "5.3.1-A1",
-  "system": "V5.3.1 Option A1 \u2014 Donchian 40 + Time Stop 15 only (no ATR/trailing stops)",
+  "timestamp": "2026-08-24T17:29:01.432182",
+  "version": "5.3.2-RISK-MANAGED",
+  "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
     "entry_channel": 20,
     "exit_channel": 40,
     "sma_filter": 50,
     "time_stop": 15,
     "atr_stop_mult": 0,
-    "trailing_atr_mult": 0,
+    "trailing_atr_mult": 3.0,
+    "hard_stop_pct": 10.0,
+    "trailing_activation_pct": 2.0,
     "max_positions": 10,
     "capital_per_token_eur": 250,
     "universe_size": 189,
@@ -17,42 +19,27 @@
     "cache_ttl_hours": 3,
     "min_bars_before_exit": 8,
     "btc_neutral_zone_pct": 2.0,
-    "a1_improvements": [
-      "Option A1: removed ATR 2.5 hard stop",
-      "Option A1: removed 3.0 ATR trailing stop",
-      "Exit: Donchian 40 channel + time stop 15 only",
-      "Min 8 bars before Donchian exit",
-      "BTC neutral zone (+/-2% of SMA50) allows both directions",
-      "Stablecoins blacklisted (USDE, BFUSD, U, RLUSD, EUR, XUSD, PAXG, XAUT)"
+    "v532_improvements": [
+      "HARD STOP: 10% from entry \u2014 always active, no exceptions",
+      "TRAILING STOP: 3 ATR (tightened from 6), activates at +2% profit",
+      "Trailing stop must be in profit (above entry for long, below for short)",
+      "Keeps Donchian 40 exit + time stop 15 from V5.3.1",
+      "Min 8 bars before Donchian/trailing exits",
+      "BTC neutral zone (+/-2% of SMA50) allows both directions"
     ]
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -309.13,
-    "unrealized_pnl_eur": -30.89,
-    "total_pnl_eur": -340.02,
-    "open_positions": 4,
-    "closed_trades": 189,
+    "realized_pnl_eur": -334.13,
+    "unrealized_pnl_eur": 2.8,
+    "total_pnl_eur": -331.33,
+    "open_positions": 3,
+    "closed_trades": 190,
     "wins": 72,
-    "losses": 117,
-    "win_rate": 38.1
+    "losses": 118,
+    "win_rate": 37.9
   },
   "open_positions": {
-    "OPENUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-08-19T03:05:48.535023",
-      "entry_price": 0.1504,
-      "atr": 0.014507142857142859,
-      "stop": null,
-      "highest": 0.1504,
-      "lowest": 0.1476,
-      "bars_held": 13,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250
-    },
     "EURIUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -62,11 +49,12 @@
       "stop": null,
       "highest": 1.22,
       "lowest": 1.1598,
-      "bars_held": 11,
+      "bars_held": 12,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
-      "capital": 250
+      "capital": 250,
+      "current_price": 1.167
     },
     "LDOUSDT": {
       "status": "OPEN",
@@ -77,11 +65,12 @@
       "stop": null,
       "highest": 0.4107,
       "lowest": 0.4107,
-      "bars_held": 4,
+      "bars_held": 5,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
-      "capital": 250
+      "capital": 250,
+      "current_price": 0.3875
     },
     "INJUSDT": {
       "status": "OPEN",
@@ -90,29 +79,17 @@
       "entry_price": 5.498,
       "atr": 0.35171428571428587,
       "stop": null,
-      "highest": 5.498,
+      "highest": 5.848,
       "lowest": 5.498,
-      "bars_held": 0,
+      "bars_held": 1,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
-      "capital": 250
+      "capital": 250,
+      "current_price": 5.836
     }
   },
   "recent_trades": [
-    {
-      "symbol": "EURIUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-10T00:00:10.036284",
-      "exit_date": "2026-08-11T21:00:42.083209",
-      "entry_price": 1.1561,
-      "exit_price": 1.1551,
-      "pnl_pct": -0.09,
-      "pnl_eur": -0.22,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "JSTUSDT",
       "direction": "SHORT",
@@ -359,22 +336,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "OPENUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-08-19T03:05:48.535023",
+      "exit_date": "2026-08-24T17:29:01.432182",
+      "entry_price": 0.1504,
+      "exit_price": 0.16544000000000003,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 14,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "BFUSDUSDT",
-    "RLUSDUSDT",
+    "XUSDUSDT",
     "UUSDT",
     "USDEUSDT",
-    "XUSDUSDT",
     "XAUTUSDT",
+    "KASUSDT",
     "ZECUSDT",
+    "USD1USDT",
     "EURUSDT",
     "PAXGUSDT",
-    "KASUSDT",
-    "USD1USDT"
+    "BFUSDUSDT",
+    "RLUSDUSDT"
   ]
 }
