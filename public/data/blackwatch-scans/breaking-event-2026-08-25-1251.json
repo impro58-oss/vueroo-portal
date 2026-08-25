@@ -1,0 +1,97 @@
+{
+  "scan_time": "2026-08-25T12:51:00.000000+00:00",
+  "scan_type": "breaking_event_4h",
+  "scanner": "BlackWatch Breaking Event Scanner",
+  "date": "2026-08-25",
+  "domains_scanned": 12,
+  "queries_executed": 14,
+  "new_cat5_detected": false,
+  "events_detected": [
+    {
+      "id": "BE-2026-08-25-001-UPDATE",
+      "domain": "us_fed",
+      "title": "US Treasury Expanded Buyback Plan - Intervention Still Failing",
+      "category": "sovereign_intervention",
+      "severity": 5,
+      "status": "ESCALATING",
+      "summary": "Bessent accelerated long-end buybacks (max $2B/op from Sept 9). 30yr yield at 5.248%. Yields REBOUNDED after initial rally, wiping out intervention gains. CFR warns not durable without policy change. Reuters/CNBC/Bloomberg confirm buyback relief limited.",
+      "sources": ["Bloomberg", "CNBC", "Reuters", "NYT", "CFR", "FT"],
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-003-UPDATE",
+      "domain": "middle_east",
+      "title": "Iran War / Hormuz Blockade - Disruption Now 5-7M bpd",
+      "category": "war_military",
+      "severity": 5,
+      "status": "ESCALATING",
+      "summary": "Ceasefire collapsed July 8. NEW (Aug 25, US News): oil disruption stands at 5-7M bpd, ~half of global oil flows now from war zones. Shipping collapsed to ~9 vessel transits/day mid-Aug. Oil spill reached Qeshm Island coast (projectile hit cargo vessel). EIA: inventory drawdowns continuing.",
+      "sources": ["US News", "Reuters", "Al Jazeera", "NYT", "EIA", "IEA"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-005-UPDATE",
+      "domain": "pandemic_health",
+      "title": "Ebola Bundibugyo Epidemic - 5,514 cases, 2,642 deaths",
+      "category": "pandemic",
+      "severity": 4,
+      "status": "WORSENING",
+      "summary": "5,514 confirmed cases, 2,642 deaths as of Aug 22. Spread to Uganda. Bundibugyo strain has no approved vaccine/treatment. WHO PHEIC declared, 2nd emergency committee Aug 18. CDC issued traveler guidance. Largest + fastest-growing Ebola outbreak ever.",
+      "sources": ["WHO", "ECDC", "CDC", "Wikipedia", "Lancet"],
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-006-UPDATE",
+      "domain": "financial_system",
+      "title": "5th US Bank Failure of 2026 + Russia Bank Run",
+      "category": "market_dislocation",
+      "severity": 4,
+      "status": "ESCALATING",
+      "summary": "Tioga-Franklin (Philadelphia, $68M) failed Aug 22 - 5th of 2026 (FDIC confirms 5). NEW (Fortune Aug 23): Russia slow-motion bank run - $3.4B withdrawn in first 14 days of Aug, 7th consecutive month of outflow, liquidity crunch threatening Russia's ability to fund its war. Kremlin may seize deposits/recruits.",
+      "sources": ["FDIC", "Fortune", "Washington Post", "Telegraph", "Euronews"],
+      "escalate_to": ["fin_stability", "liquidity"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-007-UPDATE",
+      "domain": "commodities",
+      "title": "Gold Near Record $4,700 - Safe Haven Extreme",
+      "category": "market_dislocation",
+      "severity": 4,
+      "status": "NEW_HIGH",
+      "summary": "Gold hit 15-week high above $4,700 Aug 24, traded ~$4,637-4,651 Aug 25 (Guardian). Up 15% in August alone, +36.6% YoY. Driven by Treasury intervention concerns, Iran war premium, dollar weakness. Safe haven demand extreme.",
+      "sources": ["Guardian", "Trading Economics", "Forbes", "Fortune"],
+      "escalate_to": ["fin_stability", "currency"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-008-ESCALATE",
+      "domain": "china",
+      "title": "PBOC Weak Yuan Fixing - Largest Deviation Since Feb 27",
+      "category": "sovereign_intervention",
+      "severity": 4,
+      "status": "ESCALATED",
+      "summary": "NEW (Aug 25, 6h): PBOC set midpoint at 6.7852, 633 pips weaker than Reuters estimate (6.7219) - LARGEST weaker-side deviation since Feb 27. Signals devaluation pressure amid deflation fight. Vanke record $13B annual loss. Property crisis grinds on (5 years).",
+      "sources": ["Business Recorder", "Trading Economics", "Bloomberg", "Reuters", "Asia Times"],
+      "escalate_to": ["china", "currency", "fin_stability"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    },
+    {
+      "id": "BE-2026-08-25-009-WATCH",
+      "domain": "uk",
+      "title": "UK Gilts Under Pressure - BOE QT, Markets Pricing Hikes",
+      "category": "market_dislocation",
+      "severity": 3,
+      "status": "WATCH",
+      "summary": "Gilt yields at 18-year high driven by Iran war + inflation concerns. BOE QT reduced holdings to ~£529B by Mar 2026. Markets swung from pricing cuts to pricing hikes (68bps priced). UK disproportionately exposed to global bond sell-off. OBR projects £47bn added to debt by 2031.",
+      "sources": ["Goldman Sachs", "Reuters", "Telegraph", "StoneX", "NIESR"],
+      "escalate_to": ["europe", "fin_stability"],
+      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+    }
+  ],
+  "summary": "7 events tracked (4 cat-5 escalating + 1 new high + 1 escalated from watch + 1 watch). No NEW cat-5 since last scan. Intensifying: Hormuz disruption quantified at 5-7M bpd, PBOC weakest yuan fixing since Feb 27, Russia bank-run liquidity crunch threatening war funding.",
+  "overall_status": "CRITICAL - no new cat-5, multiple tracked events escalating with fresh data"
+}
