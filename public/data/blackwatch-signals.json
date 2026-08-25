@@ -2,42 +2,42 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-24T19:03:00.000000+00:00",
+    "last_update": "2026-08-25T06:18:47.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: Operation Economic Outcast - US sanctions on Iran (CAT-5)"
+    "breaking_event": "4 category-5 events: US Treasury bond intervention, US-Japan FX intervention, Iran/Hormuz war + oil shock, Ebola PHEIC"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
-      "value": 2.75,
+      "value": 2.7,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 0.02,
+      "change_from_last": -0.05,
       "unit": "%",
-      "description": "US High Yield OAS Spread",
+      "description": "US High Yield OAS Spread \u2014 ESCALATED: Treasury bond intervention, 30yr yield at 5.3% (highest since 2007), 5th US bank failure of 2026",
       "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-08-20",
-      "note": "ESCALATED BY THRESHOLD SCANNER: Gold RED breach $4,732/oz (+5.4% 24h). Treasury buyback doubling, 5th US bank failure, JGB at 3-decade highs, coordinated FX intervention sold euros for yen, global bond sell-off, UK gilts >5%, Bund 10Y at 15-year high 3.25% | Operation Economic Outcast sanctions escalation",
-      "timestamp": "2026-08-24T19:03:00.000000+00:00"
+      "last_date": "2026-08-21",
+      "note": "ESCALATED by breaking event scanner BE-2026-08-25-001 + BE-2026-08-25-006",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 0.88,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 5,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-07-06",
-      "note": "ESCALATED: Treasury buyback intervention signals stress, 5th bank failure, FOMC hawkish dissents",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-25T06:18:15.242731+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -52,7 +52,7 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-24T05:34:10.140460+00:00"
+      "timestamp": "2026-08-25T06:18:15.579940+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -60,29 +60,29 @@
       "value": 95.29,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 8,
+      "confidence": 9,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price \u2014 ESCALATED: .40/bbl, Hormuz blockade disrupting 20% of global oil/LNG supply",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED BY BREAKING SCANNER: Iran threatens to halt ALL Hormuz oil movement amid 'economic D-Day' sanctions. Oil sustained /bbl, Hormuz blocked since Feb.",
-      "timestamp": "2026-08-24T19:03:00.000000+00:00"
+      "note": "ESCALATED by breaking event scanner BE-2026-08-25-004",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
-      "value": 16.01,
+      "value": 15.13,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": 1.12,
+      "confidence": 10,
+      "change_from_last": -0.88,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
+      "description": "VIX as market fear proxy \u2014 ESCALATED: Active Iran war, Strait of Hormuz blocked, Israel-Gaza-Lebanon escalation",
       "series_id": "VIXCLS",
-      "last_date": "2026-08-20",
-      "note": "ESCALATED BY BREAKING SCANNER: Operation Economic Outcast - US 'economic D-Day' sanctions on Iran. Iran threatens to halt all Hormuz oil. Iran-US war ongoing, Russia bank run, tanker seizures.",
-      "timestamp": "2026-08-24T19:03:00.000000+00:00"
+      "last_date": "2026-08-21",
+      "note": "ESCALATED by breaking event scanner BE-2026-08-25-003",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,9 +95,9 @@
       "change_from_last": 0,
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
-      "last_date": "2026-08-24",
+      "last_date": "2026-08-25",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-24T05:34:10.625297+00:00"
+      "timestamp": "2026-08-25T06:18:10.188235+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
@@ -108,11 +108,11 @@
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u2014 ESCALATED: Hormuz blockade disrupting global shipping + Ebola outbreak",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Ebola PHEIC + Hormuz disruption + oil  EIA forecasts elevated prices",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "ESCALATED by breaking event scanner: Hormuz shipping disruption + Ebola PHEIC",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -126,8 +126,8 @@
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
-      "note": "ESCALATED: Ebola + oil price inflation feeding food costs",
-      "timestamp": "2026-08-24T07:02:00.000000+00:00"
+      "note": "ESCALATED by breaking event scanner: Oil price spike + Hormuz disruption affecting food supply chains",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -142,7 +142,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-24T05:34:09.911698+00:00"
+      "timestamp": "2026-08-25T06:18:09.448840+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -150,14 +150,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
+      "confidence": 3,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC declared, 5th bank failure, dollar debasement fears, AfD Euro exit call",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-25T06:18:17.272062+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -172,7 +172,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-24T05:34:10.625297+00:00"
+      "timestamp": "2026-08-25T06:18:10.188235+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -185,54 +185,54 @@
       "change_from_last": 0,
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
       "series_id": null,
-      "last_date": "2026-08-24",
+      "last_date": "2026-08-25",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-24T05:34:10.625297+00:00"
+      "timestamp": "2026-08-25T06:18:10.188235+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
-      "value": 118.9,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": -0.28,
+      "value": 118.06,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 7,
+      "change_from_last": -0.19,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
-      "last_date": "2026-08-14",
-      "note": "ESCALATED BY THRESHOLD SCANNER: USD/JPY AMBER breach 159.16 (intervention failing), EUR/USD AMBER breach 1.167 (dollar weakness). Historic US-Japan coordinated FX intervention sold euros for yen, AfD calls for Germany to quit Euro",
-      "timestamp": "2026-08-24T15:38:47.000000+00:00"
+      "last_date": "2026-08-21",
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-25T06:18:17.677291+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4731.8,
+      "value": 4704.2,
       "unit": "$/oz",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "change_from_last": 231.8,
-      "description": "Gold Spot: $4,731.80/oz (Yahoo Finance GC=F, Aug 24)",
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": 187.9,
+      "description": "Gold Futures (GC=F): $4,704.20 (+4.16%)",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-08-24",
-      "note": "\u00f0\u0178\u201d\u00b4 THRESHOLD RED BREACH: Gold above $3,500/oz (+35.2% over threshold). +5.4% in 24h. Safe haven demand extreme \u00e2\u20ac\u201d currency crisis or war premium. Bund yields at 15-year highs, JGB at 3-decade highs, dollar weakening.",
-      "timestamp": "2026-08-24T15:38:47.000000+00:00"
+      "last_date": "2026-08-25",
+      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
+      "timestamp": "2026-08-25T06:18:08.356210+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 79803,
+      "value": 80760,
       "unit": "$",
-      "status": "amber",
-      "trend": "improving",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
-      "change_from_last": 9.27,
-      "description": "BTC $79,803 (+9.27% 24h) \u00e2\u20ac\u201d Yahoo Finance",
+      "change_from_last": 4.4,
+      "description": "BTC $80,760 (+4.4% 24h), Dominance: 76.9%",
       "series_id": "CoinGecko API",
-      "last_date": "2026-08-24",
-      "note": "BTC surging +9.3% \u00e2\u20ac\u201d risk-on flight into crypto alongside gold. Threshold scanner update.",
-      "timestamp": "2026-08-24T15:38:47.000000+00:00"
+      "last_date": "2026-08-25",
+      "note": "Live from CoinGecko API",
+      "timestamp": "2026-08-25T06:18:09.010329+00:00"
     },
     "china": {
       "name": "China Health",
@@ -247,37 +247,37 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-24T05:34:09.268723+00:00"
+      "timestamp": "2026-08-25T06:18:08.776672+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
-      "last_date": "2026-08-21",
-      "note": "ESCALATED: AfD calls for Germany to quit Euro+Schengen, UK gilts >5%, BOE selling into bond rout, EUR/USD at 3-month high, French debt 118% GDP heading to 130%",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "last_date": "2026-08-24",
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-25T06:18:19.587763+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
-      "value": 0.5,
+      "value": 0.46,
       "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": 0.0,
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.04,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
-      "last_date": "2026-08-21",
-      "note": "FOMC hawkish dissents, Treasury buyback intervention, 5th bank failure, dollar debasement concerns",
-      "timestamp": "2026-08-24T15:04:06.000000+00:00"
+      "last_date": "2026-08-24",
+      "note": "",
+      "timestamp": "2026-08-25T06:18:20.107361+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -285,14 +285,14 @@
       "value": 95.29,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 10,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Oil as ME tension proxy \u2014 ESCALATED: Active US-Israel-Iran war, Hormuz blocked since Feb 2026",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED BY BREAKING SCANNER: Iran vows to halt ALL Hormuz oil, US 'economic D-Day' sanctions. Iran-US war ongoing.",
-      "timestamp": "2026-08-24T19:03:00.000000+00:00"
+      "note": "ESCALATED by breaking event scanner BE-2026-08-25-003",
+      "timestamp": "2026-08-25T06:18:47.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,28 +307,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-24T05:34:15.203176+00:00"
-    },
-    "macro_event": {
-      "name": "Macro Event Status",
-      "domain": "System",
-      "value": "ACTIVE",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "timestamp": "2026-08-24T19:03:00.000000+00:00",
-      "note": "CAT-5: NEW Operation Economic Outcast - US 'economic D-Day' sweeping sanctions on Iran. Iran threatens to halt ALL Hormuz oil movement. Combined with Treasury buyback doubling, US-Japan FX intervention, Ebola PHEIC, JGB 3-decade highs, 5th US bank failure, gold $4,732. 11 active events."
+      "timestamp": "2026-08-25T06:18:21.123463+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 1800,
-    "red_count": 17,
-    "amber_count": 4,
-    "green_count": 0,
-    "total_count": 21,
-    "timestamp": "2026-08-24T15:38:47.000000+00:00"
+    "score": 544,
+    "red_count": 12,
+    "amber_count": 6,
+    "green_count": 1,
+    "manual_count": 1,
+    "timestamp": "2026-08-25T06:18:47.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -450,6 +440,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-24T05:34:15.213134+00:00"
+    "timestamp": "2026-08-25T06:18:21.147950+00:00"
   }
 }

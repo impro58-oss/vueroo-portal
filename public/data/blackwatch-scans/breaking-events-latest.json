@@ -1,83 +1,92 @@
 {
-  "scan_time": "2026-08-24T19:03:00.000000+00:00",
+  "scan_time": "2026-08-25T06:15:50.529487Z",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v4h",
+  "scanner": "BlackWatch Breaking Event Scanner v1.0",
+  "operator": "Lumina (cron-triggered)",
   "domains_scanned": 12,
   "queries_executed": 36,
-  "events_detected": [
+  "events_detected": 6,
+  "category_5_count": 4,
+  "events": [
     {
-      "id": "BE-2026-08-24-009",
-      "title": "Operation Economic Outcast \u2014 US unveils sweeping 'economic D-Day' sanctions on Iran",
+      "id": "BE-2026-08-25-001",
       "domain": "us_fed",
       "category": "sovereign_intervention",
       "severity": 5,
-      "sources": [
-        "washingtonpost.com",
-        "nytimes.com",
-        "npr.org",
-        "cnn.com",
-        "redstate.com"
-      ],
-      "timestamp": "2026-08-24",
-      "summary": "Treasury Secretary Bessent unveiled 'Operation Economic Outcast' \u2014 sweeping new sanctions on Iran to 'tighten the noose' on every source of Iranian revenue. Trump promised an 'ECONOMIC D-DAY.' Iran's top security chief (Mohsen Rezaei) threatened to halt ALL oil movement through the Strait of Hormuz if neighbors help the US weaken Tehran's economy. New sanctions aimed at closing loopholes in the US financial dragnet around oil trade. Major escalation of the 2026 Iran war into the economic/financial domain.",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "fin_stability"
-      ],
-      "is_new": true
+      "title": "US Treasury Announces Artificial Yield Cap / Bond Market Intervention",
+      "description": "Treasury Secretary Bessent announced intention to artificially cap runaway yields on US government debt. Treasury doubled bond buyback capacity to $4bn per issue. 30-year Treasury yield hit 5.3% (highest since 2007). Global bond sell-off across US, Japan, Germany, Canada. NYT reports Treasury using 'interventionist tactics' to lower interest rates.",
+      "sources": ["foreignpolicy.com", "nytimes.com", "thehill.com", "telegraph.co.uk"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "impact_regions": ["US", "Global"],
+      "confidence": 9
     },
     {
-      "id": "BE-2026-08-24-002",
-      "title": "US sold euros to buy yen \u2014 first coordinated US-Japan FX intervention in a generation",
+      "id": "BE-2026-08-25-002",
       "domain": "japan",
       "category": "sovereign_intervention",
-      "severity": 5,
-      "sources": [
-        "nytimes.com",
-        "cnbc.com",
-        "morganstanley.com",
-        "scmp.com",
-        "fairobserver.com"
-      ],
-      "timestamp": "2026-08-02",
-      "summary": "US Treasury sold euros to buy yen, strengthening JPY from 164 to ~155. Yen has since weakened back to 159. Intervention aimed to prevent Japan from selling US Treasuries. First joint intervention in a generation.",
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": false
+      "severity": 4,
+      "title": "Historic US-Japan Coordinated Currency Intervention",
+      "description": "First joint US-Japan yen intervention in a generation. Yen hit 164/dollar (weakest since 1986). Coordinated intervention brought it to ~155, but it has since weakened back to ~159. Washington joined to prevent Japan from needing to sell US Treasuries to fund further action. BOJ rate at 1%, intervention may signal willingness to raise sooner.",
+      "sources": ["nytimes.com", "cnbc.com", "morganstanley.com", "scmp.com"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["japan_sovereign", "currency", "fin_stability"],
+      "impact_regions": ["Japan", "US", "Global FX"],
+      "confidence": 9
     },
     {
-      "id": "BE-2026-08-24-006",
-      "title": "WHO declares Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases, 2,516 deaths",
-      "domain": "pandemic_health",
-      "category": "pandemic",
+      "id": "BE-2026-08-25-003",
+      "domain": "middle_east",
+      "category": "war_military",
       "severity": 5,
-      "sources": [
-        "who.int",
-        "ecdc.europa.eu",
-        "un.org",
-        "health.ec.europa.eu"
-      ],
-      "timestamp": "2026-08-20",
-      "summary": "WHO declared 2026 DRC Ebola outbreak (Bundibugyo strain) a Public Health Emergency of International Concern. 5,290 confirmed cases, 2,516 deaths as of Aug 19. ECDC epidemiological update published 24 Aug 2026. No approved vaccines or treatments for Bundibugyo strain. Risk in Europe remains very low.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "is_new": false
+      "title": "2026 Iran War / Strait of Hormuz Crisis — Active Military Conflict",
+      "description": "US-Israel launched air war against Iran on Feb 28, 2026. Iran retaliated with missile/drone strikes on US embassies, military installations, and oil infrastructure. Strait of Hormuz largely blocked — 20% of global oil/LNG supply disrupted. Iran parliament advancing plans for Hormuz service fees. Commercial vessel traffic through Hormuz and Bab al-Mandeb remains depressed. Israel-Gaza-Lebanon escalation continues. Trump says no talks underway with Iran (Aug 18).",
+      "sources": ["wikipedia.org", "britannica.com", "cnn.com", "aljazeera.com"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "impact_regions": ["Iran", "Israel", "US", "Global Energy", "Global Shipping"],
+      "confidence": 10
+    },
+    {
+      "id": "BE-2026-08-25-004",
+      "domain": "commodities",
+      "category": "energy_shock",
+      "severity": 5,
+      "title": "Oil Price Spike / Energy Supply Disruption",
+      "description": "Brent crude at $95.40/bbl (Aug 20), analysts warning could reach $100+. 20% of world's oil and LNG supply disrupted by Hormuz blockade. OPEC+ pledged 206k bpd increase to mitigate. Japanese refiners asked government to release strategic reserves. EIA forecasting elevated prices until oil flows normalize. 2026 Iran war fuel crisis creating economic divide in South America. Gold at $4,620-4,670/oz as safe haven demand surges.",
+      "sources": ["fortune.com", "eia.gov", "wikipedia.org", "tradingeconomics.com", "coinpaper.com"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["energy", "food_security"],
+      "impact_regions": ["Global"],
+      "confidence": 9
+    },
+    {
+      "id": "BE-2026-08-25-005",
+      "domain": "pandemic_health",
+      "category": "pandemic_health",
+      "severity": 5,
+      "title": "2026 Ebola Epidemic — WHO Public Health Emergency of International Concern",
+      "description": "WHO declared PHEIC for Bundibugyo ebolavirus outbreak in DRC. 5,290 confirmed cases, 2,516 deaths (as of Aug 19). 837 patients hospitalized. Fastest-growing Ebola outbreak on record. Bundibugyo strain has no approved vaccines or treatments (existing treatments are for Zaire strain). Spread to Uganda. Risk of international spread increasing. EU coordinating response, risk in Europe assessed as very low.",
+      "sources": ["who.int", "ecdc.europa.eu", "health.ec.europa.eu", "wikipedia.org"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "impact_regions": ["DRC", "Uganda", "Central Africa", "Global (travel)"],
+      "confidence": 10
+    },
+    {
+      "id": "BE-2026-08-25-006",
+      "domain": "financial_system",
+      "category": "market_dislocation",
+      "severity": 3,
+      "title": "5th US Bank Failure of 2026 + Global Bond Market Dislocation",
+      "description": "Tioga-Franklin Savings Bank ($68M assets, Philadelphia) became 5th US bank failure of 2026, up from 2 in same period 2025. FDIC estimated $5.5M Deposit Insurance Fund hit. Meanwhile, global bond sell-off sending yields to decade+ highs across US (30yr at 5.3%), UK (10yr at 5.06%), Japan, Germany. Banking deregulation advancing in 2026. Stansberry Research warning of approaching credit crisis. Russian banking system also flagged for systemic crisis risk by late 2026.",
+      "sources": ["creditandcollectionnews.com", "americanbanker.com", "reuters.com", "stansberryresearch.com"],
+      "detected_at": "2026-08-25T06:15Z",
+      "escalate_to": ["fin_stability", "liquidity"],
+      "impact_regions": ["US", "Global"],
+      "confidence": 7
     }
   ],
-  "new_events_count": 1,
-  "previously_tracked_count": 2,
-  "macro_event_active": true,
-  "overall_risk": "CRITICAL",
-  "key_findings": [
-    "NEW: Operation Economic Outcast \u2014 US 'economic D-Day' sweeping sanctions on Iran; Iran threatens to halt ALL Strait of Hormuz oil movement",
-    "US-Japan coordinated FX intervention continues, yen back to 159 after intervention failed",
-    "Ebola PHEIC \u2014 ECDC update Aug 24, largest outbreak on record (5,290 cases, 2,516 deaths)"
-  ]
+  "no_event_domains": ["eu_ecb", "uk", "latam", "china", "em_asia", "africa"],
+  "scan_summary": "6 events detected across 12 domains. 4 category-5 events: US Treasury bond intervention, US-Japan currency intervention, Iran/Hormuz war + energy shock, Ebola PHEIC. Global bond market dislocation accelerating. Multiple convergence vectors active."
 }
