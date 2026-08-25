@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-24T19:30:31.288294",
+  "timestamp": "2026-08-25T10:09:08.988931",
   "version": "5.3.2-WIDE-TRAILING-3ATR-HARD-STOP",
   "system": "V5.3.2 Wide Trailing 3 ATR + Hard Stop 10% \u2014 Same entries, tightened trailing + hard stop",
   "parameters": {
@@ -28,14 +28,14 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -210.28,
-    "unrealized_pnl_eur": 66.48,
-    "total_pnl_eur": -143.8,
-    "open_positions": 5,
-    "closed_trades": 7,
+    "realized_pnl_eur": -235.28,
+    "unrealized_pnl_eur": 92.54,
+    "total_pnl_eur": -142.74,
+    "open_positions": 4,
+    "closed_trades": 8,
     "wins": 2,
-    "losses": 5,
-    "win_rate": 28.6
+    "losses": 6,
+    "win_rate": 25.0
   },
   "open_positions": {
     "WLDUSDT": {
@@ -47,12 +47,12 @@
       "stop": null,
       "highest": 0.4636,
       "lowest": 0.3607,
-      "bars_held": 37,
+      "bars_held": 39,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.4061
+      "current_price": 0.4075
     },
     "JSTUSDT": {
       "status": "OPEN",
@@ -63,12 +63,12 @@
       "stop": null,
       "highest": 0.10989,
       "lowest": 0.10817,
-      "bars_held": 37,
+      "bars_held": 39,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.10144
+      "current_price": 0.10172
     },
     "CAKEUSDT": {
       "status": "OPEN",
@@ -79,28 +79,12 @@
       "stop": null,
       "highest": 1.857,
       "lowest": 1.487,
-      "bars_held": 20,
+      "bars_held": 22,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 1.76
-    },
-    "LDOUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-23T21:05:10.232185",
-      "entry_price": 0.4107,
-      "atr": 0.02453571428571428,
-      "stop": null,
-      "highest": 0.4107,
-      "lowest": 0.4107,
-      "bars_held": 8,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.3751
+      "current_price": 1.749
     },
     "INJUSDT": {
       "status": "OPEN",
@@ -109,14 +93,14 @@
       "entry_price": 5.498,
       "atr": 0.35171428571428587,
       "stop": null,
-      "highest": 5.848,
+      "highest": 6.002,
       "lowest": 5.498,
-      "bars_held": 3,
+      "bars_held": 5,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 5.831
+      "current_price": 5.912
     }
   },
   "recent_trades": [
@@ -210,22 +194,35 @@
       "reason": "TRAILING_STOP_3.0ATR",
       "bars_held": 29,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "LDOUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-23T21:05:10.232185",
+      "exit_date": "2026-08-25T07:09:20.845540",
+      "entry_price": 0.4107,
+      "exit_price": 0.36963,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 9,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
+    "EURUSDT",
+    "PAXGUSDT",
+    "UUSDT",
     "RLUSDUSDT",
-    "ZECUSDT",
+    "XAUTUSDT",
     "KASUSDT",
     "USDEUSDT",
-    "UUSDT",
-    "XUSDUSDT",
     "BFUSDUSDT",
-    "PAXGUSDT",
-    "XAUTUSDT",
-    "EURUSDT"
+    "ZECUSDT",
+    "XUSDUSDT",
+    "USD1USDT"
   ]
 }
