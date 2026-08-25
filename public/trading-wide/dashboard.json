@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T10:09:08.988931",
+  "timestamp": "2026-08-25T13:09:00.550965",
   "version": "5.3.2-WIDE-TRAILING-3ATR-HARD-STOP",
   "system": "V5.3.2 Wide Trailing 3 ATR + Hard Stop 10% \u2014 Same entries, tightened trailing + hard stop",
   "parameters": {
@@ -28,32 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -235.28,
-    "unrealized_pnl_eur": 92.54,
-    "total_pnl_eur": -142.74,
-    "open_positions": 4,
-    "closed_trades": 8,
-    "wins": 2,
+    "realized_pnl_eur": -169.06,
+    "unrealized_pnl_eur": -2.75,
+    "total_pnl_eur": -171.81,
+    "open_positions": 2,
+    "closed_trades": 10,
+    "wins": 4,
     "losses": 6,
-    "win_rate": 25.0
+    "win_rate": 40.0
   },
   "open_positions": {
-    "WLDUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-16T19:12:21.922574",
-      "entry_price": 0.3607,
-      "atr": 0.020507142857142863,
-      "stop": null,
-      "highest": 0.4636,
-      "lowest": 0.3607,
-      "bars_held": 39,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.4075
-    },
     "JSTUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -63,28 +47,12 @@
       "stop": null,
       "highest": 0.10989,
       "lowest": 0.10817,
-      "bars_held": 39,
+      "bars_held": 40,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.10172
-    },
-    "CAKEUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-18T19:19:23.676418",
-      "entry_price": 1.487,
-      "atr": 0.03535714285714288,
-      "stop": null,
-      "highest": 1.857,
-      "lowest": 1.487,
-      "bars_held": 22,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 1.749
+      "current_price": 0.09987
     },
     "INJUSDT": {
       "status": "OPEN",
@@ -93,14 +61,14 @@
       "entry_price": 5.498,
       "atr": 0.35171428571428587,
       "stop": null,
-      "highest": 6.002,
+      "highest": 6.057,
       "lowest": 5.498,
-      "bars_held": 5,
+      "bars_held": 6,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 5.912
+      "current_price": 5.863
     }
   },
   "recent_trades": [
@@ -207,22 +175,48 @@
       "reason": "HARD_STOP_10.0%",
       "bars_held": 9,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "WLDUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-16T19:12:21.922574",
+      "exit_date": "2026-08-25T13:09:00.550965",
+      "entry_price": 0.3607,
+      "exit_price": 0.4020785714285714,
+      "pnl_pct": 9.68,
+      "pnl_eur": 24.19,
+      "reason": "TRAILING_STOP_3.0ATR",
+      "bars_held": 40,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "CAKEUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-18T19:19:23.676418",
+      "exit_date": "2026-08-25T13:09:00.550965",
+      "entry_price": 1.487,
+      "exit_price": 1.7509285714285714,
+      "pnl_pct": 16.81,
+      "pnl_eur": 42.03,
+      "reason": "TRAILING_STOP_3.0ATR",
+      "bars_held": 23,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "EURUSDT",
-    "PAXGUSDT",
     "UUSDT",
-    "RLUSDUSDT",
-    "XAUTUSDT",
-    "KASUSDT",
-    "USDEUSDT",
-    "BFUSDUSDT",
     "ZECUSDT",
+    "BFUSDUSDT",
+    "PAXGUSDT",
+    "KASUSDT",
+    "EURUSDT",
+    "XAUTUSDT",
     "XUSDUSDT",
-    "USD1USDT"
+    "USD1USDT",
+    "RLUSDUSDT",
+    "USDEUSDT"
   ]
 }
