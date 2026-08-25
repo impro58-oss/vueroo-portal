@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-25T07:30:40.000000+00:00",
+    "last_update": "2026-08-25T10:15:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "4 category-5 events: US Treasury bond intervention, US-Japan FX intervention, Iran/Hormuz war + oil shock, Ebola PHEIC",
+    "breaking_event": "7 events tracked (4 escalating + 1 new high + 2 watch). No new cat-5 since last scan. Existing events intensifying.",
     "threshold_breach": "4 thresholds breached (1 RED: Gold >3500, 3 AMBER: USD/JPY >158, EUR/USD >1.15, Gold >3000)"
   },
   "signals": {
@@ -19,11 +19,11 @@
       "confidence": 10,
       "change_from_last": -0.05,
       "unit": "%",
-      "description": "US High Yield OAS Spread \u2014 ESCALATED: Treasury bond intervention, 30yr yield at 5.3% (highest since 2007), 5th US bank failure of 2026. Gold at $4,697 (+34% above RED threshold) signals currency crisis premium.",
+      "description": "US High Yield OAS Spread - ESCALATED: Treasury bond intervention expanding (buybacks from Sept 9), 30yr yield 5.248%. 5th US bank failure of 2026 (Tioga-Franklin). Gold peaked ,712 (+34% above RED threshold). Russia warned of systemic banking crisis risk.",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-21",
       "note": "ESCALATED by breaking event scanner BE-2026-08-25-001 + BE-2026-08-25-006 + threshold scanner (Gold RED breach)",
-      "timestamp": "2026-08-25T07:30:39.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -64,11 +64,11 @@
       "confidence": 9,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price \u2014 ESCALATED: .40/bbl, Hormuz blockade disrupting 20% of global oil/LNG supply",
+      "description": "Brent Crude ~/bbl - ESCALATED: Hormuz blockade ongoing, EIA reports global inventory drawdowns continuing. Saudi cut Arab Light OSP to Asia by  (biggest drop in 2 decades).",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
       "note": "ESCALATED by breaking event scanner BE-2026-08-25-004",
-      "timestamp": "2026-08-25T06:18:47.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -79,11 +79,11 @@
       "confidence": 10,
       "change_from_last": 0.82,
       "unit": "index",
-      "description": "VIX 15.71 (not breached but elevated +5.5%) \u2014 ESCALATED: Active Iran war, Strait of Hormuz blocked, Israel-Gaza-Lebanon escalation. Gold at $4,697 signals war premium.",
+      "description": "VIX elevated - ESCALATED: Active US-Israel-Iran war, Hormuz blocked, ceasefire collapsed July 8. Houthis attacking Saudi Arabia. UAE left OPEC 2026. Gold at ,640 signals war premium.",
       "series_id": "VIXCLS",
       "last_date": "2026-08-25",
       "note": "ESCALATED by breaking event scanner BE-2026-08-25-003 + threshold scanner (Gold RED breach confirms war premium)",
-      "timestamp": "2026-08-25T07:30:39.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -109,11 +109,11 @@
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 ESCALATED: Hormuz blockade disrupting global shipping + Ebola outbreak",
+      "description": "Using Brent oil as supply chain cost proxy - ESCALATED: Hormuz shipping disruption ongoing + Ebola outbreak 5,514 cases + Uganda spread",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
       "note": "ESCALATED by breaking event scanner: Hormuz shipping disruption + Ebola PHEIC",
-      "timestamp": "2026-08-25T06:18:47.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -124,11 +124,11 @@
       "confidence": 3,
       "change_from_last": 1.47,
       "unit": "index",
-      "description": "IMF Food Price Index",
+      "description": "IMF Food Price Index - ESCALATED: Oil price spike + Hormuz disruption affecting food supply chains. EIA warns supply shortages in China and India.",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
       "note": "ESCALATED by breaking event scanner: Oil price spike + Hormuz disruption affecting food supply chains",
-      "timestamp": "2026-08-25T06:18:47.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -199,26 +199,26 @@
       "confidence": 8,
       "change_from_last": -0.15,
       "unit": "USD/JPY",
-      "description": "USD/JPY at 159.40 \u2014 AMBER THRESHOLD BREACH: above 158.0 intervention zone. Joint intervention likely failing.",
+      "description": "USD/JPY at ~159 - AMBER THRESHOLD BREACH: above 158.0. Joint US-Japan intervention fading. Yen slid to 164 in late July, settled near 159 by Aug 23. BOJ rate at 1%.",
       "series_id": "Yahoo Finance JPY=X",
       "last_date": "2026-08-25",
       "note": "ESCALATED by threshold scanner: USD/JPY above 158.0 AMBER threshold. EUR/USD also breached 1.15 AMBER (current: 1.1662).",
-      "timestamp": "2026-08-25T07:30:39.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4697.0,
+      "value": 4640.0,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "change_from_last": 180.7,
-      "description": "Gold Futures (GC=F): $4,697.00 (+4.00%) \u2014 RED THRESHOLD BREACH: $4,697 above $3,500 threshold (+34.2%). Currency crisis or war premium. Safe haven demand extreme.",
+      "change_from_last": -57.0,
+      "description": "Gold at ,640 (peaked ,712 Aug 24) - RED THRESHOLD BREACH: +32.6% above ,500. Treasury intervention + Iran war + dollar weakness driving safe haven extreme.",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-25",
       "note": "ESCALATED by threshold scanner: Gold above $3,500 RED threshold. Also above $3,000 AMBER threshold (+56.6%).",
-      "timestamp": "2026-08-25T07:30:39.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -289,11 +289,11 @@
       "confidence": 10,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy \u2014 ESCALATED: Active US-Israel-Iran war, Hormuz blocked since Feb 2026",
+      "description": "Brent proxy - ESCALATED: Iran war ongoing, Hormuz disrupted since Feb. Iran parliament advancing Hormuz service fees. Houthis attacking Saudi. Gulf real estate -10% Aug. Oman mediating shipping lanes.",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
       "note": "ESCALATED by breaking event scanner BE-2026-08-25-003",
-      "timestamp": "2026-08-25T06:18:47.000000+00:00"
+      "timestamp": "2026-08-25T10:15:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",

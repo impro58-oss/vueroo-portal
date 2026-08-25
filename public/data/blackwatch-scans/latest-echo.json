@@ -1,180 +1,19 @@
 {
-  "scan_time": "2026-08-24T15:04:06.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v4h",
-  "domains_scanned": 12,
-  "queries_executed": 36,
-  "events_detected": [
-    {
-      "id": "BE-2026-08-24-001",
-      "title": "US Treasury doubles long-dated bond buybacks \u2014 active market intervention",
-      "domain": "us_fed",
-      "category": "sovereign_intervention",
-      "severity": 4,
-      "sources": [
-        "foreignpolicy.com",
-        "thehill.com",
-        "cfr.org",
-        "axios.com"
-      ],
-      "timestamp": "2026-08-20",
-      "summary": "Treasury announced doubling of buybacks from  to  per operation (Sep 9-Nov 4). Intention to artificially cap runaway yields on US government debt. Bond market alarms sparked emergency buyback plan.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-002",
-      "title": "US sold euros to buy yen \u2014 first coordinated US-Japan FX intervention in a generation",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "sources": [
-        "nytimes.com",
-        "cnbc.com",
-        "morganstanley.com",
-        "scmp.com",
-        "fairobserver.com"
-      ],
-      "timestamp": "2026-08-02",
-      "summary": "US Treasury sold euros to buy yen, strengthening JPY from 164 to ~155. Yen has since weakened back to 159. Intervention aimed to prevent Japan from selling US Treasuries. First joint intervention in a generation.",
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-003",
-      "title": "AfD leader calls for Germany to quit the Euro and Schengen",
-      "domain": "eu_ecb",
-      "category": "sovereign_crisis",
-      "severity": 3,
-      "sources": [
-        "clashreport.com"
-      ],
-      "timestamp": "2026-08-23",
-      "summary": "Alice Weidel publicly called for Germany to exit the Euro and Schengen. Political shock to Euro stability framework.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-004",
-      "title": "FOMC minutes turned hawkish \u2014 multiple dissents, rate hikes may resume",
-      "domain": "us_fed",
-      "category": "emergency_rate",
-      "severity": 3,
-      "sources": [
-        "briskmarkets.com",
-        "newsquawk.com",
-        "wellsfargoadvisors.com"
-      ],
-      "timestamp": "2026-08-19",
-      "summary": "FOMC minutes (Jul 28-29) showed multiple hawkish dissents. Many policymakers believe further rate increases could become necessary if inflation fails to moderate. Current rate 3.50-3.75%.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-005",
-      "title": "5th US bank failure of 2026 \u2014 Tioga-Franklin Savings Bank, Philadelphia",
-      "domain": "financial_system",
-      "category": "market_dislocation",
-      "severity": 3,
-      "sources": [
-        "creditandcollectionnews.com"
-      ],
-      "timestamp": "2026-08-22",
-      "summary": "Tioga-Franklin Savings Bank ( assets) becomes 5th US bank failure of 2026, up from 2 in all of 2025. Small-bank closure trend accelerating.",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-006",
-      "title": "WHO declares Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases, 2,516 deaths",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 5,
-      "sources": [
-        "who.int",
-        "ecdc.europa.eu",
-        "un.org",
-        "health.ec.europa.eu"
-      ],
-      "timestamp": "2026-08-20",
-      "summary": "WHO declared 2026 DRC Ebola outbreak (Bundibugyo strain) a Public Health Emergency of International Concern. 5,290 confirmed cases, 2,516 deaths as of Aug 19. No approved vaccines or treatments for Bundibugyo strain. Risk in Europe remains very low.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-007",
-      "title": "JGB yields at 3-decade highs near 3% \u2014 Takaichi budget fears driving bond vigilantes",
-      "domain": "japan",
-      "category": "sovereign_crisis",
-      "severity": 4,
-      "sources": [
-        "asia.nikkei.com",
-        "asiatimes.com",
-        "tradingeconomics.com",
-        "faressolution.net"
-      ],
-      "timestamp": "2026-08-18",
-      "summary": "10-year JGB yield near 2.95%, highest since 1996. Finance Ministry raising assumed interest rate to 3.8% for fiscal 2027. Takaichi administration loose fiscal policy spooking bond vigilantes. Japan leading global bond selloff.",
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-008",
-      "title": "Oil at , gold above ,500 \u2014 Hormuz disruption continues, no end in sight",
-      "domain": "commodities",
-      "category": "energy_shock",
-      "severity": 4,
-      "sources": [
-        "tradingeconomics.com",
-        "eia.gov",
-        "amillex.com"
-      ],
-      "timestamp": "2026-08-21",
-      "summary": "Crude oil just below /bbl, 2nd consecutive weekly gain of ~5%. Gold above ,500/oz, 3rd consecutive weekly gain. EIA forecasts elevated prices until Hormuz flows normalize. Global inventories drawing down.",
-      "escalate_to": [
-        "energy",
-        "food_security"
-      ],
-      "is_new": false
-    }
-  ],
-  "new_events_count": 7,
-  "previously_tracked_count": 1,
-  "macro_event_active": true,
-  "overall_risk": "CRITICAL",
-  "key_findings": [
-    "US Treasury doubling long-dated bond buybacks \u2014 active yield cap intervention",
-    "US sold euros to buy yen in first coordinated FX intervention in a generation",
-    "WHO declared Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases",
-    "JGB yields at 3-decade highs near 3%, Japan leading global bond selloff",
-    "5th US bank failure of 2026 (up from 2 in all of 2025)",
-    "AfD leader calls for Germany to quit Euro and Schengen",
-    "FOMC minutes showed hawkish dissents \u2014 rate hikes may resume",
-    "Oil at , gold above ,500 \u2014 Hormuz disruption continues"
+  "scan_time": "2026-08-24T07:02:00.000000+00:00",
+  "scanner": "breaking_event",
+  "events_count": 8,
+  "top_event": "Strait of Hormuz Active Disruption + Ebola 5,290 Cases/2,516 Deaths + UK Gilt Crisis + Russia Bank Run + Hedge Fund Treasury Leverage $2.4T",
+  "risk_level": "CRITICAL",
+  "summary": "8 events: Hormuz shipping crisis (oil >$90, war-risk insurance tripled), Ebola Bundibugyo fastest-growing outbreak ever (5,290 cases/2,516 deaths, 3x underreporting), UK gilt crisis (10Y >5%, BOE selling into rout), US-Japan yen intervention unraveling (~159), hedge fund Treasury leverage $2.4T at 100:1, Russia bank run €24.4B withdrawn, global bond sell-off pre-crisis levels, Argentina sovereign risk widening",
+  "signals_updated": "macro_event ACTIVE, escalated: middle_east, energy, geopolitical, supply_chain, social_cohesion, food_security, fin_stability, liquidity, currency, europe",
+  "macro_event": "ACTIVE",
+  "new_events_vs_last_scan": 3,
+  "new_event_ids": ["evt-004-uk-gilts", "evt-006-russia-bankrun", "evt-008-argentina-sov-risk"],
+  "top_threats": [
+    "Strait of Hormuz: active disruption, oil >$90, insurance premiums tripled",
+    "Ebola: 5,290 cases, 2,516 deaths, 3x underreporting, vaccine mismatch",
+    "UK gilts: 10Y >5.0%, 30Y 5.7%, BOE selling into global bond rout",
+    "Hedge fund Treasury leverage: $2.4T, 100:1, basis trade $830B",
+    "Russia: €24.4B withdrawn, systemic crisis by October, war funding threatened"
   ]
 }
