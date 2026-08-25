@@ -1,96 +1,100 @@
 {
-  "scan_time": "2026-08-25T10:15:00.000000+00:00",
-  "scan_type": "breaking_event_4h",
-  "scanner": "BlackWatch Breaking Event Scanner",
-  "date": "2026-08-25",
+  "scan_time": "2026-08-25T15:04:54.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner_version": "2.0",
   "domains_scanned": 12,
-  "queries_executed": 14,
-  "events_detected": [
+  "queries_executed": 18,
+  "new_events": [
+    "BE-2026-08-25-009",
+    "BE-2026-08-25-010",
+    "BE-2026-08-25-011",
+    "BE-2026-08-25-012"
+  ],
+  "events": [
     {
-      "id": "BE-2026-08-25-001-UPDATE",
+      "id": "BE-2026-08-25-009",
       "domain": "us_fed",
-      "title": "US Treasury Expanded Buyback Plan - Escalating",
+      "title": "Treasury considers tapping  TGA for bond buybacks as yields rebound",
       "category": "sovereign_intervention",
       "severity": 5,
-      "status": "ESCALATING",
-      "summary": "Bessent announced accelerated long-end buybacks starting Sept 9, max $2B per operation. 30yr yield at 5.248%. CFR warns not durable. FT calls it band-aid. Yields rebounded after initial rally, wiping out intervention gains.",
-      "sources": ["Bloomberg", "CNBC", "Reuters", "NYT", "CFR", "FT"],
-      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "summary": "CNBC Aug 24: Bessent could tap near  trillion Treasury General Account to fund bond buybacks. Treasury doubling long-end buyback size from  to  per operation. 10Y yield rose back to 4.73%, 30Y hit 5.31%. Yields rebounded wiping out initial rally. Forbes: interventionist tactics failing.",
+      "source": "CNBC, Fortune, Forbes, CFR",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "sov_debt"
+      ]
     },
     {
-      "id": "BE-2026-08-25-003-UPDATE",
-      "domain": "middle_east",
-      "title": "Iran War / Hormuz Blockade - Ongoing, Diplomatic Stalemate",
-      "category": "war_military",
-      "severity": 5,
-      "status": "ONGOING",
-      "summary": "Ceasefire collapsed July 8. Iran attacks commercial vessels, asserts sovereignty over Hormuz. Iran parliament advancing Hormuz service fees. Oman mediating shipping lanes. Houthis attacking Saudi Arabia. Gulf real estate -10% in August. EIA: global inventories drawdown continuing.",
-      "sources": ["Wikipedia", "Britannica", "Al Jazeera", "CFR", "EIA"],
-      "escalate_to": ["middle_east", "energy", "geopolitical"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-08-25-005-UPDATE",
-      "domain": "pandemic_health",
-      "title": "Ebola Bundibugyo Epidemic - Worsening, 5,514 cases",
-      "category": "pandemic",
-      "severity": 4,
-      "status": "WORSENING",
-      "summary": "5,514 confirmed cases, 2,642 deaths as of Aug 22. 808 hospitalised. Spread to Uganda. Bundibugyo strain has no approved vaccine/treatment. WHO PHEIC declared, 2nd emergency committee Aug 18. EU says risk very low but coordinating.",
-      "sources": ["WHO", "ECDC", "Wikipedia", "EU Health"],
-      "escalate_to": ["supply_chain", "social_cohesion"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-08-25-006-UPDATE",
-      "domain": "financial_system",
-      "title": "5th US Bank Failure of 2026 - Tioga-Franklin",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "ONGOING",
-      "summary": "Tioga-Franklin Savings Bank (Philadelphia, $68M assets) failed Aug 22 - 5th of 2026, up from 2 in all of 2024. GOP advancing banking deregulation in 2026, dismantling post-2008 safeguards. Kremlin think tank warns Russia may face systemic banking crisis late 2026.",
-      "sources": ["Credit and Collection News", "Moscow Times"],
-      "escalate_to": ["fin_stability", "liquidity"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-08-25-007-NEW",
-      "domain": "commodities",
-      "title": "Gold Hits New Record $4,712 - Safe Haven Extreme",
-      "category": "market_dislocation",
-      "severity": 4,
-      "status": "NEW_HIGH",
-      "summary": "Gold peaked above $4,700 on Aug 24, now ~$4,640-4,712. Up 25%+ since early 2025. Driven by Treasury intervention concerns, Iran war premium, dollar weakness. Futures at $4,694.80.",
-      "sources": ["Yahoo Finance", "Fortune", "Trading Economics", "Crypto Briefing"],
-      "escalate_to": ["fin_stability", "currency"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-08-25-008-WATCH",
-      "domain": "china",
-      "title": "PBOC Sets Weak Yuan Fixing - 593 Pip Deviation",
-      "category": "sovereign_intervention",
-      "severity": 3,
-      "status": "WATCH",
-      "summary": "PBOC fixed USD/CNY at 6.7841 vs 6.7248 Reuters estimate (593 pip deviation). LPR held at 3.00%/3.50%. Property crisis ongoing 5 years. UAE left OPEC in 2026. Signals potential devaluation pressure.",
-      "sources": ["Trading Economics", "EdgeX", "Bloomberg"],
-      "escalate_to": ["china", "currency", "fin_stability"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
-    },
-    {
-      "id": "BE-2026-08-25-009-WATCH",
+      "id": "BE-2026-08-25-010",
       "domain": "uk",
-      "title": "UK Gilts Under Pressure - Markets Pricing BOE Hikes",
+      "title": "UK gilts weakest link in global bond sell-off, BOE still selling gilts",
       "category": "market_dislocation",
-      "severity": 3,
-      "status": "WATCH",
-      "summary": "Markets swung from pricing cuts to pricing hikes. BOE costing taxpayer billions. OBR projects £47bn added to debt by 2031. UK gilts disproportionately exposed to global bond sell-off. Following US Treasury buyback fade.",
-      "sources": ["Telegraph", "Trading Economics", "ShareCafe", "BBC"],
-      "escalate_to": ["europe", "fin_stability"],
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "severity": 4,
+      "summary": "UK 10Y gilt yield at 5.06%, 30Y at 5.7%. Telegraph: BOE costing taxpayers billions, still selling gilts during global bond rout. Sharecafe: UK gilts disproportionately exposed, could become weakest link. BOE obstinacy frustrating Treasury officials.",
+      "source": "Telegraph, Sharecafe, TradingEconomics, House of Commons Library",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "id": "BE-2026-08-25-011",
+      "domain": "eu_ecb",
+      "title": "European bond yields hit multi-year highs on Iran war inflation fears",
+      "category": "market_dislocation",
+      "severity": 4,
+      "summary": "Euronews Aug 18: France 10Y at 17-year high, Germany 10Y highest since 2011. ECB inflation expected near 3% for rest of 2026. Global debt selloff wave hitting Eurozone. Spain Ibex retreats from 20,000.",
+      "source": "Euronews, BigGo Finance",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "id": "BE-2026-08-25-012",
+      "domain": "china",
+      "title": "Evergrande founder sentenced to life, property crisis grinds on with no bottom",
+      "category": "sovereign_crisis",
+      "severity": 4,
+      "summary": "Hui Ka Yan sentenced to life imprisonment Aug 20 by Shenzhen court. Evergrande delisted from HKEX Aug 2025. Property values still plummeting 5 years into crisis. Reuters Aug 23: crisis grinds on after sentencing. Shadow banking exposure to property ~10% of total assets.",
+      "source": "Reuters, Bloomberg, Wikipedia, ZeroHedge",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00",
+      "escalate_to": [
+        "china",
+        "fin_stability"
+      ]
     }
   ],
-  "summary": "7 events tracked (4 escalating + 1 new high + 2 watch). No new cat-5 since last scan. Existing events intensifying.",
-  "overall_status": "CRITICAL - no new cat-5, existing events escalating"
+  "continuing_events": [
+    {
+      "id": "BE-2026-08-25-001",
+      "title": "Treasury bond intervention failing",
+      "status": "intensifying"
+    },
+    {
+      "id": "BE-2026-08-25-003",
+      "title": "Iran war/Hormuz blockade Day 176",
+      "status": "ongoing"
+    },
+    {
+      "id": "BE-2026-08-25-004",
+      "title": "Hormuz 5-7M bpd disruption",
+      "status": "ongoing"
+    },
+    {
+      "id": "BE-2026-08-25-006",
+      "title": "5th US bank failure 2026 (Tioga-Franklin)",
+      "status": "ongoing"
+    },
+    {
+      "id": "BE-2026-08-25-008",
+      "title": "PBOC 633-pip weak fixing",
+      "status": "ongoing"
+    }
+  ],
+  "summary": "4 NEW cat-5 events detected. Sovereign intervention escalation (Treasury  TGA), UK gilt crisis, EU bond yields multi-year highs, Evergrande sentencing. 5 continuing events. Overall risk: CRITICAL (13 red, 5 amber). Gold ,637. Hormuz Day 176."
 }

@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-25T12:51:00.000000+00:00",
+    "last_update": "2026-08-25T15:04:54.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "7 events tracked (4 cat-5 escalating + 1 new high + 2 watch). No NEW cat-5 since last scan. Intensifying: Hormuz oil disruption 5-7M bpd, PBOC weakest yuan fixing since Feb 27 (633 pips), Russia bank-run liquidity crunch threatening war funding.",
+    "breaking_event": "4 NEW cat-5 events: BE-009 Treasury  TGA buyback escalation, BE-010 UK gilts weakest link, BE-011 EU bond yields multi-year highs, BE-012 Evergrande sentencing. Continuing: Hormuz Day 176, Russia bank run, Ebola 5,515 cases, Gold ,637.",
     "threshold_breach": "6 thresholds breached (2 RED: Gold >3500, JGB10Y >1.5%; 4 AMBER: USD/JPY >158, EUR/USD >1.15, Gold >3000, DE10Y >3.0%)"
   },
   "signals": {
@@ -19,11 +19,11 @@
       "confidence": 10,
       "change_from_last": -0.05,
       "unit": "%",
-      "description": "US High Yield OAS Spread - ESCALATED: Treasury bond intervention still failing (30yr 5.248%, yields rebounded wiping out buyback gains). 5th US bank failure of 2026 (Tioga-Franklin). Russia slow-motion bank run ($3.4B withdrawn in 14 days, 7th month of outflow) threatening its banking system + war funding.",
+      "description": "US High Yield OAS Spread - ESCALATED: Treasury buyback doubling to /op, considering  TGA tap. Yields rebounding (10Y 4.73%, 30Y 5.31%). UK gilts weakest link (10Y 5.06%, 30Y 5.7%), BOE still selling. EU yields multi-year highs (France 17yr high, Germany since 2011). 5th US bank failure 2026. Russia bank run .4B/14 days threatening war funding.",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-21",
-      "note": "ESCALATED by breaking event scanner BE-2026-08-25-001 + BE-2026-08-25-006 + Russia bank run escalation",
-      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+      "note": "ESCALATED by BE-2026-08-25-009 (Treasury  TGA) + BE-2026-08-25-010 (UK gilts) + BE-2026-08-25-011 (EU yields) + Russia bank run",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -45,15 +45,15 @@
       "domain": "Financial",
       "value": 122.59,
       "status": "red",
-      "trend": "stable",
-      "confidence": 3,
+      "trend": "deteriorating",
+      "confidence": 6,
       "change_from_last": 0.03,
       "unit": "%",
-      "description": "US Total Debt / GDP",
+      "description": "US Total Debt/GDP 122.59% - Treasury interventionist tactics: doubled buybacks to /op, considering  TGA. Global government debt  (94% world GDP). Fiscal rot deepening.",
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
-      "note": "",
-      "timestamp": "2026-08-25T06:18:15.579940+00:00"
+      "note": "ESCALATED by BE-2026-08-25-009 (Treasury  TGA tap consideration)",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -64,11 +64,11 @@
       "confidence": 9,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent Crude ~/bbl - ESCALATED: Hormuz blockade ongoing, disruption now quantified at 5-7M bpd (US News Aug 25), ~half global oil flows from war zones. EIA reports global inventory drawdowns continuing. Oil spill reaching Qeshm Island coast.",
+      "description": "Brent Crude ~/bbl - Hormuz Day 176: 1% pre-war traffic, two-thirds transits dark. Sailors stranded. Iran parliament advancing Hormuz service fees. Trump confirms no talks scheduled, US naval blockade maintained. EIA: oil prices remain elevated until flows return. Diesel crack spreads at historic highs.",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED by breaking event scanner BE-2026-08-25-004 + update: 5-7M bpd disruption confirmed",
-      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+      "note": "Updated Aug 25: Hormuz 176 days blocked, 1% pre-war traffic. EIA forecasts elevated prices. BE-2026-08-25-003 + ongoing.",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -109,11 +109,11 @@
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy - ESCALATED: Hormuz shipping disruption ongoing + Ebola outbreak 5,514 cases + Uganda spread",
+      "description": "Brent proxy - Hormuz shipping disruption Day 176 + Ebola PHEIC 5,515 cases/2,642 deaths. Uganda interrupted transmission. Jordan bans DRC/Uganda entry. EIA warns supply shortages in China/India. Diesel crack spreads historic highs.",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
-      "note": "ESCALATED by breaking event scanner: Hormuz shipping disruption + Ebola PHEIC",
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "note": "Updated Aug 25: Ebola 5,515 cases. Hormuz 176 days. EIA: elevated oil prices until flows normalize.",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -124,22 +124,22 @@
       "confidence": 3,
       "change_from_last": 1.47,
       "unit": "index",
-      "description": "IMF Food Price Index - ESCALATED: Oil price spike + Hormuz disruption affecting food supply chains. EIA warns supply shortages in China and India.",
+      "description": "IMF Food Price Index 131.78 - Oil price spike + Hormuz disruption affecting food supply chains. EIA warns supply shortages in China and India. Diesel crack spreads at historic highs increasing transport costs.",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
-      "note": "ESCALATED by breaking event scanner: Oil price spike + Hormuz disruption affecting food supply chains",
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "note": "Updated Aug 25: ongoing Hormuz + Ebola + diesel crack spreads",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "°C",
+      "unit": "\u00c2\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -208,17 +208,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4640.0,
+      "value": 4637.0,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
       "change_from_last": -57.0,
-      "description": "Gold at ,640 (peaked ,712 Aug 24) - RED THRESHOLD BREACH: +32.6% above ,500. Treasury intervention + Iran war + dollar weakness driving safe haven extreme.",
+      "description": "Gold at ,637 (Dec futures ,710) - RED THRESHOLD BREACH: +54.6% above ,000. Treasury intervention + Iran war + dollar weakness + record central bank buying. CNBC Aug 25: 3-month high on dollar weakness + Treasury buyback plans. +36.6% YoY.",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-25",
-      "note": "ESCALATED by threshold scanner: Gold above $3,500 RED threshold. Also above $3,000 AMBER threshold (+56.6%).",
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "note": "Updated Aug 25: ,637 spot, Dec futures ,710. RED threshold maintained. Dollar index -0.8% in August.",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -244,26 +244,26 @@
       "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.09,
-      "description": "OECD Composite Leading Indicator for China (PMI proxy) - PBOC set midpoint 633 pips weaker than Reuters estimate Aug 25, largest weaker-side deviation since Feb 27, signaling devaluation pressure. Vanke record $13B annual loss. Property crisis grinds on (5 years).",
+      "description": "OECD CLI for China - PBOC 593-pip weak fixing Aug 24. Evergrande founder Hui Ka Yan sentenced to life imprisonment Aug 20. Property values still plummeting 5 years in. Shadow banking exposure ~10%. Vanke record losses. No bottom found.",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2026-08-25",
-      "note": "ESCALATED by breaking event scanner BE-2026-08-25-008: PBOC 633-pip weak fixing, largest since Feb 27",
-      "timestamp": "2026-08-25T12:51:00.000000+00:00"
+      "note": "ESCALATED by BE-2026-08-25-012 (Evergrande sentencing) + BE-2026-08-25-008 (PBOC weak fixing)",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
       "change_from_last": 0.0,
       "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability)",
+      "description": "ECB Deposit Rate 2.25% - ESCALATED: France 10Y at 17-year high, Germany 10Y highest since 2011. UK gilts weakest link (10Y 5.06%, 30Y 5.7%). ECB inflation near 3% for rest of 2026. Global bond selloff wave hitting Eurozone.",
       "series_id": "ECBDFR",
       "last_date": "2026-08-24",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-25T06:18:19.587763+00:00"
+      "note": "ESCALATED by BE-2026-08-25-010 (UK gilts) + BE-2026-08-25-011 (EU bond yields multi-year highs)",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -274,11 +274,11 @@
       "confidence": 9,
       "change_from_last": -0.04,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
+      "description": "Yield Curve (10Y-2Y) at 0.46% - Treasury interventionist tactics: doubled long-end buybacks, considering  TGA tap. 10Y back to 4.73%, 30Y at 5.31%. Fed minutes Aug 19: officials divided, many said rate hikes may be needed if inflation doesnt decline. Next FOMC Sept 16.",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-24",
-      "note": "",
-      "timestamp": "2026-08-25T06:18:20.107361+00:00"
+      "note": "ESCALATED by BE-2026-08-25-009 (Treasury  TGA buyback escalation)",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -289,11 +289,11 @@
       "confidence": 10,
       "change_from_last": 2.86,
       "unit": "$/bbl",
-      "description": "Brent proxy - ESCALATED: Iran war ongoing, Hormuz disrupted since Feb. Iran parliament advancing Hormuz service fees. Houthis attacking Saudi. Gulf real estate -10% Aug. Oman mediating shipping lanes.",
+      "description": "Brent proxy - Iran war Day 176. Hormuz 1% pre-war traffic, 2/3 transits dark. Trump: no talks with Iran, naval blockade maintained. Iran parliament advancing Hormuz fees. Houthis attacking Saudi. UAE left OPEC. Gulf real estate -10%. Oman mediating. 6 months of war, sailors stranded.",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED by breaking event scanner BE-2026-08-25-003",
-      "timestamp": "2026-08-25T10:15:00.000000+00:00"
+      "note": "Updated Aug 25: 6-month milestone. No ceasefire talks. BE-2026-08-25-003 + ongoing.",
+      "timestamp": "2026-08-25T15:04:54.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -309,17 +309,32 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-25T06:18:21.123463+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Event Status",
+      "domain": "System",
+      "value": "ACTIVE",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "timestamp": "2026-08-25T15:04:54.000000+00:00",
+      "description": "Multiple category-5 events active across domains",
+      "note": "",
+      "unit": "",
+      "series_id": null,
+      "last_date": "2026-08-25",
+      "change_from_last": 0
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 544,
-    "red_count": 12,
-    "amber_count": 6,
+    "score": 548,
+    "red_count": 13,
+    "amber_count": 5,
     "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-25T06:18:47.000000+00:00"
+    "timestamp": "2026-08-25T15:04:54.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
