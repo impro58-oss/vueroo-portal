@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-25T15:04:54.000000+00:00",
+    "last_update": "2026-08-25T15:51:27.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "4 NEW cat-5 events: BE-009 Treasury  TGA buyback escalation, BE-010 UK gilts weakest link, BE-011 EU bond yields multi-year highs, BE-012 Evergrande sentencing. Continuing: Hormuz Day 176, Russia bank run, Ebola 5,515 cases, Gold ,637.",
-    "threshold_breach": "6 thresholds breached (2 RED: Gold >3500, JGB10Y >1.5%; 4 AMBER: USD/JPY >158, EUR/USD >1.15, Gold >3000, DE10Y >3.0%)"
+    "breaking_event": "4 NEW cat-5 events: BE-009 Treasury TGA buyback escalation, BE-010 UK gilts weakest link, BE-011 EU bond yields multi-year highs, BE-012 Evergrande sentencing. Continuing: Hormuz Day 176, Russia bank run, Ebola 5,515 cases, Gold $4,713.",
+    "threshold_breach": "4 thresholds breached (1 RED: Gold >3500; 3 AMBER: USD/JPY >158, EUR/USD >1.15, Gold >3000). Manual data: MOVE 73.18, JGB10Y 2.895%, DE10Y 3.26%, BAA10Y 1.63%"
   },
   "signals": {
     "fin_stability": {
@@ -193,32 +193,32 @@
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
-      "value": 159.404,
+      "value": 159.224,
       "status": "amber",
       "trend": "deteriorating",
       "confidence": 8,
-      "change_from_last": -0.15,
+      "change_from_last": -0.18,
       "unit": "USD/JPY",
-      "description": "USD/JPY at ~159 - AMBER THRESHOLD BREACH: above 158.0. Joint US-Japan intervention fading. Yen slid to 164 in late July, settled near 159 by Aug 23. BOJ rate at 1%.",
+      "description": "USD/JPY at 159.22 - AMBER THRESHOLD BREACH: above 158.0. Joint US-Japan intervention fading. BOJ rate at 1%. JGB 10Y at 2.895% (three-decade high). EUR/USD also breached 1.15 AMBER (current: 1.1675).",
       "series_id": "Yahoo Finance JPY=X",
       "last_date": "2026-08-25",
-      "note": "ESCALATED by threshold scanner: USD/JPY above 158.0 AMBER threshold. EUR/USD also breached 1.15 AMBER (current: 1.1662). | ESCALATED by threshold scanner (JGB10Y RED: Japan 10Y 2.88% three-decade high, fiscal spiral)",
-      "timestamp": "2026-08-25T11:54:44.636652+00:00"
+      "note": "Updated Aug 25 16:00 UTC: USD/JPY 159.22, EUR/USD 1.1675. JGB10Y 2.895% (30yr high). Both AMBER breaches maintained.",
+      "timestamp": "2026-08-25T15:51:27.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4637.0,
+      "value": 4713.6,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 10,
-      "change_from_last": -57.0,
-      "description": "Gold at ,637 (Dec futures ,710) - RED THRESHOLD BREACH: +54.6% above ,000. Treasury intervention + Iran war + dollar weakness + record central bank buying. CNBC Aug 25: 3-month high on dollar weakness + Treasury buyback plans. +36.6% YoY.",
+      "change_from_last": 76.6,
+      "description": "Gold at $4,713 (Dec futures tracking higher) - RED THRESHOLD BREACH: +34.7% above $3,500. Treasury intervention + Iran war + dollar weakness + record central bank buying. +4.37% in 24h alone. Dollar index weakening. CNBC Aug 25: 3-month high on dollar weakness + Treasury buyback plans.",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-25",
-      "note": "Updated Aug 25: ,637 spot, Dec futures ,710. RED threshold maintained. Dollar index -0.8% in August.",
-      "timestamp": "2026-08-25T15:04:54.000000+00:00"
+      "note": "Updated Aug 25 16:00 UTC: $4,713 spot, +4.37% 24h. RED threshold maintained. Dollar weakness + war premium + Treasury buyback fears.",
+      "timestamp": "2026-08-25T15:51:27.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
