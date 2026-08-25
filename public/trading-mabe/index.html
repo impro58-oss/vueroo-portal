@@ -325,12 +325,18 @@
                 const tradesResp = await fetch('trades.json?ts=' + Date.now());
                 const trades = await tradesResp.json();
 
-                // Load backtest results
+                // Load full-period backtest results (4 months: Apr 29 - Aug 25)
                 let btData = null;
                 try {
-                    const btResp = await fetch('backtest_results.json?ts=' + Date.now());
+                    const btResp = await fetch('full_backtest_results.json?ts=' + Date.now());
                     if (btResp.ok) btData = await btResp.json();
                 } catch(e) {}
+                // Fallback to 3-week backtest if full not available
+                if (!btData) {
+                    try {
+                        const btResp2 = await fetch('backtest_results.json?ts=' + Date.now());
+                        if (btResp2.ok) btData = await btResp2.json();
+                    } catch(e) {}
 
                 // Update overview cards
                 const pf = dash.portfolio || {};
