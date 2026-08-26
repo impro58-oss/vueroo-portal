@@ -2,7 +2,7 @@
   "metadata": {
     "source": "Multi-API: FRED, CoinGecko, NOAA + Lumina assessment",
     "system": "BlackWatch Manual Signals",
-    "last_update": "2026-08-26T17:11:13.046656+00:00",
+    "last_update": "2026-08-26T23:04:22.660817+00:00",
     "signals_fetched": 9,
     "signals_total": 9
   },
@@ -10,17 +10,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4647.2,
+      "value": 4661.8,
       "unit": "$/oz",
       "status": "green",
       "trend": "improving",
       "confidence": 9,
-      "change_from_last": 23.1,
-      "description": "Gold Futures (GC=F): $4,647.20 (+0.50%)",
+      "change_from_last": 37.7,
+      "description": "Gold Futures (GC=F): $4,661.80 (+0.82%)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-26",
       "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-26T17:10:28.411123+00:00"
+      "timestamp": "2026-08-26T23:04:20.307781+00:00"
     },
     "china": {
       "name": "China Health",
@@ -35,22 +35,22 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-26T17:10:39.066255+00:00"
+      "timestamp": "2026-08-26T23:04:20.832429+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 78075,
+      "value": 78704,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -1.1,
-      "description": "BTC $78,075 (-1.1% 24h), Dominance: 76.6%",
+      "change_from_last": -0.3,
+      "description": "BTC $78,704 (-0.3% 24h), Dominance: 76.5%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-26",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-26T17:10:39.400231+00:00"
+      "timestamp": "2026-08-26T23:04:21.085206+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -65,12 +65,12 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-26T17:10:39.823421+00:00"
+      "timestamp": "2026-08-26T23:04:21.494407+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 95.29,
+      "value": 88.24,
       "unit": "$/bbl (proxy)",
       "status": "amber",
       "trend": "stable",
@@ -78,9 +78,9 @@
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-18",
+      "last_date": "2026-08-25",
       "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-26T17:10:59.764026+00:00"
+      "timestamp": "2026-08-26T23:04:22.308226+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -95,7 +95,7 @@
       "series_id": null,
       "last_date": "2026-08-26",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-26T17:10:59.764026+00:00"
+      "timestamp": "2026-08-26T23:04:22.308226+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -110,7 +110,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-26T17:10:59.764026+00:00"
+      "timestamp": "2026-08-26T23:04:22.308226+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -125,7 +125,7 @@
       "series_id": null,
       "last_date": "2026-08-26",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-26T17:10:59.764026+00:00"
+      "timestamp": "2026-08-26T23:04:22.308226+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -140,8 +140,8 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "Live from FRED. Enriched with social sentiment during deep scans.",
-      "timestamp": "2026-08-26T17:11:13.046656+00:00"
+      "timestamp": "2026-08-26T23:04:22.660817+00:00"
     }
   },
-  "timestamp": "2026-08-26T17:11:13.046656+00:00"
+  "timestamp": "2026-08-26T23:04:22.660817+00:00"
 }
