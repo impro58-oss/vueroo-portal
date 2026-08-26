@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-26T23:30:46.000000+00:00",
+    "last_update": "2026-08-26T23:30:44.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "7 thresholds breached (2 RED, 5 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-25",
-      "note": "Threshold breach: Gold above 3500 (current: 4674.8)",
-      "timestamp": "2026-08-26T23:30:46.000000+00:00"
+      "note": "Threshold breaches: Gold above 3500 (4674.8), JGB10Y above 1.5 (2.89), DE10Y above 3.0 (3.20)",
+      "timestamp": "2026-08-26T23:30:44.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -82,7 +82,7 @@
       "series_id": "VIXCLS",
       "last_date": "2026-08-25",
       "note": "Threshold breach: Gold above 3500 (current: 4674.8)",
-      "timestamp": "2026-08-26T23:30:46.000000+00:00"
+      "timestamp": "2026-08-26T23:30:44.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -261,8 +261,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-26",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-26T23:04:25.389480+00:00"
+      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.20) - European fiscal stress, periphery spreads widening",
+      "timestamp": "2026-08-26T23:30:44.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -308,6 +308,21 @@
       "last_date": "2026-06-01",
       "note": "",
       "timestamp": "2026-08-26T23:04:26.401435+00:00"
+    },
+    "japan_sovereign": {
+      "name": "Japan Sovereign Stress",
+      "domain": "Japan",
+      "value": 2.89,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 0,
+      "unit": "%",
+      "description": "Japan 10-Year JGB Yield - BOJ yield curve control broken",
+      "series_id": "web_search",
+      "last_date": "2026-08-26",
+      "note": "Threshold breach: JGB10Y above 1.5 (current: 2.89) and above 1.0 (current: 2.89)",
+      "timestamp": "2026-08-26T23:30:44.000000+00:00"
     }
   },
   "overall_risk": {
