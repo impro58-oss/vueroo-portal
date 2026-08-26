@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-26T19:32:13.000000+00:00",
+    "last_update": "2026-08-26T23:02:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "Breaking event scanner: 9 events tracked, 2 NEW (Iran Hormuz military vessel ban, Colombia mass deportation). Macro event ACTIVE.",
-    "threshold_breach": "6 thresholds breached (incl. manual fallback: JGB10Y RED, DE10Y AMBER)"
+    "breaking_event": "Breaking event scanner 4h: 11 events tracked, 1 NEW cat-5 (Iran-Oman Hormuz military vessel exclusion framework formalized). 5th US bank failure (Tioga-Franklin). Liquidity contraction analysis. Oil drops to $80.78 on diplomacy. Gold pulls back from $4,715. Macro event ACTIVE.",
+    "threshold_breach": "6 thresholds breached (incl. manual fallback: JGB10Y RED, DE10Y AMBER). Oil RELIEF signal: Brent drops below threshold to $80.78."
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-25",
-      "note": "Threshold breach: Gold above 3500 (current: 4647.4). JGB10Y above 1.5 (current: 2.89) - Japan fiscal crisis.",
-      "timestamp": "2026-08-26T19:32:13.000000+00:00"
+      "note": "5th US bank failure 2026 (Tioga-Franklin, $68M assets, Aug 22). Ross Report: August 2026 liquidity contraction — 'financial engineering cannot indefinitely substitute for physical abundance.' Gold above 3500 (current: 4593.74). JGB10Y above 1.5 (current: 2.89) - Japan fiscal crisis.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -67,8 +67,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz blockade, Houthis targeting Saudi tankers, OPEC+ +206K bpd insufficient.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "RELIEF SIGNAL: Brent drops to $80.78 (-3% Aug 25) on diplomatic progress signs. However Hormuz disruption persists — EIA forecasts elevated prices until flows normalize. Iran-Oman military exclusion framework formalized. OPEC+ +206K bpd insufficient.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: Iran Hormuz military vessel ban, Colombia mass deportation, Russia bank run, Africa conflicts.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "Iran-Oman Hormuz military exclusion framework formalized (cat-5). Russia bank run $24B since Jan, $3.4B in 14 days (Aug). 5th US bank failure 2026. Africa: Uganda military chief 2031 presidential bid, Somalia humanitarian crisis. Colombia mass deportation.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -112,8 +112,8 @@
       "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-18",
-      "note": "ESCALATED: Hormuz disrupting fertilizer/food shipping, Houthi attacks on Saudi tankers, shipping reroutes.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "Hormuz disrupting fertilizer/food shipping. Iran-Oman military exclusion framework escalates. Houthi attacks on Saudi tankers. Shipping reroutes. EIA: global oil inventories falling.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,8 +127,8 @@
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
-      "note": "ESCALATED: HSBC warns food shock brewing. Hormuz blocking fertilizer. Ukraine wheat reduced. Export restrictions.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "HSBC warns food shock brewing. Hormuz blocking fertilizer. Ukraine wheat reduced. Export restrictions. Vietnam fuel shortages + panic buying (Iran war fuel crisis).",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -157,8 +157,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola 5656 cases/2715 deaths. Colombia mass deportation. Consumer sentiment 49.5.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "Ebola: WHO global health emergency, Bundibugyo strain, 100 days since outbreak, may be 3x confirmed size. Congo/Uganda. Colombia mass deportation. Consumer sentiment 49.5.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -214,11 +214,11 @@
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -53.8,
-      "description": "Gold Spot Bid: ,593.40/oz (Kitco, Aug 26 1:10 PM NY)",
-      "series_id": "Kitco Spot Gold",
+      "description": "Gold $4,593.74/oz - pulled back from $4,715.70 high (Dec futures, Aug 26). +35.2% YoY.",
+      "series_id": "Kitco/Yahoo Finance",
       "last_date": "2026-08-26",
-      "note": "Live from Kitco - spot gold bid price",
-      "timestamp": "2026-08-26T17:10:28.411123+00:00"
+      "note": "Gold hit $4,715.70 then pulled back to $4,593.74. Still +35.2% YoY. Safe-haven demand extreme.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -262,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-26",
-      "note": "UK gilts 10Y 4.99% (highest G7). JGB 2.95% (3-decade high). ECB hawkish. US debt spillover. Threshold breach: DE10Y above 3.0 (current: 3.24) - European fiscal stress.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "UK gilts 10Y 4.99% (highest G7, 18-yr high). BOE gilt sales costing taxpayer £47bn by 2031. JGB 2.95% (3-decade high). ECB held rates, hawkish. US debt spillover. DE10Y above 3.0 (current: 3.24) - European fiscal stress.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -277,8 +277,8 @@
       "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-25",
-      "note": "Treasury buyback failing. 30Y 5.273%. 4 Fed boards wanted hike. Yield curve 0.47% recession signal.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "Treasury buyback failing — yields rising again after intervention doubled. 30Y 5.273%. 4 Fed boards wanted hike (July FOMC minutes, revealed Aug 25). Yield curve 0.47% recession signal.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -292,8 +292,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-18",
-      "note": "ESCALATED by BE-2026-08-26-009: Iran warns military vessel ban in Hormuz. Strait shut since Feb 28. Houthis targeting Saudi tankers.",
-      "timestamp": "2026-08-26T19:02:00.000000+00:00"
+      "note": "ESCALATED BE-2026-08-27-001: Iran-Oman framework to exclude ALL military vessels from Hormuz transit formalized. Deputy FM Gharibabadi announced on state TV. Moves from de facto closure to institutionalized military exclusion. Strait shut since Feb 28. Houthis targeting Saudi tankers.",
+      "timestamp": "2026-08-26T23:02:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -319,7 +319,7 @@
     "amber_count": 6,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-26T19:02:00.000000+00:00"
+    "timestamp": "2026-08-26T23:02:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -459,6 +459,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-26T19:02:00.000000+00:00"
+    "timestamp": "2026-08-26T23:02:00.000000+00:00"
   }
 }
