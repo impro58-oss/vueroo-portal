@@ -67,8 +67,9 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 95.0,
+      "source": "manual",
+      "note": "Web search fallback: MOVE in 80-110 range (Convex, Jun 2026). No precise live value; below 130 AMBER threshold."
     },
     "GOLD": {
       "price": 4647.4,
@@ -92,16 +93,19 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.89,
+      "source": "manual",
+      "note": "TradingEconomics, Aug 26 2026. Multi-decade high; BOJ hike expected."
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.24,
+      "source": "manual",
+      "note": "TradingEconomics, Aug 26 2026. ECB tightening expected."
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.6,
+      "source": "manual",
+      "note": "TradingEconomics, Jul 2026. Moody's Baa-10Y spread."
     },
     "BTC": {
       "price": 78509.26,
@@ -170,9 +174,41 @@
         "fin_stability"
       ],
       "distance_pct": 54.91
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.89,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 92.67,
+      "source": "manual"
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.24,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 8.0,
+      "source": "manual"
     }
   ],
-  "breach_count": 4,
+  "breach_count": 6,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
