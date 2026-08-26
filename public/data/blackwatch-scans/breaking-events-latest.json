@@ -1,100 +1,169 @@
 {
-  "scan_time": "2026-08-25T15:04:54.000000+00:00",
+  "scan_time": "2026-08-26T05:55:00.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner_version": "2.0",
+  "scanner_version": "1.0",
   "domains_scanned": 12,
-  "queries_executed": 18,
-  "new_events": [
-    "BE-2026-08-25-009",
-    "BE-2026-08-25-010",
-    "BE-2026-08-25-011",
-    "BE-2026-08-25-012"
-  ],
-  "events": [
+  "queries_executed": 36,
+  "events_detected": [
     {
-      "id": "BE-2026-08-25-009",
+      "id": "BE-2026-0826-001",
       "domain": "us_fed",
-      "title": "Treasury considers tapping  TGA for bond buybacks as yields rebound",
+      "title": "US Treasury Emergency Bond Buyback — Intervention to Cap Yields",
+      "description": "Treasury Secretary Bessent announced intention to artificially cap runaway yields on US government debt. Treasury doubling long-dated bond buybacks from $2B to $4B per operation (Sep 9 - Nov 4). NYT calls it 'interventionist tactics'. Bond market alarms spark emergency Treasury buyback plan.",
       "category": "sovereign_intervention",
       "severity": 5,
-      "summary": "CNBC Aug 24: Bessent could tap near  trillion Treasury General Account to fund bond buybacks. Treasury doubling long-end buyback size from  to  per operation. 10Y yield rose back to 4.73%, 30Y hit 5.31%. Yields rebounded wiping out initial rally. Forbes: interventionist tactics failing.",
-      "source": "CNBC, Fortune, Forbes, CFR",
-      "timestamp": "2026-08-25T15:04:54.000000+00:00",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "sov_debt"
-      ]
+      "sources": ["foreignpolicy.com", "nytimes.com", "thehill.com", "cfr.org"],
+      "detected_at": "2026-08-26T05:53:00+00:00",
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "impact_regions": ["US", "Global"],
+      "url": "https://foreignpolicy.com/2026/08/20/us-bond-crisis-treasury-bessent-trump-national-debt/"
     },
     {
-      "id": "BE-2026-08-25-010",
-      "domain": "uk",
-      "title": "UK gilts weakest link in global bond sell-off, BOE still selling gilts",
-      "category": "market_dislocation",
+      "id": "BE-2026-0826-002",
+      "domain": "japan",
+      "title": "US-Japan Coordinated Yen Intervention — First in a Generation",
+      "description": "US and Japan carried out rare coordinated FX intervention to stabilize yen. Yen hit 164/dollar (weakest since 1986) before intervention. US joined yen-buying operation for first time in a generation. Yen settled near 159 but intervention failing to hold. BOJ September rate hike expected (~80% probability for 1.25%).",
+      "category": "sovereign_intervention",
       "severity": 4,
-      "summary": "UK 10Y gilt yield at 5.06%, 30Y at 5.7%. Telegraph: BOE costing taxpayers billions, still selling gilts during global bond rout. Sharecafe: UK gilts disproportionately exposed, could become weakest link. BOE obstinacy frustrating Treasury officials.",
-      "source": "Telegraph, Sharecafe, TradingEconomics, House of Commons Library",
-      "timestamp": "2026-08-25T15:04:54.000000+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ]
+      "sources": ["nytimes.com", "cnbc.com", "bloomberg.com", "scmp.com"],
+      "detected_at": "2026-08-26T05:53:00+00:00",
+      "escalate_to": ["japan_sovereign", "currency", "fin_stability"],
+      "impact_regions": ["Japan", "US", "Global FX"],
+      "url": "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html"
     },
     {
-      "id": "BE-2026-08-25-011",
-      "domain": "eu_ecb",
-      "title": "European bond yields hit multi-year highs on Iran war inflation fears",
-      "category": "market_dislocation",
+      "id": "BE-2026-0826-003",
+      "domain": "middle_east",
+      "title": "2026 Iran War — Strait of Hormuz Crisis Active",
+      "description": "Active war with Iran. Iran launched retaliatory missile/drone strikes targeting US embassies, military installations, and oil infrastructure including vessels in Strait of Hormuz. Iran threatens to block all oil exports through Hormuz. Trump claims 'complete control' and mines cleared. ~20% of global oil/LNG normally passes through strait. Brent crude jumped 10-13%. OPEC+ pledged 206K bpd increase. UAE suspended financial/trade dealings with Iran.",
+      "category": "war_military",
+      "severity": 5,
+      "sources": ["wikipedia.org", "britannica.com", "abcnews.com", "eia.gov"],
+      "detected_at": "2026-08-26T05:54:00+00:00",
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "impact_regions": ["Middle East", "Global Energy", "Global Shipping"],
+      "url": "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis"
+    },
+    {
+      "id": "BE-2026-0826-004",
+      "domain": "middle_east",
+      "title": "Israel-Gaza Ceasefire Collapsing — Escalation Despite Truce",
+      "description": "Israel escalating Gaza attacks despite US-brokered ceasefire. Senior officers describing return to pre-ceasefire rules of engagement. 17 killed, 38 wounded in 24 hours (Aug 19). Strikes continuing after Kushner talks. Disarmament/humanitarian working groups stalled.",
+      "category": "war_military",
       "severity": 4,
-      "summary": "Euronews Aug 18: France 10Y at 17-year high, Germany 10Y highest since 2011. ECB inflation expected near 3% for rest of 2026. Global debt selloff wave hitting Eurozone. Spain Ibex retreats from 20,000.",
-      "source": "Euronews, BigGo Finance",
-      "timestamp": "2026-08-25T15:04:54.000000+00:00",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ]
+      "sources": ["aljazeera.com", "dropsitenews.com", "wikipedia.org"],
+      "detected_at": "2026-08-26T05:54:00+00:00",
+      "escalate_to": ["middle_east", "geopolitical"],
+      "impact_regions": ["Gaza", "Israel", "Middle East"],
+      "url": "https://www.aljazeera.com/news/2026/8/25/palestine-weekly-after-kushner-departs-israel-escalates-gaza-attacks"
     },
     {
-      "id": "BE-2026-08-25-012",
+      "id": "BE-2026-0826-005",
+      "domain": "commodities",
+      "title": "Oil Price Surge — Iran War Supply Disruption Persisting",
+      "description": "Oil surged to three-week highs (Aug 20). Brent jumped 10-13% on Hormuz disruption. EIA estimates 0.6M bpd disruptions continuing through end of 2026. Analysts note prices 'grinding consistently higher' not spike-and-retreat. 2026 fuel crisis hitting South American importers. Japanese refiners asking government to release stockpiles.",
+      "category": "energy_shock",
+      "severity": 4,
+      "sources": ["globalbankingandfinance.com", "eia.gov", "wikipedia.org", "discoveryalert.com.au"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["energy", "food_security"],
+      "impact_regions": ["Global"],
+      "url": "https://www.globalbankingandfinance.com/oil-prices-steady-investors-assess-us-iran-war-outlook/"
+    },
+    {
+      "id": "BE-2026-0826-006",
+      "domain": "commodities",
+      "title": "Gold Surges Past $4,650 — Safe Haven Panic Buying",
+      "description": "Gold pushing $4,651/oz, up ~15% in August alone. Three-month highs. Driven by US debt crisis ($40T), Treasury yield cap intervention, Iran war uncertainty, and dollar weakness. One of strongest weekly advances of the year.",
+      "category": "market_dislocation",
+      "severity": 3,
+      "sources": ["theguardian.com", "blockonomi.com", "e8markets.com", "coinpaper.com"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["fin_stability"],
+      "impact_regions": ["Global"],
+      "url": "https://www.theguardian.com/business/2026/aug/25/gold-price-high-iran-war-donald-trump-economy-us"
+    },
+    {
+      "id": "BE-2026-0826-007",
+      "domain": "pandemic_health",
+      "title": "DR Congo Ebola Epidemic — WHO Global Emergency, 5,290+ Cases",
+      "description": "2026 Ebola epidemic declared PHEIC (Public Health Emergency of International Concern) by WHO. 5,290 confirmed cases, 2,516 deaths as of Aug 19. Fastest-growing Ebola outbreak on record. Caused by Bundibugyo ebolavirus — existing treatments certified for different species. Africa CDC estimates only 30-40% of infections detected, true cases could be 3x higher.",
+      "category": "pandemic_health",
+      "severity": 4,
+      "sources": ["aljazeera.com", "globalbiodefense.com", "wikipedia.org"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "impact_regions": ["DRC", "Central Africa", "Global Health"],
+      "url": "https://www.aljazeera.com/news/2026/8/18/congo-ebola-outbreak-global-emergency-as-infections-pass-5000-who"
+    },
+    {
+      "id": "BE-2026-0826-008",
       "domain": "china",
-      "title": "Evergrande founder sentenced to life, property crisis grinds on with no bottom",
+      "title": "China Property Crisis — Evergrande Founder Sentenced to Life",
+      "description": "Evergrande founder Hui Ka Yan (Xu Jiayin) sentenced to life imprisonment (Aug 20). $300B in liabilities. Property market in 5-year downward spiral. Values continuing to plummet. Ongoing developer distress. PBOC conducting overnight reverse repos for liquidity (Aug 27 - Sep 1).",
       "category": "sovereign_crisis",
-      "severity": 4,
-      "summary": "Hui Ka Yan sentenced to life imprisonment Aug 20 by Shenzhen court. Evergrande delisted from HKEX Aug 2025. Property values still plummeting 5 years into crisis. Reuters Aug 23: crisis grinds on after sentencing. Shadow banking exposure to property ~10% of total assets.",
-      "source": "Reuters, Bloomberg, Wikipedia, ZeroHedge",
-      "timestamp": "2026-08-25T15:04:54.000000+00:00",
-      "escalate_to": [
-        "china",
-        "fin_stability"
-      ]
+      "severity": 3,
+      "sources": ["bloomberg.com", "reuters.com", "wasingtontimes.com", "scmp.com"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["china", "fin_stability"],
+      "impact_regions": ["China", "Global Real Estate"],
+      "url": "https://www.bloomberg.com/news/articles/2026-08-20/china-s-property-crisis-from-evergrande-collapse-to-spiraling-prices"
+    },
+    {
+      "id": "BE-2026-0826-009",
+      "domain": "latam",
+      "title": "Colombia Mass Deportation of Venezuelans — Border Tension Escalating",
+      "description": "Colombian President de la Espriella ordering mass deportations of Venezuelan migrants. Immigration raids targeting those without residence permits. New president (inaugurated Aug 7) making significant immigration policy changes. Echoes of 2026 US intervention in Venezuela background.",
+      "category": "sovereign_crisis",
+      "severity": 2,
+      "sources": ["washingtonpost.com", "taipeitimes.com", "wikipedia.org"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["geopolitical"],
+      "impact_regions": ["Colombia", "Venezuela", "South America"],
+      "url": "https://www.washingtonpost.com/world/2026/08/24/colombia-de-la-espriella-migrants-president-venezuelans-raids-crime/7c4e86b0-a010-11f1-8606-1d40ad00172e_story.html"
+    },
+    {
+      "id": "BE-2026-0826-010",
+      "domain": "financial_system",
+      "title": "Fifth US Bank Failure of 2026 — Small Bank Closures Accelerating",
+      "description": "Tioga-Franklin Savings Bank ($68M assets, Philadelphia) became 5th US bank failure of 2026, up from 2 in same period 2025. FDIC hit estimated at $5.5M. Russia warned of potential systemic banking crisis by late 2026 (Kremlin-linked think tank). Polymarket tracking bank failure odds.",
+      "category": "market_dislocation",
+      "severity": 2,
+      "sources": ["americanbanker.com", "creditandcollectionnews.com", "themoscowtimes.com", "polymarket.com"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["fin_stability", "liquidity"],
+      "impact_regions": ["US", "Russia"],
+      "url": "https://www.americanbanker.com/news/fifth-bank-fails-in-2026-as-drip-of-small-bank-closures-continues"
+    },
+    {
+      "id": "BE-2026-0826-011",
+      "domain": "uk",
+      "title": "UK Gilt Yields at 5.06% — BOE Selling into Bond Market Rout",
+      "description": "UK 10Y gilt yield at 5.06% (Aug 24), up 0.36pts YoY. 30Y at 5.7%. BOE continuing gilt sales during global bond rout, drawing criticism. Telegraph: 'Bank of England costing taxpayer billions.' UK preparing households for national emergencies (extreme heat, flooding, wildfires, cyber-attacks). Sterling vulnerable to bond yield surge.",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "sources": ["telegraph.co.uk", "tradingeconomics.com", "commonslibrary.parliament.uk", "poundsterlinglive.com"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["europe", "fin_stability"],
+      "impact_regions": ["UK", "Europe"],
+      "url": "https://www.telegraph.co.uk/business/2026/08/22/the-bank-of-england-is-costing-the-taxpayer-billions/"
+    },
+    {
+      "id": "BE-2026-0826-012",
+      "domain": "africa",
+      "title": "DRC Conflict + Ebola — Multi-Crisis in Central Africa",
+      "description": "Active multi-actor war in eastern DRC over critical-mineral terrain. Rwanda sanctions by US over alleged involvement. Sudan largest displacement crisis on continent. Azawad Liberation Front freed 82 Malian soldiers. Combined with Ebola PHEIC, creating compound crisis in Central Africa.",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "sources": ["allafrica.com", "theafricainsight.substack.com", "the-world-now.com"],
+      "detected_at": "2026-08-26T05:55:00+00:00",
+      "escalate_to": ["geopolitical"],
+      "impact_regions": ["DRC", "Sudan", "Mali", "Central Africa"],
+      "url": "https://allafrica.com/stories/202608250173.html"
     }
   ],
-  "continuing_events": [
-    {
-      "id": "BE-2026-08-25-001",
-      "title": "Treasury bond intervention failing",
-      "status": "intensifying"
-    },
-    {
-      "id": "BE-2026-08-25-003",
-      "title": "Iran war/Hormuz blockade Day 176",
-      "status": "ongoing"
-    },
-    {
-      "id": "BE-2026-08-25-004",
-      "title": "Hormuz 5-7M bpd disruption",
-      "status": "ongoing"
-    },
-    {
-      "id": "BE-2026-08-25-006",
-      "title": "5th US bank failure 2026 (Tioga-Franklin)",
-      "status": "ongoing"
-    },
-    {
-      "id": "BE-2026-08-25-008",
-      "title": "PBOC 633-pip weak fixing",
-      "status": "ongoing"
-    }
-  ],
-  "summary": "4 NEW cat-5 events detected. Sovereign intervention escalation (Treasury  TGA), UK gilt crisis, EU bond yields multi-year highs, Evergrande sentencing. 5 continuing events. Overall risk: CRITICAL (13 red, 5 amber). Gold ,637. Hormuz Day 176."
+  "category_5_events": 3,
+  "total_events": 12,
+  "highest_severity": 5,
+  "summary": "CRITICAL SCAN: 12 events detected across 9 domains. 3 Category-5 events: (1) US Treasury emergency yield cap intervention, (2) 2026 Iran War / Strait of Hormuz crisis active, (3) DR Congo Ebola PHEIC. Multiple severity-4 events: US-Japan coordinated yen intervention, Israel-Gaza ceasefire collapse, oil supply disruption persisting. Systemic risk elevated: US bond market intervention + yen intervention + war-driven energy shock + pandemic + bank failures accelerating."
 }
