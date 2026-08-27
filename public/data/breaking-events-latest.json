@@ -1,90 +1,116 @@
 {
-  "scan_time": "2026-08-27T07:04:01.000000+00:00",
+  "scan_time": "2026-08-27T11:03:00Z",
   "scan_type": "breaking_event",
-  "events_detected": 6,
-  "events": [
+  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
+  "domains_scanned": 12,
+  "queries_executed": 12,
+  "follow_up_queries": 4,
+  "events_detected": [
     {
-      "domain": "us_fed",
-      "title": "US Treasury emergency bond buyback doubling - Bessent taps ~1T TGA",
-      "category": "sovereign_intervention",
+      "id": "evt-001",
+      "domain": "eu_ecb",
+      "title": "ECB set for September rate hike to 2.50% to contain Iran war inflation",
       "severity": 4,
-      "source": "CNBC, Reuters, CFR, NYT",
-      "summary": "Treasury Secretary Bessent announced doubling of long-dated bond buybacks from 2B to 4B per operation. Yields rebounded despite intervention. Considering tapping near 1T Treasury General Account. 30Y yield at 5.248%.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "url": "https://www.cnbc.com/2026/08/24/bessent-1-trillion-treasury-general-account-bond-buybacks.html"
+      "category": "emergency_rate",
+      "source": "Reuters via RTE/Yahoo/IndexBox",
+      "url": "https://www.rte.ie/news/business/2026/0826/1589253-european-cental-bank-preview/",
+      "summary": "ECB policymakers ready to raise deposit rate from 2.25% to 2.50% at September meeting to counter inflationary impact of Iran war. Inflation at nearly 3%. No appetite for further tightening beyond September. Schnabel explicitly called for further hikes.",
+      "triggers_hit": ["emergency rate", "surprise decision"],
+      "escalate_to": ["europe", "fin_stability"],
+      "timestamp": "2026-08-27T11:03:00Z"
     },
     {
+      "id": "evt-002",
       "domain": "middle_east",
-      "title": "US-Israel war on Iran ongoing, Hormuz disruptions, oil elevated ~90",
+      "title": "Iran negotiating Hormuz military ship ban with Oman — escalation of strait control",
+      "severity": 5,
       "category": "war_military",
-      "severity": 4,
-      "source": "AP, Reuters, Al Jazeera, NPR, EIA",
-      "summary": "US-Israel launched war on Iran. Iran vows seismic response to sanctions. Strait of Hormuz disruptions persist. Iran warned Gulf states against hosting US forces. Brent ~88-90, EIA forecasts elevated prices until flows normalize.",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical"
-      ],
-      "url": "https://www.britannica.com/event/2026-Iran-war"
+      "source": "AP News / US News / Newsday",
+      "url": "https://apnews.com/article/middle-east-iran-israel-west-bank-august-26-2026-cb19bc3f0b467db591edbef52d0db273",
+      "summary": "Iran's Deputy Foreign Minister announced Iran is negotiating with Oman a framework to ban all military vessel transit through Strait of Hormuz. This represents a major escalation in Iran's control of the critical oil chokepoint. The US-Israel war on Iran continues. Tanker attacked in Hormuz per UKMTO. Israel strikes continue in Gaza.",
+      "triggers_hit": ["military action", "Hormuz", "war declaration", "sanctions"],
+      "escalate_to": ["middle_east", "energy", "geopolitical"],
+      "timestamp": "2026-08-27T11:03:00Z"
     },
     {
+      "id": "evt-003",
       "domain": "pandemic_health",
-      "title": "Ebola epidemic (Bundibugyo virus) in DRC - WHO PHEIC, 5290 cases, 2516 deaths",
+      "title": "DRC Ebola epidemic: 5,656 confirmed cases, 2,715 deaths — fastest-growing Ebola outbreak on record",
+      "severity": 5,
       "category": "pandemic_health",
+      "source": "ECDC / Washington Post / Global Biodefense",
+      "url": "https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda",
+      "summary": "As of Aug 25, DRC reports 5,656 confirmed cases and 2,715 deaths. Africa CDC estimates only 30-40% of actual infections being detected. Bundibugyo virus (BDBV) complicating treatment as existing treatments certified for Zaire species. WHO declared Public Health Emergency of International Concern. Outbreak outpacing containment. Mpox also resurging in new countries.",
+      "triggers_hit": ["pandemic", "WHO emergency", "outbreak", "epidemic"],
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "timestamp": "2026-08-27T11:03:00Z"
+    },
+    {
+      "id": "evt-004",
+      "domain": "us_fed",
+      "title": "Treasury Secretary Bessent doubles long-dated bond buybacks to $4B per operation — 30Y at 5.23%",
       "severity": 4,
-      "source": "WHO, Wikipedia, GlobalBiodefense",
-      "summary": "Fastest-growing Ebola outbreak on record. Bundibugyo ebolavirus complicates response. Africa CDC estimates only 30-40% of infections detected. WHO declared PHEIC.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614"
-    },
-    {
-      "domain": "financial_system",
-      "title": "5th US bank failure of 2026 - Tioga-Franklin Savings Bank, worst since 2017",
-      "category": "market_dislocation",
-      "severity": 3,
-      "source": "American Banker, FDIC",
-      "summary": "Tioga-Franklin Savings Bank (68M assets) failed Aug 22, 5th failure of 2026, costing DIF 5.5M. Systemic risk contained but small-bank stress accelerating.",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "url": "https://www.americanbanker.com/news/fifth-bank-fails-in-2026-as-drip-of-small-bank-closures-continues"
-    },
-    {
-      "domain": "japan",
-      "title": "US-Japan joint yen intervention - first in a generation, yen at ~159",
       "category": "sovereign_intervention",
-      "severity": 3,
-      "source": "CNBC, Japan Times",
-      "summary": "US joined Japan in yen-buying operation for first time in a generation. Yen strengthened from 164 to 155 but surrendered gains, back to ~159. BOJ expected to hike rates next month.",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "url": "https://www.cnbc.com/2026/08/20/us-japan-yen-intervention-bank-of-japan-carry-trade.html"
+      "source": "Breitbart / Fortune / CNBC",
+      "url": "https://fortune.com/2026/08/26/why-40-trillion-national-debt-bond-market-druckenmiller-top-economists-wall-street/",
+      "summary": "Treasury announced Aug 19 it would double long-dated bond buybacks from $2B to at least $4B per operation. 30-year Treasury yield hit 5.3% last week — highest in nearly 20 years. 10-year at 4.66%. Buybacks showing signs of improving long-bond liquidity, but $40T national debt and bond market revolt continue. Fortune reports top Wall Street strategists describe this as unprecedented intervention.",
+      "triggers_hit": ["Treasury intervention", "swap line", "emergency lending"],
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "timestamp": "2026-08-27T11:03:00Z"
     },
     {
-      "domain": "uk",
-      "title": "UK gilt crisis - BOE urged to halt bond sales, 10Y at 5.05%, 30Y at 5.7%",
-      "category": "sovereign_crisis",
+      "id": "evt-005",
+      "domain": "japan",
+      "title": "BOJ Deputy Governor Himino calls for 'timely' rate hike — September hike probability rising",
       "severity": 3,
-      "source": "Telegraph, Scottish Financial News",
-      "summary": "BOE urged to halt active gilt sales amid global bond rout. 10Y borrowing costs ~5.05%, 30Y ~5.7%. QT adding pressure to elevated yields, costing Treasury billions.",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "url": "https://www.telegraph.co.uk/business/2026/08/22/the-bank-of-england-is-costing-the-taxpayer-billions/"
+      "category": "emergency_rate",
+      "source": "Reuters via 933 The Drive / Economic Times",
+      "url": "https://www.933thedrive.com/2026/08/26/boj-deputy-governor-himino-calls-for-timely-rate-hike/",
+      "summary": "BOJ Deputy Governor Himino said raising rates 'in a timely manner' will help avoid inflation spikes requiring abrupt future hikes. Markets pricing high probability of September BOJ hike. Ueda's Jackson Hole absence puts focus on September decision. US-Japan yen intervention context continues. Yen fundamentals shifting after coordinated intervention.",
+      "triggers_hit": ["BOJ emergency", "decisive action", "intervention"],
+      "escalate_to": ["japan_sovereign", "currency", "fin_stability"],
+      "timestamp": "2026-08-27T11:03:00Z"
+    },
+    {
+      "id": "evt-006",
+      "domain": "em_asia",
+      "title": "RBI intensifying rupee intervention as oil prices pressure EM currencies",
+      "severity": 3,
+      "category": "sovereign_intervention",
+      "source": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-27/rbi-is-showing-up-whenever-rupee-weakens-in-intervention-shift",
+      "summary": "India's RBI is intensifying efforts to support the rupee, emboldened by jump in FX reserves to contest pressure from higher oil prices. Strategy shift to intervening whenever rupee weakens. EM Asia currency stress rising with oil prices from Iran war.",
+      "triggers_hit": ["intervention", "currency crisis"],
+      "escalate_to": ["currency", "fin_stability"],
+      "timestamp": "2026-08-27T11:03:00Z"
+    },
+    {
+      "id": "evt-007",
+      "domain": "latam",
+      "title": "Brazil weighing sweeping austerity plan; Argentina peso slides to 1,514/USD",
+      "severity": 2,
+      "category": "sovereign_crisis",
+      "source": "Rio Times",
+      "url": "https://www.riotimesonline.com/latin-american-pulse-for-thursday-august-27-2026/",
+      "summary": "Brazil weighing sweeping austerity plan. Argentina's peso slid to 1,514 per dollar, country risk at 517. Merval rose 0.53% for third straight gain. No acute crisis but deteriorating trend. Trump admin suspended immigrant visas for 75 countries including Brazil.",
+      "triggers_hit": ["devaluation"],
+      "escalate_to": ["fin_stability", "currency"],
+      "timestamp": "2026-08-27T11:03:00Z"
     }
   ],
-  "domains_scanned": 12,
-  "category_5_count": 3,
-  "max_severity": 4
+  "domains_clear": [
+    "china",
+    "uk",
+    "financial_system",
+    "commodities",
+    "africa"
+  ],
+  "domain_notes": {
+    "china": "PBOC nudging yuan fix slightly stronger at 6.7829. No emergency policy. Substack analysis confirms PBOC not withdrawing monetary support.",
+    "uk": "BOE held rates at 3.75% on July 30. CPI inflation at 2.6% above target. Mortgage rates nudging up due to Middle East fighting. No acute gilt crisis this scan — previous escalation signals still active.",
+    "financial_system": "No new bank failures or credit freeze events in last 24h. SNB's Martin commenting on capital standards. Previous bank failure escalations from earlier scans remain in effect.",
+    "commodities": "Brent at $86.32 (down 0.76%), gold consolidating $4,576-$4,698 range. Oil fell 3rd consecutive session. WTI expected range $67.93-$106.74. No new supply disruption event.",
+    "africa": "Benin failed coup revealed Russia network. Adetshina South Africa-Nigeria citizenship case postponed to 2027. No acute new crisis."
+  },
+  "summary": "7 events detected across 12 domains. 2 category-5 (severity 5), 2 severity-4, 2 severity-3, 1 severity-2. Key developments: Iran-Hormuz military ship ban escalation, Ebola outpacing containment (5,656 cases/2,715 deaths), ECB September rate hike confirmed, Treasury buyback doubling continues. Macro event signal remains ACTIVE."
 }
