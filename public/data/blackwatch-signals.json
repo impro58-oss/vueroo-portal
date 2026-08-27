@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-27T11:03:00.000000+00:00",
+    "last_update": "2026-08-27T15:05:24.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
-    "breaking_event": "7 events detected: Iran-Hormuz military ship ban, Ebola 5656 cases/2715 deaths, ECB Sept rate hike to 2.5%, Treasury buyback doubling, BOJ Himino hawkish, RBI rupee intervention, Brazil austerity"
+    "breaking_event": "10+ events detected: Hormuz tanker attack, Bessent-Fed collision, ECB Sept hike, BOJ Himino hawkish, Evergrande life sentence, Australia private credit collapse, 5th US bank failure, Ebola accelerating, global food shock brewing, UK food stockpiling warning"
   },
   "signals": {
     "fin_stability": {
@@ -20,9 +20,9 @@
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-08-25",
-      "note": "ESCALATED: Treasury buyback doubling ($4B/op), ECB rate hike, BOJ hawkish, RBI intervention. JGB10Y at 2.895% (RED threshold breach, >1.5%). German Bund at 3.2% (AMBER threshold breach, >3.0%). Bond market stress across all major economies.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Bessent Treasury intervention vs Fed Warsh (FT: collision course). Fed stopped Reserve Management Purchases mid-Aug. 5th US bank failure (Tioga-Franklin). Australia private credit crisis: Bathla Group collapse $3.6B debt. UK gilt yields 5.05%/5.7% - BOE urged to halt bond sales. JGB 5Y at 2.155%. Financial system stress across all major economies.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -35,9 +35,9 @@
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
-      "last_date": "2026-08-03",
-      "note": "ESCALATED: Treasury buyback doubling signals liquidity stress in long-end bond market",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Treasury buyback intervention ongoing, Fed stopped T-bill purchases. Bessent using near-$1T General Account for bond purchases. Australia private credit redemptions escalating.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -50,24 +50,24 @@
       "unit": "%",
       "description": "US Total Debt / GDP",
       "series_id": "GFDEGDQ188S",
-      "last_date": "2026-01-01",
-      "note": "",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "No change this cycle. Fitch warns sovereign yield spikes highlight persistent fiscal challenges.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 86.32,
+      "value": 89.68,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -1.92,
+      "change_from_last": 3.36,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: Iran-Hormuz military ship ban negotiation with Oman - oil chokepoint escalation",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Brent $89.68 (+$2.27 today). Tanker attacked in Hormuz TODAY (Aug 27). Iran negotiating military ship ban with Oman. OPEC+ worst-ever supply disruption. China falling imports helping balance. WTI range $67.93-$106.74.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -80,9 +80,9 @@
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
-      "last_date": "2026-08-25",
-      "note": "ESCALATED: Iran-Hormuz military ship ban, US-Israel war on Iran continues, tanker attacked",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Tanker attacked in Strait of Hormuz today. Iran-Hormuz military ship ban negotiation. Israel arming militias in Gaza, ceasefire fragile. Iran nuclear sites not secured. US-Iran war ongoing since Feb 2026.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -97,22 +97,22 @@
       "series_id": null,
       "last_date": "2026-08-27",
       "note": "No new cyber events in this scan cycle.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 86.32,
+      "value": 89.68,
       "unit": "$/bbl (proxy)",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
-      "change_from_last": -1.92,
+      "confidence": 7,
+      "change_from_last": 3.36,
       "description": "Using Brent oil as supply chain cost proxy",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: Hormuz disruption + Ebola supply chain impact in DRC/Uganda",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Hormuz tanker attack. OPEC+ worst-ever supply disruption. China falling crude imports. Ebola supply chain impact DRC/Uganda. Ukraine grain exports collapse -54%.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -120,29 +120,29 @@
       "value": 131.78,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 7,
       "change_from_last": 1.47,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
-      "last_date": "2026-07-01",
-      "note": "",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: HSBC/JPMorgan warn global food shock brewing. Wheat at 3-year high. Ukraine exports -54% to 29.6M tons. Global grain deficit 2026-27 (first since 2020-21, largest since 2006-07). UK warns citizens to stock up on food. Hormuz disruption hitting fertiliser/sulphur supply.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "°C",
+      "unit": "\u00c2\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
-      "last_date": "2026",
-      "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "Global temp anomaly 1.11C above 20th century avg. No change this cycle.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -150,14 +150,14 @@
       "value": 49.5,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 5,
       "change_from_last": 4.7,
       "unit": "index",
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
-      "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "UK government warning citizens to stock up on food. Israel-Gaza ceasefire fragility. Global food shock fears. Ebola outbreak social impact in DRC/Uganda.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -170,9 +170,9 @@
       "change_from_last": 0,
       "description": "Baseline: ~30% trust in government (Edelman 2025).",
       "series_id": null,
-      "last_date": "2025-Q1",
-      "note": "Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "Treasury-Fed public collision (Bessent vs Warsh). UK government food stockpiling warning. No change this cycle.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -186,8 +186,8 @@
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026.",
       "series_id": null,
       "last_date": "2026-08-27",
-      "note": "Assessed during weekly deep scans.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "note": "No change this cycle.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "currency": {
       "name": "Currency Stability",
@@ -195,44 +195,44 @@
       "value": 118.06,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": -0.19,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
-      "last_date": "2026-08-21",
-      "note": "ESCALATED: RBI rupee intervention shift, BOJ Himino hawkish on rate hikes, JGB10Y at 2.895% (highest since 1996, RED breach), yen intervention context",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: RBI intensifying rupee intervention (Bloomberg: showing up whenever rupee weakens). BOJ Himino hawkish but Takaichi government pushing dovish. Yen at 159.395. Joint Japan-US yen intervention last month. JGB 5Y at 2.155%. UK gilt yields 5.05%/5.7%.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4630,
+      "value": 4594,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -10.4,
+      "change_from_last": -36,
       "description": "Gold spot price ~$4,630/oz (Aug 27 2026), consolidating $4,576-$4,698",
       "series_id": "web search (livegoldprice.net)",
       "last_date": "2026-08-27",
-      "note": "ESCALATED: Gold above $4,630, war premium from Iran conflict + ECB rate hike + currency stress",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "note": "ESCALATED: Gold $4,594 (consolidating $4,576-$4,698). Up 35.2% YoY. Safe haven demand from Iran conflict, ECB rate hike, Treasury-Fed collision, food shock. PCE sticky, Warsh in focus at Jackson Hole.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 79585,
+      "value": 79458,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 1.1,
+      "change_from_last": 0.6,
       "description": "BTC $79,585 (+1.1% 24h), Dominance: 76.7%",
       "series_id": "CoinGecko API",
       "last_date": "2026-08-27",
-      "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "note": "BTC $79,458 (+0.6%). Holding steady despite macro stress. Risk-on in crypto.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "china": {
       "name": "China Health",
@@ -245,9 +245,9 @@
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
-      "last_date": "2024-01-01",
-      "note": "PBOC nudging yuan stronger at 6.7829. No emergency policy.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "Evergrande founder Hui Ka Yan sentenced to LIFE IN PRISON (Aug 20), CN Y 15.8B fine. Property slump into 6th year. PBOC nudging yuan stronger at 6.7829, resisting sharp appreciation vs weak dollar. China falling crude imports helping balance oil market.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -260,9 +260,9 @@
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: ECB set for September rate hike to 2.50% to contain Iran war inflation. German 10Y Bund at 3.2% (AMBER threshold breach, >3.0%, near 15-year high). Schnabel hawkish.",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: ECB September rate hike to 2.50% confirmed. July meeting was pause not end. Schnabel hawkish. Iran war inflation. UK gilt yields 5.05%/5.7% - BOE urged to halt active bond sales. Fitch warns sovereign yield spikes highlight persistent fiscal challenges.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -275,24 +275,24 @@
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) - recession signal",
       "series_id": "T10Y2Y",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: Treasury buyback doubling, 10Y at 4.66%, 30Y at 5.23% - bond market stress",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Bessent Treasury intervention vs Fed Warsh. Fed stopped Reserve Management Purchases. 10Y near flat after PCE. 5th US bank failure of 2026 (Tioga-Franklin). PCE sticky above forecasts. Bessent using $1T General Account - analysts call it paying mortgage with credit card.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 86.32,
+      "value": 89.68,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -1.92,
+      "change_from_last": 3.36,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: Iran negotiating Hormuz military ship ban with Oman - major chokepoint escalation",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "ESCALATED: Tanker attacked in Hormuz TODAY. Iran negotiating military ship ban with Oman. Iran nuclear sites not secured. Israel arming Gaza militias (Haaretz investigation). Ceasefire fragile. Israel threatens to expel Gazans over kites.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -305,9 +305,9 @@
       "unit": "index",
       "description": "Consumer Sentiment Index",
       "series_id": "UMCSENT",
-      "last_date": "2026-06-01",
-      "note": "",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "last_date": "2026-08-27",
+      "note": "Consumer sentiment deteriorating. Food shock fears. UK stockpiling guidance.",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00"
     },
     "macro_event": {
       "name": "Macro Event Detector",
@@ -317,19 +317,20 @@
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "description": "Breaking event scanner detected 7 category-4+ events across 12 domains",
-      "timestamp": "2026-08-27T11:03:00.000000+00:00"
+      "description": "Breaking event scanner detected 10+ category-4/5 events across 12 domains (4h scan Aug 27 15:00 UTC)",
+      "timestamp": "2026-08-27T15:05:24.000000+00:00",
+      "last_date": "2026-08-27"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 526,
-    "red_count": 16,
-    "amber_count": 3,
+    "score": 562,
+    "red_count": 18,
+    "amber_count": 2,
     "green_count": 1,
     "manual_count": 0,
-    "timestamp": "2026-08-27T11:03:00.000000+00:00"
+    "timestamp": "2026-08-27T15:05:24.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -487,6 +488,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-27T11:03:00.000000+00:00"
+    "timestamp": "2026-08-27T15:05:24.000000+00:00"
   }
 }
