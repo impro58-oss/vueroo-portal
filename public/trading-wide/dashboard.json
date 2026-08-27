@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-27T16:35:48.191037",
+  "timestamp": "2026-08-27T19:44:09.830829",
   "version": "5.3.2-WIDE-TRAILING-3ATR-HARD-STOP",
   "system": "V5.3.2 Wide Trailing 3 ATR + Hard Stop 10% \u2014 Same entries, tightened trailing + hard stop",
   "parameters": {
@@ -28,32 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -194.06,
-    "unrealized_pnl_eur": -15.43,
-    "total_pnl_eur": -209.49,
-    "open_positions": 3,
-    "closed_trades": 11,
+    "realized_pnl_eur": -219.06,
+    "unrealized_pnl_eur": 4.07,
+    "total_pnl_eur": -214.99,
+    "open_positions": 2,
+    "closed_trades": 12,
     "wins": 4,
-    "losses": 7,
-    "win_rate": 36.4
+    "losses": 8,
+    "win_rate": 33.3
   },
   "open_positions": {
-    "JSTUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-16T19:12:21.922574",
-      "entry_price": 0.10817,
-      "atr": 0.003023571428571429,
-      "stop": null,
-      "highest": 0.10989,
-      "lowest": 0.10817,
-      "bars_held": 54,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.09847
-    },
     "INJUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -63,12 +47,12 @@
       "stop": null,
       "highest": 6.057,
       "lowest": 5.498,
-      "bars_held": 20,
+      "bars_held": 21,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 5.532
+      "current_price": 5.437
     },
     "HUMAUSDT": {
       "status": "OPEN",
@@ -79,12 +63,12 @@
       "stop": 0.02223,
       "highest": 0.02622,
       "lowest": 0.0247,
-      "bars_held": 5,
+      "bars_held": 6,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.02526
+      "current_price": 0.0254
     }
   },
   "recent_trades": [
@@ -230,22 +214,35 @@
       "reason": "HARD_STOP_10.0%",
       "bars_held": 1,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "JSTUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-16T19:12:21.922574",
+      "exit_date": "2026-08-27T19:44:09.830829",
+      "entry_price": 0.10817,
+      "exit_price": 0.09735300000000001,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 55,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
     "ZECUSDT",
-    "PAXGUSDT",
-    "XAUTUSDT",
-    "XUSDUSDT",
     "RLUSDUSDT",
-    "USDEUSDT",
-    "EURUSDT",
     "UUSDT",
+    "XAUTUSDT",
+    "EURUSDT",
+    "USD1USDT",
     "KASUSDT",
-    "BFUSDUSDT"
+    "BFUSDUSDT",
+    "USDEUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT"
   ]
 }
