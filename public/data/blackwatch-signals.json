@@ -2,7 +2,7 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-27T07:04:01.000000+00:00",
+    "last_update": "2026-08-27T07:30:38.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
@@ -207,17 +207,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4675.0,
+      "value": 4651.7,
       "unit": "$/oz",
-      "status": "green",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 34.2,
-      "description": "Gold Futures (GC=F): $4,675.00 (+0.74%)",
+      "change_from_last": -23.3,
+      "description": "Gold Futures (GC=F): $4,651.70 (+0.23%) — ABOVE RED THRESHOLD ($3,500)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-27",
-      "note": "Live from Yahoo Finance \u2014 COMEX Gold Futures",
-      "timestamp": "2026-08-27T05:34:09.528796+00:00"
+      "note": "ESCALATED by threshold scanner: Gold at $4,651.7, 32.9% above RED threshold. Currency crisis or war premium.",
+      "timestamp": "2026-08-27T07:30:38.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -325,9 +325,9 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 180,
-    "red_count": 17,
+    "red_count": 18,
     "amber_count": 2,
-    "green_count": 2,
+    "green_count": 1,
     "manual_count": 0,
     "timestamp": "2026-08-27T07:04:01.000000+00:00"
   },
