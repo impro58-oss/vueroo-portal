@@ -1,150 +1,90 @@
 {
-  "scan_time": "2026-08-26T19:02:00.000000+00:00",
-  "scanner": "breaking_event",
-  "scan_type": "4h_breaking_event",
-  "domains_scanned": 12,
-  "queries_executed": 36,
-  "events_count": 9,
-  "new_events_vs_last_scan": 2,
-  "new_event_ids": ["BE-2026-08-26-009", "BE-2026-08-26-010"],
-  "risk_level": "CRITICAL",
-  "macro_event": "ACTIVE",
-  "summary": "9 events tracked, 2 NEW cat-5 escalations. NEW: (1) Iran warns military vessel ban in Hormuz under Oman deal — potential escalation of naval blockade, (2) Colombia mass deportation order targeting Venezuelans — regional refugee crisis escalation. INTENSIFYING: Ebola cases up to 5,656 / 2,715 deaths (from 5,514/2,642), gold hits $4,651 (+15% August), UK 10Y gilts at 4.99% (highest in G7), JGB 10Y near 2.95% (3-decade high), Treasury buyback doubled to $4B/op but 30Y yield still rising to 5.273%, Russia bank run $3.4B in 14 days (7th month outflow), PBOC yuan fixing 593 pips weak, China property crisis: Evergrande founder sentenced to life.",
-  "top_event": "Iran Hormuz military vessel ban + Colombia mass deportation + Ebola 5,656 cases/2,715 deaths + Treasury buyback failing (30Y at 5.273%) + Gold $4,651 + JGB 2.95% + Russia bank run $3.4B",
-  "top_threats": [
-    "Strait of Hormuz: Iran warns military vessel ban under Oman deal, strait shut since Feb 28, ~20% global oil/LNG blocked, Houthis targeting Saudi tankers in Red Sea",
-    "US Treasury: buyback doubled to $4B/op but 30Y yield rose to 5.273%, CFR says not durable, Bessent interventionist tactics failing",
-    "Ebola DRC: 5,656 confirmed cases, 2,715 deaths (up from 5,514/2,642), 56 health zones, 100 days since declaration, MSF warns inadequate response",
-    "Gold: $4,651/oz (+15% August, +36.25% YoY), safe-haven extreme, 3-month high",
-    "UK gilts: 10Y at 4.99%, highest in G7, fiscal stress signal",
-    "JGB: 10Y at 2.95%, three-decade high, Takaichi budget fears driving bond vigilantes",
-    "Russia: $3.4B withdrawn in 14 days (Aug 1-14), $7.3B in July, $4.5B in June, 7th month outflow, war funding threatened",
-    "PBOC: yuan fixing 593 pips weak vs estimate (6.7841 vs 6.7248), devaluation pressure, China property 5-year downward spiral",
-    "Colombia: mass deportation order for Venezuelan migrants, regional refugee crisis escalation"
-  ],
+  "scan_time": "2026-08-27T07:04:01.000000+00:00",
+  "scan_type": "breaking_event",
+  "events_detected": 6,
   "events": [
     {
-      "id": "BE-2026-08-26-009",
-      "domain": "middle_east",
-      "title": "Iran warns military vessel ban in Strait of Hormuz under potential Oman deal",
-      "severity": 5,
-      "category": "war_military",
-      "status": "NEW",
-      "summary": "Iran stated it won't allow military vessels to transit the Strait of Hormuz if agreement with Oman is finalized. Strait has been effectively shut since Feb 28 when US/Israel launched air war on Iran. Houthis also targeted Saudi oil tanker Amzan in Red Sea with ballistic missile and drones.",
-      "sources": ["Al Jazeera", "CNN", "San Diego Union Tribune"],
-      "timestamp": "2026-08-26T12:00:00+00:00",
-      "escalate_to": ["middle_east", "energy", "geopolitical"]
-    },
-    {
-      "id": "BE-2026-08-26-010",
-      "domain": "latam",
-      "title": "Colombia orders mass deportation of Venezuelan migrants — regional refugee crisis",
-      "severity": 4,
-      "category": "sovereign_crisis",
-      "status": "NEW",
-      "summary": "Colombian President Abelardo de la Espriella ordered immediate deportation of irregular migrants, mainly Venezuelans. Complete reversal of decade-long policy. Colombia has received largest share of Venezuelan diaspora. Potential mass refugee influx at Venezuela-Colombia border.",
-      "sources": ["Washington Post", "El Pais", "Taipei Times"],
-      "timestamp": "2026-08-25T19:00:00+00:00",
-      "escalate_to": ["geopolitical"]
-    },
-    {
-      "id": "BE-2026-08-25-001",
-      "domain": "middle_east",
-      "title": "Strait of Hormuz crisis — Iran blockade ongoing since Feb 28",
-      "severity": 5,
-      "category": "war_military",
-      "status": "INTENSIFYING",
-      "summary": "Strait of Hormuz largely blocked by Iran since Feb 28, 2026. ~20% of world's oil and LNG normally passes through. OPEC+ pledged +206K bpd to mitigate. Japanese refiners requesting stockpile releases. Houthis targeting Saudi tankers in Red Sea.",
-      "sources": ["Wikipedia", "Al Jazeera", "CNN", "EIA"],
-      "timestamp": "2026-08-26T12:00:00+00:00",
-      "escalate_to": ["middle_east", "energy", "geopolitical"]
-    },
-    {
-      "id": "BE-2026-08-25-002",
       "domain": "us_fed",
-      "title": "US Treasury buyback intervention failing — 30Y yield at 5.273%",
-      "severity": 4,
+      "title": "US Treasury emergency bond buyback doubling - Bessent taps ~1T TGA",
       "category": "sovereign_intervention",
-      "status": "INTENSIFYING",
-      "summary": "Treasury doubled buyback operations from $2B to $4B per operation. Initial yield drop (30Y from 5.21% to 5.196%) reversed by Aug 21 — 30Y rose to 5.273%. CFR says approach not durable. Bessent using interventionist tactics to cap yields. 4 Fed bank boards wanted rate hike.",
-      "sources": ["CNBC", "CFR", "NYT", "The Hill", "Foreign Policy"],
-      "timestamp": "2026-08-21T00:00:00+00:00",
-      "escalate_to": ["fin_stability", "us_cycle", "liquidity"]
+      "severity": 4,
+      "source": "CNBC, Reuters, CFR, NYT",
+      "summary": "Treasury Secretary Bessent announced doubling of long-dated bond buybacks from 2B to 4B per operation. Yields rebounded despite intervention. Considering tapping near 1T Treasury General Account. 30Y yield at 5.248%.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ],
+      "url": "https://www.cnbc.com/2026/08/24/bessent-1-trillion-treasury-general-account-bond-buybacks.html"
     },
     {
-      "id": "BE-2026-08-25-003",
+      "domain": "middle_east",
+      "title": "US-Israel war on Iran ongoing, Hormuz disruptions, oil elevated ~90",
+      "category": "war_military",
+      "severity": 4,
+      "source": "AP, Reuters, Al Jazeera, NPR, EIA",
+      "summary": "US-Israel launched war on Iran. Iran vows seismic response to sanctions. Strait of Hormuz disruptions persist. Iran warned Gulf states against hosting US forces. Brent ~88-90, EIA forecasts elevated prices until flows normalize.",
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ],
+      "url": "https://www.britannica.com/event/2026-Iran-war"
+    },
+    {
       "domain": "pandemic_health",
-      "title": "Ebola DRC epidemic — 5,656 cases, 2,715 deaths, fastest-growing outbreak on record",
-      "severity": 5,
-      "category": "pandemic",
-      "status": "INTENSIFYING",
-      "summary": "Bundibugyo ebolavirus outbreak in DRC intensifying. 5,656 confirmed cases (up from 5,514), 2,715 deaths (up from 2,642), 56 health zones affected. 100 days since declaration, MSF warns inadequate response. PHEIC declared May 16, 2026. Cases also in Uganda (20 confirmed).",
-      "sources": ["WHO", "ECDC", "CDC", "Al Jazeera", "Wikipedia"],
-      "timestamp": "2026-08-25T00:00:00+00:00",
-      "escalate_to": ["supply_chain", "social_cohesion"]
-    },
-    {
-      "id": "BE-2026-08-25-004",
-      "domain": "commodities",
-      "title": "Gold hits $4,651/oz — safe-haven panic +15% in August",
+      "title": "Ebola epidemic (Bundibugyo virus) in DRC - WHO PHEIC, 5290 cases, 2516 deaths",
+      "category": "pandemic_health",
       "severity": 4,
-      "category": "market_dislocation",
-      "status": "INTENSIFYING",
-      "summary": "Gold reached $4,651/oz in Asian trading Aug 25, +15% in August, +36.25% YoY. 3-month high. Driven by Iran war fears, US fiscal deterioration, Treasury intervention concerns. Trading at $4,629 on Aug 26.",
-      "sources": ["Guardian", "TradingEconomics", "Coinpaper"],
-      "timestamp": "2026-08-26T10:00:00+00:00",
-      "escalate_to": ["fin_stability"]
+      "source": "WHO, Wikipedia, GlobalBiodefense",
+      "summary": "Fastest-growing Ebola outbreak on record. Bundibugyo ebolavirus complicates response. Africa CDC estimates only 30-40% of infections detected. WHO declared PHEIC.",
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614"
     },
     {
-      "id": "BE-2026-08-25-005",
-      "domain": "uk",
-      "title": "UK 10Y gilts at 4.99% — highest in G7, fiscal stress",
-      "severity": 3,
-      "category": "sovereign_crisis",
-      "status": "ONGOING",
-      "summary": "UK 10Y bond yield rose to 4.99% on Aug 26, +0.26pts YoY. Highest in G7. GBP/USD at 5-month high but gilts signal fiscal stress. BOE costing taxpayer billions in QE losses.",
-      "sources": ["TradingEconomics", "FXStreet", "Investing.com", "Telegraph"],
-      "timestamp": "2026-08-26T00:00:00+00:00",
-      "escalate_to": ["europe", "fin_stability"]
-    },
-    {
-      "id": "BE-2026-08-25-006",
-      "domain": "japan",
-      "title": "JGB 10Y at 2.95% — three-decade high, fiscal fears",
-      "severity": 4,
-      "category": "sovereign_intervention",
-      "status": "ONGOING",
-      "summary": "10-year JGB yield near 2.95%, highest since 1996. Takaichi budget fears driving bond vigilantes. Joint US-Japan yen intervention failed to sustain — yen back to 159 after brief drop to 155. BOJ 80% probability of rate hike to 1.25% at Sep 18 meeting.",
-      "sources": ["Nikkei Asia", "Asia Times", "Reuters", "Fares Solution", "CNBC", "Forbes"],
-      "timestamp": "2026-08-20T00:00:00+00:00",
-      "escalate_to": ["currency", "fin_stability"]
-    },
-    {
-      "id": "BE-2026-08-25-007",
       "domain": "financial_system",
-      "title": "Russia slow-motion bank run — $3.4B withdrawn in 14 days, 7th month outflow",
-      "severity": 4,
+      "title": "5th US bank failure of 2026 - Tioga-Franklin Savings Bank, worst since 2017",
       "category": "market_dislocation",
-      "status": "INTENSIFYING",
-      "summary": "Russians withdrew $3.4B in first 14 days of August, after $7.3B in July and $4.5B in June. 7th consecutive month of outflows. Liquidity crunch threatening war funding. Fears of Kremlin seizing savings for war.",
-      "sources": ["Fortune", "Euronews", "Yahoo Finance", "FirstPost", "TVP World"],
-      "timestamp": "2026-08-23T00:00:00+00:00",
-      "escalate_to": ["fin_stability", "liquidity"]
+      "severity": 3,
+      "source": "American Banker, FDIC",
+      "summary": "Tioga-Franklin Savings Bank (68M assets) failed Aug 22, 5th failure of 2026, costing DIF 5.5M. Systemic risk contained but small-bank stress accelerating.",
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ],
+      "url": "https://www.americanbanker.com/news/fifth-bank-fails-in-2026-as-drip-of-small-bank-closures-continues"
+    },
+    {
+      "domain": "japan",
+      "title": "US-Japan joint yen intervention - first in a generation, yen at ~159",
+      "category": "sovereign_intervention",
+      "severity": 3,
+      "source": "CNBC, Japan Times",
+      "summary": "US joined Japan in yen-buying operation for first time in a generation. Yen strengthened from 164 to 155 but surrendered gains, back to ~159. BOJ expected to hike rates next month.",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "url": "https://www.cnbc.com/2026/08/20/us-japan-yen-intervention-bank-of-japan-carry-trade.html"
+    },
+    {
+      "domain": "uk",
+      "title": "UK gilt crisis - BOE urged to halt bond sales, 10Y at 5.05%, 30Y at 5.7%",
+      "category": "sovereign_crisis",
+      "severity": 3,
+      "source": "Telegraph, Scottish Financial News",
+      "summary": "BOE urged to halt active gilt sales amid global bond rout. 10Y borrowing costs ~5.05%, 30Y ~5.7%. QT adding pressure to elevated yields, costing Treasury billions.",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ],
+      "url": "https://www.telegraph.co.uk/business/2026/08/22/the-bank-of-england-is-costing-the-taxpayer-billions/"
     }
   ],
-  "signals_updated": "macro_event ACTIVE (unchanged), escalated: middle_east, energy, geopolitical, supply_chain, food_security, fin_stability, china, currency, europe, us_cycle, social_cohesion",
-  "domain_summaries": {
-    "us_fed": "No emergency rate decision. No FOMC meeting in August. Next meeting Sep 15-16. Current rate 3.50-3.75%. July meeting 9-3 vote to hold. 4 Fed bank boards wanted rate hike on discount window. Treasury buyback doubled to $4B/op but yields still rising. Bessent interventionist tactics.",
-    "latam": "NEW: Colombia mass deportation of Venezuelans. Argentina peso at 1,497/USD, reserves at record $50.6B. Brazil DI Jan 2029 at 16.50%, Morgan Stanley warns of complacency before election. 2027 budget bill due Aug 31.",
-    "eu_ecb": "No emergency action. ECB cut rates 8x Jun 2024-Jun 2025, unchanged since. Schnabel says ECB must raise rates further. Lagarde warns US retreat eroding European competitiveness. Europe far from own debt crisis but spillover from US.",
-    "uk": "10Y gilts at 4.99% (highest in G7). GBP/USD 5-month high. BOE costing billions in QE losses. No emergency action but fiscal stress signal.",
-    "japan": "10Y JGB at 2.95% (3-decade high). Joint US-Japan yen intervention failed — yen back to 159. BOJ 80% prob of hike to 1.25% Sep 18. Takaichi budget fears. Bond vigilantes active.",
-    "china": "PBOC yuan fixing 593 pips weak vs estimate. Evergrande founder sentenced to life. Property market 5-year downward spiral. PBOC injecting liquidity. China pledges timely fiscal support.",
-    "em_asia": "No acute crisis. KRW at 1,384/USD. RCEP trade growing. No currency crisis signals.",
-    "middle_east": "CRITICAL: Hormuz shut since Feb 28. Iran warns military vessel ban. Houthis targeting Saudi tankers. UAE suspended financial dealings with Iran. Oman deal negotiations ongoing.",
-    "africa": "JNIM-ISSP conflict spreading to Niger/Nigeria. Somalia al-Shabaab ongoing. Nigeria-South Africa xenophobic tensions. No coup events this week.",
-    "financial_system": "5th US bank failure of 2026 (small regional). August 2026 liquidity contraction — 'depleted reserves, exhausted buffers'. Systemic risk contained but non-linear. Russia bank run threatens war funding.",
-    "commodities": "Oil surged to 3-week highs Aug 20. Brent ~$95. Gold at $4,651 (+15% August). Food crisis escalating — Hormuz blocking fertilizer shipments, HSBC warns food shock brewing, Ukraine wheat exports reduced.",
-    "pandemic_health": "Ebola DRC: 5,656 cases, 2,715 deaths, 56 health zones, 100 days since declaration. Bundibugyo virus (no certified treatments). PHEIC active. MSF warns inadequate response."
-  }
+  "domains_scanned": 12,
+  "category_5_count": 3,
+  "max_severity": 4
 }
