@@ -2,43 +2,41 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-27T03:04:18.000000+00:00",
+    "last_update": "2026-08-27T05:03:39.546735+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "7 thresholds breached (2 RED, 5 AMBER)",
-    "breaking_event": "Breaking event scanner: 9 events detected, 4 Category-5. US Treasury intervention, Japan JGB crisis, Hormuz war, Ebola PHEIC."
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.7,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: US Treasury emergency bond buyback + Japan JGB 30-year highs + 5th US bank failure",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:33.857465+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 1.33,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-08-03",
-      "note": "ESCALATED: Treasury buyback operations + Fed divided on rate hikes",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:34.280557+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -53,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-08-26T23:04:21.814567+00:00"
+      "timestamp": "2026-08-27T05:03:34.645973+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.24,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: Hormuz disruption 0.6M bpd, Brent spiked 10-13%, Saudi rerouting from Bab al-Mandab",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:35.036369+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 15.45,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.4,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: Iran war active, Gaza ceasefire collapsing, Colombia-Venezuela border crisis, Sudan civil war",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-08-27T05:03:35.357925+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -96,24 +94,24 @@
       "change_from_last": 0,
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
-      "last_date": "2026-08-26",
+      "last_date": "2026-08-27",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-08-26T23:04:22.308226+00:00"
+      "timestamp": "2026-08-27T05:03:35.362519+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
       "value": 88.24,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: Hormuz disruption + Ebola PHEIC + drug shortages 71 active",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-08-27T05:03:35.362519+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -127,8 +125,8 @@
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
-      "note": "ESCALATED: Fertilizer scarcity from Hormuz, UK food shortage warnings, Somalia hunger crisis",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:36.420955+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -143,7 +141,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-08-26T23:04:21.494407+00:00"
+      "timestamp": "2026-08-27T05:03:34.721951+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -157,8 +155,8 @@
       "description": "Consumer Sentiment as social mood proxy",
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
-      "note": "ESCALATED: Ebola PHEIC + Gaza escalation + Colombia deportations + food crisis",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:36.764741+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -173,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-08-26T23:04:22.308226+00:00"
+      "timestamp": "2026-08-27T05:03:35.362519+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -186,54 +184,54 @@
       "change_from_last": 0,
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
       "series_id": null,
-      "last_date": "2026-08-26",
+      "last_date": "2026-08-27",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-08-26T23:04:22.308226+00:00"
+      "timestamp": "2026-08-27T05:03:35.362519+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.06,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "info",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.19,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "ESCALATED: US-Japan coordinated yen intervention failed, yuan at 3.5yr high vs weak dollar, RBI intervening on rupee",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-08-27T05:03:37.102374+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4607.73,
+      "value": 4647.6,
       "unit": "$/oz",
       "status": "green",
-      "trend": "improving",
+      "trend": "stable",
       "confidence": 9,
-      "change_from_last": -54.07,
-      "description": "Gold Spot: ,607.73/oz (BullionVault live)",
-      "series_id": "BullionVault Spot",
-      "last_date": "2026-08-26",
-      "note": "Live spot from BullionVault \u2014 26 Aug 2026",
-      "timestamp": "2026-08-26T23:04:30+00:00"
+      "change_from_last": 6.8,
+      "description": "Gold spot price verified via web search (JM Bullion, Aug 26 11:33 PM EDT)",
+      "series_id": "JM Bullion spot price",
+      "last_date": "2026-08-27",
+      "note": "Web-verified spot price. Previous: ,640.80",
+      "timestamp": "2026-08-27T05:03:33.720247+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 78704,
+      "value": 78755,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.3,
-      "description": "BTC $78,704 (-0.3% 24h), Dominance: 76.5%",
+      "change_from_last": -0.1,
+      "description": "BTC $78,755 (-0.1% 24h), Dominance: 76.6%",
       "series_id": "CoinGecko API",
-      "last_date": "2026-08-26",
+      "last_date": "2026-08-27",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-08-26T23:04:21.085206+00:00"
+      "timestamp": "2026-08-27T05:03:34.333640+00:00"
     },
     "china": {
       "name": "China Health",
@@ -248,7 +246,7 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-26T23:04:20.832429+00:00"
+      "timestamp": "2026-08-27T05:03:34.045842+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -262,38 +260,38 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-26",
-      "note": "Threshold breach: German 10Y Bund above 3.0 (current: 3.20) - European fiscal stress, periphery spreads widening",
-      "timestamp": "2026-08-26T23:30:44.000000+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-08-27T05:03:38.621123+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.47,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-26",
-      "note": "ESCALATED: US Treasury intervening to cap yields - fiscal emergency",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "",
+      "timestamp": "2026-08-27T05:03:38.922489+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.24,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: Active Iran war - Hormuz strikes, Saudi oil rerouting, Gaza ceasefire collapsing",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-08-27T05:03:39.213865+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,45 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-06-01",
       "note": "",
-      "timestamp": "2026-08-26T23:04:26.401435+00:00"
-    },
-    "japan_sovereign": {
-      "name": "Japan Sovereign Stress",
-      "domain": "Japan",
-      "value": 2.89,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": 0,
-      "unit": "%",
-      "description": "Japan 10-Year JGB Yield - BOJ yield curve control broken",
-      "series_id": "web_search",
-      "last_date": "2026-08-26",
-      "note": "ESCALATED: JGB yields at 2.95% (30-year high), BOJ September hike 80% priced, coordinated intervention failed",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00"
-    },
-    "macro_event": {
-      "name": "Macro Event Alert",
-      "domain": "Systemic",
-      "value": "ACTIVE",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 9,
-      "unit": "alert",
-      "description": "Breaking event scanner: Category-5 events detected",
-      "timestamp": "2026-08-27T03:04:18.000000+00:00",
-      "note": "4 Category-5 events: US Treasury yield intervention, Japan JGB/yen crisis, Hormuz war disruption, Ebola PHEIC"
+      "timestamp": "2026-08-27T05:03:39.541208+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 920,
-    "red_count": 17,
-    "amber_count": 3,
-    "green_count": 2,
+    "score": 526,
+    "red_count": 7,
+    "amber_count": 9,
+    "green_count": 3,
     "manual_count": 1,
-    "timestamp": "2026-08-27T03:04:18.000000+00:00"
+    "timestamp": "2026-08-27T05:03:39.546735+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -462,6 +433,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-26T23:04:26.415099+00:00"
+    "timestamp": "2026-08-27T05:03:39.546735+00:00"
   }
 }
