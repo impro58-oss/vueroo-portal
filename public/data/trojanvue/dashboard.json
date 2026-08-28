@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-28T18:00:48.666475",
+  "timestamp": "2026-08-29T00:00:14.618009",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,76 +30,17 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -364.88,
-    "unrealized_pnl_eur": 2.38,
-    "total_pnl_eur": -362.5,
-    "open_positions": 2,
-    "closed_trades": 193,
+    "realized_pnl_eur": -414.88,
+    "unrealized_pnl_eur": 0,
+    "total_pnl_eur": -414.88,
+    "open_positions": 0,
+    "closed_trades": 195,
     "wins": 73,
-    "losses": 120,
-    "win_rate": 37.8
+    "losses": 122,
+    "win_rate": 37.4
   },
-  "open_positions": {
-    "HUMAUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-27T03:05:37.439429",
-      "entry_price": 0.0247,
-      "atr": 0.001323571428571428,
-      "stop": 0.02223,
-      "highest": 0.02816,
-      "lowest": 0.0247,
-      "bars_held": 12,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.02628
-    },
-    "RUNEUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-27T03:05:37.439429",
-      "entry_price": 0.534,
-      "atr": 0.025428571428571422,
-      "stop": 0.4806,
-      "highest": 0.631,
-      "lowest": 0.534,
-      "bars_held": 12,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.476
-    }
-  },
+  "open_positions": {},
   "recent_trades": [
-    {
-      "symbol": "IOUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-08-12T21:00:19.522447",
-      "exit_date": "2026-08-15T06:00:11.482458",
-      "entry_price": 0.1137,
-      "exit_price": 0.1119,
-      "pnl_pct": 1.58,
-      "pnl_eur": 3.96,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
-    {
-      "symbol": "AVNTUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-13T09:01:06.366045",
-      "exit_date": "2026-08-15T09:00:55.895425",
-      "entry_price": 0.098,
-      "exit_price": 0.10075714285714286,
-      "pnl_pct": 1.43,
-      "pnl_eur": 3.57,
-      "reason": "TRAILING_STOP",
-      "bars_held": 12,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "ATOMUSDT",
       "direction": "LONG",
@@ -333,22 +274,48 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "RUNEUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-27T03:05:37.439429",
+      "exit_date": "2026-08-28T21:00:10.355360",
+      "entry_price": 0.534,
+      "exit_price": 0.4806,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 13,
+      "timeframe": "DAILY"
+    },
+    {
+      "symbol": "HUMAUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-27T03:05:37.439429",
+      "exit_date": "2026-08-29T00:00:14.618009",
+      "entry_price": 0.0247,
+      "exit_price": 0.02223,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 14,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USDEUSDT",
     "RLUSDUSDT",
-    "XUSDUSDT",
-    "KASUSDT",
-    "USD1USDT",
-    "PAXGUSDT",
-    "BFUSDUSDT",
-    "UUSDT",
-    "XAUTUSDT",
+    "USDEUSDT",
     "ZECUSDT",
-    "EURUSDT"
+    "BFUSDUSDT",
+    "KASUSDT",
+    "XAUTUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT",
+    "EURUSDT",
+    "USD1USDT",
+    "UUSDT"
   ]
 }
