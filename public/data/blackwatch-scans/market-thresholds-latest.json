@@ -67,8 +67,11 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 73,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search (CBOE week of 8/24/2026)"
     },
     "GOLD": {
       "price": 4504.1,
@@ -92,16 +95,25 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.875,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search (Reuters/Business Recorder Aug 21-25 2026)"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.26,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "web_search (TradingEconomics/MacroMicro Aug 25 2026)"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.6,
+      "prev_close": null,
+      "change_1d_pct": null,
+      "data_points": 0,
+      "source": "FRED CSV (BAA10Y Aug 27 2026)"
     },
     "BTC": {
       "price": 77684.52,
@@ -141,6 +153,21 @@
         "geopolitical"
       ],
       "distance_pct": 28.69
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.875,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral - Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 91.67
     },
     {
       "key": "USDJPY",
@@ -185,10 +212,41 @@
         "fin_stability"
       ],
       "distance_pct": 50.14
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.875,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure - BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 187.5
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.26,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress - periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 8.67
     }
   ],
-  "breach_count": 5,
+  "breach_count": 8,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_instruments_filled": true,
+  "manual_instruments_note": "MOVE=73 (CBOE), JGB10Y=2.875% (Reuters), DE10Y=3.26% (TradingEconomics), BAA10Y=1.60% (FRED)"
 }

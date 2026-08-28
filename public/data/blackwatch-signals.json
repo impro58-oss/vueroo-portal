@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-28T23:30:41.000000+00:00",
+    "last_update": "2026-08-28T23:31:27.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "5 thresholds breached"
+    "threshold_breach": "8 thresholds breached (3 RED, 5 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +21,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-27",
-      "note": "Threshold breach: Gold above 3500 (current: 4504.1)",
-      "timestamp": "2026-08-28T23:30:41.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4504.1) | Threshold breach: JGB 10Y above 1.5 (current: 2.875)",
+      "timestamp": "2026-08-28T23:31:27.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -201,7 +201,7 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "Threshold breach: USD/JPY above 160.0 (current: 160.038)",
+      "note": "Threshold breach: USD/JPY above 160.0 (current: 160.038) | Threshold breach: JGB 10Y above 1.5 (current: 2.875)",
       "timestamp": "2026-08-28T23:30:41.000000+00:00"
     },
     "gold": {
@@ -261,7 +261,7 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-28",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2) | Threshold breach: German Bund 10Y above 3.0 (current: 3.26)",
       "timestamp": "2026-08-28T23:05:06.632776+00:00"
     },
     "us_cycle": {
@@ -313,15 +313,21 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 439,
-    "red_count": 5,
+    "score": 660,
+    "red_count": 8,
     "amber_count": 10,
-    "green_count": 4,
+    "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-28T23:05:07.973475+00:00"
+    "timestamp": "2026-08-28T23:31:27.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
+      {
+        "domain": "Financial",
+        "red": 2,
+        "amber": 1,
+        "stress_level": 5
+      },
       {
         "domain": "Social",
         "red": 1,
@@ -329,10 +335,10 @@
         "stress_level": 4
       },
       {
-        "domain": "Financial",
+        "domain": "Geopolitics",
         "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Food",
@@ -342,6 +348,12 @@
       },
       {
         "domain": "Climate",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
+        "domain": "Currency",
         "red": 1,
         "amber": 0,
         "stress_level": 2
@@ -398,16 +410,22 @@
     "convergence_active": true,
     "convergence_domains": [
       {
+        "domain": "Financial",
+        "red": 2,
+        "amber": 1,
+        "stress_level": 5
+      },
+      {
         "domain": "Social",
         "red": 1,
         "amber": 2,
         "stress_level": 4
       },
       {
-        "domain": "Financial",
+        "domain": "Geopolitics",
         "red": 1,
-        "amber": 1,
-        "stress_level": 3
+        "amber": 0,
+        "stress_level": 2
       },
       {
         "domain": "Food",
@@ -422,12 +440,18 @@
         "stress_level": 2
       },
       {
+        "domain": "Currency",
+        "red": 1,
+        "amber": 0,
+        "stress_level": 2
+      },
+      {
         "domain": "China",
         "red": 1,
         "amber": 0,
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-28T23:05:07.973475+00:00"
+    "timestamp": "2026-08-28T23:31:27.000000+00:00"
   }
 }
