@@ -2,18 +2,19 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-28T07:02:00.000000+00:00",
+    "last_update": "2026-08-28T07:32:33.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "5 events detected: Hormuz closed, Ebola PHEIC, US-Japan intervention, bank failures, ECB hawkish"
+    "breaking_event": "5 events detected: Hormuz closed, Ebola PHEIC, US-Japan intervention, bank failures, ECB hawkish",
+    "threshold_breach": "4 thresholds breached"
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.67,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.03,
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-26",
-      "note": "ESCALATED by breaking event scanner: 5th US bank failure of 2026, US-Japan intervention stress, BOE gilt crisis.",
-      "timestamp": "2026-08-28T07:02:00.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4661.4)",
+      "timestamp": "2026-08-28T07:32:33.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
