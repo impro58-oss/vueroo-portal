@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-08-28T07:02:00.000000+00:00",
+  "scan_time": "2026-08-28T15:08:00.000000+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1.0",
   "date": "2026-08-28",
@@ -7,31 +7,48 @@
   "queries_executed": 36,
   "events_detected": [
     {
+      "id": "EVT-2026-08-28-006",
+      "domain": "japan",
+      "title": "Japan confirms record $96.5B yen intervention — largest monthly on record",
+      "severity": 5,
+      "category": "sovereign_intervention",
+      "description": "Japan's Finance Ministry confirmed ¥15.39 trillion ($96.5B) spent July 30–Aug 26, largest monthly FX intervention on record. Single-day July 30 operation may have been ¥9.6T. BOJ meeting Aug 28 with 65% odds of rate hike. Yen near ¥159. Carry trade re-emerging per CNBC.",
+      "escalate_to": ["fin_stability", "currency", "us_cycle"],
+      "source": "Nikkei Asia, BNN Bloomberg, Business Times",
+      "url": "https://asia.nikkei.com/business/markets/currencies/japan-reveals-96bn-yen-buying-intervention-in-july-august"
+    },
+    {
+      "id": "EVT-2026-08-28-007",
+      "domain": "us_fed",
+      "title": "US Treasury actively capping bond yields — Bessent doubles buyback operations",
+      "severity": 4,
+      "category": "sovereign_intervention",
+      "description": "Treasury Secretary Bessent doubled liquidity-support buybacks from $2B to $4B per operation on Aug 19, explicitly targeting 10-30Y debt. US 10Y yield at 4.67%. Goldman Sachs expressing doubts about effectiveness. CNN reports analysts view it as attempt to drive down bond rates. Second intervention in weeks.",
+      "escalate_to": ["fin_stability", "us_cycle", "liquidity"],
+      "source": "CNN, Axios, Goldman Sachs via Yahoo Finance",
+      "url": "https://www.cnn.com/2026/08/27/business/market-bonds-fed-bessent-warsh"
+    },
+    {
       "id": "EVT-2026-08-28-001",
       "domain": "middle_east",
-      "title": "Strait of Hormuz CLOSED — Iran War Day 181, tanker attacks ongoing",
+      "title": "Strait of Hormuz — CENTCOM claims mines cleared, tanker attacked same day",
       "severity": 5,
       "category": "war_military",
-      "description": "Strait of Hormuz effectively closed. 3 ships transited Aug 23 vs ~85/day normal. Iran war Day 181. Oil tanker attacked Aug 27. Brent $88.85.",
-      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"]
+      "description": "CENTCOM declared Hormuz cleared of Iranian sea mines (UPI Aug 28). However, allies skeptical mines fully cleared (Bloomberg/CNBC). Tanker attacked Aug 27 off Omani coast. Iran war Day 181 (6-month mark Aug 28). Qatar PM in Tehran for de-escalation talks. Iran/Oman proposing safe passage plan. Traffic still ~3/day vs 85 normal.",
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"],
+      "source": "UPI, CNBC, AP News, ABC News",
+      "url": "https://www.upi.com/Top_News/World-News/2026/08/28/Iran-CENTCOM-Hormuz-sea-mines/4511787898915/"
     },
     {
       "id": "EVT-2026-08-28-002",
       "domain": "pandemic_health",
-      "title": "2026 Ebola Epidemic — WHO PHEIC, 5,713 cases, 2,744 deaths",
+      "title": "2026 Ebola epidemic — 5,290 cases, 2,516 deaths, 2nd largest in history",
       "severity": 5,
       "category": "pandemic",
-      "description": "Fastest-growing Ebola outbreak on record. Only 30-40% of infections detected. Outpacing containment.",
-      "escalate_to": ["supply_chain", "social_cohesion"]
-    },
-    {
-      "id": "EVT-2026-08-28-003",
-      "domain": "japan",
-      "title": "US-Japan coordinated yen intervention — first since 1998",
-      "severity": 4,
-      "category": "sovereign_intervention",
-      "description": "Yen near ¥160. BOJ 80% hike probability for Sept 18. Carry trade re-emerging.",
-      "escalate_to": ["fin_stability", "currency", "us_cycle"]
+      "description": "Bundibugyo ebolavirus outbreak in DRC/Uganda. WHO PHEIC declared. Africa CDC estimates only 30-40% of infections detected — true cases could be 3x higher. Outpacing containment. MSF says communities still not receiving adequate support after 100 days.",
+      "escalate_to": ["supply_chain", "social_cohesion"],
+      "source": "Wikipedia, Global Biodefense, MSF, CDC",
+      "url": "https://en.wikipedia.org/wiki/2026_Ebola_epidemic"
     },
     {
       "id": "EVT-2026-08-28-004",
@@ -39,8 +56,10 @@
       "title": "5th US bank failure of 2026 — worst year since 2017",
       "severity": 3,
       "category": "market_dislocation",
-      "description": "Tioga-Franklin Savings Bank failed Aug 22. $68M assets. 5th failure of year.",
-      "escalate_to": ["fin_stability", "liquidity"]
+      "description": "Tioga-Franklin Savings Bank failed Aug 22. $68M assets, DIF cost $5.5M. 5th failure of year, most since 2023. Polymarket odds of further failures. Russia warned of systemic banking crisis by Oct 2026 per Kremlin think tank.",
+      "escalate_to": ["fin_stability", "liquidity"],
+      "source": "American Banker, Credit and Collection News, Polymarket",
+      "url": "https://www.americanbanker.com/news/fifth-bank-fails-in-2026-as-drip-of-small-bank-closures-continues"
     },
     {
       "id": "EVT-2026-08-28-005",
@@ -48,16 +67,21 @@
       "title": "ECB hawkish pivot + BOE urged to halt gilt sales during bond rout",
       "severity": 3,
       "category": "emergency_rate",
-      "description": "Traders bracing for hawkish ECB. UK 10yr at ~5.05%. BOE costing taxpayer billions.",
-      "escalate_to": ["europe", "fin_stability"]
+      "description": "Traders bracing for hawkish ECB (Reuters Aug 21). UK 10Y at ~5.05%, 30Y at 5.7%. BOE still selling gilts during bond rout, Treasury officials frustrated. Telegraph calling it 'costing taxpayer billions'. German 10Y Bund at 3.23%.",
+      "escalate_to": ["europe", "fin_stability"],
+      "source": "Reuters, Telegraph, House of Commons Library",
+      "url": "https://reuters.com/world/europe/traders-are-bracing-an-increasingly-hawkish-ecb-2026-08-21"
     }
   ],
   "summary": {
-    "category_5_count": 2,
+    "category_5_count": 3,
     "category_4_count": 1,
     "category_3_count": 2,
-    "total_events": 5,
+    "total_events": 6,
     "highest_severity": 5,
-    "macro_event_active": true
+    "macro_event_active": true,
+    "new_events_since_last_scan": 2,
+    "new_event_ids": ["EVT-2026-08-28-006", "EVT-2026-08-28-007"],
+    "escalated_events": ["EVT-2026-08-28-001", "EVT-2026-08-28-002"]
   }
 }

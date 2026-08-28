@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment + breaking event scanner",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-28T07:32:33.000000+00:00",
+    "last_update": "2026-08-28T15:08:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "breaking_event": "5 events detected: Hormuz closed, Ebola PHEIC, US-Japan intervention, bank failures, ECB hawkish",
+    "breaking_event": "6 events detected: Japan record $96.5B intervention, US Treasury yield cap, Hormuz mines cleared but tanker attacked, Ebola 5,290 cases, bank failures, ECB hawkish",
     "threshold_breach": "6 thresholds breached (2 RED: Gold>3500, JGB10Y>1.5; 4 AMBER: USDJPY>158, EURUSD>1.15, Gold>3000, DE10Y>3.0)"
   },
   "signals": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-26",
-      "note": "Threshold breaches: Gold above 3500 (4661.4 RED), JGB10Y above 1.5% (2.895% RED), DE10Y above 3.0% (3.23% AMBER). Triple financial stress convergence.",
-      "timestamp": "2026-08-28T07:32:33.000000+00:00"
+      "note": "ESCALATED: US Treasury actively capping bond yields (Bessent doubled buybacks to $4B/op). Japan record $96.5B intervention. Threshold breaches: Gold above 3500 (4661.4 RED), JGB10Y above 1.5% (2.895% RED), DE10Y above 3.0% (3.23% AMBER). Quadruple financial stress convergence.",
+      "timestamp": "2026-08-28T15:08:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -199,11 +199,11 @@
       "confidence": 8,
       "change_from_last": -0.19,
       "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad) - US-Japan coordinated intervention stress",
+      "description": "Trade-Weighted Dollar Index (broad) - Japan record intervention + US Treasury yield cap",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "ESCALATED by breaking event scanner: US-Japan first coordinated intervention since 1998. Yen at 160. BOJ 80% hike probability Sept 18. Threshold scanner: JGB 10Y at 2.895% (RED breach >1.5%) — highest since 1996, BOJ losing yield curve control. USD/JPY 159.46 (AMBER >158).",
-      "timestamp": "2026-08-28T07:32:33.000000+00:00"
+      "note": "ESCALATED: Japan confirmed record ¥15.39T ($96.5B) intervention July 30–Aug 26 — largest monthly on record. Single-day July 30 may have been ¥9.6T. BOJ meeting TODAY with 65% hike odds. US Treasury simultaneously capping bond yields. Dual sovereign intervention convergence. USD/JPY ~159. JGB 10Y at 2.895% (RED breach >1.5%) — highest since 1996.",
+      "timestamp": "2026-08-28T15:08:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -289,11 +289,11 @@
       "confidence": 10,
       "change_from_last": 0.61,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy - Hormuz CLOSED, Iran War Day 181",
+      "description": "Brent Oil as ME tension proxy - Hormuz mines cleared but traffic still near zero, Iran War Day 181",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-28",
-      "note": "ESCALATED by breaking event scanner: Strait of Hormuz closed to commercial shipping. Iran war Day 181. Tanker attacked Aug 27. Only 3 transits/day vs 85 normal. IEA calls largest supply disruption on record.",
-      "timestamp": "2026-08-28T07:02:00.000000+00:00"
+      "note": "UPDATE: CENTCOM claims Hormuz mines cleared (UPI Aug 28) but allies skeptical. Tanker attacked Aug 27 off Oman. Qatar PM in Tehran for de-escalation. Iran/Oman safe passage plan proposed. Traffic ~3/day vs 85 normal. Iran war 6-month mark Aug 28.",
+      "timestamp": "2026-08-28T15:08:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -314,12 +314,12 @@
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 532,
+    "score": 540,
     "red_count": 11,
     "amber_count": 7,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-28T07:32:33.000000+00:00"
+    "timestamp": "2026-08-28T15:08:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -453,6 +453,5 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-08-28T07:32:33.000000+00:00"
+    "timestamp": "2026-08-28T15:08:00.000000+00:00"
   }
-}
