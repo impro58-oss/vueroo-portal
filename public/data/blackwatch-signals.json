@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-28T03:03:46.000000+00:00",
+    "last_update": "2026-08-28T03:34:31.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 21,
-    "breaking_event": "Breaking event scanner: 12 domains scanned, ongoing CRITICAL - Iran ceasefire collapsing, Hormuz closed, Ebola PHEIC accelerating, 5th US bank failure, France > Italy bond risk"
+    "breaking_event": "Breaking event scanner: 12 domains scanned, ongoing CRITICAL - Iran ceasefire collapsing, Hormuz closed, Ebola PHEIC accelerating, 5th US bank failure, France > Italy bond risk",
+    "threshold_breach": "7 thresholds breached (2 RED, 5 AMBER)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-26",
-      "note": "ESCALATED: Treasury bond buyback doubled + 5th bank failure 2026 (Tioga-Franklin 68M) + France/UK bond stress + Iran ceasefire risk",
-      "timestamp": "2026-08-28T03:03:46.000000+00:00"
+      "note": "ESCALATED: Treasury bond buyback doubled + 5th bank failure 2026 (Tioga-Franklin 68M) + France/UK bond stress + Iran ceasefire risk + JGB 10Y at 2.90% (RED threshold 1.5% breached) - Japan fiscal crisis deepening",
+      "timestamp": "2026-08-28T03:34:31.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -201,13 +202,13 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "ESCALATED: Historic US-Japan yen intervention, carry trade unwind risk",
-      "timestamp": "2026-08-27T23:19:17.158632+00:00"
+      "note": "ESCALATED: Historic US-Japan yen intervention, carry trade unwind risk + USD/JPY 159.44 > 158 AMBER threshold - intervention zone",
+      "timestamp": "2026-08-28T03:34:31.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4662.68,
+      "value": 4641.2,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
@@ -216,8 +217,8 @@
       "description": "Gold Spot: $4,655.30/oz (Yahoo Finance)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-27",
-      "note": "ESCALATED: Gold at $4,655 \u00e2\u20ac\u201d RED threshold ($3,500) breached by 33%. Currency crisis/war premium. Safe haven demand extreme.",
-      "timestamp": "2026-08-27T23:03:01.813666+00:00"
+      "note": "Gold 4,641 > 3,500 RED threshold (33% above). Currency crisis/war premium. Safe haven demand extreme.",
+      "timestamp": "2026-08-28T03:34:31.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
