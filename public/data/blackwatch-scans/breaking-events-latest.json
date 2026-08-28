@@ -1,121 +1,130 @@
 {
-  "scan_time": "2026-08-27T15:03:59.000000+00:00",
+  "scan_time": "2026-08-28T03:03:58.751345",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner (4h cycle)",
+  "scanner_version": "1.0",
   "domains_scanned": 12,
-  "queries_executed": 19,
-  "events_detected": 10,
-  "new_events_since_last_scan": 4,
-  "new_events": [
+  "queries_executed": 14,
+  "category_5_events": [
     {
       "domain": "middle_east",
-      "title": "Tanker attacked in Strait of Hormuz",
-      "source": "ABC News / UKMTO",
-      "time": "2026-08-27 ~14:00 UTC",
+      "title": "Iran ceasefire collapsing - Hormuz remains closed",
       "severity": 5,
       "category": "war_military",
-      "description": "UKMTO reports tanker hit by unknown projectile, fire extinguished. No casualties. Iran nuclear chief says wartime situation continues.",
-      "escalate_to": ["middle_east", "energy", "geopolitical"]
-    },
-    {
-      "domain": "financial_system",
-      "title": "Tioga-Franklin Savings Bank closed - 5th US bank failure of 2026",
-      "source": "Abelian Partners Weekly Market Update",
-      "time": "2026-08-22",
-      "severity": 4,
-      "category": "market_dislocation",
-      "description": "Pennsylvania regulators closed Tioga-Franklin Savings Bank. Second Federal Savings and Loan assumed deposits.",
-      "escalate_to": ["fin_stability", "liquidity"]
-    },
-    {
-      "domain": "financial_system",
-      "title": "Australia private credit crisis: Bathla Group collapse",
-      "source": "AFR / MacroBusiness",
-      "time": "2026-08-26",
-      "severity": 4,
-      "category": "market_dislocation",
-      "description": "Bathla Group entered voluntary administration, $3.6B private-credit debt, 2000 homes mid-construction. $200B private credit sector in storm. Fund redemptions escalating.",
-      "escalate_to": ["fin_stability", "liquidity"]
-    },
-    {
-      "domain": "commodities",
-      "title": "Global food shock brewing: HSBC/JPMorgan warn, wheat at 3-year high",
-      "source": "ZeroHedge / HSBC / JPMorgan",
-      "time": "2026-08-26",
-      "severity": 4,
-      "category": "energy_shock",
-      "description": "Ukraine grain exports -54% to 29.6M tons. Global grain deficit 2026-27 (first since 2020-21, largest since 2006-07). Hormuz disruption hitting fertiliser/sulphur. UK warns citizens to stock up on food.",
-      "escalate_to": ["food_security", "supply_chain", "social_cohesion"]
-    }
-  ],
-  "ongoing_events_updated": [
-    {
-      "domain": "us_fed",
-      "title": "Bessent Treasury intervention vs Fed Warsh - collision course",
-      "source": "FT / CNBC / Adam Tooze",
-      "severity": 5,
-      "category": "sovereign_intervention",
-      "description": "Treasury Secretary Bessent using near-$1T General Account for bond purchases. Fed stopped Reserve Management Purchases mid-Aug. FT reports collision course with Fed Chair Warsh. Analysts call it 'paying mortgage with credit card'."
-    },
-    {
-      "domain": "eu_ecb",
-      "title": "ECB September rate hike to 2.50% confirmed",
-      "source": "Reuters / EUToday / 933thedrive",
-      "severity": 4,
-      "category": "emergency_rate",
-      "description": "Schnabel backs further rate rise. July meeting described as 'pause' not end. Inflation at ~3%, Iran war inflation, eurozone resilience. ECB governors ready to raise to 2.50% on Sep 9-10."
-    },
-    {
-      "domain": "japan",
-      "title": "BOJ Himino calls for 'timely' rate hike, political pressure mounting",
-      "source": "AOL / Reuters / Economic Times",
-      "severity": 4,
-      "category": "emergency_rate",
-      "description": "Deputy Governor Himino stresses timely rate hikes. Takaichi government pushing dovish policymakers. JGB 5Y at 2.155%. Yen at 159.395. Joint intervention last month. Ueda absent from Jackson Hole."
-    },
-    {
-      "domain": "china",
-      "title": "Evergrande founder sentenced to life in prison",
-      "source": "Wikipedia / Chosun / Claims Journal",
-      "time": "2026-08-20",
-      "severity": 3,
-      "category": "market_dislocation",
-      "description": "Hui Ka Yan sentenced to life, all personal property confiscated, CN Y 15.8B fine on Evergrande. Property slump into 6th year. PBOC nudging yuan at 6.7829."
-    },
-    {
-      "domain": "em_asia",
-      "title": "RBI intensifying rupee intervention",
-      "source": "Bloomberg / HinduBusinessLine",
-      "severity": 3,
-      "category": "sovereign_intervention",
-      "description": "Bloomberg: RBI 'showing up whenever rupee weakens'. FX reserves jumped. Oil pressure offset by RBI intervention."
+      "source": "Al Jazeera / CFR / Polymarket / Wikipedia",
+      "summary": "Iran ceasefire expired mid-August without final deal. Hormuz still closed despite Oman route deal. Parliament advancing Hormuz service fees. Houthis threatening UAE/Bahrain. Tanker attacks ongoing. Day 181 of war.",
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
     },
     {
       "domain": "pandemic_health",
-      "title": "Ebola epidemic accelerating - 5,656 cases, 2,715 deaths",
-      "source": "ECDC / Wikipedia / Global Biodefense",
+      "title": "Ebola PHEIC - fastest growing outbreak on record",
       "severity": 5,
-      "category": "pandemic_health",
-      "description": "Bundibugyo ebolavirus, fastest-growing outbreak on record. 5,656 cases / 2,715 deaths as of Aug 25. Africa CDC: only 30-40% of infections detected. WHO PHEIC declared."
+      "category": "sovereign_crisis",
+      "source": "WHO / CDC / MSF",
+      "summary": "5,290 confirmed cases, 2,516 deaths across 56 health zones in DRC/Uganda. Bundibugyo ebolavirus. WHO PHEIC declared. 100+ days since declaration. Outbreak may be 3x confirmed size.",
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
+    },
+    {
+      "domain": "us_fed",
+      "title": "Treasury bond buyback intervention doubled",
+      "severity": 4,
+      "category": "sovereign_intervention",
+      "source": "NYT / Guardian / Foreign Policy",
+      "summary": "Treasury Secretary Bessent announced doubling of bond buyback program to artificially cap yields. Called interventionist. Bond crisis highlights deeper fiscal rot.",
+      "escalate_to": [
+        "fin_stability",
+        "us_cycle",
+        "liquidity"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
+    },
+    {
+      "domain": "financial_system",
+      "title": "5th US bank failure of 2026",
+      "severity": 3,
+      "category": "market_dislocation",
+      "source": "American Banker / FDIC",
+      "summary": "Tioga-Franklin Savings Bank ( assets) failed. 5th failure of 2026, most since 2017. Systemic risk contained but regional stress continuing.",
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
+    },
+    {
+      "domain": "eu_ecb",
+      "title": "France surpasses Italy as top EU bond risk",
+      "severity": 4,
+      "category": "sovereign_crisis",
+      "source": "European Business Magazine / Politico / ideal-investisseur",
+      "summary": "France OAT/Bund spread at 83.6 bps. French 10yr yields 4.08% vs German 3.24%. Political instability driving risk premium. UK gilt yields at 5.05%/5.7% (10yr/30yr).",
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
+    },
+    {
+      "domain": "japan",
+      "title": "BOJ September rate hike imminent",
+      "severity": 3,
+      "category": "emergency_rate",
+      "source": "Bloomberg / Japan Times / CNBC",
+      "summary": "BOJ likely to raise rates in September. US-Japan joint yen intervention settled at ~159. Carry trade unwind risk persists.",
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ],
+      "timestamp": "2026-08-28T03:03:58.751345"
     }
   ],
-  "market_data": {
-    "brent_oil": 89.68,
-    "gold": 4594,
-    "btc": 79458,
-    "us_10y": "near flat after PCE",
-    "uk_10y_gilt": 5.05,
-    "uk_30y_gilt": 5.7,
-    "jgb_5y": 2.155,
-    "yen_usd": 159.395,
-    "usd_cny": 6.7829,
-    "argentina_peso": 1514
-  },
-  "signal_board_summary": {
-    "red": 18,
-    "amber": 2,
-    "green": 1,
-    "risk_score": 562,
-    "risk_level": "CRITICAL"
-  }
+  "ongoing_events": [
+    {
+      "domain": "middle_east",
+      "event": "Iran war Day 181 - ceasefire fraying"
+    },
+    {
+      "domain": "pandemic_health",
+      "event": "Ebola PHEIC - 5290 cases / 2516 deaths"
+    },
+    {
+      "domain": "financial_system",
+      "event": "US Treasury bond buyback program doubled"
+    },
+    {
+      "domain": "eu_ecb",
+      "event": "France > Italy as top EU bond risk"
+    },
+    {
+      "domain": "uk",
+      "event": "BOE selling gilts into bond rout - 10yr at 5.05%"
+    },
+    {
+      "domain": "commodities",
+      "event": "Global fuel crisis from Hormuz closure"
+    },
+    {
+      "domain": "japan",
+      "event": "BOJ September hike bets surging"
+    }
+  ],
+  "new_since_last_scan": [
+    "Iran ceasefire expired mid-Aug without final deal",
+    "Hormuz remains closed despite Oman route deal",
+    "Iran parliament advancing Hormuz service fees",
+    "Houthis threatening UAE/Bahrain for joining Hormuz campaign",
+    "France OAT/Bund spread widening to 83.6 bps",
+    "UK gilt yields at 5.05%/5.7%",
+    "5th US bank failure confirmed (Tioga-Franklin)",
+    "BOJ September hike bets surging"
+  ],
+  "overall_assessment": "CRITICAL - macro_event ACTIVE. Iran ceasefire collapsing with Hormuz still closed. Ebola PHEIC accelerating. US Treasury interventionist tactics. European bond stress worsening. 5th US bank failure. Multiple convergence domains active."
 }
