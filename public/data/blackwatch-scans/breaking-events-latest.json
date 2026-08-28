@@ -1,130 +1,63 @@
 {
-  "scan_time": "2026-08-28T03:03:58.751345",
+  "scan_time": "2026-08-28T07:02:00.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner_version": "1.0",
+  "scanner": "BlackWatch Breaking Event Scanner v1.0",
+  "date": "2026-08-28",
   "domains_scanned": 12,
-  "queries_executed": 14,
-  "category_5_events": [
+  "queries_executed": 36,
+  "events_detected": [
     {
+      "id": "EVT-2026-08-28-001",
       "domain": "middle_east",
-      "title": "Iran ceasefire collapsing - Hormuz remains closed",
+      "title": "Strait of Hormuz CLOSED — Iran War Day 181, tanker attacks ongoing",
       "severity": 5,
       "category": "war_military",
-      "source": "Al Jazeera / CFR / Polymarket / Wikipedia",
-      "summary": "Iran ceasefire expired mid-August without final deal. Hormuz still closed despite Oman route deal. Parliament advancing Hormuz service fees. Houthis threatening UAE/Bahrain. Tanker attacks ongoing. Day 181 of war.",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
+      "description": "Strait of Hormuz effectively closed. 3 ships transited Aug 23 vs ~85/day normal. Iran war Day 181. Oil tanker attacked Aug 27. Brent $88.85.",
+      "escalate_to": ["middle_east", "energy", "geopolitical", "supply_chain", "food_security"]
     },
     {
+      "id": "EVT-2026-08-28-002",
       "domain": "pandemic_health",
-      "title": "Ebola PHEIC - fastest growing outbreak on record",
+      "title": "2026 Ebola Epidemic — WHO PHEIC, 5,713 cases, 2,744 deaths",
       "severity": 5,
-      "category": "sovereign_crisis",
-      "source": "WHO / CDC / MSF",
-      "summary": "5,290 confirmed cases, 2,516 deaths across 56 health zones in DRC/Uganda. Bundibugyo ebolavirus. WHO PHEIC declared. 100+ days since declaration. Outbreak may be 3x confirmed size.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
+      "category": "pandemic",
+      "description": "Fastest-growing Ebola outbreak on record. Only 30-40% of infections detected. Outpacing containment.",
+      "escalate_to": ["supply_chain", "social_cohesion"]
     },
     {
-      "domain": "us_fed",
-      "title": "Treasury bond buyback intervention doubled",
+      "id": "EVT-2026-08-28-003",
+      "domain": "japan",
+      "title": "US-Japan coordinated yen intervention — first since 1998",
       "severity": 4,
       "category": "sovereign_intervention",
-      "source": "NYT / Guardian / Foreign Policy",
-      "summary": "Treasury Secretary Bessent announced doubling of bond buyback program to artificially cap yields. Called interventionist. Bond crisis highlights deeper fiscal rot.",
-      "escalate_to": [
-        "fin_stability",
-        "us_cycle",
-        "liquidity"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
+      "description": "Yen near ¥160. BOJ 80% hike probability for Sept 18. Carry trade re-emerging.",
+      "escalate_to": ["fin_stability", "currency", "us_cycle"]
     },
     {
+      "id": "EVT-2026-08-28-004",
       "domain": "financial_system",
-      "title": "5th US bank failure of 2026",
+      "title": "5th US bank failure of 2026 — worst year since 2017",
       "severity": 3,
       "category": "market_dislocation",
-      "source": "American Banker / FDIC",
-      "summary": "Tioga-Franklin Savings Bank ( assets) failed. 5th failure of 2026, most since 2017. Systemic risk contained but regional stress continuing.",
-      "escalate_to": [
-        "fin_stability",
-        "liquidity"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
+      "description": "Tioga-Franklin Savings Bank failed Aug 22. $68M assets. 5th failure of year.",
+      "escalate_to": ["fin_stability", "liquidity"]
     },
     {
+      "id": "EVT-2026-08-28-005",
       "domain": "eu_ecb",
-      "title": "France surpasses Italy as top EU bond risk",
-      "severity": 4,
-      "category": "sovereign_crisis",
-      "source": "European Business Magazine / Politico / ideal-investisseur",
-      "summary": "France OAT/Bund spread at 83.6 bps. French 10yr yields 4.08% vs German 3.24%. Political instability driving risk premium. UK gilt yields at 5.05%/5.7% (10yr/30yr).",
-      "escalate_to": [
-        "europe",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
-    },
-    {
-      "domain": "japan",
-      "title": "BOJ September rate hike imminent",
+      "title": "ECB hawkish pivot + BOE urged to halt gilt sales during bond rout",
       "severity": 3,
       "category": "emergency_rate",
-      "source": "Bloomberg / Japan Times / CNBC",
-      "summary": "BOJ likely to raise rates in September. US-Japan joint yen intervention settled at ~159. Carry trade unwind risk persists.",
-      "escalate_to": [
-        "currency",
-        "fin_stability"
-      ],
-      "timestamp": "2026-08-28T03:03:58.751345"
+      "description": "Traders bracing for hawkish ECB. UK 10yr at ~5.05%. BOE costing taxpayer billions.",
+      "escalate_to": ["europe", "fin_stability"]
     }
   ],
-  "ongoing_events": [
-    {
-      "domain": "middle_east",
-      "event": "Iran war Day 181 - ceasefire fraying"
-    },
-    {
-      "domain": "pandemic_health",
-      "event": "Ebola PHEIC - 5290 cases / 2516 deaths"
-    },
-    {
-      "domain": "financial_system",
-      "event": "US Treasury bond buyback program doubled"
-    },
-    {
-      "domain": "eu_ecb",
-      "event": "France > Italy as top EU bond risk"
-    },
-    {
-      "domain": "uk",
-      "event": "BOE selling gilts into bond rout - 10yr at 5.05%"
-    },
-    {
-      "domain": "commodities",
-      "event": "Global fuel crisis from Hormuz closure"
-    },
-    {
-      "domain": "japan",
-      "event": "BOJ September hike bets surging"
-    }
-  ],
-  "new_since_last_scan": [
-    "Iran ceasefire expired mid-Aug without final deal",
-    "Hormuz remains closed despite Oman route deal",
-    "Iran parliament advancing Hormuz service fees",
-    "Houthis threatening UAE/Bahrain for joining Hormuz campaign",
-    "France OAT/Bund spread widening to 83.6 bps",
-    "UK gilt yields at 5.05%/5.7%",
-    "5th US bank failure confirmed (Tioga-Franklin)",
-    "BOJ September hike bets surging"
-  ],
-  "overall_assessment": "CRITICAL - macro_event ACTIVE. Iran ceasefire collapsing with Hormuz still closed. Ebola PHEIC accelerating. US Treasury interventionist tactics. European bond stress worsening. 5th US bank failure. Multiple convergence domains active."
+  "summary": {
+    "category_5_count": 2,
+    "category_4_count": 1,
+    "category_3_count": 2,
+    "total_events": 5,
+    "highest_severity": 5,
+    "macro_event_active": true
+  }
 }
