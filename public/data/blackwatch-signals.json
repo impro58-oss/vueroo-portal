@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-29T09:18:29.000000+00:00",
+    "last_update": "2026-08-29T09:17:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "5 thresholds breached"
+    "threshold_breach": "5 thresholds breached",
+    "breaking_event": "CATEGORY-5: Bessent coordinated sovereign intervention campaign confirmed — joint yen intervention + expanded buybacks + TGA financing + $5T debt ceiling push"
   },
   "signals": {
     "fin_stability": {
@@ -21,38 +22,38 @@
       "description": "US High Yield OAS Spread + Gold threshold breach overlay",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-27",
-      "note": "🔴 RED BREACH: Gold $4,529.90 above $3,500 — gold mania, currency crisis or war premium. 29.4% above threshold. Confidence escalated 9→10.",
-      "timestamp": "2026-08-29T09:19:30.000000+00:00"
+      "note": "🔴 CATEGORY-5 ESCALATION: Bessent's coordinated sovereign intervention campaign revealed — joint US-Japan yen intervention + expanded buybacks ($2B→$4B+) + TGA ($1T) financing + short squeeze. Private credit crisis unresolved ($15B backlog). Gold $4,461 above $3,500 threshold. Druckenmiller: buybacks undermine Treasury credibility.",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
       "domain": "Financial",
       "value": 1.33,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0,
       "unit": "%",
-      "description": "M2 Money Supply YoY growth",
+      "description": "M2 Money Supply YoY growth + TGA buyback financing overlay",
       "series_id": "WM2NS",
       "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-08-29T09:18:06.861360+00:00"
+      "note": "🔴 ESCALATED by breaking event scanner: Bessent considering TGA ($1T) to finance Treasury buybacks — direct liquidity intervention. Private credit $15B redemption backlog frozen. M2 stable but intervention tools depleting.",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
       "domain": "Financial",
       "value": 122.59,
       "status": "red",
-      "trend": "stable",
-      "confidence": 3,
+      "trend": "deteriorating",
+      "confidence": 7,
       "change_from_last": 0.03,
       "unit": "%",
-      "description": "US Total Debt / GDP",
+      "description": "US Total Debt / GDP + sovereign intervention overlay",
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
-      "note": "",
-      "timestamp": "2026-08-29T09:18:07.285029+00:00"
+      "note": "🔴 ESCALATED by breaking event scanner: National debt surpassed $40T. Trump pushing $5T debt ceiling increase via reconciliation. Bessent using TGA ($1T) to finance buybacks. Most aggressive sovereign intervention in modern history. Confidence 3→7.",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -81,8 +82,8 @@
       "description": "VIX as market fear proxy + Gold breach geopolitical overlay",
       "series_id": "VIXCLS",
       "last_date": "2026-08-27",
-      "note": "🔴 RED BREACH: Gold $4,529.90 above $3,500 — geopolitical war premium detected. Confidence escalated 9→10.",
-      "timestamp": "2026-08-29T09:19:30.000000+00:00"
+      "note": "🔴 Iran war Day 182: Operation Economic Outcast launched Aug 24 — sanctions on UAE banks, 103 front companies, $1.8B traced. Iran FM rejects ceasefire, demands 'end to war' — maximum deterrence posture. Hormuz traffic still depressed. Gold $4,461 above $3,500 threshold.",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -201,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad) + threshold breach escalation",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "🔴 RED BREACH: USD/JPY 160.038 above 160.0 — intervention failure. Yen in freefall, Japan losing control. Confidence escalated from 5→8.",
-      "timestamp": "2026-08-29T09:19:30.000000+00:00"
+      "note": "🔴 Japan $96.5B intervention lost 61% of initial FX gain. Officials shifting to covert speculator-squeeze strategy. Sept BOJ meeting critical. Colombia fiscal crisis ($6.8B cuts), Argentina record dollar hoarding ($3.319B/month).",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -253,16 +254,16 @@
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability)",
+      "description": "ECB Deposit Rate + September hike expectation + autumn budget crisis",
       "series_id": "ECBDFR",
       "last_date": "2026-08-28",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-08-29T09:18:10.714711+00:00"
+      "note": "🔴 ESCALATED by breaking event scanner: ECB Dolenc signals September hike to 2.50% (96% market probability). Autumn budget season 'hair-raising' — Iran oil shock + US Treasury/JGB spillovers. France sovereign debt crisis warning. UK gilts 5.05% (10Y), 5.7% (30Y).",
+      "timestamp": "2026-08-29T09:17:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -314,11 +315,11 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 439,
-    "red_count": 5,
-    "amber_count": 10,
+    "red_count": 8,
+    "amber_count": 7,
     "green_count": 4,
     "manual_count": 1,
-    "timestamp": "2026-08-29T09:18:11.775422+00:00"
+    "timestamp": "2026-08-29T09:17:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
