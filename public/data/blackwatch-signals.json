@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-29T19:31:02.000000+00:00",
+    "last_update": "2026-08-29T19:32:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
     "breaking_event": "Breaking event scanner 17:22 UTC: 9 events detected (1 new: Niger coup attempt), Category-5 sovereign intervention maintained",
-    "threshold_breach": "5 thresholds breached"
+    "threshold_breach": "5 thresholds breached (2 RED: USD/JPY>160, Gold>3500; 3 AMBER: USD/JPY>158, EUR/USD>1.15, Gold>3000)"
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-27",
-      "note": "Threshold breach: Gold above 3500 (current: 4529.9)",
-      "timestamp": "2026-08-29T19:31:02.000000+00:00"
+      "note": "RED ESCALATION (20:30 scan): Gold at $4,529/oz — 29% above RED threshold of $3,500. Currency crisis or war premium. BAA10Y spread at 1.60% (tight, not stressed). MOVE Index at 73 (54th percentile, rising). Systemic safe haven demand extreme.",
+      "timestamp": "2026-08-29T19:32:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -196,14 +196,14 @@
       "value": 118.06,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 5,
+      "confidence": 7,
       "change_from_last": -0.19,
       "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad) | ESCALATED: USD/JPY RED (160.04 > 160.0), EUR/USD AMBER (1.1587 > 1.15)",
+      "description": "Trade-Weighted Dollar Index (broad) | ESCALATED: USD/JPY RED (160.04 > 160.0) — intervention failure, EUR/USD AMBER (1.1587 > 1.15) — dollar weakness",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "Threshold breach: USD/JPY above 160.0 (current: 160.038)",
-      "timestamp": "2026-08-29T19:31:02.000000+00:00"
+      "note": "RED ESCALATION (20:30 scan): USD/JPY broke 160.0 — Japan intervention failing. JGB 10Y at 2.93% (multi-decade high, BOJ hike priced 87% for Sept). Currency system under dual stress: yen freefall + dollar weakness vs euro.",
+      "timestamp": "2026-08-29T19:32:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
