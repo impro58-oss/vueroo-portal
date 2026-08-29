@@ -1,6 +1,6 @@
 {
   "scan_date": "2026-08-29",
-  "scan_time_utc": "2026-08-29T09:18:26.043664+00:00",
+  "scan_time_utc": "2026-08-29T17:22:58.045391+00:00",
   "scanner_version": "1.0.0",
   "current_values": {
     "USDJPY": {
@@ -25,9 +25,9 @@
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7205,
+      "price": 6.7208,
       "prev_close": 6.721,
-      "change_1d_pct": -0.01,
+      "change_1d_pct": -0.0,
       "data_points": 6,
       "source": "yahoo"
     },
@@ -67,13 +67,10 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "price": 73,
-      "prev_close": null,
+      "price": 73.0,
       "change_1d_pct": null,
       "data_points": 1,
-      "source": "web_search (CBOE Insights, week of 8/24/2026)",
-      "source_date": "2026-08-24",
-      "note": "MOVE Index at 73 (54th percentile) per CBOE cross-asset volatility report"
+      "source": "web_search (CBOE Insights, Aug 24 week)"
     },
     "GOLD": {
       "price": 4529.9,
@@ -98,35 +95,26 @@
     },
     "JGB10Y": {
       "price": 2.895,
-      "prev_close": 2.88,
-      "change_1d_pct": 0.52,
+      "change_1d_pct": null,
       "data_points": 1,
-      "source": "web_search (fvbb.com, Aug 25 2026)",
-      "source_date": "2026-08-25",
-      "note": "10-year JGB yield at 2.895%, highest since 1996"
+      "source": "web_search (fvbb.com, Aug 25)"
     },
     "DE10Y": {
       "price": 3.27,
-      "prev_close": 3.25,
-      "change_1d_pct": 0.62,
+      "change_1d_pct": null,
       "data_points": 1,
-      "source": "web_search (Economic Times, Aug 28 2026)",
-      "source_date": "2026-08-28",
-      "note": "German 10-year Bund yield above 3.2%, near 15-year high"
+      "source": "web_search (Economic Times, Aug 28)"
     },
     "BAA10Y": {
       "price": 1.60,
-      "prev_close": 1.61,
-      "change_1d_pct": -0.62,
+      "change_1d_pct": null,
       "data_points": 1,
-      "source": "web_search (FRED CSV, Aug 27 2026)",
-      "source_date": "2026-08-27",
-      "note": "Baa-10Y spread at 1.60%, narrowing trend"
+      "source": "web_search (FRED CSV, Aug 27)"
     },
     "BTC": {
-      "price": 77643.73,
+      "price": 78001.49,
       "prev_close": 78564.98,
-      "change_1d_pct": -1.17,
+      "change_1d_pct": -0.72,
       "data_points": 4,
       "source": "yahoo"
     }
@@ -207,7 +195,52 @@
       "distance_pct": 51.0
     }
   ],
-  "breach_count": 5,
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.895,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 93.0
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.895,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 189.5
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.27,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 9.0
+    }
+  ],
+  "breach_count": 8,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
