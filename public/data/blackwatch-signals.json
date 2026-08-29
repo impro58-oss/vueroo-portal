@@ -2,10 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-29T17:23:06.913470+00:00",
+    "last_update": "2026-08-29T17:28:43.943420Z",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20
+    "signals_total": 20,
+    "breaking_event": "Breaking event scanner 17:22 UTC: 9 events detected (1 new: Niger coup attempt), Category-5 sovereign intervention maintained"
   },
   "signals": {
     "fin_stability": {
@@ -72,16 +73,16 @@
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.51,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.7,
       "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned) | ESCALATED: Gold RED (4529 > 3500) — war premium/currency crisis",
+      "description": "VIX as market fear proxy (GDELT integration planned) | ESCALATED: Gold RED (4529 > 3500) \u00e2\u20ac\u201d war premium/currency crisis",
       "series_id": "VIXCLS",
       "last_date": "2026-08-27",
-      "note": "Threshold scanner escalation: Gold at $4,529/oz — RED breach. Safe haven demand at crisis levels.",
-      "timestamp": "2026-08-29T17:22:58.045391+00:00"
+      "note": "Threshold scanner escalation: Gold at $4,529/oz \u00e2\u20ac\u201d RED breach. Safe haven demand at crisis levels. | BREAKING 17:22: Niger coup attempt - mutinous soldiers attack airport/presidency in Niamey. Major uranium producer. Situation fluid.",
+      "timestamp": "2026-08-29T17:28:43.943420Z"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -107,10 +108,10 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u00e2\u20ac\u201d Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "note": "Proxy indicator \u00e2\u20ac\u201d Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
       "timestamp": "2026-08-29T17:23:02.901435+00:00"
     },
     "food_security": {
@@ -132,12 +133,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "°C",
+      "unit": "\u00c2\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00c2\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -200,7 +201,7 @@
       "description": "Trade-Weighted Dollar Index (broad) | ESCALATED: USD/JPY RED (160.04 > 160.0), EUR/USD AMBER (1.1587 > 1.15)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "Threshold scanner escalation: USD/JPY at 160.04 — intervention failure. EUR/USD at 1.1587 — dollar weakness.",
+      "note": "Threshold scanner escalation: USD/JPY at 160.04 \u00e2\u20ac\u201d intervention failure. EUR/USD at 1.1587 \u00e2\u20ac\u201d dollar weakness.",
       "timestamp": "2026-08-29T17:22:58.045391+00:00"
     },
     "gold": {
@@ -257,10 +258,10 @@
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability) | ESCALATED: DE10Y AMBER (3.27% > 3.0%) — bund yields near 15-year high",
+      "description": "ECB Deposit Rate (proxy for EU stability) | ESCALATED: DE10Y AMBER (3.27% > 3.0%) \u00e2\u20ac\u201d bund yields near 15-year high",
       "series_id": "ECBDFR",
       "last_date": "2026-08-28",
-      "note": "Threshold scanner escalation: German 10-year bund at 3.27% — European fiscal stress, periphery spreads widening.",
+      "note": "Threshold scanner escalation: German 10-year bund at 3.27% \u00e2\u20ac\u201d European fiscal stress, periphery spreads widening.",
       "timestamp": "2026-08-29T17:22:58.045391+00:00"
     },
     "us_cycle": {
@@ -272,7 +273,7 @@
       "confidence": 9,
       "change_from_last": -0.08,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
+      "description": "Yield Curve (10Y-2Y) \u00e2\u20ac\u201d recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-28",
       "note": "",
@@ -290,7 +291,7 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
+      "note": "Proxy \u00e2\u20ac\u201d GDELT/news API for direct conflict tracking in Phase 2",
       "timestamp": "2026-08-29T17:23:06.572281+00:00"
     },
     "public_sentiment": {
@@ -313,11 +314,11 @@
     "level": "CRITICAL",
     "color": "red",
     "score": 439,
-    "red_count": 5,
-    "amber_count": 13,
-    "green_count": 1,
+    "red_count": 6,
+    "amber_count": 12,
+    "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-08-29T17:22:58.045391+00:00"
+    "timestamp": "2026-08-29T17:28:43.943420Z"
   },
   "convergence": {
     "stressed_domains": [
