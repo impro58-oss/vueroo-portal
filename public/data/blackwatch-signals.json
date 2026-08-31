@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-31T20:04:12.000000+00:00",
+    "last_update": "2026-08-31T20:15:40.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "7 thresholds breached"
+    "signals_manual": 2,
+    "signals_total": 21,
+    "threshold_breach": "7 thresholds breached",
+    "breaking_event": "Breaking event scanner blackwatch-2026-08-31-2015: 7 events - CAT-5 Hormuz closure escalation + US-Iran exchange; CAT-4 energy; CAT-3 x5 (markets, Treasury-Fed, JGB, China, Ebola). Signals escalated: middle_east, energy, supply_chain, us_cycle, gold, currency."
   },
   "signals": {
     "fin_stability": {
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "",
-      "timestamp": "2026-08-31T17:18:11.960184+00:00"
+      "note": "ESCALATED 20:15Z: Hormuz closure sustained <5% throughput; tanker war-risk insurance + rerouting costs spiking; SPR drawdown pressure (IranSITREP Sept 1-7); Brent $88.10 live vs FRED 88.24 (Aug 25)",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -104,15 +105,15 @@
       "domain": "Supply Chain",
       "value": 88.24,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy â€” Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "Proxy indicator â€” Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-08-31T17:18:07.107103+00:00"
+      "note": "ESCALATED 20:15Z: Hormuz effectively closed to commercial shipping - crossings <20/day vs ~85 normal (CryptoBriefing Aug 30); rerouting + insurance repricing; Brent proxy lag acknowledged",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -193,7 +194,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.06,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 5,
       "change_from_last": -0.19,
@@ -201,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "Threshold breaches: USD/JPY above 158.0 (current: 159.742) + EUR/USD above 1.15 (current: 1.1618)",
-      "timestamp": "2026-08-31T20:04:12.000000+00:00"
+      "note": "ESCALATED 20:15Z: joint US-Japan yen intervention gains fully surrendered; USD/JPY 159.7 > 158 tripwire (threshold breached); dollar surge war-driven; BoJ Sept hike expected; JGB 5yr record yield on weak auction",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
       "value": 4443.8,
       "unit": "$/oz",
-      "status": "green",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -116.8,
       "description": "Gold Spot: \\,443.80/oz (web-verified, JM Bullion Aug 31 2026)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-08-31",
-      "note": "Manually web-verified spot price â€” JM Bullion live spot",
-      "timestamp": "2026-08-31T17:18:33.171060+00:00"
+      "note": "ESCALATED 20:15Z: -6% from Aug 24 ($4,732 → $4,443); Warsh-hike repricing + war dollar surge unwinding debasement trade; forced-liquidation cascade watch (16:17Z); spot ~$4,433 (ET 01:39pm)",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -268,31 +269,31 @@
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.39,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -0.08,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) â€” recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-28",
-      "note": "",
-      "timestamp": "2026-08-31T17:18:15.277259+00:00"
+      "note": "ESCALATED 20:15Z: war escalation + hike repricing (>70% Dec odds) + Treasury-Fed collision = stagflation risk compounding; curve data unchanged (+0.39, 10Y-2Y Aug 28) - event-driven status, not curve-driven",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
+      "status": "red",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy â€” GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-31T17:18:15.663164+00:00"
+      "note": "ESCALATED by breaking event scanner 20:15Z: Hormuz effectively CLOSED since Aug 30 (straits.live: 3 transits Aug 23 vs ~85/day; 'Day 183'); 3rd vessel hit incl Qatari LNG Gaslog Shanghai; US-Iran direct exchange with Iran attacking US bases; Brent $88.10 live (FRED value stale Aug 25)",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,6 +309,21 @@
       "last_date": "2026-07-01",
       "note": "",
       "timestamp": "2026-08-31T17:18:15.997855+00:00"
+    },
+    "macro_event": {
+      "name": "Macro Breaking Event",
+      "domain": "Global",
+      "value": "ACTIVE",
+      "unit": "",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
+      "description": "Breaking-event scanner composite flag (4h scans, 12 domains). ACTIVE when CAT-4+ event detected.",
+      "series_id": null,
+      "last_date": "2026-08-31",
+      "note": "CAT-5 ACTIVE since 2026-08-31 12:15Z. 20:15Z: Hormuz effectively CLOSED (<5% normal transits, Day ~183-185); 3rd vessel struck incl Qatari LNG tanker; US struck Larak Island IRGC launchers (2 killed); Iran attacking US bases; Trump vows 'hit Iran hard'. Brent $88.10, S&P -0.45% open, gold ~$4,433. Related: see macro-event scenarios file.",
+      "timestamp": "2026-08-31T20:15:40.000000+00:00"
     }
   },
   "overall_risk": {
