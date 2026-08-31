@@ -67,8 +67,10 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 73.0,
+      "source": "web_search (manual fill)",
+      "source_detail": "MOVE: Traders Magazine vol report (~2026-08-24, 54th pctile, corroborated 'very contained' 2026-08-30; vintage ~1wk) | JGB10Y: TradingEconomics live 2026-08-31 (2.94-2.95%, 30yr highs) | DE10Y: CNBC DE10Y-DE intraday 2026-08-31 13:57 CEST | BAA10Y: FRED BAA10Y latest obs 2026-08-27",
+      "filled_at": "2026-08-31T12:02:02.516970+00:00"
     },
     "GOLD": {
       "price": 4504.6,
@@ -92,16 +94,22 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.94,
+      "source": "web_search (manual fill)",
+      "source_detail": "MOVE: Traders Magazine vol report (~2026-08-24, 54th pctile, corroborated 'very contained' 2026-08-30; vintage ~1wk) | JGB10Y: TradingEconomics live 2026-08-31 (2.94-2.95%, 30yr highs) | DE10Y: CNBC DE10Y-DE intraday 2026-08-31 13:57 CEST | BAA10Y: FRED BAA10Y latest obs 2026-08-27",
+      "filled_at": "2026-08-31T12:02:02.516970+00:00"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.3,
+      "source": "web_search (manual fill)",
+      "source_detail": "MOVE: Traders Magazine vol report (~2026-08-24, 54th pctile, corroborated 'very contained' 2026-08-30; vintage ~1wk) | JGB10Y: TradingEconomics live 2026-08-31 (2.94-2.95%, 30yr highs) | DE10Y: CNBC DE10Y-DE intraday 2026-08-31 13:57 CEST | BAA10Y: FRED BAA10Y latest obs 2026-08-27",
+      "filled_at": "2026-08-31T12:02:02.516970+00:00"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.6,
+      "source": "web_search (manual fill)",
+      "source_detail": "MOVE: Traders Magazine vol report (~2026-08-24, 54th pctile, corroborated 'very contained' 2026-08-30; vintage ~1wk) | JGB10Y: TradingEconomics live 2026-08-31 (2.94-2.95%, 30yr highs) | DE10Y: CNBC DE10Y-DE intraday 2026-08-31 13:57 CEST | BAA10Y: FRED BAA10Y latest obs 2026-08-27",
+      "filled_at": "2026-08-31T12:02:02.516970+00:00"
     },
     "BTC": {
       "price": 78280.37,
@@ -126,6 +134,21 @@
         "geopolitical"
       ],
       "distance_pct": 28.7
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.94,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral \u2014 Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 96.0
     },
     {
       "key": "USDJPY",
@@ -170,10 +193,49 @@
         "fin_stability"
       ],
       "distance_pct": 50.15
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.94,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure \u2014 BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 194.0
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.3,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress \u2014 periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 10.0
     }
   ],
-  "breach_count": 4,
+  "breach_count": 7,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_fill": {
+    "values": {
+      "MOVE": 73.0,
+      "JGB10Y": 2.94,
+      "DE10Y": 3.3,
+      "BAA10Y": 1.6
+    },
+    "source_note": "MOVE: Traders Magazine vol report (~2026-08-24, 54th pctile, corroborated 'very contained' 2026-08-30; vintage ~1wk) | JGB10Y: TradingEconomics live 2026-08-31 (2.94-2.95%, 30yr highs) | DE10Y: CNBC DE10Y-DE intraday 2026-08-31 13:57 CEST | BAA10Y: FRED BAA10Y latest obs 2026-08-27",
+    "filled_at": "2026-08-31T12:02:02.516970+00:00"
+  }
 }
