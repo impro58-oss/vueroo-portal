@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-08-31T12:17:22.000000+00:00",
+    "last_update": "2026-08-31T16:17:40.000000+00:00",
     "signals_auto": 21,
     "signals_manual": 0,
     "signals_total": 21,
     "threshold_breach": "7 thresholds breached",
-    "breaking_event": "Breaking event scanner 2026-08-31 12:15 UTC: 5 events (2 cat-5, 1 cat-4, 2 cat-3). US-Iran direct exchange + Hormuz supertanker mined; Treasury bond intervention failing; yen intervention erased (USD/JPY>160, JGB 30-yr high); Niger coup attempt; UK gilts >5%."
+    "breaking_event": "Breaking event scanner 2026-08-31 16:15 UTC: CAT-5s still active (US-Iran exchange + Hormuz supertanker mined; Treasury intervention failing). NEW: gold -3% to $4,452 (Warsh hawkish + strikes), Dow -400/S&P -0.47%, US debt $40T, China 300B yuan housing bailout, Fed discount-rate hike bids 4/12."
   },
   "signals": {
     "fin_stability": {
@@ -22,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-27",
-      "note": "ESCALATED: Treasury buyback intervention (potentially ~$1T TGA-funded) - bond rally faded, long-end yields near 2-decade highs. Jackson Hole: Warsh hawkish on sticky inflation; market >70% odds of Fed HIKE by Dec. Bessent-Warsh collision.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: gold -3% one-day drop (liquidation risk); front-end Treasury selloff, dollar surge post-Warsh. Fed minutes: 4/12 Reserve Bank boards voted discount-rate HIKE pre-FOMC (Reuters Aug 25) - stress precursor watch. Treasury buyback still failing to hold long end (2-decade highs).",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -45,15 +45,15 @@
       "domain": "Financial",
       "value": 122.59,
       "status": "red",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 3,
       "change_from_last": 0.03,
       "unit": "%",
       "description": "US Total Debt / GDP",
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
-      "note": "Treasury buyback (ESF/TGA-funded) signals financing stress; long-end pressure from AI-driven corporate bond supply; Warsh Fed unlikely to accommodate.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: US national debt crosses $40 TRILLION milestone (CNN). August yields at multi-year highs; expanded buybacks failed to stem rout. Debt-service pressure compounding via hike repricing.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "energy": {
       "name": "Energy Security",
@@ -67,8 +67,8 @@
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: supertanker mined in Hormuz Aug 31; Kharg Island (Iran export hub) reportedly attacked. Brent last FRED print $88.24 (Aug 25, stale) - expect gap higher at Monday open. Goldman: Gulf exports ~15-16M bpd vs 22-24M pre-war.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: crude $85.57 +2.6% on day (+32% YoY) as US-Iran traded strikes (first direct exchange in weeks, Aug 30). EIA assumes Hormuz flows 'severely constrained through August' - revised shut-in production up, inventories falling. Supertanker mined Aug 31 still halting traffic.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -82,8 +82,8 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-27",
-      "note": "ESCALATED: Iran-US direct exchange Aug 30-31 (Larak, Jordan, UAE, Kharg claims); Niger coup attempt Aug 29; Moody's cut Senegal to Caa2 Aug 28.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: UK intel - Russia planning new offensive in Ukraine. Aug 29 Niger coup attempt (Tiani vs mutinous soldiers). Senegal cut to Caa2 Aug 28. DE-ESCALATION: Trump pauses 50% Canada tariffs, cites 'deal'.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -112,8 +112,8 @@
       "description": "Using Brent oil as supply chain cost proxy â€” Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "ESCALATED: supertanker mined in Hormuz Aug 31; tanker risk premium rising ahead of Monday open. Brent proxy last $88.24 (Aug 25, stale data).",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: Hormuz supertanker mining reimposes shipping risk premium; two commercial vessels struck this week; EIA shut-in production forecast raised. Second LNG carrier (Gaslog Shanghai, ex-Qatar) among hit vessels - Europe/Asia gas exposure.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -202,23 +202,23 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-21",
-      "note": "ESCALATED: USD/JPY closed 160.10 (Aug 28), breached 160 again Aug 31 - all gains from Aug 1 joint US-Japan intervention erased. JGB 10Y 2.95% (fresh 30-yr high). Traders on intervention watch (Bloomberg, Aug 31). Threshold USD/JPY>158 breached.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31 confirmed: USD/JPY 160.16-160.20 - all joint-intervention gains erased despite $97B (JPY 15.4T) spent Jul 30-Aug 26. JGB 10Y 2.95% highest since Sept 1996; 2Y 31-yr high; 5Y record after weak auction. Traders on intervention watch; second MOF intervention likely.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4459.01,
+      "value": "ESCALATED: gold plunged 3%+ to $4,452/oz Aug 31 after Warsh hawkish Jackson Hole (hotter US inflation, >70% odds Fed HIKE by Dec) + renewed US-Iran strikes. Dollar surged, front-end Treasuries sold off. Largest one-day drop of the war period; debasement trade unwinding. Down $280 (-6%) from Aug 24 print $4,732. Watch forced-liquidation cascade risk.",
       "unit": "$/oz",
-      "status": "green",
+      "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -139.19,
       "description": "Gold Spot (web): \\,459.01/oz",
       "series_id": "Web spot (JM Bullion)",
       "last_date": "2026-08-31",
-      "note": "Manual web check â€” JM Bullion live spot",
-      "timestamp": "2026-08-31T11:32:13.055265+00:00"
+      "note": "4452.00",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -241,14 +241,14 @@
       "value": 97.69,
       "unit": "CLI index",
       "status": "red",
-      "trend": "stable",
+      "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.09,
       "description": "OECD Composite Leading Indicator for China (PMI proxy)",
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-08-31T11:31:39.471311+00:00"
+      "note": "Aug 30-31: State launches 300B yuan housing bailout to avert 'sudden, catastrophic financial collapse' - aims to keep banks/devs from failing but won't revive market (analysts). PBOC still capping yuan appreciation (3.5-yr high). Chronic property degradation continues.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "europe": {
       "name": "Europe Stability",
@@ -262,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-28",
-      "note": "UK 10Y gilt >5% held all month; BoE urged to halt QT as borrowing costs climb. ECB held July 22-23, waiting to Sept; watching energy price rotation to gas. No euro-area crisis; watch spillover from US/Japan long-end stress.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: global bond yields surging (CNN); gilt >5% chronic. ECB hiked 25bp in response to Middle East war inflation shock (headline 2026 proj 3.0%); Schnabel: further tightening necessary. Oil/energy shock rotation to gas - growth outlook at risk.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -277,8 +277,8 @@
       "description": "Yield Curve (10Y-2Y) â€” recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-28",
-      "note": "ESCALATED: Fed hike repricing (>70% by Dec post-Jackson Hole), Treasury-Fed policy collision over buybacks, AI-corporate-bond supply pressure on long end. Curve last 10Y-2Y +0.39 (Aug 28).",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 31: Dow -400 (-1%+), S&P -0.47%, Nasdaq -0.41% on oil surge + Fed hike repricing (>70% by Dec). Hotter-than-expected inflation reading. Bessent-Warsh collision over buybacks continues. Curve 10Y-2Y +0.39.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
@@ -292,8 +292,8 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Aug 30-31: first direct US-Iran exchange in a month. US struck IRGC rocket launchers on Larak Island; supertanker mined in southern Hormuz (fire, halted); Iran ballistic-missile attack on 2 US airbases in Jordan (Jordan intercepted 8); UAE airbase targeted; Trump claims Kharg Island 'blown to smithereens'.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Aug 30-31 direct US-Iran kinetic exchange continues: Larak Island strikes, supertanker mined, Iran missiles at 2 US bases in Jordan, Kharg claims. Iran dismisses new sanctions. Oman-Iran talks on Hormuz 'toll'. Qatari PM to Tehran for de-escalation. Trump claims 'complete control'.",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -319,11 +319,11 @@
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0,
-      "description": "Multiple CAT-5 active: US-Iran direct exchange + Hormuz supertanker mining (Aug 30-31); US Treasury sovereign bond intervention; joint US-Japan yen intervention erased (USD/JPY >160, JGB 10Y 2.95% 30-yr high)",
+      "description": "Multiple CAT-5 active: US-Iran direct exchange + Hormuz supertanker mining (Aug 30-31); US Treasury sovereign bond intervention failing. NEW 16:15Z: gold -3% to $4,452 (dislocation), Dow -400 / S&P -0.47%, US debt crosses $40T, China 300B yuan housing bailout.",
       "series_id": null,
       "last_date": "2026-08-31",
-      "note": "Breaking event scanner 2026-08-31T12:15Z: 2 CAT-5, 1 CAT-4, 2 CAT-3 confirmed multi-source.",
-      "timestamp": "2026-08-31T12:17:22.000000+00:00"
+      "note": "Breaking event scanner 2026-08-31T16:15Z: CAT-5s still active (US-Iran strikes, Hormuz mining; Treasury intervention failing). NEW: gold -3% to $4,452, US debt $40T, China housing bailout, Fed discount-rate hike bids. Equities red (Dow -400).",
+      "timestamp": "2026-08-31T16:17:40.000000+00:00"
     }
   },
   "overall_risk": {
@@ -331,10 +331,10 @@
     "color": "red",
     "score": 439,
     "red_count": 13,
-    "amber_count": 6,
-    "green_count": 2,
+    "amber_count": 7,
+    "green_count": 1,
     "manual_count": 1,
-    "timestamp": "2026-08-31T12:17:22.000000+00:00"
+    "timestamp": "2026-08-31T16:17:40.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
