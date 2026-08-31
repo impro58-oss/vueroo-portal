@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-30T13:34:15.443872",
+  "timestamp": "2026-08-31T14:29:01.387924",
   "version": "5.3.2-WIDE-TRAILING-3ATR-HARD-STOP",
   "system": "V5.3.2 Wide Trailing 3 ATR + Hard Stop 10% \u2014 Same entries, tightened trailing + hard stop",
   "parameters": {
@@ -28,33 +28,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -244.06,
-    "unrealized_pnl_eur": -10.87,
-    "total_pnl_eur": -254.93,
-    "open_positions": 1,
-    "closed_trades": 13,
+    "realized_pnl_eur": -269.06,
+    "unrealized_pnl_eur": 0,
+    "total_pnl_eur": -269.06,
+    "open_positions": 0,
+    "closed_trades": 14,
     "wins": 4,
-    "losses": 9,
-    "win_rate": 30.8
+    "losses": 10,
+    "win_rate": 28.6
   },
-  "open_positions": {
-    "INJUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-08-24T13:55:44.777137",
-      "entry_price": 5.498,
-      "atr": 0.35171428571428587,
-      "stop": null,
-      "highest": 6.057,
-      "lowest": 5.498,
-      "bars_held": 41,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 5.255
-    }
-  },
+  "open_positions": {},
   "recent_trades": [
     {
       "symbol": "XLMUSDT",
@@ -224,22 +207,35 @@
       "reason": "HARD_STOP_10.0%",
       "bars_held": 17,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "INJUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-08-24T13:55:44.777137",
+      "exit_date": "2026-08-31T14:29:01.387924",
+      "entry_price": 5.498,
+      "exit_price": 4.9482,
+      "pnl_pct": -10.0,
+      "pnl_eur": -25.0,
+      "reason": "HARD_STOP_10.0%",
+      "bars_held": 42,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "BFUSDUSDT",
+    "EURUSDT",
+    "KASUSDT",
+    "XUSDUSDT",
     "XAUTUSDT",
     "UUSDT",
-    "XUSDUSDT",
+    "ZECUSDT",
     "PAXGUSDT",
-    "KASUSDT",
-    "RLUSDUSDT",
-    "USD1USDT",
-    "BFUSDUSDT",
     "USDEUSDT",
-    "EURUSDT",
-    "ZECUSDT"
+    "RLUSDUSDT",
+    "USD1USDT"
   ]
 }
