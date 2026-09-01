@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T08:00:12.000000+00:00",
+    "last_update": "2026-09-01T08:02:34.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "threshold_breach": "6 thresholds breached",
+    "manual_fills": "MOVE 70.97 (Investing.com) | JGB10Y 2.95 + DE10Y 3.32 (TradingEconomics 08-31) | BAA10Y 1.54 (FRED 08-28)"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: Gold above 3500 (current: 4471.8)",
-      "timestamp": "2026-09-01T08:00:12.000000+00:00"
+      "note": "Threshold breach: Gold above 3500 (current: 4471.8) | Japan 10-Year JGB Yield RED breach: 2.95 above 1.5 | German 10-Year (Bund) AMBER breach: 3.32 above 3.0",
+      "timestamp": "2026-09-01T08:02:34.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -108,10 +109,10 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
       "timestamp": "2026-09-01T05:18:03.277708+00:00"
     },
     "food_security": {
@@ -133,12 +134,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -213,7 +214,7 @@
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": -129.9,
-      "description": "Gold Spot (XAU/USD): \\,456.86 \u2014 web-verified 2026-09-01",
+      "description": "Gold Spot (XAU/USD): \\,456.86 — web-verified 2026-09-01",
       "series_id": "Web spot check (LiteFinance/TradingEconomics)",
       "last_date": "2026-09-01",
       "note": "Spot price web-verified vs live sources; futures feed cross-check ~4479",
@@ -261,8 +262,8 @@
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-31",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-09-01T05:18:13.428776+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2) | German 10-Year (Bund) AMBER breach: 3.32 above 3.0",
+      "timestamp": "2026-09-01T08:02:34.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -273,7 +274,7 @@
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-31",
       "note": "",
@@ -291,7 +292,7 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
       "timestamp": "2026-09-01T05:18:14.356035+00:00"
     },
     "public_sentiment": {
