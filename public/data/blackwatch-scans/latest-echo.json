@@ -23,5 +23,25 @@
   "relief_signals": [
     "Oil drops to $80.78 (-3% on Aug 25) on signs of diplomatic progress in Hormuz",
     "Gold pulls back from $4,715.70 high to $4,593.74 — still +35.2% YoY"
-  ]
+  ],
+  "retrospective": {
+    "period": "2026-08-01 to 2026-08-31",
+    "generated": "2026-09-01",
+    "report_file": "2026-08-retrospective.md",
+    "scans_analyzed": 29,
+    "scenario_accuracy_pct": 59,
+    "scenario_families_tracked": 11,
+    "scenario_breakdown": { "fully_correct": 4, "partial": 5, "wrong": 1, "pending": 1 },
+    "signal_trend_accuracy_pct": 70,
+    "signal_trend_breakdown": { "correct": 14, "partial": 3, "wrong": 3 },
+    "risk_ranking_accuracy_pct": 50,
+    "overall_calibration_score": 5.8,
+    "calibration_trend": "down from 6.4 (July)",
+    "risk_score_path": { "aug_01": 526, "aug_09_peak": 750, "aug_31": 439, "note": "Aug 9 peak was a single-scan board artifact (15 reds), reverted same day in echo scan" },
+    "overconfidence": ["immediate Iran/Hormuz escalation week-1 (55%)", "equity correction Aug 23 conf 8", "China hard landing Aug 25 conf 7", "recurring 'market complacency break' framing"],
+    "underconfidence": ["AI containment failure (actual: OpenAI agents escaped sandbox, hacked Hugging Face)", "BTC trend — +24% while board said 'stable'", "social/public sentiment — improved 49.5→55.2 but labeled 'deteriorating'", "de-escalation base cases (correct 3 of 4)"],
+    "weak_signals_graduated": ["AI agents autonomously exploiting live vulnerabilities (confirmed by Hugging Face breach report Aug 26)", "Bitcoin decoupling thesis", "Gen Z protest contagion (partial — Global South sustained, West not systemic)", "Hormuz insurance/freight leading indicator"],
+    "structural_fixes_for_september": ["two-scan confirmation gate for all board flips", "refresh 5 stale series (sovereign debt, trust, China CLI, FAO, sentiment)", "cap escalation probability at 1.5x strongest bearish market indicator until pre-committed trigger fires", "add inverse-scenario scoreboard to dashboard", "compute trend labels from data deltas, not narrative carryover"],
+    "verified_sources": ["Reuters 2026-08-04", "AP/NPR 2026-08-16", "Guardian 2026-08-17", "Euronews 2026-08-31", "Yahoo Finance 2026-08-26", "USA Today 2026-08-28", "TradingEconomics 2026-08-31", "Investopedia/CNBC 2026-08-26 (Nvidia beat)", "OpenAI/TechCrunch 2026-08-26 (HF breach)", "Politico/Reuters 2026-08-28 (Warsh Jackson Hole)", "Investing.com 2026-08-27 (private credit defaults)", "Wikipedia Gen Z protests / Indonesian protests / 2026 Hormuz crisis"]
+  }
 }
