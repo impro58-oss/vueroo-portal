@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T04:00:10.000000+00:00",
-    "signals_auto": 20,
+    "last_update": "2026-09-01T04:02:07.000000+00:00",
+    "signals_auto": 21,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "4 thresholds breached"
+    "signals_total": 21,
+    "threshold_breach": "7 thresholds breached"
   },
   "signals": {
     "fin_stability": {
@@ -308,6 +308,22 @@
       "last_date": "2026-07-01",
       "note": "",
       "timestamp": "2026-09-01T01:26:25.285386+00:00"
+    },
+    "japan_sovereign": {
+      "name": "Japan Sovereign Stress",
+      "domain": "Japan",
+      "value": 2.99,
+      "unit": "%",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 0.04,
+      "description": "Japan 10-Year JGB Yield",
+      "series_id": "JGB10Y (TradingEconomics web fallback)",
+      "last_date": "2026-09-01",
+      "note": "Threshold breach: Japan 10-Year JGB Yield above 1.5 (current: 2.99) \u2014 yield spiral signal; BOJ losing control",
+      "timestamp": "2026-09-01T04:02:07.000000+00:00",
+      "source": "web_search fallback (Yahoo unavailable)"
     }
   },
   "overall_risk": {
