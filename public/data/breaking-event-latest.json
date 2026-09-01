@@ -1,83 +1,24 @@
 {
-  "scan_time": "2026-08-24T19:03:00.000000+00:00",
+  "scan_time": "2026-09-01T08:23:19.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v4h",
+  "scanner": "BlackWatch Breaking Event Scanner v1.1 - Lumina automated (cron 4h)",
   "domains_scanned": 12,
-  "queries_executed": 36,
+  "queries_executed": 31,
   "events_detected": [
-    {
-      "id": "BE-2026-08-24-009",
-      "title": "Operation Economic Outcast \u2014 US unveils sweeping 'economic D-Day' sanctions on Iran",
-      "domain": "us_fed",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "sources": [
-        "washingtonpost.com",
-        "nytimes.com",
-        "npr.org",
-        "cnn.com",
-        "redstate.com"
-      ],
-      "timestamp": "2026-08-24",
-      "summary": "Treasury Secretary Bessent unveiled 'Operation Economic Outcast' \u2014 sweeping new sanctions on Iran to 'tighten the noose' on every source of Iranian revenue. Trump promised an 'ECONOMIC D-DAY.' Iran's top security chief (Mohsen Rezaei) threatened to halt ALL oil movement through the Strait of Hormuz if neighbors help the US weaken Tehran's economy. New sanctions aimed at closing loopholes in the US financial dragnet around oil trade. Major escalation of the 2026 Iran war into the economic/financial domain.",
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "geopolitical",
-        "fin_stability"
-      ],
-      "is_new": true
-    },
-    {
-      "id": "BE-2026-08-24-002",
-      "title": "US sold euros to buy yen \u2014 first coordinated US-Japan FX intervention in a generation",
-      "domain": "japan",
-      "category": "sovereign_intervention",
-      "severity": 5,
-      "sources": [
-        "nytimes.com",
-        "cnbc.com",
-        "morganstanley.com",
-        "scmp.com",
-        "fairobserver.com"
-      ],
-      "timestamp": "2026-08-02",
-      "summary": "US Treasury sold euros to buy yen, strengthening JPY from 164 to ~155. Yen has since weakened back to 159. Intervention aimed to prevent Japan from selling US Treasuries. First joint intervention in a generation.",
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability"
-      ],
-      "is_new": false
-    },
-    {
-      "id": "BE-2026-08-24-006",
-      "title": "WHO declares Ebola PHEIC \u2014 fastest-growing outbreak on record, 5,290 cases, 2,516 deaths",
-      "domain": "pandemic_health",
-      "category": "pandemic",
-      "severity": 5,
-      "sources": [
-        "who.int",
-        "ecdc.europa.eu",
-        "un.org",
-        "health.ec.europa.eu"
-      ],
-      "timestamp": "2026-08-20",
-      "summary": "WHO declared 2026 DRC Ebola outbreak (Bundibugyo strain) a Public Health Emergency of International Concern. 5,290 confirmed cases, 2,516 deaths as of Aug 19. ECDC epidemiological update published 24 Aug 2026. No approved vaccines or treatments for Bundibugyo strain. Risk in Europe remains very low.",
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion"
-      ],
-      "is_new": false
-    }
+    "EVT-2026-09-01-0815-001 JGB 10Y crosses 3.00% first time since 1996, breaching Japan's FY2026 budget assumption; yen back above 160; BOJ Sept 18 hike near-locked wi",
+    "EVT-2026-09-01-0815-002 UK 10Y gilt 5.223% - highest since June 2008 (+7bp) as global bond sell-off broadens; Bailey warns AI-bubble correction could cause global c",
+    "EVT-2026-09-01-0815-003 US-Iran Hormuz exchange SUSTAINED cat-5: Larak strike killed 3 IRGC prepping sea-mine rockets; tanker hit exiting strait; strait re-closure "
   ],
-  "new_events_count": 1,
-  "previously_tracked_count": 2,
+  "new_events_count": 3,
+  "previously_tracked_count": 6,
   "macro_event_active": true,
   "overall_risk": "CRITICAL",
-  "key_findings": [
-    "NEW: Operation Economic Outcast \u2014 US 'economic D-Day' sweeping sanctions on Iran; Iran threatens to halt ALL Strait of Hormuz oil movement",
-    "US-Japan coordinated FX intervention continues, yen back to 159 after intervention failed",
-    "Ebola PHEIC \u2014 ECDC update Aug 24, largest outbreak on record (5,290 cases, 2,516 deaths)"
+  "summary": "CAT-5 SUSTAINED + 2 NEW RUNGS vs 04:15Z. (1) JAPAN: JGB 10Y crossed 3.00% - first time since 1996 - breaching the 3% rate assumed in Japan's FY2026 budget; borrowing costs at 30-yr highs; yen ~160.16 erases the record 15T-yen joint intervention (2026 cumulative >27T yen); Bessent signals BOJ Sept hike + possible renewed intervention financed by Treasury sales; BOJ Sept 18 + FOMC Sept 16 decisions converge. (2) UK JOINS THE ROUT: 10Y gilt 5.223%, highest since Jun 2008, +7bp - global bond sell-off broadens on oil-driven inflation + fiscal fears (France OAT near 2008 highs; record $29T 2026 issuance per OECD). (3) US-IRAN SUSTAINED cat-5: Larak strike killed 3 IRGC prepping sea-mine rocket launch into Hormuz; tanker hit exiting strait; Iran re-closure claim; Trump 'hit them hard'; WTI 86.57 (+7.75% m, +32% y/y), EIA 0.6M bpd disruptions through 2027. Escalated: middle_east, energy, currency, europe (all amber->red). Board hygiene: refreshed 6-day-stale latest-echo.json. macro_event ACTIVE, overall CRITICAL.",
+  "relief_signals": [
+    "No new bank failures (5 small US failures YTD; majors passed stress tests).",
+    "Gold pulled back -2.2% Monday to ~$4,456-4,480 (still +9.6% August).",
+    "BTC ~78.5-78.9K stable, dominance 76.7% - crypto vector calm.",
+    "Niger mutiny repelled - acute coup phase de-escalated.",
+    "Rupee stabilized by RBI near 4-week high; Argentina rolled 96% of maturing debt."
   ]
 }

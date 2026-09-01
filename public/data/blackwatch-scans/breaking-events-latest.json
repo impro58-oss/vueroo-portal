@@ -1,126 +1,91 @@
 {
-  "scan_time": "2026-09-01T04:15:00.000000+00:00",
+  "scan_time": "2026-09-01T08:23:19.000000+00:00",
   "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner v1.0 - Lumina automated (cron 4h)",
+  "scanner": "BlackWatch Breaking Event Scanner v1.1 - Lumina automated (cron 4h)",
   "date": "2026-09-01",
   "domains_scanned": 12,
-  "queries_executed": 15,
-  "previous_scan": "2026-09-01T00:15:00.000000+00:00",
-  "summary": "CAT-5 SUSTAINED (no new rung vs 00:15Z, energy vector INTENSIFYING): US-Iran direct exchange continues - US struck Larak (IRGC minelaying forces), Iran missiles at two US bases in Jordan; Kharg status now AMBIGUOUS: Trump posted AI video of Kharg attack and says it is 'being blown to smithereens' while US officials confirm Larak-only and Iran claims Kharg bombed several times but oil production continues. NEW shipping incident: tanker struck by 3 projectiles EXITING Hormuz (3h ago); earlier supertanker fire from two naval mines. Russia refinery strikes push refined-product margins to fresh highs. Brent +2-3% above $90. Japan 'day of policy reckoning': Bessent PUBLICLY told JapanFM Katayama and BOJ gov Ueda to raise rates before the September meeting - BOJ hike now 'effectively locked in'; JGB 10Y 2.95% (highest since Sep 1996), 2Y 1.70% (31-yr high), yen ~159.75 just under 160. Fed Sept hike odds 57-60% (CME ~59.9%); five major US data releases this week; Bessent $4B buyback cap Sept 9. France debt 'poster child' loudening (OAT near 2008 highs, OAT-Bund ~75-80bp fwd, debt to 118.5% GDP per IMF). DRC Ebola worst-ever Bundibugyo outbreak: >6,000 cases, ~3,000 deaths (from 2,715), NO approved vaccine/treatment, WHO risk 'very high'. Niger: 24-hour mutiny repelled WITH confirmed direct Russian Africa Corps intervention (AP detail); acute phase de-escalated. Quiet: UK, EM Asia (RBI stabilised rupee to 4-week high), financial system (FSB flags frontier-AI cyber risk to G20 - routine), crypto (BTC ~78.5K stable). macro_event ACTIVE, overall CRITICAL.",
+  "queries_executed": 31,
+  "previous_scan": "2026-09-01T04:15:00.000000+00:00",
+  "summary": "CAT-5 SUSTAINED + 2 NEW RUNGS vs 04:15Z. (1) JAPAN: JGB 10Y crossed 3.00% - first time since 1996 - breaching the 3% rate assumed in Japan's FY2026 budget; borrowing costs at 30-yr highs; yen ~160.16 erases the record 15T-yen joint intervention (2026 cumulative >27T yen); Bessent signals BOJ Sept hike + possible renewed intervention financed by Treasury sales; BOJ Sept 18 + FOMC Sept 16 decisions converge. (2) UK JOINS THE ROUT: 10Y gilt 5.223%, highest since Jun 2008, +7bp - global bond sell-off broadens on oil-driven inflation + fiscal fears (France OAT near 2008 highs; record $29T 2026 issuance per OECD). (3) US-IRAN SUSTAINED cat-5: Larak strike killed 3 IRGC prepping sea-mine rocket launch into Hormuz; tanker hit exiting strait; Iran re-closure claim; Trump 'hit them hard'; WTI 86.57 (+7.75% m, +32% y/y), EIA 0.6M bpd disruptions through 2027. Escalated: middle_east, energy, currency, europe (all amber->red). Board hygiene: refreshed 6-day-stale latest-echo.json. macro_event ACTIVE, overall CRITICAL.",
   "events_detected": [
     {
-      "id": "EVT-2026-09-01-0415-001",
-      "domain": "middle_east",
-      "title": "US-Iran direct exchange sustained; Kharg ambiguity deepens; NEW tanker hit by 3 projectiles exiting Hormuz; Brent >$90",
+      "id": "EVT-2026-09-01-0815-001",
+      "domain": "japan + us_fed",
+      "title": "JGB 10Y crosses 3.00% first time since 1996, breaching Japan's FY2026 budget assumption; yen back above 160; BOJ Sept 18 hike near-locked with FOMC Sept 16 = synchronized-tightening window",
+      "severity": 4,
+      "category": "market_dislocation + sovereign_intervention",
+      "description": "New rung vs 04:15Z (JGB was 2.95%): Japan 10Y JGB yield struck 3.00% for the first time since 1996 (Reuters, Sep 1) - breaches the 3% long-term rate the government assumed for FY2026 debt-servicing costs. Japanese borrowing costs at 30-year highs (CNBC Sep 1); 2Y at 1.70% (31-yr high, carried from 04:15Z). Yen ~160.16: the end-July joint Japan-US intervention gains (record 15T-yen single month; 2026 cumulative >27T yen) fully erased. Bessent publicly expects Japan to act for a stronger yen, signals strong chance of BOJ Sept hike, and flags that Tokyo may finance intervention with major Treasury sales; Katayama plays down the rate-hike push (Bloomberg). BOJ decision Sept 18 + FOMC Sept 15-16 converge = synchronized-tightening carry-unwind window intact. US Sept hike odds now a coin flip (50-60% across Kalshi/CME/Polymarket).",
+      "sources": [
+        "ca.finance.yahoo.com Reuters 'Global bond rout deepens as Japan yield hits key threshold' (46 min old at scan)",
+        "cnbc.com Japan borrowing costs 30-yr high (23 min old)",
+        "japantimes.co.jp Bessent expects Japan action / BOJ hike chance (5h)",
+        "bloomberg.com Katayama plays down Bessent push (5h)",
+        "freemalaysiatoday.com yen near 160 (6h)",
+        "note.com 27T-yen cumulative 2026 intervention",
+        "cnbc.com/kalshi/polymarket Fed Sept odds coin flip"
+      ],
+      "escalate_to": [
+        "currency",
+        "fin_stability"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0815-002",
+      "domain": "uk",
+      "title": "UK 10Y gilt 5.223% - highest since June 2008 (+7bp) as global bond sell-off broadens; Bailey warns AI-bubble correction could cause global crash",
+      "severity": 3,
+      "category": "market_dislocation",
+      "description": "NEW vs 04:15Z ('UK quiet'): 10Y gilt yield jumped 7bp to 5.223%, highest since June 2008, per Guardian live (22 min old at scan) - part of a global bond rout driven by oil-driven inflation fears, tightening and worsening fiscal conditions. Gilt yields >5% framed as a fiscal test for GBP (Investing.com). BOE voted 7-2 to hold at 3.75% in June; markets price a hike by November. Separately Gov. Bailey warned a bursting AI bubble could cause a global economic crash in a letter to finance ministers (Daily Mail, 1d).",
+      "sources": [
+        "theguardian.com business live 2026-09-01 (22 min old)",
+        "uk.investing.com gilt fiscal test",
+        "dailymail.com Bailey AI-bubble warning (1d)",
+        "tradingeconomics.com UK rate 3.75%"
+      ],
+      "escalate_to": [
+        "europe",
+        "fin_stability"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0815-003",
+      "domain": "middle_east + commodities",
+      "title": "US-Iran Hormuz exchange SUSTAINED cat-5: Larak strike killed 3 IRGC prepping sea-mine rockets; tanker hit exiting strait; strait re-closure claimed; oil +32% y/y",
       "severity": 5,
       "category": "war_military + energy_shock",
-      "description": "Escalation stack 04:15Z Sep 1: (1) Confirmed base state: US CENTCOM 'limited, precise action' against IRGC minelaying forces on Larak Island (night of Aug 30); Iran retaliated with ballistic missiles at two US bases in Jordan - first direct state-on-state exchange in weeks, war enters month 7. (2) KHARG AMBIGUITY: Trump posted AI-generated video depicting US attack on Kharg Island and claims it is 'being blown to smithereens'; US official to Reuters: Kharg NOT targeted - strikes confined to Larak; separate Iranian official: Kharg bombed 'several times by the US-Israeli enemy' but oil production continues; NIOC says conditions calm, operations normal. Kharg strike remains pending threat - Iran has vowed response 'far beyond Jordan/UAE' if the export terminal is hit. (3) NEW (04:15Z window): tanker reported struck by THREE projectiles while EXITING the Strait - third shipping incident in the corridor within ~48h alongside the supertanker fire from two naval mines. (4) Trump: 'We're going to hit them hard'; 'may still smack Iran'. VP Vance: video was a message to Tehran to stop shooting at commercial shipping 'or there are going to be some consequences'. (5) Brent +2-3% to >$90 as strikes resumed. (6) Russia refinery strikes tighten global refining capacity; refined-product margins at fresh highs. (7) Hormuz commercial transit still effectively disrupted (~Day 186); Bab al-Mandab also choked per 03:00Z lead scan.",
+      "description": "SUSTAINED vs 04:15Z, no entirely new rung but escalation details confirmed: US forces struck 2 Iranian rocket launchers on Larak Island Sunday (Aug 31), reportedly killing 3, saying IRGC was preparing rockets carrying sea mines for launch into Hormuz; Trump: 'we're going to hit them hard' after Iran targets US forces in Jordan; tanker struck in Hormuz keeps escalation worries elevated (CNBC Sep 1). Iran claims it re-closed the strait citing Israeli violations (US denies). WTI $86.57 Sep 1 (+0.94% d, +7.75% m, +32% y/y); Brent >$90 per 04:15Z; vessel traffic through Hormuz fallen sharply; OPEC+ final 188k bpd quota increase due September; EIA sees ~0.6M bpd disruptions persisting through 2027; fuel-crisis inflation divide emerging in South America. India equities opened red Sep 1 on renewed US-Iran hostilities + rising crude (contagion channel).",
       "sources": [
-        "the-independent.com live 2026-09-01 (45 min old)",
-        "cbsnews.com live 2026-09-01 (48 min old)",
-        "foreignpolicy.com 2026-08-31",
-        "thenationalnews.com 2026-08-31",
-        "aljazeera.com 2026-08-30/31",
-        "oilprice.com 2026-08-31",
-        "sg.headtopics.com tanker projectiles (2026-09-01, 3h)",
-        "tradingeconomics.com crude (Russia refinery strikes, margins)"
+        "cnbc.com 2026-09-01 tanker struck/Larak (6h, 17h)",
+        "wikipedia 2026 Strait of Hormuz crisis (7h update)",
+        "britannica.com 2026 Iran war (1d)",
+        "cfr.org Global Conflict Tracker (2d)",
+        "tradingeconomics.com crude 86.57 (4h)",
+        "eia.gov STEO 0.6M bpd (20h)",
+        "newsdrum.in India open red on US-Iran (3h)"
       ],
       "escalate_to": [
         "middle_east",
         "energy",
-        "geopolitical",
-        "currency"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-01-0415-002",
-      "domain": "japan + us_fed",
-      "title": "Japan 'day of policy reckoning': Bessent PUBLICLY demands BOJ hike before Sept meeting; JGB records; Fed Sept odds 57-60%",
-      "severity": 4,
-      "category": "market_dislocation",
-      "description": "Bessent publicly told Japan's finance minister Katayama and BOJ governor Ueda to raise interest rates, signalling support for a September hike - Treasury Secretary openly dictating sovereign monetary policy; Reuters analysis: Bessent's comments 'effectively lock' the BOJ into lifting rates and pressure it to step up hikes going forward. Japan press frames it as a day of policy reckoning as Bessent 'calls time on big stimulus'. Market state: JGB 10Y 2.95% (fresh 30-year high, highest since Sep 1996), 2Y 1.70% (31-year high), yen ~159.75 hovering under intervention threshold 160 (Bessent meanwhile calls JPY moves 'well-contained', reducing imminent joint-intervention odds). US side: CME/Polymarket Sept FOMC hike odds 57-60% (held vs 00:15Z), five major US economic reports this week decide it; Bessent $4B/operation long-end buyback cap effective Sept 9 = Treasury-Fed Battle Royale unresolved; BOJ + FOMC decisions converge Sept 15-16 = synchronized-tightening carry-unwind window intact.",
-      "sources": [
-        "ca.finance.yahoo.com Reuters analysis (13 min old)",
-        "briefs.co (7h)",
-        "oxfordeconomics.com (1d)",
-        "ft.com/yen",
-        "nai500.com JGB 2.95% (17h)",
-        "newsy-today.com yen 159.75 (2h)",
-        "europesays.com BNY",
-        "litefinance.org CME 59.9% (10h)",
-        "optionstradingiq.com 57% (6h)",
-        "coingabbar.com five US reports this week"
-      ],
-      "escalate_to": [
-        "japan_sovereign",
-        "currency",
-        "fin_stability",
-        "liquidity",
-        "us_cycle"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-01-0415-003",
-      "domain": "eu_ecb",
-      "title": "France 'poster child' loudening: OAT near 2008 highs, Fed hawkishness inflaming EU spreads (BTP/OAT)",
-      "severity": 3,
-      "category": "sovereign_crisis",
-      "description": "Continuation/loudening, no new rung (euro_crisis already flipped ACTIVE at 85 in 03:00Z lead scan): CNBC 2026-08-31 France 'poster child' of sovereign debt problems with borrowing costs near 2008 highs; 10Y OAT ~4.1% (highest since 2010); OAT-Bund spread seen ending 2026 at ~75bp if budget passes, ~80bp if not; deficit 5.1% of GDP, debt >115%, IMF projects ~118.5% by 2026. ANSA: Fed hawkish tones 'inflame' EU spreads - France and Italy yields flaring on war + protectionism = more inflation, higher rates. Volatility window seen in final months of 2026 through Q1 2027 as budget debate and presidential dynamics intertwine. EU meanwhile plans up to EUR 800B rearmament mobilization - fiscal load compounding.",
-      "sources": [
-        "cnbc.com 2026-08-31",
-        "europesays.com/france (1d, 20h)",
-        "ansa.it 2026-08-31",
-        "france.news-pravda.com"
-      ],
-      "escalate_to": [
-        "europe",
-        "euro_crisis"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-01-0415-004",
-      "domain": "pandemic_health",
-      "title": "DRC Ebola worst ever recorded: >6,000 cases, ~3,000 deaths; Bundibugyo strain with NO approved vaccine or treatment",
-      "severity": 3,
-      "category": "pandemic",
-      "description": "Escalation vs 00:15Z (2,715 deaths): Al Jazeera/Newsy/Vision Times 2026-08-31: DRC outbreak tops 6,000 confirmed cases, deaths near 3,000 - now the worst outbreak the DRC has experienced and largest Bundibugyo-species outbreak in medical history (17th DRC epidemic). Bundibugyo strain has NO approved vaccine or specific treatment. WHO maintains PHEIC (declared 17 May 2026) and rates risk within Congo 'very high': sustained transmission, geographic expansion, health-worker infections. Guardian Aug 23 framing: 'why this outbreak could become the deadliest in history'.",
-      "sources": [
-        "aljazeera.com 2026-08-31",
-        "newsy-today.com 2026-08-31",
-        "visiontimes.com 2026-08-31",
-        "ecdc.europa.eu",
-        "wikipedia 2026 Ebola epidemic (updated)"
-      ],
-      "escalate_to": [
-        "supply_chain",
-        "social_cohesion",
-        "food_security"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-01-0415-005",
-      "domain": "africa",
-      "title": "Niger mutiny repelled with DIRECT Russian Africa Corps intervention confirmed; acute phase de-escalated; Senegal cut to Caa2",
-      "severity": 2,
-      "category": "geopolitical_instability",
-      "description": "AP deep-dive: 24-hour mutiny in Niamey (gunfire/explosions near Diori Hamani Intl Airport and presidential palace) repelled by security forces WITH direct involvement of Russia's Africa Corps - first detailed confirmation of Russian forces physically intervening to keep the junta in power; junta remains in control, Niamey calm, situation 'tense'. Nigerian MFA issuing concern statements, warning against force. Acute coup risk DOWN vs 00:15Z, but Russian-network entrenchment in Sahel UP. Separately: Moody's cut Senegal Caa1->Caa2 on the Sonko power struggle, rising default risk, CFA-zone borrowing costs.",
-      "sources": [
-        "apnews.com 2026-08-31",
-        "allafrica.com 2026-08-31 (x3)",
-        "von.gov.ng",
-        "riotimesonline.com Senegal"
-      ],
-      "escalate_to": [
         "geopolitical"
       ]
     }
   ],
+  "sustained_tracked": [
+    "pandemic_health: DRC Ebola >6,000 cases / ~3,000 deaths (worst-ever Bundibugyo outbreak, no approved vaccine) - sustained, no new numbers since 04:15Z; COVID infections growing in 48 US states (CDC Aug 26).",
+    "africa: Niger mutiny repelled with confirmed Russian Africa Corps intervention (allAfrica 2h: deep military divisions exposed); Senegal Caa2 - tracked, de-escalated acute phase.",
+    "eu_ecb: ECB meeting Sept 9-10 Berlin; rates unchanged since Jun 2026; France OAT near 2008 highs (tracked at 04:15Z); OECD-record $29T 2026 global bond issuance context.",
+    "financial_system: no new bank failures (5 small US failures YTD, majors resilient in stress tests); BIS 'fiscal-financial stability nexus' warning - chronic, not breaking.",
+    "china: property support package (Aug 28) chronic - presale overhaul + financing support; PBOC reverse repos routine; Evergrande founder life sentence (last week, tracked).",
+    "latam: Argentina rolled 96% of maturing debt, country risk ~509bp; WEAK SIGNAL (unverified single source, low reliability): Colombia budget crisis - peso -2%+, sovereign bonds sold off, FM reportedly seeking emergency IMF/IDB tranches (news-pravda, Aug 31) - NOT upgraded to event pending corroboration.",
+    "commodities ex-oil: gold ~$4,456-4,480 after -2.2% Monday pullback (+9.6% Aug) - elevated, not spiking; BTC ~78.5-78.9K stable (relief)."
+  ],
   "domains_no_new_events": [
-    "uk (no gilt/sterling stress; routine Commons debt-interest data)",
-    "latam (Argentina stablecoin-ization 94% of peso crypto volume; household delinquency 12.8%/30.1% - chronic, not breaking)",
-    "em_asia (RBI intervention stabilised rupee to ~4-week high, monthly gain; oil a headwind)",
-    "china (chronic: housing bailout of ~28T yuan unsold stock launched; land sales -30.8% H1; PBOC holding midpoints weaker than market - all tracked)",
-    "financial_system (no bank failures; FSB letter to G20 flags frontier-AI cyber risk - routine)",
-    "commodities ex-oil (gold ~4,450 overnight flat after Monday -2.2%; crypto BTC ~78.5K stable; VIX <15 complacency persists)"
-  ]
+    "us_fed (Sept 16 FOMC hike odds coin-flip 50-60%; no emergency decision; Treasury-Fed collision chronic)",
+    "em_asia (rupee stabilized by RBI near 4-wk high; India equities red on oil/Iran - derivative of EVT-003)",
+    "financial_system (no failures, no freeze)",
+    "china (chronic property/PBOC items)",
+    "africa (Niger/Senegal tracked)",
+    "gold/crypto (pullback/stable - relief vectors)"
+  ],
+  "board_hygiene": "latest-echo.json was 6 days stale (Aug 26) - refreshed by this scan; signals.json portal legacy copy (Aug 29) re-synced."
 }
