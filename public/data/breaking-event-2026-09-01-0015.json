@@ -1,0 +1,130 @@
+{
+  "scan_time": "2026-09-01T00:15:00.000000+00:00",
+  "scan_type": "breaking_event",
+  "scanner": "BlackWatch Breaking Event Scanner v1.0 - Lumina automated (cron 4h)",
+  "date": "2026-09-01",
+  "domains_scanned": 12,
+  "queries_executed": 15,
+  "previous_scan": "2026-08-31T20:15:40.000000+00:00",
+  "summary": "CAT-5 ESCALATION vs 20:15Z: Iran fired missiles at TWO US bases in JORDAN Sunday night (retaliation for Larak strikes) - direct state-on-state exchange now active. Trump: 'We're going to hit them hard. There will be a response.' US weighing strike on KHARG ISLAND (Iran's main oil export terminal) - if struck, energy shock goes global beyond Hormuz. Iran reports supertanker disabled/fired by two naval mines in southern Hormuz; CENTCOM strikes on Iranian command centres, air defence, coastal surveillance near strait. Hormuz remains effectively closed (~Day 185). Fed Sept hike odds 58% (up from 35% pre-Jackson Hole); Bessent $4B buyback cap effective Sept 9 = Battle Royale unresolved. JGB 2Y 1.70% (31-yr high), 10Y 2.95% (30-yr high), yen breached 160 again. France 'poster child' of eurozone debt problems - 10Y OAT 4.1% highest since 2010, costs near 2008 highs. Uganda Ebola outbreak declared OVER by WHO; DRC continues exponential expansion (2,715 deaths, Ituri epicentre). Niger coup attempt repelled - Russia's Africa Corps key actor. CRITICAL DIVERGENCE: VIX below 15 with Hormuz closed + direct US-Iran missile exchanges - Sept complacency setup. macro_event ACTIVE, overall CRITICAL.",
+  "events_detected": [
+    {
+      "id": "EVT-2026-09-01-0015-001",
+      "domain": "middle_east",
+      "title": "US-Iran DIRECT STATE-ON-STATE EXCHANGE: Iran missiles at two US bases in Jordan; supertanker mined in Hormuz; US weighing Kharg Island strike",
+      "severity": 5,
+      "category": "war_military + energy_shock",
+      "description": "Escalation stack 00:15Z Sep 1: (1) Iran launched missile attack on TWO US bases in Jordan Sunday night - retaliation for US Larak Island strike; all but one missile intercepted, Trump says US let one pass as it wasn't going to hit anything. (2) Trump Monday: 'We're going to hit them hard. There will be a response.' Also: could still 'smack' Iran 'to see what happens'. (3) Fox live update: US weighing retaliation on KHARG ISLAND - Iran's primary crude export terminal; strike would remove Iran's oil lifeline and trigger global energy shock. (4) Iranian state media: supertanker caught fire/disabled in southern Hormuz after striking two naval mines (Iran frames vessels as violating passage rules). (5) CENTCOM wave of strikes on Iranian command centres, air defence, missile/drone capabilities, coastal surveillance near strait; disabled unladen tanker heading to Iranian port. (6) Hormuz commercial transit remains effectively closed Day ~185. (7) US Treasury reimposed oil-export sanctions lifted under Islamabad Memorandum.",
+      "sources": [
+        "cnbc.com 2026-08-30",
+        "aljazeera.com liveblog Aug 31",
+        "foxnews.com live Aug 31",
+        "wikipedia 2026 Strait of Hormuz crisis",
+        "iransitrep.com",
+        "timesnownews.com"
+      ],
+      "escalate_to": [
+        "middle_east",
+        "energy",
+        "geopolitical",
+        "currency"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0015-002",
+      "domain": "us_fed",
+      "title": "September dual-tightening convergence: Fed hike odds 58%, Bessent $4B buybacks Sep 9, JGB 2Y 31-yr high, yen >160",
+      "severity": 4,
+      "category": "market_dislocation",
+      "description": "Warsh's hawkish Jackson Hole lifted Sept hike odds to 58% from 35%; markets read him as endorsing a hike while not all FOMC convinced. Bessent long-end buyback cap doubles to $4B/operation effective Sept 9 - direct Treasury-Fed conflict (Warsh wants quieter Fed, less Treasury in markets). Japan: JGB 2Y 1.70% 31-year high; 10Y 2.95% 30-year high; yen breached 160 post-Jackson Hole; BOJ deputy gov signalled no clear hike timing (brief yields retreat); failed US-Japan joint intervention backdrop. Dual Fed+BOJ tightening September = carry trade unwind risk intact.",
+      "sources": [
+        "investinglive.com Aug 31",
+        "cnbc.com Aug 31",
+        "fxstreet.com Aug 31",
+        "brecorder.com Aug 31 (Business Recorder)",
+        "economictimes.com",
+        "cryptobriefing.com"
+      ],
+      "escalate_to": [
+        "us_cycle",
+        "currency",
+        "fin_stability",
+        "liquidity"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0015-003",
+      "domain": "eu_ecb",
+      "title": "France 'poster child' of eurozone debt problems: 10Y OAT 4.1% highest since 2010, borrowing costs near 2008 highs",
+      "severity": 3,
+      "category": "sovereign_crisis",
+      "description": "CNBC Aug 31: France becoming 'poster child' of sovereign debt problems; growth expectations revised lower, debt ratio set to keep rising, yields at levels not seen since the financial crisis, spending restraint politically impossible pre-presidential election. AEI: 10Y French yield 4.1%, highest since 2010. OAT-Bund spreads widening; analysis consensus: French problem not yet full eurozone crisis, but France too large for ECB to ignore if spread widens further.",
+      "sources": [
+        "cnbc.com 2026-08-31",
+        "aei.org",
+        "investing.com",
+        "thedarksideoftheboom.substack.com"
+      ],
+      "escalate_to": [
+        "europe",
+        "euro_crisis"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0015-004",
+      "domain": "pandemic_health",
+      "title": "Ebola PHEIC split: Uganda outbreak declared OVER by WHO; DRC continues exponential expansion (2,715 deaths)",
+      "severity": 3,
+      "category": "pandemic",
+      "description": "WHO declared Uganda's Ebola outbreak over Aug 26 (Al Jazeera). DRC outbreak continues expanding exponentially 'in an area the size of France' (2026 Ebola epidemic wiki, updated Aug 31); 2,715 deaths per ECDC-cited government data; Ituri province epicentre. Net change vs prior scan: slight de-escalation (Uganda clear) but core DRC epidemic uncontained.",
+      "sources": [
+        "aljazeera.com Aug 26",
+        "ecdc.europa.eu",
+        "wikipedia 2026 Ebola epidemic",
+        "cdc.gov"
+      ],
+      "escalate_to": [
+        "supply_chain",
+        "social_cohesion"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0015-005",
+      "domain": "africa",
+      "title": "Niger coup attempt repelled; Russia's Africa Corps emerges as key actor; Nigeria kidnapping crisis spreading south",
+      "severity": 2,
+      "category": "geopolitical_instability",
+      "description": "2026 Nigerien coup attempt (wiki, updated ~16h ago): attempt repelled; Russian Africa Corps cited as key actor in the outcome (Aug 29 reporting). Nigerian MFA expressing deep concern. BBC: mass kidnappings spreading further south in Nigeria, interim NFF board amid leadership failures. Continuation/extension of the Russian-network African instability pattern (cf. Benin failed coup Aug 28 scan).",
+      "sources": [
+        "wikipedia 2026 Nigerien coup attempt",
+        "bbc.com"
+      ],
+      "escalate_to": [
+        "geopolitical"
+      ]
+    },
+    {
+      "id": "EVT-2026-09-01-0015-005",
+      "domain": "financial_system",
+      "title": "Market complacency divergence: VIX <15 with Hormuz closed + direct US-Iran missile exchange + 58% hike odds",
+      "severity": 3,
+      "category": "market_dislocation",
+      "description": "Observational risk flag: S&P/Dow/Nasdaq slipped Monday but capped a winning August; VIX below 15 (Santoli), 'remains below 20' per technicals. Historical pattern: VIX seasonally climbs into September. Markets are NOT pricing Hormuz closure, US-Iran missile exchanges, or dual CB tightening - complacency into the September pivot month sets up gap-risk on the snap.",
+      "sources": [
+        "cnbc.com santoli Aug 31",
+        "finance.yahoo.com Aug 31",
+        "palmafutures.substack.com"
+      ],
+      "escalate_to": [
+        "fin_stability",
+        "liquidity"
+      ]
+    }
+  ],
+  "domains_no_new_events": [
+    "latam (Argentina 96% debt rollover, country risk easing to 509bp) ",
+    "china (continuation only: housing rescue expanded, Evergrande founder life sentence - both already tracked)",
+    "em_asia (BOK back-to-back hike to 3.00% - context, not breaking)",
+    "financial_system (no new US bank failures)"
+  ]
+}

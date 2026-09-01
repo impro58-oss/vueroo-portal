@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T00:00:12.000000+00:00",
+    "last_update": "2026-09-01T00:15:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "7 thresholds breached"
+    "threshold_breach": "7 thresholds breached",
+    "breaking_event": "Breaking event scanner 00:15Z Sep 1: 6 events (1 CAT-5 direct US-Iran exchange, 1 CAT-4 dual tightening, 3 CAT-3, 1 CAT-2); macro_event ACTIVE"
   },
   "signals": {
     "fin_stability": {
@@ -21,8 +22,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: Gold above 3500 (current: 4494.9)",
-      "timestamp": "2026-09-01T00:00:12.000000+00:00"
+      "note": "Breaking scan 00:15Z Sep 1: COMPLACENCY DIVERGENCE - VIX <15 despite Hormuz closed, US-Iran direct exchanges, 58% Sept hike odds. Gap-risk into September pivot. Fed/Treasury buyback-vs-hike conflict live (Sept 9 cap doubling).",
+      "timestamp": "2026-09-01T00:15:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,16 +59,16 @@
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "",
-      "timestamp": "2026-08-31T23:18:09.542375+00:00"
+      "note": "MANUAL ESCALATION (breaking scan 00:15Z Sep 1): Hormuz effectively closed; supertanker mined; KHARG ISLAND strike under consideration = potential global energy shock. Brent proxy stale (Aug 25); press references $88-94/bbl range.",
+      "timestamp": "2026-09-01T00:15:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -193,7 +194,7 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.75,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
       "change_from_last": 0.39,
@@ -201,8 +202,8 @@
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.764)",
-      "timestamp": "2026-09-01T00:00:12.000000+00:00"
+      "note": "ESCALATED to red by breaking scan 00:15Z Sep 1: USD/JPY back above 160 (breach was 158 threshold at 159.8 on Aug 28); JGB 2Y 1.70% 31-yr high; yen 160+ + Fed 58% September odds = carry unwind pressure. Prior note: Threshold breach: USD/JPY above 158.0 (current: 159.764) - now exceeded.",
+      "timestamp": "2026-09-01T00:15:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -283,16 +284,16 @@
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-08-31T23:18:13.411682+00:00"
+      "note": "MANUAL ESCALATION (breaking scan 00:15Z Sep 1): Iran missile attack on two US bases in JORDAN; supertanker mined southern Hormuz; US weighing KHARG ISLAND strike; strait effectively closed ~Day 185. Brent proxy stale (data to Aug 25) - actual tension far above proxy value. macro_event ACTIVE.",
+      "timestamp": "2026-09-01T00:15:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
