@@ -2,20 +2,17 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T08:23:19.000000+00:00",
+    "last_update": "2026-09-01T11:18:14.809181+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
-    "signals_total": 20,
-    "threshold_breach": "6 thresholds breached",
-    "manual_fills": "MOVE 70.97 (Investing.com) | JGB10Y 2.95 + DE10Y 3.32 (TradingEconomics 08-31) | BAA10Y 1.54 (FRED 08-28) | JGB10Y 3.00 first since 1996 (Reuters 09-01) | UK10Y gilt 5.223 highest since Jun 2008 (Guardian 09-01) | USD/JPY ~160.16 (09-01) | WTI 86.57 (TradingEconomics 09-01)",
-    "breaking_event": "08:15Z breaking scan (31 queries, 12 domains): CAT-5 SUSTAINED + 2 new rungs. EVT-001 JGB 10Y 3.00% first since 1996 + yen 160.16 re-cross (severity 4); EVT-002 UK gilt 5.223% highest since Jun 2008 (severity 3); EVT-003 US-Iran Hormuz exchange sustained (severity 5). Escalated amber->red: middle_east, energy, currency, europe. Notes updated: fin_stability, geopolitical."
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
       "value": 2.6,
-      "status": "red",
+      "status": "green",
       "trend": "deteriorating",
       "confidence": 7,
       "change_from_last": -0.03,
@@ -23,8 +20,8 @@
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: Gold above 3500 (current: 4471.8) | Japan 10-Year JGB Yield RED breach: 2.95 above 1.5 | German 10-Year (Bund) AMBER breach: 3.32 above 3.0 | 08:15Z: global bond rout deepens - JGB 10Y 3.00% first since 1996 (breaches Japan's 3% FY2026 budget assumption), UK gilt 5.223% highest since 2008, French OAT near 2008 highs; Treasury (Bessent buyback cap from Sept 9) vs Fed (Warsh) collision unresolved; BOJ Sept 18 + FOMC Sept 16 converge.",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "",
+      "timestamp": "2026-09-01T11:18:09.637153+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -39,7 +36,7 @@
       "series_id": "WM2NS",
       "last_date": "2026-08-03",
       "note": "",
-      "timestamp": "2026-09-01T05:18:09.868855+00:00"
+      "timestamp": "2026-09-01T11:18:09.991142+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -54,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-09-01T05:18:10.287572+00:00"
+      "timestamp": "2026-09-01T11:18:10.381593+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
       "value": 88.24,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "08:15Z breaking scan: Hormuz commercial transit disrupted ~Day 186; tanker struck exiting strait; Iran targeting tankers, vessel traffic fallen sharply. WTI $86.57 Sep 1 (+0.94% d / +7.75% m / +32% y/y, TradingEconomics); Brent >$90 per 04:15Z scan. EIA: ~0.6M bpd disruptions through 2027; Russia refinery strikes tighten refined-product supply. Brent value stale (Aug 25).",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "",
+      "timestamp": "2026-09-01T11:18:10.873882+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
       "value": 14.43,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "green",
+      "trend": "stable",
       "confidence": 7,
       "change_from_last": -0.08,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: Gold above 3500 (current: 4471.8) | 08:15Z: US-Iran direct exchange sustained (Larak strikes, 3 IRGC killed Aug 31; Iranian missiles at US bases in Jordan); Trump 'hit them hard'; Kharg strike remains pending threat; war month 7.",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "timestamp": "2026-09-01T11:18:11.193181+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -99,7 +96,7 @@
       "series_id": null,
       "last_date": "2026-09-01",
       "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-09-01T05:18:03.277708+00:00"
+      "timestamp": "2026-09-01T11:18:05.432289+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
@@ -110,11 +107,11 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-09-01T05:18:03.277708+00:00"
+      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-09-01T11:18:05.432289+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -129,22 +126,22 @@
       "series_id": "PFOODINDEXM",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-09-01T05:18:11.679879+00:00"
+      "timestamp": "2026-09-01T11:18:11.935670+00:00"
     },
     "climate": {
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "°C",
+      "unit": "\u00b0C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-09-01T05:18:02.620513+00:00"
+      "timestamp": "2026-09-01T11:18:04.788876+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -159,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-09-01T05:18:12.007962+00:00"
+      "timestamp": "2026-09-01T11:18:12.257028+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -174,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-09-01T05:18:03.277708+00:00"
+      "timestamp": "2026-09-01T11:18:05.432289+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -189,52 +186,52 @@
       "series_id": null,
       "last_date": "2026-09-01",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-09-01T05:18:03.277708+00:00"
+      "timestamp": "2026-09-01T11:18:05.432289+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.75,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 7,
       "change_from_last": 0.39,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.983) | 08:15Z: yen ~160.16 - joint-intervention gains fully erased (record 15T-yen single month; 2026 cumulative >27T yen). Bessent signals Tokyo may intervene again + BOJ Sept hike; JGB 10Y crossed 3.00% first time since 1996.",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-09-01T11:18:12.576828+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4456.86,
+      "value": 4421.8,
       "unit": "$/oz",
       "status": "green",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -129.9,
-      "description": "Gold Spot (XAU/USD): \\,456.86 — web-verified 2026-09-01",
-      "series_id": "Web spot check (LiteFinance/TradingEconomics)",
+      "change_from_last": -180.7,
+      "description": "Gold Spot (XAU/USD): \\,421.80/oz (web check vs futures \\,429.00)",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-09-01",
-      "note": "Spot price web-verified vs live sources; futures feed cross-check ~4479",
-      "timestamp": "2026-09-01T05:18:24.409429+00:00"
+      "note": "Spot cross-checked via web search 2026-09-01 (NowPrice live; APMEX \\,398.80)",
+      "timestamp": "2026-09-01T11:18:03.619214+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 78860,
+      "value": 77975,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": 1.4,
-      "description": "BTC $78,860 (+1.4% 24h), Dominance: 76.7%",
+      "change_from_last": -0.7,
+      "description": "BTC $77,975 (-0.7% 24h), Dominance: 76.6%",
       "series_id": "CoinGecko API",
       "last_date": "2026-09-01",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-09-01T05:18:02.225252+00:00"
+      "timestamp": "2026-09-01T11:18:04.219634+00:00"
     },
     "china": {
       "name": "China Health",
@@ -249,22 +246,22 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-09-01T05:18:02.029670+00:00"
+      "timestamp": "2026-09-01T11:18:03.988405+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 7,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
       "last_date": "2026-08-31",
-      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2) | German 10-Year (Bund) AMBER breach: 3.32 above 3.0 | 08:15Z: UK 10Y gilt 5.223% (+7bp), highest since Jun 2008 - UK joins global bond rout; France OAT near 2008 highs; Bund 3.32%.",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-09-01T11:18:13.634590+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -275,26 +272,26 @@
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
+      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-31",
       "note": "",
-      "timestamp": "2026-09-01T05:18:13.751341+00:00"
+      "timestamp": "2026-09-01T11:18:13.941185+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
       "value": 88.24,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 9,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 7,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2 | 08:15Z breaking scan: Iran war month 7 - US struck 2 IRGC rocket launchers on Larak Island (Aug 31, 3 killed) preparing sea-mine launch into Hormuz; tanker hit by 3 projectiles EXITING strait (~01:15Z Sep 1); Iran claims strait re-closed again (US denies); Trump vows to hit Iran 'hard'. Brent >$90 per 04:15Z scan. Proxy value stale (Aug 25 FRED).",
-      "timestamp": "2026-09-01T08:23:19.000000+00:00"
+      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-09-01T11:18:14.489012+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -309,18 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-09-01T05:18:14.834217+00:00"
+      "timestamp": "2026-09-01T11:18:14.797569+00:00"
     }
   },
   "overall_risk": {
-    "level": "RED",
+    "level": "CRITICAL",
     "color": "red",
     "score": 439,
-    "red_count": 11,
-    "amber_count": 7,
-    "green_count": 2,
+    "red_count": 5,
+    "amber_count": 10,
+    "green_count": 4,
     "manual_count": 1,
-    "timestamp": "2026-09-01T05:18:14.845892+00:00"
+    "timestamp": "2026-09-01T11:18:14.809181+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -430,6 +427,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-09-01T05:18:14.845892+00:00"
+    "timestamp": "2026-09-01T11:18:14.809181+00:00"
   }
 }
