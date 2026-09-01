@@ -2,11 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T04:02:07.000000+00:00",
+    "last_update": "2026-09-01T04:15:00.000000+00:00",
     "signals_auto": 21,
     "signals_manual": 0,
     "signals_total": 21,
-    "threshold_breach": "7 thresholds breached"
+    "threshold_breach": "7 thresholds breached",
+    "breaking_event": "Breaking event scan 04:15Z: CAT-5 SUSTAINED - macro_event ACTIVE; middle_east, energy, currency escalated RED; japan_sovereign confirmed red (Bessent demands BOJ hike)"
   },
   "signals": {
     "fin_stability": {
@@ -57,17 +58,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
-      "change_from_last": -4.47,
+      "value": 90.74,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 2.5,
       "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
+      "description": "Brent Crude Oil Price - Hormuz disruption active",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-25",
-      "note": "",
-      "timestamp": "2026-09-01T01:26:20.954396+00:00"
+      "last_date": "2026-09-01",
+      "note": "ESCALATED 04:15Z by breaking scan: Hormuz transit fire, Bab al-Mandab choked, tanker 3-projectile hit, supertanker mined+burned; Russia refinery strikes push refined-product margins to fresh highs. Brent >$90.",
+      "timestamp": "2026-09-01T04:15:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -193,16 +194,16 @@
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.75,
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.39,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
       "last_date": "2026-08-28",
-      "note": "Threshold breach: USD/JPY above 158.0 (current: 159.805)",
-      "timestamp": "2026-09-01T04:00:10.000000+00:00"
+      "note": "ESCALATED 04:15Z by breaking scan: USD/JPY ~159.75 under 160 intervention line, Bessent publicly demanding BOJ Sept hike; JGB 10Y 2.95% (30-yr high), 2Y 1.70% (31-yr high); PBOC midpoints weaker than market since Nov 2025. FRED DTWEXBGS datum 2026-08-28.",
+      "timestamp": "2026-09-01T04:15:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -282,17 +283,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
-      "change_from_last": -4.47,
+      "value": 90.74,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 8,
+      "change_from_last": 2.5,
       "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
+      "description": "Brent Crude (war-tension proxy) - US-Iran direct exchange active, Hormuz shipping under fire",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-25",
-      "note": "Proxy \u00e2\u20ac\u201d GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-09-01T01:26:24.957431+00:00"
+      "last_date": "2026-09-01",
+      "note": "ESCALATED 04:15Z by breaking scan: Brent +2-3% >$90.74 on Larak exchange + Kharg ambiguity + NEW tanker hit by 3 projectiles exiting strait; third shipping incident in ~48h. Iran response to any confirmed Kharg strike would be 'far beyond Jordan/UAE'.",
+      "timestamp": "2026-09-01T04:15:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -312,18 +313,33 @@
     "japan_sovereign": {
       "name": "Japan Sovereign Stress",
       "domain": "Japan",
-      "value": 2.99,
+      "value": 2.95,
       "unit": "%",
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 8,
+      "confidence": 9,
       "change_from_last": 0.04,
-      "description": "Japan 10-Year JGB Yield",
+      "description": "Japan 10-Year JGB Yield - 30-year high, highest since Sep 1996",
       "series_id": "JGB10Y (TradingEconomics web fallback)",
       "last_date": "2026-09-01",
-      "note": "Threshold breach: Japan 10-Year JGB Yield above 1.5 (current: 2.99) \u2014 yield spiral signal; BOJ losing control",
-      "timestamp": "2026-09-01T04:02:07.000000+00:00",
+      "note": "Threshold breach: JGB 10Y above 1.5 (current 2.95). 04:15Z: Bessent PUBLICLY told Ueda/Katayama to hike before BOJ Sept meeting - hike 'effectively locked in'; yields 2Y 1.70% 31-yr high, 10Y 2.95% 30-yr high; yen ~159.75. Yield-spiral signal intact.",
+      "timestamp": "2026-09-01T04:15:00.000000+00:00",
       "source": "web_search fallback (Yahoo unavailable)"
+    },
+    "macro_event": {
+      "name": "Macro Breaking Event",
+      "domain": "Global",
+      "value": "ACTIVE",
+      "unit": "",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "change_from_last": 0,
+      "description": "CAT-5 sustained: US-Iran direct exchange + Hormuz shipping attacks + September synchronized-tightening window",
+      "series_id": null,
+      "last_date": "2026-09-01",
+      "note": "04:15Z scan: CAT-5 sustained (no new rung vs 00:15Z). US-Iran exchange active (Larak/Jordan bases); Kharg strike ambiguous + pending (Trump AI video, Iran claims hits, US denies); NEW tanker hit by 3 projectiles exiting Hormuz; Brent >$90; Japan policy-reckoning (Bessent publicly demands BOJ Sept hike, JGB 30-yr highs, yen ~159.75); Fed hike odds 57-60%; France poster-child loudening; DRC Ebola worst-ever (>6K cases, ~3K deaths, no vaccine); Niger mutiny repelled w/ direct Russian intervention. De-escalations: none material.",
+      "timestamp": "2026-09-01T04:15:00.000000+00:00"
     }
   },
   "overall_risk": {
