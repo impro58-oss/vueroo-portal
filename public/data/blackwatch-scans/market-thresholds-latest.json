@@ -67,8 +67,9 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 75.32,
+      "source": "manual",
+      "note": "CNBC 2026-08-31 close: 75.32, unchanged (medium confidence - index quote vintage +1d)"
     },
     "GOLD": {
       "price": 4434.0,
@@ -92,16 +93,19 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 2.996,
+      "source": "manual",
+      "note": "TradingEconomics 2026-09-01: 2.996%, topped 3.0% intraday - first time since 1996, Nikkei/Herald confirm (high confidence)"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.35,
+      "source": "manual",
+      "note": "investing.com/TradingEconomics 2026-09-01: 3.3476-3.3548% intraday, at 52-week high (high confidence)"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.6,
+      "source": "manual",
+      "note": "FRED BAA10Y, latest published value 2026-08-27 (high confidence)"
     },
     "BTC": {
       "price": 78061.72,
@@ -120,7 +124,7 @@
       "threshold": 160.0,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Intervention failure \u2014 yen in freefall, Japan loses control",
+      "meaning": "Intervention failure — yen in freefall, Japan loses control",
       "escalate": [
         "japan_sovereign",
         "currency"
@@ -135,7 +139,7 @@
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "meaning": "Gold mania — currency crisis or war premium",
       "escalate": [
         "fin_stability",
         "geopolitical"
@@ -150,7 +154,7 @@
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Intervention zone \u2014 joint intervention likely failing",
+      "meaning": "Intervention zone — joint intervention likely failing",
       "escalate": [
         "japan_sovereign",
         "currency"
@@ -165,7 +169,7 @@
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "meaning": "Euro strength — dollar weakness, possible Fed pivot",
       "escalate": [
         "us_cycle",
         "currency"
@@ -180,14 +184,58 @@
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
       "escalate": [
         "fin_stability"
       ],
       "distance_pct": 47.8
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.996,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 99.73
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 2.996,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure — BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 199.6
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.35,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress — periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 11.67
     }
   ],
-  "breach_count": 5,
+  "breach_count": 8,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
   "max_severity": "RED"
