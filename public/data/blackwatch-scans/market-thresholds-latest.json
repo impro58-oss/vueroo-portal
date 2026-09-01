@@ -67,8 +67,12 @@
       "source": "yahoo"
     },
     "MOVE": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 75.32,
+      "prev_close": 75.32,
+      "change_1d_pct": 0.0,
+      "data_points": 1,
+      "source": "manual/web (CNBC, 2026-08-31 close)",
+      "as_of": "2026-08-31"
     },
     "GOLD": {
       "price": 4421.7,
@@ -92,16 +96,28 @@
       "source": "yahoo"
     },
     "JGB10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.004,
+      "prev_close": 2.941,
+      "change_1d_pct": 2.14,
+      "data_points": 1,
+      "source": "manual/web (Investing.com real-time; Japan Times: 3% first since 1996)",
+      "as_of": "2026-09-01"
     },
     "DE10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 3.3408,
+      "prev_close": 3.3233,
+      "change_1d_pct": 0.53,
+      "data_points": 1,
+      "source": "manual/web (CNBC/Investing.com, 15:46 CEST)",
+      "as_of": "2026-09-01"
     },
     "BAA10Y": {
-      "error": "Requires web search fallback",
-      "source": "manual"
+      "price": 1.6,
+      "prev_close": 1.62,
+      "change_1d_pct": -1.23,
+      "data_points": 1,
+      "source": "manual/web (FRED BAA10Y, 2026-08-27 obs)",
+      "as_of": "2026-08-27"
     },
     "BTC": {
       "price": 77812.2,
@@ -120,7 +136,7 @@
       "threshold": 160.0,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Intervention failure \u2014 yen in freefall, Japan loses control",
+      "meaning": "Intervention failure — yen in freefall, Japan loses control",
       "escalate": [
         "japan_sovereign",
         "currency"
@@ -135,12 +151,27 @@
       "threshold": 3500,
       "direction": "above",
       "severity": "RED",
-      "meaning": "Gold mania \u2014 currency crisis or war premium",
+      "meaning": "Gold mania — currency crisis or war premium",
       "escalate": [
         "fin_stability",
         "geopolitical"
       ],
       "distance_pct": 26.33
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 3.004,
+      "threshold": 1.5,
+      "direction": "above",
+      "severity": "RED",
+      "meaning": "JGB yield spiral — Japan fiscal crisis, BOJ losing control",
+      "escalate": [
+        "japan_sovereign",
+        "fin_stability"
+      ],
+      "distance_pct": 100.27
     },
     {
       "key": "USDJPY",
@@ -150,7 +181,7 @@
       "threshold": 158.0,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Intervention zone \u2014 joint intervention likely failing",
+      "meaning": "Intervention zone — joint intervention likely failing",
       "escalate": [
         "japan_sovereign",
         "currency"
@@ -165,7 +196,7 @@
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Euro strength \u2014 dollar weakness, possible Fed pivot",
+      "meaning": "Euro strength — dollar weakness, possible Fed pivot",
       "escalate": [
         "us_cycle",
         "currency"
@@ -180,15 +211,59 @@
       "threshold": 3000,
       "direction": "above",
       "severity": "AMBER",
-      "meaning": "Gold surge \u2014 safe haven demand extreme, systemic fear",
+      "meaning": "Gold surge — safe haven demand extreme, systemic fear",
       "escalate": [
         "fin_stability"
       ],
       "distance_pct": 47.39
+    },
+    {
+      "key": "JGB10Y",
+      "name": "Japan 10-Year JGB Yield",
+      "category": "rates",
+      "current": 3.004,
+      "threshold": 1.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "JGB under pressure — BOJ yield curve control stress",
+      "escalate": [
+        "japan_sovereign"
+      ],
+      "distance_pct": 200.4
+    },
+    {
+      "key": "DE10Y",
+      "name": "German 10-Year (Bund)",
+      "category": "rates",
+      "current": 3.3408,
+      "threshold": 3.0,
+      "direction": "above",
+      "severity": "AMBER",
+      "meaning": "European fiscal stress — periphery spreads widening",
+      "escalate": [
+        "europe",
+        "fin_stability"
+      ],
+      "distance_pct": 11.36
     }
   ],
-  "breach_count": 5,
+  "breach_count": 8,
   "thresholds_monitored": 31,
   "markets_monitored": 17,
-  "max_severity": "RED"
+  "max_severity": "RED",
+  "manual_fill": {
+    "filled_at": "2026-09-01T16:13:00.388572+00:00",
+    "instruments": [
+      "MOVE",
+      "JGB10Y",
+      "DE10Y",
+      "BAA10Y"
+    ],
+    "added_breaches": [
+      "JGB10Y RED",
+      "JGB10Y AMBER",
+      "DE10Y AMBER"
+    ]
+  },
+  "data_sources": "Yahoo Finance + web search fallback (MOVE/JGB10Y/DE10Y/BAA10Y)"
 }
