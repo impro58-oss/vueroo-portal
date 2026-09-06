@@ -2,7 +2,7 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-01T17:18:29.260242+00:00",
+    "last_update": "2026-09-06T23:00:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20
@@ -80,7 +80,7 @@
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
       "last_date": "2026-08-31",
-      "note": "Proxy indicator \u2014 GDELT API integration in Phase 2",
+      "note": "Proxy indicator — GDELT API integration in Phase 2",
       "timestamp": "2026-09-01T17:18:25.313191+00:00"
     },
     "cyber": {
@@ -107,10 +107,10 @@
       "trend": "stable",
       "confidence": 5,
       "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy \u2014 Cass Freight Index not available on FRED",
+      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
       "last_date": "2026-08-25",
-      "note": "Proxy indicator \u2014 Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
       "timestamp": "2026-09-01T17:18:15.384535+00:00"
     },
     "food_security": {
@@ -132,12 +132,12 @@
       "name": "Climate Stress",
       "domain": "Climate",
       "value": 1.11,
-      "unit": "\u00b0C",
+      "unit": "°C",
       "status": "red",
       "trend": "improving",
       "confidence": 9,
       "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11\u00b0C above 20th century avg (2026)",
+      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
@@ -206,17 +206,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4366.0,
+      "value": 4359.32,
       "unit": "$/oz",
       "status": "green",
-      "trend": "deteriorating",
+      "trend": "stable",
       "confidence": 9,
-      "change_from_last": -216.8,
-      "description": "Spot Gold: \\,366/oz (Kitco live, 2026-09-01 14:15 UTC)",
+      "change_from_last": -6.68,
+      "description": "Spot Gold: $4,359.32/oz (goldprice.com live, 2026-09-06 23:00 UTC)",
       "series_id": "Kitco Spot (web-verified)",
-      "last_date": "2026-09-01",
-      "note": "Web-verified spot price via Kitco news",
-      "timestamp": "2026-09-01T17:18:12.677967+00:00"
+      "last_date": "2026-09-06",
+      "note": "Web-verified spot via goldprice.com (65s fresh); cluster $4,340-$4,360 (APMEX 4342, Markets Insider 4361). Drift -$6.68 vs Sep 1. Connector scripts missing on DreamQuest - manual web refresh only.",
+      "timestamp": "2026-09-06T23:00:00Z"
     },
     "crypto": {
       "name": "Crypto Markets",
@@ -272,7 +272,7 @@
       "confidence": 9,
       "change_from_last": 0.02,
       "unit": "%",
-      "description": "Yield Curve (10Y-2Y) \u2014 recession signal",
+      "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
       "last_date": "2026-08-31",
       "note": "",
@@ -290,7 +290,7 @@
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
       "last_date": "2026-08-25",
-      "note": "Proxy \u2014 GDELT/news API for direct conflict tracking in Phase 2",
+      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
       "timestamp": "2026-09-01T17:18:28.898575+00:00"
     },
     "public_sentiment": {
