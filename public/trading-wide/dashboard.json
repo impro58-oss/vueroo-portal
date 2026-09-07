@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-07T03:37:21.912771",
+  "timestamp": "2026-09-07T06:32:44.844908",
   "version": "5.3.2-WIDE-TRAILING-6ATR",
   "system": "V5.3.2 WIDE \u2014 6 ATR trailing stop ONLY (activates at +2%, no hard stop / Donchian exit / time stop)",
   "parameters": {
@@ -30,9 +30,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": 0,
-    "unrealized_pnl_eur": 0.0,
-    "total_pnl_eur": 0.0,
-    "open_positions": 2,
+    "unrealized_pnl_eur": -5.43,
+    "total_pnl_eur": -5.43,
+    "open_positions": 3,
     "closed_trades": 0,
     "wins": 0,
     "losses": 0,
@@ -46,14 +46,14 @@
       "entry_price": 0.02394,
       "atr": 0.001395714285714286,
       "stop": null,
-      "highest": 0.02423,
+      "highest": 0.02457,
       "lowest": 0.02394,
-      "bars_held": 3,
+      "bars_held": 4,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.02423
+      "current_price": 0.02398
     },
     "LINEAUSDT": {
       "status": "OPEN",
@@ -62,14 +62,30 @@
       "entry_price": 0.002864,
       "atr": 0.00013378571428571432,
       "stop": null,
-      "highest": 0.002865,
+      "highest": 0.00287,
       "lowest": 0.002864,
-      "bars_held": 3,
+      "bars_held": 4,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.002834
+      "current_price": 0.002797
+    },
+    "LINKUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-09-07T06:32:44.844908",
+      "entry_price": 13.331,
+      "atr": 0.653357142857143,
+      "stop": null,
+      "highest": 13.371,
+      "lowest": 13.331,
+      "bars_held": 0,
+      "signal": "D_HIGH_BREAKOUT",
+      "btc_regime": "BULLISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 13.371
     }
   },
   "recent_trades": [],
@@ -77,16 +93,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "EURUSDT",
+    "UUSDT",
     "RLUSDUSDT",
     "KASUSDT",
-    "ZECUSDT",
-    "PAXGUSDT",
-    "USD1USDT",
-    "XUSDUSDT",
-    "XAUTUSDT",
-    "USDEUSDT",
     "BFUSDUSDT",
-    "UUSDT"
+    "USD1USDT",
+    "EURUSDT",
+    "XUSDUSDT",
+    "USDEUSDT",
+    "ZECUSDT",
+    "XAUTUSDT",
+    "PAXGUSDT"
   ]
 }
