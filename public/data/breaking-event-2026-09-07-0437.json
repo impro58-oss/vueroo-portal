@@ -1,0 +1,134 @@
+{
+  "scan_id": "blackwatch-2026-09-07-0437",
+  "scan_time": "2026-09-07T04:45:00.000000+00:00",
+  "scanner": "breaking_event_addendum",
+  "scanner_type": "4h_breaking_event_scanner",
+  "run_type": "ADDENDUM - job double-fired",
+  "double_fire_note": "This 4h job double-fired again (2nd cycle in a row): sibling run completed the primary 04:30Z scan (scan_id blackwatch-2026-09-07-0430, ~20 queries, commits 13d5367f + 12a8d6d0, pushed to origin/main) while this 04:37Z fire was mid-scan. Canonical board state per the 0430 artifacts: 14 red / 5 amber / 2 green, CRITICAL 470, macro_event ACTIVE conf 10, global_pandemic escalated WATCH->DEVELOPING. This run did NOT rewrite canonical files (race avoidance); it contributes an independent 17-query sweep and records findings the 0430 scan did not capture.",
+  "window": "2026-09-07T00:32Z to 04:37Z",
+  "queries": 17,
+  "domains_scanned": [
+    "us_fed",
+    "latam",
+    "eu_ecb",
+    "uk",
+    "japan",
+    "china",
+    "em_asia",
+    "middle_east",
+    "africa",
+    "financial_system",
+    "commodities",
+    "pandemic_health"
+  ],
+  "verdict": "CAT-5 SUSTAINED - no new rung vs 0430; addendum items below enrich the record",
+  "addendum_findings": [
+    {
+      "id": "ADD-001",
+      "domain": "japan / financial_system",
+      "severity": 3,
+      "item": "Japan likely SOLD TREASURIES to fund the record yen intervention - Japan Times Sep 7 01:17Z (in window), citing TIC-type flow data; separately CNA confirms the US-Japan JOINT yen-buying intervention (first since 2011) with both signalling more action. Confirms the forced-seller mechanism the bond-wildfire thread has feared since the Aug 3 joint intervention (Wolf Street): Japan defending the yen by liquidating USTs rather than drawing down reserves alone. Structural confirmation - no status flip; feeds fin_stability/currency threads.",
+      "sources": [
+        "japantimes.co.jp Sep 7 01:17Z",
+        "channelnewsasia.com"
+      ]
+    },
+    {
+      "id": "ADD-002",
+      "domain": "middle_east",
+      "severity": 3,
+      "item": "FIRST DE-ESCALATION VECTOR on the CAT-5: Iran signaled 'Hormuz can reopen if US halts attacks' as oil extended its rally (01:35Z, BigGo/Bloomberg-sourced). Reuters analysis (Japan Times Sep 7): 'Iran's Hormuz leverage wanes as US economic squeeze bites' - 6 months in, sanctions bite while Iran announces a NEW Hormuz shipping route 'in coming days' (Al Jazeera live) and formalizes the prohibited/restricted zone (Straits Times, Anadolu). Counterpoint: Brent firmed toward $97 (Gulf News Sep 7), tanker crossings ~4/day. Net: CAT-5 sustained; relief channel now visible but conditional and unreciprocated - a negotiation-off-ramp signal, not a de-escalation fact.",
+      "sources": [
+        "finance.biggo.com Sep 7 01:35Z",
+        "japantimes.co.jp Sep 7",
+        "aljazeera.com live Sep 7",
+        "straitstimes.com",
+        "aa.com.tr Sep 7",
+        "gulfnews.com Sep 7"
+      ]
+    },
+    {
+      "id": "ADD-003",
+      "domain": "africa",
+      "severity": 3,
+      "item": "Sudan: chemical-weapons dossier made PUBLIC Sat Sep 6 ~22:35Z (Semafor; The National witness account of alleged CW attack); UN-backed probe (Sep 3, Reuters Sep 6 pickup): foreign support + drones fuel the war, possible war crimes. 4th year of war; atrocity documentation rung. No africa signal on the board - logged in macro threads context only.",
+      "sources": [
+        "semafor.com Sep 6 22:35Z",
+        "thenationalnews.com Sep 6",
+        "astroawani/Reuters Sep 6",
+        "aljazeera.com Sep 3"
+      ]
+    },
+    {
+      "id": "ADD-004",
+      "domain": "eu_ecb",
+      "severity": 2,
+      "item": "ECB September hike hardened to 'done deal' (Bloomberg via Herald Korea 00:56Z; Japan Times Sep 7: 'ECB set to hike as Iran war flares anew'; The Star: 'G7 hawk with upcoming interest rate hike'). Reuters poll (Sep 3): second hike of the year Sep 10, 'but then done'. Confirms synchronized September tightening: ECB Sep 10 + FOMC Sep 16 (~55-62% hike odds) + BOJ Sep 18 - all hiking into a $94-97 Brent war band.",
+      "sources": [
+        "biz.heraldcorp.com Sep 7 00:56Z",
+        "thejapantimes.jp Sep 7",
+        "thestar.com.my Sep 7",
+        "Reuters poll Sep 3"
+      ]
+    },
+    {
+      "id": "ADD-004b",
+      "domain": "us_fed",
+      "severity": 2,
+      "item": "Fed odds corroboration (0430 captured the reversal; this adds levels): CME FedWatch 58.3% (Gate News 22:00Z Sep 6), StockWireX 62% (01:28Z in-window), Polymarket 55% hike / 39% hold / ~6% cut. Aug NFP blowout (Sep 4 release) killed Waller's Sep 3 dovish tick. Next trigger: US CPI this week - 'make or break' (lse.co.uk 02:00Z). NOTE: Sep 7 2026 is US LABOR DAY - US markets closed Monday, thin overnight flow; CPI is the week's hinge.",
+      "sources": [
+        "gate.com 22:00Z Sep 6",
+        "stockwirex.com 01:28Z Sep 7",
+        "polymarket.com",
+        "lse.co.uk 02:00Z Sep 7"
+      ]
+    },
+    {
+      "id": "ADD-005",
+      "domain": "em_asia",
+      "severity": 2,
+      "item": "Peso reserve-erosion corroborated in-window: The Edge Malaysia Sep 7 04:03Z - 'Philippine peso left behind in Asia as oil shock erodes dollar reserves'; peso >62/USD record territory; Malacanang publicly asking BSP to 'intervene when necessary' (Daily Tribune Sep 3). Matches 0430's asian_contagion 85->90 escalation. UNVERIFIED and NOT escalated: alphabriefing (undated) claims rupiah hit 1998 levels - no fresh corroboration found in a dedicated date-check search; UNKNOWN > wrong.",
+      "sources": [
+        "theedgemalaysia.com Sep 7 04:03Z",
+        "tribune.net.ph Sep 3"
+      ]
+    },
+    {
+      "id": "ADD-006",
+      "domain": "pandemic_health",
+      "severity": 2,
+      "item": "DRC Ebola corroboration of the 0430 escalation (WATCH->DEVELOPING): Reuters Sep 2 - deaths >3,000; WHO AFRO Aug 24 - >5,200 cases at 100 days; Bundibugyo species (no vaccine/treatment); Uganda outbreak over Aug 27. Sustained, not new.",
+      "sources": [
+        "reuters.com Sep 2",
+        "afro.who.int Aug 24",
+        "who.int DON614"
+      ]
+    },
+    {
+      "id": "ADD-007",
+      "domain": "markets",
+      "severity": 2,
+      "item": "Complacency divergence PERSISTS: Asia-Pacific markets opened HIGHER Monday on renewed Middle East hostilities (CNBC 04:20Z, Bloomberg wrap, Nikkei leading; 'others cautious as oil rises'); US closed flat for the Labor Day holiday; European futures slightly lower (EMEA briefing ~04:25Z). VIX ~14.5 vs a 14-red board - the complacency divergence flagged since Aug 31 persists into the September decision window.",
+      "sources": [
+        "cnbc.com Sep 7",
+        "bloomberg.com wrap",
+        "au.marketscreener.com 04:25Z",
+        "lse.co.uk 02:00Z"
+      ]
+    }
+  ],
+  "quiet_domains": [
+    "latam (nothing fresh surfaced)",
+    "financial_system/banks (no new failures; HY OAS 2.63% improving per threshold scan)",
+    "china (SCMP Sep 6 01:00Z 'new rules spark unease' - sustained, no fresh rung)",
+    "uk (gilt 10Y highest since 2008, long-end 28-yr high - sustained; no fresh intervention)",
+    "commodities beyond oil (wheat crunch warning Kpler Sep 3 sustained; gold mania $4,476 GC=F per threshold job)"
+  ],
+  "telegram_decision": "NOT SENT - sustained-only addendum; CAT-5 already alerted to Roo 00:36Z; new rungs are incremental; quiet hours (05:45 IST); 07:30 IST morning briefing aggregates. No duplicate of the 0430 run's notification.",
+  "handoff_next_scan": "~08:37Z. Watch: US CPI verdict, ECB Sep 10 decision, whether Iran's conditional-reopen offer gets reciprocated or rejected, Kharg Island status, first US session post-Labor Day (Tuesday), JGB 30Y auction as global repricing bellwether.",
+  "process_notes": [
+    "DOUBLE-FIRE 3rd occurrence (00:32/00:37, then 04:30/04:37) - two breaking-scanner jobs appear anchored ~:30 and ~:37 in the fleet; automations list for this session shows only the :37-anchored job (7e978fb2). Recommend Roo dedupe the fleet (disable one of the pair).",
+    "Sibling race observed live: 04:39:24Z threshold refresh overwrote signals while the 0430 scanner was mid-write; sibling repaired in commit 12a8d6d0. The 6h refresh + threshold scanner still do not ingest breaking-event escalations (regress loop, 4th repair).",
+    "This run held to addendum-only writes to avoid a third race on canonical files."
+  ]
+}
