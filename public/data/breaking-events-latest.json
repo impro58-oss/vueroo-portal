@@ -1,27 +1,29 @@
 {
-  "scan_time": "2026-09-01T12:21:12.000000+00:00",
+  "scan_time": "2026-09-07T00:40:00.000000+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1.1 - Lumina automated (cron 4h)",
-  "date": "2026-09-01",
+  "date": "2026-09-07",
   "domains_scanned": 12,
   "queries_executed": 15,
-  "previous_scan": "2026-09-01T08:23:19.000000+00:00",
-  "summary": "CAT-5 SUSTAINED + NEW QUANTIFIED RUNG + 2 CONFIRMED RUNGS vs 08:15Z. (1) HORMUZ TRAFFIC COLLAPSE QUANTIFIED: visible commodity vessels through the strait dropped to 5/day (Kpler weekend data) - strait functionally choked (~20% of pre-war global oil); UKMTO reports tanker struck by 3 projectiles exiting Hormuz Tuesday; Qatar/Oman mediation stalled; Iran has kept the strait shut since the Feb 28 US/Israel strikes; Trump threatens further strikes after first direct US-Iran exchange in a month (Larak Sunday, Iran hits US forces in Jordan). Brent $91.05 (+0.6% Tue 0044GMT; +2.7% Mon, highest since Aug 25), WTI $86.59. (2) BOND ROUT BROADENS: JGB 10Y touched 3.00% first time since 1996 (2.996 close per 12:00Z threshold scan); US 10Y topped 4.75% - highest since Jan 2025 - despite Trump demanding lower rates; UK long-end 28-year high; German bunds decade-plus high; ECB Sept hike 98.9% priced; Fed Sept hike odds 'nearly doubled' on Warsh hawkishness (CME ~66%). Synchronized Sept tightening (ECB 10th, FOMC 15-16th, BOJ 18th) fully loaded. (3) COLOMBIA CONFIRMED: economic emergency declared (Aug 19-20), deficit worse than feared with IMF support floated (Reuters Aug 28), peso hit - upgraded from 08:15Z weak signal. EM Asia currencies+equities fell Monday; gold $4,429 (-3.9%) liquidation alongside rout. Escalated: middle_east, energy, supply_chain, europe, us_cycle (amber->red); currency, geopolitical refreshed; macro_event signal ACTIVE. Board hygiene note: 11:18Z/12:02Z refresh runs regressed the 08:15Z escalations (middle_east back to amber on stale Aug-25 Brent proxy) - re-escalated here; refresh script should ingest breaking-event escalations to stop the regress loop.",
+  "previous_scan": "2026-09-01T12:21:12.000000+00:00",
+  "summary": "CAT-5 ESCALATED + 3 SUSTAINED vs Sep 1 12:15Z (note: no scan artifacts Sep 1 16:20Z -> Sep 7 00:32Z despite 4h cadence - gap flagged). (1) TANKER WAR ESCALATION: US struck and sank 3 Iranian oil tankers Sep 5 after saying its warships were targeted with ballistic missiles (PBS/AP); US maintains naval blockade and keeps hitting tankers (Al Jazeera Sep 6 16:17Z); Iran vows 'more painful response' - parliament speaker Ghalib: 'the era of proportionate responses has come to an end'; Iran announces EXCLUSION ZONE outside Strait of Hormuz for selected vessels (India Today Sep 7); war month 6+ in 'lethal stalemate' (IBTimes Sep 6). Brent $95.45 (Markets Insider ~23:36Z Sep 6), Gulf News Sep 7: 'hold near $97' - war high, +4.4-6 vs Sep 1 $91.05. (2) BOND WILDFIRE SUSTAINED + NEW STRUCTURAL RUNG: BBC Faisal Islam (Sep 3, resurfacing Sep 6): Hormuz closure now priced as CHRONIC through Nov US midterms - higher energy, higher inflation for longer, higher rates; AI hyperscalers issued $219bn debt YTD (vs $93bn all 2025; <$40bn/yr historically; $400-500bn expected full-year) - el-Erian: 'the biggest new factor' crowding out sovereigns; JGB yields HOLD ABOVE 3% for first time in 30 years (Sep 4) with Takaichi cabinet eyeing record budget request; US govt still trying to manage down surging yields (O'Neill). (3) UK FISCAL: gilt rout hands Burnham govt £14bn hole weeks before first Budget (Oct); tax rises 'increasingly likely' (Sep 5); PM calming bond markets. (4) EM: Philippine peso RECORD LOW (Sep 2); HSBC: Asia markets 'look like 1997'; EM FX intervention risk turbocharged. DE-ESCALATION TICKS: Fed Sep 16 hike odds eased 66-68% -> ~51-60% (Waller dovish relented Sep 3); yen recovered >1% to one-month high Sep 3 (BOJ bets + intervention credibility); food so far insulated from energy shock (ample carryover stocks); no new bank failures; Uganda Ebola outbreak over. Escalated: middle_east, energy, supply_chain (conf 8->9), geopolitical, fin_stability (conf 7->8); refreshed: currency, europe, us_cycle, macro_event ACTIVE conf 10. Board hygiene: refresh script AGAIN regressed middle_east/energy to amber on stale Aug-25 proxy - re-escalated here; refresh must ingest breaking-event escalations.",
   "events_detected": [
     {
-      "id": "EVT-2026-09-01-1215-001",
+      "id": "EVT-2026-09-07-0030-001",
       "domain": "middle_east + commodities",
-      "title": "Hormuz functionally choked: traffic down to 5 commodity vessels/day (Kpler); tanker struck by 3 projectiles exiting strait (UKMTO); Trump threatens further strikes; Brent $91.05",
+      "title": "TANKER WAR ESCALATION: US sank 3 Iranian oil tankers (Sep 5); US blockade sustained; Iran declares Hormuz exclusion zone + 'more painful response' vow; Brent $95.45-97 war high",
       "severity": 5,
       "category": "war_military + energy_shock",
-      "description": "NEW QUANTIFICATION vs 08:15Z: number of visible commodity vessels transiting Hormuz dropped to FIVE per day over the weekend (Kpler shipping data, via CNBC Sep 1) - the strait that carried ~1/5 of global oil before the war erupted Feb 28 is functionally halted ('Hormuz Grinds to a Halt as Iran Tests Its Leverage', JCFA Sep 1). UKMTO said Tuesday a tanker reported being struck by three projectiles while sailing OUT of the strait (no casualties reported). Qatar/Oman mediation to reopen has failed to gain traction; Iran shut the waterway after the US and Israel attacked Iran Feb 28. Trump threatened further strikes Monday after the first direct exchange in a month on Sunday (US struck 2 IRGC rocket launchers on Larak Island, killing 3, saying they were prepping sea-mine rockets for Hormuz; Iran targeted US forces in Jordan; IRGC intercepted a US MQ-9 drone). Brent $91.05 (+0.6% at 0044GMT Tue), WTI $86.59 (+1%); Monday Brent +2.7% (highest since Aug 25), WTI +2.8% (highest since Aug 21). EIA sees ~0.6M bpd disruptions persisting through 2027 (carried); OPEC+ final 188k bpd quota increase due this month.",
+      "description": "ESCALATION vs Sep 1 (infrastructure strikes + projectile hits): the US military struck and sank THREE Iranian oil tankers Sep 5, saying its warships had been targeted with ballistic missiles (PBS NewsHour/AP; Al-Monitor Sep 5). US maintains a naval blockade and continues hitting tankers (Al Jazeera Sep 6 16:17Z: 'Iran touts military response as US maintains blockade, hits tankers'). Iran warned of 'more painful response' - parliament speaker Mohammad Bagher Ghalib: 'The Americans must have understood that the era of proportionate responses has come to an end' (National Post). Iran said it will declare an EXCLUSION ZONE outside the Strait of Hormuz for selected vessels (India Today Sep 7) - formalizing the choke that Kpler measured at 5 visible commodity vessels/day (Sep 1). Conflict in month 6+ remains a 'lethal stalemate' (IBTimes Sep 6). Oil: Brent $95.45 (Markets Insider, ~23:36Z Sep 6; prev close 95.63, day range 94.96-95.50), Gulf News Sep 7 (03:42 GST): 'Oil prices hold near $97'. Brent +4.4 vs Sep 1 $91.05; 52-week range 58.72-126.41. Markets price the Gulf crisis as chronic through the November midterms (BBC).",
       "sources": [
-        "cnbc.com 2026-09-01 oil rises / Kpler 5 vessels/day / UKMTO tanker (0044GMT quotes)",
-        "jcfa.org 'Hormuz Grinds to a Halt as Iran Tests Its Leverage' (Sep 1)",
-        "aljazeera.com oil jumps as US/Iranian attacks stoke escalation fears (Sep 1)",
-        "theglobeandmail.com Trump vows to hit Iran hard (Reuters, Sep 1)",
-        "euronews.com Iran strikes on Jordan after US Larak attack (Aug 31)",
-        "aljazeera.com 60-day ceasefire expired mid-Aug (Sep 1)"
+        "pbs.org US strikes 3 Iranian oil tankers after warships targeted with ballistic missiles (Sep 5)",
+        "al-monitor.com US strikes oil tankers as Iran vows tougher reprisals (AFP, Sep 5)",
+        "aljazeera.com Iran touts military response as US maintains blockade, hits tankers (Sep 6 16:17Z)",
+        "indiatoday.in Iran plans Hormuz exclusion zone after US tanker strikes (Sep 7)",
+        "nationalpost.com Iran warns US of 'more painful response' - Ghalib quote",
+        "ibtimes.com.au Hormuz 'lethal stalemate' six months into war (Sep 6)",
+        "gulfnews.com oil holds near $97 (Sep 7 03:42 GST)",
+        "markets.businessinsider.com Brent 95.45 snapshot (~23:36Z Sep 6)"
       ],
       "escalate_to": [
         "middle_east",
@@ -31,65 +33,65 @@
       ]
     },
     {
-      "id": "EVT-2026-09-01-1215-002",
-      "domain": "japan + us_fed + eu_ecb + uk",
-      "title": "Global bond rout broadens: JGB 10Y 3.00% (first since 1996), US 10Y >4.75% (highest since Jan 2025), UK long-end 28-yr high, German bunds decade-plus high; Fed Sept hike odds nearly doubled, ECB 98.9% hike priced",
+      "id": "EVT-2026-09-07-0030-002",
+      "domain": "us_fed + eu_ecb + uk + japan + financial_system",
+      "title": "Global bond wildfire sustained + structural new factor: AI hyperscalers $219bn YTD issuance crowding sovereigns (el-Erian); JGB holds >3% first in 30y; gilt rout -> £14bn Burnham budget hole; Fed hike odds eased to ~51-60%",
       "severity": 4,
       "category": "market_dislocation + sovereign_intervention",
-      "description": "SUSTAINED + NEW RUNGS vs 08:15Z: (a) JGB 10Y touched 3.00% intraday (first since 1996; closed ~2.996 per 12:00Z threshold scan - breach of the 3% rate assumed in Japan's FY2026 budget); borrowing costs 30-yr highs; yen >160 - end-July record joint intervention gains fully erased (2026 cumulative >27T yen); Bessent 'calls time on big stimulus' (Straits Times/CNA analysis Sep 1), expects Japan to act for a stronger yen and flags possible intervention financed by Treasury sales; BOJ Sept 18 hike expectations rising. (b) NEW: US 10Y Treasury yield topped 4.75%, highest since January 2025, despite Trump warning 'rates are too high' - Wall Street closed lower Monday (Dow -374) on oil >$90 + surging rate-hike bets (Asia Business Daily, HDFC Sky Sep 1). (c) Fed Chair Warsh's latest comments nearly doubled September rate-HIKE odds (Motley Fool Sep 1; CME ~66% carried from 00:15Z) - Fed HIKING into oil shock. (d) ECB Sept 10 hike 98.9% priced (Polymarket); ECB explicitly cites energy-led inflation for June hike (Sep 1). (e) UK long-end borrowing costs at 28-year high as oil triggers global rout (Guardian Sep 1); 10Y gilt 5.223% carried from 08:15Z. Synchronized tightening window intact: ECB Sep 10 + FOMC Sep 15-16 + BOJ Sep 18 within 8 days.",
+      "description": "SUSTAINED + NEW RUNG vs Sep 1: BBC economics editor Faisal Islam ('Why bond market wildfire is keeping world leaders up at night', Sep 3, trending Sep 6): many countries face multi-decade yields; the immediate driver is the Hormuz closure + renewed US-Iran hostilities -> chronic Gulf crisis priced through Nov midterms (the pre-summer hope of pre-election de-escalation was 'wishful thinking'). NEW STRUCTURAL FACTOR: US AI hyperscalers (Google, Amazon, Meta et al.) have issued $219bn debt YTD (~1/3 non-USD, incl. sterling), vs $93bn in 2025 and <$40bn/yr before; full-year expectations $400-500bn - Mohamed el-Erian: AI competition in bond markets is 'the biggest new factor' pushing sovereign borrowing costs up. Japan: JGB yields holding ABOVE 3% for first time in 30 years (Seoul Economic Daily Sep 4), falling prices fail to draw buyers on fiscal fears, Takaichi cabinet eyeing RECORD budget request; BOJ rate crept up from zero. US: O'Neill points to US yield-management efforts as volatility source; Fed Sep 16 hike odds EASED to ~51-60% (Polymarket 60% 25bp-hike / 39% hold; WET 51% Sep 5) after Gov. Waller 'relented' Sep 3 (TMGM) - vs 66-68% Sep 1. UK: gilt sell-off hands Burnham govt £14bn hole weeks before first Budget (Parliament News Sep 2); economists: tax rises 'increasingly likely' (i-news Sep 5); PM Burnham trying to calm bond market fears (Guardian Sep 2). Synchronized September tightening still loaded: ECB Sep 10, FOMC Sep 16, BOJ Sep 18.",
       "sources": [
-        "cnbc.com Japan borrowing costs 30-yr high, yen >160 (Sep 1)",
-        "straitstimes.com / channelnewsasia.com Bessent calls time on stimulus (Sep 1)",
-        "asiae.co.kr US 10Y tops 4.75% highest since Jan 2025 (Sep 1)",
-        "theguardian.com UK long-end 28-year high (Sep 1)",
-        "europesays.com German yields decade-plus high after Warsh Jackson Hole (Sep 1)",
-        "fool.com Fed Sept hike odds nearly doubled (Sep 1)",
-        "polymarket.copilot.markets ECB Sept +25bp 98.9%",
-        "globalbankingandfinance.com ECB cites energy for June hike (Sep 1)"
+        "bbc.com Faisal Islam bond wildfire analysis (Sep 3, trending Sep 6)",
+        "en.sedaily.com Japan bond yields near/above 3% as fiscal fears scare buyers; Takaichi record budget request (Sep 4)",
+        "cnbc.com yen surges >1% to one-month high on BOJ bets + intervention talk (Sep 3)",
+        "tmgm.com Waller relented 9/3, September hike suspense shifts to Powell (Sep 4)",
+        "worldeventtrading.com Fed Sep 16: 51% 25bp-hike implied (Sep 5)",
+        "polymarket.com Fed September: 25bp increase 60% / no change 39%",
+        "theguardian.com Burnham tries to calm bond market fears (Sep 2)",
+        "parliamentnews.co.uk bond market hands Burnham £14bn headache (Sep 2)",
+        "inews.co.uk tax rises 'increasingly likely' as Healey unveils growth plan (Sep 5)"
       ],
       "escalate_to": [
         "fin_stability",
-        "currency",
         "europe",
-        "us_cycle"
+        "us_cycle",
+        "currency"
       ]
     },
     {
-      "id": "EVT-2026-09-01-1215-003",
-      "domain": "em_asia + latam",
-      "title": "EM stress broadens + Colombia economic emergency CONFIRMED: EM Asia FX/equities fell Monday; KOSPI slides Sep 1; rupee 95.16; Colombia emergency + IMF support floated + peso hit",
+      "id": "EVT-2026-09-07-0030-003",
+      "domain": "em_asia + china + latam",
+      "title": "EM stress sustained: Philippine peso record low (Sep 2), HSBC 'Asia looks like 1997', EM FX intervention risk turbocharged; China property overhaul targets shadow banking",
       "severity": 3,
       "category": "market_dislocation + sovereign_crisis",
-      "description": "CONFIRMED/NEW vs 08:15Z: (a) Most emerging Asian currencies and equities fell Monday on Warsh's hawkish Jackson Hole pivot + oil surge (market.news Aug 31-Sep 1); KOSPI slides Sep 1 (US-Iran clashes, oil, Fed); India equities opened red (carried); rupee ended 95.16/USD - a 4-week HIGH for the currency (RBI stabilization working, still historically weak). (b) UPGRADED from 08:15Z weak single-source signal: Colombia declared an ECONOMIC EMERGENCY (Bloomberg, Aug 19-20); Reuters (Aug 28) reports the deficit is worse than feared and analysts say IMF support may be needed; dollar jumped 80 pesos on budget uncertainty (ColombiaOne Aug 28). Multi-source now (Reuters/Bloomberg) - recorded as confirmed event, severity 3, not yet cat-5. Argentina stable (IMF chief visit positive, $57B program on track).",
+      "description": "SUSTAINED vs Sep 1: Philippine peso hit RECORD LOW as rising oil pressures Asian assets (Interaksyon/Reuters Sep 2). HSBC: Asia's markets 'starting to look a lot like 1997' - biggest risk different this time (IBTimes Sep 2). Most emerging Asian FX/stocks weakened as the global bond selloff drove long-dated UST yields to multi-decade highs (The Edge). Reuters analysis: oil shock 'turbocharges' Asia FX intervention risk. China: sweeping property-finance overhaul targets shadow banking and local-debt risks (Caixin Aug 31); property bust spilling across borders via export dependence (PIIE Aug 7); SCMP notes developer unease amid new rules. Colombia economic emergency (Apr/Aug) + peso pressure carried; Argentina fragile-monetary-framework watch (PIIE Feb) - no fresh Latam breaks this cycle.",
       "sources": [
-        "market.news EM Asia currencies/equities fall (Aug 31)",
-        "finance.yahoo.com Colombia declares economic emergency (Aug 20)",
-        "timeslive.co.za Reuters Colombia deficit worse, IMF support floated (Aug 28)",
-        "colombiaone.com dollar up 80 pesos on budget uncertainty (Aug 28)",
-        "economictimes.com rupee 95.16 (Sep 1)",
-        "sundayguardianlive.com KOSPI slides Sep 1",
-        "hdfcsky.com Dow -374, oil >$90, hike bets surge (Sep 1)"
+        "interaksyon.philstar.com Philippine peso record low (Sep 2)",
+        "ibtimes.com HSBC: Asia markets look like 1997 (Sep 2)",
+        "theedgemalaysia.com EM Asia FX/stocks weaken on UST surge",
+        "reuters.com oil shock turbocharges Asia FX intervention risk",
+        "caixinglobal.com property overhaul targets shadow banking, local debt (Aug 31)",
+        "piie.com China property bust spilling across borders (Aug 7)"
       ],
       "escalate_to": [
         "currency",
-        "fin_stability"
+        "china"
       ]
+    },
+    {
+      "id": "EVT-2026-09-07-0030-004",
+      "domain": "commodities + pandemic_health + africa + financial_system",
+      "title": "Wheat supply crunch warning (Kpler Sep 3) but food insulated so far; DRC Ebola PHEIC sustained (2nd IHR committee Aug 28); no new bank failures; Sudan 4th year sustained",
+      "severity": 2,
+      "category": "food_security + pandemic_watch",
+      "description": "COMMODITIES: Kpler (Sep 3): 'A wheat supply crunch is a warning of things to come' - Black Sea tensions + regional droughts driving wheat up (IFPRI); HOWEVER energy shock has NOT spread to food so far - ample carryover stocks from 2025-26 bumper harvests keep global food prices in check (Indian Express; IFPRI). food_security stays RED on existing data, no new rung. PANDEMIC: DRC/Uganda Ebola (Bundibugyo) PHEIC sustained - WHO 2nd IHR Emergency Committee met Aug 28; Uganda's outbreak declared over Aug 27 after 42-day countdown; no new WHO escalations found this cycle. BANKS: no new bank failures in week's search (5 small US failures YTD baseline). AFRICA: Sudan war 4th year, 'abandoned crisis' sustained - nothing acute/new this cycle.",
+      "sources": [
+        "kpler.com wheat supply crunch warning (Sep 3)",
+        "ifpri.org Black Sea tensions + droughts spark rising wheat prices",
+        "indianexpress.com why energy shock has not spread to food",
+        "who.int 2nd IHR Emergency Committee on Ebola Bundibugyo DRC (Aug 28)",
+        "apnews.com Sudan war enters 4th year"
+      ],
+      "escalate_to": []
     }
-  ],
-  "sustained_tracked": [
-    "pandemic_health: DRC/Uganda Ebola Bundibugyo PHEIC (since May 17) sustained - 2nd IHR Emergency Committee meeting Aug 28, >6,000 cases/~3,000 deaths, no approved vaccine; COVID growing in 48 US states (carried).",
-    "financial_system: no new failures since Tioga-Franklin (5th US failure of 2026, Aug 21); BIS fiscal-financial nexus warning chronic.",
-    "china: five-regulator presale-mortgage overhaul + property support (Aug 28-31) chronic; yuan rally being reined in by PBOC; capital outflows ~$780B 2025 (Barclays, carried).",
-    "africa: Niger mutiny repelled w/ Russia Africa Corps (de-escalated acute phase); Senegal Caa2 hidden-swaps credit collapse tracked.",
-    "commodities ex-oil: gold $4,429 (-3.9% from ~4,610) - liquidation alongside bond rout (real-yield shock), NOT safe-haven bid; BTC ~$78.0K stable (-0.7%).",
-    "eu_ecb: ECB Berlin meeting Sept 9-10; France OAT near 2008 highs (carried); OECD record $29T 2026 issuance context."
-  ],
-  "domains_no_new_events": [
-    "us_fed (no emergency decision; Warsh hike-odds surge folded into EVT-002; Treasury-Fed collision chronic)",
-    "uk (28-yr long-end high folded into EVT-002; no BOE emergency action)",
-    "financial_system (no new failures/freezes)",
-    "africa (Niger/Senegal tracked, no acute event)",
-    "china (chronic property/PBOC items)"
-  ],
-  "board_hygiene": "RE-ESCALATION vs regression: 08:15Z escalated middle_east/energy/currency/europe to red, but the 11:18Z signal-refresh and 12:00Z threshold scans rebuilt the board from stale FRED proxies (middle_east back to amber 'improving' on Aug-25 Brent $88.24) - regression re-fixed by this scan (middle_east, energy, supply_chain, europe, us_cycle -> red with verified Brent $91.05). macro_event signal re-added to board (red/ACTIVE). latest-echo.json + signals.json portal copies re-synced."
+  ]
 }

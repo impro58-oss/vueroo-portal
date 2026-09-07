@@ -2,10 +2,10 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-06T23:00:00.000000+00:00",
+    "last_update": "2026-09-07T00:40:00.000000+00:00",
     "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20
+    "signals_manual": 1,
+    "signals_total": 21
   },
   "signals": {
     "fin_stability": {
@@ -56,17 +56,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "value": 95.45,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-25",
-      "note": "",
-      "timestamp": "2026-09-01T17:18:24.924664+00:00"
+      "last_date": "2026-09-06",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0030 (refresh regressed to amber again): Brent $95.45 (Markets Insider ~23:36Z Sep 6, 'near $97' Gulf News Sep 7) - war high, +4.4 vs Sep 1. US tanker strikes + blockade + Iran exclusion zone.",
+      "timestamp": "2026-09-07T00:40:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -101,17 +101,17 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 88.24,
+      "value": 95.45,
       "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-08-25",
-      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-09-01T17:18:15.384535+00:00"
+      "last_date": "2026-09-06",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0030: Iran Hormuz exclusion zone formalizes choke (5 vessels/day Sep 1 baseline); US counter-blockade; war-risk routing institutionalized.",
+      "timestamp": "2026-09-07T00:40:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -281,17 +281,17 @@
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 88.24,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 7,
+      "value": 95.45,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
       "change_from_last": -4.47,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-08-25",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-09-01T17:18:28.898575+00:00"
+      "last_date": "2026-09-06",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0030 (refresh regressed to amber again): US sank 3 Iranian oil tankers Sep 5; Iran Hormuz exclusion zone; Brent $95.45 war high.",
+      "timestamp": "2026-09-07T00:40:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -307,6 +307,21 @@
       "last_date": "2026-07-01",
       "note": "",
       "timestamp": "2026-09-01T17:18:29.230058+00:00"
+    },
+    "macro_event": {
+      "name": "Breaking Macro Event",
+      "domain": "Global",
+      "value": "ACTIVE",
+      "unit": "",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 10,
+      "change_from_last": 0,
+      "description": "Category-5 breaking event tracker (4h web-scan layer)",
+      "series_id": null,
+      "last_date": "2026-09-07",
+      "note": "ACTIVE+ESCALATED blackwatch-2026-09-07-0030: CAT-5 tanker war (US sank 3 Iranian tankers Sep 5; Iran Hormuz exclusion zone Sep 7; Brent $95.45-97 war high) + bond wildfire sustained. See breaking-event-2026-09-07-0030.json.",
+      "timestamp": "2026-09-07T00:40:00.000000+00:00"
     }
   },
   "overall_risk": {
