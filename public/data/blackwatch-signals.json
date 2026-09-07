@@ -1,29 +1,27 @@
 {
   "metadata": {
-    "source": "FRED API + manual assessment",
+    "source": "FRED API + manual assessment + web-verified spot check",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-07T06:00:00.000000+00:00",
+    "last_update": "2026-09-07T05:55:00+00:00",
     "signals_auto": 20,
-    "signals_manual": 1,
-    "signals_total": 21,
-    "threshold_breach": "Gold spot 4,359 > 3,500 RED mania wire (+24.6%, manual web refresh 06:00Z) + Tanker war sustained CAT-5 + Iran struck US unmanned vessel + Hormuz prohibited zone imminent + Fed hike odds re-reversed up (Aug NFP blowout) + EU gas 3-yr high dual shock + Ebola deaths >3,000",
-    "breaking_event": "blackwatch-2026-09-07-0430: CAT-5 SUSTAINED (US-Iran tanker war, no new increment), 5 events logged, 10 signals escalated/refreshed; REGRESS REPAIR x4 (01:39Z refresh re-wiped 5 escalations)"
+    "signals_manual": 0,
+    "signals_total": 20
   },
   "signals": {
     "fin_stability": {
       "name": "Financial Stability",
       "domain": "Financial",
-      "value": 2.6,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": -0.03,
+      "value": 2.65,
+      "status": "green",
+      "trend": "stable",
+      "confidence": 7,
+      "change_from_last": -0.01,
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-09-07",
-      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to green): bond wildfire sustained - UST 10Y 4.77% (Sep 3), JGB 10Y 3.02%/30Y 4.18% (30Y auction = global long-end repricing bellwether, Sep 3), Bund 2011 high. NEW: private credit to fund ~$800B AI data-center debt as hyperscaler bond cover ratios fall 5x-><2x; $1.5T funding gap; BIS 2026 annual report flags AI bubble + circular financing + sovereign debt as TOP financial risks. No new bank failures.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-03",
+      "note": "",
+      "timestamp": "2026-09-07T05:30:56.171182+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -31,14 +29,14 @@
       "value": 1.33,
       "status": "amber",
       "trend": "stable",
-      "confidence": 5,
+      "confidence": 3,
       "change_from_last": 0,
       "unit": "%",
       "description": "M2 Money Supply YoY growth",
       "series_id": "WM2NS",
       "last_date": "2026-08-03",
       "note": "",
-      "timestamp": "2026-09-01T11:18:09.991142+00:00"
+      "timestamp": "2026-09-07T05:30:56.639521+00:00"
     },
     "sov_debt": {
       "name": "Sovereign Debt Stress",
@@ -53,37 +51,37 @@
       "series_id": "GFDEGDQ188S",
       "last_date": "2026-01-01",
       "note": "",
-      "timestamp": "2026-09-01T11:18:10.381593+00:00"
+      "timestamp": "2026-09-07T05:30:57.227322+00:00"
     },
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 94.27,
-      "status": "red",
+      "value": 96.02,
+      "status": "amber",
       "trend": "deteriorating",
-      "confidence": 9,
-      "change_from_last": 3.22,
+      "confidence": 7,
+      "change_from_last": 6.27,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-07",
-      "note": "SUSTAINED blackwatch-2026-09-07-0430: Brent $94.27 live Sep 7 (~04:30Z, -1.25 intraday pullback), band $94-97 (Gulf News Sep 7: 'hold near $97'; Economic Times: 'approaches $100'); OPEC+ HOLDS output - buyers in control (FXEmpire Sep 7). DUAL SHOCK: European gas at 3-YEAR HIGH (TTF >EUR70/MWh Aug 31; 4th consecutive weekly rise Sep 4; Norwegian outages + LNG tightness + ME fighting) - second energy front. +3.2 vs Sep 1 $91.05; 52wk 58.72-126.41.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-01",
+      "note": "",
+      "timestamp": "2026-09-07T05:30:57.623481+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
       "domain": "Geopolitics",
-      "value": 14.43,
-      "status": "red",
+      "value": 14.32,
+      "status": "green",
       "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": -0.08,
+      "confidence": 7,
+      "change_from_last": -0.88,
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
-      "last_date": "2026-09-07",
-      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed red->green on stale data - 4th regress-loop occurrence): US-Iran MUTUAL vessel attacks sustained (US sank 3 Iranian tankers Sep 5 after warships targeted by BMs; Iran struck US unmanned military vessel in Hormuz Sep 6); Israel-Lebanon second front - 4 killed (Sep 6); Iran exclusion/prohibited zone + 'more painful response' renewed (Sep 7); US blockade sustained; mediation absent, markets price chronic Gulf crisis through Nov midterms (BBC).",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-03",
+      "note": "PROXY WARNING: VIX-based proxy reads green/stable while US-Iran kinetic naval conflict is active (tanker strikes, Hormuz exclusion zone declared 2026-09-07). Proxy is showing market complacency, not conflict reality. Manual override recommended Phase 2.",
+      "timestamp": "2026-09-07T05:30:57.979289+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -96,24 +94,24 @@
       "change_from_last": 0,
       "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
       "series_id": null,
-      "last_date": "2026-09-01",
-      "note": "Lumina assesses during daily echo scan by searching for recent CISA alerts, major breach events, and ENISA threat reports. Updated daily.",
-      "timestamp": "2026-09-01T11:18:05.432289+00:00"
+      "last_date": "2026-09-07",
+      "note": "Assessed 2026-09-07: Elevated. Week events: Liquid Network 4,000 BTC (~\\) federation-reserve breach; JetBrains TeamCity CVE-2026-63077 exploited for AWS creds; Magento/Adobe Commerce 0-day RCE actively exploited; MikroTik pre-auth RCE chain; Mathspace 1M+ records; Weverse 422K accounts.",
+      "timestamp": "2026-09-07T05:30:57.617092+00:00"
     },
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 94.27,
+      "value": 96.02,
       "unit": "$/bbl (proxy)",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 9,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 5,
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-09-07",
-      "note": "SUSTAINED blackwatch-2026-09-07-0430: Iran prohibited/exclusion zone formalization IMMINENT ('in coming days', AJ live Sep 7; Straits Times) + Iran plans to announce NEW Hormuz shipping route - choke institutionalizing on BOTH sides (US counter-blockade sinking tankers; Iran formalizing exclusion). Wheat 2-year high adds Black Sea strain (AA; AJ Aug 31 'war and heat'). Kpler Sep 1: 5 visible commodity vessels/day baseline.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-01",
+      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
+      "timestamp": "2026-09-07T05:30:57.617092+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -121,14 +119,14 @@
       "value": 131.78,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 3,
       "change_from_last": 1.47,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
-      "last_date": "2026-08-31",
-      "note": "SUSTAINED blackwatch-2026-09-07-0430: wheat at 2-YEAR HIGH (highest since May 2024) - Black Sea attacks + El Nino droughts (Anadolu); AJ Aug 31: 'war and heat - why wheat prices are soaring'; Kpler Sep 3 supply-crunch warning; food so far insulated by carryover stocks. DRC conflict also threatens Ebola response logistics (Sep 3).",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-07-01",
+      "note": "",
+      "timestamp": "2026-09-07T05:30:58.655006+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -143,7 +141,7 @@
       "series_id": "NOAA NCEI",
       "last_date": "2026",
       "note": "Live from NOAA climate API",
-      "timestamp": "2026-09-01T11:18:04.788876+00:00"
+      "timestamp": "2026-09-07T05:30:56.830430+00:00"
     },
     "social_cohesion": {
       "name": "Social Cohesion",
@@ -158,7 +156,7 @@
       "series_id": "UMCSENT",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-09-01T11:18:12.257028+00:00"
+      "timestamp": "2026-09-07T05:30:59.009408+00:00"
     },
     "inst_trust": {
       "name": "Institutional Trust",
@@ -173,7 +171,7 @@
       "series_id": null,
       "last_date": "2025-Q1",
       "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-09-01T11:18:05.432289+00:00"
+      "timestamp": "2026-09-07T05:30:57.617092+00:00"
     },
     "ai_acceleration": {
       "name": "AI Acceleration",
@@ -186,54 +184,54 @@
       "change_from_last": 0,
       "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
       "series_id": null,
-      "last_date": "2026-09-01",
+      "last_date": "2026-09-07",
       "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-09-01T11:18:05.432289+00:00"
+      "timestamp": "2026-09-07T05:30:57.617092+00:00"
     },
     "currency": {
       "name": "Currency Stability",
       "domain": "Currency",
       "value": 118.75,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 7,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 5,
       "change_from_last": 0.39,
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
-      "last_date": "2026-09-07",
-      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to info): NEW CHANNEL - 'Philippine peso left behind in Asia as oil shock ERODES DOLLAR RESERVES' (The Edge Malaysia Sep 7 04:03Z); peso record low P62.565 sustained (Sep 3); BSP intervention expected (BW Sep 4); AJ Sep 4 ties plunge to Iran-war fallout. EM FX intervention risk turbocharged (Reuters). Yen at one-month high Sep 3 on BOJ bets/intervention credibility - Japan pressure EASED even as EM stress builds.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-08-28",
+      "note": "Stability = low volatility. Track change rate.",
+      "timestamp": "2026-09-07T05:30:59.375744+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4359.32,
-      "unit": "USD/oz",
-      "status": "red",
-      "trend": "deteriorating",
+      "value": 4361.0,
+      "unit": "$/oz",
+      "status": "amber",
+      "trend": "improving",
       "confidence": 9,
-      "change_from_last": -62.48,
-      "description": "Gold Spot (XAU/USD): USD 4,359.32/oz (web check 06:00Z; MI 4,361.01, APMEX 4,342.00)",
-      "series_id": "Web spot (goldprice.com/Metals.dev)",
+      "change_from_last": 26.5,
+      "description": "Gold Spot: ~,361 (+0.61%) - web-verified today",
+      "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-09-07",
-      "note": "MANUAL WEB REFRESH 2026-09-07T06:00Z (gold-spot cron): spot 4,359.32/oz (goldprice.com updated 06:00Z; corroborated Markets Insider 4,361.01 05:59Z, APMEX 4,342.00). RED mania wire >3500 breached by +24.6% — status green->RED (evidenced tripwire; 04:37Z rescan intent restored after canonical overwrites). Pullback from GC=F futures 4,476.6 (04:37Z); weekend spot cluster Sep 6 4,340-4,360. Connector scripts missing on DreamQuest — manual web refresh only.",
-      "timestamp": "2026-09-07T06:00:00.000000+00:00"
+      "note": "Spot via web search 2026-09-07 (Markets Insider 4361.01 / goldprice.com 4359.32 / APMEX 4342 consensus ~4350). COMEX futures GC=F at 4476.60 carry ~ premium. 19.3% below ATH 5405 (Jan 2026).",
+      "timestamp": "2026-09-07T05:30:55.759752+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
       "domain": "Currency",
-      "value": 77975,
+      "value": 79843,
       "unit": "$",
       "status": "green",
       "trend": "stable",
       "confidence": 9,
-      "change_from_last": -0.7,
-      "description": "BTC $77,975 (-0.7% 24h), Dominance: 76.6%",
+      "change_from_last": 0.0,
+      "description": "BTC $79,843 (+0.0% 24h), Dominance: 76.6%",
       "series_id": "CoinGecko API",
-      "last_date": "2026-09-01",
+      "last_date": "2026-09-07",
       "note": "Live from CoinGecko API",
-      "timestamp": "2026-09-01T11:18:04.219634+00:00"
+      "timestamp": "2026-09-07T05:30:56.450907+00:00"
     },
     "china": {
       "name": "China Health",
@@ -248,52 +246,52 @@
       "series_id": "BSCICP03CNM665S",
       "last_date": "2024-01-01",
       "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-09-01T11:18:03.988405+00:00"
+      "timestamp": "2026-09-07T05:30:56.140011+00:00"
     },
     "europe": {
       "name": "Europe Stability",
       "domain": "Europe",
       "value": 2.25,
-      "status": "red",
-      "trend": "deteriorating",
+      "status": "amber",
+      "trend": "stable",
       "confidence": 9,
       "change_from_last": 0.0,
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
-      "last_date": "2026-09-07",
-      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to amber): DUAL SHOCK - European gas 3-YEAR HIGH (TTF >EUR70 Aug 31; 4th straight weekly rise Sep 4; Norwegian outages + LNG tight + ME fighting) and euro bond selloff 'amid rising gas prices' (Sep 7 04:19Z); Bund 2011 high (Sep 2); gilt rout hands Burnham GBP 14bn hole before first Budget, tax rises 'increasingly likely' (Sep 5); ECB 25bp HIKE expected Sep 10 (ING preview).",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-04",
+      "note": "Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+      "timestamp": "2026-09-07T05:31:01.834814+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
       "domain": "United States",
       "value": 0.41,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 8,
-      "change_from_last": 0.02,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "change_from_last": -0.02,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
-      "last_date": "2026-09-07",
-      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to amber): Fed Sep 15-16 hike odds RE-REVERSED UP on August NFP BLOWOUT - Polymarket 55% 25bp-hike / 39% no change (Sep 7), stockwirex: 'jobs beat sends hike odds to 62%'; CPI verdict next. REVERSES the Waller Sep-3 de-escalation tick (66-68% -> 51-60% -> 55-62%). 10Y 4.77%. Synchronized tightening window intact: ECB Sep 10, FOMC Sep 16 (dot plot), BOJ Sep 18 - hiking-into-oil-shock regime.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-04",
+      "note": "",
+      "timestamp": "2026-09-07T05:31:02.433302+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 94.27,
-      "status": "red",
+      "value": 96.02,
+      "status": "amber",
       "trend": "deteriorating",
-      "confidence": 9,
-      "change_from_last": 3.22,
+      "confidence": 7,
+      "change_from_last": 6.27,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-07",
-      "note": "SUSTAINED blackwatch-2026-09-07-0430: CAT-5 tanker war, month 6+, no new mass-sinking but NEW RUNGS: Iran struck a US UNMANNED military vessel in Hormuz (Sep 6, Independent) - direct US-asset strike; Iran to declare Hormuz PROHIBITED/exclusion zone AND announce NEW Hormuz shipping route 'in coming days' (AJ live Sep 7; Straits Times; Business Times 05:56 SG); top negotiator warns heavier responses to any new attacks; 'more painful response' renewed (ABC Sep 7); Israeli strikes kill 4 in Lebanon - SECOND FRONT active (Sep 6). US blockade sustained; 'lethal stalemate' (IBTimes). Brent $94.27 (live, -1.25).",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "last_date": "2026-09-01",
+      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
+      "timestamp": "2026-09-07T05:31:02.791533+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -308,33 +306,18 @@
       "series_id": "UMCSENT",
       "last_date": "2026-07-01",
       "note": "",
-      "timestamp": "2026-09-01T11:18:14.797569+00:00"
-    },
-    "macro_event": {
-      "name": "Breaking Macro Event",
-      "domain": "Global",
-      "value": "ACTIVE",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 10,
-      "change_from_last": 0,
-      "unit": "",
-      "description": "Category-5 breaking event tracker (4h web-scan layer)",
-      "series_id": null,
-      "last_date": "2026-09-07",
-      "note": "ACTIVE SUSTAINED blackwatch-2026-09-07-0430: CAT-5 tanker war holds (US sank 3 tankers Sep 5; Iran struck US unmanned vessel Sep 6; prohibited zone + new shipping route 'coming days'; Lebanon second front; Brent $94.27 war band $94-97). No NEW CAT-5 increment vs 00:32Z scan. New rungs: Fed hike odds re-reversed up to 55-62% (Aug NFP blowout), EU gas 3-yr high dual shock, Ebola deaths >3,000 (48% CFR), EM reserve-erosion channel. See blackwatch-macro-event.json + breaking-event-2026-09-07-0430.json.",
-      "timestamp": "2026-09-07T04:40:00.000000+00:00"
+      "timestamp": "2026-09-07T05:31:03.413641+00:00"
     }
   },
   "overall_risk": {
     "level": "CRITICAL",
     "color": "red",
-    "score": 470,
-    "red_count": 14,
-    "amber_count": 5,
-    "green_count": 2,
+    "score": 456,
+    "red_count": 5,
+    "amber_count": 11,
+    "green_count": 3,
     "manual_count": 1,
-    "timestamp": "2026-09-07T04:40:00.000000+00:00"
+    "timestamp": "2026-09-07T05:31:03.423670+00:00"
   },
   "convergence": {
     "stressed_domains": [
@@ -393,6 +376,12 @@
         "stress_level": 1
       },
       {
+        "domain": "Currency",
+        "red": 0,
+        "amber": 1,
+        "stress_level": 1
+      },
+      {
         "domain": "Europe",
         "red": 0,
         "amber": 1,
@@ -444,6 +433,6 @@
         "stress_level": 2
       }
     ],
-    "timestamp": "2026-09-01T11:18:14.809181+00:00"
+    "timestamp": "2026-09-07T05:31:03.423670+00:00"
   }
 }
