@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T04:40:00.000000+00:00",
-  "scan_id": "blackwatch-2026-09-07-0430",
+  "last_updated": "2026-09-07T06:00:00.000000+00:00",
+  "scan_id": "blackwatch-2026-09-07-0700",
   "signals": {
     "japan_yen": "ACTIVE",
     "us_recession": "ACTIVE",
@@ -21,12 +21,35 @@
     "crypto_collapse": 40,
     "global_pandemic": 40
   },
-  "score_basis": "blackwatch-2026-09-07-0430 breaking scan (20 web queries, 12 domains) vs 00:32Z same-day baseline: middle_east_war 200 MAXED SUSTAINED (US sank 3 Iranian tankers Sep 5; Iran struck US unmanned vessel Sep 6; Hormuz prohibited zone + new shipping route 'coming days'; Israeli strikes kill 4 in Lebanon - second front; Brent $94.27-97 war band), us_recession 200 MAXED maintained (bond wildfire + REVERSAL: Fed hike odds re-rose 51-60% -> 55-62% on Aug NFP blowout - the Waller de-escalation tick is dead; CPI verdict next), japan_yen 100 (JGB 10Y 3.02% / 30Y 4.18%; 30Y auction = global repricing bellwether; yen one-month high eases FX pressure), china_collapse 110 (property overhaul targets shadow banking/local debt - Caixin Aug 31; no fresh Sep 7 developments), euro_crisis 100 (NEW: EU gas 3-YEAR HIGH - TTF >EUR70, 4th weekly rise; euro bond selloff amid rising gas Sep 7; gilt rout GBP14bn sustained; ECB 25bp expected Sep 10), asian_contagion 85->90 (NEW CHANNEL: oil shock erodes EM dollar reserves - peso 'left behind', record low P62.565, BSP intervention expected), crypto_collapse WATCH 40 (no fresh stress found), global_pandemic WATCH->DEVELOPING 8->40 (DRC Ebola deaths PASS 3,000 of 6,250 cases ~48% CFR; 'still evolving'; spreading FASTER than containment; conflict derailing response).",
+  "formal_lead_scan_scores": {
+    "japan_yen": 53,
+    "us_recession": 95,
+    "middle_east_war": 100,
+    "china_collapse": 21,
+    "euro_crisis": 81,
+    "asian_contagion": 92,
+    "crypto_collapse": 36,
+    "global_pandemic": 0
+  },
+  "formal_scale_note": "formal_lead_scan_scores are the 07:00Z Lead Indicator Scanner v2.1 output on the 0-100 capped scale (min(100, raw_sum x 0.17 + 5x(categories_beyond_2))). convergence_scores above remain the hand-assessment layer on the 0-200 composite scale (confirmed-state-change rule). Hand layer is the live board; formal layer is the methodological cross-check. No downgrade wiping: hand-layer ACTIVE states stand on confirmed evidence even where the formal scan found no fresh increments (china_collapse, japan_yen, euro_crisis).",
+  "score_basis": "blackwatch-2026-09-07-0700 formal lead scan (13 web queries, 8 categories, 30 findings) confirming + extending the 04:30Z breaking scan: middle_east_war 100 formal ACTIVE SUSTAINED (US sank 3 Iranian tankers Sep 5; Iran struck US unmanned vessel Sep 6; restricted zone OUTSIDE Hormuz announced Sep 7, 'within days'; Israel-Lebanon second front; Brent $94-97; Hormuz traffic -95%), us_recession 95 formal / ACTIVE hand (bond wildfire 'no plan'/'next domino mispriced' + Fed hike odds re-reversed 55-62% on Aug NFP + Japan UST sales funding + $800B private-credit AI debt <2x cover), asian_contagion 92 DEVELOPING (6-category breadth: Japan intervention/repatriation + JGB 3.02%/4.18% + China recap skepticism + EM dollar-reserve erosion + Jakarta unrest), euro_crisis 81 formal / ACTIVE hand (NEW: France>Italy OAT inversion, France-bund spread at debt-crisis levels, 57.5% foreign-held, Japan repatriation; ECB Sep 10 hike expected), japan_yen 53 formal / ACTIVE hand (record intervention milestone, funding mechanism is the structural risk), china_collapse 21 formal / ACTIVE hand (no fresh stress data; $54bn recap Sep 7 met with skepticism), crypto_collapse 36-40 WATCH (BTC <$80K intraday on Fed hike bets; Liquid breach absorbed; overnight price bands approved), global_pandemic 40 DEVELOPING carried on Ebola >3,000 deaths ~48% CFR (single-category this scan).",
   "active_count": 5,
   "developing_count": 2,
   "watch_count": 1,
   "clear_count": 0,
-  "methodology_divergence_note": "SUSTAINMENT run vs 00:32Z: no new CAT-5 increment - the tanker-war institutionalization (sinking tankers, exclusion zone) was already priced into the board. New rungs this scan: (1) Iran struck a US UNMANNED vessel - first claimed direct strike on a US vessel; (2) Israel-Lebanon front active (4 killed); (3) Fed hike odds RE-REVERSED UP on Aug NFP blowout - kills the one de-escalation tick from 00:32Z; (4) EU gas 3-yr high = second energy front (dual oil+gas shock); (5) EM dollar-reserve erosion channel named; (6) Ebola deaths crossed 3,000 at ~48% CFR, outpacing containment -> global_pandemic WATCH->DEVELOPING. REGRESS LOOP 4th OCCURRENCE: 01:39Z threshold refresh re-wiped geopolitical/fin_stability/currency/europe/us_cycle escalations (and had flipped macro-related signals on stale Aug-25 proxies); re-escalated here with fresh evidence. The refresh script must ingest breaking-event escalations.",
-  "active_count_note": "FIVE ACTIVE threads sustained into 6th month of war: middle_east_war + us_recession (both 200 maxed), japan_yen, china_collapse, euro_crisis. September synchronized tightening INTACT and hardened: ECB Sep 10 (25bp expected), FOMC Sep 15-16 (~55-62% hike), BOJ Sep 18.",
-  "highest_alert": "middle_east_war 200 (SUSTAINED CAT-5) + us_recession 200 + euro_crisis 100. Tanker war: US sank 3 Iranian tankers Sep 5; Iran struck US unmanned vessel Sep 6; Hormuz prohibited zone + new route 'coming days'; Lebanon second front; Brent $94.27-97. Bond wildfire: UST 10Y 4.77%, JGB 10Y >3%/30Y 4.18%, Bund 2011 high; private credit funding $800B AI data-center debt (cover ratios <2x); BIS top-risk flags. Fed odds re-reversed UP to 55-62% on Aug NFP. EU gas 3-yr high. Ebola deaths >3,000."
+  "methodology_divergence_note": "SUSTAINMENT run by the 07:00 IST Lead Indicator Scanner (formal v2.1): no state changes vs 04:30Z breaking scan — five ACTIVE threads sustained. New rungs this scan: (1) RECORD yen intervention with inferred US Treasury sales as funding; (2) France-Italy OAT inversion + Japan repatriation channel named; (3) Fed hike odds re-reversed UP on Aug NFP; (4) overnight-session price-band approval; (5) China $54bn recap announced and market-skeptical. REGRESS LOOP history stands: 01:39Z threshold refresh re-wiped geopolitical/fin_stability/currency/europe/us_cycle escalations on stale Aug-25 proxies; hand-layer confirmed-state rule remains authoritative. The refresh script must ingest breaking-event escalations.",
+  "active_count_note": "FIVE ACTIVE threads sustained into 6th month of war: middle_east_war + us_recession (both 200 maxed), japan_yen, china_collapse, euro_crisis. September synchronized tightening INTACT and hardened: ECB Sep 10 (25bp expected), FOMC Sep 15-16 (~55-62% hike), BOJ Sep 18. Formal layer independently reaches ACTIVE for middle_east_war (100) and one-below-cap for us_recession (95) — consistent with the hand board.",
+  "highest_alert": "middle_east_war 200 (SUSTAINED CAT-5) + us_recession 200 + euro_crisis 100. Tanker war institutionalized: US sank 3 Iranian tankers Sep 5; Iran struck US unmanned vessel Sep 6; Iran restricted zone OUTSIDE Hormuz announced Sep 7 ('within days'); Lebanon second front; Brent $94-97 war band; Hormuz traffic -95%. Bond wildfire: UST/gilts decades-high yields, 'no plan' commentary; JGB 10Y 3.02% / 30Y 4.18% with 30Y auction as global repricing bellwether; private credit funding $800B AI data-center debt (cover ratios <2x); BIS top-risk flags. NEW: Japan likely sold USTs to fund record yen intervention (Bloomberg Sep 6). France>Italy OAT inversion at debt-crisis-level spreads. Fed odds re-reversed UP to 55-62% on Aug NFP. EU gas 3-yr high. Ebola deaths >3,000 at ~48% CFR.",
+  "alert_log": [
+    {
+      "timestamp": "2026-09-07T04:40:00+00:00",
+      "event": "State updates: global_pandemic WATCH->DEVELOPING; asian_contagion 85->90; euro_crisis gas rung (TTF 3-yr high); Fed odds re-reversal. Five ACTIVE held.",
+      "channel": "hand-assessment (breaking scan 0430Z)"
+    },
+    {
+      "timestamp": "2026-09-07T06:00:00+00:00",
+      "event": "07:00 IST Lead Indicator Scanner sustainment: formal layer confirms middle_east_war ACTIVE (100) and us_recession 95 (one below cap); 5 ACTIVE / 2 DEVELOPING / 1 WATCH held. No state change -> no new outbound alert required (ACTIVE state already communicated 04:40Z). Telegram delivery not configured in scanner run context (BlackWatch scope: external messaging out of protocol scope).",
+      "channel": "formal scan (lead-indicators.json)"
+    }
+  ]
 }
