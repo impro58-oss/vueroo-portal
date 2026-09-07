@@ -2,12 +2,12 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-07T00:40:00.000000+00:00",
+    "last_update": "2026-09-07T04:40:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "threshold_breach": "Hormuz EXCLUSION ZONE announced + US sinks 3 Iranian tankers + Brent ~$95.5-97 war high + JGB >3% first in 30y",
-    "breaking_event": "blackwatch-2026-09-07-0030: CAT-5 ESCALATED (US-Iran tanker war), 4 events logged, 7 signals escalated/refreshed"
+    "threshold_breach": "Tanker war sustained CAT-5 + Iran struck US unmanned vessel + Hormuz prohibited zone imminent + Fed hike odds re-reversed up (Aug NFP blowout) + EU gas 3-yr high dual shock + Ebola deaths >3,000",
+    "breaking_event": "blackwatch-2026-09-07-0430: CAT-5 SUSTAINED (US-Iran tanker war, no new increment), 5 events logged, 10 signals escalated/refreshed; REGRESS REPAIR x4 (01:39Z refresh re-wiped 5 escalations)"
   },
   "signals": {
     "fin_stability": {
@@ -21,9 +21,9 @@
       "unit": "%",
       "description": "US High Yield OAS Spread",
       "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-09-06",
-      "note": "SUSTAINED blackwatch-2026-09-07-0030: 'bond market wildfire' global (BBC Islam Sep 3, republished Sep 6) - multi-decade yields across majors. NEW RUNG: AI hyperscalers $219bn YTD issuance (vs $93bn 2025, <$40bn/yr before; $400-500bn expected) - el-Erian: 'biggest new factor' crowding sovereign borrowing. JGB >3% first in 30y (Sep 4).",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to green): bond wildfire sustained - UST 10Y 4.77% (Sep 3), JGB 10Y 3.02%/30Y 4.18% (30Y auction = global long-end repricing bellwether, Sep 3), Bund 2011 high. NEW: private credit to fund ~$800B AI data-center debt as hyperscaler bond cover ratios fall 5x-><2x; $1.5T funding gap; BIS 2026 annual report flags AI bubble + circular financing + sovereign debt as TOP financial risks. No new bank failures.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "liquidity": {
       "name": "Liquidity Conditions",
@@ -58,17 +58,17 @@
     "energy": {
       "name": "Energy Security",
       "domain": "Energy",
-      "value": 95.45,
+      "value": 94.27,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 4.4,
+      "change_from_last": 3.22,
       "unit": "$/bbl",
       "description": "Brent Crude Oil Price",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-06",
-      "note": "ESCALATED blackwatch-2026-09-07-0030: Brent $95.45 (Markets Insider ~23:36Z Sep 6; Gulf News Sep 7: 'hold near $97') - war high, +4.4 vs Sep 1 $91.05. US struck/sank 3 Iranian oil tankers Sep 5 (PBS/AP) after warships targeted by ballistic missiles; US maintains naval blockade (AJ Sep 6); Iran to declare Hormuz exclusion zone for selected vessels (Sep 7). 52wk range 58.72-126.41.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "SUSTAINED blackwatch-2026-09-07-0430: Brent $94.27 live Sep 7 (~04:30Z, -1.25 intraday pullback), band $94-97 (Gulf News Sep 7: 'hold near $97'; Economic Times: 'approaches $100'); OPEC+ HOLDS output - buyers in control (FXEmpire Sep 7). DUAL SHOCK: European gas at 3-YEAR HIGH (TTF >EUR70/MWh Aug 31; 4th consecutive weekly rise Sep 4; Norwegian outages + LNG tightness + ME fighting) - second energy front. +3.2 vs Sep 1 $91.05; 52wk 58.72-126.41.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "geopolitical": {
       "name": "Geopolitical Conflict",
@@ -81,9 +81,9 @@
       "unit": "index",
       "description": "VIX as market fear proxy (GDELT integration planned)",
       "series_id": "VIXCLS",
-      "last_date": "2026-09-06",
-      "note": "REFRESH blackwatch-2026-09-07-0030: direct attacks on oil shipping - US sank 3 tankers (Sep 5), Iran exclusion zone + retaliation vows (Sep 6-7); markets now price chronic Gulf crisis through Nov US midterms (BBC Sep 3); mediation absent.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed red->green on stale data - 4th regress-loop occurrence): US-Iran MUTUAL vessel attacks sustained (US sank 3 Iranian tankers Sep 5 after warships targeted by BMs; Iran struck US unmanned military vessel in Hormuz Sep 6); Israel-Lebanon second front - 4 killed (Sep 6); Iran exclusion/prohibited zone + 'more painful response' renewed (Sep 7); US blockade sustained; mediation absent, markets price chronic Gulf crisis through Nov midterms (BBC).",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "cyber": {
       "name": "Cyber Threat Level",
@@ -103,7 +103,7 @@
     "supply_chain": {
       "name": "Supply Chain Health",
       "domain": "Supply Chain",
-      "value": 95.45,
+      "value": 94.27,
       "unit": "$/bbl (proxy)",
       "status": "red",
       "trend": "deteriorating",
@@ -111,9 +111,9 @@
       "change_from_last": 0,
       "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
       "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-09-06",
-      "note": "ESCALATED blackwatch-2026-09-07-0030: Iran to declare Hormuz exclusion zone for selected vessels - formalizes the choke beyond the 5-vessels/day de facto halt (Kpler Sep 1); US counter-blockade sinking tankers; war-risk routing now institutionalized on both sides. Wheat supply crunch adds Black Sea risk (Kpler Sep 3).",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "SUSTAINED blackwatch-2026-09-07-0430: Iran prohibited/exclusion zone formalization IMMINENT ('in coming days', AJ live Sep 7; Straits Times) + Iran plans to announce NEW Hormuz shipping route - choke institutionalizing on BOTH sides (US counter-blockade sinking tankers; Iran formalizing exclusion). Wheat 2-year high adds Black Sea strain (AA; AJ Aug 31 'war and heat'). Kpler Sep 1: 5 visible commodity vessels/day baseline.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "food_security": {
       "name": "Food Security",
@@ -121,14 +121,14 @@
       "value": 131.78,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 3,
+      "confidence": 7,
       "change_from_last": 1.47,
       "unit": "index",
       "description": "IMF Food Price Index",
       "series_id": "PFOODINDEXM",
-      "last_date": "2026-07-01",
-      "note": "",
-      "timestamp": "2026-09-01T11:18:11.935670+00:00"
+      "last_date": "2026-08-31",
+      "note": "SUSTAINED blackwatch-2026-09-07-0430: wheat at 2-YEAR HIGH (highest since May 2024) - Black Sea attacks + El Nino droughts (Anadolu); AJ Aug 31: 'war and heat - why wheat prices are soaring'; Kpler Sep 3 supply-crunch warning; food so far insulated by carryover stocks. DRC conflict also threatens Ebola response logistics (Sep 3).",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "climate": {
       "name": "Climate Stress",
@@ -201,9 +201,9 @@
       "unit": "index",
       "description": "Trade-Weighted Dollar Index (broad)",
       "series_id": "DTWEXBGS",
-      "last_date": "2026-09-06",
-      "note": "REFRESH blackwatch-2026-09-07-0030: yen RECOVERED >1% Sep 3 to one-month high (CNBC) on BOJ hike bets + intervention credibility - currency pressure EASED in Japan even as JGB >3% sustained. EM stress UP: Philippine peso RECORD LOW (Sep 2), HSBC: Asia 'looks like 1997'; EM Asia FX/stocks weak on UST long-end multi-decade highs.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to info): NEW CHANNEL - 'Philippine peso left behind in Asia as oil shock ERODES DOLLAR RESERVES' (The Edge Malaysia Sep 7 04:03Z); peso record low P62.565 sustained (Sep 3); BSP intervention expected (BW Sep 4); AJ Sep 4 ties plunge to Iran-war fallout. EM FX intervention risk turbocharged (Reuters). Yen at one-month high Sep 3 on BOJ bets/intervention credibility - Japan pressure EASED even as EM stress builds.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "gold": {
       "name": "Gold / Precious Metals",
@@ -261,9 +261,9 @@
       "unit": "%",
       "description": "ECB Deposit Rate (proxy for EU stability)",
       "series_id": "ECBDFR",
-      "last_date": "2026-09-05",
-      "note": "SUSTAINED blackwatch-2026-09-07-0030: UK gilt rout hands Burnham govt £14bn hole weeks before first Budget (Sep 2); tax rises 'increasingly likely' (Sep 5); Burnham trying to calm bond markets. ECB Sep 10 hike still ahead (~fully priced per Sep 1). Euro-area yields at multi-decade highs per BBC wildfire piece.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to amber): DUAL SHOCK - European gas 3-YEAR HIGH (TTF >EUR70 Aug 31; 4th straight weekly rise Sep 4; Norwegian outages + LNG tight + ME fighting) and euro bond selloff 'amid rising gas prices' (Sep 7 04:19Z); Bund 2011 high (Sep 2); gilt rout hands Burnham GBP 14bn hole before first Budget, tax rises 'increasingly likely' (Sep 5); ECB 25bp HIKE expected Sep 10 (ING preview).",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "us_cycle": {
       "name": "US Cycle Position",
@@ -271,29 +271,29 @@
       "value": 0.41,
       "status": "red",
       "trend": "deteriorating",
-      "confidence": 7,
+      "confidence": 8,
       "change_from_last": 0.02,
       "unit": "%",
       "description": "Yield Curve (10Y-2Y) — recession signal",
       "series_id": "T10Y2Y",
-      "last_date": "2026-09-05",
-      "note": "REFRESH blackwatch-2026-09-07-0030: Fed Sep 16 HIKE odds EASED to ~51-60% (Polymarket 60/39/1.8; WET 51% Sep 5) after Waller 'relented' dovish Sep 3 (TMGM) - down from 66-68% Sep 1. Still hiking-into-oil-shock regime: Brent ~$96, 10Y elevated, synchronized-tightening window (ECB 10th, FOMC 16th, BOJ 18th) intact.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "RE-ESCALATED blackwatch-2026-09-07-0430 (01:39Z refresh regressed to amber): Fed Sep 15-16 hike odds RE-REVERSED UP on August NFP BLOWOUT - Polymarket 55% 25bp-hike / 39% no change (Sep 7), stockwirex: 'jobs beat sends hike odds to 62%'; CPI verdict next. REVERSES the Waller Sep-3 de-escalation tick (66-68% -> 51-60% -> 55-62%). 10Y 4.77%. Synchronized tightening window intact: ECB Sep 10, FOMC Sep 16 (dot plot), BOJ Sep 18 - hiking-into-oil-shock regime.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "middle_east": {
       "name": "Middle East Tension",
       "domain": "Middle East",
-      "value": 95.45,
+      "value": 94.27,
       "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 4.4,
+      "change_from_last": 3.22,
       "unit": "$/bbl",
       "description": "Brent Oil as ME tension proxy",
       "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-06",
-      "note": "ESCALATED blackwatch-2026-09-07-0030 (was regressed to amber by refresh script - regress loop struck again): US strikes sank 3 Iranian oil tankers Sep 5; Iran vows 'more painful response' - 'era of proportionate responses has come to an end' (Ghalib, AJ Sep 6 16:17Z); Iran announces Hormuz exclusion zone for selected vessels (India Today Sep 7); war month 6+ 'lethal stalemate' (IBTimes Sep 6); US blockade sustained. Brent $95.45.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "last_date": "2026-09-07",
+      "note": "SUSTAINED blackwatch-2026-09-07-0430: CAT-5 tanker war, month 6+, no new mass-sinking but NEW RUNGS: Iran struck a US UNMANNED military vessel in Hormuz (Sep 6, Independent) - direct US-asset strike; Iran to declare Hormuz PROHIBITED/exclusion zone AND announce NEW Hormuz shipping route 'in coming days' (AJ live Sep 7; Straits Times; Business Times 05:56 SG); top negotiator warns heavier responses to any new attacks; 'more painful response' renewed (ABC Sep 7); Israeli strikes kill 4 in Lebanon - SECOND FRONT active (Sep 6). US blockade sustained; 'lethal stalemate' (IBTimes). Brent $94.27 (live, -1.25).",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     },
     "public_sentiment": {
       "name": "Public Sentiment",
@@ -322,8 +322,8 @@
       "description": "Category-5 breaking event tracker (4h web-scan layer)",
       "series_id": null,
       "last_date": "2026-09-07",
-      "note": "ACTIVE+ESCALATED blackwatch-2026-09-07-0030: CAT-5 tanker war - US sank 3 Iranian oil tankers (Sep 5), US naval blockade, Iran Hormuz exclusion zone + 'more painful response' vow, Brent $95.45 war high. Bond wildfire sustained (hyperscaler $219bn+ crowding-out, JGB >3% 30y-first, gilt rout vs Burnham budget). See blackwatch-macro-event.json + breaking-event-2026-09-07-0030.json.",
-      "timestamp": "2026-09-07T00:40:00.000000+00:00"
+      "note": "ACTIVE SUSTAINED blackwatch-2026-09-07-0430: CAT-5 tanker war holds (US sank 3 tankers Sep 5; Iran struck US unmanned vessel Sep 6; prohibited zone + new shipping route 'coming days'; Lebanon second front; Brent $94.27 war band $94-97). No NEW CAT-5 increment vs 00:32Z scan. New rungs: Fed hike odds re-reversed up to 55-62% (Aug NFP blowout), EU gas 3-yr high dual shock, Ebola deaths >3,000 (48% CFR), EM reserve-erosion channel. See blackwatch-macro-event.json + breaking-event-2026-09-07-0430.json.",
+      "timestamp": "2026-09-07T04:40:00.000000+00:00"
     }
   },
   "overall_risk": {
@@ -334,7 +334,7 @@
     "amber_count": 5,
     "green_count": 2,
     "manual_count": 1,
-    "timestamp": "2026-09-07T00:40:00.000000+00:00"
+    "timestamp": "2026-09-07T04:40:00.000000+00:00"
   },
   "convergence": {
     "stressed_domains": [
