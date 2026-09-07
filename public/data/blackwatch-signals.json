@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-07T04:44:38.746165+00:00",
+    "last_update": "2026-09-07T06:00:00.000000+00:00",
     "signals_auto": 20,
     "signals_manual": 1,
     "signals_total": 21,
-    "threshold_breach": "Tanker war sustained CAT-5 + Iran struck US unmanned vessel + Hormuz prohibited zone imminent + Fed hike odds re-reversed up (Aug NFP blowout) + EU gas 3-yr high dual shock + Ebola deaths >3,000",
+    "threshold_breach": "Gold spot 4,359 > 3,500 RED mania wire (+24.6%, manual web refresh 06:00Z) + Tanker war sustained CAT-5 + Iran struck US unmanned vessel + Hormuz prohibited zone imminent + Fed hike odds re-reversed up (Aug NFP blowout) + EU gas 3-yr high dual shock + Ebola deaths >3,000",
     "breaking_event": "blackwatch-2026-09-07-0430: CAT-5 SUSTAINED (US-Iran tanker war, no new increment), 5 events logged, 10 signals escalated/refreshed; REGRESS REPAIR x4 (01:39Z refresh re-wiped 5 escalations)"
   },
   "signals": {
@@ -208,17 +208,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4421.8,
-      "unit": "$/oz",
-      "status": "green",
+      "value": 4359.32,
+      "unit": "USD/oz",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -180.7,
-      "description": "Gold Spot (XAU/USD): \\,421.80/oz (web check vs futures \\,429.00)",
-      "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-09-01",
-      "note": "THRESHOLD SCAN 2026-09-07T04:37Z: GC=F futures \\,476.6 — RED mania wire >3500 breached by +27.9% (weekend-frozen; spot cluster Sep 6 \\,340-\\,360). Note re-applied after 12a8d6d0 canonical overwrite dropped the threshold escalation (gold reverted green/Sep-1). || Web-verified spot via goldprice.com; connector scripts missing on DreamQuest — manual web refresh only.",
-      "timestamp": "2026-09-07T04:44:38.746165+00:00"
+      "change_from_last": -62.48,
+      "description": "Gold Spot (XAU/USD): USD 4,359.32/oz (web check 06:00Z; MI 4,361.01, APMEX 4,342.00)",
+      "series_id": "Web spot (goldprice.com/Metals.dev)",
+      "last_date": "2026-09-07",
+      "note": "MANUAL WEB REFRESH 2026-09-07T06:00Z (gold-spot cron): spot 4,359.32/oz (goldprice.com updated 06:00Z; corroborated Markets Insider 4,361.01 05:59Z, APMEX 4,342.00). RED mania wire >3500 breached by +24.6% — status green->RED (evidenced tripwire; 04:37Z rescan intent restored after canonical overwrites). Pullback from GC=F futures 4,476.6 (04:37Z); weekend spot cluster Sep 6 4,340-4,360. Connector scripts missing on DreamQuest — manual web refresh only.",
+      "timestamp": "2026-09-07T06:00:00.000000+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
