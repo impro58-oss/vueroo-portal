@@ -1,121 +1,14 @@
 {
-  "scan_time": "2026-09-08T14:30:00.000000+00:00",
+  "scan_time": "2026-09-08T16:40:00.000000+00:00",
   "scan_type": "breaking_event",
   "scanner": "BlackWatch Breaking Event Scanner v1.1 - Lumina automated (cron 4h; routine cycle)",
   "date": "2026-09-08",
   "domains_scanned": 12,
-  "queries_executed": 20,
-  "previous_scan": "2026-09-08T11:35:00.000000+00:00",
-  "summary": "CAT-5 SUSTAINED + 1 ESCALATION RUNG vs the 10:35Z scan. NEW RUNG: war widened to Saudi PRODUCTION infrastructure - Iran-backed Houthis hit multiple Saudi energy facilities (Abha, Khamis Mushait, Jizan, Najran) with drones + ballistic missiles; fires + temporary shutdowns (Energy Ministry); 73 wounded; Jizan 400kbpd refinery hit again (OilPrice Sep 7); several sites halted near Yemen border (Bloomberg Sep 8). Brent session high 99.46, prints 98.13-98.28 - the $100 RED wire is 1.5-1.7% away; +8% in September; Goldman base 85 Dec-26 (+5) with a 120 shipping-escalation tail. All five ACTIVE threads hold: middle_east_war 200 (escalation rung upgrades the war's economic blast radius; Iran threatens US energy assets; Hegseth-Ghalibaf sinking-threat ladder; Oman corridor deal 'just days away', zone declaration pending), us_recession 200 (hike odds 58% CME / 60% Polymarket into CPI FRIDAY Sep 11 - weekday corrected from 'Thu'; FOMC Sep 15-16), china_collapse 120 (Y300bn special treasury bonds formalize the Y360bn 8-bank recap; CNY-fixing correction stands), japan_yen 100 (reserve-drop discrepancy: -95bn FX-component per Wolf Street vs -80bn total per CNBC, both record UST-funded; Katayama 'orderly FX market' Sep 8; JGB ~2.856% slipping as yen strengthens - RED wire sustained; BOJ Sep 18), euro_crisis 100 (ECB Thu Sep 10 25bp; ING pick-your-poison; MUFG euro downside risk). DEVELOPING: asian_contagion 90 (NPS hedging halt CONFIRMED Sep 8; USD/KRW breaks below 1,340); global_pandemic 40 (DRC Ebola 6,686/3,226 static). WATCH: crypto_collapse 40. Quiet: LatAm (stale-only sweep), UK (adaptive policy), bank failures (none new).",
-  "events_detected": [
-    {
-      "id": "EVT-2026-09-08-1430-001",
-      "domain": "middle_east",
-      "title": "RUNG: Houthis hit Saudi energy facilities - war widened to production infrastructure",
-      "severity": 1,
-      "category": "war_escalation / energy_infrastructure",
-      "description": "Iran-backed Houthis attacked multiple Saudi energy facilities with drones + ballistic missiles - cities Abha, Khamis Mushait, Jazan, Najran (Saudi Foreign Ministry); fires + temporary shutdowns (Energy Ministry); 73 wounded; Houthi state media claims Aramco southern facilities; 400kbpd Jizan refinery 'hit again' (OilPrice Sep 7 12:34Z); several energy sites halted near Yemen border (Bloomberg Sep 8). First production-side disruption of the war logged: the world's largest oil exporter's southern nodes are now under direct fire. Brent session high 99.46 / prints 98.13-98.28; $100 wire 1.5-1.7% away.",
-      "sources": [
-        "cnbc.com Sep 8 14:01Z",
-        "bloomberg.com Sep 8",
-        "oilprice.com Sep 7 12:34Z",
-        "newarab.com Sep 8"
-      ],
-      "escalate_to": [
-        "middle_east_war",
-        "energy",
-        "supply_chain"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-08-1430-002",
-      "domain": "middle_east",
-      "title": "Iran threatens US energy assets; Hegseth-Ghalibaf sinking-threat ladder",
-      "severity": 1,
-      "category": "war_rhetoric_escalation",
-      "description": "Iran threatens to target US energy assets in the Gulf if the US strikes again (TIME Sep 8); 'US energy companies' facilities are exposed' (CSMonitor/Al-Monitor Sep 7). Hegseth: US 'will destroy (and sink)' Iranian oil tankers if Iran fires on US vessels; Ghalibaf: 'Strike our assets and you get struck' (Sep 8). Iran FM: the Sep 5 tanker strikes were a 'war crime' and 'economic warfare'. UAE warns no single state should control Hormuz (TOI Sep 8 02:36Z).",
-      "sources": [
-        "time.com Sep 8",
-        "csmonitor.com Sep 7",
-        "al-monitor.com Sep 7",
-        "timesofindia.indiatimes.com Sep 8"
-      ],
-      "escalate_to": [
-        "middle_east_war",
-        "energy"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-08-1430-003",
-      "domain": "middle_east",
-      "title": "Iran-Oman Hormuz corridor deal 'just days away'; zone geometry hardened",
-      "severity": 1,
-      "category": "shipping_disruption",
-      "description": "Bloomberg Sep 7: Iran says the Strait of Hormuz deal with Oman is 'just days away' (Business Times Sep 8 04:23Z: 'Oil near US$100 as Iran says Hormuz deal with Oman is close'). Rezaei (SNSC): the restricted zone begins where the US blockade begins and extends into Gulf areas; ships entering the zone added to Iran's sanctions list (Baird Maritime). The declaration remains the top Brent>$100 trigger; Oman coordination advancing shortens the fuse.",
-      "sources": [
-        "bloomberg.com Sep 7",
-        "businesstimes.com.sg Sep 8",
-        "al-monitor.com Sep 7 (Rezaei)",
-        "bairdmaritime.com Sep 8"
-      ],
-      "escalate_to": [
-        "middle_east_war",
-        "supply_chain",
-        "energy"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-08-1430-004",
-      "domain": "japan",
-      "title": "Japan reserve-drop discrepancy (-95bn FX-component vs -80bn total) + Katayama orderly-FX Sep 8",
-      "severity": 1,
-      "category": "currency_intervention / sovereign_funding",
-      "description": "Wolf Street (Sep 8 02:08Z): FX-currency reserves -USD95bn in August funding the intervention via UST sales, vs CNBC Sep 7's record -USD80bn total-reserve framing - both record-scale, UST-sale funding confirmed on both reads; discrepancy logged, not adjudicated. Fresh: Katayama 'will aim to maintain orderly FX market' (Bloomberg Sep 8). JGB 10Y ~2.856% slipping as yen strengthens (marketscreener 05:00Z; tradingeconomics 02:51Z) - RED wire sustained. Yen 154.07 inside the 158 wire; BOJ Sep 18.",
-      "sources": [
-        "wolfstreet.com Sep 8 02:08Z",
-        "cnbc.com Sep 7",
-        "bloomberg.com Sep 8",
-        "marketscreener.com Sep 8 05:00Z",
-        "tradingeconomics.com Sep 8 02:51Z"
-      ],
-      "escalate_to": [
-        "japan_sovereign",
-        "currency"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-08-1430-005",
-      "domain": "em_asia",
-      "title": "NPS FX-hedging halt confirmed; USD/KRW breaks below 1,340",
-      "severity": 1,
-      "category": "currency_divergence",
-      "description": "KED Global (Sep 8 02:01Z) + Maeil Pulse (01:39Z): NPS seen halting FX hedging as the won hits a 2-year high, roiling the currency market; Yonhap Infomax: NPS dollar-buying intensifies as USD/KRW breaks below 1,340. RBI $8bn+ rupee defense stands (Sep 4). Strong-Asia divergence, not contagion - asian_contagion 90 DEVELOPING stands.",
-      "sources": [
-        "kedglobal.com Sep 8 02:01Z",
-        "pulse.mk.co.kr Sep 8 01:39Z",
-        "en.infomaxai.com Sep 8"
-      ],
-      "escalate_to": [
-        "currency"
-      ]
-    },
-    {
-      "id": "EVT-2026-09-08-1430-006",
-      "domain": "us_fed",
-      "title": "CORRECTION: CPI is FRIDAY Sep 11 (prior runs stamped Thu); Fed odds 58% CME / 60% Polymarket",
-      "severity": 0,
-      "category": "read_correction",
-      "description": "Sep 11, 2026 is a Friday - the 0230Z/1030Z records and board notes stamped 'CPI THU Sep 11'. Date correct, weekday wrong (unbiasedheadlines: 'Friday's Inflation Report Will Decide It'). CME FedWatch ~58% (Gate Sep 7 23:32Z), markets 'price a 58 percent chance' (economymiddleeast Sep 8), Polymarket ~60% (10:33Z) - two-sided into FOMC Sep 15-16. FOMC Sep 15-16 and ECB THU Sep 10 stamps are correct. Also: investinglive Katayama citation corrected to Sep 1 vintage.",
-      "sources": [
-        "unbiasedheadlines.com Sep 8",
-        "economymiddleeast.com Sep 8",
-        "gate.com Sep 7 23:32Z"
-      ],
-      "escalate_to": [
-        "us_cycle"
-      ]
-    }
-  ],
-  "telegram_decision": "NOT SENT - sustained CAT-5 + 1 incremental escalation rung; no NEW category-5 event (no zone declaration, no $100 breach, no US-energy-asset strike); CAT-5 already alerted to Roo 00:36Z Sep 7. Precedent: 0430Z/0437Z/0230Z/1030Z runs silent on sustainment.",
-  "handoff_next_scan": "~18:30Z. Watch: Brent $100 breach (band 98.1-99.5, wire 1.5-1.7% away; Houthi-Saudi campaign is the accelerant), Iran restricted-zone/Oman-corridor declaration ('just days away'), US CPI FRIDAY Sep 11 (FOMC Sep 15-16 hinge), ECB THU Sep 10 13:45 CET, Saudi retaliation dynamics, BOJ Sep 18, Sudan Sep 12 sanctions deadline."
+  "queries_executed": 14,
+  "previous_scan": "2026-09-08T14:30:00.000000+00:00",
+  "summary": "CAT-5 SUSTAINED - no new category-5 event, no new rungs vs the 14:30Z scan. Houthi-Saudi infrastructure campaign STABLE: only fresh item is Riyadh's formal condemnation of the 'renewed' attacks (73 civilians injured, Rudaw 15:13Z) plus fires-containment grind. Brent FADED from the 99.46 session high to 97.33 (-0.25%) at the 16:30Z live read - $100 RED wire widened to ~2.7%. Iran restricted-zone declaration STILL pending ('coming days'); Iran-Oman deal 'fails to ease supply fears' (NDTV Profit). Goldman raised oil forecasts - Gulf-shipment disruption could extend into 2027. Markets: orderly risk-off only (S&P -0.67%, VIX 15.32 LOW, Wall St dip 14:46Z, Europe dip on crude/inflation, Asia fell on yen surge). Yen extended to a fresh 7-month high (~154.2) with carry-unwind warnings mainstreamed (Reuters); RBI extended its intervention streak; DRC Ebola 6,686/3,226 static. Board held: middle_east_war 200 + us_recession 200 (both maxed), china_collapse 120, japan_yen 100, euro_crisis 100, asian_contagion 90 DEVELOPING, global_pandemic 40 DEVELOPING, crypto_collapse 40 WATCH. macro_event ACTIVE conf 10.",
+  "events_detected": [],
+  "events_note": "No new events/rungs this cycle - sustainment. The 14:30Z escalation rung (Houthi-Saudi energy infrastructure) and threat-ladder ticks remain the operative events; see breaking-event-2026-09-08-1430.json.",
+  "telegram_decision": "NOT SENT - sustainment-only cycle; no NEW category-5 event; CAT-5 already alerted 00:36Z Sep 7. Precedent: 0230Z/1030Z/1430Z runs silent on sustainment.",
+  "handoff_next_scan": "~18:30-18:40Z. Watch: Iran restricted-zone/Oman-corridor declaration ('coming days' - top Brent>$100 catalyst), Brent $100 breach (faded to 97.33, wire ~2.7%), ECB THU Sep 10, CPI FRIDAY Sep 11 -> FOMC Sep 15-16, Houthi-Saudi follow-on strikes, yen carry-unwind into BOJ Sep 18, Sudan Sep 12 sanctions deadline."
 }
