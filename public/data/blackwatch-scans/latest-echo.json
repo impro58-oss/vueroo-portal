@@ -1,36 +1,78 @@
 {
-  "scan_time": "2026-09-01T16:20:01.000000+00:00",
-  "scanner": "breaking_event",
-  "scanner_type": "4h_breaking_event_scanner",
-  "scan_id": "blackwatch-2026-09-01-1615",
-  "events_count": 4,
-  "top_event": "SECOND tanker struck in Hormuz as US-Iran hostilities resume (2 tankers, MQ-9 intercepted, Tehran urges June-deal return); EZ flash inflation >3% seals ECB multi-hike path; wheat at 3-year high as Russian Sept exports plunge 60%",
-  "risk_level": "CRITICAL",
-  "summary": "4 events, CAT-5 sustained + 3 new rungs. Middle East: second tanker struck in Hormuz (World Oil/CNBC), IRGC intercepted US MQ-9 drone, month-long lull shattered (Reuters); Trump 'hit them hard'; Tehran's June-deal ask = first off-ramp signal; Brent >$91 sustained, climbing Tue. Europe: EZ flash HICP above 3% all but seals Sep 10 hike; Simkus says one hike 'not going to be enough'; bond rout day 2 with yields surging across US/Japan/UK/Germany to multi-decade highs; UK 30Y could halve budget headroom. Food: wheat highest since early 2023, Russian Sept exports -60% (record since 2010). Gold sub-$4,400 two-week low, silver -3%. Fed hike odds 66-68%. Convergence: euro_crisis 90->95, asian_contagion 78->80; middle_east_war + us_recession held at 200 (maxed, 4th cycle). Relief: Uganda Ebola declared over, BTC held $77K, no new bank failures.",
-  "signals_updated": "macro_event ACTIVE sustained; notes refreshed (no status regressions): middle_east, energy, supply_chain, food_security, currency, europe, us_cycle, fin_stability, geopolitical, gold (green->amber), crypto, china. Convergence bumps: euro_crisis 95, asian_contagion 80.",
-  "macro_event": "ACTIVE",
-  "new_events_vs_last_scan": 3,
-  "new_event_ids": [
-    "EVT-2026-09-01-1615-001",
-    "EVT-2026-09-01-1615-002",
-    "EVT-2026-09-01-1615-003"
+  "scan": {
+    "type": "echo",
+    "date": "2026-09-08",
+    "time_ist": "2026-09-08T06:30:00+01:00",
+    "ref_utc": "2026-09-08T05:30:00Z",
+    "session": "cron:71805a7c-6775-4695-9305-d98af8395130",
+    "data_posture": "Connector scripts missing (multi-source, FRED). Board = 2026-09-07T05:30Z API vintage + threshold scan 2026-09-08T02:45Z + manual web fills. Gold refreshed 05:30Z.",
+    "overall_risk": {"level": "CRITICAL", "score": 456, "red": 5, "amber": 11, "green": 3, "info": 1, "tripwire_breaches": 6, "red_breaches": 2}
+  },
+  "signal_board": [
+    {"n": 1, "name": "Financial Stability (HY OAS)", "value": "2.65%", "status": "green", "trend": "stable", "conf": 7},
+    {"n": 2, "name": "Liquidity (M2 YoY)", "value": "1.33%", "status": "amber", "trend": "stable", "conf": 3},
+    {"n": 3, "name": "Sovereign Debt (US Debt/GDP)", "value": "122.6%", "status": "red", "trend": "stable", "conf": 3},
+    {"n": 4, "name": "Energy Security (Brent)", "value": "$97.06", "status": "amber", "trend": "deteriorating", "conf": 7},
+    {"n": 5, "name": "Geopolitical Conflict (VIX proxy)", "value": "15.3", "status": "green", "trend": "deteriorating", "conf": 7, "flag": "broken proxy - VIX reads calm during active US-Iran naval war"},
+    {"n": 6, "name": "Cyber Threat", "value": "Elevated", "status": "amber", "trend": "deteriorating", "conf": 4},
+    {"n": 7, "name": "Supply Chain (Brent proxy)", "value": "$97.06", "status": "amber", "trend": "deteriorating", "conf": 5},
+    {"n": 8, "name": "Food Security (IMF FPI)", "value": "131.8", "status": "red", "trend": "deteriorating", "conf": 3},
+    {"n": 9, "name": "Climate Stress", "value": "+1.11C", "status": "red", "trend": "improving", "conf": 9},
+    {"n": 10, "name": "Social Cohesion (sentiment proxy)", "value": "55.2", "status": "amber", "trend": "deteriorating", "conf": 3},
+    {"n": 11, "name": "Institutional Trust", "value": "~30%", "status": "red", "trend": "deteriorating", "conf": 5},
+    {"n": 12, "name": "AI Acceleration", "value": "Rapid", "status": "amber", "trend": "improving", "conf": 5},
+    {"n": 13, "name": "Currency Stability (Dollar idx)", "value": "118.75", "status": "info", "trend": "stable", "conf": 5, "note": "USD/JPY 153.08 (-2.0% d/d)"},
+    {"n": 14, "name": "Gold (spot)", "value": 4354, "status": "amber", "trend": "stable", "conf": 9, "note": "RED wire $3,500 breached (+27.8%); GC=F 4,472 implies ~$118 gap - verify"},
+    {"n": 15, "name": "Crypto (BTC)", "value": 79324, "status": "green", "trend": "stable", "conf": 9},
+    {"n": 16, "name": "China Health (CLI)", "value": 97.69, "status": "red", "trend": "stable", "conf": 7, "note": "CLI stale 2024; live: exports +25% Aug, $54bn bank recap, bank stocks fell"},
+    {"n": 17, "name": "Europe Stability (ECB rate)", "value": "2.25%", "status": "amber", "trend": "deteriorating", "conf": 9, "note": "Hike Thu, HICP 3.3%, Bund 3.359% 15y-high"},
+    {"n": 18, "name": "US Cycle (10Y-2Y)", "value": "0.41%", "status": "amber", "trend": "improving", "conf": 9},
+    {"n": 19, "name": "Middle East Tension (Brent proxy)", "value": "$97.06", "status": "amber", "trend": "deteriorating", "conf": 7},
+    {"n": 20, "name": "Public Sentiment", "value": "55.2", "status": "amber", "trend": "deteriorating", "conf": 3}
   ],
-  "escalated_event_ids": [
-    "EVT-2026-09-01-1615-004"
+  "tripwire_breaches": [
+    {"key": "JGB10Y", "severity": "RED", "current": 2.918, "threshold": 1.5, "distance_pct": 94.5},
+    {"key": "GOLD", "severity": "RED", "current": 4472.4, "threshold": 3500.0, "distance_pct": 27.8},
+    {"key": "JGB10Y", "severity": "AMBER", "current": 2.918, "threshold": 1.0, "distance_pct": 191.8},
+    {"key": "GOLD", "severity": "AMBER", "current": 4472.4, "threshold": 3000.0, "distance_pct": 49.1},
+    {"key": "DE10Y", "severity": "AMBER", "current": 3.359, "threshold": 3.0, "distance_pct": 12.0},
+    {"key": "EURUSD", "severity": "AMBER", "current": 1.1633, "threshold": 1.15, "distance_pct": 1.2}
   ],
-  "top_threats": [
-    "Hormuz war escalation: second tanker struck + MQ-9 intercepted as month-long lull shatters; strait functionally choked at 5 commodity vessels/day; Kharg export terminal remains Iran's declared red line; Tehran's June-deal ask the only de-escalation channel.",
-    "Synchronized September tightening: EZ HICP >3% seals ECB Sep 10 and Simkus flags multi-hike path; Fed ~66-68% Sep 15-16; BOJ Sep 18 near-locked - three hikes in 8 days into an oil + food shock.",
-    "Global bond rout day 2: multi-decade yield highs (JGB 3.00%, UK long-end 28-yr, US 10Y >4.75%); UK budget headroom at risk ahead of Oct 28; gold sub-$4,400 liquidation shows real-yield stress not haven flight.",
-    "Food-energy inflation spiral: wheat highest since early 2023 as Russian Sept exports plunge up to 60% (record low since 2010) - food channel compounds oil in inflation math just as central banks converge on hikes."
+  "overnight_events": [
+    "US struck 3 Iranian oil tankers Sat; IRGC retaliated on 6 vessels; Centcom denies successful hit on US vessel",
+    "Iran to declare restricted/exclusion zone outside Hormuz 'in coming days' - PENDING binary catalyst",
+    "Brent ~$97 near 6-week highs (+7.8% last week); Hormuz transits lowest since May; OPEC+ held output",
+    "JGB 10Y 2.918% Tokyo Tue; USD/JPY 153.08 (-2.0%); BOJ Sept-hike odds rising",
+    "Eurozone HICP 3.3% Aug; ECB 25bp hike expected Thu; markets price more after; Bund 3.359%",
+    "US envoys in Kyiv with 'more effective' peace proposals",
+    "Liquid Network: 4,000 BTC (~$320M) drained from federation wallet; 'white hat' kept $47M; sidechain halted",
+    "MikroTik RouterOS 0-days actively exploited; Bimbo/Oracle EBS 0-day breach confirmed",
+    "Berlin: 6TB state administration + national defense data leaked after refused 30-BTC ransom",
+    "China: $54bn recap of 8 state banks/insurers announced; bank stocks fell; Aug exports +25%, surplus $119B",
+    "AI: GPT-6 Astra (Sep 3), Gemini 3.8 Flash + Flash Cyber (Sep 2), Claude Fable/Mythos 5.1, IFM K2 Horizon open fleet (Sep 3)",
+    "UK anti-migrant disorder: Portsmouth riot + Dover standoffs, second violent protest in two days",
+    "BTC $79,324 (-1.3%); SPX 7,718.6 Fri close; VIX 15.3 Tue (+5.3% d/d, YTD lows); US10Y 4.784%"
   ],
-  "relief_signals": [
-    "Tehran publicly urges return to June deal - first explicit off-ramp ask since strikes resumed.",
-    "Uganda declared its Ebola outbreak OVER (Aug 27, 42-day countdown completed); DRC PHEIC sustained but regional count falling.",
-    "BTC held $77K support (low 77,161 -> ~78K rebound); crypto vector calm.",
-    "No new bank failures (Tioga-Franklin Aug 21 still the 5th/latest of 2026).",
-    "Colombia/Argentina contained (IMF engagement); rupee RBI-stabilized."
+  "scenarios": [
+    {"id": "S1", "name": "Zone Declared, Corridors Hold", "probability": 0.35, "confidence": 6, "inverse": "zone enforced day one", "triggers": ["corridor language in zone text", "war-risk premia stabilize", "Brent <$95 sustained"]},
+    {"id": "S2", "name": "Hormuz Squeeze", "probability": 0.25, "confidence": 6, "inverse": "backchannel de-escalation", "triggers": ["strike inside declared zone", "transits halted >48h", "Brent >$100"]},
+    {"id": "S3", "name": "Financial-Accident Propagation", "probability": 0.20, "confidence": 5, "inverse": "coordinated liquidity backstop", "triggers": ["HY OAS >3.5", "MOVE >90", "Bund close >3.3951", "USD/JPY <150"]},
+    {"id": "S4", "name": "De-escalation Rally", "probability": 0.15, "confidence": 5, "inverse": "talks collapse", "triggers": ["Witkoff/Kushner framework", "IRGC standdown", "zone withdrawn"]},
+    {"id": "S5", "name": "Regional Escalation", "probability": 0.05, "confidence": 4, "inverse": "n/a", "triggers": ["US casualties", "strikes on Saudi/UAE territory", "strikes on Iranian mainland"]}
   ],
-  "domains_scanned": 12,
-  "queries_executed": 18
+  "top_risks": [
+    {"rank": 1, "risk": "Energy shock: zone enforced, Brent >$110", "prob": "25-35%", "conf": 7},
+    {"rank": 2, "risk": "European rate shock: ECB + Bund >3.3951", "prob": "30-40%", "conf": 6},
+    {"rank": 3, "risk": "Credit/vol repricing", "prob": "20-30%", "conf": 5},
+    {"rank": 4, "risk": "Japan JGB >3.023, carry unwind", "prob": "15-25%", "conf": 5},
+    {"rank": 5, "risk": "Cyber-financial infra event", "prob": "20-30%", "conf": 4}
+  ],
+  "recursive_intelligence_score": {"evidence": 6, "logic": 7, "blind_spots": 6, "alternatives": 7, "usefulness": 7, "actionability": 7, "overall": 6.7},
+  "failures": [
+    "scripts/blackwatch-multi-source-connector.py NOT FOUND",
+    "scripts/blackwatch-fred-connector.py NOT FOUND",
+    "GitHub commit/push FAILED: workspace not a git repository, no remote/credentials configured; data saved locally only"
+  ],
+  "gold_update": {"value": 4354, "prev": 4361, "change_pct": -0.16, "sources": ["goldprice.com/Metals.dev 4359.32", "APMEX 4342.00", "Markets Insider 4361.01"], "timestamp": "2026-09-08T05:32:07Z"},
+  "full_report": "data/blackwatch-scans/2026-09-08-echo.md"
 }

@@ -1,110 +1,170 @@
 {
-  "scan_time": "2026-09-01T16:20:01.000000+00:00",
-  "scan_type": "breaking_event",
-  "scanner": "BlackWatch Breaking Event Scanner - Lumina automated (cron 4h)",
-  "scan_id": "blackwatch-2026-09-01-1615",
-  "date": "2026-09-01",
-  "domains_scanned": 12,
-  "queries_executed": 18,
-  "previous_scan": "2026-09-01T12:21:12.000000+00:00",
-  "summary": "CAT-5 SUSTAINED + NEW RUNGS vs 12:15Z. (1) SECOND TANKER STRUCK: two oil tankers reportedly struck as Hormuz hostilities resume (World Oil/CNBC Sep 1) - up from one at 12:15Z; IRGC intercepted a US MQ-9 drone over the eastern strait; US-Iran strikes shattered the month-long lull (Reuters); Trump vows to hit Iran 'hard'; NEW DIPLOMATIC SIGNAL: Tehran urges return to June deal. Brent >$91 sustained, climbing Tuesday (AP). (2) EZ INFLATION >3%: flash print seals ECB Sep 10 hike; Simkus says one hike 'not going to be enough' - multi-hike repricing; bond rout DAY 2 with yields surging across US/Japan/UK/Germany; UK 30Y could halve budget headroom. (3) FOOD SHOCK RUNG: wheat highest since early 2023; Russian Sept exports -60% (record low since 2010). (4) GOLD sub-$4,400 two-week low, silver -3%. RELIEF: Uganda Ebola outbreak declared over; BTC held $77K; no new bank failures. Escalations: euro_crisis 90->95, asian_contagion 78->80 (convergence); board notes refreshed on 12 signals, no regressions. latest-echo.json was stale from 08:23Z - refreshed here.",
-  "events_detected": [
+  "scan_id": "blackwatch-2026-09-08-2037",
+  "scan_time": "2026-09-08T20:43:41.000000+00:00",
+  "scanner": "breaking_event_scanner",
+  "scanner_type": "4h_breaking_event_scanner",
+  "run_type": "routine 4h cycle - window 16:40Z -> 20:37Z; follows the 16:40Z sustainment cycle",
+  "window": "2026-09-08T16:40Z to 2026-09-08T20:37Z",
+  "queries_executed": 16,
+  "domains_scanned": [
+    "us_fed",
+    "latam",
+    "eu_ecb",
+    "uk",
+    "japan",
+    "china",
+    "em_asia",
+    "middle_east",
+    "africa",
+    "financial_system",
+    "commodities",
+    "pandemic_health"
+  ],
+  "verdict": "CAT-5 SUSTAINED - no new category-5 event, no new rungs, no state changes. Iran restricted-zone declaration STILL pending ('coming days' - Sep 7/8 coverage repeats; Al-Monitor explainer on enforceability; no declaration in-window). Houthi-Saudi infrastructure campaign stable, no fresh strike wave. Brent RE-APPROACHED the $100 RED wire: 97.74 (18:41Z) -> 99.24 LIVE 20:29Z (+3.1% vs Mon settle 96.28, high 99.45) - NOT breached; third consecutive sub-$100 close pending. Gold eased (GC=F 4401, -1.7% vs Mon settle 4476.6, high 4488.8) - RED wire (>3500) held at +25.7%. In-window escalation markers: WHO DRC-Ebola staffing/funding crisis (17:12Z Xinhua + Reuters) and rupee worst day in 8 weeks (session close ~11:30Z, logged from prior window tail). Rejected as fresh events: Silvergate 'closure' (recycled Mar-2023 content), Axios US-default (class exercise). Fed closed board meeting Sep 8 = routine/presumed pre-scheduled (purpose page 404), watch-only. macro_event ACTIVE conf 10; 5 ACTIVE / 2 DEVELOPING / 1 WATCH held.",
+  "new_rungs": [],
+  "escalation_actions": "NONE - sustainment-only cycle; board notes remain stamped (latest: threshold scan 18:41Z). Metadata-only updates (last_update + breaking_event + Brent live swap in threshold_breach).",
+  "ticks": [
     {
-      "id": "EVT-2026-09-01-1615-001",
-      "domain": "middle_east + commodities",
-      "title": "SECOND tanker struck in Hormuz as hostilities resume; IRGC intercepted US MQ-9 drone; Tehran urges June-deal return; Brent >$91 climbing",
-      "severity": 5,
-      "category": "war_military + energy_shock",
-      "description": "ESCALATION vs 12:15Z (one tanker): TWO oil tankers reportedly struck as Strait of Hormuz hostilities resume (World Oil, Sep 1). IRGC reported intercepting a US MQ-9 drone over the eastern strait (CNBC, Sep 1). US strikes + Iranian retaliation shattered the month-long lull (Reuters, Sep 1): US struck 2 IRGC rocket launchers on Larak Island Sunday (3 killed) prepping sea-mine rockets for Hormuz; Iran targeted US forces in Jordan. Trump vows to hit Iran 'hard' (CNBC Sep 1). DIPLOMATIC SIGNAL: Tehran publicly urges return to the June deal - first explicit off-ramp ask since strikes resumed. Brent topped $91 (+3.28%) and continued climbing Tuesday (AP/WTOP). Hormuz traffic 5 commodity vessels/day (Kpler, carried); UKMTO tanker strike exiting strait (carried); Qatar/Oman mediation stalled.",
+      "id": "TICK-2037-001",
+      "domain": "middle_east",
+      "severity": 1,
+      "item": "IRAN RESTRICTED-ZONE DECLARATION STILL PENDING: every Sep 7/8 item repeats Rezaei's 'coming days' (Al-Monitor explainer 'what we know'; Al Jazeera 'can Iran enforce it'; LA Times/Nikkei 'exclusion zone'; Anadolu). Zone would begin where the US blockade ends (Rezaei). No fresh strike wave in-window; Houthi-Saudi infrastructure campaign stable. Iran-Oman corridor unresolved. middle_east_war 200 SUSTAINED.",
       "sources": [
-        "worldoil.com two tankers struck as Hormuz hostilities resume (Sep 1)",
-        "cnbc.com Tehran urges June deal, Trump vows to hit Iran hard; MQ-9 intercepted (Sep 1)",
-        "tribune.com.pk/Reuters US, Iran strikes shatter month-long fighting lull (Sep 1)",
-        "thenationalnews.com tanker attacked near Oman exiting strait (Sep 1)",
-        "economymiddleeast.com Brent tops $91 +3.28% on renewed Hormuz risk (Sep 1)",
-        "wtop.com/AP oil continued climbing Tue; S&P -0.4%, Dow -164 (Sep 1)"
-      ],
-      "escalate_to": [
-        "middle_east",
-        "energy",
-        "supply_chain",
-        "geopolitical"
+        "al-monitor.com Sep 7/8",
+        "aljazeera.com Sep 7",
+        "latimes.com Sep 7",
+        "asia.nikkei.com Sep 8 03:24Z",
+        "aa.com.tr Sep 7"
       ]
     },
     {
-      "id": "EVT-2026-09-01-1615-002",
-      "domain": "eu_ecb + us_fed + uk + japan",
-      "title": "EZ flash inflation ABOVE 3% seals ECB multi-hike path (Simkus: 'not going to be enough'); global bond rout DAY 2 - yields surge across US/Japan/UK/Germany",
-      "severity": 4,
-      "category": "market_dislocation + sovereign_intervention",
-      "description": "NEW vs 12:15Z: (a) Euro-zone flash HICP rose ABOVE 3% (Sep 1) - 'all but sealing' the Sept 10 ECB hike (Straits Times/GlobalBankingFinance). ECB's Simkus: September hike 'not going to be enough'; updated projections will show the rate path moving UP (Econostream/Newsquawk, Sep 1) - multi-hike repricing, not one-and-done. (b) Bond rout DAY 2: government bond yields rose across the U.S., Japan, U.K. and Germany on Tuesday (CNBC 16:19 +03); Japanese and British yields surged to multi-decade highs on US-Iran inflation concerns. (c) UK long-term borrowing costs 'could halve chancellor's budget headroom' ahead of Oct 28 budget (Guardian, Sep 1); 30Y gilt multi-year high; pound slipped despite yield jump (dollar favoured). (d) Fed Sept hike odds 66-68% (TechTimes 68%, Sep 1); US 10Y >4.75% carried. Synchronized tightening window intact: ECB Sep 10 + FOMC Sep 15-16 + BOJ Sep 18 within 8 days.",
+      "id": "TICK-2037-002",
+      "domain": "commodities",
+      "severity": 2,
+      "item": "BRENT RE-APPROACHES $100 - WIRE TIGHTENS TO <1%: live 20:29Z BZ=F 99.24 (high 99.45, +3.1% vs Mon settle 96.28); climbed from 97.74 (18:41Z read). WTI 94.22 (high 94.73). Reuters: oil at multi-week highs after Houthi attacks on Saudi energy facilities; Goldman raised forecasts on Gulf-shipment disruption extending into 2027. Gate News' 'breaks $100' headline (08:01Z, XBRUSD 100.02) INCONSISTENT with Yahoo tape (97.3-97.7 around 10:30-18:41Z) - treated as feed artifact, NOT confirmed breach. GC=F 4401 easing, high 4488.8, -1.7% vs Mon settle - gold RED wire held.",
       "sources": [
-        "straitstimes.com euro zone inflation flares, all but sealing Sept ECB hike (Sep 1)",
-        "newsquawk.com Simkus: Sept hike 'not going to be enough' (Sep 1)",
-        "cnbc.com bond yields soar across US/Japan/UK/Germany on Iran tensions (Sep 1)",
-        "theguardian.com UK long-term costs could halve budget headroom (Sep 1)",
-        "globalbankingandfinance.com pound slips despite gilt yield jump (Sep 1)",
-        "techtimes.com Fed hike at 68% odds (Sep 1)"
-      ],
-      "escalate_to": [
-        "europe",
-        "us_cycle",
-        "fin_stability",
-        "currency"
+        "yfinance BZ=F/CL=F/GC=F 20:29Z live",
+        "reuters.com Sep 8",
+        "rte.ie Sep 8",
+        "gate.com 08:01Z (flagged)"
       ]
     },
     {
-      "id": "EVT-2026-09-01-1615-003",
-      "domain": "commodities + supply_chain",
-      "title": "FOOD SHOCK RUNG: wheat highest since early 2023; Russian Sept exports to plunge up to 60% (record low since 2010); Black Sea disruption 'turning point'",
-      "severity": 4,
-      "category": "energy_shock + food_security",
-      "description": "NEW QUANTIFICATION vs 12:15Z: wheat prices hit their highest since early 2023 (Guardian live blog, Sep 1) as war + heat disrupt Black Sea exports (Al Jazeera analysis, Aug 31: 'War and heat: Why are wheat prices soaring?'). Russian wheat exports in September seen at just 1.8-2.3Mt - up to -60% y/y and a record low for the month since 2010 (The Insider, Sep 1); UkrAgroConsult calls August 2026 a 'turning point' as the market repriced from crop fundamentals to port/chokepoint risk. Food-inflation channel now compounds the oil channel in central-bank math - feeds the synchronized September tightening path (ECB/Fed/BOJ).",
+      "id": "TICK-2037-003",
+      "domain": "pandemic_health",
+      "severity": 2,
+      "item": "WHO DRC-EBOLA ESCALATION MARKERS (IN-WINDOW 17:12Z): Xinhua/WHO - outbreak 'increasingly heterogeneous' with high community deaths; Reuters Sep 8 - WHO says staff shortage + funding challenges hamper the Congo Ebola response (outbreak confirmed DRC + Uganda since May 2026, Bundibugyo strain). Case/death counts static vs 16:40Z (6,686/3,226 Monday figures). global_pandemic 40 DEVELOPING SUSTAINED - marker logged, no score change (still regional).",
       "sources": [
-        "theguardian.com global bond rout deepens; wheat highest since early 2023 (Sep 1)",
-        "aljazeera.com war and heat: why wheat prices are soaring (Aug 31)",
-        "theins.press Russian wheat exports to plunge up to 60% in Sept, record low since 2010 (Sep 1)",
-        "ukragroconsult.com world wheat rises, Black Sea port crisis turning point (Sep 1)",
-        "agriinsite.com Russian export prices climb as Black Sea supplies shrink (Sep 1)"
-      ],
-      "escalate_to": [
-        "food_security",
-        "supply_chain"
+        "english.news.cn Sep 8 17:12Z",
+        "reuters.com Sep 8",
+        "who.int"
       ]
     },
     {
-      "id": "EVT-2026-09-01-1615-004",
+      "id": "TICK-2037-004",
+      "domain": "em_asia",
+      "severity": 2,
+      "item": "RUPEE WORST DAY IN 8 WEEKS (prior window tail, logged now): INR 94.8175 (-0.35%), sharpest fall in over a month as Brent barrels toward $100 (Hindu BusinessLine; Business Standard 14:16Z); RBI intervention streak extended (Reuters 04:41Z, $8bn+ prior week). Won stays strong (NPS halt) - oil-spillover pressure + RBI defense = divergence, not contagion. asian_contagion 90 DEVELOPING SUSTAINED.",
+      "sources": [
+        "thehindubusinessline.com Sep 8",
+        "business-standard.com Sep 8 14:16Z",
+        "reuters.com Sep 8 04:41Z"
+      ]
+    },
+    {
+      "id": "TICK-2037-005",
+      "domain": "us_fed",
+      "severity": 1,
+      "item": "FED CLOSED BOARD MEETING ON SEP 8 CALENDAR: Sunshine-notice closed Board meeting listed for today (federalreserve.gov); purpose page 404s on fetch - routine pre-scheduled presumed (discount/regular items), watch-only, NOT an emergency marker. Hike odds ~58% CME / ~60% Polymarket into CPI FRIDAY Sep 11; Trump-Warsh pressure-campaign commentary continues (Dolan Reuters Sep 8; ET 12:12Z). FOMC Sep 15-16. us_recession 200 SUSTAINED.",
+      "sources": [
+        "federalreserve.gov Sep 8 (404 on fetch - snippet only)",
+        "reuters.com Sep 8 (Dolan)",
+        "gate.com Sep 7 23:32Z"
+      ]
+    },
+    {
+      "id": "TICK-2037-006",
+      "domain": "uk/eu_ecb",
+      "severity": 1,
+      "item": "UK 30Y AUCTION AT RECORD ~5.9% YIELD (12:18Z, pre-window; 'since-1998' headline already logged 16:40Z): in-window commentary shifts to fiscal consequence - October Budget tax rises 'near-certain' (TechTimes 18:46Z), NIESR on global driver. Europe: yields steady near multi-year highs; France>Italy inversion stands; Bund-curve analysis flags 12% eurozone recession odds; ECB THU Sep 10 13:45 CET 25bp expected. euro_crisis 100 SUSTAINED; no BOE intervention.",
+      "sources": [
+        "lse.co.uk Sep 8 12:18Z",
+        "telegraph.co.uk Sep 8",
+        "techtimes.com Sep 8 18:46Z",
+        "rallies.ai Sep 8",
+        "stockwirex.com Sep 8"
+      ]
+    },
+    {
+      "id": "TICK-2037-007",
       "domain": "financial_system",
-      "title": "Gold crosses below $4,400 - two-week low; silver slumps 3%; debasement-trade liquidation extends",
-      "severity": 3,
-      "category": "market_dislocation",
-      "description": "SUSTAINED vs 12:15Z: gold fell below $4,400 to a fresh two-week low Tuesday (FXStreet/The Standard/TradingKey 10:11Z) as rising Treasury yields + dollar dominate; silver slumped 3%. Gold has now halved its August jump (BullionVault, Sep 1): from the Aug 24 print of $4,732 to sub-$4,400 = -7%+. Falling gold alongside surging yields = real-yield liquidation shock, NOT safe-haven exit. Forced-liquidation cascade risk remains the watch item.",
+      "severity": 1,
+      "item": "REJECTED AS FRESH EVENTS: (1) 'Silvergate CEO confirms voluntary closure after bank run' (tradersunion 19:10Z) = recycled Mar-2023 Silvergate liquidation content, NOT a new bank failure; (2) Axios 'US debt default' = university class exercise on the unthinkable, watch-only. No new bank failures, no credit freeze in-window; private-credit contagion watch unchanged.",
       "sources": [
-        "fxstreet.com gold struggles below $4,400 (Sep 1)",
-        "thestandard.com.hk gold falls to two-week low (Sep 1)",
-        "tradingkey.com gold below $4,400, silver -3% (Sep 1)",
-        "bullionvault.com gold halves August jump on war-fuelled oil/food inflation (Sep 1)"
-      ],
-      "escalate_to": [
-        "gold",
-        "fin_stability"
+        "tradersunion.com Sep 8 19:10Z (flagged)",
+        "axios.com Sep 8 (flagged)"
+      ]
+    },
+    {
+      "id": "TICK-2037-008",
+      "domain": "japan",
+      "severity": 1,
+      "item": "YEN HOLDS 7-MONTH-HIGH ZONE: ~153.5-154.2; BOJ hike bets into Sep 18; 'Intervention Didn't Move the Yen. The Plumbing Did.' analysis (ainvest 01:22Z) argues plumbing not intervention drove the 163->154 round trip; Gate's '153 after US-Japan coordinated intervention' (03:38Z) = pre-window restatement. Record Aug reserve drop (-80bn) + UST-sale funding leg stands. japan_yen 100 SUSTAINED.",
+      "sources": [
+        "ainvest.com Sep 8 01:22Z",
+        "gate.com 03:38Z (pre-window)",
+        "reuters.com Sep 8"
+      ]
+    },
+    {
+      "id": "TICK-2037-009",
+      "domain": "china",
+      "severity": 1,
+      "item": "CHINA RECAP LEG STATIC: Y300bn/$45bn special-treasury-bond injection into 8 state banks+insurers re-reported (Bloomberg via Insurance Journal Sep 8; SCMP 'Will China's US$54b be enough to ease financial strains?' - analysts say more needed); no fresh PBOC/yuan event in-window. china_collapse 120 SUSTAINED.",
+      "sources": [
+        "insurancejournal.com Sep 8",
+        "scmp.com Sep 8",
+        "cnbc.com Sep 7"
+      ]
+    },
+    {
+      "id": "TICK-2037-010",
+      "domain": "africa/latam",
+      "severity": 1,
+      "item": "AFRICA/LATAM QUIET: Niger Aug-29 mutiny = analysis recycle (no fresh event); Senegal IMF ECF $2.2bn staff-level (Sep 1) 'fails to reassure bondholders' (Daily News; Forbes Africa 14:40Z) - static. LatAm: BCRA halted dollar purchases Sep 7 (third halt of 2026); Argentina treasury hands BCRA $2bn dollar-linked debt (16:36Z, borderline pre-window); BRL election-risk commentary only. No CAT-3+ developments.",
+      "sources": [
+        "forbesafrica.com Sep 8 14:40Z",
+        "dailynews.co.tz Sep 8",
+        "riotimesonline.com Sep 8 16:36Z",
+        "weex.com Sep 7 20:52Z"
       ]
     }
   ],
-  "sustained_tracked": [
-    "pandemic_health: DRC Ebola Bundibugyo PHEIC sustained (2nd IHR committee Aug 28; >6,000 cases/~3,000 deaths carried). RELIEF: Uganda declared its outbreak OVER Aug 27 (42-day countdown completed, WHO AFRO). COVID growing in 48 US states (carried).",
-    "financial_system: no new failures since Tioga-Franklin (5th US failure of 2026, Aug 21); Bessent told G20 bank rules wiped out half of America's community banks (Sep 1).",
-    "china: PBOC fix 6.7809 vs 6.7170 est (Sep 1); presale-overhaul property-stock selloff (Business Times Sep 1); Caixin explainer Sep 1. Outflows ~$780B 2025 carried.",
-    "em_asia: Asian equities slipped again Tuesday (KOSPI/Nikkei, tech-led) on oil + hike bets (SeekingAlpha/CNBC-TV18); Man Group: 'Today's Economy Mirrors Eve of 1997 Asian Financial Crisis' (Sep 1). Rupee 95.16 RBI-stabilized carried.",
-    "latam: Colombia deficit worse than feared, IMF support floated (Reuters Aug 28, carried); Georgieva visited Milei Monday as $57B bill comes due (Buenos Aires Times, Aug 31) - Argentina contained.",
-    "africa: Russia cements junta-protector role after helping quell Niger mutiny (LA Times, Aug 31); Senegal-IMF loan talks progressing (Sep 1); Senegal hidden-swaps credit collapse tracked."
+  "corrections": [],
+  "sustained_threads": [
+    "MIDDLE_EAST WAR (month 6+): CAT-5 SUSTAINED - zone declaration STILL pending ('coming days'); Houthi-Saudi infrastructure campaign stable; no fresh strike wave; US blockade + tanker-strike history hold. middle_east_war 200 SUSTAINED.",
+    "US/FED: hike odds ~58% CME / ~60% Polymarket into CPI FRIDAY Sep 11; FOMC Sep 15-16; closed board meeting Sep 8 = routine/watch-only. us_recession 200 SUSTAINED.",
+    "EU/ECB: decision THU Sep 10 13:45 CET - 25bp to 2.50% expected; France>Italy OAT inversion stands. euro_crisis 100 SUSTAINED.",
+    "JAPAN: yen ~153.5-154 7-month-high zone; plumbing-vs-intervention debate; BOJ Sep 18. japan_yen 100 SUSTAINED.",
+    "CHINA: Y300bn recap leg static; 'is $54bn enough' analysis. china_collapse 120 SUSTAINED.",
+    "EM ASIA: rupee worst day in 8 weeks (oil spillover) + RBI streak; won divergence holds. asian_contagion 90 DEVELOPING SUSTAINED.",
+    "PANDEMIC: DRC Ebola 6,686/3,226 static + WHO staffing/funding-crisis markers (17:12Z). global_pandemic 40 DEVELOPING SUSTAINED.",
+    "CRYPTO: post-deleveraging calm; BTC ~78-79K. crypto_collapse 40 WATCH."
   ],
-  "domains_no_new_events": [
-    "us_fed (no emergency action; hike-odds 66-68% folded into EVT-002)",
-    "uk (no BOE action; gilt/fiscal warning folded into EVT-002)",
-    "financial_system (no new failures/freezes; gold liquidation in EVT-004)",
-    "africa (Niger/Senegal tracked, no acute event)",
-    "pandemic_health (Uganda relief; DRC sustained)"
+  "quiet_domains": [
+    "latam (BCRA halt Sep 7 + $2bn dollar-linked debt; BRL election-risk commentary; no fresh crisis)",
+    "africa (Niger mutiny analysis recycle; Senegal IMF ECF static)",
+    "uk (30Y record auction pre-window; no BOE intervention)",
+    "financial_system/banks (no new failures; Silvergate story rejected as recycled)",
+    "crypto (no fresh stress)"
   ],
-  "board_hygiene": "No status regressions this cycle: 12:15Z escalations (middle_east, energy, supply_chain, europe, us_cycle red) preserved through 16:11Z threshold scan and re-verified here. Gold reset amber (liquidation extension; threshold scanner had it green). latest-echo.json was stale from 08:23Z - refreshed with this scan. Portal copies re-synced (signals.json + latest-echo.json + breaking-events-latest + macro-event.json)."
+  "live_read_2029z": {
+    "BZ=F": 99.24,
+    "CL=F": 94.22,
+    "GC=F": 4401.0,
+    "BZ=F_prev_close": 96.28,
+    "GC=F_prev_close": 4476.6
+  },
+  "telegram_decision": "NOT SENT - sustainment-only cycle: no NEW category-5 event (no zone declaration, no $100 breach, no fresh strike wave, no dislocation); CAT-5 already alerted to Roo 00:36Z Sep 7. Precedent: 0230Z/1030Z/1430Z/1640Z runs silent on sustainment. Also 22:37 local, inside quiet-hours approach. Decision recorded here + in macro-event alert_log.",
+  "handoff_next_scan": "~00:37Z Sep 9 (4h). Watch: (1) BRENT $100 BREACH - 99.24 LIVE 20:29Z, wire <1%, US session open; the wire event that would trigger Telegram alert; (2) IRAN RESTRICTED-ZONE / OMAN-CORRIDOR DECLARATION - still 'coming days', the top Brent catalyst; (3) ECB THU Sep 10 13:45 CET (25bp); (4) US CPI FRIDAY Sep 11 -> FOMC Sep 15-16 (~58-60%); (5) Houthi-Saudi follow-on strikes / Saudi retaliation; (6) yen carry-unwind acceleration into BOJ Sep 18; (7) gold pullback follow-through (GC=F 4401, -1.7% d/d); (8) Sudan Sep 12 sanctions deadline."
 }
