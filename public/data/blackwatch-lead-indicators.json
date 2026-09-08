@@ -1,105 +1,119 @@
 {
-  "scan_id": "blackwatch-2026-09-07-0700",
-  "scan_timestamp": "2026-09-07T06:00:00Z",
-  "scan_local_time": "2026-09-07 07:00 Europe/Dublin",
+  "scan_id": "blackwatch-2026-09-08-0700",
+  "scan_timestamp": "2026-09-08T06:00:00Z",
+  "scan_local_time": "2026-09-08 07:00 Europe/Dublin",
   "scan_label": "BlackWatch Lead Indicator Scanner — Daily 07:00 IST cycle (on-schedule run)",
   "scanner": "BlackWatch Lead Indicator Scanner",
   "scanner_version": "2.1",
   "status": "COMPLETE",
+  "scan_window": "2026-09-07 06:00Z -> 2026-09-08 06:00Z (24h, 20 web queries)",
   "categories": {
     "verbal_intervention": {
       "findings": [
         {
           "id": "vi-001",
-          "headline": "Japan executed RECORD yen intervention — likely funded by selling US Treasuries (MoF data inference)",
-          "source": "Bloomberg / Japan Times (Yokoyama)",
+          "headline": "Trump warned Warsh not to raise rates at September FOMC — presidential pressure collides with hot inflation into CPI Friday",
+          "source": "Heisenberg Report (citing Fed-watcher reports)",
           "date": "2026-09-06",
-          "summary": "Bloomberg (Sep 6) and Japan Times (Sep 7): Japan likely sold a portion of its foreign securities holdings, including US Treasuries, to fund a RECORD yen intervention. Yen rallied sharply with USD/JPY falling from near 160 to under 156 last week. First direct evidence of official-sector UST selling this cycle — a new channel feeding global bond stress.",
-          "imminence": 9,
+          "summary": "Late last week Trump warned Kevin Warsh not to raise rates at this month's FOMC. Political pressure against a hike while eurozone inflation prints 3.3% and Brent nears $100 sets up a credibility collision: if the Fed folds, inflation expectations risk unanchoring; if it hikes over the president's objection, Fed-independence stress enters the bond wildfire. CPI Friday Sep 11 decides.",
+          "imminence": 7,
           "impact": 7,
-          "threads": ["japan_yen", "us_recession", "asian_contagion", "euro_crisis"],
-          "confidence": "HIGH",
-          "url": "https://www.bloomberg.com/news/articles/2026-09-06/japan-likely-sold-treasuries-to-fund-record-yen-intervention"
+          "threads": ["us_recession"],
+          "confidence": "MEDIUM",
+          "url": "https://heisenbergreport.com/2026/09/06/warsh-hangs-his-hat-on-fridays-inflation-report/"
         },
         {
           "id": "vi-002",
-          "headline": "Yen at one-month high on intervention talk + BOJ rate-bet repricing; hawkish-BOJ vs Fed-hike clash opens the week",
-          "source": "CNBC (Sep 3) / FXStreet (Sep 7) / investinglive",
+          "headline": "Iran vows response to US tanker strikes: American facilities 'exposed', US energy firms at risk",
+          "source": "Christian Science Monitor",
           "date": "2026-09-07",
-          "summary": "Yen jumped >1% Thursday to a one-month high as traders weighed further intervention and BOJ rate-hike repricing. FXStreet Sep 7: USD/JPY subdued at week-open as 'hawkish BoJ, Fed bets clash'. Brokerage research: markets now pricing BOJ hikes. FX pressure on Japan eased near-term, but the intervention-funding mechanism (asset sales) is the structural worry.",
-          "imminence": 8,
-          "impact": 6,
-          "threads": ["japan_yen", "asian_contagion"],
-          "confidence": "HIGH",
-          "url": "https://www.cnbc.com/2026/09/03/yen-japan-intervention-boj.html"
-        },
-        {
-          "id": "vi-003",
-          "headline": "Iran escalates rhetoric: 'more intense' / 'more painful response' warned; Ghalibaf: 'the era of proportionate responses has come to an end'",
-          "source": "News24 / National Post (Ghalibaf, parliament speaker)",
-          "date": "2026-09-06",
-          "summary": "Iranian parliament speaker Mohammad Bagher Ghalibaf: 'The Americans must have understood that the era of proportionate responses has come to an end.' Tehran warns of a stronger response to further US strikes as CENTCOM enforces its maritime blockade. Coercion signaling ahead of the restricted-zone implementation — escalation language, not de-escalation.",
+          "summary": "Following CENTCOM's destruction of 3 IRGC tankers, Iran vows revenge and states US facilities and energy firms in the region are 'exposed'. Rhetoric continues to escalate beyond proportionality language; coercion signaling now explicitly names US commercial energy targets.",
           "imminence": 8,
           "impact": 9,
           "threads": ["middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://www.news24.com/world/iran-warns-us-of-more-intense-response-after-latest-strikes-20260906-0975"
+          "url": "https://www.csmonitor.com/USA/Military/2026/0907/iran-us-war-strike-energy-strait-gulf"
+        },
+        {
+          "id": "vi-003",
+          "headline": "Record $99bn yen intervention confirmed; funding likely from selling US Treasuries (~70% of reserves in USTs)",
+          "source": "Bloomberg (Yokoyama, Sep 6) / Japan Times (Sep 7) / Moneycontrol (Sep 7)",
+          "date": "2026-09-07",
+          "summary": "Japan's record yen intervention is now quantified at $99bn; MoF data inference says a portion of foreign securities holdings, including US Treasuries, were sold to fund it. First confirmed official-sector UST selling this cycle — a structural new channel feeding US bond stress while the wildfire burns. Sustained/escalated rung carried from Sep 7 scan with scale now confirmed.",
+          "imminence": 9,
+          "impact": 8,
+          "threads": ["japan_yen", "us_recession", "asian_contagion"],
+          "confidence": "HIGH",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-06/japan-likely-sold-treasuries-to-fund-record-yen-intervention"
         }
       ]
     },
     "anonymous_leaks": {
-      "findings": [],
-      "note": "Zero credible current-week findings in scan window (Sep 1-7). Searches surfaced only historical leaks (2020 pandemic prep, 2019 Yellowhammer, Aug 2025 DHS memo). Negative finding recorded for epistemic completeness — leak category quiet this cycle."
+      "findings": [
+        {
+          "id": "al-001",
+          "headline": "USPS mail-in ballot whistleblower disclosure: 'rushed' implementation, alleged defiance of court orders (Blumenthal letter)",
+          "source": "Sen. Blumenthal letter (Aug 31) / The Independent",
+          "date": "2026-09-01",
+          "summary": "Whistleblower disclosure to Sen. Blumenthal alleges USPS lacks technical capability to implement the mail-in ballot EO and may have violated a court order continuing implementation. Governance/electoral domain — no macro-financial thread tagging. Recorded for epistemic completeness; leak category remains quiet on financial-stability content this cycle.",
+          "imminence": 4,
+          "impact": 4,
+          "threads": [],
+          "confidence": "HIGH",
+          "url": "https://www.blumenthal.senate.gov/imo/media/doc/2026-8-31_usps_whistleblower_letter_final_with_disclosure.pdf"
+        }
+      ],
+      "note": "No macro-financial leak findings in window (Sep 7-8). Single governance-domain leak recorded above; no thread impact."
     },
     "central_bank_communication": {
       "findings": [
         {
           "id": "cb-001",
-          "headline": "August NFP blowout sends Fed HIKE odds to 55-62%; DXY back above 99; CPI verdict is the decision trigger",
-          "source": "StockwireX / FXStreet / FXEmpire",
-          "date": "2026-09-07",
-          "summary": "Strong August nonfarm payrolls re-reversed Fed pricing UP: hike odds ~62% (StockwireX Sep 7), DXY >99.00. FXEmpire: strong jobs 'increased the risk of a September hike'. The Waller de-escalation tick from 00:32Z is dead. Two central banks now tightening into a supply shock (oil ~$96, food red). September FOMC Sep 15-16; CPI first.",
+          "headline": "Fed September hike odds whipsaw 62% -> 58.4% -> ~50% coin-flip into CPI Friday Sep 11; FOMC Sep 15-16",
+          "source": "StockwireX (Sep 7 01:28Z) / IndexBox (Sep 7) / KuCoin-CME FedWatch (Sep 7)",
+          "date": "2026-09-08",
+          "summary": "August NFP blowout sent hike odds to 62%, then intra-week repricing dragged them back to a ~50% coin flip (CME FedWatch). Odds split wide ~50-62% into CPI Friday Sep 11; FOMC Sep 15-16. Two central banks tightening into a supply shock — the decision trigger is now hours away, not weeks.",
           "imminence": 8,
           "impact": 8,
           "threads": ["us_recession", "crypto_collapse"],
           "confidence": "HIGH",
-          "url": "https://stockwirex.com/news/us-market-analysis-jobs-fed-hike-odds-september-2026/"
-        },
-        {
-          "id": "cb-002",
-          "headline": "ECB set to hike Sep 10 (25bp expected) with eurozone inflation at 3-year high >3%; Simkus: 'this September hike is not going to be enough'; Makhlouf uneasy",
-          "source": "Echo scan 06:30 IST observables (ECB officials) / Xinhua fiscal-risk watch",
-          "date": "2026-09-07",
-          "summary": "ECB officials signal more tightening needed: Simkus says the September hike won't be enough; Makhlouf (Ireland) 'uneasy' at >3% inflation, urges readiness for further rises. ECB hike lands Sep 10 — two days before US CPI, into a French-bond flashpoint and 3-year-high EU gas.",
-          "imminence": 8,
-          "impact": 7,
-          "threads": ["euro_crisis"],
-          "confidence": "HIGH",
-          "url": "https://english.news.cn/20260904/8a87cce04da1452ba227ab7857e0ad71/c.html"
+          "url": "https://www.kucoin.com/blog/fed-september-rate-hike-odds-fall-back-to-50-coin-flip-cme-fedwatch-shows"
         },
         {
           "id": "cb-003",
-          "headline": "BOJ hawkish repricing confirmed: markets price September hike (Sep 18 meeting), driving yen rally and JGB pressure",
-          "source": "FXStreet / investinglive / CNBC",
+          "headline": "ECB hikes Sep 10 (25bp 'insurance' expected) with eurozone flash HICP at 3.3% (up from 2.9%); markets price more than economists",
+          "source": "Eurostat flash via samuelandcotrading / cryptobriefing / FX Bank Forecast preview",
           "date": "2026-09-07",
-          "summary": "Yen's sharp weekly rally tied to BOJ rate-hike repricing; hawkish BOJ vs Fed bets divergence the week's FX axis. September synchronized-tightening window now fully loaded: ECB Sep 10, FOMC Sep 15-16, BOJ Sep 18.",
-          "imminence": 7,
+          "summary": "Euro area August flash HICP printed 3.3% y/y (Jul 2.9%), 3-year high territory. ECB Sep 10 decision two days away: 25bp expected as insurance, markets price more than economists, officials (Simkus, Makhlouf) signal more needed. Lands into a French-bond flashpoint and multiyear-high gas.",
+          "imminence": 9,
           "impact": 7,
-          "threads": ["japan_yen", "asian_contagion"],
+          "threads": ["euro_crisis"],
           "confidence": "HIGH",
-          "url": "https://investinglive.com/forex/yen-s-sharp-weekly-rally-tied-to-boj-rate-hike-repricing/"
+          "url": "https://www.samuelandcotrading.com/eurozone-inflation-3-3-ecb-rate-hike-bunds-euro/"
         },
         {
           "id": "cb-004",
-          "headline": "Scope Ratings: 'a bond crisis is when central banks step in' — backstop-expectations language enters mainstream commentary",
-          "source": "Bloomberg (Craig Stirling)",
-          "date": "2026-09-05",
-          "summary": "Scope Ratings frames the live question as WHEN central banks intervene in a bond crisis, not whether. Normalization of central-bank-backstop assumptions during a sovereign-bond selloff is itself a stress precursor — markets are pre-positioning for intervention.",
-          "imminence": 6,
+          "headline": "Yen rallies to Feb-18 high on wage data + GDP; BOJ Sep-18 hike bets harden; USD/JPY below 155",
+          "source": "FXStreet (Sep 8 01:16Z) / TradingKey (Sep 7)",
+          "date": "2026-09-08",
+          "summary": "Upbeat wage data and GDP lifted BOJ hike bets; yen at strongest since February 18. USD/JPY dropped below 155. Hawkish-BOJ vs Fed-bets divergence remains the week's FX axis; synchronized-tightening window fully loaded (ECB Sep 10, FOMC Sep 15-16, BOJ Sep 18).",
+          "imminence": 8,
           "impact": 7,
-          "threads": ["euro_crisis", "us_recession"],
+          "threads": ["japan_yen", "asian_contagion"],
           "confidence": "HIGH",
-          "url": "https://www.bloomberg.com/news/articles/2026-09-05/a-bond-crisis-is-when-central-banks-step-in-scope-ratings-says"
+          "url": "https://www.fxstreet.com/news/japanese-yen-rallies-to-february-18-high-as-upbeat-wage-data-and-gdp-lift-boj-hike-bets-202609080116"
+        },
+        {
+          "id": "cb-005",
+          "headline": "PBOC sets weaker USD/CNY fixing signalling depreciation risk as China pivots to state capital for growth",
+          "source": "CNBC (Anniek Bao) / catch-up scan baseline",
+          "date": "2026-09-07",
+          "summary": "Weaker CNY fixings continue alongside the $54bn state recap: depreciation-risk signalling while credit demand stays weak and Beijing leans on state capital. Currency channel of the China stress knot still open.",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["china_collapse", "asian_contagion"],
+          "confidence": "HIGH",
+          "url": "https://www.cnbc.com/2026/09/07/china-state-banks-lenders-insurers-capital-solvency-bankrupt-nim-.html"
         }
       ]
     },
@@ -107,75 +121,39 @@
       "findings": [
         {
           "id": "gp-001",
-          "headline": "US struck 3 Iranian oil tankers after warships were targeted with ballistic missiles; CENTCOM maritime blockade of Iran active",
-          "source": "PBS NewsHour (AP) / Al Jazeera / News24 (F-35A patrols)",
-          "date": "2026-09-06",
-          "summary": "US military hit 3 Iranian oil tankers after saying navy ships were targeted with ballistic missiles. CENTCOM enforcing a maritime blockade of Iran; F-35A stealth patrols over regional waters. Tanker war institutionalized: state-on-state strikes on energy logistics are now routine operations.",
+          "headline": "CENTCOM destroyed 3 IRGC oil tankers after Iran targeted 2 US Navy warships with ballistic missiles",
+          "source": "DVIDS (official, Sep 5) / CNBC / NBC",
+          "date": "2026-09-05",
+          "summary": "Official CENTCOM confirmation: 3 Iranian crude carriers struck after Iranian missile attacks on 2 US warships; no US personnel harmed. Tanker war institutionalized and now runs on official state-on-state strikes on energy logistics. Sustained from baseline.",
           "imminence": 9,
           "impact": 9,
           "threads": ["middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://www.pbs.org/newshour/world/u-s-military-hits-3-iranian-oil-tankers-after-saying-navy-ships-were-targeted-with-missiles"
+          "url": "https://www.dvidshub.net/news/574030/centcom-destroys-3-irgc-oil-tankers-after-iran-targets-2-us-navy-warships"
         },
         {
           "id": "gp-002",
-          "headline": "Iran declares restricted/exclusion maritime zone OUTSIDE Strait of Hormuz for selected vessels — implementation 'within days'",
-          "source": "India Today / Iran top security official via echo scan",
-          "date": "2026-09-07",
-          "summary": "Iran said it will declare an exclusion zone outside the Strait of Hormuz for selected vessels; top security official confirmed a 'restricted' maritime zone will be declared within days. Second chokepoint-restriction rung: the world's most important oil artery now operates under announced Iranian exclusion rules amid active US-Iran exchange.",
+          "headline": "Iran vows to EXTEND Hormuz exclusion zone; new restricted zone + passage-route maps still 'coming days'; CENTCOM denies Iran's claimed strike on US vessel",
+          "source": "The Independent (live) / CNA-Reuters / Al Jazeera explainer",
+          "date": "2026-09-08",
+          "summary": "Tehran vows to widen the exclusion zone after the tanker strikes; SNSC says the new restricted zone and Hormuz passage-route maps will be announced 'in the coming days' — still pending implementation, now with maps 'approved soon'. Disputed strike claim on a US military vessel (CENTCOM denial) keeps the crewed-vessel threshold live. War band unchanged but pressure rising.",
           "imminence": 9,
           "impact": 9,
           "threads": ["middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://www.indiatoday.in/world/story/strait-of-hormuz-iran-exclusion-zone-us-tanker-strikes-ptag-2988538-2026-09-07"
+          "url": "https://www.independent.co.uk/news/world/middle-east/iran-us-war-live-trump-hormuz-strikes-oil-tankers-b3045692.html"
         },
         {
           "id": "gp-003",
-          "headline": "US declares NATIONAL EMERGENCY to secure the bulk-power system (Federal Register Aug 31)",
-          "source": "Federal Register / Executive Office of the President",
-          "date": "2026-08-31",
-          "summary": "Presidential national emergency declared to secure the US bulk-power (electric grid) system, published Aug 31 — one week before this scan. Posture hardening on critical energy infrastructure; context finding (no direct thread mapping). Separate export-control national emergency continued Aug 14 (routine).",
-          "imminence": 5,
-          "impact": 6,
-          "threads": [],
-          "confidence": "HIGH",
-          "url": "https://www.federalregister.gov/documents/2026/08/31/2026-17843/declaring-a-national-emergency-to-secure-the-united-states-bulk-power-system"
-        },
-        {
-          "id": "gp-004",
-          "headline": "Iran struck a US UNMANNED vessel (Sep 6) — first claimed direct Iranian strike on a US vessel",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified) / Al Jazeera",
-          "date": "2026-09-06",
-          "summary": "Iran struck a US unmanned surface vessel — the first claimed direct Iranian strike on a US-flagged vessel of the war. Crossed the vessel-type threshold: US crewed-ship retaliation now one incident away. Verified in this morning's 04:30Z breaking scan; included for thread completeness.",
-          "imminence": 9,
-          "impact": 8,
-          "threads": ["middle_east_war"],
-          "confidence": "HIGH",
-          "url": "https://www.aljazeera.com/news/2026/9/6/iran-touts-military-response-as-us-maintains-blockade-hits-tankers"
-        },
-        {
-          "id": "gp-005",
-          "headline": "Israel-Lebanon second front active: Israeli strikes killed 4 in Lebanon",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified)",
-          "date": "2026-09-06",
-          "summary": "Second front confirmed active — Israeli strikes in Lebanon killed 4. Regional war breadth expanding beyond the US-Iran naval theater; multi-front dynamics raise broadening risk (Gulf states, Levant).",
+          "headline": "Iran restricting Gulf shipping as active posture; US energy firms named at risk",
+          "source": "Christian Science Monitor",
+          "date": "2026-09-07",
+          "summary": "Beyond rhetoric: Iran is actively restricting Gulf shipping while naming US energy firms as exposed. Operational posture now targets commercial energy logistics of the adversary — one rung below strikes on US energy assets.",
           "imminence": 7,
           "impact": 8,
           "threads": ["middle_east_war"],
-          "confidence": "MEDIUM",
-          "url": null
-        },
-        {
-          "id": "gp-006",
-          "headline": "US envoys Witkoff/Kushner met Putin, now in Kyiv with 'more effective' peace proposals",
-          "source": "Echo scan 06:30 IST observables",
-          "date": "2026-09-06",
-          "summary": "Ukraine-theater diplomacy active. Context finding — no direct mapping to the 8 threads this cycle; monitored for energy/gas linkage to European stress.",
-          "imminence": 4,
-          "impact": 5,
-          "threads": [],
-          "confidence": "MEDIUM",
-          "url": null
+          "confidence": "HIGH",
+          "url": "https://www.csmonitor.com/USA/Military/2026/0907/iran-us-war-strike-energy-strait-gulf"
         }
       ]
     },
@@ -183,39 +161,39 @@
       "findings": [
         {
           "id": "sc-001",
-          "headline": "Hormuz traffic down ~95%; war-risk cover canceled/repriced; 'Hormuz on a Knife-Edge' as Iran-US ceasefire unravels",
-          "source": "Al Jazeera (Aug 27) / gCaptain / Reuters archive",
-          "date": "2026-08-27",
-          "summary": "Al Jazeera data story: 95% drop in Hormuz traffic has already redrawn global shipping. gCaptain: shipping 'pays the price as the Iran-US ceasefire unravels'; marine insurers canceled war-risk cover earlier in the conflict. The chokepoint is functionally constrained — not at risk of disruption, but disrupted.",
+          "headline": "Brent nears $100 — six-week high as US-Iran war chokes Hormuz; Goldman bands $80-120",
+          "source": "Gulf News (Sep 8 00:35Z) / National Herald India / Economy Middle East (Goldman)",
+          "date": "2026-09-08",
+          "summary": "NEW RUNG: Brent pushed toward the $100 threshold (six-week high) as the war chokes Hormuz. Goldman frames $80-120 band conditional on regional export normalization. War band widens upward from $94-98 — direct stagflation feed into US/EU CPI prints due this fortnight.",
           "imminence": 9,
           "impact": 9,
           "threads": ["middle_east_war", "us_recession", "asian_contagion", "euro_crisis"],
           "confidence": "HIGH",
-          "url": "https://www.aljazeera.com/news/2026/8/27/how-a-95-percent-drop-in-hormuz-traffic-changed-global-shipping"
+          "url": "https://gulfnews.com/business/energy/brent-crude-oil-nears-100-as-us-iran-war-chokes-hormuz-rattles-oil-markets-1.500666538"
         },
         {
           "id": "sc-002",
-          "headline": "Brent $96.02 (+6.27 w/w), war band $94-97; food price index red at 131.8 and deteriorating — energy pass-through hits food next",
-          "source": "FRED DCOILBRENTEU (Sep 1) / IMF PFOODINDEXM / Echo scan",
+          "headline": "LNG prices surge to multiyear highs; Europe depleted hydro reservoirs heading into winter — LNG crisis Europe 'cannot afford to ignore'",
+          "source": "Business Standard (Sep 7 11:09Z) / The National (Sep 7) / Timera (Sep 7)",
           "date": "2026-09-07",
-          "summary": "Brent live ~$94-97 war band (signal-board value $96.02, deteriorating). IMF Food Price Index 131.8 red/deteriorating. Energy-to-food pass-through is the next stagflation rung; oil at $96 keeps both the inflation and recession channels loaded.",
+          "summary": "West Asia war squeezes LNG supplies to multiyear highs; Europe's hot dry summer evaporated hydro reservoirs and winter now hinges on securing marginal cargoes against Asia. Energy-inflation second wave stacking onto the ECB decision and euro sovereign stress.",
           "imminence": 8,
           "impact": 8,
-          "threads": ["middle_east_war", "us_recession"],
+          "threads": ["euro_crisis", "asian_contagion", "middle_east_war"],
           "confidence": "HIGH",
-          "url": "https://gcaptain.com/hormuz-on-a-knife-edge-shipping-pays-the-price-as-the-iran-u-s-ceasefire-unravels/"
+          "url": "https://www.business-standard.com/economy/news/lng-prices-surge-to-multiyear-highs-as-west-asia-war-squeezes-supplies-126090700873_1.html"
         },
         {
           "id": "sc-003",
-          "headline": "New shipping route around Iranian restricted zone announced 'coming days'; tanker costs set to rise further",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified) / gCaptain",
+          "headline": "Hormuz transit constraint sustained: tanker traffic lowest since May; Iran restricting Gulf shipping actively",
+          "source": "Kpler / catch-up scan baseline / CSMonitor",
           "date": "2026-09-07",
-          "summary": "Iran's restricted zone + alternative routing regime takes effect within days; freight and insurance premia step up again on rerouting. Logistics cost inflation compounds the oil shock into H2 supply chains.",
+          "summary": "Hormuz disruption persists at crisis levels (traffic lowest since May), with Iran now actively restricting Gulf shipping ahead of formal zone implementation. Sustained rung — no relief in shipping flows.",
           "imminence": 8,
-          "impact": 7,
-          "threads": ["middle_east_war"],
-          "confidence": "MEDIUM",
-          "url": null
+          "impact": 8,
+          "threads": ["middle_east_war", "us_recession", "asian_contagion", "euro_crisis"],
+          "confidence": "HIGH",
+          "url": "https://www.kpler.com/blog/restocking-demand-lower-chinese-domestic-gas-production-to-push-global-lng-prices-higher-as-hormuz-transits-remain-constrained"
         }
       ]
     },
@@ -223,51 +201,27 @@
       "findings": [
         {
           "id": "rc-001",
-          "headline": "China issues 300bn yuan special treasury bonds — $54bn recapitalisation of 8 state banks/insurers, biggest financial recap push in two decades",
-          "source": "Xinhua / BBC / Guardian / moneycontrol",
+          "headline": "China injects $54bn (Y300bn+) into 8 state banks + insurers — bank/insurer shares SLIDE on 'limited short-term impact' amid weak credit demand",
+          "source": "BBC / Nikkei Asia / Caixin / SCMP / CNBC",
           "date": "2026-09-07",
-          "summary": "China's Ministry of Finance will issue 300bn yuan in special treasury bonds to boost financial firms' capital — pumping ~$54bn into eight state banks and insurers, the biggest recapitalisation push in two decades. Announced Monday Sep 7 amid 'fears over sluggish growth'. Official intervention at this scale arrives BECAUSE stress exists.",
-          "imminence": 7,
-          "impact": 7,
+          "summary": "Biggest state-bank recapitalization in two decades meets falling bank stocks: market reads it as confirmation of balance-sheet strain, not rescue. Insurers included (real-estate exposure backstop). Analysts say more needed; credit demand still weak. Escalated rung now market-confirmed.",
+          "imminence": 8,
+          "impact": 8,
           "threads": ["china_collapse", "asian_contagion"],
           "confidence": "HIGH",
-          "url": "http://www.china.org.cn/china/Off_the_Wire/2026-09/07/content_118683221.shtml"
+          "url": "https://asia.nikkei.com/business/finance/china-s-state-bank-and-insurer-shares-slide-after-54bn-injection-plan"
         },
         {
           "id": "rc-002",
-          "headline": "Temporary price-band protections approved for overnight trading due to 'Extraordinary Market Volatility' (Federal Register 2026)",
-          "source": "Federal Register (91 FR 51515) / Joint Industry Plan",
+          "headline": "OCC + FDIC finalize supervisory redefinition ('unsafe or unsound practices' -> material financial risks focus) amid bond wildfire",
+          "source": "Federal Register (Sep 1) / Consumer Finance Monitor / Crowell",
           "date": "2026-09-01",
-          "summary": "SEC-approved 27th amendment to the NMS plan establishes temporary price band protections in OVERNIGHT trading to address extraordinary volatility. Regulatory stress response to overnight-session instability — circuit-breaker architecture being extended to hours that used to be quiet. Signal: market structure is strained outside regular hours.",
-          "imminence": 6,
-          "impact": 6,
-          "threads": ["us_recession", "crypto_collapse"],
-          "confidence": "HIGH",
-          "url": "https://thefederalregister.org/documents/2026-16201/joint-industry-plan-order-granting-approval-of-the-twenty-seventh-amendment-to-the-national-market-system-plan-to-addres"
-        },
-        {
-          "id": "rc-003",
-          "headline": "China property presale-rule upheaval targets shadow banking and local-government debt",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (Caixin Aug 31)",
-          "date": "2026-08-31",
-          "summary": "Property overhaul aims at shadow banking/local debt channels (carried from 04:30Z scan basis; no fresh Sep 7 developments). Structural de-risking of property finance is itself a deflationary force for the China thread.",
-          "imminence": 6,
-          "impact": 6,
-          "threads": ["china_collapse"],
+          "summary": "US banking regulators finalized rules redefining supervisory terms and refocusing bank supervision on material financial risks — timing lands mid-selloff. Modest systemic signal; recorded as the period's principal US financial-regulatory change.",
+          "imminence": 5,
+          "impact": 5,
+          "threads": ["us_recession"],
           "confidence": "MEDIUM",
-          "url": null
-        },
-        {
-          "id": "rc-004",
-          "headline": "Export-control national emergency continued (Federal Register Aug 14) — routine continuation, context only",
-          "source": "Federal Register",
-          "date": "2026-08-14",
-          "summary": "Annual continuation of the export-control national emergency. Context finding, no thread mapping.",
-          "imminence": 3,
-          "impact": 4,
-          "threads": [],
-          "confidence": "HIGH",
-          "url": "https://www.federalregister.gov/documents/2026/08/14/2026-16748/continuation-of-the-national-emergency-with-respect-to-export-control-regulations"
+          "url": "https://www.consumerfinancemonitor.com/2026/09/01/occ-and-fdic-finalize-rules-to-refocus-bank-supervision-on-material-financial-risks/"
         }
       ]
     },
@@ -275,51 +229,39 @@
       "findings": [
         {
           "id": "su-001",
-          "headline": "Jakarta protests persist despite volcanic ash fallout; 760 police deployed",
-          "source": "JournalArta Global",
+          "headline": "NEW: Fresh labor protests spread across Iran as Tehran DOUBLES third-tier gasoline price — war economy cracking at home",
+          "source": "Bloomberg via europesays (Sep 7 19:34Z) / Jerusalem Post",
           "date": "2026-09-07",
-          "summary": "Protests continue in central Jakarta despite falling volcanic ash from Anak Krakatau; 760 officers deployed today. Indonesia unrest persists under compound stress (political + natural). Weak regional-sentiment channel for asian_contagion.",
-          "imminence": 5,
-          "impact": 3,
-          "threads": ["asian_contagion"],
-          "confidence": "MEDIUM",
-          "url": "https://journalarta.com/en/2026/09/07/jakarta-protests-persist-volcanic-ash-fallout/"
+          "summary": "Long fuel queues and fresh demonstrations in Tehran, Ahvaz, Shush, Kermanshah, Dezful, Rasht after Tehran doubled third-tier gasoline prices; retired educators and telecom workers also out. Domestic pressure on the wartime government rising — unpredictable escalation vector for the war thread.",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["middle_east_war"],
+          "confidence": "HIGH",
+          "url": "https://www.europesays.com/iran/282481/"
         },
         {
           "id": "su-002",
-          "headline": "UK Dover/Kent port standoffs: hundreds in police standoff after migrant boat arrivals; routes to processing centre blocked",
-          "source": "The Standard / Kent Live",
+          "headline": "Jakarta protests EASE after lawmaker pay-hike reversal; aftermath lingers",
+          "source": "Business Times (ASEAN)",
           "date": "2026-09-07",
-          "summary": "Port-adjacent protest standoffs continue in Dover/Kent. Localized UK flashpoint — substrate for euro_crisis social stress, low direct financial transmission.",
+          "summary": "DE-ESCALATION TICK: Indonesian protests eased after the pay-hike reversal, though analysts warn response inadequacy could reignite. Excluded from convergence tagging (signal direction is down); recorded for completeness.",
           "imminence": 4,
           "impact": 3,
-          "threads": ["euro_crisis"],
-          "confidence": "MEDIUM",
-          "url": "https://www.standard.co.uk/news/uk/portsmouth-hampshire-hampshire-police-dover-port-of-dover-b1295987.html"
-        },
-        {
-          "id": "su-003",
-          "headline": "Delhi ABVP-MCD clashes over building collapse; Karachi PTI rally clashes with detentions",
-          "source": "The Hindu / Express Tribune",
-          "date": "2026-09-07",
-          "summary": "Localized South-Asian flashpoints. Context finding — no thread mapping; recorded for unrest-pattern continuity.",
-          "imminence": 3,
-          "impact": 2,
           "threads": [],
           "confidence": "MEDIUM",
-          "url": "https://www.thehindu.com/news/cities/Delhi/abvp-members-clash-with-police-during-protest-outside-mcd-headquarters-over-building-collapse/article71436427.ece"
+          "url": "https://www.businesstimes.com.sg/international/asean/jakarta-protests-ease-after-pay-hike-lawmakers-reversed-aftermath-lingers"
         },
         {
           "id": "su-004",
-          "headline": "DRC Ebola deaths pass 3,000 of ~6,250 cases (~48% CFR); spreading faster than containment; conflict derailing response",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified)",
+          "headline": "DRC Ebola (Bundibugyo) sustained: 3,000+ deaths of 6,250 cases, outbreak 'still evolving', WHO adapting care in Bunia",
+          "source": "Reuters (Sep 2) / Health Policy Watch (Sep 3) / WHO AFRO (Sep 7)",
           "date": "2026-09-07",
-          "summary": "Ebola outbreak deaths crossed 3,000 at ~48% case fatality ratio, outpacing containment; conflict zones are derailing the response. Public-health crisis tag under social_unrest (public-health emergency). Single-category evidence — formal convergence not triggered; hand-assessment layer holds global_pandemic DEVELOPING.",
-          "imminence": 7,
-          "impact": 7,
+          "summary": "Ebola deaths >3,000 of >6,250 confirmed cases; outbreak still evolving; WHO regional response adapting. Sustained — no new acceleration rung in window.",
+          "imminence": 5,
+          "impact": 4,
           "threads": ["global_pandemic"],
-          "confidence": "MEDIUM",
-          "url": null
+          "confidence": "HIGH",
+          "url": "https://afro.who.int/countries/democratic-republic-of-congo/news/adapting-care-evolving-ebola-outbreak-democratic-republic-congo"
         }
       ]
     },
@@ -327,196 +269,212 @@
       "findings": [
         {
           "id": "fs-001",
-          "headline": "Global bond wildfire: US Treasuries + UK gilts at decades-high yields; 'no plan' commentary; 'next domino still mispriced'",
-          "source": "The Guardian (Sep 4) / ainvest (Sep 5) / Globe & Mail (Sep 1)",
-          "date": "2026-09-04",
-          "summary": "Guardian: yields on USTs and gilts recently hit their highest levels for decades; 'as instability in global bond markets rises... there's no plan'. ainvest: global government-bond yields doing something not seen in decades; the next domino is mispriced. Globe & Mail: bond unease is the greatest risk for the next financial crisis. Sovereign-bond wildfire is the week's dominant stress precursor.",
+          "headline": "UST 10Y at the 4.8% test — sustained break 'could create meaningful spillover' into other assets; global selloff US 4.8 / UK 5.25 / JGB 3.0",
+          "source": "CNBC (Bessent/fiscal framing, Sep 6) / EBC (Sep 2)",
+          "date": "2026-09-07",
+          "summary": "10-year Treasury hovers at the 4.8% threshold with fiscal-risk spillover warnings; UK gilts 5.25%, JGB 10Y ~3.0%. The bond wildfire's next leg is a single decisive break away.",
           "imminence": 8,
           "impact": 9,
-          "threads": ["us_recession", "euro_crisis"],
+          "threads": ["us_recession", "euro_crisis", "japan_yen", "crypto_collapse"],
           "confidence": "HIGH",
-          "url": "https://www.theguardian.com/business/2026/sep/04/instability-in-global-bond-markets-rising-knock-on-effects"
+          "url": "https://www.cnbc.com/2026/09/07/us-treasury-yields-markets-scott-bessent.html"
         },
         {
           "id": "fs-002",
-          "headline": "France-Italy OAT/BTP yield INVERSION; France-bund spread at debt-crisis levels; 57.5% foreign-held French debt = flight risk; Japan institutions repatriating from French assets",
-          "source": "Seoul Economic Daily (Sep 7) / StockwireX (Sep 6) / money.it (El-Erian)",
+          "headline": "S&P 500 slips below 7,700 as bond yields surge and stocks tumble on inflation fears",
+          "source": "Mitrade (Sep 7) / NBC News",
           "date": "2026-09-07",
-          "summary": "French OAT yields overtook Italian BTPs (El-Erian: 'Rome beats Paris'); France's spread over bunds hits debt-crisis levels; foreign investors hold 57.5% of French debt, raising flight risk. Seoul Economic Daily flags Japan's big institutions showing signs of REPATRIATING from French debt — direct japan_yen-to-euro_crisis transmission channel via the intervention funding.",
-          "imminence": 8,
-          "impact": 8,
-          "threads": ["euro_crisis", "asian_contagion", "japan_yen"],
+          "summary": "Equity tape deteriorating in sympathy with the bond selloff — risk-asset transmission channel active while CPI verdict pending.",
+          "imminence": 7,
+          "impact": 7,
+          "threads": ["us_recession"],
           "confidence": "HIGH",
-          "url": "https://en.sedaily.com/international/2026/09/07/frances-debt-emerges-as-euro-zones-next-flashpoint"
+          "url": "https://www.mitrade.com/insights/shares-analysis/us-stocks/us-stock-jobs-report-fed-hike-fomc-202609071434"
         },
         {
           "id": "fs-003",
-          "headline": "BTC breaks below $80,000 ($78,649 low) on Fed hike bets; crypto-wide selloff on Iran strikes; Liquid Network federation-reserve breach (4,000 BTC ~$320M); USDT market-cap reduction",
-          "source": "Straits Times (Sep 7) / ainvest (Sep 5) / memeburn (Sep 5) / biggo finance (Sep 7) / Echo scan cyber note",
+          "headline": "NEW: Bitcoin below $79K — $208M long liquidation rout; sharpest deleveraging since 2023",
+          "source": "news.bitcoin.com (Sep 7 17:16Z) / cryptobriefing",
           "date": "2026-09-07",
-          "summary": "BTC fell below $80K intraday (low $78,649) as hot jobs data spurred Fed HIKE bets; ETF inflows provided support. Iran strikes drove crypto-wide selloff (SOL/TRON -3%+). Liquid Network 4,000 BTC federation-reserve breach (~$320M) did not move BTC price; USDT market-cap reduction noted. Crypto stress is macro-driven, not idiosyncratic — WATCH posture held.",
-          "imminence": 6,
-          "impact": 6,
+          "summary": "BTC broke below $79K with a $208M longs rout; Binance futures OI dipped below 180-day average — sharpest deleveraging since 2023. Crypto stress increment while risk assets sell off globally.",
+          "imminence": 7,
+          "impact": 7,
           "threads": ["crypto_collapse"],
           "confidence": "HIGH",
-          "url": "https://www.straitstimes.com/business/bitcoin-drops-below-80000-as-hot-jobs-data-spurs-us-federal-reserve-hike-bets"
+          "url": "https://news.bitcoin.com/market-updates/bitcoin-price-drops-below-79k-line-as-longs-get-torched-in-208m-rout/"
         },
         {
           "id": "fs-004",
-          "headline": "China state bank/insurer shares SLIDE after $54bn injection plan — 'limited short-term impact' seen amid weak credit demand",
-          "source": "Nikkei Asia (Sep 7)",
+          "headline": "NEW: $320M Liquid Network breach hits during record deleveraging — crypto infrastructure shock",
+          "source": "WalletInvestor (Sep 7)",
           "date": "2026-09-07",
-          "summary": "Market reaction to the recap was skeptical: eight Chinese financial institutions' shares slid; funding seen having 'limited short-term impact' amid weak credit demand. Stimulus skepticism + weak credit demand = china_collapse stress-response evidence.",
+          "summary": "A $320M breach of the Liquid Network (BTC sidechain/transfer plumbing) coincides with the deleveraging wave — infrastructure-layer stress, not just price. Single-source; MEDIUM confidence.",
           "imminence": 6,
           "impact": 6,
-          "threads": ["china_collapse"],
-          "confidence": "HIGH",
-          "url": "https://asia.nikkei.com/business/finance/china-s-state-bank-and-insurer-shares-slide-after-54bn-injection-plan"
+          "threads": ["crypto_collapse"],
+          "confidence": "MEDIUM",
+          "url": "https://walletinvestor.com/news/crypto-news/bitcoin-stalls-below-80000-as-record-deleveraging-meets-a-320-million-liquid-network-breach/"
         },
         {
           "id": "fs-005",
-          "headline": "JGB stress sustained: 10Y 3.02% / 30Y 4.18%; 30Y auction = global repricing bellwether",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified)",
+          "headline": "Peso record low sustained — oil shock erodes EM dollar reserves; JPM/BoA see 65/USD by mid-2027",
+          "source": "BusinessWorld/Bloomberg (Sep 7) / Business Times",
           "date": "2026-09-07",
-          "summary": "Japanese government bond yields hold at cycle extremes (10Y >3%, 30Y 4.18%); the 30Y auction functions as the global repricing bellwether. Japan's banks/insurers face mark-to-market pressure as BOJ hike odds firm; intervention funding via asset sales compounds the flow.",
+          "summary": "Philippine peso left behind in Asia as the oil shock drains dollar reserves of import-heavy EMs; JPM/BoA target 65/USD by mid-2027. EM reserve-erosion channel sustained.",
           "imminence": 7,
-          "impact": 8,
-          "threads": ["japan_yen", "asian_contagion"],
+          "impact": 7,
+          "threads": ["asian_contagion"],
           "confidence": "HIGH",
-          "url": null
+          "url": "https://bworldonline.com/bloomberg/2026/09/07/774984/peso-left-behind-in-asia-as-oil-shock-erodes-dollar-reserves/"
         },
         {
           "id": "fs-006",
-          "headline": "Private credit funding ~$800B AI data-center debt with cover ratios <2x; BIS top-risk flags",
-          "source": "blackwatch-2026-09-07-0430 breaking scan (verified, BIS)",
+          "headline": "NEW: Gary Shilling — 60-70% recession probability within 12 months; consumer warnings flashing",
+          "source": "Business Insider (Sep 2026)",
           "date": "2026-09-07",
-          "summary": "Private credit is carrying ~$800B of AI data-center debt at coverage ratios below 2x; BIS flags it as top risk. Credit-quality stress in the AI buildout is the hidden domino behind the public bond selloff.",
-          "imminence": 6,
-          "impact": 8,
-          "threads": ["us_recession", "crypto_collapse"],
+          "summary": "Named high-profile recession call added to the chorus: consumer signals point to recession in 12 months at 60-70% odds. Opinion-layer but widens the recession-call camp during the stagflation band.",
+          "imminence": 5,
+          "impact": 7,
+          "threads": ["us_recession"],
           "confidence": "MEDIUM",
-          "url": null
+          "url": "https://www.businessinsider.com/recession-outlook-warning-signs-us-consumer-spending-economy-gary-shilling-2026-9"
+        },
+        {
+          "id": "fs-007",
+          "headline": "Japan bond rout turning tide of global capital — repatriation channel sustained",
+          "source": "Reuters (Sep 2) / Franklin Templeton-Western Asset",
+          "date": "2026-09-07",
+          "summary": "JGB repricing keeps pulling domestic capital home — the structural outflow channel from US/EU assets persists (carry-over sustained; no fresh increment in window).",
+          "imminence": 6,
+          "impact": 7,
+          "threads": ["japan_yen", "asian_contagion", "us_recession"],
+          "confidence": "HIGH",
+          "url": "https://www.reuters.com/world/asia-pacific/how-japans-bond-rout-is-turning-tide-global-capital-2026-09-02/"
+        },
+        {
+          "id": "fs-008",
+          "headline": "France now borrows more expensively than Italy — OAT/BTP inversion mainstreamed; EU borrowing costs at/near multi-decade highs",
+          "source": "StockwireX (Sep 6) / Xinhua (Sep 4)",
+          "date": "2026-09-06",
+          "summary": "France-Italy yield inversion confirmed and now surfaced in mainstream market commentary; eurozone sovereign borrowing costs at or near multi-decade highs amid inflation and fiscal-risk pressure. Euro-crisis knot remains live into the ECB decision.",
+          "imminence": 8,
+          "impact": 8,
+          "threads": ["euro_crisis"],
+          "confidence": "HIGH",
+          "url": "https://stockwirex.com/analysis/france-italy-bond-yields-inversion-september-2026/"
         }
       ]
     }
   },
   "convergence_detection": {
-    "methodology": "Sum of (imminence x impact) for all findings tagged with each thread across different categories. Thread score = min(100, raw_sum x 0.17 + 5x(categories_beyond_2)). Threshold: >=50 = DEVELOPING, >=100 = ACTIVE (capped). Hand-assessment layer (blackwatch-macro-event.json) applies confirmed-state-change rule on the 0-200 composite scale.",
+    "methodology": "Sum of (imminence x impact) for all findings tagged with each thread across different categories. Thread score = min(100, round(raw_sum x 0.17) + 5x(categories_beyond_2)). Threshold: >=50 = DEVELOPING, >=100 = ACTIVE (capped). De-escalation-tick findings (su-002 Jakarta easing) carry no thread tags and are excluded from convergence. Hand-assessment layer (blackwatch-macro-event.json) applies confirmed-state-change rule on the 0-200 composite scale and remains the live board.",
     "threads": {
       "middle_east_war": {
-        "findings": ["vi-003", "gp-001", "gp-002", "gp-004", "gp-005", "sc-001", "sc-002", "sc-003"],
-        "categories_represented": ["verbal_intervention", "geopolitical_posture", "supply_chain_disruption"],
-        "raw_score": 563,
+        "findings": ["vi-002", "gp-001", "gp-002", "gp-003", "sc-001", "sc-002", "sc-003", "su-001"],
+        "categories_represented": ["verbal_intervention", "geopolitical_posture", "supply_chain_disruption", "social_unrest"],
+        "raw_score": 548,
         "convergence_score": 100,
-        "score_breakdown": "vi-003(8x9=72) + gp-001(9x9=81) + gp-002(9x9=81) + gp-004(9x8=72) + gp-005(7x8=56) + sc-001(9x9=81) + sc-002(8x8=64) + sc-003(8x7=56) = 563 across 8 findings in 3 categories -> 563 x 0.17 = 95.71 -> 96 + 5x(3-2)=5 -> 101 -> capped at 100",
+        "score_breakdown": "vi-002(8x9=72) + gp-001(9x9=81) + gp-002(9x9=81) + gp-003(7x8=56) + sc-001(9x9=81) + sc-002(8x8=64) + sc-003(8x8=64) + su-001(7x7=49) = 548 across 8 findings in 4 categories -> 548 x 0.17 = 93.16 -> 93 + 5x(4-2)=10 -> 103 -> capped at 100",
         "signal": "ACTIVE",
-        "assessment": "FORMAL SCAN CONFIRMS ACTIVE (100). Tanker war institutionalized: US sank/hit 3 Iranian tankers Sep 5-6 (warships ballistic-missile-targeted); Iran struck a US unmanned vessel Sep 6 (first claimed direct strike on a US vessel); Iran declares restricted/exclusion zone OUTSIDE Hormuz 'within days' (Sep 7 announcement); Israel-Lebanon second front active; Brent $94-97 war band; Hormuz traffic -95%. Rhetoric escalated beyond proportionality (Ghalibaf). KEY VECTORS: restricted-zone implementation 'coming days', US crewed-vessel threshold, Kharg Island strike option (weighed per Aug 31 scan, un-refreshed this cycle)."
-      },
-      "us_recession": {
-        "findings": ["vi-001", "cb-001", "cb-004", "rc-002", "sc-001", "sc-002", "fs-001", "fs-006"],
-        "categories_represented": ["verbal_intervention", "central_bank_communication", "regulatory_change", "supply_chain_disruption", "financial_stress_precursors"],
-        "raw_score": 470,
-        "convergence_score": 95,
-        "score_breakdown": "vi-001(9x7=63) + cb-001(8x8=64) + cb-004(6x7=42) + rc-002(6x6=36) + sc-001(9x9=81) + sc-002(8x8=64) + fs-001(8x9=72) + fs-006(6x8=48) = 470 across 8 findings in 5 categories -> 470 x 0.17 = 79.9 -> 80 + 5x(5-2)=15 -> 95",
-        "signal": "DEVELOPING",
-        "assessment": "FORMAL LAYER 95 (DEVELOPING, one increment from cap) — hand-assessment layer holds us_recession ACTIVE at 200 (0-200 composite, confirmed-state rule). Bond wildfire sustained (UST/gilts decades-high yields, 'no plan', 'next domino mispriced'), Fed hike odds RE-REVERSED UP to 55-62% on Aug NFP blowout (the one de-escalation tick is dead), overnight-session price bands approved for extraordinary volatility, private credit ~$800B AI data-center debt <2x cover, oil $94-97 stagflation band, Japan official UST selling (vi-001) now a direct flow into US debt markets. CPI verdict + Sep 15-16 FOMC + Sept 9 buyback cap = fully-loaded fortnight."
+        "assessment": "FORMAL SCAN CONFIRMS ACTIVE (100, capped, 3rd consecutive cycle). Tanker war institutionalized (CENTCOM destroyed 3 IRGC tankers after ballistic-missile targeting of 2 US warships); Iran vows response naming US facilities 'exposed' and US energy firms at risk; exclusion-zone EXTENSION vowed with restricted zone/maps still 'coming days'; Brent NEARS $100. NEW this cycle: Iran doubles third-tier gasoline price -> labor protests spread across 6 cities — war economy cracking at home is an unpredictable escalation vector. KEY VECTORS: restricted-zone implementation 'coming days' (maps 'approved soon'), US crewed-vessel threshold, Iran domestic unrest trajectory, Kharg Island strike option (still un-refreshed)."
       },
       "asian_contagion": {
-        "findings": ["vi-001", "vi-002", "cb-003", "rc-001", "sc-001", "su-001", "fs-002", "fs-005"],
-        "categories_represented": ["verbal_intervention", "central_bank_communication", "regulatory_change", "supply_chain_disruption", "social_unrest", "financial_stress_precursors"],
-        "raw_score": 425,
-        "convergence_score": 92,
-        "score_breakdown": "vi-001(63) + vi-002(8x6=48) + cb-003(7x7=49) + rc-001(7x7=49) + sc-001(9x9=81) + su-001(5x3=15) + fs-002(8x8=64) + fs-005(7x8=56) = 425 across 8 findings in 6 categories -> 425 x 0.17 = 72.25 -> 72 + 5x(6-2)=20 -> 92",
+        "findings": ["vi-003", "cb-004", "cb-005", "rc-001", "sc-001", "sc-002", "sc-003", "fs-005", "fs-007"],
+        "categories_represented": ["verbal_intervention", "central_bank_communication", "regulatory_change", "supply_chain_disruption", "financial_stress_precursors"],
+        "raw_score": 541,
+        "convergence_score": 100,
+        "score_breakdown": "vi-003(9x8=72) + cb-004(8x7=56) + cb-005(7x7=49) + rc-001(8x8=64) + sc-001(81) + sc-002(64) + sc-003(64) + fs-005(7x7=49) + fs-007(6x7=42) = 541 across 9 findings in 5 categories -> 541 x 0.17 = 91.97 -> 92 + 5x(5-2)=15 -> 107 -> capped at 100",
+        "signal": "ACTIVE",
+        "assessment": "FORMAL LAYER REACHES CAP (100) — up from 92 Sep 7, driven by the Brent-$100 rung, record-intervention confirmation, China recap skepticism deepening (bank/insurer shares slid), and LNG multiyear highs squeezing Asian buyers. DIVERGENCE NOTE: hand-assessment layer holds asian_contagion at 90 DEVELOPING (won exceptionally strong vs peso record low = idiosyncratic divergence, not broad contagion; Jakarta protests easing). Formal cap is a category-diversity bonus, not a confirmed hand state change — hand layer remains authoritative.",
+        "formal_state_note": "formal ACTIVE (capped) vs hand DEVELOPING 90 — logged, no hand upgrade without confirmed-state evidence"
+      },
+      "us_recession": {
+        "findings": ["vi-001", "vi-003", "cb-001", "sc-001", "sc-003", "fs-001", "fs-002", "fs-006"],
+        "categories_represented": ["verbal_intervention", "central_bank_communication", "supply_chain_disruption", "financial_stress_precursors"],
+        "raw_score": 437,
+        "convergence_score": 84,
+        "score_breakdown": "vi-001(7x7=49) + vi-003(72) + cb-001(8x8=64) + sc-001(81) + sc-003(64) + fs-001(8x9=72) + fs-002(49) + fs-006(5x7=35) = 437 across 8 findings in 4 categories -> 437 x 0.17 = 74.29 -> 74 + 5x(4-2)=10 -> 84",
         "signal": "DEVELOPING",
-        "assessment": "FORMAL SCAN CONFIRMS DEVELOPING (92), consistent with hand layer (90). Broadest diversity after the war thread: 6 categories. Japan record intervention + repatriation flows + JGB extremes + BOJ hike repricing = the Japan knot tightening; China $54bn recap skepticism + property-rule upheaval; oil shock erodes EM dollar reserves (peso record-low channel named at 04:30Z); Jakarta unrest persists under compound stress."
+        "assessment": "FORMAL 84 (DEVELOPING, eased from 95 on composition — Sep 5 Scope-Ratings and overnight price-band items not re-surfaced this cycle). Hand layer holds us_recession ACTIVE at 200. This cycle's increments: Trump-Warsh hike-pressure collision (political risk into FOMC), Fed odds whipsaw 62->~50 into CPI Friday Sep 11, Brent nears $100 (stagflation band), UST 4.8% test framing, Shilling 60-70% recession call, Japan official UST selling confirmed as live flow into US debt markets. Fully loaded fortnight: CPI Fri Sep 11, ECB Sep 10, FOMC Sep 15-16, BOJ Sep 18."
       },
       "euro_crisis": {
-        "findings": ["vi-001", "cb-002", "cb-004", "sc-001", "su-002", "fs-001", "fs-002"],
-        "categories_represented": ["verbal_intervention", "central_bank_communication", "supply_chain_disruption", "social_unrest", "financial_stress_precursors"],
-        "raw_score": 390,
-        "convergence_score": 81,
-        "score_breakdown": "vi-001(63) + cb-002(8x7=56) + cb-004(42) + sc-001(81) + su-002(12) + fs-001(72) + fs-002(64) = 390 across 7 findings in 5 categories -> 390 x 0.17 = 66.3 -> 66 + 5x(5-2)=15 -> 81",
+        "findings": ["cb-003", "sc-001", "sc-002", "sc-003", "fs-001", "fs-008"],
+        "categories_represented": ["central_bank_communication", "supply_chain_disruption", "financial_stress_precursors"],
+        "raw_score": 408,
+        "convergence_score": 74,
+        "score_breakdown": "cb-003(9x7=63) + sc-001(81) + sc-002(64) + sc-003(64) + fs-001(72) + fs-008(64) = 408 across 6 findings in 3 categories -> 408 x 0.17 = 69.36 -> 69 + 5x(3-2)=5 -> 74",
         "signal": "DEVELOPING",
-        "assessment": "FORMAL LAYER 81 (DEVELOPING); hand layer holds euro_crisis ACTIVE at 100 (0-200 composite). NEW THIS CYCLE: France-Italy OAT/BTP inversion with France-bund spread at debt-crisis levels and 57.5% foreign-held French debt (flight risk); Japanese institutions repatriating from French assets. ECB hikes Sep 10 (25bp expected, officials signal 'not enough') with eurozone inflation 3-yr high >3% and EU gas at 3-year high (TTF >EUR70 per 04:30Z basis, not re-verified this scan). UK gilt stress sits in the same wildfire (fs-001)."
+        "assessment": "FORMAL 74 (DEVELOPING; composition-shifted from 81 — France unrest and vi euro-tag from Sep 7 not re-surfaced, offset by ECB-eve inflation print). ECB Sep 10 hike two days away into flash HICP 3.3% (3-yr high), France>Italy OAT/BTP inversion now mainstreamed, borrowing costs at/near multi-decade highs, LNG multiyear highs with depleted hydro reservoirs into winter. Hand layer holds euro_crisis 100 ACTIVE SUSTAINED."
       },
       "japan_yen": {
-        "findings": ["vi-001", "vi-002", "cb-003", "fs-002", "fs-005"],
+        "findings": ["vi-003", "cb-004", "fs-001", "fs-007"],
         "categories_represented": ["verbal_intervention", "central_bank_communication", "financial_stress_precursors"],
-        "raw_score": 280,
-        "convergence_score": 53,
-        "score_breakdown": "vi-001(63) + vi-002(48) + cb-003(49) + fs-002(64) + fs-005(56) = 280 across 5 findings in 3 categories -> 280 x 0.17 = 47.6 -> 48 + 5x(3-2)=5 -> 53",
-        "signal": "DEVELOPING",
-        "assessment": "FORMAL LAYER 53 (DEVELOPING); hand layer holds japan_yen ACTIVE at 100 (0-200 composite). MILESTONE: record yen intervention executed, with MoF-data inference of US Treasury sales as funding — intervention has moved from verbal warnings (Jan/Mar/May 2026 cycles) to record-scale actuals funded by reserve-asset sales. Yen at one-month high eases FX pressure near-term; the funding mechanism is the structural risk (UST selling feeds us_recession thread; repatriation feeds euro_crisis). Bessent public pressure on Ueda (Aug 31) + BOJ Sep 18 decision pending."
+        "raw_score": 242,
+        "convergence_score": 46,
+        "score_breakdown": "vi-003(72) + cb-004(56) + fs-001(72) + fs-007(42) = 242 across 4 findings in 3 categories -> 242 x 0.17 = 41.14 -> 41 + 5x(3-2)=5 -> 46",
+        "signal": "WATCH",
+        "assessment": "FORMAL 46 WATCH — composition-driven ease from 53 (Sep 7 carried more overlapping yen findings). Directionally the knot TIGHTENED: record intervention now quantified at $99bn with UST-sale funding confirmed, yen at Feb-18 high on wage/GDP, BOJ Sep-18 hike bets hardening. Hand layer holds japan_yen 100 ACTIVE SUSTAINED — no hand downgrade from formal-layer composition effects."
       },
       "crypto_collapse": {
-        "findings": ["cb-001", "rc-002", "fs-003", "fs-006"],
-        "categories_represented": ["central_bank_communication", "regulatory_change", "financial_stress_precursors"],
-        "raw_score": 184,
-        "convergence_score": 36,
-        "score_breakdown": "cb-001(64) + rc-002(36) + fs-003(36) + fs-006(48) = 184 across 4 findings in 3 categories -> 184 x 0.17 = 31.28 -> 31 + 5x(3-2)=5 -> 36",
+        "findings": ["cb-001", "fs-001", "fs-003", "fs-004"],
+        "categories_represented": ["central_bank_communication", "financial_stress_precursors"],
+        "raw_score": 221,
+        "convergence_score": 38,
+        "score_breakdown": "cb-001(64) + fs-001(72) + fs-003(49) + fs-004(6x6=36) = 221 across 4 findings in 2 categories -> 221 x 0.17 = 37.57 -> 38 + 0 -> 38",
         "signal": "WATCH",
-        "assessment": "WATCH held (36 formal / 40 hand). BTC <$80K intraday on Fed hike bets (macro-driven, not idiosyncratic); Liquid Network 4,000 BTC federation-reserve breach did not move price; ETF inflows providing support; USDT market-cap reduction noted. Overnight price-band approval (rc-002) is the structural watch-item: market-stress architecture extending to overnight sessions. Sell pressure 'nearing its limit' per on-chain commentary."
+        "assessment": "FORMAL 38 (WATCH, up from 36): BTC broke below $79K with $208M long rout, sharpest deleveraging since 2023, $320M Liquid Network infrastructure breach. Stress incrementing but below DEVELOPING threshold; Fed-hike odds remain the transmission channel into CPI Friday. Hand layer holds WATCH 40."
       },
       "china_collapse": {
-        "findings": ["rc-001", "rc-004", "fs-004"],
-        "categories_represented": ["regulatory_change", "financial_stress_precursors"],
-        "raw_score": 121,
-        "convergence_score": 21,
-        "score_breakdown": "rc-001(49) + rc-004(36) + fs-004(36) = 121 across 3 findings in 2 categories -> 121 x 0.17 = 20.57 -> 21 + 0 -> 21",
+        "findings": ["cb-005", "rc-001"],
+        "categories_represented": ["central_bank_communication", "regulatory_change"],
+        "raw_score": 113,
+        "convergence_score": 19,
+        "score_breakdown": "cb-005(7x7=49) + rc-001(8x8=64) = 113 across 2 findings in 2 categories -> 113 x 0.17 = 19.21 -> 19 + 0 -> 19",
         "signal": "WATCH",
-        "assessment": "FORMAL LAYER 21 (WATCH); hand layer holds china_collapse ACTIVE at 110 (0-200 composite, evidence carried from Aug 31 baseline: record ~$780B 2025 capital outflows, tax crackdown + exit-controls direction). This cycle's fresh evidence: $54bn/300bn-yuan state-bank recap announced Sep 7 (biggest in two decades) MET WITH SKEPTICISM — bank/insurer shares slid, 'limited short-term impact' amid weak credit demand. Recapitalization arriving = stress acknowledged; no fresh escalation data found this scan. Hand-layer ACTIVE stands on prior confirmed evidence."
+        "assessment": "FORMAL 19 (WATCH, steady vs 21): $54bn recap skepticism persists (shares slid, 'limited short-term impact'), weaker CNY fixings, credit demand still weak. Hand layer holds china_collapse 120 ACTIVE (escalated rung from 02:35Z catch-up scan stands on confirmed evidence)."
       },
       "global_pandemic": {
         "findings": ["su-004"],
         "categories_represented": ["social_unrest"],
-        "raw_score": 49,
-        "convergence_score": 0,
-        "score_breakdown": "su-004(7x7=49) across 1 finding in 1 category -> below 2-category threshold, formal convergence N/A -> 0",
+        "raw_score": 20,
+        "convergence_score": 3,
+        "score_breakdown": "su-004(5x4=20) in 1 category -> 20 x 0.17 = 3.4 -> 3 + 0 -> 3",
         "signal": "WATCH",
-        "assessment": "Formal layer: single-category evidence (social_unrest only), no multi-category convergence this scan. Hand layer holds global_pandemic DEVELOPING at 40 on Ebola evidence (deaths >3,000 of ~6,250 cases, ~48% CFR, outpacing containment, conflict derailing response — verified 04:30Z). Watch item: whether outbreak crosses into multi-category evidence (supply chain, regulatory, financial) by next scan."
+        "assessment": "FORMAL 3 (WATCH): DRC Ebola sustained at 3,000+ deaths / 6,250 cases, 'still evolving', no acceleration rung this window. Hand layer holds global_pandemic DEVELOPING 40 SUSTAINED (Bundibugyo outrunning containment)."
       }
-    },
-    "changes_from_previous_lead_scan": [
-      "NEW MILESTONE: Japan executed RECORD yen intervention — Bloomberg Sep 6 infers US Treasury sales as funding (first direct UST-selling evidence this cycle)",
-      "NEW: France-Italy OAT/BTP yield inversion; France-bund spread at debt-crisis levels; 57.5% foreign-held French debt; Japan repatriation from French assets named as channel",
-      "HARDENED: Fed hike odds re-reversed UP to 55-62% on Aug NFP blowout (Waller de-escalation tick dead); DXY >99",
-      "CONFIRMED: Iran restricted/exclusion zone OUTSIDE Hormuz announced Sep 7, implementation 'within days'; US sank 3 Iranian tankers Sep 5; Iran struck US unmanned vessel Sep 6",
-      "NEW: Global bond wildfire commentary hardened — 'no plan' (Guardian), 'next domino still mispriced' (ainvest), Scope Ratings 'bond crisis = when central banks step in'",
-      "NEW: Temporary overnight-session price bands approved on 'Extraordinary Market Volatility' (Federal Register)",
-      "NEW: China $54bn state-bank/insurer recap (300bn yuan special bonds) announced Sep 7 — market skeptical, shares slid",
-      "NEW: US national emergency declared for bulk-power system (Aug 31)",
-      "SUSTAINED: ECB Sep 10 hike expected, BOJ Sep 18 pending — September synchronized tightening intact",
-      "SUSTAINED: BTC <$80K intraday ($78,649 low) on macro; Liquid Network breach priced through without contagion",
-      "CARRIED: global_pandemic DEVELOPING on Ebola >3,000 deaths (no new pandemic-category evidence this scan)",
-      "ZERO anonymous_leaks findings this cycle (category quiet — negative finding recorded)"
-    ],
-    "critical_alert": "TANKER WAR INSTITUTIONALIZED + SEPTEMBER SQUEEZE FULLY LOADED. middle_east_war formal-ACTIVE (100): US sank 3 Iranian tankers Sep 5, Iran struck US unmanned vessel Sep 6, Iran announces Hormuz-adjacent restricted zone 'within days', Israel-Lebanon second front live, Brent $94-97, Hormuz traffic -95%. us_recession formal 95 / hand-ACTIVE 200: bond wildfire at decades-high stress + Fed hike odds re-reversed UP on NFP blowout + Japan now funding intervention by selling USTs + $800B private-credit AI debt <2x cover. FIVE threads held ACTIVE on the hand board (middle_east_war, us_recession, japan_yen, china_collapse, euro_crisis). Triple tightening window: ECB Sep 10, FOMC Sep 15-16 (~55-62% hike), BOJ Sep 18. Complacency divergence persists: VIX ~14.3 while kinetic tanker war runs — repricing risk asymmetric."
+    }
   },
   "previous_scan_comparison": {
-    "previous_scan_id": "blackwatch-2026-09-01-morning",
-    "previous_scan_timestamp": "2026-09-01T02:00:00Z",
-    "interim_scans": [
-      "whale scan 00:30Z Sep 1",
-      "multiple breaking-event scans Sep 1-6 (threshold refresh regress-loop flagged 4th occurrence 01:39Z Sep 7)",
-      "breaking scan 04:30Z Sep 7 (20 queries, 12 domains)",
-      "whale scan 05:30Z Sep 7",
-      "morning echo scan 06:30 IST Sep 7 (CRITICAL board 456/100)"
+    "reference": "blackwatch-2026-09-07-0700 (Sep 7 06:00Z)",
+    "formal_layer_deltas": {
+      "middle_east_war": "100 -> 100 (capped ACTIVE sustained; +Iran gasoline protests rung su-001)",
+      "us_recession": "95 -> 84 (composition ease; hand ACTIVE 200 held; +Trump-Warsh collision, +Shilling call, +Brent-$100 rung)",
+      "asian_contagion": "92 -> 100 capped (formal ACTIVE; oil rung + 5-category diversity; hand 90 DEVELOPING held — divergence logged)",
+      "euro_crisis": "81 -> 74 (composition shift; ECB-eve 3.3% HICP; France>Italy inversion mainstreamed; hand 100 ACTIVE held)",
+      "japan_yen": "53 -> 46 (composition; knot genuinely tighter: $99bn + UST-sale funding confirmed; hand 100 ACTIVE held)",
+      "crypto_collapse": "36 -> 38 (BTC <79K sharpest-deleveraging rungs + Liquid breach)",
+      "china_collapse": "21 -> 19 (recap skepticism persists; hand 120 ACTIVE held)",
+      "global_pandemic": "0 -> 3 (Ebola sustained, no new rung)"
+    },
+    "new_rungs_this_cycle": [
+      "Brent NEARS $100 (six-week high; war band widens upward)",
+      "Trump warned Warsh not to hike — Fed-independence collision into CPI Friday",
+      "Iran doubles third-tier gasoline price -> labor protests spread across 6 cities",
+      "Record intervention quantified at $99bn; UST-sale funding confirmed (~70% reserves in USTs)",
+      "BTC <$79K: sharpest deleveraging since 2023 + $320M Liquid Network breach",
+      "Eurozone flash HICP 3.3% (3-yr high) on ECB-decision eve",
+      "France>Italy OAT/BTP inversion mainstreamed"
     ],
-    "key_changes_since_previous_lead_scan": [
-      "CONFIRMED ESCALATION: US sank 3 Iranian tankers (Sep 5); Iran struck US unmanned vessel (Sep 6) — first claimed direct strike on a US vessel",
-      "NEW RUNG: Iran restricted/exclusion maritime zone OUTSIDE Hormuz announced Sep 7 — implementation 'within days'",
-      "NEW MILESTONE: RECORD yen intervention executed, funded (inferred) by US Treasury sales — japan_yen thread moves from jawboning era to record-scale actuals",
-      "NEW CHANNEL: Japan institutional repatriation from French assets — japan_yen-to-euro_crisis transmission named",
-      "NEW: France>Italy OAT/BTP inversion, France-bund spread at debt-crisis levels",
-      "HARDENED: global bond wildfire commentary ('no plan', 'next domino mispriced', Scope 'crisis = when CBs step in')",
-      "REVERSED: Fed hike odds back UP to 55-62% after Aug NFP blowout — de-escalation tick dead",
-      "NEW SCHEDULED CATALYSTS: ECB Sep 10 + FOMC Sep 15-16 + BOJ Sep 18 inside 9 days; CPI Sep 11; US buyback cap Sep 9",
-      "NEW: China $54bn state-bank recap (Sep 7) met with skepticism — shares slid, weak credit demand",
-      "NEW: US bulk-power-system national emergency (Aug 31); overnight price-band approval (Federal Register)",
-      "SUSTAINED: Brent $94-97 war band; Hormuz traffic -95%; food index red/deteriorating; VIX ~14 complacency divergence",
-      "SUSTAINED: crypto WATCH — BTC <$80K intraday on macro, Liquid Network breach absorbed without contagion",
-      "CARRIED: global_pandemic DEVELOPING (Ebola >3,000 deaths, ~48% CFR); no fresh pandemic-category evidence this cycle"
-    ]
+    "deescalation_ticks": [
+      "Jakarta protests ease after pay-hike reversal",
+      "Fed hike odds whipsawed back toward ~50% coin flip (from 62%)"
+    ],
+    "hand_layer": "UNCHANGED — 5 ACTIVE (middle_east_war 200, us_recession 200, china_collapse 120, japan_yen 100, euro_crisis 100) / 2 DEVELOPING (asian_contagion 90, global_pandemic 40) / 1 WATCH (crypto_collapse 40). No confirmed state changes; no new outbound Telegram (ACTIVE states already alerted; sustained-only cycle per precedent)."
   },
-  "next_scan": "2026-09-08T06:00:00Z"
+  "telegram_alert_decision": {
+    "sent": false,
+    "reason": "No hand-layer state change this cycle (sustained-only). Formal asian_contagion reaching capped 100 is a category-diversity bonus against hand 90 DEVELOPING — not a confirmed state change; formal layer is the methodological cross-check, hand layer is the live board. CAT-5 ACTIVE states were already alerted (00:36Z Sep 7 baseline; 02:35Z catch-up logged incremental rungs only).",
+    "precedent": "alert_log 2026-09-07T06:00Z: 'No state change -> no new outbound alert required'"
+  },
+  "next_scan": "2026-09-09T06:00:00Z"
 }
