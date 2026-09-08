@@ -1,26 +1,26 @@
 {
   "scan_date": "2026-09-08",
-  "scan_time_utc": "2026-09-08T10:28:21.853217+00:00",
+  "scan_time_utc": "2026-09-08T11:00:39.822656+00:00",
   "scanner_version": "2.0.0-reconstructed",
   "current_values": {
     "USDJPY": {
-      "price": 154.074,
+      "price": 154.233,
       "prev_close": 156.197,
-      "change_1d_pct": -1.36,
+      "change_1d_pct": -1.26,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.1614,
+      "price": 1.1616,
       "prev_close": 1.1614,
-      "change_1d_pct": 0.0,
+      "change_1d_pct": 0.02,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3529,
+      "price": 1.3528,
       "prev_close": 1.3517,
-      "change_1d_pct": 0.09,
+      "change_1d_pct": 0.08,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -32,9 +32,9 @@
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1342.43,
+      "price": 1341.88,
       "prev_close": 1345.0601,
-      "change_1d_pct": -0.2,
+      "change_1d_pct": -0.24,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -60,23 +60,23 @@
       "source": "yahoo"
     },
     "VIX": {
-      "price": 15.61,
+      "price": 15.7,
       "prev_close": 15.3,
-      "change_1d_pct": 2.03,
+      "change_1d_pct": 2.61,
       "data_points": 5,
       "source": "yahoo"
     },
     "GOLD": {
-      "price": 4442.3,
+      "price": 4443.7,
       "prev_close": 4429.7998,
-      "change_1d_pct": 0.28,
+      "change_1d_pct": 0.31,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 98.7,
+      "price": 98.66,
       "prev_close": 96.28,
-      "change_1d_pct": 2.51,
+      "change_1d_pct": 2.47,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -88,9 +88,9 @@
       "source": "yahoo"
     },
     "BTC": {
-      "price": 78816.97,
+      "price": 78541.92,
       "prev_close": 79115.8516,
-      "change_1d_pct": -0.38,
+      "change_1d_pct": -0.73,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -147,7 +147,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4442.3,
+      "current": 4443.7,
       "threshold": 3500.0,
       "direction": "above",
       "severity": "RED",
@@ -156,7 +156,7 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 26.92
+      "distance_pct": 26.96
     },
     {
       "key": "JGB10Y",
@@ -176,7 +176,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4442.3,
+      "current": 4443.7,
       "threshold": 3000.0,
       "direction": "above",
       "severity": "AMBER",
@@ -184,7 +184,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 48.08
+      "distance_pct": 48.12
     },
     {
       "key": "DE10Y",
@@ -205,7 +205,7 @@
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.1614,
+      "current": 1.1616,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -214,7 +214,7 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 0.99
+      "distance_pct": 1.01
     }
   ],
   "breach_count": 6,
@@ -222,14 +222,14 @@
   "markets_monitored": 17,
   "max_severity": "RED",
   "manual_fill": {
-    "filled_at": "2026-09-08T10:32:04.904289+00:00",
+    "filled_at": "2026-09-08T11:00:39.822656+00:00",
     "instruments": [
       "MOVE",
       "JGB10Y",
       "DE10Y",
       "BAA10Y"
     ],
-    "method": "web_search (fresh fill 2026-09-08 10:28Z: all four re-verified UNCHANGED - MOVE still Fri Sep 4 close, JGB Tokyo close, Bund Xetra live, BAA10Y FRED Sep 3)"
+    "method": "web_search (see per-instrument source fields)"
   },
   "data_sources": "Yahoo Finance + web search fallback (MOVE/JGB10Y/DE10Y/BAA10Y)",
   "reconstruction_note": "Original scanner script lost in workspace migration; rebuilt 2026-09-07 with the 12 tripwires evidenced in historical scan records + job spec. 19 of the original 31 thresholds were never evidenced and are not fabricated here."
