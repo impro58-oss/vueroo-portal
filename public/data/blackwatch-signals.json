@@ -1,438 +1,440 @@
-{
-  "metadata": {
-    "source": "FRED API + manual assessment + web-verified spot check",
-    "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-08T02:30:00.734911+00:00",
-    "signals_auto": 20,
-    "signals_manual": 0,
-    "signals_total": 20
-  },
-  "signals": {
-    "fin_stability": {
-      "name": "Financial Stability",
-      "domain": "Financial",
-      "value": 2.65,
-      "status": "green",
-      "trend": "stable",
-      "confidence": 7,
-      "change_from_last": -0.01,
-      "unit": "%",
-      "description": "US High Yield OAS Spread",
-      "series_id": "BAMLH0A0HYM2",
-      "last_date": "2026-09-03",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z (RED wires sustained from 22:28Z, same 6 breaches): JGB 10Y 2.918% > 1.5 RED wire (+94.5%, Tue Tokyo -1.0% from Mon 2.948 close, BOJ Sept-hike odds rising); Gold $4,472.4 > $3,500 RED wire (+27.8%, LIVE, +0.96% d/d to fresh highs); Bund 3.359% > 3.0 AMBER (+12.0%, Tue open eased from Mon ~3.38-3.39); EUR/USD 1.1633 > 1.15 AMBER (flat). Brent $97.06 nearing $100 wire; MOVE 74.68 re-verified (US closed Mon Labor Day) + BAA10Y 1.57 (FRED obs Sep 3) - credit calm despite sovereign-rate stress. || THRESHOLD SCAN 2026-09-07T18:07Z (RED wires sustained from 04:33Z; catch-up after ~13h missed cycles): JGB 10Y 2.93% > 1.5 RED wire (+95.3%) - Mon Tokyo close +0.03pp d/d, BOJ Sept-hike odds rising (Takaichi adviser Aida), GPIF allocation-watch; Gold $4,476.6 > $3,500 RED wire (+27.9%, GC=F Fri close - US Labor Day); Bund 3.39% > 3.0 AMBER (at 15y-high doorstep 3.3951, +0.05pp d/d); MOVE 74.68 (Fri), BAA10Y 1.57 (FRED Sep 3) no breach - credit calm despite sovereign-rate stress.",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "liquidity": {
-      "name": "Liquidity Conditions",
-      "domain": "Financial",
-      "value": 1.33,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 3,
-      "change_from_last": 0,
-      "unit": "%",
-      "description": "M2 Money Supply YoY growth",
-      "series_id": "WM2NS",
-      "last_date": "2026-08-03",
-      "note": "",
-      "timestamp": "2026-09-07T05:30:56.639521+00:00"
-    },
-    "sov_debt": {
-      "name": "Sovereign Debt Stress",
-      "domain": "Financial",
-      "value": 122.59,
-      "status": "red",
-      "trend": "stable",
-      "confidence": 3,
-      "change_from_last": 0.03,
-      "unit": "%",
-      "description": "US Total Debt / GDP",
-      "series_id": "GFDEGDQ188S",
-      "last_date": "2026-01-01",
-      "note": "",
-      "timestamp": "2026-09-07T05:30:57.227322+00:00"
-    },
-    "energy": {
-      "name": "Energy Security",
-      "domain": "Energy",
-      "value": 96.02,
-      "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 7,
-      "change_from_last": 6.27,
-      "unit": "$/bbl",
-      "description": "Brent Crude Oil Price",
-      "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-01",
-      "note": "",
-      "timestamp": "2026-09-07T05:30:57.623481+00:00"
-    },
-    "geopolitical": {
-      "name": "Geopolitical Conflict",
-      "domain": "Geopolitics",
-      "value": 14.32,
-      "status": "green",
-      "trend": "deteriorating",
-      "confidence": 7,
-      "change_from_last": -0.88,
-      "unit": "index",
-      "description": "VIX as market fear proxy (GDELT integration planned)",
-      "series_id": "VIXCLS",
-      "last_date": "2026-09-03",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z (RED sustained): Gold mania wire RED - $4,472.4 vs $3,500 (+27.8%, LIVE, +0.96% d/d to fresh highs): war premium + currency-crisis bid compounding the CAT-5 tanker-war state (US striking Iranian tankers; Iran Hormuz exclusion zone sustained). || PROXY WARNING: VIX-based proxy reads green/stable while US-Iran kinetic naval conflict is active (tanker strikes, Hormuz exclusion zone declared 2026-09-07). Proxy is showing market complacency, not conflict reality. Manual override recommended Phase 2.",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "cyber": {
-      "name": "Cyber Threat Level",
-      "domain": "Cyber",
-      "value": "Elevated",
-      "unit": "",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 4,
-      "change_from_last": 0,
-      "description": "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
-      "series_id": null,
-      "last_date": "2026-09-07",
-      "note": "Assessed 2026-09-07: Elevated. Week events: Liquid Network 4,000 BTC (~\\) federation-reserve breach; JetBrains TeamCity CVE-2026-63077 exploited for AWS creds; Magento/Adobe Commerce 0-day RCE actively exploited; MikroTik pre-auth RCE chain; Mathspace 1M+ records; Weverse 422K accounts.",
-      "timestamp": "2026-09-07T05:30:57.617092+00:00"
-    },
-    "supply_chain": {
-      "name": "Supply Chain Health",
-      "domain": "Supply Chain",
-      "value": 96.02,
-      "unit": "$/bbl (proxy)",
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 5,
-      "change_from_last": 0,
-      "description": "Using Brent oil as supply chain cost proxy — Cass Freight Index not available on FRED",
-      "series_id": "DCOILBRENTEU (proxy)",
-      "last_date": "2026-09-01",
-      "note": "Proxy indicator — Baltic Dry Index or Cass Freight would be better. Phase 2 will add direct source.",
-      "timestamp": "2026-09-07T05:30:57.617092+00:00"
-    },
-    "food_security": {
-      "name": "Food Security",
-      "domain": "Food",
-      "value": 131.78,
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 3,
-      "change_from_last": 1.47,
-      "unit": "index",
-      "description": "IMF Food Price Index",
-      "series_id": "PFOODINDEXM",
-      "last_date": "2026-07-01",
-      "note": "",
-      "timestamp": "2026-09-07T05:30:58.655006+00:00"
-    },
-    "climate": {
-      "name": "Climate Stress",
-      "domain": "Climate",
-      "value": 1.11,
-      "unit": "°C",
-      "status": "red",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": -0.15,
-      "description": "Global temp anomaly: 1.11°C above 20th century avg (2026)",
-      "series_id": "NOAA NCEI",
-      "last_date": "2026",
-      "note": "Live from NOAA climate API",
-      "timestamp": "2026-09-07T05:30:56.830430+00:00"
-    },
-    "social_cohesion": {
-      "name": "Social Cohesion",
-      "domain": "Social",
-      "value": 55.2,
-      "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 3,
-      "change_from_last": 5.7,
-      "unit": "index",
-      "description": "Consumer Sentiment as social mood proxy",
-      "series_id": "UMCSENT",
-      "last_date": "2026-07-01",
-      "note": "",
-      "timestamp": "2026-09-07T05:30:59.009408+00:00"
-    },
-    "inst_trust": {
-      "name": "Institutional Trust",
-      "domain": "Social",
-      "value": 30,
-      "unit": "%",
-      "status": "red",
-      "trend": "deteriorating",
-      "confidence": 5,
-      "change_from_last": 0,
-      "description": "Baseline: ~30% trust in government (Edelman 2025). Assessed quarterly + during deep scans.",
-      "series_id": null,
-      "last_date": "2025-Q1",
-      "note": "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
-      "timestamp": "2026-09-07T05:30:57.617092+00:00"
-    },
-    "ai_acceleration": {
-      "name": "AI Acceleration",
-      "domain": "Technology",
-      "value": "Rapid",
-      "unit": "",
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 5,
-      "change_from_last": 0,
-      "description": "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
-      "series_id": null,
-      "last_date": "2026-09-07",
-      "note": "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
-      "timestamp": "2026-09-07T05:30:57.617092+00:00"
-    },
-    "currency": {
-      "name": "Currency Stability",
-      "domain": "Currency",
-      "value": 118.75,
-      "status": "info",
-      "trend": "stable",
-      "confidence": 5,
-      "change_from_last": 0.39,
-      "unit": "index",
-      "description": "Trade-Weighted Dollar Index (broad)",
-      "series_id": "DTWEXBGS",
-      "last_date": "2026-08-28",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z: USD/JPY 153.08 - deeper INSIDE the 158 intervention wire (was 154.16 at 22:28Z, 160.05 Sep 1) - yen strengthening further on BOJ Sept-hike expectations; EUR/USD 1.1633 > 1.15 AMBER (+1.16%, flat). || Stability = low volatility. Track change rate.",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "gold": {
-      "name": "Gold / Precious Metals",
-      "domain": "Currency",
-      "value": 4350.0,
-      "unit": "$/oz",
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": 26.5,
-      "description": "Gold Spot: ~$4,350/oz spot consensus (goldprice 4,359.32 / APMEX 4,342.00), web-verified 2026-09-07 23:00 UTC",
-      "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-09-07",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z (RED wire sustained): GC=F LIVE $4,472.4 > 3500 RED mania wire (+27.8%); +0.96% d/d from 4,429.8 - pushing higher, not consolidating. Spot web-verified Mon ~4,350-4,476 zone. || Spot via web search 2026-09-07 (Markets Insider 4361.01 / goldprice.com 4359.32 / APMEX 4342 consensus ~4350). COMEX futures GC=F at 4476.60 carry ~ premium. 19.3% below ATH 5405 (Jan 2026). || 6h REFRESH 2026-09-07T23:00Z: spot re-verified ~4,350 (goldprice.com 4,359.32 / APMEX 4,342.00; Consensus spot ~4,350, GC=F futures premium intact). Connectors MISSING (multi-source + FRED scripts not on disk) - manual gold update only.",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "crypto": {
-      "name": "Crypto Markets",
-      "domain": "Currency",
-      "value": 79843,
-      "unit": "$",
-      "status": "green",
-      "trend": "stable",
-      "confidence": 9,
-      "change_from_last": 0.0,
-      "description": "BTC $79,843 (+0.0% 24h), Dominance: 76.6%",
-      "series_id": "CoinGecko API",
-      "last_date": "2026-09-07",
-      "note": "Live from CoinGecko API",
-      "timestamp": "2026-09-07T05:30:56.450907+00:00"
-    },
-    "china": {
-      "name": "China Health",
-      "domain": "China",
-      "value": 97.69,
-      "unit": "CLI index",
-      "status": "red",
-      "trend": "stable",
-      "confidence": 7,
-      "change_from_last": -0.09,
-      "description": "OECD Composite Leading Indicator for China (PMI proxy)",
-      "series_id": "BSCICP03CNM665S",
-      "last_date": "2024-01-01",
-      "note": "Proxy: OECD CLI instead of direct PMI. Direct PMI needs Trading Economics API or web search.",
-      "timestamp": "2026-09-07T05:30:56.140011+00:00"
-    },
-    "europe": {
-      "name": "Europe Stability",
-      "domain": "Europe",
-      "value": 2.25,
-      "status": "amber",
-      "trend": "stable",
-      "confidence": 9,
-      "change_from_last": 0.0,
-      "unit": "%",
-      "description": "ECB Deposit Rate (proxy for EU stability)",
-      "series_id": "ECBDFR",
-      "last_date": "2026-09-04",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z (AMBER sustained): Bund 3.359% > 3.0 AMBER wire (+12.0%), Tue open eased from Mon ~3.38-3.39 close (15y-high doorstep 3.3951 intact); drivers unchanged: AfD Saxony-Anhalt win (44%) + ECB hike expected Thu; borrowing costs up 4 straight weeks. || Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "us_cycle": {
-      "name": "US Cycle Position",
-      "domain": "United States",
-      "value": 0.41,
-      "status": "amber",
-      "trend": "improving",
-      "confidence": 9,
-      "change_from_last": -0.02,
-      "unit": "%",
-      "description": "Yield Curve (10Y-2Y) — recession signal",
-      "series_id": "T10Y2Y",
-      "last_date": "2026-09-04",
-      "note": "THRESHOLD SCAN 2026-09-08T02:45Z: Post-Labor Day Tuesday - SPX 7718.6 (-0.4% Fri close) / US10Y 4.784% (+0.5% d/d) / VIX 15.3 (+5.3% d/d) / MOVE 74.68 re-verified - no wire breach; Nikkei +3.4% Mon (BOJ-hike-day rally), BTC 79,324 (-1.3%). Equity vol still not pricing bond-war divergence. || THRESHOLD SCAN 2026-09-07T18:07Z: US Labor Day Monday - SPX 7718.6 / US10Y 4.784% / VIX 15.3 / MOVE 74.68 = Friday Sep 4 closes, no wire breach; equity vol still not pricing bond-war divergence.",
-      "timestamp": "2026-09-08T02:30:00.734911+00:00"
-    },
-    "middle_east": {
-      "name": "Middle East Tension",
-      "domain": "Middle East",
-      "value": 96.02,
-      "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 7,
-      "change_from_last": 6.27,
-      "unit": "$/bbl",
-      "description": "Brent Oil as ME tension proxy",
-      "series_id": "DCOILBRENTEU",
-      "last_date": "2026-09-01",
-      "note": "Proxy — GDELT/news API for direct conflict tracking in Phase 2",
-      "timestamp": "2026-09-07T05:31:02.791533+00:00"
-    },
-    "public_sentiment": {
-      "name": "Public Sentiment",
-      "domain": "Social",
-      "value": 55.2,
-      "status": "amber",
-      "trend": "deteriorating",
-      "confidence": 3,
-      "change_from_last": 5.7,
-      "unit": "index",
-      "description": "Consumer Sentiment Index",
-      "series_id": "UMCSENT",
-      "last_date": "2026-07-01",
-      "note": "",
-      "timestamp": "2026-09-07T05:31:03.413641+00:00"
-    }
-  },
-  "overall_risk": {
-    "level": "CRITICAL",
-    "color": "red",
-    "score": 456,
-    "red_count": 5,
-    "amber_count": 11,
-    "green_count": 3,
-    "manual_count": 1,
-    "timestamp": "2026-09-07T05:31:03.423670+00:00"
-  },
-  "convergence": {
-    "stressed_domains": [
-      {
-        "domain": "Social",
-        "red": 1,
-        "amber": 2,
-        "stress_level": 4
-      },
-      {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Climate",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "China",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Energy",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Cyber",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Supply Chain",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Technology",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Currency",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Europe",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "United States",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      },
-      {
-        "domain": "Middle East",
-        "red": 0,
-        "amber": 1,
-        "stress_level": 1
-      }
-    ],
-    "convergence_active": true,
-    "convergence_domains": [
-      {
-        "domain": "Social",
-        "red": 1,
-        "amber": 2,
-        "stress_level": 4
-      },
-      {
-        "domain": "Financial",
-        "red": 1,
-        "amber": 1,
-        "stress_level": 3
-      },
-      {
-        "domain": "Food",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "Climate",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      },
-      {
-        "domain": "China",
-        "red": 1,
-        "amber": 0,
-        "stress_level": 2
-      }
-    ],
-    "timestamp": "2026-09-07T05:31:03.423670+00:00"
-  }
+﻿{
+    "metadata":  {
+                     "source":  "FRED API + manual assessment + web-verified spot check",
+                     "system":  "BlackWatch Signal Board",
+                     "last_update":  "2026-09-08T02:35:00.000000+00:00",
+                     "signals_auto":  20,
+                     "signals_manual":  0,
+                     "signals_total":  20,
+                     "threshold_breach":  "Tanker war CAT-5 SUSTAINED (Brent -98, Hormuz traffic lowest since May) + China $54bn bank recap met by falling bank shares + weaker CNY fixing + Fed odds split ~50-62% into CPI Sep 11 + Ebola \u003e3,000 deaths DEVELOPING",
+                     "breaking_event":  "blackwatch-2026-09-08-0230 (post-outage catch-up, 18 queries/12 domains): CAT-5 SUSTAINED + 3 new rungs; 6 signals refreshed/escalated; macro_event ACTIVE conf 10"
+                 },
+    "signals":  {
+                    "fin_stability":  {
+                                          "name":  "Financial Stability",
+                                          "domain":  "Financial",
+                                          "value":  2.65,
+                                          "status":  "green",
+                                          "trend":  "stable",
+                                          "confidence":  7,
+                                          "change_from_last":  -0.01,
+                                          "unit":  "%",
+                                          "description":  "US High Yield OAS Spread",
+                                          "series_id":  "BAMLH0A0HYM2",
+                                          "last_date":  "2026-09-03",
+                                          "note":  "THRESHOLD SCAN 2026-09-08T02:45Z (RED wires sustained from 22:28Z, same 6 breaches): JGB 10Y 2.918% \u003e 1.5 RED wire (+94.5%, Tue Tokyo -1.0% from Mon 2.948 close, BOJ Sept-hike odds rising); Gold $4,472.4 \u003e $3,500 RED wire (+27.8%, LIVE, +0.96% d/d to fresh highs); Bund 3.359% \u003e 3.0 AMBER (+12.0%, Tue open eased from Mon ~3.38-3.39); EUR/USD 1.1633 \u003e 1.15 AMBER (flat). Brent $97.06 nearing $100 wire; MOVE 74.68 re-verified (US closed Mon Labor Day) + BAA10Y 1.57 (FRED obs Sep 3) - credit calm despite sovereign-rate stress. || THRESHOLD SCAN 2026-09-07T18:07Z (RED wires sustained from 04:33Z; catch-up after ~13h missed cycles): JGB 10Y 2.93% \u003e 1.5 RED wire (+95.3%) - Mon Tokyo close +0.03pp d/d, BOJ Sept-hike odds rising (Takaichi adviser Aida), GPIF allocation-watch; Gold $4,476.6 \u003e $3,500 RED wire (+27.9%, GC=F Fri close - US Labor Day); Bund 3.39% \u003e 3.0 AMBER (at 15y-high doorstep 3.3951, +0.05pp d/d); MOVE 74.68 (Fri), BAA10Y 1.57 (FRED Sep 3) no breach - credit calm despite sovereign-rate stress.",
+                                          "timestamp":  "2026-09-08T02:30:00.734911+00:00"
+                                      },
+                    "liquidity":  {
+                                      "name":  "Liquidity Conditions",
+                                      "domain":  "Financial",
+                                      "value":  1.33,
+                                      "status":  "amber",
+                                      "trend":  "stable",
+                                      "confidence":  3,
+                                      "change_from_last":  0,
+                                      "unit":  "%",
+                                      "description":  "M2 Money Supply YoY growth",
+                                      "series_id":  "WM2NS",
+                                      "last_date":  "2026-08-03",
+                                      "note":  "",
+                                      "timestamp":  "2026-09-07T05:30:56.639521+00:00"
+                                  },
+                    "sov_debt":  {
+                                     "name":  "Sovereign Debt Stress",
+                                     "domain":  "Financial",
+                                     "value":  122.59,
+                                     "status":  "red",
+                                     "trend":  "stable",
+                                     "confidence":  3,
+                                     "change_from_last":  0.03,
+                                     "unit":  "%",
+                                     "description":  "US Total Debt / GDP",
+                                     "series_id":  "GFDEGDQ188S",
+                                     "last_date":  "2026-01-01",
+                                     "note":  "",
+                                     "timestamp":  "2026-09-07T05:30:57.227322+00:00"
+                                 },
+                    "energy":  {
+                                   "name":  "Energy Security",
+                                   "domain":  "Energy",
+                                   "value":  96.02,
+                                   "status":  "amber",
+                                   "trend":  "deteriorating",
+                                   "confidence":  7,
+                                   "change_from_last":  6.27,
+                                   "unit":  "$/bbl",
+                                   "description":  "Brent Crude Oil Price",
+                                   "series_id":  "DCOILBRENTEU",
+                                   "last_date":  "2026-09-01",
+                                   "note":  "ESCALATED blackwatch-2026-09-08-0230 (post-outage catch-up): Brent climbed to -98 war band across Sep 7-8 (Gate 13:15Z \u0027approaches , WTI \u003e\u0027; ET Sep 8 \u0027crude at \u0027; TradingEconomics 96.00 +0.5% d/d, +20.8% MONTH, +46.6% YoY). Iran vows to EXTEND Hormuz exclusion zone; new restricted zone + shipping route still \u0027coming days\u0027 (Reuters fresh Sep 8); Centcom denies Iran\u0027s unmanned-vessel strike claim; Hormuz tanker traffic LOWEST since May (IBTimes). OPEC+ holds output. Was .27 at 0430Z scan.",
+                                   "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                               },
+                    "geopolitical":  {
+                                         "name":  "Geopolitical Conflict",
+                                         "domain":  "Geopolitics",
+                                         "value":  14.32,
+                                         "status":  "green",
+                                         "trend":  "deteriorating",
+                                         "confidence":  7,
+                                         "change_from_last":  -0.88,
+                                         "unit":  "index",
+                                         "description":  "VIX as market fear proxy (GDELT integration planned)",
+                                         "series_id":  "VIXCLS",
+                                         "last_date":  "2026-09-03",
+                                         "note":  "SUSTAINED blackwatch-2026-09-08-0230 (CAT-5 war month 6+): US blockade + tanker strikes hold; Iran vows to EXTEND exclusion zone near Hormuz after US strikes (Independent live Sep 7-8); Iran: \u0027time for proportionate retaliation is over\u0027 (AJ Sep 6), US energy facilities \u0027exposed\u0027 (CSMonitor Sep 7); Centcom DENIES Iran struck US unmanned vessel (KAIT8 Sep 7) - mutual-recrimination fog; Hormuz tanker traffic lowest since May. Israel-Lebanon front quiet in window. VIX ~14.5-15.3 complacency divergence persists into decision week.",
+                                         "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                                     },
+                    "cyber":  {
+                                  "name":  "Cyber Threat Level",
+                                  "domain":  "Cyber",
+                                  "value":  "Elevated",
+                                  "unit":  "",
+                                  "status":  "amber",
+                                  "trend":  "stable",
+                                  "confidence":  4,
+                                  "change_from_last":  0,
+                                  "description":  "Baseline: Elevated. Assessed during daily echo scan via web search for recent CISA/ENISA alerts.",
+                                  "series_id":  null,
+                                  "last_date":  "2026-09-07",
+                                  "note":  "Assessed 2026-09-07: Elevated. Week events: Liquid Network 4,000 BTC (~\\) federation-reserve breach; JetBrains TeamCity CVE-2026-63077 exploited for AWS creds; Magento/Adobe Commerce 0-day RCE actively exploited; MikroTik pre-auth RCE chain; Mathspace 1M+ records; Weverse 422K accounts.",
+                                  "timestamp":  "2026-09-07T05:30:57.617092+00:00"
+                              },
+                    "supply_chain":  {
+                                         "name":  "Supply Chain Health",
+                                         "domain":  "Supply Chain",
+                                         "value":  96.02,
+                                         "unit":  "$/bbl (proxy)",
+                                         "status":  "amber",
+                                         "trend":  "deteriorating",
+                                         "confidence":  5,
+                                         "change_from_last":  0,
+                                         "description":  "Using Brent oil as supply chain cost proxy â€” Cass Freight Index not available on FRED",
+                                         "series_id":  "DCOILBRENTEU (proxy)",
+                                         "last_date":  "2026-09-01",
+                                         "note":  "SUSTAINED blackwatch-2026-09-08-0230: Hormuz tanker traffic lowest since May (IBTimes); Iran exclusion-zone EXTENSION vowed + new restricted zone/shipping route \u0027coming days\u0027 (Reuters fresh Sep 8); US counter-blockade sustained. Europe pricing up to outcompete Asia for marginal LNG amid prolonged Hormuz disruption (Timera Sep 7). Wheat 2-year high + Kpler crunch warning sustained. Proxy tracks Brent -98.",
+                                         "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                                     },
+                    "food_security":  {
+                                          "name":  "Food Security",
+                                          "domain":  "Food",
+                                          "value":  131.78,
+                                          "status":  "red",
+                                          "trend":  "deteriorating",
+                                          "confidence":  3,
+                                          "change_from_last":  1.47,
+                                          "unit":  "index",
+                                          "description":  "IMF Food Price Index",
+                                          "series_id":  "PFOODINDEXM",
+                                          "last_date":  "2026-07-01",
+                                          "note":  "",
+                                          "timestamp":  "2026-09-07T05:30:58.655006+00:00"
+                                      },
+                    "climate":  {
+                                    "name":  "Climate Stress",
+                                    "domain":  "Climate",
+                                    "value":  1.11,
+                                    "unit":  "Â°C",
+                                    "status":  "red",
+                                    "trend":  "improving",
+                                    "confidence":  9,
+                                    "change_from_last":  -0.15,
+                                    "description":  "Global temp anomaly: 1.11Â°C above 20th century avg (2026)",
+                                    "series_id":  "NOAA NCEI",
+                                    "last_date":  "2026",
+                                    "note":  "Live from NOAA climate API",
+                                    "timestamp":  "2026-09-07T05:30:56.830430+00:00"
+                                },
+                    "social_cohesion":  {
+                                            "name":  "Social Cohesion",
+                                            "domain":  "Social",
+                                            "value":  55.2,
+                                            "status":  "amber",
+                                            "trend":  "deteriorating",
+                                            "confidence":  3,
+                                            "change_from_last":  5.7,
+                                            "unit":  "index",
+                                            "description":  "Consumer Sentiment as social mood proxy",
+                                            "series_id":  "UMCSENT",
+                                            "last_date":  "2026-07-01",
+                                            "note":  "",
+                                            "timestamp":  "2026-09-07T05:30:59.009408+00:00"
+                                        },
+                    "inst_trust":  {
+                                       "name":  "Institutional Trust",
+                                       "domain":  "Social",
+                                       "value":  30,
+                                       "unit":  "%",
+                                       "status":  "red",
+                                       "trend":  "deteriorating",
+                                       "confidence":  5,
+                                       "change_from_last":  0,
+                                       "description":  "Baseline: ~30% trust in government (Edelman 2025). Assessed quarterly + during deep scans.",
+                                       "series_id":  null,
+                                       "last_date":  "2025-Q1",
+                                       "note":  "Lumina updates during weekly deep scan via web search for latest polls and trust surveys. Quarterly baseline from Edelman Trust Barometer.",
+                                       "timestamp":  "2026-09-07T05:30:57.617092+00:00"
+                                   },
+                    "ai_acceleration":  {
+                                            "name":  "AI Acceleration",
+                                            "domain":  "Technology",
+                                            "value":  "Rapid",
+                                            "unit":  "",
+                                            "status":  "amber",
+                                            "trend":  "improving",
+                                            "confidence":  5,
+                                            "change_from_last":  0,
+                                            "description":  "Baseline: Rapid. Multiple frontier model releases in 2026. Assessed during weekly deep scans.",
+                                            "series_id":  null,
+                                            "last_date":  "2026-09-07",
+                                            "note":  "Lumina assesses during weekly deep scan by searching for recent model releases, capability benchmarks, and regulatory actions. Updated weekly.",
+                                            "timestamp":  "2026-09-07T05:30:57.617092+00:00"
+                                        },
+                    "currency":  {
+                                     "name":  "Currency Stability",
+                                     "domain":  "Currency",
+                                     "value":  118.75,
+                                     "status":  "info",
+                                     "trend":  "deteriorating",
+                                     "confidence":  5,
+                                     "change_from_last":  0.39,
+                                     "unit":  "index",
+                                     "description":  "Trade-Weighted Dollar Index (broad)",
+                                     "series_id":  "DTWEXBGS",
+                                     "last_date":  "2026-08-28",
+                                     "note":  "UPDATED blackwatch-2026-09-08-0230: USD/JPY 153.22 (-0.74% d/d, +3.81%/mo yen) - strongest yen since February, back INSIDE intervention wire with relief: carry-trade unwind + capital repatriation + US political pressure for BOJ tightening; wages fastest since 1997; Takaichi adviser signals Sep + Jan hikes. PBOC WEAKER CNY fixing = depreciation risk signalled. Peso record low sustained (JPM/BoA: 65/USD mid-2027); won exceptionally strong (USD/KRW -13%/2mo - divergence, not contagion).",
+                                     "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                                 },
+                    "gold":  {
+                                 "name":  "Gold / Precious Metals",
+                                 "domain":  "Currency",
+                                 "value":  4350.0,
+                                 "unit":  "$/oz",
+                                 "status":  "amber",
+                                 "trend":  "improving",
+                                 "confidence":  9,
+                                 "change_from_last":  26.5,
+                                 "description":  "Gold Spot: ~$4,350/oz spot consensus (goldprice 4,359.32 / APMEX 4,342.00), web-verified 2026-09-07 23:00 UTC",
+                                 "series_id":  "Yahoo Finance GC=F",
+                                 "last_date":  "2026-09-07",
+                                 "note":  "THRESHOLD SCAN 2026-09-08T02:45Z (RED wire sustained): GC=F LIVE $4,472.4 \u003e 3500 RED mania wire (+27.8%); +0.96% d/d from 4,429.8 - pushing higher, not consolidating. Spot web-verified Mon ~4,350-4,476 zone. || Spot via web search 2026-09-07 (Markets Insider 4361.01 / goldprice.com 4359.32 / APMEX 4342 consensus ~4350). COMEX futures GC=F at 4476.60 carry ~ premium. 19.3% below ATH 5405 (Jan 2026). || 6h REFRESH 2026-09-07T23:00Z: spot re-verified ~4,350 (goldprice.com 4,359.32 / APMEX 4,342.00; Consensus spot ~4,350, GC=F futures premium intact). Connectors MISSING (multi-source + FRED scripts not on disk) - manual gold update only.",
+                                 "timestamp":  "2026-09-08T02:30:00.734911+00:00"
+                             },
+                    "crypto":  {
+                                   "name":  "Crypto Markets",
+                                   "domain":  "Currency",
+                                   "value":  79843,
+                                   "unit":  "$",
+                                   "status":  "green",
+                                   "trend":  "stable",
+                                   "confidence":  9,
+                                   "change_from_last":  0.0,
+                                   "description":  "BTC $79,843 (+0.0% 24h), Dominance: 76.6%",
+                                   "series_id":  "CoinGecko API",
+                                   "last_date":  "2026-09-07",
+                                   "note":  "Live from CoinGecko API",
+                                   "timestamp":  "2026-09-07T05:30:56.450907+00:00"
+                               },
+                    "china":  {
+                                  "name":  "China Health",
+                                  "domain":  "China",
+                                  "value":  97.69,
+                                  "unit":  "CLI index",
+                                  "status":  "red",
+                                  "trend":  "deteriorating",
+                                  "confidence":  7,
+                                  "change_from_last":  -0.09,
+                                  "description":  "OECD Composite Leading Indicator for China (PMI proxy)",
+                                  "series_id":  "BSCICP03CNM665S",
+                                  "last_date":  "2024-01-01",
+                                  "note":  "ESCALATED blackwatch-2026-09-08-0230: Beijing announced ~Y360bn (~) injection into EIGHT state banks+insurers Sep 7 - BIGGEST recapitalization push in two decades (BBC/Semafor/Nikkei/SCMP). Market verdict negative: state bank+insurer shares SLID on announcement, funding seen having \u0027limited short-term impact\u0027 amid weak credit demand; SCMP: analysts say more needed. PBOC set a WEAKER USD/CNY fixing signalling further renminbi depreciation risk. Beijing moving from property overhaul to direct financial-system backstop = stress confirmation. CLI proxy (97.69, Jan 2024) unchanged - stale series, assessment from live news.",
+                                  "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                              },
+                    "europe":  {
+                                   "name":  "Europe Stability",
+                                   "domain":  "Europe",
+                                   "value":  2.25,
+                                   "status":  "amber",
+                                   "trend":  "stable",
+                                   "confidence":  9,
+                                   "change_from_last":  0.0,
+                                   "unit":  "%",
+                                   "description":  "ECB Deposit Rate (proxy for EU stability)",
+                                   "series_id":  "ECBDFR",
+                                   "last_date":  "2026-09-04",
+                                   "note":  "THRESHOLD SCAN 2026-09-08T02:45Z (AMBER sustained): Bund 3.359% \u003e 3.0 AMBER wire (+12.0%), Tue open eased from Mon ~3.38-3.39 close (15y-high doorstep 3.3951 intact); drivers unchanged: AfD Saxony-Anhalt win (44%) + ECB hike expected Thu; borrowing costs up 4 straight weeks. || Full EU stability = composite of ECB rate + fragmentation spreads (Phase 2)",
+                                   "timestamp":  "2026-09-08T02:30:00.734911+00:00"
+                               },
+                    "us_cycle":  {
+                                     "name":  "US Cycle Position",
+                                     "domain":  "United States",
+                                     "value":  0.41,
+                                     "status":  "amber",
+                                     "trend":  "stable",
+                                     "confidence":  9,
+                                     "change_from_last":  -0.02,
+                                     "unit":  "%",
+                                     "description":  "Yield Curve (10Y-2Y) â€” recession signal",
+                                     "series_id":  "T10Y2Y",
+                                     "last_date":  "2026-09-04",
+                                     "note":  "UPDATED blackwatch-2026-09-08-0230: Fed September hike odds SPLIT ~50% (CME FedWatch coin flip, KuCoin Sep 7 14:37Z) vs 61-62% (Pomegra/Gate) post-NFP blowout - partial de-escalation tick, but two-sided event risk: US CPI THU SEP 11 decides FOMC Sep 15-16. DXY 98.76 (-1.06%/mo); 10Y ~4.78%; curve +0.41. ECB hikes Thu Sep 10, BOJ hawkish bets harden for Sep 18. Labor Day Monday passed; first full US session Tue Sep 8.",
+                                     "timestamp":  "2026-09-08T02:35:00.000000+00:00"
+                                 },
+                    "middle_east":  {
+                                        "name":  "Middle East Tension",
+                                        "domain":  "Middle East",
+                                        "value":  96.02,
+                                        "status":  "amber",
+                                        "trend":  "deteriorating",
+                                        "confidence":  7,
+                                        "change_from_last":  6.27,
+                                        "unit":  "$/bbl",
+                                        "description":  "Brent Oil as ME tension proxy",
+                                        "series_id":  "DCOILBRENTEU",
+                                        "last_date":  "2026-09-01",
+                                        "note":  "Proxy â€” GDELT/news API for direct conflict tracking in Phase 2",
+                                        "timestamp":  "2026-09-07T05:31:02.791533+00:00"
+                                    },
+                    "public_sentiment":  {
+                                             "name":  "Public Sentiment",
+                                             "domain":  "Social",
+                                             "value":  55.2,
+                                             "status":  "amber",
+                                             "trend":  "deteriorating",
+                                             "confidence":  3,
+                                             "change_from_last":  5.7,
+                                             "unit":  "index",
+                                             "description":  "Consumer Sentiment Index",
+                                             "series_id":  "UMCSENT",
+                                             "last_date":  "2026-07-01",
+                                             "note":  "",
+                                             "timestamp":  "2026-09-07T05:31:03.413641+00:00"
+                                         }
+                },
+    "overall_risk":  {
+                         "level":  "CRITICAL",
+                         "color":  "red",
+                         "score":  456,
+                         "red_count":  5,
+                         "amber_count":  11,
+                         "green_count":  3,
+                         "manual_count":  1,
+                         "timestamp":  "2026-09-07T05:31:03.423670+00:00"
+                     },
+    "convergence":  {
+                        "stressed_domains":  [
+                                                 {
+                                                     "domain":  "Social",
+                                                     "red":  1,
+                                                     "amber":  2,
+                                                     "stress_level":  4
+                                                 },
+                                                 {
+                                                     "domain":  "Financial",
+                                                     "red":  1,
+                                                     "amber":  1,
+                                                     "stress_level":  3
+                                                 },
+                                                 {
+                                                     "domain":  "Food",
+                                                     "red":  1,
+                                                     "amber":  0,
+                                                     "stress_level":  2
+                                                 },
+                                                 {
+                                                     "domain":  "Climate",
+                                                     "red":  1,
+                                                     "amber":  0,
+                                                     "stress_level":  2
+                                                 },
+                                                 {
+                                                     "domain":  "China",
+                                                     "red":  1,
+                                                     "amber":  0,
+                                                     "stress_level":  2
+                                                 },
+                                                 {
+                                                     "domain":  "Energy",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Cyber",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Supply Chain",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Technology",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Currency",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Europe",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "United States",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 },
+                                                 {
+                                                     "domain":  "Middle East",
+                                                     "red":  0,
+                                                     "amber":  1,
+                                                     "stress_level":  1
+                                                 }
+                                             ],
+                        "convergence_active":  true,
+                        "convergence_domains":  [
+                                                    {
+                                                        "domain":  "Social",
+                                                        "red":  1,
+                                                        "amber":  2,
+                                                        "stress_level":  4
+                                                    },
+                                                    {
+                                                        "domain":  "Financial",
+                                                        "red":  1,
+                                                        "amber":  1,
+                                                        "stress_level":  3
+                                                    },
+                                                    {
+                                                        "domain":  "Food",
+                                                        "red":  1,
+                                                        "amber":  0,
+                                                        "stress_level":  2
+                                                    },
+                                                    {
+                                                        "domain":  "Climate",
+                                                        "red":  1,
+                                                        "amber":  0,
+                                                        "stress_level":  2
+                                                    },
+                                                    {
+                                                        "domain":  "China",
+                                                        "red":  1,
+                                                        "amber":  0,
+                                                        "stress_level":  2
+                                                    }
+                                                ],
+                        "timestamp":  "2026-09-07T05:31:03.423670+00:00"
+                    }
 }
