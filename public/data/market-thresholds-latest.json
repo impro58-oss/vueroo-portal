@@ -1,41 +1,41 @@
 {
   "scan_date": "2026-09-09",
-  "scan_time_utc": "2026-09-09T22:46:32.582553+00:00",
+  "scan_time_utc": "2026-09-09T23:05:55.202171+00:00",
   "scanner_version": "2.0.0-reconstructed",
   "current_values": {
     "USDJPY": {
-      "price": 153.347,
+      "price": 153.342,
       "prev_close": 153.478,
       "change_1d_pct": -0.09,
-      "data_points": 6,
+      "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
       "price": 1.164,
       "prev_close": 1.1627,
       "change_1d_pct": 0.11,
-      "data_points": 6,
+      "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
       "price": 1.3552,
       "prev_close": 1.3545,
       "change_1d_pct": 0.05,
-      "data_points": 6,
+      "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
       "price": 6.6977,
-      "prev_close": 6.7105,
-      "change_1d_pct": -0.19,
-      "data_points": 6,
+      "prev_close": 6.7108,
+      "change_1d_pct": -0.2,
+      "data_points": 4,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1339.31,
+      "price": 1339.43,
       "prev_close": 1339.21,
-      "change_1d_pct": 0.01,
-      "data_points": 6,
+      "change_1d_pct": 0.02,
+      "data_points": 5,
       "source": "yahoo"
     },
     "SPX": {
@@ -67,16 +67,16 @@
       "source": "yahoo"
     },
     "GOLD": {
-      "price": 4445.1,
+      "price": 4442.8,
       "prev_close": 4393.8999,
-      "change_1d_pct": 1.17,
+      "change_1d_pct": 1.11,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 102.05,
+      "price": 101.97,
       "prev_close": 97.92,
-      "change_1d_pct": 4.22,
+      "change_1d_pct": 4.14,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -88,9 +88,9 @@
       "source": "yahoo"
     },
     "BTC": {
-      "price": 78026.17,
+      "price": 78106.66,
       "prev_close": 78438.5781,
-      "change_1d_pct": -0.53,
+      "change_1d_pct": -0.42,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -147,7 +147,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4445.1,
+      "current": 4442.8,
       "threshold": 3500.0,
       "direction": "above",
       "severity": "RED",
@@ -156,13 +156,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 27.0
+      "distance_pct": 26.94
     },
     {
       "key": "OIL",
       "name": "Brent Crude",
       "category": "commodity",
-      "current": 102.05,
+      "current": 101.97,
       "threshold": 100.0,
       "direction": "above",
       "severity": "RED",
@@ -171,7 +171,7 @@
         "energy",
         "inflation"
       ],
-      "distance_pct": 2.05
+      "distance_pct": 1.97
     },
     {
       "key": "JGB10Y",
@@ -191,7 +191,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4445.1,
+      "current": 4442.8,
       "threshold": 3000.0,
       "direction": "above",
       "severity": "AMBER",
@@ -199,7 +199,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 48.17
+      "distance_pct": 48.09
     },
     {
       "key": "DE10Y",
@@ -237,16 +237,14 @@
   "markets_monitored": 17,
   "max_severity": "RED",
   "manual_fill": {
-    "filled_at": "2026-09-09T22:46:32.582553+00:00",
+    "filled_at": "2026-09-09T23:05:55.202171+00:00",
     "instruments": [
       "MOVE",
       "JGB10Y",
       "DE10Y",
       "BAA10Y"
     ],
-    "method": "web_search (see per-instrument source fields)",
-    "reverified_at": "2026-09-09T22:47:12.484505+00:00",
-    "reverification": "22:41Z 4h-cron refresh via web_search: JGB 10Y EASED 2.918 -> 2.88 (TE live 22:43Z Sep 9, -0.01pp d/d, retreat from 30-yr highs as yen ~7-mo high on carry unwind; Investing Wed band 2.915-2.992; breach fires under any source); Bund RAISED 3.3593 -> 3.39 (Sep 9 auction avg 3.39% highest since 2009 per Bloomberg via Gate 11:30Z; TE 08:01Z 15y-high headline; ECB Thu); MOVE 74.68 10th identical check (still Fri Sep 4 print; CNBC 73.10 Sep 4 corroborates); FRED BAA10Y 1.57 obs Sep 3 still latest. Yahoo 13 re-fetched live at scan."
+    "method": "web_search (see per-instrument source fields)"
   },
   "data_sources": "Yahoo Finance + web search fallback (MOVE/JGB10Y/DE10Y/BAA10Y)",
   "reconstruction_note": "Original scanner script lost in workspace migration; rebuilt 2026-09-07 with the 12 tripwires evidenced in historical scan records + job spec. 19 of the original 31 thresholds were never evidenced and are not fabricated here."
