@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-09T21:00:05.921418",
+  "timestamp": "2026-09-10T00:00:10.056259",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,32 +30,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -426.42,
-    "unrealized_pnl_eur": -10.96,
+    "realized_pnl_eur": -435.57,
+    "unrealized_pnl_eur": -1.81,
     "total_pnl_eur": -437.38,
-    "open_positions": 2,
-    "closed_trades": 196,
+    "open_positions": 1,
+    "closed_trades": 197,
     "wins": 73,
-    "losses": 123,
-    "win_rate": 37.2
+    "losses": 124,
+    "win_rate": 37.1
   },
   "open_positions": {
-    "SENTUSDT": {
-      "status": "OPEN",
-      "direction": "LONG",
-      "entry_date": "2026-09-08T03:00:11.234793",
-      "entry_price": 0.01475,
-      "atr": 0.0005957142857142854,
-      "stop": 0.013275,
-      "highest": 0.01551,
-      "lowest": 0.01475,
-      "bars_held": 14,
-      "signal": "D_HIGH_BREAKOUT",
-      "btc_regime": "BULLISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.01421
-    },
     "AUSDT": {
       "status": "OPEN",
       "direction": "LONG",
@@ -65,28 +49,15 @@
       "stop": 0.07461000000000001,
       "highest": 0.086,
       "lowest": 0.0829,
-      "bars_held": 6,
+      "bars_held": 7,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0823
+      "current_price": 0.0806
     }
   },
   "recent_trades": [
-    {
-      "symbol": "EURIUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-14T23:53:14.121494",
-      "exit_date": "2026-08-16T12:00:29.814485",
-      "entry_price": 1.1573,
-      "exit_price": 1.1571,
-      "pnl_pct": -0.02,
-      "pnl_eur": -0.04,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "PENDLEUSDT",
       "direction": "SHORT",
@@ -333,22 +304,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "SENTUSDT",
+      "direction": "LONG",
+      "entry_date": "2026-09-08T03:00:11.234793",
+      "exit_date": "2026-09-10T00:00:10.056259",
+      "entry_price": 0.01475,
+      "exit_price": 0.01421,
+      "pnl_pct": -3.66,
+      "pnl_eur": -9.15,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XAUTUSDT",
-    "RLUSDUSDT",
-    "UUSDT",
-    "PAXGUSDT",
-    "KASUSDT",
-    "USD1USDT",
-    "BFUSDUSDT",
     "EURUSDT",
-    "XUSDUSDT",
     "USDEUSDT",
-    "ZECUSDT"
+    "RLUSDUSDT",
+    "BFUSDUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT",
+    "ZECUSDT",
+    "USD1USDT",
+    "KASUSDT",
+    "XAUTUSDT",
+    "UUSDT"
   ]
 }
