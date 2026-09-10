@@ -2,11 +2,11 @@
   "metadata": {
     "source": "FRED API + manual assessment + web-verified spot check",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-10T05:05:00+00:00",
+    "last_update": "2026-09-10T05:51:48+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
-    "threshold_breach": "threshold scan 02:41Z legs SUSTAINED + 04:37Z breaking refresh (7 breaches, max RED - 6th consecutive RED scan): Brent BZ=F $101.03 live 04:40Z (overnight 00:00 ET bar H 101.10; cycle high 102.57 stands; >$100 ~17.5+ hrs; press settle 101.21 +3.36% d/d; Iran zone coords pending 7th day) + JGB 10Y 2.88% > 1.5 RED (TE-OTC basis; fresh band 2.915-2.992; no settled Sep 10 print yet; BOJ Sep 18) + Gold GC=F $4,454.5 > 3500 RED (cycle high 4,479.0 intact, $4,500 watch) + AMBER: JGB > 1.0, Gold > 3000, Bund 3.39% > 3.0 (Sep 9 auction, ECB TODAY 11:45Z), EUR/USD 1.164 > 1.15; max RED; MOVE 74.68 (11th identical check, stale-quote risk) + BAA10Y 1.57 (FRED Sep 3) calm. NEW: US diesel RECORD $5.85-$5.94/gal (EIA/AP/Fortune - transport inflation channel). Watches: ECB decision TODAY 11:45Z + presser (lands 08:37Z cycle), PPI TONIGHT Sep 10, CPI Fri Sep 11 (~60%), Iran zone coordinates (7th day), BOJ Sep 18.",
+    "threshold_breach": "threshold scan 02:41Z legs SUSTAINED + 04:37Z breaking refresh (7 breaches, max RED - 6th consecutive RED scan): Brent BZ=F $101.03 live 04:40Z (overnight 00:00 ET bar H 101.10; cycle high 102.57 stands; >$100 ~17.5+ hrs; press settle 101.21 +3.36% d/d; Iran zone coords pending 7th day) + JGB 10Y 2.88% > 1.5 RED (TE-OTC basis; fresh band 2.915-2.992; no settled Sep 10 print yet; BOJ Sep 18) + Gold GC=F $4,454.5 > 3500 RED (cycle high 4,479.0 intact, $4,500 watch) + AMBER: JGB > 1.0, Gold > 3000, Bund 3.39% > 3.0 (Sep 9 auction, ECB TODAY 11:45Z), EUR/USD 1.164 > 1.15; max RED; MOVE 74.68 (11th identical check, stale-quote risk) + BAA10Y 1.57 (FRED Sep 3) calm. NEW: US diesel RECORD $5.85-$5.94/gal (EIA/AP/Fortune - transport inflation channel). Watches: ECB decision TODAY 11:45Z + presser (lands 08:37Z cycle), PPI TONIGHT Sep 10, CPI Fri Sep 11 (~60%), Iran zone coordinates (7th day), BOJ Sep 18. || ECHO SCAN 06:3xZ: gold spot re-verified Yahoo GC=F live $4462.0 (+1.04% d/d) || ECHO SCAN 06:3xZ: gold spot re-verified Yahoo GC=F live $4464.4 (+1.10% d/d) || ECHO SCAN 06:3xZ: gold spot re-verified Yahoo GC=F live $4467.0 (+1.15% d/d)",
     "breaking_event": "blackwatch-2026-09-10-0437 (routine 4h cycle, window Sep 10 00:46Z -> 04:37Z, 14 query ops/12 domains + live Yahoo quotes + overnight 1h bars; follows 02:41Z threshold scan 7 breaches max RED + 00:37Z rung-cluster scan): CAT-5 SUSTAINED 7th consecutive cycle, NO NEW RUNGS, no state changes. (1) ATTACK-WAVE CONSOLIDATION: Reuters 'Iran and US hit tankers in biggest wave of attacks on shipping since war began' (Sep 9-10; Japan Times Sep 10; Gulf News updated 01:04Z) - known rung cluster stands (US 5 tankers/1 sunk; IRGC-15 2 US vessels + 8 tankers + 10 non-compliant; UKMTO disabling fire; Jordan base 18 intercepted); zone coords STILL PENDING 7th day; hamerintel tanker-hit-in-Iraqi-waters (11:28Z Sep 9, late-caught OSINT, uncorroborated - low confidence); Edge-Malaysia UKMTO item = stale Aug-1 content, not logged. (2) DIESEL RECORDS first-time board capture: US national average all-time high week of Sep 7 (EIA); AP $5.85; Fortune $5.94/gal; FreightWaves benchmark record; Forbes/axios - transport inflation channel. (3) RUPEE fresh leg down: opens 95.25 (03:31Z), live 95.21, day high 95.315; RBI unloaded >=$8bn last week (bankers) + FX-swap mopup leg. (4) China-US 10Y yield gap widest on record (Bloomberg); PBOC short-rates signal. (5) Brent 101.03 live 04:40Z holds >$100 ~17.5 hrs (high 102.57 stands); gold 4,454.5 (4,479 high intact); silver 68.11; N225 64,810 -0.52% live Thu; HSI 24,949 -1.29% live; yen 153.403; EUR 1.164; BTC 78,328. (6) UK gilt yields easing toward 4.8% (labour data) - mild de-escalation tick. (7) ECB decision TODAY 11:45Z (25bp, lands next cycle); NEW WATCH: US PPI tonight Sep 10; CPI Fri ~60% (Kalshi 66%/coingape ~50%); FOMC Sep 15-16; BOJ Sep 18. (8) Ebola static ~6,686/3,226; Sudan sustained; no bank failures; latam quiet (IBOV -0.96% etc.). macro_event ACTIVE conf 10 held; 5 ACTIVE / 2 DEVELOPING / 1 WATCH. TELEGRAM NOT SENT (sustained-only precedent - no new rungs/state changes)."
   },
   "signals": {
@@ -208,17 +208,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4409.6,
+      "value": 4467.0,
       "unit": "$/oz",
-      "status": "amber",
+      "status": "red",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": 38.6,
-      "description": "Gold Spot: $4,409.6 - live gold-api 2026-09-10 05:00:54Z (feed seconds old; fixes 09-09 23:05Z $-mangling)",
+      "change_from_last": 0.0,
+      "description": "Gold Spot (GC=F): $4467.0 - Yahoo live echo-scan check 2026-09-10T05:51:48+00:00 (+51.0 / +1.15% vs prev close 4416.0)",
       "series_id": "Yahoo Finance GC=F",
       "last_date": "2026-09-10",
-      "note": "Cron refresh 2026-09-10T05:05Z: manual spot update, gold-api live 4,409.60 (+38.6/+0.9% vs 4,371.0); multi-source + FRED connector scripts still missing (6th consecutive cycle) - auto-refresh not run (Roo's call) || BREAKING SCAN 2026-09-10T04:37Z (RED SUSTAINED): GC=F 4,454.5 live 04:40Z (00:00 ET bar H 4,458.4) vs 4,437.7 overnight - holding near cycle high 4,479.0; $4,500 resistance stands; silver 68.11. || THRESHOLD SCAN 2026-09-10T02:41Z (RED sustained): GC=F LIVE $4,457.2 > 3500 mania wire (+27.4%, 1.44% d/d vs prior Yahoo bar 4,393.9; ~+0.4% vs Wed settle band 4,420.4-4,441.0 (contract artifact, both logged); overnight grind toward $4,500; cycle high 4,479.0 (13:00Z Sep 9 bar) intact; $4,500 resistance test looms - SocGen via Kitco Sep 7). Deep in RED. || Cron refresh 2026-09-09T23:05Z: manual spot update, sources APMEX + FindBullionPrices Sep 9",
-      "timestamp": "2026-09-10T05:05:00+00:00"
+      "note": "Echo scan 2026-09-10T06:3xZ: manual spot update via Yahoo GC=F direct API, live $4467.0 (+51.0/+1.15% vs prev close 4,416.0); cycle high 4,479.0 intact, $4,500 resistance watch; >3500 RED (threshold class), >3000 AMBER also breached. Prior: cron refresh 05:05Z gold-api 4,409.6 || multi-source + FRED connector scripts still missing (7th consecutive cycle) - auto-refresh not run",
+      "timestamp": "2026-09-10T05:51:48+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
