@@ -1,11 +1,11 @@
 {
-  "scan_id": "blackwatch-2026-09-09-1637",
-  "scan_time": "2026-09-09T16:45:00+00:00",
+  "scan_id": "blackwatch-2026-09-10-0037",
+  "scan_time": "2026-09-10T00:46:06+00:00",
   "scanner": "breaking_event_scanner",
   "scanner_type": "4h_breaking_event_scanner",
-  "run_type": "routine 4h cycle - window 12:46Z -> 16:37Z; follows the 12:37Z/12:47Z breaking double-fire (sibling died mid-run, repair run completed pipeline) + 14:42Z threshold scan (7 breaches, max RED, 3rd consecutive RED scan); sits before the ~18:42Z threshold scan",
-  "window": "2026-09-09T12:46Z to 2026-09-09T16:37Z",
-  "queries_executed": 13,
+  "run_type": "routine 4h cycle - window 20:37Z Sep 9 -> 00:37Z Sep 10; follows 22:41Z threshold scan (7 breaches, max RED, 5th consecutive RED); overnight Asia-session cycle; recalibration-day preamble ruled by standing precedent - the brief's standing scanner instruction IS the brief, scan proceeded",
+  "window": "2026-09-09T20:37Z to 2026-09-10T00:37Z",
+  "queries_executed": 14,
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -20,122 +20,142 @@
     "commodities",
     "pandemic_health"
   ],
-  "verdict": "CAT-5 SUSTAINED, no new rungs, no state changes; market-data deepening cycle. Brent BZ=F extended the deepening chain: 100.81 (10:41Z) -> 100.88 (12:39Z) -> 101.06 (14:42Z) -> 101.18 live 16:38Z (+3.33% d/d vs Tue settle 97.92), NEW session high 101.60 (16:00Z bar); every hourly close >= 100.14 since the 08:00Z bar = 8.5+ hrs above the wire. Gold GC=F NEW cycle high 4,479.0 (13:00Z bar), live 4,445.1 (+1.17% d/d) - eased off highs. Equities soft on oil: S&P 7,635.7 (-0.49% d/d live), UK stocks declined on oil >$100 (Reuters), US session weighed by Canada tariff escalation + oil (Xinhua/The Star). Iran restricted-zone declaration STILL pending (all coverage Sep 7 vintage); Iran-Oman transit-protocol talks 'progress' (Sep 8) - the >$100 trigger remains undeclared. IRGC Statement No. 15 remains unverified. No new war rungs: wires consolidate the known rung (US destroyed 5 Iranian tankers / Iran hit Jordan base + US warships - Sep 8-9 stories). Rupee CLOSED 95.08 (India close, ET/Telangana Today) - flat vs 12:37Z 95.10 live; RBI FX-swap deployment for $115bn cash surplus (Bloomberg Sep 9) = new intervention-tool tick, not a state change. Peso record-low leg documented today (Philstar Sep 9). macro_event ACTIVE conf 10 held; 5 ACTIVE / 2 DEVELOPING / 1 WATCH unchanged.",
-  "new_rungs": [],
-  "escalation_actions": "BOARD MAINTAINED (sustained-only cycle): metadata.last_update + breaking_event 1637 summary + threshold_breach Brent clause refreshed (deepening chain extended to 101.60 high / 101.18 live); signal notes stamped BREAKING SCAN 16:37Z (energy, fin_stability, geopolitical, middle_east, currency, us_cycle, gold); macro-event.json: last_updated + scan_id + alert_log 1637Z entry + highest_alert REFRESHED (repaired 04:37Z-vintage stale text - was pre-breach 'Brent 0.33% away', now post-breach sustained) + score_basis += 1637 sustainment paragraph. No convergence_scores changes (no confirmed state changes). PORTAL SYNC: blackwatch-signals.json + signals.json (x2 canonical) + blackwatch-macro-event.json + scan JSONs (dated 1637 + latest x2) + live-quotes to LIVE workspace vueroo-portal + vueroo-portal-scan repo (commit+push). TELEGRAM: NOT SENT (sustained-only precedent; CAT-5 alerted 00:36Z Sep 7, rungs alerted 14:05 IST via 12:37Z repair, threshold REDs alerted 14:42Z - no new rungs/state changes this cycle).",
+  "verdict": "CAT-5 SUSTAINED (6th+ consecutive cycle) + NEW RUNG CLUSTER caught first-cycle. (1) ZONE SCOPE EXPANDED: Iran for the FIRST TIME added parts of the Gulf of Oman + Arabian Sea to the prohibited zone (announced Wed Sep 9, exact coordinates STILL pending; Arab News/AFP 20:28Z 'prohibited zone would stretch from near Chabahar'; Al-Monitor/AFP Sep 9; Kurdistan24 12:14Z; Turkiye Today 12:24Z; VietNamNet 13:56Z; IANS wire Tehran Sep 10) + IRGC spokesman Hossein Mohebi: uncoordinated entry 'subject to our sanctions'. The declaration-with-coordinates the board has watched for 5-6 days is MATERIALIZING. (2) IRGC Statement No. 15 content PRESS-CORROBORATED: 2 US vessels + 8 oil tankers + 10 'non-compliant vessels' attacked Wednesday (AFP/Al-Monitor/AA citing Iranian state media; prior status UNVERIFIED; 'Hormuz full control' clause still unverified). (3) UKMTO: several merchant vessels hit by disabling fire in the Gulf + Gulf of Oman (Reuters/AA/NDTV/Straits Times Sep 9; report chain from Sep 8 22:15Z update). (4) BRENT OVERNIGHT EXTENSION: BZ=F post-settle bars pushed NEW cycle high 102.57 (22:00-23:00Z) before easing to 101.34 by the 00:00Z bar; press canonical settle 101.21 (+3.36% d/d; AFP 17:48Z + Gate 19:33Z) vs yfinance settle-bar close 101.68 (+3.84%) - continuous-contract artifact documented, both logged; >$100 in every hourly close since the 08:00Z Sep 9 bar (~16.5 hrs). (5) Gold GC=F 4,437.7 overnight (+0.39% d/d), cycle high 4,479.0 intact; silver 67.93 (+1.58%). (6) Asia open risk-off: N225 -0.69% early Thu (64,699); HSI Wed close -0.17%; yen 153.625 (+0.19% d/d weaker); rupee 95.13 (day high 95.223); EUR 1.163; BTC 78,186 (-0.08%). (7) ECB decision TODAY Thu Sep 10 11:45Z (13:45 CET) - 25bp all-but-certain (Reuters wire Sep 9 17:02Z 'set to hike as Iran war fuels fresh inflation fears'; ING/MUFG/Danske/FXStreet previews; deposit rate to 2.50%); Fed CPI Fri Sep 11 (~60% hike odds; ainvest: 'swing vote' framing; Reuters poll: hold rest-of-2026 base with rising hike minority); BOJ Sep 18. (8) UK: short-dated gilt yields highest since 2023 on oil >$100 (Reuters/lse.co.uk 16:52Z); FTSE six-week lows; 30-yr record-yield auction Sep 8 stands. (9) JGB Wed Tokyo close 2.918 canonical (52wk high 3.023 intact); repatriation-risk debate stands. (10) China recap leg static (Y300bn Xinhua); PBOC OMO neutral; Beijing Post Y500bn claim remains uncorroborated. (11) Ebola static ~6,686/3,226 (+5,000 health workers needed, medicaldaily Sep 9). (12) No bank failures; latam quiet. macro_event ACTIVE conf 10; 5 ACTIVE / 2 DEVELOPING / 1 WATCH held. NEW RUNG => TELEGRAM SENT (first-cycle catch precedent).",
+  "new_rungs": [
+    "ZONE SCOPE EXPANDED (first-time): Iran added parts of the Gulf of Oman + Arabian Sea to the prohibited zone (announced Wed Sep 9, coordinates STILL pending; Arab News/AFP 20:28Z 'stretch from near Chabahar'; Kurdistan24 12:14Z, Turkiye Today 12:24Z, VietNamNet 13:56Z, IANS Tehran Sep 10) + IRGC spokesman Mohebi: uncoordinated vessels 'subject to our sanctions' - items published 12:14Z-20:33Z Sep 9; prior cycles (12:37Z died mid-pipeline, 16:37Z, 20:37Z) logged Sep 7-vintage only (query-wording miss); caught first-cycle by the 00:37Z run",
+    "IRGC STATEMENT NO. 15 PRESS-CORROBORATED + UKMTO DISABLING FIRE: 2 US vessels + 8 oil tankers + 10 'non-compliant vessels' attacked Wednesday (AFP/Al-Monitor/AA citing Iranian state media - prior status UNVERIFIED; 'Hormuz full control' clause still unverified); UKMTO: several merchant vessels hit by disabling fire in the Gulf + Gulf of Oman (Reuters/AA/NDTV/Straits Times Sep 9; Newsquawk chains the UKMTO report to the Sep 8 22:15Z update); Jordan shot down 18 missiles (army statement, known rung re-confirmed); Iran war-end conditions voiced (Israeli withdrawal from Lebanon + end Yemen blockade + release $24bn frozen assets)",
+    "BRENT OVERNIGHT EXTENSION: BZ=F NEW cycle high 102.57 in the 22:00-23:00Z post-settle bars (threshold 22:41Z read 102.05; settle-bar high 101.71; 23:00Z bar high 102.12), easing to 101.34 by the 00:00Z bar (00:41Z live) - every hourly close >= 100.14 since 08:00Z Sep 9 (~16.5 hrs); press canonical settle 101.21 (+3.36% d/d) vs yfinance settle-bar 101.68 - contract artifact documented, both logged"
+  ],
+  "escalation_actions": "BOARD ESCALATED (rung cluster, notes+metadata only, no score changes - middle_east_war already 200 maxed, energy already RED, precedent): metadata.last_update + breaking_event 0037 summary + threshold_breach refreshed (Brent clause -> overnight extension 102.57 / press settle 101.21 + zone-expansion clause 6th day; gold clause 4,437.7 overnight); signal notes stamped BREAKING SCAN 2026-09-10T00:37Z newest-first (energy, fin_stability, geopolitical, middle_east, currency, us_cycle, gold); macro-event.json: last_updated + scan_id 0037 + alert_log 13th entry + highest_alert refreshed (20:47Z -> 00:47Z vintage: zone expansion + IRGC-15 corroborated + UKMTO disabling fire + 102.57 overnight) + score_basis += 0037 sustainment. No convergence_scores changes (no confirmed state changes). PORTAL SYNC: blackwatch-signals.json + signals.json twin + blackwatch-macro-event.json + scan JSONs (dated 0037 + latest x2) to workspace vueroo-portal + impro vueroo-portal + vueroo-portal-scan repo (commit+push); latest-echo.json md5-checked (no content change -> no copy). Carbon to D:/Lumina workspace (artifact + live-quotes + scripts). TELEGRAM: SENT to Roo (new/escalated rung cluster => notify precedent; CAT-5 alerted 00:36Z Sep 7, war rungs 14:05 IST, threshold REDs 14:42Z, first-settle 20:37Z cycle - zone EXPANSION is the declaration-materialization rung).",
   "ticks": [
     {
-      "id": "TICK-1637-001",
-      "domain": "commodities",
-      "severity": 2,
-      "item": "COMMODITIES: Brent deepening chain extended - BZ=F 101.18 live 16:38Z (+3.33% d/d vs settle 97.92), session high 101.60 (16:00Z bar), hourly bars: 13:00Z H101.09 / 14:00Z H101.54 / 15:00Z H101.50 / 16:00Z H101.60 - every hourly close >= 100.14 since 08:00Z bar (8.5+ hrs). WTI 96.33 (+3.55%). Gold GC=F NEW cycle high 4,479.0 (13:00Z bar; 14:00Z 4,473.0 / 15:00Z 4,477.0), live 4,445.1 (+1.17% d/d) eased off highs; +27% over 3,500 RED wire. Silver 68.12 (+2.75%). Press: ts2.tech 15:30Z 'S&P 500 Falls 0.5% as Brent Hits $101'; Reuters UK stocks decline on oil >$100.",
-      "sources": ["yfinance BZ=F/CL=F/GC=F/SI=F live 16:38Z + 1h bars", "ts2.tech 15:30Z Sep 9", "reuters.com Sep 9 UK stocks"]
-    },
-    {
-      "id": "TICK-1637-002",
+      "id": "TICK-0037-001",
       "domain": "middle_east",
-      "severity": 2,
-      "item": "MIDDLE EAST: No new rungs in-window. Zone declaration STILL pending - fresh query returns only Sep 7-vintage items (Reuters 'coming days' 09-07, AJ explainer, LA Times, gCaptain, Al-Monitor). Iran-Oman transit protocols 'progress' noted in Sep 8 US-market wrap (Xinhua/The Star). Wires consolidate the known rung (Reuters/NBC/BBC/AJ/NPR Sep 8-9: US struck 5 Iranian tankers sinking one, Iran hit Jordan base + US warships twice). IRGC Statement No. 15 still unverified/no corroboration. Reuters Sep 9: Hormuz shipping traffic below 10-day average; commentary 'Oil prices fly blind as the Hormuz enigma deepens' (data darkness).",
-      "sources": ["reuters.com 09-07 zone", "aljazeera.com 09-07 explainer", "al-monitor.com 09-07", "thestar.com.my Sep 9 (Xinhua Sep 8 wrap)", "reuters.com Sep 9 Hormuz traffic"]
+      "severity": 1,
+      "item": "MIDDLE EAST - ZONE SCOPE EXPANDED (NEW RUNG): Iran for the first time added parts of the Gulf of Oman + Arabian Sea to the prohibited zone, announced Wednesday Sep 9; exact coordinates STILL pending ('will be announced later'); Arab News/AFP 20:28Z: prohibited zone 'would stretch from near Chabahar'; Guards spokesman Hossein Mohebi (state TV): vessels entering without coordination 'subject to our sanctions'. Cross-refs: Al-Monitor Sep 9 (AFP teams Tehran/Dubai), Kurdistan24 12:14Z, Turkiye Today 12:24Z, VietNamNet 13:56Z, IANS Tehran Sep 10 wire. The declaration-with-coordinates (the board's top trigger since Sep 6) is materializing - scope now exceeds Hormuz proper toward the Indian Ocean side. middle_east_war 200 SUSTAINED (escalation recorded as rung of the ACTIVE CAT-5).",
+      "sources": [
+        "arabnews.com 20:28Z Sep 9 (AFP)",
+        "al-monitor.com Sep 9",
+        "kurdistan24.net 12:14Z Sep 9",
+        "turkiyetoday.com 12:24Z Sep 9",
+        "vietnam.vn 13:56Z Sep 9",
+        "thepresidency.net IANS Sep 10"
+      ]
     },
     {
-      "id": "TICK-1637-003",
-      "domain": "em_asia",
-      "severity": 3,
-      "item": "EM ASIA: Rupee CLOSED 95.08 (Economic Times 11:19Z / Telangana Today / HDFC Sky - 'plunges 34 paise as crude surpasses $100') - flat vs 12:37Z live 95.10, no further slide into the close. RBI deploys FX swaps to reduce $115bn cash surplus (Bloomberg Sep 9; HinduBusinessLine updated 10:03Z) - intervention toolbox widens, not a state change. Peso record-low P62 leg re-documented (Philstar Sep 9 12:00am PHT). KRW strength stands (ING Sep 7) - divergence not contagion; asian_contagion 100 DEVELOPING held.",
-      "sources": ["economictimes.indiatimes.com 11:19Z", "telanganatoday.com 13:50Z", "bloomberg.com Sep 9 RBI swaps", "philstar.com Sep 9"]
+      "id": "TICK-0037-002",
+      "domain": "middle_east",
+      "severity": 1,
+      "item": "MIDDLE EAST - IRGC-15 CORROBORATED + UKMTO: IRGC said it attacked two US vessels, eight oil tankers and 10 'non-compliant vessels' trying to pass through Hormuz on Wednesday (Iranian state media via AFP/Al-Monitor) - content matches Statement No. 15 (prior status UNVERIFIED, now press-corroborated; 'Hormuz full control' clause remains unverified). UKMTO: 'several' merchant vessels in the Gulf + Gulf of Oman subject to disabling fire (Reuters/AA/NDTV/Straits Times Sep 9; Newsquawk references the Sep 8 22:15Z update). Iran also struck the US/Jordan base (~20 ballistic missiles, 18 intercepted by Jordan - re-confirmed). Iran war-end conditions: withdraw Israeli forces from Lebanon, end Yemen blockade, release $24bn frozen assets (AFP). Hormuz traffic below 10-day average stands.",
+      "sources": [
+        "al-monitor.com Sep 9",
+        "reuters.com Sep 9 (UKMTO disabling fire)",
+        "aa.com.tr Sep 9",
+        "ndtv.com 12:31Z Sep 9",
+        "newsquawk.com (Sep 8 22:15Z UKMTO chain)"
+      ]
     },
     {
-      "id": "TICK-1637-004",
-      "domain": "us_fed",
-      "severity": 3,
-      "item": "US FED: CPI Friday Sep 11 - odds ~60% CME (Xinhua/The Star Sep 8 wrap) / 'more likely than not' (Forbes Sep 8); Northwestern Mutual via cryptobriefing 13:16Z (in-window): 'Hot CPI report may trigger Fed rate hike this month'; CNBC Sep 8: call could hang on a few hundredths. us_recession 200 SUSTAINED. FOMC Sep 15-16.",
-      "sources": ["cryptobriefing.com 13:16Z Sep 9", "forbes.com Sep 8", "cnbc.com Sep 8", "thestar.com.my Sep 9 Xinhua wrap"]
+      "id": "TICK-0037-003",
+      "domain": "commodities",
+      "severity": 1,
+      "item": "COMMODITIES - BRENT OVERNIGHT EXTENSION: BZ=F post-settle bars NEW cycle high 102.57 (22:00-23:00Z bar, close 101.96), 23:00Z bar high 102.12, easing to 101.34 by the 00:00Z bar (00:41Z live; day-high field 102.57). Chain: settle 101.68 (20:47Z yfinance settle-bar) / press canonical settle 101.21 (+3.36% d/d, AFP 17:48Z + Gate 19:33Z; The Star 19:18Z WTI settle 96.05 +3.25%) -> 102.05 (22:41Z threshold read) -> 102.57 (overnight). Every hourly close >= 100.14 since 08:00Z Sep 9 (~16.5 hrs). Contract-roll artifact: yfinance prev_daily_close 99.3 vs press Tue settle 97.92 - documented, level-based report per precedent. Gold GC=F 4,437.7 overnight (+0.39% d/d vs 4,420.4), cycle high 4,479.0 (13:00Z Sep 9 bar) intact, $4,500 resistance stands; silver 67.93 (+1.58%, high 68.98).",
+      "sources": [
+        "yfinance BZ=F/CL=F/GC=F/SI=F 00:41Z live + 1h bars",
+        "arabnews.com/AFP 17:48Z settle 101.21",
+        "gate.com 19:33Z",
+        "thestar.com.my 19:18Z (WTI settle)"
+      ]
     },
     {
-      "id": "TICK-1637-005",
-      "domain": "eu_ecb",
-      "severity": 3,
-      "item": "EUROPE: ECB decision TOMORROW Thu Sep 10 13:45 CET - 25bp all-but-certain (Euronews Sep 9 'all but certain, the reasoning less so'); ING 'pick your poison' cheat sheet; FXStreet 'expected to hike 25bps with Dec guidance the open question'. Bund 3.359% near 15-yr high (TE Sep 9). euro_crisis 100 SUSTAINED.",
-      "sources": ["euronews.com Sep 9", "think.ing.com Sep 9", "fxstreet.com Sep 8"]
-    },
-    {
-      "id": "TICK-1637-006",
-      "domain": "japan",
-      "severity": 3,
-      "item": "JAPAN: No fresh in-window items. Japan Times Sep 9 repatriation-risk piece (logged 14:42Z) stands; yen 153.55 live (+0.20% weaker vs 153.36 04:38Z); Nikkei closed 65,142.78 (-0.19%). BOJ Sep 18. japan_yen 100 SUSTAINED.",
-      "sources": ["yfinance JPY=X live 16:38Z", "japantimes.co.jp Sep 9"]
-    },
-    {
-      "id": "TICK-1637-007",
-      "domain": "china",
-      "severity": 3,
-      "item": "CHINA: Recap leg static - $45-54bn / Y300bn into 8 state banks+insurers (CNBC Sep 7, BBC, SCMP analysis 'more needed', People's Daily Sep 7, InsuranceJournal Sep 8); credit demand weak. HSI closed 25,274.96 (-0.54%). china_collapse 120 SUSTAINED.",
-      "sources": ["cnbc.com Sep 7", "bbc.com", "scmp.com", "en.people.cn Sep 7"]
-    },
-    {
-      "id": "TICK-1637-008",
+      "id": "TICK-0037-004",
       "domain": "uk",
       "severity": 3,
-      "item": "UK: 30y gilt record-yield auction (Sep 8, Reuters/Guardian/Bloomberg 'highest since 1998') stands - no new fiscal events in-window; FTSE declined on oil >$100 (Reuters Sep 9).",
-      "sources": ["reuters.com Sep 8", "reuters.com Sep 9 UK stocks"]
+      "item": "UK: short-dated gilt yields rose to highest since 2023 after oil topped $100 (Reuters/lse.co.uk 16:52Z Sep 9); FTSE six-week lows, closed 10,664.8 (-1.35%, known); 30-year record-yield auction Sep 8 stands (Reuters); Bloomberg: surging gilt yields erode a key reason to own UK stocks; Healey fiscal-discipline vow Sep 7. sov_debt qualitative tick; no score change.",
+      "sources": [
+        "lse.co.uk 16:52Z Sep 9 (Reuters wire)",
+        "bloomberg.com Sep 9",
+        "tickmill.com Sep 9"
+      ]
     },
     {
-      "id": "TICK-1637-009",
-      "domain": "financial_system",
+      "id": "TICK-0037-005",
+      "domain": "eu_ecb",
+      "severity": 3,
+      "item": "EUROPE: ECB decision TODAY Thu Sep 10 11:45Z (13:45 CET) - 25bp all-but-certain, deposit rate to 2.50% (Reuters wire Sep 9 17:02Z 'ECB set to hike as Iran war fuels fresh inflation fears'; ING cheat sheet 'pick your poison'; MUFG 'moving to the next phase'; Danske/FXStreet previews); piptheory: eurozone inflation 3.3% headline, energy 14.3%; EUR/USD 1.163 overnight; Bund 3.39% 15-yr-high auction stands. Decision + presser land inside the next threshold scan window.",
+      "sources": [
+        "socastsrm Reuters wire 17:02Z Sep 9",
+        "think.ing.com Sep 8",
+        "mufgresearch.com Sep 7",
+        "piptheory.com Sep 9"
+      ]
+    },
+    {
+      "id": "TICK-0037-005b",
+      "domain": "us_fed",
+      "severity": 3,
+      "item": "US FED: CPI Fri Sep 11 8:30 ET - hike odds ~58-60% (CME/Forbes Sep 8 'more likely than not'; ainvest 'swing vote... investors pricing the wrong outcome'; HTX preview); Reuters poll Sep 9: Fed to hold rates steady rest-of-2026 base case but rising minority see at least one hike; FOMC Sep 15-16. US close known: SPX 7,637.7 (-0.47%), VIX 16.46 (+4.64%), TNX 4.837. us_recession 200 SUSTAINED.",
+      "sources": [
+        "forbes.com Sep 8",
+        "ainvest.com Sep 8",
+        "wsau.com Reuters poll Sep 9"
+      ]
+    },
+    {
+      "id": "TICK-0037-006",
+      "domain": "japan",
+      "severity": 3,
+      "item": "JAPAN: JGB Wed Tokyo close 2.918 canonical (Investing 20:32Z, band 2.910-2.948, 52wk high 3.023 intact) - RED sustained, no new high; TE 2.9150. N225 early Thu 64,699 (-0.69%) risk-off Asia open; yen 153.625 (+0.19% d/d weaker, day high 153.69). Repatriation-risk debate stands (Japan Times Sep 9 + Fitch via Reuters). BOJ Sep 18. japan_yen 100 SUSTAINED.",
+      "sources": [
+        "investing.com 20:32Z",
+        "tradingeconomics.com",
+        "yfinance ^N225/JPY=X 00:41Z"
+      ]
+    },
+    {
+      "id": "TICK-0037-007",
+      "domain": "em_asia",
+      "severity": 3,
+      "item": "EM ASIA: Rupee 95.13 (INR=X day high 95.223, ~flat overnight vs 95.08 India close); known Sep 9 cluster stands (Business Standard/HinduBL past-95 + RBI dollar sales; Reuters traders-say; Bloomberg $115bn FX swaps + $136bn diaspora-deposit draw). PHP record-low P62 leg stands; KRW strength = divergence not contagion. HSI Wed close -0.17% (25,275). asian_contagion 100 DEVELOPING held.",
+      "sources": [
+        "yfinance INR=X 00:41Z",
+        "business-standard.com 13:25Z Sep 9",
+        "bloomberg.com Sep 9"
+      ]
+    },
+    {
+      "id": "TICK-0037-008",
+      "domain": "china",
       "severity": 4,
-      "item": "FINANCIAL SYSTEM: No new bank failures or credit events in-window (search returned only evergreen/academic content + Jul-2026 CRS report; Tioga-Franklin Aug 21 = small historic community-bank failure, not fresh). MOVE 74.68 (stale Sep 4 print, 7th check) + BAA10Y 1.57 (FRED Sep 3) calm per 14:42Z threshold scan. fin_stability green (HY OAS 2.65%).",
-      "sources": ["web_search day-window nil", "threshold scan 14:42Z MOVE/BAA10Y"]
+      "item": "CHINA: recap leg static - Y300bn special treasury bonds for financial-firm capital (Xinhua Sep 9 re-affirm; state lenders/insurers ~Y360bn state-capital injection line stands); PBOC OMO neutral (CNY1bn Sep 8 7-day at 1.40% per ainvest - 'daily liquidity numbers unreadable on purpose'); Beijing Post Y500bn reverse-repo claim remains an uncorroborated aggregator piece, NOT logged as rung (2nd cycle unchanged). china_collapse 120 SUSTAINED.",
+      "sources": [
+        "chinagate.cn Sep 9 (Xinhua)",
+        "ainvest.com Sep 8",
+        "beijingpost.com Sep 8"
+      ]
     },
     {
-      "id": "TICK-1637-010",
-      "domain": "pandemic_health",
-      "severity": 4,
-      "item": "PANDEMIC: DRC Ebola static - ~6,686 cases / 3,226 deaths (Sep 8 govt figures stand); WHO situation page + ECDC Sep 7 page unchanged; qualitative 'increasingly heterogeneous' + new health zone (logged 12:37Z) stands. No new counts or IHR escalation in-window. global_pandemic 40 DEVELOPING held.",
-      "sources": ["who.int situation page", "ecdc.europa.eu Sep 7"]
-    },
-    {
-      "id": "TICK-1637-011",
+      "id": "TICK-0037-008b",
       "domain": "africa",
       "severity": 4,
-      "item": "AFRICA: No new coup/conflict/debt events in-window (search returned evergreen analysis only). DRC Ebola is the active Africa thread (see pandemic tick).",
-      "sources": ["web_search day-window nil"]
+      "item": "AFRICA/PANDEMIC: DRC Ebola static ~6,686 cases / 3,226 deaths (board leg; medicaldaily Sep 9 'confirmed deaths climb past 3,000', 5,000 more health workers needed; ECDC sitrep chain MVE17 111/SitRep Sep 1-2 vintage; WHO AFRO feature Sep 7). No new zone reached per last gov sitrep. global_pandemic 40 DEVELOPING held. No bank failures; latam quiet (BRL 5.55 forecast chatter; Copom cut to 14.00% Aug stands).",
+      "sources": [
+        "medicaldaily.com Sep 9",
+        "ecdc.europa.eu Sep 7",
+        "afro.who.int Sep 7",
+        "stockwirex.com Sep 9",
+        "bcb.gov.br Copom Aug"
+      ]
     },
     {
-      "id": "TICK-1637-012",
-      "domain": "latam",
+      "id": "TICK-0037-009",
+      "domain": "financial_system",
       "severity": 4,
-      "item": "LATAM: No fresh crisis items in-window (search returned IMF evergreen + PIIE Aug 3). Argentina country risk >450bp + BRL 5.088 stable per 12:37Z artifact stands.",
-      "sources": ["web_search day-window nil", "12:37Z scan artifact"]
-    },
-    {
-      "id": "TICK-1637-013",
-      "domain": "food_security",
-      "severity": 3,
-      "item": "FOOD: CFR 'Hunger Warfare and a Fertilizer Crisis Are Straining Global Food Supplies' (Sep 8 21:03Z, pre-window) - war-driven food strain narrative; Politico: Ukraine grain choked by Black Sea strikes + Europe drought, US corn to fill gap. No new export-ban shock in-window. food_security watch maintained.",
-      "sources": ["cfr.org Sep 8 21:03Z", "politico.eu"]
+      "item": "FIN SYSTEM: no bank failures; no new emergency-liquidity events in-window (search returns only historical 2023/2024 references + RBI E-Kuber glitch Sep 7 - operational, non-systemic). Crypto calm: BTC 78,186 (-0.08% overnight). inst_trust/fin_stability no score change; fin_stability note carries the gilt/ECB/oil cluster.",
+      "sources": [
+        "web search financial_system domain Sep 10",
+        "yfinance BTC-USD 00:41Z"
+      ]
     }
-  ],
-  "live_quotes": {
-    "BZ=F": 101.18,
-    "CL=F": 96.33,
-    "GC=F": 4445.1,
-    "SI=F": 68.12,
-    "^VIX": 16.58,
-    "JPY=X": 153.553,
-    "EURUSD=X": 1.1636,
-    "USDINR=X": 95.095,
-    "DX-Y.NYB": 98.825,
-    "^TNX": 4.849,
-    "BTC-USD": 78774.05,
-    "^GSPC": 7635.71,
-    "^N225": 65142.78,
-    "^HSI": 25274.96,
-    "BZ=F_session_high_1h": 101.6,
-    "GC=F_session_high_1h": 4479.0
-  },
-  "artifacts": {
-    "live_quotes_json": "data/blackwatch-scans/live-quotes-2026-09-09-1637.json",
-    "script": "scripts/bw-live-quotes-2026-09-09-1637.py"
-  }
+  ]
 }
