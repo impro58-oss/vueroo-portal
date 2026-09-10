@@ -2,7 +2,7 @@
   "metadata": {
     "source": "FRED API + manual assessment + web-verified spot check",
     "system": "BlackWatch Signal Board",
-    "last_update": "2026-09-10T04:44:50+00:00",
+    "last_update": "2026-09-10T05:05:00+00:00",
     "signals_auto": 20,
     "signals_manual": 0,
     "signals_total": 20,
@@ -208,17 +208,17 @@
     "gold": {
       "name": "Gold / Precious Metals",
       "domain": "Currency",
-      "value": 4371.0,
+      "value": 4409.6,
       "unit": "$/oz",
       "status": "amber",
       "trend": "deteriorating",
       "confidence": 9,
-      "change_from_last": -30.5,
-      "description": "Gold Spot: \\,371.0 - web-verified 2026-09-09 23:05Z (APMEX \\,342.00 + FindBullion \\,400.05 avg)",
+      "change_from_last": 38.6,
+      "description": "Gold Spot: $4,409.6 - live gold-api 2026-09-10 05:00:54Z (feed seconds old; fixes 09-09 23:05Z $-mangling)",
       "series_id": "Yahoo Finance GC=F",
-      "last_date": "2026-09-09",
-      "note": "BREAKING SCAN 2026-09-10T04:37Z (RED SUSTAINED): GC=F 4,454.5 live 04:40Z (00:00 ET bar H 4,458.4) vs 4,437.7 overnight - holding near cycle high 4,479.0; $4,500 resistance stands; silver 68.11. || THRESHOLD SCAN 2026-09-10T02:41Z (RED sustained): GC=F LIVE $4,457.2 > 3500 mania wire (+27.4%, 1.44% d/d vs prior Yahoo bar 4,393.9; ~+0.4% vs Wed settle band 4,420.4-4,441.0 (contract artifact, both logged); overnight grind toward $4,500; cycle high 4,479.0 (13:00Z Sep 9 bar) intact; $4,500 resistance test looms - SocGen via Kitco Sep 7). Deep in RED. || Cron refresh 2026-09-09T23:05Z: manual spot update, sources APMEX + FindBullionPrices Sep 9",
-      "timestamp": "2026-09-10T04:44:50+00:00"
+      "last_date": "2026-09-10",
+      "note": "Cron refresh 2026-09-10T05:05Z: manual spot update, gold-api live 4,409.60 (+38.6/+0.9% vs 4,371.0); multi-source + FRED connector scripts still missing (6th consecutive cycle) - auto-refresh not run (Roo's call) || BREAKING SCAN 2026-09-10T04:37Z (RED SUSTAINED): GC=F 4,454.5 live 04:40Z (00:00 ET bar H 4,458.4) vs 4,437.7 overnight - holding near cycle high 4,479.0; $4,500 resistance stands; silver 68.11. || THRESHOLD SCAN 2026-09-10T02:41Z (RED sustained): GC=F LIVE $4,457.2 > 3500 mania wire (+27.4%, 1.44% d/d vs prior Yahoo bar 4,393.9; ~+0.4% vs Wed settle band 4,420.4-4,441.0 (contract artifact, both logged); overnight grind toward $4,500; cycle high 4,479.0 (13:00Z Sep 9 bar) intact; $4,500 resistance test looms - SocGen via Kitco Sep 7). Deep in RED. || Cron refresh 2026-09-09T23:05Z: manual spot update, sources APMEX + FindBullionPrices Sep 9",
+      "timestamp": "2026-09-10T05:05:00+00:00"
     },
     "crypto": {
       "name": "Crypto Markets",
