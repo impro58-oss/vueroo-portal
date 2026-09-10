@@ -1,40 +1,40 @@
 {
   "scan_date": "2026-09-10",
-  "scan_time_utc": "2026-09-10T02:41:54.747272+00:00",
+  "scan_time_utc": "2026-09-10T06:41:55.950318+00:00",
   "scanner_version": "2.0.0-reconstructed",
   "current_values": {
     "USDJPY": {
-      "price": 153.502,
+      "price": 153.583,
       "prev_close": 153.478,
-      "change_1d_pct": 0.02,
+      "change_1d_pct": 0.07,
       "data_points": 5,
       "source": "yahoo"
     },
     "EURUSD": {
-      "price": 1.164,
+      "price": 1.1641,
       "prev_close": 1.1627,
-      "change_1d_pct": 0.11,
+      "change_1d_pct": 0.12,
       "data_points": 5,
       "source": "yahoo"
     },
     "GBPUSD": {
-      "price": 1.3556,
+      "price": 1.3557,
       "prev_close": 1.3545,
-      "change_1d_pct": 0.08,
+      "change_1d_pct": 0.09,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDCNY": {
-      "price": 6.7071,
+      "price": 6.7062,
       "prev_close": 6.7105,
-      "change_1d_pct": -0.05,
+      "change_1d_pct": -0.06,
       "data_points": 5,
       "source": "yahoo"
     },
     "USDKRW": {
-      "price": 1337.29,
+      "price": 1338.18,
       "prev_close": 1339.21,
-      "change_1d_pct": -0.14,
+      "change_1d_pct": -0.08,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -46,16 +46,16 @@
       "source": "yahoo"
     },
     "NKX": {
-      "price": 64603.66,
+      "price": 65128.81,
       "prev_close": 65142.7812,
-      "change_1d_pct": -0.83,
+      "change_1d_pct": -0.02,
       "data_points": 5,
       "source": "yahoo"
     },
     "HSI": {
-      "price": 24944.26,
+      "price": 24906.29,
       "prev_close": 25274.9609,
-      "change_1d_pct": -1.31,
+      "change_1d_pct": -1.46,
       "data_points": 5,
       "source": "yahoo"
     },
@@ -67,16 +67,16 @@
       "source": "yahoo"
     },
     "GOLD": {
-      "price": 4457.2,
-      "prev_close": 4393.8999,
-      "change_1d_pct": 1.44,
+      "price": 4460.4,
+      "prev_close": 4416.0,
+      "change_1d_pct": 1.01,
       "data_points": 4,
       "source": "yahoo"
     },
     "OIL": {
-      "price": 101.32,
-      "prev_close": 97.92,
-      "change_1d_pct": 3.47,
+      "price": 100.35,
+      "prev_close": 101.21,
+      "change_1d_pct": -0.85,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -88,9 +88,9 @@
       "source": "yahoo"
     },
     "BTC": {
-      "price": 78195.03,
+      "price": 78230.82,
       "prev_close": 78438.5781,
-      "change_1d_pct": -0.31,
+      "change_1d_pct": -0.26,
       "data_points": 4,
       "source": "yahoo"
     },
@@ -147,7 +147,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4457.2,
+      "current": 4460.4,
       "threshold": 3500.0,
       "direction": "above",
       "severity": "RED",
@@ -156,13 +156,13 @@
         "fin_stability",
         "geopolitical"
       ],
-      "distance_pct": 27.35
+      "distance_pct": 27.44
     },
     {
       "key": "OIL",
       "name": "Brent Crude",
       "category": "commodity",
-      "current": 101.32,
+      "current": 100.35,
       "threshold": 100.0,
       "direction": "above",
       "severity": "RED",
@@ -171,7 +171,7 @@
         "energy",
         "inflation"
       ],
-      "distance_pct": 1.32
+      "distance_pct": 0.35
     },
     {
       "key": "JGB10Y",
@@ -191,7 +191,7 @@
       "key": "GOLD",
       "name": "Gold",
       "category": "commodity",
-      "current": 4457.2,
+      "current": 4460.4,
       "threshold": 3000.0,
       "direction": "above",
       "severity": "AMBER",
@@ -199,7 +199,7 @@
       "escalate": [
         "fin_stability"
       ],
-      "distance_pct": 48.57
+      "distance_pct": 48.68
     },
     {
       "key": "DE10Y",
@@ -220,7 +220,7 @@
       "key": "EURUSD",
       "name": "EUR/USD",
       "category": "currency",
-      "current": 1.164,
+      "current": 1.1641,
       "threshold": 1.15,
       "direction": "above",
       "severity": "AMBER",
@@ -229,7 +229,7 @@
         "us_cycle",
         "currency"
       ],
-      "distance_pct": 1.22
+      "distance_pct": 1.23
     }
   ],
   "breach_count": 7,
@@ -237,7 +237,7 @@
   "markets_monitored": 17,
   "max_severity": "RED",
   "manual_fill": {
-    "filled_at": "2026-09-10T02:41:54.747272+00:00",
+    "filled_at": "2026-09-10T06:41:55.950318+00:00",
     "instruments": [
       "MOVE",
       "JGB10Y",
@@ -245,8 +245,8 @@
       "BAA10Y"
     ],
     "method": "web_search (see per-instrument source fields)",
-    "reverified_at": "2026-09-10T02:46:17.323965+00:00",
-    "reverification": "02:41Z 4h-cron refresh via web_search (02:4xZ): JGB 2.88 TE-OTC 22:43Z Sep 9 basis kept - fresh band 2.915-2.992 (TE snippet 2.9150 daily -0.0559; Investing band 2.919-2.948; CNBC 2.992 prev 2.995 day-high 3.011); Tokyo open Wed Sep 10, no settled print yet; breach fires under every source; basis divergence documented. Bund 3.39 auction basis kept (highest since 2009); Xetra settled close 3.3593 still last published (no Sep 9 close yet); CNBC divergent 3.2622. MOVE 74.68 11th identical check (CNBC 73.10 Sep 4 UNCH corroborates; TradingView no trades) - STALE-QUOTE RISK flagged. BAA10Y 1.57 FRED Sep 3 unchanged (weekly obs cadence). Yahoo 13 re-fetched live at scan."
+    "reverified_at": "2026-09-10T06:45:57.551837+00:00",
+    "reverification": "06:41Z 4h-cron refresh via web_search (06:4xZ): JGB 2.88 TE-OTC 22:43Z Sep 9 basis kept - Investing TOKYO CLOSED print 2.948 (day range 2.919-2.948, 52wk 1.540-3.023) = first settled-style Sep 10 print (same band already visible at 02:45Z; basis documented, not canonical); TE snippet 2.9150 daily -0.0559 unchanged; CNBC divergent 2.992 prev 2.995 day-high 3.011 (stale RT); TE wire Sep 10 02:52Z 'Japan 10Y Yield Tracks Treasury Yields Higher'; breach fires under every source incl. lowest 2.88. Bund 3.39 auction basis kept (highest since 2009); Investing Xetra 3.3593 -0.0177/-0.52% RT 07:10 CEST, day range 3.3501-3.3778 (Sep 9 settled close still last settled print, early Sep 10 session quote under it); CNBC divergent 3.2622 (stale 08:52Z Sep 9 vintage); ECB decision TODAY 11:45Z. MOVE 74.68 12th identical check (Investing Delayed 01:00Z still Sep 4 close vs prev 79.71; CNBC 73.10 Sep 4 UNCH; TradingView no trades) - STALE-QUOTE RISK flagged. BAA10Y skipped (weekly FRED cadence, Sep 3 obs 1.57 documented). Yahoo 13 re-fetched live at scan."
   },
   "data_sources": "Yahoo Finance + web search fallback (MOVE/JGB10Y/DE10Y/BAA10Y)",
   "reconstruction_note": "Original scanner script lost in workspace migration; rebuilt 2026-09-07 with the 12 tripwires evidenced in historical scan records + job spec. 19 of the original 31 thresholds were never evidenced and are not fabricated here."
