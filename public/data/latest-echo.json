@@ -1,77 +1,383 @@
 {
   "scan_id": "blackwatch-2026-09-11-echo",
   "scan_type": "echo",
-  "timestamp_utc": "2026-09-11T05:40:00Z",
-  "timestamp_ist": "2026-09-11T06:40:00+01:00",
+  "timestamp_utc": "2026-09-11T06:10:00Z",
+  "timestamp_ist": "2026-09-11T07:10:00+01:00",
   "cycle_state": {
     "macro_event": "ACTIVE",
     "macro_event_confidence": 10,
-    "cat5_sustained_cycles": 12,
+    "cat5_sustained_cycles": 13,
     "threshold_breaches": 7,
     "max_threshold_status": "RED",
     "consecutive_red_scans": 14,
-    "red_wires": ["Brent > $100 (44+ hrs)", "Gold > 3500 (+24.8%)", "JGB 10Y > 1.5 (+98.9%)"]
+    "red_wires": [
+      "Brent > $100 (44+ hrs)",
+      "Gold > 3500 (+24.8%)",
+      "JGB 10Y > 1.5 (+98.9%)"
+    ]
   },
   "data_quality_note": "blackwatch-multi-source-connector.py and blackwatch-fred-connector.py missing from scripts/; board sourced from signals.json (FRED-based 05:30Z) + live Yahoo quotes + 8-domain web research",
   "gold_signal_update": {
     "symbol": "GC=F",
-    "value": 4378.5,
-    "prev_close": 4407.3,
-    "change_pct_dd": -0.65,
+    "value": 4389.0,
+    "prev_close": 4364.5,
+    "change_pct_dd": 0.56,
     "cycle_high": 4479.9,
-    "source": "Yahoo Finance live quote 2026-09-11T06:44Z",
+    "source": "Yahoo Finance live quote 2026-09-11T06:07Z",
     "written_to": "data/blackwatch-signals.json"
   },
   "signal_board": [
-    {"name": "Financial Stability", "value": 2.71, "unit": "%", "status": "green", "trend": "improving", "confidence": 9, "last": "2026-09-09"},
-    {"name": "Liquidity Conditions", "value": 1.33, "status": "amber", "trend": "stable", "confidence": 3, "last": "2026-08-03", "stale": true},
-    {"name": "Sovereign Debt Stress", "value": 122.59, "status": "red", "trend": "stable", "confidence": 3, "last": "2026-01-01", "stale": true},
-    {"name": "Energy Security", "value": 96.02, "status": "amber", "trend": "deteriorating", "confidence": 5, "last": "2026-09-01"},
-    {"name": "Geopolitical Conflict", "value": 16.46, "status": "amber", "trend": "deteriorating", "confidence": 9, "last": "2026-09-09"},
-    {"name": "Cyber Threat Level", "value": "Elevated", "status": "amber", "trend": "stable", "confidence": 4, "last": "2026-09-10"},
-    {"name": "Supply Chain Health", "value": 96.02, "status": "amber", "trend": "stable", "confidence": 5, "last": "2026-09-01"},
-    {"name": "Food Security", "value": 131.78, "status": "red", "trend": "deteriorating", "confidence": 3, "last": "2026-07-01", "stale": true},
-    {"name": "Climate Stress", "value": 1.1, "status": "red", "trend": "improving", "confidence": 9, "last": "2026"},
-    {"name": "Social Cohesion", "value": 55.2, "status": "amber", "trend": "deteriorating", "confidence": 3, "last": "2026-07-01", "stale": true},
-    {"name": "Institutional Trust", "value": 30, "status": "red", "trend": "deteriorating", "confidence": 5, "last": "2025-Q1", "stale": true},
-    {"name": "AI Acceleration", "value": "Rapid", "status": "amber", "trend": "improving", "confidence": 5, "last": "2026-09-10"},
-    {"name": "Currency Stability", "value": 118.07, "status": "info", "trend": "stable", "confidence": 7, "last": "2026-09-04"},
-    {"name": "Gold / Precious Metals", "value": 4378.5, "unit": "$/oz", "status": "red", "trend": "deteriorating", "confidence": 9, "last": "2026-09-11", "live": true},
-    {"name": "Crypto Markets", "value": 77132, "status": "green", "trend": "stable", "confidence": 9, "last": "2026-09-10"},
-    {"name": "China Health", "value": 97.69, "status": "red", "trend": "stable", "confidence": 7, "last": "2024-01-01", "stale": true},
-    {"name": "Europe Stability", "value": 2.25, "status": "amber", "trend": "stable", "confidence": 9, "last": "2026-09-10"},
-    {"name": "US Cycle Position", "value": 0.4, "status": "amber", "trend": "improving", "confidence": 9, "last": "2026-09-09"},
-    {"name": "Middle East Tension", "value": 96.02, "status": "amber", "trend": "deteriorating", "confidence": 5, "last": "2026-09-01"},
-    {"name": "Public Sentiment", "value": 55.2, "status": "amber", "trend": "deteriorating", "confidence": 3, "last": "2026-07-01", "stale": true}
+    {
+      "name": "Financial Stability",
+      "value": 2.71,
+      "unit": "%",
+      "status": "green",
+      "trend": "improving",
+      "confidence": 9,
+      "last": "2026-09-09"
+    },
+    {
+      "name": "Liquidity Conditions",
+      "value": 1.33,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 3,
+      "last": "2026-08-03",
+      "stale": true
+    },
+    {
+      "name": "Sovereign Debt Stress",
+      "value": 122.59,
+      "status": "red",
+      "trend": "stable",
+      "confidence": 3,
+      "last": "2026-01-01",
+      "stale": true
+    },
+    {
+      "name": "Energy Security",
+      "value": 96.02,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 5,
+      "last": "2026-09-01"
+    },
+    {
+      "name": "Geopolitical Conflict",
+      "value": 16.46,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "last": "2026-09-09"
+    },
+    {
+      "name": "Cyber Threat Level",
+      "value": "Elevated",
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 4,
+      "last": "2026-09-10"
+    },
+    {
+      "name": "Supply Chain Health",
+      "value": 96.02,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 5,
+      "last": "2026-09-01"
+    },
+    {
+      "name": "Food Security",
+      "value": 131.78,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 3,
+      "last": "2026-07-01",
+      "stale": true
+    },
+    {
+      "name": "Climate Stress",
+      "value": 1.1,
+      "status": "red",
+      "trend": "improving",
+      "confidence": 9,
+      "last": "2026"
+    },
+    {
+      "name": "Social Cohesion",
+      "value": 55.2,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 3,
+      "last": "2026-07-01",
+      "stale": true
+    },
+    {
+      "name": "Institutional Trust",
+      "value": 30,
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 5,
+      "last": "2025-Q1",
+      "stale": true
+    },
+    {
+      "name": "AI Acceleration",
+      "value": "Rapid",
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 5,
+      "last": "2026-09-10"
+    },
+    {
+      "name": "Currency Stability",
+      "value": 118.07,
+      "status": "info",
+      "trend": "stable",
+      "confidence": 7,
+      "last": "2026-09-04"
+    },
+    {
+      "name": "Gold / Precious Metals",
+      "value": 4389.0,
+      "unit": "$/oz",
+      "status": "red",
+      "trend": "deteriorating",
+      "confidence": 9,
+      "last": "2026-09-11",
+      "live": true
+    },
+    {
+      "name": "Crypto Markets",
+      "value": 77132,
+      "status": "green",
+      "trend": "stable",
+      "confidence": 9,
+      "last": "2026-09-10"
+    },
+    {
+      "name": "China Health",
+      "value": 97.69,
+      "status": "red",
+      "trend": "stable",
+      "confidence": 7,
+      "last": "2024-01-01",
+      "stale": true
+    },
+    {
+      "name": "Europe Stability",
+      "value": 2.25,
+      "status": "amber",
+      "trend": "stable",
+      "confidence": 9,
+      "last": "2026-09-10"
+    },
+    {
+      "name": "US Cycle Position",
+      "value": 0.4,
+      "status": "amber",
+      "trend": "improving",
+      "confidence": 9,
+      "last": "2026-09-09"
+    },
+    {
+      "name": "Middle East Tension",
+      "value": 96.02,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 5,
+      "last": "2026-09-01"
+    },
+    {
+      "name": "Public Sentiment",
+      "value": 55.2,
+      "status": "amber",
+      "trend": "deteriorating",
+      "confidence": 3,
+      "last": "2026-07-01",
+      "stale": true
+    }
   ],
   "convergence_alerts": [
-    {"id": "CA-1", "severity": "SEVERE", "domains": ["energy", "geopolitical", "rates", "equities", "em-fx"], "summary": "Iran war escalation -> Brent >$100 44hrs -> global bond selloff (US10Y cusp 5%, UK30Y since-1998 high, Bund 3.50%, JGB 2.98%) -> ECB +25bp citing war inflation -> Fed hike odds 60-70% -> Nikkei -2.6%, rupee record low + RBI intervention"},
-    {"id": "CA-2", "severity": "HIGH", "domains": ["asia-funding", "fx", "monetary"], "summary": "JGB 2.984% TE + BOJ Sep 18 hike bets + Nikkei -2.6% + rupee 95.79 record leg with RBI intervention — Asia carry unwind recipe"},
-    {"id": "CA-3", "severity": "HIGH", "domains": ["cyber", "ai", "trust"], "summary": "IDScan 150M licenses + McKesson 6.4M + Veradigm 3.5M + Berlin election 1.4M files; AI agents off-script in PaperCut attack (395+ orgs); GPT-6 Astra AGI-era release"},
-    {"id": "CA-4", "severity": "MODERATE", "domains": ["food", "energy", "social"], "summary": "Food red deteriorating + energy deteriorating + Iran execution campaign + Nepal Gen Z uprising + Tirana 103rd protest — cost-of-living to unrest chain active"}
+    {
+      "id": "CA-1",
+      "severity": "SEVERE",
+      "domains": [
+        "energy",
+        "geopolitical",
+        "rates",
+        "equities",
+        "em-fx"
+      ],
+      "summary": "Iran war escalation -> Brent >$100 44hrs -> global bond selloff (US10Y cusp 5%, UK30Y since-1998 high, Bund 3.50%, JGB 2.98%) -> ECB +25bp citing war inflation -> Fed hike odds 60-70% -> Nikkei -2.6%, rupee record low + RBI intervention"
+    },
+    {
+      "id": "CA-2",
+      "severity": "HIGH",
+      "domains": [
+        "asia-funding",
+        "fx",
+        "monetary"
+      ],
+      "summary": "JGB 2.984% TE + BOJ Sep 18 hike bets + Nikkei -2.6% + rupee 95.79 record leg with RBI intervention — Asia carry unwind recipe"
+    },
+    {
+      "id": "CA-3",
+      "severity": "HIGH",
+      "domains": [
+        "cyber",
+        "ai",
+        "trust"
+      ],
+      "summary": "IDScan 150M licenses + McKesson 6.4M + Veradigm 3.5M + Berlin election 1.4M files; AI agents off-script in PaperCut attack (395+ orgs); GPT-6 Astra AGI-era release"
+    },
+    {
+      "id": "CA-4",
+      "severity": "MODERATE",
+      "domains": [
+        "food",
+        "energy",
+        "social"
+      ],
+      "summary": "Food red deteriorating + energy deteriorating + Iran execution campaign + Nepal Gen Z uprising + Tirana 103rd protest — cost-of-living to unrest chain active"
+    }
   ],
   "primary_drivers": [
-    {"rank": 1, "driver": "Iran war -> energy supply fear (Mocha capture, coastal advance, Hormuz USV strikes, UNSC referral)", "confidence": 9},
-    {"rank": 2, "driver": "Global duration repricing (US10Y 4.944%, UK30Y since-1998 high, JGB 2.98%, Bund 3.50%)", "confidence": 8},
-    {"rank": 3, "driver": "Central banks pivoting to hikes against supply shock (ECB +25bp done, Fed 60-70%, BOJ Sep 18)", "confidence": 8},
-    {"rank": 4, "driver": "US CPI print 12:30Z today — binary catalyst", "confidence": 9},
-    {"rank": 5, "driver": "Cyber-AI escalation (record identity breach + agentic offense + AGI-era claims)", "confidence": 6}
+    {
+      "rank": 1,
+      "driver": "Iran war -> energy supply fear (Mocha capture, coastal advance, Hormuz USV strikes, UNSC referral)",
+      "confidence": 9
+    },
+    {
+      "rank": 2,
+      "driver": "Global duration repricing (US10Y 4.944%, UK30Y since-1998 high, JGB 2.98%, Bund 3.50%)",
+      "confidence": 8
+    },
+    {
+      "rank": 3,
+      "driver": "Central banks pivoting to hikes against supply shock (ECB +25bp done, Fed 60-70%, BOJ Sep 18)",
+      "confidence": 8
+    },
+    {
+      "rank": 4,
+      "driver": "US CPI print 12:30Z today — binary catalyst",
+      "confidence": 9
+    },
+    {
+      "rank": 5,
+      "driver": "Cyber-AI escalation (record identity breach + agentic offense + AGI-era claims)",
+      "confidence": 6
+    }
   ],
   "scenarios": [
-    {"id": "S1", "name": "Stagflation grind", "probability": 0.40, "confidence": 8, "inverse": "CPI soft -> hike odds collapse, yields retrace, risk-on", "triggers": ["CPI >3.4% y/y", "Fed hike Sep 16", "Brent weekly settle >$105", "JGB >3.0%"]},
-    {"id": "S2", "name": "Chokepoint rupture", "probability": 0.20, "confidence": 6, "inverse": "Naval escorts restore transit; oil retraces $90s", "triggers": ["Saudi export halt", "UKMTO warnings spike", "Bab el-Mandeb closed", "Terminal strike"]},
-    {"id": "S3", "name": "Long-end accident", "probability": 0.15, "confidence": 5, "inverse": "Yields stabilize on CPI softness", "triggers": ["US10Y sustained >5%", "MOVE >100", "EM sovereign event", "Failed auction"]},
-    {"id": "S4", "name": "De-escalation unwind", "probability": 0.15, "confidence": 4, "inverse": "Escalation (S1/S2)", "triggers": ["US-Iran channel active", "Hormuz baseline restored", "Houthi-Saudi mediation"]},
-    {"id": "S5", "name": "Acceleration cascade", "probability": 0.10, "confidence": 4, "inverse": "Stresses remain siloed", "triggers": ["Systemic cyber event", "CDS dislocation", "WHO PHEIC upgrade", "Asia gap-down contagion"]}
+    {
+      "id": "S1",
+      "name": "Stagflation grind",
+      "probability": 0.4,
+      "confidence": 8,
+      "inverse": "CPI soft -> hike odds collapse, yields retrace, risk-on",
+      "triggers": [
+        "CPI >3.4% y/y",
+        "Fed hike Sep 16",
+        "Brent weekly settle >$105",
+        "JGB >3.0%"
+      ]
+    },
+    {
+      "id": "S2",
+      "name": "Chokepoint rupture",
+      "probability": 0.2,
+      "confidence": 6,
+      "inverse": "Naval escorts restore transit; oil retraces $90s",
+      "triggers": [
+        "Saudi export halt",
+        "UKMTO warnings spike",
+        "Bab el-Mandeb closed",
+        "Terminal strike"
+      ]
+    },
+    {
+      "id": "S3",
+      "name": "Long-end accident",
+      "probability": 0.15,
+      "confidence": 5,
+      "inverse": "Yields stabilize on CPI softness",
+      "triggers": [
+        "US10Y sustained >5%",
+        "MOVE >100",
+        "EM sovereign event",
+        "Failed auction"
+      ]
+    },
+    {
+      "id": "S4",
+      "name": "De-escalation unwind",
+      "probability": 0.15,
+      "confidence": 4,
+      "inverse": "Escalation (S1/S2)",
+      "triggers": [
+        "US-Iran channel active",
+        "Hormuz baseline restored",
+        "Houthi-Saudi mediation"
+      ]
+    },
+    {
+      "id": "S5",
+      "name": "Acceleration cascade",
+      "probability": 0.1,
+      "confidence": 4,
+      "inverse": "Stresses remain siloed",
+      "triggers": [
+        "Systemic cyber event",
+        "CDS dislocation",
+        "WHO PHEIC upgrade",
+        "Asia gap-down contagion"
+      ]
+    }
   ],
   "top_risks": [
-    {"rank": 1, "risk": "Inflation resurgence / policy into supply shock", "probability": "40-55%", "confidence": 8},
-    {"rank": 2, "risk": "ME escalation -> export disruption", "probability": "15-25%", "confidence": 7},
-    {"rank": 3, "risk": "Duration/liquidity event at 5%+ yields", "probability": "10-20%", "confidence": 6},
-    {"rank": 4, "risk": "EM stress propagation (India FX first)", "probability": "15%", "confidence": 5},
-    {"rank": 5, "risk": "Major cyber incident on EU infra/identity", "probability": "10-15% weekly", "confidence": 6},
-    {"rank": 6, "risk": "Health shock escalation (Ebola DRC 7th province, CFR 48%)", "probability": "5-10%", "confidence": 4},
-    {"rank": 7, "risk": "European social unrest spillover", "probability": "5-10%", "confidence": 3}
+    {
+      "rank": 1,
+      "risk": "Inflation resurgence / policy into supply shock",
+      "probability": "40-55%",
+      "confidence": 8
+    },
+    {
+      "rank": 2,
+      "risk": "ME escalation -> export disruption",
+      "probability": "15-25%",
+      "confidence": 7
+    },
+    {
+      "rank": 3,
+      "risk": "Duration/liquidity event at 5%+ yields",
+      "probability": "10-20%",
+      "confidence": 6
+    },
+    {
+      "rank": 4,
+      "risk": "EM stress propagation (India FX first)",
+      "probability": "15%",
+      "confidence": 5
+    },
+    {
+      "rank": 5,
+      "risk": "Major cyber incident on EU infra/identity",
+      "probability": "10-15% weekly",
+      "confidence": 6
+    },
+    {
+      "rank": 6,
+      "risk": "Health shock escalation (Ebola DRC 7th province, CFR 48%)",
+      "probability": "5-10%",
+      "confidence": 4
+    },
+    {
+      "rank": 7,
+      "risk": "European social unrest spillover",
+      "probability": "5-10%",
+      "confidence": 3
+    }
   ],
   "recommended_preparations_ireland": [
     "Top up home heating fuel and vehicle tanks before winter (Brent >$100 pass-through)",
@@ -89,7 +395,36 @@
     "PPI core was soft (+0.2%) — soft CPI collapses hike odds and the bond narrative in 24h",
     "One ECB +25bp is not a hike cycle — headline extrapolation, not ECB guidance"
   ],
-  "recursive_intelligence_score": {"evidence": 7, "logic": 8, "blind_spots": 6, "alternatives": 6, "usefulness": 8, "actionability": 7, "overall": 7.0},
-  "unknowns": ["CPI 12:30Z today", "Iran coordination status (day 10)", "Houthi blockade execution vs bluff", "Hormuz recovery trajectory", "Fed Sep 15-16", "BOJ Sep 18", "ECB guidance", "China stimulus follow-through", "MOVE true level (stale)", "Senegal reprofile (uncorroborated)"],
-  "scan_files": {"markdown": "data/blackwatch-scans/2026-09-11-echo.md", "json": "data/blackwatch-scans/2026-09-11-echo.json"}
+  "recursive_intelligence_score": {
+    "evidence": 7,
+    "logic": 8,
+    "blind_spots": 6,
+    "alternatives": 6,
+    "usefulness": 8,
+    "actionability": 7,
+    "overall": 7.0
+  },
+  "unknowns": [
+    "CPI 12:30Z today",
+    "Iran coordination status (day 10)",
+    "Houthi blockade execution vs bluff",
+    "Hormuz recovery trajectory",
+    "Fed Sep 15-16",
+    "BOJ Sep 18",
+    "ECB guidance",
+    "China stimulus follow-through",
+    "MOVE true level (stale)",
+    "Senegal reprofile (uncorroborated)"
+  ],
+  "scan_files": {
+    "markdown": "data/blackwatch-scans/2026-09-11-echo.md",
+    "json": "data/blackwatch-scans/2026-09-11-echo.json"
+  },
+  "scan_addendum": [
+    "Reuters Sep 9: one third of Gulf oil still missing despite dark crossings (~2.8mbd unaccounted) - supply-side opacity standing feature",
+    "WSJ official US closes Sep 10: SPX 7,596.30 -0.52% / DJIA 52,217.18 -0.31% / Nasdaq 26,041.91 -0.81%",
+    "China coordinated share buybacks + ~ state-capital injections into banks/insurers + 2026-2030 finance-strength plan (Xinhua/Reuters/CNBC)",
+    "GPT-6 Astra AGI-era release Sep 3 (Axios/Verge) after OpenAI agent-swarm hacked Hugging Face; Navier-Stokes Millennium claim Sep 8; Claude Fable/Mythos 5.1 Sep 10 - frontier cadence accelerating into macro-stress window",
+    "Cyber week confirmed: Berlin state-election attack (Rhysida, 1.4M files), McKesson 6.4M records (ShinyHunters), Cisco FMC CVEs nation-state exploited, AI agents off-script in PaperCut chain (395+ orgs)"
+  ]
 }
