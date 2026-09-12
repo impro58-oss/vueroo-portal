@@ -1,11 +1,12 @@
 {
-  "scan_id": "blackwatch-2026-09-11-2037",
-  "scan_time": "2026-09-11T20:45:57+00:00",
+  "scan_id": "blackwatch-2026-09-12-0037",
+  "scan_time": "2026-09-12T00:44:08+00:00",
   "scanner": "breaking_event_scanner",
   "scanner_type": "4h_breaking_event_scanner",
-  "run_type": "routine 4h cycle - window Sep 11 16:37Z -> 20:37Z; follows 1637Z breaking scan (14th CAT-5 + NEW RUNG Mocha capture) + threshold 1633Z (17th RED, commit 495edf11) + whale 20:38Z (AMBER, commit 8b980f14 pushed 20:40Z); Friday-settle cycle; recalibration-day preamble ruled by standing precedent - the brief's standing scanner instruction IS the brief, scan proceeded; nominal 20:33Z threshold scan not on disk at scan time",
-  "window": "2026-09-11T16:37Z to 2026-09-11T20:37Z",
+  "run_type": "routine 4h cycle - window Sep 11 20:37Z -> Sep 12 00:37Z; follows 2037Z breaking (15th CAT-5, commit 37f69c28) + threshold 1633Z (17th RED, commit 495edf11) + whale 20:38Z (AMBER, commit 8b980f14); Saturday-early cycle - markets closed (US Fri 20:00Z, Europe Fri 15:30Z), weekend news-flow cycle; recalibration-day preamble ruled by standing precedent - the brief's standing scanner instruction IS the brief, scan proceeded",
+  "window": "2026-09-11T20:37Z to 2026-09-12T00:37Z",
   "queries_executed": 17,
+  "verification_fetches": 3,
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -20,81 +21,83 @@
     "commodities",
     "pandemic_health"
   ],
-  "verdict": "CAT-5 SUSTAINED (15th consecutive cycle) - NO NEW RUNGS, no state changes. All 3 RED wires SUSTAINED per threshold 16:33Z + this scan's live quotes 20:43Z: Brent BZ=F 104.76 > $100 (-2.67% d/d; FRIDAY SETTLE LANDED - Brent (X6) 104.61 / WTI (V6) 100.05 per Newsquawk 19:01Z IN-WINDOW, weekly settle >$100 CONFIRMED first time since mid-May; >$100 ~65 hrs), JGB 10Y settled 2.973% > 1.5 (+98.2%; Friday settled print final; 52wk 3.023 ~1.7% away), Gold GC=F 4,389.5 > 3500 (+0.57% d/d; cycle high 4,479.9 intact; $4,500 NOT tested). (1) US 10Y REPRIEVE leg: pulled back from 5% Friday (Reuters 'reprieve for Bessent'; intraday 4.979 peak, US close ~4.955-4.975; US30Y 5.354) - cusp holds, no breach. (2) FED ODDS CONSOLIDATED 85-91% post-CPI (CNBC 'cements' + Fool/MishTalk 85% + FXStreet 91%); FOMC Sep 15-16 (5 days) hike base case unchanged. (3) PRIVATE CREDIT: oil-spike defaults now CNBC-corroborated 10:55Z IN-WINDOW (upgrades 1637Z aggregator flag). (4) HORMUZ dispute: transits 7 (Reuters 09:40Z stands) + gCaptain/Stars&Stripes counter-narrative 'US-facilitated transits lift Gulf crude exports above 10M bpd'. (5) MIDDLE EAST sustained: no fresh UKMTO/IRGC incidents in-window; Mocha/Red Sea-coast campaign stands (Al-Monitor Sep 11); UNSC snapback debate stands; zone coords pending 11th day. (6) EUROPE: Bund 15-yr high confirmed + multi-year highs as selloff continues; gilts ease slightly near 19-yr highs. (7) JAPAN: BOJ 'set to lift rates next week' + ING 25bp preview; Nikkei 64,011 (-1.93% Friday close). (8) CHINA: recap confirmed both bases, no fresh legs. (9) EM: rupee 95.54 + RBI multi-market (spot/forwards/NDF) defense IN-WINDOW. (10) EBOLA static: 7th province re-confirmed; DON617 stands. (11) LATAM quiet; Senegal CAA2 standing. (12) Gold rebound ~$100 (BullionVault) + 100-day SMA reclaimed; silver 64.925. macro_event ACTIVE conf 10 held; 5 ACTIVE / 2 DEVELOPING / 1 WATCH; no convergence_scores changes. TELEGRAM NOT SENT (sustained-only precedent).",
-  "new_rungs": [],
-  "escalation_actions": "BOARD REFRESHED (consolidation cycle, notes+metadata only, no score changes, severity counts untouched - RED 5 / AMBER 11 / others): metadata.last_update + threshold_breach appended (1633Z threshold block + 1637Z breaking block preserved in full + breaking 2037 adds appended: Friday settle landed, US10Y reprieve, odds consolidation 85-91%, gold rebound, private-credit CNBC corroboration, RBI multi-market, Hormuz counter-narrative) + breaking_event 2037 summary appended; 11 signal notes stamped BREAKING SCAN 2026-09-11T20:37Z newest-first (middle_east, energy, us_cycle, currency, gold, europe, fin_stability, sov_debt, supply_chain, liquidity, china - supersedes 1637 breaking segments + 17:00Z gold-refresh segment on gold, spot basis preserved in note); signal VALUES not touched (threshold 1633Z owns this session's value updates; live quotes 20:43Z corroborate in notes). No convergence_scores changes (no confirmed state changes). macro-event.json: last_updated + scan_id refreshed, sustainment record appended (no score changes). PORTAL SYNC: blackwatch-signals.json + signals.json twin + blackwatch-macro-event.json + scan JSONs (dated 2037 + latest x2) to LIVE workspace vueroo-portal + LEGACY impro vueroo-portal + REPO vueroo-portal-scan (commit+push); latest-echo.json md5-checked. Carbon to D:/Lumina workspace (signals + macro-event + artifact + live-quotes). TELEGRAM: NOT SENT (sustained-only precedent).",
+  "verdict": "CAT-5 SUSTAINED (16th consecutive cycle) + NEW RUNG INSTANCE - BAB EL-MANDEB: PERIM ISLAND SEIZED (late-caught; first wire Reuters Sep 11 09:47Z 'reach strategic island' - missed by 1637/2037 scans; seizure confirmed govt-source-to-BBC + witnesses, BBC front page 'tighten grip on Red Sea shipping lane' ~22:40Z + 'take strategic island' ~23:40Z IN-WINDOW): Houthis seized PERIM/MAYYUN Island at the mouth of the BAB AL-MANDEB Strait (BBC - source from Yemen's internationally recognised government + witnesses; pro-govt forces WITHDREW Friday; Anadolu: 'completed its control of strategic waterway'; Times of Israel: 'complete takeover of vital Bab al-Mandab shipping lane'; AFP via Yemeni military official: Houthis 'now control the entire coastline' - a day after Mokha capture). Houthi statement: operation 'success', 'maritime navigation is safe for all companies except for Saudi vessels' - SELECTIVE blockade language stands; Yahya Sarea: large-scale op launched Sep 3, 'Saudi enemy' expelled from 6 districts in Taiz + Hodeidah (claim). GEOPOLITIC LEG: MBS personally pressed Trump for direct US military action vs Houthis during the rapid advance (CBS News, 2 sources) - Trump DECLINED so far, offering intel + targeting support; senior US official: 'continuous dialogue'. All 3 RED wires SUSTAINED (weekend settles): Brent BZ=F 104.42 Yahoo Friday bar (-2.98% d/d; Newsquawk settle 104.61; >$100 ~64 hrs per standing first-breach anchor 08:45Z Sep 9), JGB 10Y settled 2.973% Friday print stands (52wk 3.023), Gold GC=F 4,390.0 settle > 3500 (cycle high 4,479.9 intact; $4,500 NOT tested). US 10Y REPRIEVE HOLDS: ^TNX 4.975 close (H 4.985) - cusp, no breach; FOMC Sep 15-16 in 5 days, hike odds consolidated 85-91%. (1) LATE-CAUGHT LEG: Israel says it destroyed a major underground Hezbollah base - blast registered ~M4.1 per USGS (BBC front page, ~15:40Z Sep 11, prior window; late-caught, not in 1637/2037 scans). (2) PANDEMIC NUMERIC LEG: Ebola infections TOP 7,000 in Congo (Reuters Sep 11) + 7th province Sud-Ubangi instance re-confirmed (NBC republication 21:32Z IN-WINDOW); global_pandemic stays DEVELOPING. (3) PRIVATE CREDIT: 'stress rises sharply among smallest borrowers' (Alternative Credit Investor Sep 11) - corroborates CNBC 10:55Z leg; no new bank failures. (4) Hormuz: transits 7 (Reuters 09:40Z stands) + US-facilitated >10M bpd counter-narrative stands; zone coords pending 12th day; no fresh UKMTO/IRGC incidents in-window. (5) EUROPE: Bund 15-yr high stands (Europe closed Fri 15:30Z); gilts ease slightly near 19-yr highs. (6) JAPAN: BOJ 'set to lift rates next week' + ING 25bp preview; Tokyo closed weekend. (7) CHINA: recap confirmed both bases, no fresh legs. (8) EM: rupee 95.54 close + RBI multi-market defense stands. (9) LATAM quiet; Senegal CAA2 standing. macro_event ACTIVE conf 10 held; 5 ACTIVE / 2 DEVELOPING / 1 WATCH; no convergence_scores changes (middle_east_war already 200 max).",
+  "new_rungs": [
+    "BAB EL-MANDEB: PERIM/MAYYUN ISLAND SEIZED - Houthi takeover of the strait-mouth island (govt source to BBC + witnesses; pro-govt withdrawal Friday; AFP 'entire coastline'; Anadolu 'completed its control of strategic waterway'; ToI 'complete takeover of vital Bab al-Mandab shipping lane'; Houthi stmt 'navigation safe except Saudi vessels'; MBS->Trump direct-action request declined so far). Late-caught: first wire Reuters Sep 11 09:47Z 'reach' - missed by 1637/2037; capture confirmation + BBC front page IN-WINDOW ~22:40Z-23:40Z."
+  ],
+  "escalation_actions": "CHAIN COMPLETED by fix run scripts/bw-signals-fix-2026-09-12-0049.py (~00:55Z). Prior scan run (agent:main:cron:7e978fb2:run:9c9f7c89, 00:37:23Z->00:47:24Z) hit the 10-min agent timeout after script completion, before git+telegram; AND the 0037 script had a one-off bug - step 2 mutated signals in memory but MISSING dump(SIG_WS) so signals.json was never written while step 4 had already synced the STALE file to portals+carbon. Fix replayed step-2 VERBATIM from the 0037 script source (idempotency guards intact): metadata.last_update 00:44:08Z + threshold_breach 0037 append + breaking_event 0037 summary appended + 11 signal notes stamped BREAKING SCAN 2026-09-12T00:37Z newest-first (middle_east, energy, us_cycle, currency, gold, europe, fin_stability, sov_debt, supply_chain, liquidity, china); signal VALUES not touched (threshold 1633Z owns this session's value updates; live quotes fetched 00:41:43Z per file mtime - the script's '00:52Z' label is erroneous but kept for cross-file consistency with macro-event.json). No convergence_scores changes (middle_east_war already 200 max). PORTAL SYNC re-run post-fix: blackwatch-signals.json + signals.json twin + blackwatch-macro-event.json + scan JSONs (dated 0037 + latest x2) to LIVE workspace vueroo-portal + LEGACY impro vueroo-portal + REPO vueroo-portal-scan; latest-echo.json md5-checked; carbon D:/Lumina refreshed. GIT: commit+push to origin/main (vueroo-portal-scan). TELEGRAM: SENT via Morning Brief group (new rung instance - Perim Island seizure; per cluster precedent).",
   "ticks": [
     {
-      "id": "TICK-2037-001",
-      "domain": "us_fed",
-      "severity": 2,
-      "item": "US FED - ODDS CONSOLIDATION + 10Y REPRIEVE: hike odds consolidated 85-91% post-CPI (CNBC 'cements' 10:17Z + Motley Fool 85% 16:32Z + MishTalk 85% + tradevae 85% + Newsdive ~90% + FXStreet 91% 17:31Z IN-WINDOW); FOMC Sep 15-16 (in 5 days) hike base case stands. US 10Y pulled back from 5% (Reuters IN-WINDOW 'reprieve for Bessent'; intraday 4.979 peak per tradingkey -> live 4.975; US30Y 5.354; Business Insider 16:23Z 'inching toward 5%'). SPX 7,657 (+0.27% Friday close), VIX 15.84 (-11.2%)."
-    },
-    {
-      "id": "TICK-2037-002",
+      "id": "TICK-0037-001",
       "domain": "middle_east",
-      "severity": 2,
-      "item": "MIDDLE EAST - SUSTAINED, no fresh incidents: NO new UKMTO/IRGC events in-window (last = UKMTO 133-26 Sep 10 Khasab, fire out, crew safe); zone coords pending 11th day stands; Hormuz transits 7 (Reuters 09:40Z prior-window) + COUNTER-NARRATIVE gCaptain/Stars&Stripes Sep 11: US-facilitated transits lift Gulf crude exports >10M bpd - blockade-binding vs eased-flows dispute unresolved; Al-Monitor Sep 11 IN-WINDOW: 'Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea' (Mocha capture + coastal campaign stands); UNSC snapback debate stands (press.un.org SC16448 Sep 10); Iran NPT-exit rhetoric stands (Turkiye Today)."
+      "severity": 3,
+      "item": "MIDDLE EAST - NEW RUNG INSTANCE: PERIM ISLAND SEIZED / BAB EL-MANDEB CONSOLIDATION. Houthis seized Perim (Mayyun) Island at the mouth of Bab al-Mandeb - source from Yemen's internationally recognised government to BBC + witnesses + news agencies; pro-govt forces WITHDREW Friday (BBC); Anadolu: 'completed its control of strategic waterway'; Times of Israel: 'complete takeover of vital Bab al-Mandab shipping lane'; AFP via Yemeni military official: Houthis 'now control the entire coastline' (day after Mokha capture; Dhubab city also seized per Anadolu headline). Houthi statement: 'maritime navigation is safe for all companies except for Saudi vessels' + 'no threat to international shipping' reiterated; Saudi NOT publicly commented; MBS personally pressed Trump for direct military action (CBS, 2 sources) - Trump declined so far (intel + targeting support only). LATE-CAUGHT: Israel destroyed major underground Hezbollah base (~M4.1 USGS, ~15:40Z prior window). UNSC snapback debate stands (SC16448 Sep 10); Iran NPT-exit rhetoric stands; Hormuz transits 7 stand; zone coords pending 12th day."
     },
     {
-      "id": "TICK-2037-003",
+      "id": "TICK-0037-002",
       "domain": "commodities",
       "severity": 2,
-      "item": "COMMODITIES - FRIDAY SETTLE LANDED (RED SUSTAINED): Brent (X6) SETTLED 104.61 -3.02 / WTI (V6) SETTLED 100.05 -2.43 (Newsquawk 19:01Z IN-WINDOW) - weekly settle >$100 CONFIRMED first since mid-May; live 20:43Z Brent 104.76 (-2.67% d/d) / WTI 100.37 (-2.06%); >$100 ~65 hrs (first breach 08:45Z Sep 9); diesel record + IEA -2.5M bpd 2026 demand-cut legs stand. GOLD: GC=F 4,389.5 (+0.57%), rebound ~$100/oz (BullionVault 15:36Z), 100-day SMA reclaimed (FXStreet 17:31Z), $4,500 NOT tested, cycle high 4,479.9; SILVER 64.925 (+1.0%)."
+      "item": "COMMODITIES - WEEKEND SETTLES (RED WIRES SUSTAINED): Brent BZ=F 104.42 Yahoo Friday bar (-2.98% vs prior bar; day H 110.19 / L 103.48; Newsquawk settle X6 104.61 -3.02; weekly settle >$100 CONFIRMED first since mid-May; >$100 ~64 hrs per standing anchor 08:45Z Sep 9); WTI CL=F 99.99 Yahoo (Newsquawk V6 100.05 -2.43; L 98.48 sub-100 graze - AT THE WIRE); diesel record + IEA -2.5M bpd 2026 demand-cut legs stand. GOLD GC=F 4,390.0 settle (+0.58% d/d; H 4,444.9; $4,500 NOT tested; cycle high 4,479.9); SILVER 65.02 (+1.14%). Hormuz premium intact (EnergyReader); Bab al-Mandeb now Houthi-claimed controlled - alternative-route risk compounds."
     },
     {
-      "id": "TICK-2037-004",
+      "id": "TICK-0037-003",
+      "domain": "us_fed",
+      "severity": 2,
+      "item": "US FED - WEEKEND QUIET, base case stands: FOMC Sep 15-16 in 5 days; hike odds consolidated 85-91% post-CPI (Fool 85% / MishTalk 85% / NewsDive ~90% / FXStreet 91% - all Sep 11 prior-window); Polymarket snapshot 55% hike / 39% no-change (prediction market, divergent from futures - noted, not actionable). US10Y ^TNX 4.975 close (H 4.985 / L 4.904, +0.63% d/d) - 5% cusp HOLDS, no breach; US30Y 5.354 stands; SPX 7,656.98 (+0.86% d/d), VIX 15.84. No new in-window Fed news (weekend)."
+    },
+    {
+      "id": "TICK-0037-004",
       "domain": "japan",
       "severity": 2,
-      "item": "JAPAN - BOJ PREVIEW: 'set to lift rates next week but offer few clues on terminal' (Reuters Sep 11) + ING preview '25bp hike incoming', market near-pricing further 25bp by year-end; JGB 2.973% settled Friday print stands (52wk high 3.023 ~1.7% away; 30-yr-high framing per TFTC); repatriation-risk debate (Japan Times Sep 9); Nikkei 64,011 (-1.93% Friday close), yen 153.735."
+      "item": "JAPAN - BOJ T-MINUS 6: 'set to lift rates next week but offer few clues on terminal' (Reuters Sep 11) + ING 25bp preview; BOJ 1.25% this month + 1.75% 'faster than expected' (Reuters Sep 9) legs stand; JGB 10Y settled 2.973% Friday print final (RED wire; 52wk 3.023 ~1.7% away; 30-yr-high framing); repatriation-risk debate stands (Japan Times Sep 9); Tokyo closed weekend; Nikkei 64,011 Friday close per prior scan (Yahoo ^N225 bar stale Sep 10)."
     },
     {
-      "id": "TICK-2037-005",
+      "id": "TICK-0037-005",
       "domain": "eu_ecb",
       "severity": 2,
-      "item": "EUROPE - ROUT CONTINUATION: Bund 10Y NEW 15-YEAR HIGH (WSJ) + European bonds multi-year highs as global selloff continues (Euronews Sep 11 IN-WINDOW) + German 17-yr high (livemint); 'new ECB rate-hike cycle' framing stands (TE 08:57Z); ECB 2.50% landed Sep 10 stands; DAX 25,568.56 (-0.03% Friday close)."
+      "item": "EUROPE - ROUT STANDS (Europe closed Fri 15:30Z): Bund 10Y 15-YEAR HIGH (WSJ) + multi-year highs as selloff continues (Euronews) + 'new ECB rate-hike cycle' framing (TE 08:57Z) - all standing; ECB 2.50% landed Sep 10; worst weekly selloff since March (BNN/Reuters); BTP 10Y highest since 2023 (Il Sole). No fresh weekend legs."
     },
     {
-      "id": "TICK-2037-006",
+      "id": "TICK-0037-006",
       "domain": "uk",
       "severity": 1,
-      "item": "UK - minor relief inside the wire: gilts EASED SLIGHTLY, still near 19-year highs (TE 08:08Z IN-WINDOW); 10Y >5.3% zone + 30Y highest-since-1998 legs stand; BoE hike bets stand."
+      "item": "UK - relief leg stands: gilts EASED SLIGHTLY, still near 19-year highs (TE 08:08Z); 10Y >5.3% zone + 30Y highest-since-1998 + record 30Y auction legs stand; BoE hike bets stand; October-Budget tax-rise framing (TechTimes) stands."
     },
     {
-      "id": "TICK-2037-007",
+      "id": "TICK-0037-007",
       "domain": "financial_system",
       "severity": 2,
-      "item": "FINANCIAL SYSTEM - no failures; PRIVATE CREDIT corroboration: CNBC 10:55Z IN-WINDOW 'Oil spike piles pressure on private credit borrowers as defaults rise' (upgrades 1637Z aggregator flag med-low -> major-wire); Bessent buyback disappointment + 'unconsoled' + 'Treasuries are strong' dismissal legs stand (Reuters/Bloomberg Sep 10); MOVE 74.68 23rd stale check + BAA10Y 1.55 (obs Sep 9) calm; VIX 15.84; no new bank failures (FDIC 5 YTD)."
+      "item": "FINANCIAL SYSTEM - no failures: NO new bank failures in-window (FDIC 5 YTD stands). PRIVATE CREDIT corroboration stack grows: 'stress rises sharply among smallest borrowers' (Alternative Credit Investor Sep 11) + CNBC 10:55Z oil-spike-defaults leg (corroborated 1637Z) + Leuthold contagion-watch 'not all clear' (Sep 4). MOVE 74.68 stale-check series (23rd+) + BAA10Y 1.55 (obs Sep 9) calm; VIX 15.84 calm."
     },
     {
-      "id": "TICK-2037-008",
+      "id": "TICK-0037-008",
       "domain": "china",
-      "severity": 1,
-      "item": "CHINA - recap CONFIRMED both bases, no fresh legs: $54bn/360bn-yuan 8-institution (Nikkei/CNBC) vs 300bn-yuan ($45bn) Caixin basis; Reuters explainer Sep 11 (insurers) stands; biggest recap in 2 decades; stocks fell on the news (CNBC Sep 7); HSI 24,805.63 (-1.86% Friday close)."
+      "severity": 2,
+      "item": "CHINA - recap CONFIRMED both bases stand ($54bn/360bn-yuan 8-institution Nikkei/CNBC + 300bn-yuan/$45bn Caixin basis - biggest recap in 2 decades; Reuters insurer explainer Sep 11); HSI Friday close 24,806 per prior scan (Yahoo bar stale Sep 10); no fresh legs (weekend)."
     },
     {
-      "id": "TICK-2037-009",
+      "id": "TICK-0037-009",
       "domain": "em_asia",
       "severity": 2,
-      "item": "EM - RUPEE defense widened: RBI intervening across onshore spot, forwards AND NDF (HinduBusinessLine/Reuters Sep 11 IN-WINDOW) as oil climbs; rupee 95.54 live (+0.45% d/d), record-low zone stands (95.79/95.80 prints); >=$8B last week + refiner spot-dollar curb legs stand; KRW 1,341.32."
+      "item": "EM/INDIA - defense stands: rupee INR=X 95.54 close (day high 95.79) + RBI multi-market (spot/forwards/NDF) defense + >=$8bn prior-week sales legs stand; rupee-breaches-96-wall ET piece = older archive resurfaced, not in-window; no fresh weekend legs."
     },
     {
-      "id": "TICK-2037-010",
-      "domain": "latam",
-      "severity": 1,
-      "item": "LATAM - quiet: Argentina/Colombia/Senegal no fresh major-wire legs in-window; Senegal CAA2 downgrade (Aug 31) + ECF reprofile countdown stand; Brazil bank-fraud probe unsealed (Reuters Sep 11, watch) stands."
-    },
-    {
-      "id": "TICK-2037-011",
+      "id": "TICK-0037-010",
       "domain": "africa",
       "severity": 1,
-      "item": "AFRICA - EBOLA static on 7th-province instance: Sud-Ubangi case re-confirmed (Al Jazeera 14:32Z IN-WINDOW, PBS, Xinhua); DON617 numbers stand (6,757 cases / 3,267 deaths / 61 zones); Sudan cholera FaSER alerts stand."
+      "item": "AFRICA - Senegal CAA2 downgrade standing (Sep 4); Sudan cholera standing; no new sovereign events in-window."
     },
     {
-      "id": "TICK-2037-012",
+      "id": "TICK-0037-011",
       "domain": "pandemic_health",
+      "severity": 2,
+      "item": "PANDEMIC - NUMERIC ESCALATION LEG: Reuters Sep 11 - Ebola infections TOP 7,000 in Congo as virus spreads to new province (numeric milestone vs DON617 baseline; Sud-Ubangi = 7th province instance, AJ 14:32Z + NBC republication 21:32Z IN-WINDOW); 'case detected in northwestern province far from epicentre' (Reuters Sep 11) = same 7th-province story. global_pandemic stays DEVELOPING 40; not a CAT-5 rung (case-count milestone on existing thread)."
+    },
+    {
+      "id": "TICK-0037-012",
+      "domain": "latam",
       "severity": 1,
-      "item": "PANDEMIC/HEALTH - no new global-threat legs in-window: DRC Ebola DON617 static + 7th province (Sud-Ubangi) re-confirmed (AJ 14:32Z/PBS/Xinhua IN-WINDOW); Sudan cholera standing; no H5N1/other emerging alerts in-window."
+      "item": "LATAM - quiet: Brazil bank-fraud probe unsealed standing (watch); no new in-window events."
     }
   ]
 }
