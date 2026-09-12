@@ -1,11 +1,13 @@
 {
-  "scan_id": "blackwatch-2026-09-10-2100",
-  "scan_time": "2026-09-10T21:09:49+00:00",
+  "scan_id": "blackwatch-2026-09-12-1637",
+  "timestamp": "2026-09-12T16:41:00+00:00",
   "scanner": "breaking_event_scanner",
   "scanner_type": "4h_breaking_event_scanner",
-  "run_type": "RESTORED post-outage 4h cycle covering DOUBLE window 12:37Z Sep 10 -> 21:00Z Sep 10 (16:37Z + 20:37Z cycles missed during outage; job restored and fired 21:00Z); follows 12:37Z breaking scan (9th consecutive CAT-5, Mocha rung) + 20:33Z/20:44Z threshold scans (11th/12th consecutive RED, commits b2dbe2a9/b4c11dc9, Brent 108.36->108.59 zone); recalibration-day preamble ruled by standing precedent - the brief's standing scanner instruction IS the brief, scan proceeded",
-  "window": "2026-09-10T12:37Z to 2026-09-10T21:00Z (double window)",
-  "queries_executed": 18,
+  "run_type": "routine 4h cycle - window Sep 12 12:37Z -> 16:37Z; follows 1237Z breaking 19th CAT-5 + Trump-attribution rung commit a3e41003; Saturday-afternoon cycle, markets closed; scheduler preamble carried a recalibration-day hold note; job brief instructs full scan - executed per brief",
+  "window": "2026-09-12T12:37Z to 2026-09-12T16:37Z",
+  "queries_executed": 15,
+  "verification_fetches": 3,
+  "live_quotes_at": "2026-09-12T16:41Z",
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -20,55 +22,31 @@
     "commodities",
     "pandemic_health"
   ],
-  "verdict": "CAT-5 SUSTAINED (10th consecutive cycle, double window) + NEW RUNG CLUSTER (2 first-time rungs) + major threshold escalation. NEW RUNG 1 - IAEA BOARD REPORTS IRAN TO UN SECURITY COUNCIL, first time in 20 years (LA Times URL dated Sep 9, board resolution Sep 9 Vienna; BBC fresh coverage ~20:30Z Sep 10; The Hindu/ABC/Tribune/AlJazeera-explainer/CNN corroboration; CNN: cameras disabled + inspectors blocked; iranwire legal-impact analysis 10:39Z) - snapback-sanctions diplomatic track opens; MISSED by prior 4h cycles (query-wording miss), caught first-cycle by this scan; confidence 9. NEW RUNG 2 - HOUTHI RED SEA COASTAL CAMPAIGN -> SAUDI OIL EXPORT BLOCKADE THREAT (WaPo 'fight to block Red Sea passage for Saudi oil'; Reuters 'advance along Yemeni coast, threaten Saudi oil exports' + 'close in on Bab el-Mandeb' + Khamis Mushait alert; The National links $105 oil to the Houthi port seizure; Business Insider Africa: 12% of global trade at risk) - material escalation of the 12:37Z Mocha rung; confidence 8. THRESHOLD ESCALATION - Brent BZ=F 108.89 live 21:02Z (+7.81% d/d, day high 109.01, NEW CYCLE HIGH overtaking 102.57; largest daily gain in the scan record; >$100 ~37 hrs, every hourly close >=$100 all day) + WTI 103.87 (+8.09%, H 104.0) BROKE $100 first time in the war window; drivers: Houthi Saudi-oil campaign + IAEA referral + extended-war framing. PPI LANDED 12:30Z: Aug headline +0.4% m/m (hot, energy-driven; diesel soared - UPI) vs core +0.2% (LESS than forecast - Bloomberg); Fed hike odds ROSE to 61% (24/7 Wall St.) -> CPI Fri Sep 11 could push higher; US 10Y TNX 4.944 (+2.21% d/d, day high 4.952) post-PPI surge; gold sold off -2.11% to 4,358 (Kitco: slid to $4,340 on PPI print, regained $4,400, then eased; day high 4,479.9 = cycle high INTACT); silver 64.115 (-5.71%). UK: 30Y gilt HIGHEST SINCE 1998 (Euronext 13:21Z, in-window) + 10Y >5.3% highest since Aug 2007 (FX.co 13:29Z) + BoE hike bets surging + wholesale gas >200p. ECB landed 11:45Z +25bp to 2.50% (held); Reuters: 'bond yields multi-year highs as traders brace for NEW ECB rate-hike cycle' + global bond sell-off resumes (Guardian). SUSTAINED: Iran zone coords STILL pending (no publication since Sep 9 scope expansion, through 21:02Z); IRGC-15/UKMTO legs stand; Bloomberg 15:12Z 'Iran and US set for extended war with neither side ceding ground' + Trump: war to end after US midterms (Reuters) - war-duration confirmation; Israel warns strikes on Iranian ENERGY sites as 'war enters new phase' (HNGN 12:13Z, window boundary); AJ liveblog: 'enemy' projectiles hit Sirik areas (Hormozgan coast, conf 6, watch); JGB 2.948/2.9150 settled RED stands; rupee closed 95.46 (-38p, The Hindu); HSI -1.27% close; VIX 17.84 (+8.38%); gold dealers flat vs futures basis stands; China recap figures Y390bn/$54B + Y600bn 'one-day valve' float uncorroborated (low-tier); Senegal reprofile-not-restructure countdown; Ebola DRC sustained (Africa CDC 'spreading beyond epicenter' warning); Sudan sustained; no bank failures - Hilltop Bank (Casper WY, regional) cyber incident = branches closed + $1,000 ATM limits, NOT systemic; latam quiet. macro_event ACTIVE conf 10 held; 5 ACTIVE / 2 DEVELOPING / 1 WATCH unchanged; no convergence_scores changes (new rungs logged as rungs of the ACTIVE middle_east_war CAT-5).",
-  "new_rungs": [
-    {
-      "id": "RUNG-2100-001",
-      "domain": "middle_east",
-      "severity": 4,
-      "item": "IAEA BOARD REPORTS IRAN TO UN SECURITY COUNCIL - FIRST TIME IN 20 YEARS: the IAEA Board of Governors passed a resolution reporting Iran to the UNSC over nuclear non-compliance (LA Times: 'for the first time in 20 years', article dated Sep 9 - board resolution Sep 9 Vienna; BBC fresh coverage ~20:30Z Sep 10 'Nuclear watchdog refers Iran to UN Security Council over non-compliance'; Express Tribune Sep 10; The Hindu; ABC wire; Al Jazeera explainer 'why and what now'; CNN Sep 10: cameras disabled, inspectors blocked, watchdog asks for help; iranwire legal-impact analysis 10:39Z). Western officials: traces may indicate secret weapons programme until 2003; Iran claims programme peaceful and says US attacks made access unsafe. Opens the UN snapback-sanctions diplomatic track alongside the hot war. MISSED by prior 4h cycles (query-wording miss) - caught first-cycle by the 21:00Z restored run.",
-      "sources": [
-        "latimes.com Sep 9 (board reports Iran to UNSC, first in 20 years)",
-        "bbc.com ~20:30Z Sep 10 (fresh referral coverage)",
-        "aljazeera.com Sep 10 (explainer)",
-        "cnn.com Sep 10 04:01Z (inspectors blocked)",
-        "thehindu.com Sep 10",
-        "abcnews wire Sep 10",
-        "tribune.com.pk Sep 10",
-        "iranwire.com 10:39Z Sep 10"
-      ],
-      "confidence": 9,
-      "first_seen": "2026-09-09T00:00Z (board resolution Sep 9 Vienna; press-corroborated through Sep 10)"
-    },
-    {
-      "id": "RUNG-2100-002",
-      "domain": "middle_east",
-      "severity": 4,
-      "item": "HOUTHI RED SEA COASTAL CAMPAIGN -> SAUDI OIL EXPORT BLOCKADE THREAT: Houthis advancing along Yemen's Red Sea coast after seizing Mocha (12:37Z rung), with the stated objective of blocking Red Sea passage for SAUDI OIL and closing on the Bab el-Mandeb Strait (WaPo Sep 10: 'Iranian-backed Houthis fight to block Red Sea passage for Saudi oil'; Reuters Sep 10: 'Houthis advance along Yemeni coast, threaten Saudi oil exports in the Red Sea' + 'close in on Bab el-Mandeb Strait in new threat to shipping'; attacks on Saudi Arabia escalating - Khamis Mushait alert, Saudi says 'no danger'; The National: 'Houthis seize Mokha port as attacks on Saudi Arabia escalate' + oil $105 linked to the port seizure; Bloomberg explainer: how Houthi attacks threaten Red Sea shipping and Saudi oil; Euronews: 'blitz Yemen's Red Sea coastline in push to seize Bab el-Mandeb'; Business Insider Africa: 12% of global trade at risk; Haaretz: Saudi-Houthi escalation threatens to draw Iran and US back into war). Second chokepoint campaign now explicitly targets Saudi crude export flows - material escalation of the 12:37Z Mocha rung.",
-      "sources": [
-        "washingtonpost.com Sep 10",
-        "reuters.com Sep 10 (x2 headlines)",
-        "thenationalnews.com Sep 10 (x2)",
-        "bloomberg.com Sep 10 (explainer)",
-        "euronews.com Sep 10",
-        "africa.businessinsider.com Sep 10",
-        "haaretz.com 10:01Z Sep 10"
-      ],
-      "confidence": 8,
-      "first_seen": "2026-09-10T09:09Z (Mocha seizure, prior rung) -> coastal-advance/Saudi-oil framing through the 12:37Z->21:00Z window"
-    }
+  "verdict": "CAT-5 SUSTAINED (20th consecutive cycle), NO NEW RUNGS - corroboration cycle + FIRST-TIME QUANTITATIVE LEG: BAB AL-MANDEB SHIP TRAFFIC HALVED (15 crossings Friday vs 30 Thursday, Kpler preliminary via The National Sep 12)",
+  "new_rungs": [],
+  "new_legs": [
+    "BAB AL-MANDEB TRAFFIC HALVED - total ship crossings fell to 15 Friday from 30 Thursday (Kpler preliminary via The National Sep 12; 6 exited Red Sea, 9 entered; cargoes crude/grains/steel, 3 ballast); first hard measured flow impact of the Houthi coastal takeover + maritime embargo on Saudi-linked vessels; Saudi diverting crude via Suez/Cape",
+    "Attribution cluster corroboration - 'Iran probably responsible' syndicated Saturday-wide (CNN/The National/Al Arabiya/India Today/arabnews.jp; ST 18:21 SGT repost)",
+    "BOJ Sep 17-18 hike preview consolidated - 'set to lift rates next week' (Reuters Sep 11) + 25bp to 1.25% near-certain (Sep 11 wires); t-6"
   ],
-  "escalations": [
-    "ENERGY: Brent BZ=F 108.89 live 21:02Z (+7.81% d/d, day high 109.01) - NEW CYCLE HIGH overtaking 102.57, largest daily gain in the scan record; WTI 103.87 (+8.09%, H 104.0) BROKE $100 first time; >$100 ~37 hrs; The National links the $105 print to the Houthi port seizure",
-    "US_CYCLE: PPI landed 12:30Z - Aug +0.4% m/m headline (energy-driven, diesel soared) vs core +0.2% (softer than forecast, Bloomberg); Fed hike odds ROSE to 61% (24/7 Wall St.) -> CPI Fri; US 10Y TNX 4.944 (+2.21% d/d, H 4.952) post-PPI surge",
-    "SOV_DEBT/EUROPE: UK 30Y gilt highest since 1998 (Euronext 13:21Z, in-window) + UK 10Y >5.3% highest since Aug 2007 (FX.co 13:29Z) + BoE hike bets surging; ECB landed +25bp to 2.50% and Reuters: 'bond yields multi-year highs as traders brace for NEW ECB rate-hike cycle'",
-    "WAR-DURATION: Bloomberg 15:12Z 'Iran and US set for extended war with neither side ceding ground' + Trump says war ends after US midterms (Reuters) + Israel warns strikes on Iranian ENERGY sites as 'war enters new phase' (HNGN 12:13Z)"
+  "dismissed_stale": [
+    "AP 'Trump says Mideast allies reached outlines of deal to end Iran war / US to stop new strikes' = Aug 1 2026 vintage (KSAT/WTOP/SFGate/WPXI syndication) - freshness-filter leak, NOT a de-escalation rung",
+    "MarketScreener 'JGB 10Y 3% first in 30 years' = Sep 1 2026 vintage"
   ],
-  "telegram_sent": true,
-  "telegram_reason": "new rung cluster (IAEA UNSC referral first-time catch + Houthi Saudi-oil campaign) per new-rung precedent (00:46Z Sep 10 alert; 12:37Z Mocha alert)",
-  "created_files": [
-    "breaking-event-2026-09-10-2100.json",
-    "breaking-event-latest.json",
-    "breaking-events-latest.json"
-  ]
+  "domain_notes": {
+    "middle_east": "CAT-5 cluster stands: attribution syndication + Bab al-Mandeb consolidation (traffic halved, Kpler) + Petroline shut + response decision pending + Hormuz talks Monday; no fresh UKMTO/IRGC incidents",
+    "us_fed": "No emergency action in-window; FOMC Sep 15-16 t-3; odds 85-90% consolidated post-CPI",
+    "financial_system": "No new bank failures (FDIC 5 YTD); JPMorgan/Situational-Awareness leg stands, private-credit adjacent",
+    "commodities": "Settles stand: Brent 104.61 / WTI 100.05 / Gold 4,408.9 ($4,500 untested); diesel $6.05/gal record stands",
+    "pandemic_health": "Ebola >7,000 cases / ~3,400 deaths / 7th province stands (Xinhua 06:33Z + CDC MMWR corrob)",
+    "japan": "JGB 2.973 settled; BOJ hike preview t-6; repatriation-risk debate stands",
+    "china": "No fresh PBOC/yuan events; property restructuring-door closure (Sep 9) stands",
+    "em_asia": "Rupee 95.54 settle stands; RBI defense + reserves record $785.71B stand; no fresh intervention news",
+    "eu_ecb": "ECB +25bp follow-through stands; Bund 3.4963% TE highest since Aug 2009; markets closed",
+    "uk": "Gilt >5.3% zone stands (UK10Y 5.3963); sterling pressure stands; markets closed",
+    "africa": "Nothing fresh in-window (Niger coup-attempt Russia claim was 04:08Z window edge, prior)",
+    "latam": "Nothing fresh in-window"
+  },
+  "escalation_actions": "no signal status/trend changes - threshold 1633Z owns values; 11 signals stamped (middle_east, energy, supply_chain, fin_stability, liquidity, sov_debt, currency, gold, china, europe, us_cycle); macro_event ACTIVE conf 10 held; no convergence_scores changes",
+  "telegram": "NOT SENT (sustained-only precedent)"
 }
