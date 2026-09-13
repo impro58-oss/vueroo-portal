@@ -1,13 +1,13 @@
 {
-  "scan_id": "blackwatch-2026-09-13-1237",
-  "timestamp": "2026-09-13T12:46:00+00:00",
+  "scan_id": "blackwatch-2026-09-13-1637",
+  "timestamp": "2026-09-13T16:42:00+00:00",
   "scanner": "breaking_event_scanner",
   "scanner_type": "4h_breaking_event_scanner",
-  "run_type": "routine 4h cycle - window Sep 13 09:23Z -> 12:37Z; follows 0922Z restored scan (23rd CAT-5 + 2 late-caught rungs, commit ef7236ff); Sunday-midday cycle, markets closed; scheduler preamble carried recalibration-day hold note; job brief instructs full scan - executed per brief; live quotes fetched clean this cycle (11/11)",
-  "window": "2026-09-13T09:23Z to 2026-09-13T12:37Z",
-  "queries_executed": 14,
+  "run_type": "routine 4h cycle - window Sep 13 12:37Z -> 16:37Z; follows 1237Z breaking scan 24th CAT-5 consolidation commit 82359b06; Sunday-afternoon cycle, markets closed; scheduler preamble carried recalibration-day hold note; job brief instructs full scan - executed per brief",
+  "window": "2026-09-13T12:37Z to 2026-09-13T16:37Z",
+  "queries_executed": 15,
   "verification_fetches": 2,
-  "live_quotes_at": "2026-09-13T12:44Z (Yahoo v8 chart 11/11 clean)",
+  "live_quotes_at": "2026-09-13T16:38Z (Yahoo v8 chart 11/11 clean)",
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -22,41 +22,40 @@
     "commodities",
     "pandemic_health"
   ],
-  "verdict": "CAT-5 SUSTAINED (24th consecutive cycle), NO NEW RUNGS - quiet Sunday corroboration cycle; UKMTO 134-26 vessel-strike rung consolidated (Iranian vessel, 1 dead) + Sharurah follow-ups",
+  "verdict": "CAT-5 SUSTAINED (25th consecutive cycle), NO NEW RUNGS - Sunday-afternoon syndication/ corroboration cycle; Marib inland-push ground leg logged as follow-on (not a new rung)",
   "new_rungs": [],
   "in_window_observations": [
-    "UKMTO 134-26 Hormuz vessel strike (23:00Z Sep 12, logged 0922Z) consolidated: Iranian commercial vessel per Iranian media; 1 dead (AP/The Hill); fire aboard + crew evacuated by local authorities (AA/Turkiye Today; VoE details 09:11Z); attribution unclaimed; RedMed 12:38Z fetch confirms same warning 134-26 with Sep 13 advisory (crew/damage/ environmental unknown per UKMTO); no newer UKMTO number seen",
-    "Sharurah rung follow-ups: Houthi deep-strike warning 'larger strikes deeper inside Saudi Arabia if attacks on Yemen continue' (TRT); Saudi counter 2 wounded + mosque damaged Jazan (AJ, logged 09:23Z recovery)",
-    "Mandeb consolidation framing spread: SCMP 'rebels cemented hold on Bab al-Mandeb Strait, which has become a key route for oil exports'; Sunday syndication wave (Guardian/ABC/Telegraph/TRT/AA/SCMP/Aaj)",
-    "Monday Iran-GCC talks venue NAMED SALALAH (Oman Observer 05:08Z); Iranian official via Reuters (Gulf Times 00:00Z): no signed deal expected Monday; Iran-Oman understanding = basis for reopening the strait but NOT immediate reopening; Amwaj/Newsquawk: meeting was Omani idea, primary aim formally present Iran-Oman Hormuz deal",
-    "us_fed: AInvest week-ahead preview in-window (10:21Z): 'week ahead brings Fed's first rate hike in three years' (Warsh chair); odds PM ~80% (09:16Z live prior cycle) / consensus 85-91% stand; FOMC t-2",
-    "Weekend quote fetch 11/11 clean: all Friday settles identical to 09:22Z fetch - 7th consecutive identical weekend print (Brent 104.61 / WTI 100.05 / Gold 4,408.9 / US10Y 4.975 / VIX 15.84 / SPX 7,656.98 / INR 95.55 / JPY 153.554 / EUR 1.1601 / Nikkei 64,011.34; BTC 76,724 slight -0.05% drift vs 09:22Z)",
-    "Ebola: >7,000 cases / ~3,400 deaths / 7th province unchanged (medicalxpress Sep 13 = AJ recirc; Xinhua 'under control' counter-narrative stands; WHO DON617; CDC MMWR)",
-    "Nikkei recap: 'Trump rebuffs MBS request for military help against Houthis' = standing leg (strikes DECLINED so far); response decision STILL PENDING"
+    "AJ live blog (fetched 16:38Z): Houthis advancing toward MARIB + heavy fighting at two key strongholds + Saudi air strikes on Houthi-taken areas ('trade strikes over Bab al-Mandeb' slug); tens of thousands displaced - ground offensive moves inland; follow-on of standing counterattack rung, NOT a new rung",
+    "UKMTO 134-26 syndication wave: Iran International 12:45:15Z 'Deadly ship strike deepens crisis over Strait of Hormuz'; CNBC 13:38Z 'Vessel struck... as prospects for US-Iran diplomacy appear elusive'; Reuters wrap 'New attacks in Hormuz and Saudi test nerves as war's spread worsens oil disruption' (Sep 13) + CNA syndication - all corroboration of the rung caught at 0922Z/consolidated 1237Z (Iranian vessel, 1 dead / 3 wounded, attribution unclaimed)",
+    "Pezeshkian 'Iran will not surrender, rejects nuclear weapons claims' (India Today Sep 13) - rhetoric, no new rung"
+  ],
+  "prior_window_addendum": [
+    "Goldman 'Brent could rise above $120' supply-fears call (tradersunion 2026-09-13T07:55Z = before 12:37Z window start) - analyst commentary consistent with standing energy cluster"
   ],
   "dismissed_stale": [
-    "gcaptain 'Crew Abandons Burning Tanker' = Jul 20 2026 vintage",
-    "Polymarket cached snippets (55% hike / 33%) = mixed-vintage search cache; live PM ~80% (09:16Z prior cycle) + consensus 85-91% own the number",
-    "market.news 'Gold Retreats from $4,500 Zone' = AI-synthesized sloppy recap; board owns: $4,500 NOT tested, cycle high 4,479.9",
-    "Moneycontrol 'oil nears $110' = week recap referencing cycle high 109.01, not a new print",
-    "latam: all 2025 vintage + known Sep 1 swap repayment; africa: Critical Threats Africa File Sep 3 + Zagazola Sep 8-9 + Niger Aug 30-31 mutiny recirculation",
-    "uk: BOE 2022-vintage papers + background insight pieces; NIESR Sep 7 analysis"
+    "IBTimes 'Brent surges above $105' = week recap of standing move; Finit 8:00AM EDT recap confirms settles",
+    "bank-failure query all vintage (SVB-creditor FDIC ruling Aug 31; 2023-era pieces)",
+    "china property pieces Sep 8-10 vintage (Caixin Sep 10, SCMP/BT, Xinhua Sep 8)",
+    "em_asia RBI streak pieces Sep 4-11 vintage",
+    "eu_ecb/uk ECB-hike pieces Sep 10-11 vintage (Guardian/NYT/ST Sep 10)",
+    "africa Arab News op-ed Sep 12 (logged 0037Z) + Horn Review Sep 9 + Media Line Sep 7 + AAWSAT Sep 5",
+    "latam Atlantic Council Sep 4 / LA Times Sep 10 / UPI Sep 11 / Buenos Aires Times 2025 vintage",
+    "japan FXEmpire Sep 13 09:14Z forecast = commentary; BOJ pieces Sep 9-12 vintage"
   ],
   "domain_notes": {
-    "middle_east": "CAT-5 cluster stands: UKMTO 134-26 consolidated (Iranian vessel, 1 dead, fire + evacuation, attribution unclaimed) + Sharurah follow-ups (deep-strike warning + Jazan counter) + Mandeb consolidation framing + Petroline shut + attribution + response decision PENDING + Monday Salalah talks (no signed deal expected)",
-    "us_fed": "No emergency action in-window; FOMC Sep 15-16 t-2; odds PM ~80% / consensus 85-91%; 'first hike in three years' preview",
+    "middle_east": "CAT-5 cluster stands: UKMTO 134-26 consolidated (Iranian vessel, 1 dead/3 wounded, attribution unclaimed) + in-window Houthi Marib inland push + Saudi air strikes on Houthi-taken areas + Mandeb coastal takeover + Petroline shut + attribution + response decision PENDING + Monday Salalah talks (no signed deal expected)",
+    "us_fed": "No emergency action in-window; FOMC Sep 15-16 t-2; odds PM ~80% / consensus 85-91%; AFP 'Warsh's first real test' + Bloomberg Trump cut-pressure pieces (Sep 13)",
     "financial_system": "No new bank failures (FDIC 5 YTD); query all background/vintage; private-credit legs stand",
-    "commodities": "Settles stand: Brent 104.61 / WTI 100.05 / Gold 4,408.9 ($4,500 untested); diesel $6.05/gal record; IEA OMR stands",
-    "pandemic_health": "Ebola >7,000 cases / ~3,400 deaths / 7th province unchanged; DRC 'under control' counter-narrative stands",
-    "japan": "JGB 2.973 settled; BOJ t-5; 25bp consensus unchanged; all vintage (Sep 3-11)",
-    "china": "No fresh PBOC/yuan events; property/presale legs stand (vintage Aug 31-Sep 9)",
-    "em_asia": "Rupee 95.55; RBI defense + reserves record $785.71B stand; governor liquidity remarks = Sep 11 prior window",
-    "eu_ecb": "ECB hike-cycle brace + Bund 3.4963% TE basis stand; all Sep 10-11 vintage; markets closed",
-    "uk": "Gilt >5.3% zone (5.3963) + 30Y record auction Sep 8 stand; query returned 2022-vintage + background",
-    "africa": "Sudan regionalization stands (Arab News op-ed logged 0037Z); Niger = Aug 30-31 recirculation; no new event",
-    "latam": "Nothing fresh in-window (2025 vintage + Sep 1 swap repayment known)"
+    "commodities": "Settles re-confirmed: Brent 104.61 / WTI 100.05 / Gold 4,408.9 ($4,500 untested); diesel $6.05/gal record; Goldman >$120 call = commentary; IEA OMR stands",
+    "pandemic_health": "Ebola >7,000 cases / ~3,400 deaths / 7th province unchanged; CGTN Sep 13 'under control' counter-narrative = already logged 1237Z; WHO DON617; CDC MMWR",
+    "japan": "JGB 2.973 settled; BOJ t-5; 25bp consensus unchanged; all vintage (Sep 9-12)",
+    "china": "No fresh PBOC/yuan events; property package legs stand (Sep 8-10 vintage)",
+    "em_asia": "Rupee 95.55; RBI defense + reserves record $785.71B stand; all pieces Sep 4-11 vintage",
+    "eu_ecb": "ECB +25bp to 2.5% follow-through stands; all Sep 10-11 vintage; markets closed",
+    "uk": "Gilt >5.3% zone stands; query returned vintage/background; markets closed",
+    "africa": "Sudan regionalization stands (Arab News op-ed logged 0037Z); Niger recirculation; no new event",
+    "latam": "Nothing fresh in-window (Atlantic Council Sep 4 / LA Times Sep 10 / UPI Sep 11 vintage)"
   },
-  "escalation_actions": "11 signals stamped (middle_east, energy, supply_chain, fin_stability, liquidity, sov_debt, currency, gold, china, europe, us_cycle) - newest-first prepend convention; metadata.last_update + threshold_breach + breaking_event appended; macro-event highest_alert + active_count_note + alert_log #29 updated; macro_event ACTIVE conf 10 held; convergence_scores UNCHANGED (lead-indicator/threshold jobs own numeric scores); no status/trend changes (threshold 1633Z owns values)",
-  "telegram": "NOT SENT (sustained-only precedent - no new rungs)",
-  "git": "commit+push after sync; verify scan-id in pushed HEAD + last_update on disk (3 targets)"
+  "escalation_actions": "no signal status/trend changes - threshold 1633Z owns values; 11 signals stamped (middle_east, energy, supply_chain, fin_stability, liquidity, sov_debt, currency, gold, china, europe, us_cycle); macro_event ACTIVE conf 10 held; no convergence_scores changes",
+  "telegram": "NOT SENT (sustained-only precedent)"
 }
