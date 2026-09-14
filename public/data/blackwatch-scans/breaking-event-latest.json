@@ -1,65 +1,87 @@
 {
- "scan_id": "blackwatch-2026-09-14-0037",
- "timestamp": "2026-09-14T00:52:00+00:00",
- "scanner": "breaking_event_scanner",
- "scanner_type": "4h_breaking_event_scanner",
- "run_type": "standard 4h cycle; Monday-early, futures live since 22:00Z Sunday reopen; recalibration-day note honored: scanner instruction IS the brief, no extra work",
- "window": "2026-09-13T20:37Z to 2026-09-14T00:37Z",
- "queries_executed": 14,
- "verification_fetches": 2,
- "live_quotes_at": "2026-09-14T00:45Z (Yahoo v8 chart, 11/11 clean, futures live)",
- "domains_scanned": [
-  "us_fed",
-  "latam",
-  "eu_ecb",
-  "uk",
-  "japan",
-  "china",
-  "em_asia",
-  "middle_east",
-  "africa",
-  "financial_system",
-  "commodities",
-  "pandemic_health"
- ],
- "verdict": "CAT-5 SUSTAINED (27th consecutive scan cycle) + 1 NEW RUNG INSTANCE (Salalah Iran-GCC Hormuz talks POSTPONED + reopen repricing: Brent +2.97% to 107.72, WTI +2.8% to 102.85, Nikkei opened -1.83%, SPX futures down on AI warnings + oil)",
- "new_rungs": [
-  {
-   "name": "SALALAH IRAN-GCC HORMUZ TALKS POSTPONED",
-   "detail": "Oman announced postponement of the Iran-GCC meeting on the Strait of Hormuz (Al Arabiya, dated Sep 14 + Straits Times version; in-window). The first meeting had been set for MONDAY Sep 14 in Salalah with the Iran-Oman routes pact to be PRESENTED (CNN 'deal without US'; Iraq attending, Bahrain out; ST 'unveil Hormuz pact Sep 14'). Standing texture: Araghchi agreement != reopening, Tasnim 7-conditions framing, Gulf Times 'no signed deal expected Monday'. The postponement is the first crack in the de-escalation track: reopening delayed, no new date in initial wires. Brent reacted +3% explicitly on the postponement (NAMPA/RIA: 'rising over 3% to $107.77 in early trade following the postponement of a meeting')."
-  }
- ],
- "in_window_observations": [
-  "REOPEN REPRICING (Yahoo 00:45Z live, futures trading since 22:00Z): Brent BZ=F 107.72 +2.97% / WTI CL=F 102.85 +2.8% / GC=F 4,378.9 -0.68% / ^TNX 4.975 +0.63% / BTC 76,709 -0.13% / yen 153.668 / rupee 95.54 / EUR 1.159 / NIKKEI ^N225 62,837.71 -1.83% (opened down in early Tokyo)",
-  "SPX futures fell at the 22:00Z reopen on AI-safety warnings + oil gains (CNBC live 22:06/22:14Z 'stock futures drop as investors weigh AI safety concerns, oil gains'; Bloomberg wrap 'US Stock Futures Fall on AI Warning, Oil Gains'; time.news 23:24Z)",
-  "AI-slowdown call: Amodei (Anthropic), Altman (OpenAI), Musk (SpaceX) publicly call for AI slowdown (IBD Sep 13 12:28Z) - frontier-lab leaders asking for deceleration; new market-adjacent leg into FOMC week",
-  "22:12Z reopen prints (Gate/Jin10): Brent 104.74 / WTI 99.33 before the postponement bid pushed Brent to 107.7x",
-  "Ebola unchanged: >7,000 cases / ~3,400 deaths / 7th province Sud-Ubangi / worst-ever framing (AJ Sep 12 + Reuters Sep 11 carried)",
-  "Niger army-command reshuffle (AJ Sep 13, pre-window): new chief of staff after Aug-31 failed mutiny; Brazil R$7bn/month fuel package (Sep 10, pre-window) stands"
- ],
- "dismissed_stale": [
-  "CNA 'Four crew, two rescuers killed in Red Sea attack; US strikes ship in Gulf of Oman' = Aug 11 Tihamah cargo-ship event recirculated (first post-war shipping deaths; verified via fetch: 'Tuesday (Aug 11)')",
-  "BBC 'Yemen's Houthis attack Saudi tanker as US launches more Iran strikes' = Jul 23 vintage (Encelia tanker)",
-  "AP/PBS '13th night of strikes on Iran' = July cluster (New Indian Express: 9th night was Jul 20)",
-  "China Y360bn bank-recap coverage = Sep 7 vintage (CNBC/BBC/MarketScreener)",
-  "RBI swaps/reserves pieces = Sep 9-12 carried (reserves $785.7B record already logged)",
-  "Polymarket cached 'No change 72%' snippet = mixed-vintage cache (live PM ~80% hike owns, per 1237Z convention)"
- ],
- "domain_summaries": {
-  "middle_east": "CAT-5 SUSTAINED 27th cycle + Salalah postponement rung + oil +3% reopen; no fresh UKMTO/IRGC; response decision pending",
-  "us_fed": "No emergency action; FOMC Sep 15-16 t-2; odds PM ~80% / consensus 85-91%; futures open risk-off",
-  "financial_system": "No new bank failures (FDIC 5 YTD); private-credit legs stand; AI-slowdown warnings knock futures",
-  "commodities": "Brent 107.72 +2.97% / WTI 102.85 +2.8% live; gold 4,378.9 -0.68%; >$100 since Sep 9-10",
-  "pandemic_health": "Ebola unchanged (>7k cases / ~3.4k deaths / 7 provinces)",
-  "japan": "Nikkei opened -1.83% at 62,837; JGB 2.973 settled stands; BOJ t-4; yen 153.668",
-  "china": "No fresh events; recap + presale-rule legs stand; markets closed at scan time",
-  "em_asia": "Rupee 95.54 flat; RBI defense + reserves $785.7B stand; Nikkei -1.83% open",
-  "eu_ecb": "Markets closed; ECB brace + Bund >3.5% basis + France OAT 4.44% legs stand",
-  "uk": "Markets closed; gilt 5.3963 >5.3% zone stands",
-  "africa": "Niger reshuffle (Sep 13 pre-window); Ebola carried; no new event",
-  "latam": "Nothing fresh in-window; Brazil fuel package Sep 10 carried"
- },
- "escalation_actions": "13 signals stamped (middle_east, energy, supply_chain, geopolitical, fin_stability, liquidity, sov_debt, currency, gold, china, europe, us_cycle, ai_acceleration) - newest-first prepend convention; metadata.last_update + threshold_breach appended; macro-event highest_alert + alert_log updated; macro_event ACTIVE conf 10 held; convergence_scores UNCHANGED (lead-indicator/threshold jobs own numeric scores); no status/trend changes (threshold 1633Z owns values)",
- "telegram": "SENT (new-rung precedent - Salalah postponement rung) to Roo DM 1018254667",
- "git": "commit+push after sync; verify scan-id in HEAD + last_update on disk"
+  "scan_id": "blackwatch-2026-09-14-0437",
+  "timestamp": "2026-09-14T04:52:00+00:00",
+  "scanner": "breaking_event_scanner",
+  "scanner_type": "4h_breaking_event_scanner",
+  "run_type": "standard 4h cycle; Monday pre-dawn, Tokyo afternoon session live; recalibration-day note honored: scanner instruction IS the brief, no extra work",
+  "window": "2026-09-14T00:37Z to 2026-09-14T04:37Z",
+  "queries_executed": 15,
+  "verification_fetches": 1,
+  "live_quotes_at": "2026-09-14T04:37Z (Yahoo v8 chart, 11/11 clean, Tokyo live)",
+  "domains_scanned": [
+    "us_fed",
+    "latam",
+    "eu_ecb",
+    "uk",
+    "japan",
+    "china",
+    "em_asia",
+    "middle_east",
+    "africa",
+    "financial_system",
+    "commodities",
+    "pandemic_health"
+  ],
+  "verdict": "CAT-5 SUSTAINED (28th consecutive scan cycle) + 1 NEW RUNG INSTANCE (AI-trade de-rating lands in Tokyo: SoftBank -13% after OpenAI IPO-delay + AI-safety alarm; chips sold, Nikkei briefly <63,000) + Salalah postponement corroboration/extension (Iran 'at request of others', no new date) + Brent holds postponement bid 107.63 +2.89% live",
+  "new_rungs": [
+    {
+      "name": "AI-TRADE DE-RATING LANDS IN TOKYO - SOFTBANK -13%",
+      "detail": "SoftBank (9984) slid ~13% in Monday Tokyo trading (Bloomberg Sep 14: 'Shares Slide 13% After AI Chiefs Sound Alarm on Safety'; biggest drop in ~3 months; TECHi: 'sink nearly 12%'; GuruFocus 00:50Z) - the largest single-name AI-proxy move to date (~$64.6B OpenAI stake). Trigger pair: (a) Altman's Sep 12 statement that OpenAI's IPO 'will not happen in 2026' amid AI safety fears - 'ill-advised' to go public now (Reuters; TechCrunch 20:19Z Sep 12; Forbes; Axios; Business Insider) - statement itself is LATE-CAUGHT relative to the window; (b) the Amodei/Altman/Musk AI-slowdown alarm (logged 0037Z). First-session reaction: chips sold across Tokyo (SBG, Advantest - Nikkei Inc 09:12 JST), Nikkei briefly below 63,000 (biggo 02:05Z), Gate morning close 63,158.63 (-1.33%); HSI tech leg followed (HSTECH -0.69% open; FX168: tech/AI/storage broadly lower, oil stocks active). This materializes the 0037Z 'watch AI-trade de-rating into FOMC week' call. Not systemic-credit; market dislocation leg under fin_stability/ai_acceleration."
+    }
+  ],
+  "in_window_observations": [
+    "SALALAH POSTPONEMENT CORROBORATION/EXTENSION: Iran says the Oman meeting was postponed 'at request of others' (Jerusalem Post); Oman FM Badr Albusaidi framed it 'in the interests of consensus' (late-Sunday X); NO NEW DATE SET (Hindustan Times 02:54Z IN-WINDOW); NYT 'Mideast diplomacy stalls'; ST 'Diplomacy stumbles' analysis (23:06Z Sep 13, window edge)",
+    "BRENT HOLDS THE BID: CNA/Reuters 22:14Z Sunday print Brent 108.23 (+3.46%) / WTI 103.20 after 'new strikes on Saudi, Strait of Hormuz' recap (the 'new strikes' = Sunday Sep 13 Houthi Jazan attack + UKMTO Hormuz vessel strike = already-logged 134-26 cluster); live 04:37Z Brent 107.63 (+2.89%) / WTI 102.94 (+2.89%); IG (Sycamore): risk crude extends toward US$119.48 early-March high unless Oman talks produce something operational or pipeline back online quickly; DBS: Yanbu storage supports exports 5-7 days",
+    "NIKKEI TRAJECTORY CORRECTION: official open 63,659.53 (-351.81, -0.55%) per Nikkei Inc 09:12 JST; early-session slide -1,085 to 62,925 by 09:15 JST (Kyodo), early low ~62,837 (-1.83% - the 0037Z 'opened -1.83%' framing was the early-session level, not the official open); briefly below 63,000; morning close ~63,158.63 (-1.33%, Gate 02:40Z); live 04:37Z 63,374.14 (-1.0%) mid-afternoon",
+    "PBOC Monday fix USD/CNY 6.7698 vs Reuters-expected 6.7083 (Newsquawk 01:36Z; prev 6.7743) - well weaker than models expected; MEDIUM confidence counter-cyclical leg",
+    "HSI OPENED -0.42% at 24,701.18 (HSTECH -0.69%; Alibaba -1.86%, Tencent -1.07%; oil stocks active - FX168 01:31Z)",
+    "HOUTHI-SAUDI EXCHANGE TEXTURE: Saudi state media released video of Jazan damage (homes + mosque) from Houthi attack; Houthis claim strike on Saudi military base in neighboring province; Houthis say Saudi launched >50 strikes vs them in 24h (AFP Sep 13); UN: >80,000 displaced in Yemen since Sep 1 (The Hindu)",
+    "Guardian satellite imagery shows extent of Petroline damage (Sep 14)",
+    "Ebola unchanged: >7,000 cases / ~3,400 deaths / 7th province / worst-ever framing (AJ Sep 12 + Japan Times Sep 14 carried)",
+    "FOMC odds unchanged: Polymarket ~80% print (Sep 12) + consensus 85-91% stand; 60-65% pieces = Sep 11 pre-CPI stale"
+  ],
+  "dismissed_stale": [
+    "OpenAI IPO-delay STATEMENTS themselves = Sep 12 vintage (Reuters/TechCrunch/Forbes/Axios/BI) - the in-window event is the Tokyo reaction; qz 'IPO-delay-2027' piece = Jul 3, 2026 vintage",
+    "UK gilt coverage (record 30Y auction, 19-yr-high yields, NIESR) = Sep 7-8 vintage",
+    "Eurozone bonds (multi-year highs, ECB hike-cycle brace, Bund 15-yr high) = Sep 10-11 vintage",
+    "BBC 'A financial crisis may be coming' op-ed = Apr 2026 vintage",
+    "FXStreet gold piece = Sep 2025 vintage; Fat Tail Daily gold piece = Sep 14 commentary, no new event",
+    "Argentina peso band-ceiling pieces = 2025 vintage; Brazil BCB swap auction Sep 14 = announced Sep 11 (standing intervention leg)",
+    "UKMTO search results = Jun-Aug vintage; no fresh maritime incidents in-window",
+    "Private-credit pieces (Better Markets Jul, Leuthold Sep 4, Financial Post Aug 17, based.info Apr) = vintage; standing legs carried",
+    "India reserves record $785.7B = Sep 11-13 carried"
+  ],
+  "domain_summaries": {
+    "middle_east": "CAT-5 SUSTAINED 28th cycle; Salalah postponement corroborated (Iran 'at request of others', no new date); response decision PENDING; Houthi-Saudi exchange texture (Jazan video, >50-strikes claim, UN >80k displaced); no fresh UKMTO/IRGC",
+    "us_fed": "No emergency action; FOMC Sep 15-16 t-2; odds PM ~80% / consensus 85-91% stand; futures open risk-off; gold slips on hike bets",
+    "financial_system": "No new bank failures (FDIC 5 YTD); private-credit legs stand; NEW: SoftBank -13% AI de-rating lands (single-name, not systemic-credit)",
+    "commodities": "Brent 107.63 +2.89% live (108.23 print 22:14Z); WTI 102.94; gold 4,371.5 -0.85%; >$100 since Sep 9-10; IG $119.48 risk; DBS Yanbu 5-7 days",
+    "pandemic_health": "Ebola unchanged (>7k cases / ~3.4k deaths / 7 provinces)",
+    "japan": "Nikkei -1.0% live (open -0.55% official, early low -1.83%, morning close -1.33%); SoftBank -13%; JGB 2.973 stands; BOJ t-4",
+    "china": "PBOC fix 6.7698 weak-vs-models (MEDIUM conf); HSI opened -0.42%, HSTECH -0.69%",
+    "em_asia": "India reserves record $785.7B carried; rupee 95.54 flat; RBI defense stands",
+    "latam": "Brazil BCB 50k-swap auction Sep 14 + $1B spot auction Sep 15 = standing intervention legs (announced Sep 11); nothing new",
+    "uk": "Gilt >5.3% zone carried; nothing fresh in-window",
+    "eu_ecb": "ECB hike-cycle brace + Bund 15-yr high legs stand (Sep 10-11 vintage); nothing fresh in-window",
+    "africa": "Ebola unchanged; Niger reshuffle Sep 13 pre-window; nothing new"
+  },
+  "quotes": {
+    "BZ=F": 107.63,
+    "CL=F": 102.94,
+    "GC=F": 4371.5,
+    "^TNX": 4.975,
+    "^VIX": 15.84,
+    "^GSPC": 7656.98,
+    "BTC-USD": 77569.79,
+    "INR=X": 95.54,
+    "JPY=X": 153.974,
+    "EURUSD=X": 1.1569,
+    "^N225": 63374.14
+  },
+  "convergence": "macro_event ACTIVE conf 10 held; no convergence_scores changes (lead-indicator/threshold jobs own numeric scores); no status/trend changes (threshold 1633Z owns values)",
+  "process_notes": [
+    "Template script scripts/blackwatch-breaking-event-scanner.py STILL MISSING (post-outage loss; flagged 0037Z run) - established per-run pattern used again",
+    "13 signals stamped (11 standard + geopolitical + ai_acceleration); alert_log #33; synced to 3 targets (scan repo + LIVE dir + workspace mirror)",
+    "conversations_list route ownership temporarily unavailable at send time - Telegram sent via message tool directly (prior-send convention)"
+  ]
 }
