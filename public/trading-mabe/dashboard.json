@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T23:59:29.181021",
+  "timestamp": "2026-09-15T00:00:27.680084",
   "system": "MABE \u2014 Macro-Asymmetric Breakout Engine",
   "version": "1.0",
   "strategy": {
@@ -23,9 +23,9 @@
   "portfolio": {
     "total_capital_usd": 5000,
     "realized_pnl_usd": 51.95,
-    "unrealized_pnl_usd": 124.63,
-    "total_pnl_usd": 176.58,
-    "open_positions": 3,
+    "unrealized_pnl_usd": 128.95,
+    "total_pnl_usd": 180.9,
+    "open_positions": 5,
     "closed_trades": 17,
     "wins": 6,
     "losses": 11,
@@ -41,9 +41,9 @@
       "peak_high": 56.26,
       "signal": "MABE_BREAKOUT",
       "asset_class": "ALTCOIN",
-      "bars_held": 17,
+      "bars_held": 18,
       "capital": 100,
-      "current_price": 53.61
+      "current_price": 53.44
     },
     "ARBUSDT": {
       "status": "OPEN",
@@ -54,9 +54,9 @@
       "peak_high": 0.1787,
       "signal": "MABE_BREAKOUT",
       "asset_class": "ALTCOIN",
-      "bars_held": 17,
+      "bars_held": 18,
       "capital": 100,
-      "current_price": 0.1326
+      "current_price": 0.1343
     },
     "DASHUSDT": {
       "status": "OPEN",
@@ -67,9 +67,35 @@
       "peak_high": 66.4,
       "signal": "MABE_BREAKOUT",
       "asset_class": "ALTCOIN",
-      "bars_held": 16,
+      "bars_held": 17,
       "capital": 100,
-      "current_price": 52.95
+      "current_price": 53.86
+    },
+    "XLMUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-09-15T00:00:27.670746",
+      "entry_price": 0.1936,
+      "atr": 0.009830472578018822,
+      "peak_high": 0.1971,
+      "signal": "MABE_BREAKOUT",
+      "asset_class": "ALTCOIN",
+      "bars_held": 1,
+      "capital": 100,
+      "current_price": 0.1936
+    },
+    "UUSDT": {
+      "status": "OPEN",
+      "direction": "LONG",
+      "entry_date": "2026-09-15T00:00:27.670746",
+      "entry_price": 1.0001,
+      "atr": 0.00036956963364541574,
+      "peak_high": 1.0003,
+      "signal": "MABE_BREAKOUT",
+      "asset_class": "ALTCOIN",
+      "bars_held": 1,
+      "capital": 100,
+      "current_price": 1.0001
     }
   },
   "recent_trades": [
@@ -295,7 +321,10 @@
       "asset_class": "ALTCOIN"
     }
   ],
-  "entries_today": [],
+  "entries_today": [
+    "XLMUSDT",
+    "UUSDT"
+  ],
   "exits_today": [],
   "symbols_scanned": 50
 }
