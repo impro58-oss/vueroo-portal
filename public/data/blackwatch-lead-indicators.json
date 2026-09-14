@@ -1,9 +1,9 @@
 {
-  "scan_id": "blackwatch-2026-09-13-0700",
-  "scan_timestamp": "2026-09-13T06:00:00Z",
-  "scan_local_time": "2026-09-13T07:00:00+01:00",
-  "scan_label": "BlackWatch Lead Indicator Scanner - Daily 07:00 IST cycle (weekend single window; run fired late ~10:09 IST, post-06:00Z Sep 13 wires captured opportunistically and flagged)",
-  "scan_window": "2026-09-12 06:00Z -> 2026-09-13 06:00Z (24h single window, 18 web queries incl. 2 category catch-ups, 33 findings, 8 categories)",
+  "scan_id": "blackwatch-2026-09-14-0700",
+  "scan_timestamp": "2026-09-14T06:00:00Z",
+  "scan_local_time": "2026-09-14T07:00:00+01:00",
+  "scan_label": "BlackWatch Lead Indicator Scanner - Daily 07:00 IST cycle (on-time fire; Salalah-postponement + Tokyo AI-de-rating window)",
+  "scan_window": "2026-09-13 06:00Z -> 2026-09-14 06:00Z (24h window, 21 web queries, 34 findings, 8 categories)",
   "scanner": "BlackWatch Lead Indicator Scanner",
   "scanner_version": "2.1",
   "status": "COMPLETE",
@@ -11,59 +11,49 @@
     "verbal_intervention": [
       {
         "id": "vi-001",
-        "headline": "Fed decision week opens as a no-win vote: appointee against patron - hike odds ~90% while Trump demands cuts and keeps the pressure on (calls, trade-threat rhetoric); ION: 'Fed must raise rates amid Trump, Bessent theatrics'",
-        "source": "AInvest (Sep 12, 'no-win vote: a president's appointee against his patron') / CNBC (Sep 5, carried) / Reuters Dolan (Sep 8, carried) / ION Analytics (Sep 10, carried) / Motley Fool (Sep 11, carried) - carried, sharpened into decision week",
+        "headline": "FOMC t-1: no-win vote frame stands as decision week opens - hike odds band PM ~80% / consensus 85-91% while Trump demands cuts; markets now enter the decision with futures LOWER on AI-de-rating + oil, not rallying",
+        "source": "AInvest (Sep 12, 'no-win vote' frame, carried) / financefeeds (Sep 12, PM 79.5% vs CME FedWatch ~86%) / macroodds live page (dot-plot meeting Sep 15-16) - carried, sharpened into t-1",
         "date": "2026-09-12",
-        "summary": "FOMC Sep 15-16 (t-2) opens with the independence collision at maximum tension: markets price ~85-90% (headline 90%) HIKE while the president demands cuts, has phoned the chair repeatedly, and has threatened trade consequences unless rates fall. A hike over the president's objection stresses independence inside an already-burning bond market; a fold risks unanchoring expectations. The 'no-win vote' frame is now mainstream commentary, not fringe.",
+        "summary": "The independence collision enters decision day: markets price a hike (~80-91% across CME FedWatch, Polymarket ~79.5-80%) over the president's explicit objection, with trade-threat rhetoric standing. The prior cycle's 'stock rally into the hike = absorbed' counter-narrative has REVERSED - futures opened lower on the AI-de-rating and oil spike, so the Fed now decides into building stress rather than easing.",
         "imminence": 8,
         "impact": 7,
-        "threads": [
-          "us_recession"
-        ],
+        "threads": ["us_recession"],
         "confidence": "MEDIUM",
-        "url": "https://www.ainvest.com/news/fed-win-vote-president-appointee-patron-2609/"
+        "url": "https://financefeeds.com/fed-rate-hike-odds-polymarket-79-5-vs-cme-fedwatch-86/"
       },
       {
         "id": "vi-002",
-        "headline": "Pezeshkian ties Hormuz reopening to end of US blockade - explicit Iranian precondition placed on the de-escalation track",
-        "source": "Iran International (Sep 12 interview)",
+        "headline": "CARRIED: Pezeshkian ties Hormuz reopening to end of US blockade - explicit Iranian precondition stands while the president attends the BRICS summit in New Delhi",
+        "source": "Iran International (Sep 12 interview, carried) / Straits Times photo context (Pezeshkian in New Delhi for 18th BRICS Summit) - carried + context",
         "date": "2026-09-12",
-        "summary": "Iran's president publicly conditioned Strait of Hormuz reopening on the US ending its naval blockade - the first explicit, named precondition on the de-escalation track. Converts vague 'diplomacy possible' language into a checkable demand, and raises the bar for Monday's Oman talks: a deal now runs through Washington, not just Tehran-GCC proximity.",
+        "summary": "Iran's explicit named precondition (end of US blockade) remains the checkable bar on the de-escalation track, and the Salalah postponement confirms no counterparty can clear it this week. Pezeshkian's presence at the BRICS summit in Delhi during the crisis is a posture detail: Iran deepening non-Western alignment while Gulf mediation stalls.",
         "imminence": 6,
         "impact": 7,
-        "threads": [
-          "middle_east_war"
-        ],
+        "threads": ["middle_east_war"],
         "confidence": "HIGH",
         "url": "https://www.iranintl.com/en/202609123073"
       },
       {
         "id": "vi-003",
-        "headline": "CARRIED THRESHOLD: record $99bn yen intervention confirmed UST-funded; Japan reserves BELOW $1 trillion first time in recent memory (~$95bn August burn; ~70% of reserves in USTs)",
-        "source": "Bloomberg via Japan Times / Reuters / CryptoBriefing - carried, threshold standing",
+        "headline": "CARRIED THRESHOLD: record $99bn yen intervention confirmed UST-funded; Japan reserves BELOW $1 trillion first time in recent memory (~70% of reserves in USTs)",
+        "source": "Bloomberg via Japan Times / Reuters / CryptoBriefing (Sep 7, carried) / Express Tribune (Sep 11 joint-action confirmation carry)",
         "date": "2026-09-07",
-        "summary": "Standing threshold from the prior cycle remains the structural fact of the yen thread: official-sector UST selling is a live channel feeding US bond stress, and the intervention war-chest question is formally live with reserves under $1T. BOJ decision t-5 (Sep 17-18) re-tests the chest.",
+        "summary": "Standing threshold remains the structural fact of the yen thread: official-sector UST selling is a live channel feeding US bond stress, and the intervention war-chest question is formally live with reserves under $1T. BOJ decision t-4 (Sep 18) re-tests the chest; yen ~153.97 into the decision.",
         "imminence": 9,
         "impact": 8,
-        "threads": [
-          "japan_yen",
-          "us_recession",
-          "asian_contagion"
-        ],
+        "threads": ["japan_yen", "us_recession", "asian_contagion"],
         "confidence": "HIGH",
         "url": "https://cryptobriefing.com/japan-forex-reserves-drop-yen-intervention/"
       },
       {
         "id": "vi-004",
-        "headline": "CARRIED: Bessent met Ueda and Katayama at G20, publicly pushed BOJ hikes - external pressure converted into scheduled action Sep 17-18",
+        "headline": "CARRIED: Bessent met Ueda and Katayama at G20, publicly pushed BOJ hikes - external pressure converted into scheduled action Sep 18",
         "source": "NHK via investinglive (Sep 9, carried)",
         "date": "2026-09-09",
-        "summary": "US Treasury Secretary publicly pressed BOJ hikes at the G20; the hike is now sources-confirmed for Sep 17-18. Extraordinary external pressure on an independent central bank converted into a scheduled policy action - a sovereignty-stress marker standing one week ahead of the BOJ decision, five days after FOMC.",
+        "summary": "US Treasury Secretary publicly pressed BOJ hikes at the G20; the hike is sources-confirmed for Sep 18. Extraordinary external pressure on an independent central bank converted into a scheduled policy action - sovereignty-stress marker standing four days ahead of the BOJ decision, two days after FOMC.",
         "imminence": 8,
         "impact": 7,
-        "threads": [
-          "japan_yen"
-        ],
+        "threads": ["japan_yen"],
         "confidence": "MEDIUM",
         "url": "https://investinglive.com/central-banks/bessent-met-ueda-katayama-at-g20-pushed-for-boj-hikes-nhk-reports/"
       }
@@ -71,44 +61,37 @@
     "anonymous_leaks": [
       {
         "id": "al-001",
-        "headline": "CARRIED: traders-say BOJ set to lift rates Sep 17-18 but offer few clues on terminal rate - sources say hike to 1.25% locked, guidance deliberately opaque",
-        "source": "Reuters (Sep 11, sources say) / Business Times / CNA carry",
+        "headline": "CARRIED: traders-say BOJ set to lift rates Sep 18 but offer few clues on terminal rate - sources say hike to 1.25% locked, guidance deliberately opaque",
+        "source": "Reuters (Sep 11, sources say) / Business Times / CNA carry / ING preview (Sep 11, 25bp incoming, market close to pricing further 25bp by end-year)",
         "date": "2026-09-11",
-        "summary": "Anonymous BOJ-sourced reporting keeps the hike locked for Sep 17-18 with the committee planning minimal terminal-rate guidance - deliberate opacity one week after the Fed decides and with the yen near 7-month highs. Anonymous-sourced scheduling days after a foreign government publicly pushed the bank remains a sovereignty-stress marker.",
+        "summary": "Anonymous BOJ-sourced reporting keeps the hike locked for Sep 18 with the committee planning minimal terminal-rate guidance - deliberate opacity two days after the Fed decides and with the yen at 7-month highs. Anonymous-sourced scheduling days after a foreign government publicly pushed the bank remains a sovereignty-stress marker.",
         "imminence": 6,
         "impact": 5,
-        "threads": [
-          "japan_yen",
-          "asian_contagion"
-        ],
+        "threads": ["japan_yen", "asian_contagion"],
         "confidence": "MEDIUM",
         "url": "https://www.reuters.com/world/asia-pacific/boj-set-lift-rates-next-week-offer-few-clues-terminal-sources-say-2026-09-11/"
       },
       {
         "id": "al-002",
-        "headline": "NEW: BOJ watchers see FOLLOW-UP HIKE BY JANUARY after the September move - survey shows forecast acceleration, pace faster than previously expected",
-        "source": "Bloomberg (Sep 11 survey)",
+        "headline": "CARRIED: BOJ watchers see FOLLOW-UP HIKE BY JANUARY after the September move - survey shows forecast acceleration, pace faster than previously expected",
+        "source": "Bloomberg (Sep 11 survey, carried)",
         "date": "2026-09-11",
-        "summary": "Economist survey consensus now anticipates the NEXT BOJ hike by January after the Sep 17-18 move - the tightening path is being repriced faster, compounding the Reuters 'terminal 1.75% faster than expected' reporting. For the carry-trade complex this shortens the horizon over which the unwind risk compounds.",
+        "summary": "Economist survey consensus anticipates the NEXT BOJ hike by January after the Sep 18 move - the tightening path is being repriced faster, compounding the 'terminal 1.75% faster than expected' reporting. For the carry-trade complex this shortens the horizon over which the unwind risk compounds.",
         "imminence": 6,
         "impact": 6,
-        "threads": [
-          "japan_yen"
-        ],
+        "threads": ["japan_yen"],
         "confidence": "HIGH",
         "url": "https://www.bloomberg.com/news/articles/2026-09-11/boj-watchers-see-follow-up-hike-by-january-after-september-move"
       },
       {
         "id": "al-003",
-        "headline": "CARRIED + EXTENDED: RBI intervention channel diversified - $8bn+ unload (bankers-say), streak extension (traders-say), FX-swap mop-up as support channel ($115bn surplus ops), ~$11bn diaspora-deposit bill; governor on record",
-        "source": "Reuters (Sep 7 $8bn; Sep 8 streak; Sep 10 FX-swaps mop-up) / Bloomberg (Sep 9 $115bn swaps; diaspora $11bn) / Reuters governor CNBC-TV18 (Sep 11) - carried",
+        "headline": "CARRIED + EXTENDED: RBI intervention channel diversified - $8bn+ unload (bankers-say), streak extension, FX-swap mop-up as support channel; record FY26 dollar sales $53.13bn spot with record forward book",
+        "source": "Reuters (Sep 7 $8bn; Sep 10 FX-swaps mop-up) / Bloomberg (Sep 9 $115bn swaps) / HinduBusinessLine (FY26 record $53.13bn spot, record net forward position) / Policy Circle (Sep 10, reserves test as Brent >$100) - carried",
         "date": "2026-09-10",
-        "summary": "Reserve-drain defense of the rupee in the 95.79-95.80 record-low regime continues through diversified channels: outright FX sales, an intervention streak, and now FX-swap mop-ups (reducing a $115bn cash surplus) while an ~$11bn diaspora-deposit liability adds a forward outflow. Defense is institutionalized, not spot.",
+        "summary": "Reserve-drain defense of the rupee in the 95.5-95.8 record-low regime continues through diversified channels, now quantified as the highest-ever FY26 dollar sales ($53.13bn spot) with a record outstanding net forward position. Defense is institutionalized, not spot; Brent >$100 is the standing test of the reserves cushion.",
         "imminence": 7,
         "impact": 6,
-        "threads": [
-          "asian_contagion"
-        ],
+        "threads": ["asian_contagion"],
         "confidence": "HIGH",
         "url": "https://www.reuters.com/world/india/india-rbis-liquidity-mop-up-via-fx-swaps-offers-channel-support-rupee-2026-09-10/"
       }
@@ -116,603 +99,446 @@
     "central_bank_communication": [
       {
         "id": "cb-001",
-        "headline": "FOMC t-2: hike odds consolidated ~90% (85-90% band) amid a STOCK RALLY and EASING YIELDS into the decision - risk assets pricing the hike as absorbed",
-        "source": "finance.biggo (Sep 12 07:25Z, 90%) / Motley Fool (Sep 11, 85%) / market.news (odds soar) - carried from CPI hot core +0.3%",
-        "date": "2026-09-12",
-        "summary": "Post-CPI, the September hike (Sep 15-16, t-2) is a ~90% base case - and unusually, equities are rallying and long-end yields easing INTO it. Markets treat the hike as absorbed news while the independence collision (vi-001) supplies the real tail risk. A hike with easing yields would mark the cycle's first 'hiked-with-relief' session; a hold would force violent repricing.",
+        "headline": "FOMC t-1: hike odds band PM ~80% / consensus 85-91% stands; the 'absorbed-hike' ease has REVERSED - equities futures lower at reopen on AI-de-rating + oil, stress building INTO the decision",
+        "source": "financefeeds (Sep 12, PM 79.5% vs FedWatch ~86%) / 0437Z breaking read (PM ~80%, consensus 85-91%) / CNBC 22:00Z reopen (futures fell on AI-safety warnings + oil gains) - carried + refreshed",
+        "date": "2026-09-13",
+        "summary": "FOMC Sep 15-16 (decision Wed) opens with the hike ~80-91% priced but the prior cycle's easing-yields/rally absorption leg reversed: SPX futures fell at the Sunday reopen (AI-safety warnings + oil +3%) and the AI-trade de-rating hit Tokyo Monday. The committee decides into a market that is no longer treating the hike as free. A hike over the president's objection stresses independence inside a burning bond market; a fold risks unanchoring expectations.",
         "imminence": 9,
         "impact": 8,
-        "threads": [
-          "us_recession",
-          "crypto_collapse"
-        ],
+        "threads": ["us_recession", "crypto_collapse"],
         "confidence": "HIGH",
-        "url": "https://finance.biggo.com/news/bb924a16-ce75-4536-b10d-be85179df83a"
+        "url": "https://financefeeds.com/fed-rate-hike-odds-polymarket-79-5-vs-cme-fedwatch-86/"
       },
       {
         "id": "cb-002",
-        "headline": "ESCALATED NUMERIC: German yield hits 17-YEAR HIGH as traders up ECB follow-up bets - selloff deepened after ECB executed 25bp to 2.50% and flagged Iran-war inflation; additional tightening teed up",
-        "source": "livemint (Sep 11, 17-year high) / Bloomberg (Sep 10, selloff deepens) / WSJ (Sep 10) / Scotiabank (Sep 10, 'tees up additional tightening') / tradingeconomics (Sep 11) - carried, numeric upgraded from 'highest since 2011'",
+        "headline": "CARRIED: German 10Y yield at 17-YEAR HIGH with ECB follow-up hikes priced - euro sovereign repricing standing, no fresh ECB leg in window",
+        "source": "livemint (Sep 11, carried) / ING (Aug 27, hawkish ECB not helping French OATs) / Gate News (Sep 7, 15-year highs TTF-linked) - carried",
         "date": "2026-09-11",
-        "summary": "The euro area's bond repricing hardened a rung: German yields reached a 17-year high (escalating the prior 'highest since 2011' marker) and desks price a NEW ECB hiking cycle after the bank hiked into a supply shock while warning the Iran war is fuelling inflation. Hiking into a selloff without a fragmentation backstop keeps the periphery-spread risk live.",
+        "summary": "The euro leg stands on carried evidence: German yields at 17-year highs after the ECB's Iran-war-inflation hike, markets pricing follow-ups beyond what economists expect, and hawkish-ECB pressure widening French OAT spreads. No fresh euro-area central-bank wire landed in the 24h window.",
         "imminence": 8,
-        "impact": 8,
-        "threads": [
-          "euro_crisis"
-        ],
-        "confidence": "HIGH",
-        "url": "https://www.livemint.com/market/german-yield-hits-17-year-high-as-traders-up-ecb-hike-bets-11789072150224.html"
+        "impact": 7,
+        "threads": ["euro_crisis"],
+        "confidence": "MEDIUM",
+        "url": "https://think.ing.com/articles/rates-spark-hawkish-ecb-not-helping-french-government-bonds/"
       },
       {
         "id": "cb-003",
-        "headline": "CARRIED: BOJ to raise rates to 1.25% this month, reach terminal 1.75% FASTER than expected (Reuters); Kyodo sources: 25bp at Sept meeting",
-        "source": "Reuters (Sep 9) / Kyodo (Sep 8) - carried",
+        "headline": "CARRIED: BOJ to raise rates to 1.25% on Sep 18, reach terminal 1.75% FASTER than expected (Reuters); market close to pricing a further 25bp by end-year",
+        "source": "Reuters (Sep 9, carried) / Kyodo sources (carried) / ING preview (Sep 11, money-market rates surged since June)",
         "date": "2026-09-09",
-        "summary": "The BOJ's scheduled action is double-sourced (Reuters+Kyodo): 25bp to 1.25% on Sep 17-18 with the terminal rate reached faster than markets previously priced. Combined with the Bloomberg follow-up-by-January survey (al-002), the pace dimension - not the direction - is where yen-thread risk is compounding.",
+        "summary": "The BOJ path is locked and steepening: 25bp to 1.25% on Sep 18 with terminal 1.75% repriced faster and a January follow-up in survey consensus. A faster Japanese normalization while the Fed hikes into an oil shock is the two-engine global tightening squeeze at the heart of the japan_yen and asian_contagion threads.",
         "imminence": 9,
         "impact": 7,
-        "threads": [
-          "japan_yen",
-          "asian_contagion"
-        ],
+        "threads": ["japan_yen", "asian_contagion"],
         "confidence": "HIGH",
         "url": "https://www.reuters.com/world/asia-pacific/boj-raise-rates-125-this-month-reach-175-faster-than-expected-2026-09-09/"
       },
       {
-        "id": "cb-005",
-        "headline": "CARRIED STATIC: PBOC reins in rising yuan as weak domestic demand clouds outlook - appreciation-resistance stance stands",
-        "source": "Reuters (Aug 31, carried)",
-        "date": "2026-08-31",
-        "summary": "Standing leg: China continues to slow the yuan's rally against a weak-domestic-demand backdrop - the appreciation-resistance posture that pairs with the recapitalization push (rc-001) and the credit-demand failure (rc-004). No fresh deterioration or improvement captured this cycle.",
-        "imminence": 5,
-        "impact": 5,
-        "threads": [
-          "china_collapse"
-        ],
+        "id": "cb-004",
+        "headline": "NEW: PBOC sets second consecutive weak-vs-model fix - parity 6.7698 vs Reuters-expected 6.7083 (prev 6.7743); depreciation tolerance at the margin while state-bank recap stands",
+        "source": "MNI (Sep 14 01:29Z, parity 6.7698) / investinglive (Sep 14 00:26Z, Reuters-expected 6.7083) - NEW, in-window",
+        "date": "2026-09-14",
+        "summary": "PBOC printed the daily parity at 6.7698, materially weaker than the Reuters model estimate (6.7083) for a second consecutive session - a counter-cyclical depreciation-allowing stance at the margin while the Y300bn state-bank/insurer recapitalization stands. Weak-vs-model fixes during a global risk-off + oil shock window signal Beijing prioritizing export competitiveness and bank-system support over currency stability.",
+        "imminence": 6,
+        "impact": 6,
+        "threads": ["china_collapse", "asian_contagion"],
         "confidence": "MEDIUM",
-        "url": "https://krro.com/2026/08/31/china-reins-in-rising-yuan-as-weak-domestic-demand-clouds-outlook/"
+        "url": "https://www.mnimarkets.com/articles/mni-pboc-sets-yuan-parity-lower-at-67698-mon-615percent-yy-1789349354912"
       }
     ],
     "geopolitical_posture": [
       {
         "id": "gp-001",
-        "headline": "FIRST MEASURED FLOW IMPACT: Bab el-Mandeb ship traffic HALVES (~15 crossings/day Friday, Kpler) as Houthi coastal takeover holds; AFP formalizes 'take over strait vital to global shipping'",
-        "source": "The National (Sep 12 08:25Z, Kpler data) / AFP (Sep 12 02:29) / Al Jazeera (Sep 11) / Reuters (Sep 10) / CNN (Sep 10, Mocha) / Politico (second route at risk) - carried consolidation + NEW measurement",
-        "date": "2026-09-12",
-        "summary": "The full-coast consolidation logged last cycle now has a measured flow consequence: transits halved to ~15/day with war-risk premiums in force. Hormuz (contested, US-facilitated transits) + Bab el-Mandeb (halved) + Petroline (shut) = the triple energy choke is now quantified on two of three legs. Asian and European trade routes absorb the reroute cost.",
+        "headline": "CARRIED + EXTENDED: Bab el-Mandeb traffic HALVED with the Houthi seizure of PERIM ISLAND named as the mechanism; takeover regionalized - bottleneck for Egypt, risk for Sudan/Somalia, leverage for Eritrea/Djibouti",
+        "source": "The National (Sep 12, halved + island seizure) / ua.news (Sep 12, Perim) / Al Jazeera (Sep 13, 'Red Sea nations watch' regionalization analysis) - carried + extended",
+        "date": "2026-09-13",
+        "summary": "The first measured flow impact of the Mandeb coastal takeover (traffic halved to ~15 crossings/day) now has its named mechanism - the Houthi seizure of Perim island guarding the strait - and a regionalization assessment: Egypt's bottleneck economics, Sudan/Somalia security exposure, and Red Sea littoral leverage shifting. The takeover is consolidating into a standing chokepoint regime, not a transient strike wave.",
         "imminence": 9,
         "impact": 9,
-        "threads": [
-          "middle_east_war",
-          "asian_contagion"
-        ],
+        "threads": ["middle_east_war", "asian_contagion"],
         "confidence": "HIGH",
-        "url": "https://www.thenationalnews.com/business/energy/2026/09/12/ship-traffic-in-bab-al-mandeb-strait-halves-as-houthis-seize-control-of-key-island/"
+        "url": "https://www.aljazeera.com/economy/2026/9/13/red-sea-nations-watch-as-houthis-seize-bab-al-mandeb-strait"
       },
       {
         "id": "gp-002",
-        "headline": "POST-WINDOW CATCH: Iranian commercial ship struck in Strait of Hormuz, ONE DEAD (authorities); attribution unclear - first reported fatality aboard a commercial vessel in the strait this window",
-        "source": "Independent (Sep 13 ~07:31Z live page) / Al Arabiya (Sep 13) / RTE (Sep 13) / Al-Monitor (Sep 12-13, 'fans fears of threats to oil supplies') - post-06:00Z Sep 13 capture (late fire)",
-        "date": "2026-09-13",
-        "summary": "An Iranian commercial vessel was struck in Hormuz with one reported death - attribution not yet established (US-side, Iranian-side, or insurgent unclear). The fatality raises the accident-escalation temperature inside the most contested chokepoint regardless of attribution; watch UKMTO and follow-up wires.",
-        "imminence": 8,
-        "impact": 8,
-        "threads": [
-          "middle_east_war"
-        ],
-        "confidence": "MEDIUM",
-        "url": "https://english.alarabiya.net/News/middle-east/2026/09/13/iran-authorities-say-one-dead-after-ship-struck-in-strait-of-hormuz"
+        "headline": "CARRIED + NUMERIC: Petroline remains shut; 'Saudi Arabia loses BOTH export corridors' framing lands as oil nears $108 - Red Sea route and east-west pipeline both disrupted",
+        "source": "stockwirex (Sep 14 01:16Z) / The National (Sep 14, 'oil nears $108 after Saudi Arabia shuts pipeline amid attacks') / Turkiye Today + Heraldo (Sep 12, carried) - carried + numeric",
+        "date": "2026-09-14",
+        "summary": "Saudi Arabia's two export corridors (Red Sea/Yanbu route via Mandeb waters and the east-west Petroline) are both disrupted, with Brent printing 107.6-108.2 into Monday. 'Both corridors' framing converts the pipeline shutdown from a single-asset event into a structural export-capacity question, with DBS estimating Yanbu at 5-7 days of cover.",
+        "imminence": 9,
+        "impact": 9,
+        "threads": ["middle_east_war", "us_recession"],
+        "confidence": "HIGH",
+        "url": "https://stockwirex.com/news/brent-crude-saudi-export-corridors-september-2026/"
       },
       {
         "id": "gp-003",
-        "headline": "DE-ESCALATION TRACK WITH HEADWIND: GCC-Iran-Iraq Oman talks confirmed Monday, but Trump 'sours on diplomacy'; Pakistan pressing both sides back to table",
-        "source": "Amwaj (Sep 11, 'as Trump sours on diplomacy') / The National (Sep 10, UN envoy on Pakistan mediation) - carried schedule + NEW headwind",
-        "date": "2026-09-11",
-        "summary": "Monday's Oman meeting remains the scheduled de-escalation catalyst, but the reporting now carries an explicit US-side headwind (Trump souring) plus a mediator track (Pakistan). Iran's explicit precondition (vi-002) further narrows the lane. Watch-only: scheduled catalyst, not executed tick.",
-        "imminence": 5,
-        "impact": 6,
-        "threads": [
-          "middle_east_war"
-        ],
-        "confidence": "MEDIUM",
-        "url": "https://amwaj.media/en/article/inside-story-gcc-iran-iraq-to-gather-in-oman-as-trump-sours-on-diplomacy"
+        "headline": "NEW: Salalah Iran-GCC Hormuz talks POSTPONED - no new date; Oman says 'conditions not right', Iran says 'at request of others' - first crack in the de-escalation track",
+        "source": "Reuters (Sep 13 23:02Z, 'Diplomacy stumbles') / NYT (Sep 13, diplomacy stalls) / Al Arabiya + Arab News (Sep 13 23:51Z) / The National (Sep 14 04:25Z, 'shelved') - NEW, multi-source confirmed",
+        "date": "2026-09-14",
+        "summary": "The Monday Sep 14 Salalah meeting on the Hormuz proposal - the scheduled de-escalation catalyst with the Iran-Oman routes pact to be presented - was postponed with NO new date. Oman cites 'conditions not right'; Iran claims it was 'at the request of others'. First crack in the de-escalation track: reopening now has no scheduled catalyst, and Brent +3%'d explicitly on the news. The reopening timeline is formally unanchored.",
+        "imminence": 9,
+        "impact": 9,
+        "threads": ["middle_east_war"],
+        "confidence": "HIGH",
+        "url": "https://www.reuters.com/business/energy/diplomacy-stumbles-with-postponement-meeting-strait-hormuz-proposal-2026-09-13/"
       },
       {
         "id": "gp-004",
-        "headline": "SUSTAINED + FRAMING ESCALATION: Petroline (East-West, 1,200km, up to 7M bpd design / 4-5M bpd normal flow) REMAINS SHUT with injuries reported; 'Mideast oil supplies cornered' as the Hormuz escape route sits dark",
-        "source": "Türkiye Today (Sep 12, 'supplies cornered') / Heraldo USA (Sep 12, remains closed + injuries) / Anadolu explainer (Sep 12, 7M bpd bypass route) / AInvest (Sep 12, spare-capacity 'mispriced domino') - carried shutdown + NEW framing",
-        "date": "2026-09-12",
-        "summary": "Saudi's overland Hormuz bypass remains closed days after the Iraqi-origin drone attack, with no restart announced and injuries now reported. Analysis legs frame global spare capacity as the next mispriced domino. With Hormuz contested and Bab el-Mandeb halved, every redundancy around the Gulf is dark - the supply corner is structural, not episodic.",
-        "imminence": 9,
-        "impact": 9,
-        "threads": [
-          "middle_east_war",
-          "us_recession",
-          "asian_contagion"
-        ],
-        "confidence": "HIGH",
-        "url": "https://www.turkiyetoday.com/business/mideast-oil-supplies-cornered-as-saudi-arabias-hormuz-escape-route-shuts-3227994"
+        "headline": "CARRIED + EXTENDED: Houthi-Saudi exchange continues overnight - Houthis claim fresh attacks on Saudi (AP); Yemen fighting intensifies with UN reporting >80,000 displaced since Sep 1 and civil-war risk",
+        "source": "AP via WTOP (Sep 13/14 overnight claims) / The Hindu (UN >80k displaced, civil-war risk) / Al Jazeera (Sep 13 00:24Z, Jazan projectile) / The Nation (Sep 14, Saudi base attack claim) - carried + extended",
+        "date": "2026-09-14",
+        "summary": "The Saudi front is sustained on both sides: overnight Houthi claims of new drone/missile attacks on Saudi bases and border regions, Saudi alerts issued and lifted, and a humanitarian ratchet (UN >80,000 displaced since Sep 1) with Yemen flagged as risking another full civil war. The war's ground dimension is widening even as Gulf mediation stalls.",
+        "imminence": 8,
+        "impact": 8,
+        "threads": ["middle_east_war"],
+        "confidence": "MEDIUM",
+        "url": "https://wtop.com/national/2026/09/iran-backed-houthis-in-yemen-claim-new-attacks-on-saudi-arabia/"
       },
       {
         "id": "gp-005",
-        "headline": "CARRIED DE-ESCALATION TICK: Hormuz escorted oil shipments RISING with US naval assistance; US-facilitated transits >10M bpd counter-narrative stands",
-        "source": "AP / Stars & Stripes (Sep 11, carried) / macro-event board (00:41Z) - carried",
-        "date": "2026-09-11",
-        "summary": "Standing counter-signal inside the blockade-management regime: US-facilitated escorted transits keep rising (>10M bpd claimed), partially normalizing flows even while the blockade regime persists. The tick keeps the middle_east_war thread two-sided: kinetic escalation up, escorted-flow normalization up.",
+        "headline": "CARRIED DE-ESCALATION TICK (untagged): Hormuz escorted oil shipments rising with US naval assistance; US-facilitated transits >10M bpd counter-narrative stands",
+        "source": "Naval Technology analyst comment / ENOC exec via Reuters (Sep 9, carried) - carried counter-narrative",
+        "date": "2026-09-09",
+        "summary": "The US-escort counter-narrative remains the live de-escalation leg: navy-escorted transits continue through Hormuz at scale despite the blockade regime, and ENOC confirms transit costs have escalated but flows persist. Logged untagged per v2.1 methodology (de-escalation ticks carry no thread tags).",
         "imminence": 4,
         "impact": 6,
-        "threads": [
-          "middle_east_war"
-        ],
+        "threads": [],
         "confidence": "MEDIUM",
-        "url": "https://www.thenationalnews.com/news/us/2026/09/10/pakistan-pressing-us-and-iran-to-return-to-negotiating-table-amid-renewed-strikes-un-envoy-says/"
+        "url": "https://www.reuters.com/world/middle-east/oil-vessel-transit-costs-through-hormuz-escalated-after-iran-war-enoc-exec-says-2026-09-09/"
       }
     ],
     "supply_chain_disruption": [
       {
         "id": "sc-001",
-        "headline": "CARRIED: Brent holds >$100 (~4th day; 104.61 Friday settle; first weekly settle >$100 since mid-May) under the triple energy choke",
-        "source": "Newsquawk (Sep 12 settle, carried) / whale scan weekend re-fetch (Friday closes unchanged, 4th identical print) - carried",
-        "date": "2026-09-12",
-        "summary": "Brent's >$100 regime persists (~88 hrs per board anchor) with WTI ~100 - priced straight off the Hormuz+Mandeb+Petroline triple choke. Weekend closes unchanged; FOMC t-2 and the Oman talks are the next repricing events.",
+        "headline": "CARRIED + UPGRADED NUMERIC: Brent 107.6-108.2 (+~3%) live, cycle high 109.01 ~1% away; Friday settle 104.61 was the first weekly settle >$100 in years; WTI ~103 - >$100 regime deepens on Petroline shut + Salalah postponement",
+        "source": "Yahoo quotes via 0437Z scan (Brent 107.63 +2.89%, 22:14Z print 108.23) / stockwirex (Sep 14 01:16Z) / The National (Sep 14) / NAMPA-RIA 107.77 - carried + upgraded",
+        "date": "2026-09-14",
+        "summary": "The oil shock stepped UP through the window: from the 104.61 Friday settle (first weekly close >$100 in years) to a 107.6-108.2 live band after the Salalah postponement, with the cycle high 109.01 only ~1% away and IG flagging $119.48 March-high risk unless talks/pipeline resolve. The supply shock is now compounding with the diplomatic track formally stalled - $100+ oil is the standing input to US inflation, euro energy costs, and Asian import bills into a double-central-bank decision week.",
         "imminence": 10,
         "impact": 9,
-        "threads": [
-          "middle_east_war",
-          "us_recession",
-          "asian_contagion",
-          "euro_crisis"
-        ],
+        "threads": ["middle_east_war", "us_recession", "asian_contagion", "euro_crisis"],
         "confidence": "HIGH",
-        "url": "https://www.reuters.com/business/energy/"
+        "url": "https://stockwirex.com/news/brent-crude-saudi-export-corridors-september-2026/"
       },
       {
         "id": "sc-002",
-        "headline": "CARRIED + NUMERIC: US diesel ~$6.05/GAL record; TTF European gas ~EUR 81/MWh, +145% YoY, highest since 2022 into low-inventory winter; Commerzbank sees further highs on Hormuz LNG squeeze",
-        "source": "nournews (Sep 10, '$6 diesel to EUR 80 gas') / AInvest (Sep 11, EUR 81 +145% YoY) / XTB (Sep 9, carried) / WSJ Commerzbank (carried) - carried + new numeric",
+        "headline": "CARRIED NUMERIC: US diesel ~$6.05/GAL record; TTF European gas ~EUR 81/MWh, +145% YoY - energy pass-through legs standing, no fresh print in window",
+        "source": "AInvest (Sep 11, TTF numeric) / briefs.co + Heraldo (Sep 12, diesel) / RBC BlueBay (Sep 4, TTF +140% from pre-war) - carried",
         "date": "2026-09-11",
-        "summary": "Refined-product and gas stress persists on both sides of the Atlantic: US diesel at a record ~$6.05 (freight/inflation pass-through channel) and TTF at ~EUR 81 (+145% YoY) with winter inventories low and Hormuz LNG squeezed. The energy-inflation input into ECB/Fed decisions stays binding.",
-        "imminence": 9,
-        "impact": 9,
-        "threads": [
-          "euro_crisis",
-          "us_recession"
-        ],
+        "summary": "The energy pass-through legs stand: record US diesel (transport/food inflation channel) and TTF ~EUR 81/MWh (+145% YoY) with Europe pricing to outcompete Asia for marginal LNG amid the prolonged Gulf disruption. No fresh European energy print landed in the window; the legs carry into the ECB-follow-up repricing.",
+        "imminence": 8,
+        "impact": 8,
+        "threads": ["euro_crisis", "us_recession"],
         "confidence": "HIGH",
-        "url": "https://www.ainvest.com/news/spread-henry-hub-ttf-real-story-2609/"
+        "url": "https://www.rbcbluebay.com/en-gb/institutional/what-we-think/insights/gas-discomfort/"
       },
       {
         "id": "sc-003",
-        "headline": "Asia route exposure deepens: Bab el-Mandeb capture 'could hit India hard' (Suez/Cape math); war-risk premiums + reroutes extend distances and insurance cost on Asian trade",
-        "source": "India Today (Sep 12) / carried premiums context (Kpler via The National; Saudi 75% reroute) - carried consolidation + NEW regional analysis",
+        "headline": "CARRIED: Asia route exposure deepens - Mandeb capture 'could hit India hard' (Suez/Cape math); reroutes extend distances and insurance cost across Asian trade",
+        "source": "The National + supplychain analyses (Sep 10-12, carried) / Al Jazeera (Sep 13, Egypt bottleneck + littoral risk) - carried",
         "date": "2026-09-12",
-        "summary": "Regional-impact analysis quantifies the Asian leg of the Mandeb takeover: India's Suez-dependent trade faces Cape reroute cost/insurance inflation exactly as the rupee defense (al-003) drains reserves. Asian contagion channel: energy import bills + trade-route costs rising together.",
+        "summary": "Asia-facing exposure stands: the Mandeb chokepoint regime (Perim seized, traffic halved) forces Cape reroutes that extend distances, insurance cost, and tonnage demand across Asian trade lanes, with India flagged as hardest-hit. With the rupee at record lows and the RBI defense institutionalized, the imported-energy bill is the pressure point.",
         "imminence": 7,
         "impact": 7,
-        "threads": [
-          "asian_contagion",
-          "middle_east_war"
-        ],
+        "threads": ["asian_contagion", "middle_east_war"],
         "confidence": "MEDIUM",
-        "url": "https://www.indiatoday.in/world/story/houthi-attack-saudi-arabia-bab-el-mandeb-strait-ansar-allah-yemen-suez-canal-iran-war-news-2992674-2026-09-12"
+        "url": "https://www.thenationalnews.com/business/energy/2026/09/12/ship-traffic-in-bab-al-mandeb-strait-halves-as-houthis-seize-control-of-key-island/"
       },
       {
         "id": "sc-004",
-        "headline": "CARRIED: war-risk premiums + Cape/Good-Hope and Saudi reroutes (75% of affected barrels) extend supply distances around the Mandeb chokepoint",
-        "source": "carried (prior-cycle wires; Saudi reroute 75% / selective blockade 'safe except Saudi vessels')",
-        "date": "2026-09-11",
-        "summary": "Standing reroute geometry: owners avoid the halved chokepoint, Saudi reroutes ~75% of affected barrels westbound, war-risk premiums price the selective blockade. The cost lands in European and Asian landed-energy prices with a lag - the inflation channel keeps compounding while the chokepoint stays closed.",
-        "imminence": 8,
-        "impact": 8,
-        "threads": [
-          "euro_crisis",
-          "middle_east_war",
-          "asian_contagion"
-        ],
-        "confidence": "HIGH",
-        "url": "https://www.aljazeera.com/news/2026/9/11/houthis-take-control-of-yemens-red-sea-coast-key-shipping-route"
+        "headline": "CARRIED: war-risk premiums + Cape/Good-Hope and Saudi reroutes (~75% of affected barrels) extend distances and insurance cost; Lloyd's-market P&I war-risk suspension at UKMTO critical tier stands",
+        "source": "prior scans (carried) / lowdown Lloyd's wrap (P&I cover withdrawn at UKMTO tier) - carried",
+        "date": "2026-09-12",
+        "summary": "The reroute-and-insure regime stands: ~75% of affected barrels rerouted via Cape or Saudi corridors, war-risk premiums elevated, and Lloyd's-market P&I war-risk cover formally withdrawn for Gulf vessels at the UKMTO critical tier - the financialization of the chokepoint regime that keeps effective supply tighter than headline flows suggest.",
+        "imminence": 7,
+        "impact": 7,
+        "threads": ["euro_crisis", "middle_east_war", "asian_contagion"],
+        "confidence": "MEDIUM",
+        "url": "https://www.thenationalnews.com/business/energy/2026/09/10/bab-al-mandeb-and-hormuz-ship-transits-plunge-as-war-intensifies/"
       }
     ],
     "regulatory_change": [
       {
         "id": "rc-001",
-        "headline": "CARRIED: China's $54bn (300bn-yuan special bonds) recap of eight state banks/insurers formalized - biggest recapitalization push in two decades; SCMP analysts: 'more needed' to reignite credit demand",
-        "source": "BBC (Sep 7) / moneycontrol (Sep 7, $45bn addition) / MarketScreener (300bn yuan) / SCMP (Sep 7, skepticism) / CNBC (Sep 7, credit demand weak) - carried",
-        "date": "2026-09-07",
-        "summary": "The recap is formal policy, but the analyst consensus holds it patches solvency, not demand - credit demand stays weak while state capital substitutes for private borrowing. Standing evidence for the china_collapse hand state (recap leg + credit-demand failure leg).",
-        "imminence": 7,
+        "headline": "CARRIED: China's $54bn (Y300bn special bonds) recap of eight state banks/insurers formalized - bank-system support standing while PBOC allows weaker fixes",
+        "source": "prior scans (Sep 7-8 wires, carried)",
+        "date": "2026-09-08",
+        "summary": "The biggest bank recapitalization in two decades stands formalized as the regulatory backbone of the China thread - bank/insurer shares initially slid on the news and 'limited short-term impact' framing persists amid weak credit demand. Combined with the second weak-vs-model parity fix, the regulatory posture is: save the banks, tolerate the currency.",
+        "imminence": 6,
         "impact": 6,
-        "threads": [
-          "china_collapse",
-          "asian_contagion"
-        ],
-        "confidence": "HIGH",
-        "url": "https://www.scmp.com/economy/china-economy/article/3366633/can-chinas-us54b-capital-injection-ease-financial-strains-analysts-say-more-needed"
+        "threads": ["china_collapse", "asian_contagion"],
+        "confidence": "MEDIUM",
+        "url": "carried:blackwatch-2026-09-13-0700#rc-001"
       },
       {
         "id": "rc-002",
-        "headline": "CARRIED EXECUTING: Iran doubled gasoline price for heaviest consumers (to $0.04/liter beyond subsidized quota) - rationing-style regulatory change driving strikes",
-        "source": "ontimebrief (Sep 11, AP wire) / Seoul Economic Daily (Sep 12) / NCRI (Sep 7, labor protests spread) - carried, executing",
-        "date": "2026-09-11",
-        "summary": "The fuel-price doubling is a war-financing regulatory move with immediate social consequence - strikes within days (su-001). Rationing-by-price under blockade conditions signals fiscal stress inside Iran and transfers the war cost onto the street.",
+        "headline": "CARRIED EXECUTING: Iran doubled gasoline price for heaviest consumers (to $0.04/liter beyond subsidized quota) - rationing-style regulatory change driving the strike wave",
+        "source": "prior scans (carried) / Seoul Economic Daily (Sep 12, gasoline prices DOUBLE amid prolonged war - driver detail)",
+        "date": "2026-09-12",
+        "summary": "The rationing-style price doubling for heavy consumers stands as the executing regulatory change inside Iran, now corroborated as the strike trigger by fresh reporting that gasoline prices have doubled amid the prolonged war. Regulatory scarcity management is converting directly into social unrest - the rc->su chain is live.",
         "imminence": 7,
         "impact": 7,
-        "threads": [
-          "middle_east_war"
-        ],
+        "threads": ["middle_east_war"],
         "confidence": "HIGH",
-        "url": "https://ontimebrief.com/en/2026/09/11/iran-doubles-some-gasoline-prices-triggering-strikes-by-drivers/"
+        "url": "https://en.sedaily.com/international/2026/09/12/iranian-drivers-strike-as-gasoline-prices-double-amid"
       },
       {
         "id": "rc-003",
-        "headline": "Private-credit regulatory backdrop: FSB vulnerabilities report (May) + Senate letters (May) + Bessent 'monitoring meetings' standing; in-window: private credit's pricing power fades as banks regain ground",
-        "source": "FSB (May 2026) / Senate Banking (May 2026) / webandit (Sep 12, low-grade) - carried backdrop + marginal in-window marker",
-        "date": "2026-09-12",
-        "summary": "The regulatory perimeter around private credit remains watch-listed (FSB report, congressional letters, Treasury monitoring) while market structure shifts: borrowers pivot back to banks as pricing power fades. No new rulemaking this window; backdrop stays live ahead of any stress spiral.",
+        "headline": "CARRIED: private-credit regulatory backdrop - FSB vulnerabilities report + Senate letters + Bessent 'monitoring meetings' standing; defaults at record with regulators shifted to vigilance",
+        "source": "prior scans (carried) / Fitch 2Q26 record + FT stress-signal coverage (Aug) - carried",
+        "date": "2026-09-11",
+        "summary": "The private-credit regulatory backdrop stands with Fitch's record default rate (~6%, new 2Q26 high) and FT-documented stress signals back at 2017 levels; regulators have moved from observation to vigilance. No fresh regulatory action in the window.",
         "imminence": 4,
         "impact": 5,
-        "threads": [
-          "us_recession"
-        ],
+        "threads": ["us_recession"],
         "confidence": "MEDIUM",
-        "url": "https://www.fsb.org/uploads/P060526.pdf"
+        "url": "carried:blackwatch-2026-09-13-0700#rc-003"
       },
       {
         "id": "rc-004",
-        "headline": "CARRIED STATIC: China credit-demand failure stands - August loans below forecast vintage; PBOC 'new normal' framing; Commerzbank: credit softness may spur easing",
-        "source": "CNBC (Sep 7, carried) / Commerzbank via TMGM (Aug 12, carried) / Caixin (Jul 16, carried) - carried",
-        "date": "2026-09-07",
-        "summary": "Standing leg: credit demand remains structurally weak despite the recap (rc-001) - state capital patches banks while borrowers abstain. The demand-failure leg of the china_collapse hand state is unchanged this cycle.",
+        "headline": "CARRIED STATIC: China credit-demand failure stands - August loans below forecast vintage; recap treats solvency symptoms, not demand",
+        "source": "prior scans (carried)",
+        "date": "2026-09-10",
+        "summary": "The demand-failure leg stands: loan growth below forecast with weak private credit demand, meaning the recap addresses solvency symptoms while the demand collapse persists - the structural core of the china_collapse thread.",
         "imminence": 5,
         "impact": 5,
-        "threads": [
-          "china_collapse"
-        ],
+        "threads": ["china_collapse"],
         "confidence": "MEDIUM",
-        "url": "https://www.cnbc.com/2026/09/07/china-state-banks-lenders-insurers-capital-solvency-bankrupt-nim-.html"
+        "url": "carried:blackwatch-2026-09-13-0700#rc-004"
       }
     ],
     "social_unrest": [
       {
         "id": "su-001",
-        "headline": "ESCALATED: Iran truckers' strike GROWS and wins support from prominent dissidents - AP warns it could grow into major anti-government protests; gasoline doubling is the trigger",
-        "source": "AP (Sep 12 vintage, 'grow and win support from prominent dissidents') / Seoul Economic Daily (Sep 12 x2) / ontimebrief (Sep 11) - carried executing + NEW escalation frame",
-        "date": "2026-09-12",
-        "summary": "The driver strikes have crossed from labor action to politically-endorsed movement risk: prominent dissidents publicly back the truckers and AP frames the escalation path to major anti-government protests. Iran now runs a war economy with an internally striked logistics layer - the homefront leg of middle_east_war risk is rising.",
+        "headline": "CARRIED: Iran truckers' strike GROWS and wins support from prominent dissidents - AP warns it could grow into major anti-government protests",
+        "source": "AP (carried) / The Independent (carried, Mohammadi/Panahi dissident backing)",
+        "date": "2026-09-13",
+        "summary": "The truckers' strike stands grown and dissident-backed (Narges Mohammadi lineage backing per AP/Independent), with AP's explicit warning it could grow into major anti-government protests. The gasoline-doubling trigger and war-economy scarcity keep the strike wave structurally fed while the Salalah postponement removes the diplomatic off-ramp.",
         "imminence": 7,
         "impact": 8,
-        "threads": [
-          "middle_east_war"
-        ],
+        "threads": ["middle_east_war"],
         "confidence": "HIGH",
         "url": "https://apnews.com/article/iran-truckers-protest-tehran-panahi-mohammadi-dissidents-64059c4e117f5e260e6bbe6cec1856bc"
       },
       {
         "id": "su-002",
-        "headline": "Gambia blackout protests continue: fresh overnight waves (Sep 10-11), vandalism/arson/looting logged, president urges calm, Senegal/Guinea import dependence in play",
-        "source": "Reuters (Sep 8) / BBC (Sep 9, urges calm) / The Point (Sep 9, vandalism/arson/looting) / Daily Trust (Sep 11, fresh protests) / Standard.gm (Sep 10, regional imports) - carried escalation",
-        "date": "2026-09-11",
-        "summary": "Energy-price unrest in The Gambia persists across consecutive nights with property destruction and a regional electricity-import angle. Context finding (untagged): the global energy-squeeze social tail is widening beyond headline economies.",
-        "imminence": 5,
-        "impact": 4,
-        "threads": [],
+        "headline": "CARRIED + EXTENDED: gasoline prices DOUBLED amid the prolonged war - the strike trigger is a war-economy scarcity regime spreading pain beyond truckers",
+        "source": "Seoul Economic Daily (Sep 12, drivers strike as gasoline doubles amid prolonged war) - carried + driver detail",
+        "date": "2026-09-12",
+        "summary": "Fuel scarcity is now the economy-wide strike driver: gasoline prices doubled amid the prolonged war, converting a labor dispute into a cost-of-living pressure wave with anti-government protest potential. The rc-002 rationing measure and this social consequence are two faces of the same scarcity regime.",
+        "imminence": 6,
+        "impact": 7,
+        "threads": ["middle_east_war"],
         "confidence": "MEDIUM",
-        "url": "https://dailytrust.com/fresh-protests-hit-gambia-over-power-cuts/"
+        "url": "https://en.sedaily.com/international/2026/09/12/iranian-drivers-strike-as-gasoline-prices-double-amid"
       },
       {
         "id": "su-003",
-        "headline": "CARRIED: Ebola record outbreak - infections top 7,000, seventh province (Sud-Ubangi, first western Congo), deaths >3,000 (government) / near 3,400 (Africa CDC carry); CDC MMWR field notes published",
-        "source": "Reuters (Sep 11, >7,000 + new province) / NBC (Sep 11 21:32Z) / CDC MMWR (Sep 10) / WHO DON617 - carried rungs",
-        "date": "2026-09-11",
-        "summary": "The Bundibugyo outbreak's numeric rungs stand: >7,000 cases across seven provinces with ~3,400 deaths and Africa CDC's 'spreading rapidly beyond its epicentre'. No new province or threshold captured this cycle - trajectory sustained, single-category formal ceiling unchanged.",
-        "imminence": 4,
-        "impact": 5,
-        "threads": [
-          "global_pandemic"
-        ],
+        "headline": "CARRIED + NUMERIC: Ebola worst-ever outbreak passes 7,000 cases (7,022) / 3,398 deaths across 7 provinces - Sud-Ubangi is the seventh and first western province",
+        "source": "Japan Times (Sep 14, passes 7,000) / HCNTimes (Sep 14, 7,022/3,398) / NBC (7th province, Sud-Ubangi) - carried + fresh numeric",
+        "date": "2026-09-14",
+        "summary": "The DRC Bundibugyo Ebola outbreak - the worst ever recorded - passes 7,022 registered cases with 3,398 deaths across seven provinces, including the first western-province spread (Sud-Ubangi). Containment continues to outrun; the pandemic thread's formal ceiling remains single-category.",
+        "imminence": 5,
+        "impact": 6,
+        "threads": ["global_pandemic"],
         "confidence": "HIGH",
-        "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/ebola-infections-top-7000-congo-virus-spreads-new-province-2026-09-11/"
+        "url": "https://www.japantimes.co.jp/news/2026/09/14/world/congo-ebola-7000-cases/"
       }
     ],
     "financial_stress_precursors": [
       {
         "id": "fs-001",
-        "headline": "Private-credit stress under the oil spike: defaults RISE with Fitch-tracked US private-credit defaults at ~6%; borrowers 'already on the edge' tested by $100+ oil; refinancing pressure builds",
-        "source": "CNBC (Sep 11, carried main-line) / briefs.co (Sep 11, Fitch ~6% figure - headline truncated in capture, MEDIUM on exact number) / AInvest (Sep 11) - carried + numeric",
+        "headline": "CARRIED: Fitch-tracked US private-credit defaults ~6% at record (2Q26 new high) with FT stress signals back at 2017 levels - oil-spike credit channel standing",
+        "source": "briefs.co (Sep 11, ~6% on the oil spike) / Fitch (2Q26 record) / FT via Financial Post (Aug 17, 2017-level stress) - carried",
         "date": "2026-09-11",
-        "summary": "The energy shock is now a private-credit solvency channel: defaults rising (Fitch-tracked ~6%), weakest middle-market borrowers squeezed by $100+ oil input costs and refinancing walls. The main-line coverage persists into a second cycle - the systemic-adjacent stress leg is no longer fringe.",
+        "summary": "Private-credit stress stands at records: Fitch's default rate at its 2Q26 high (~6%) with redemptions gated and regulator vigilance rising, and FT analysis placing stress signals at 2017 levels. The oil shock feeds the default channel directly (energy-linked borrowers first).",
         "imminence": 7,
         "impact": 7,
-        "threads": [
-          "us_recession"
-        ],
+        "threads": ["us_recession"],
         "confidence": "MEDIUM",
-        "url": "https://www.cnbc.com/2026/09/11/oil-private-credit-refinancing.html"
+        "url": "https://financialpost.com/financial-times/private-credit-under-strain-troubled-loans-swell"
       },
       {
         "id": "fs-002",
-        "headline": "Forward crypto cascade map: $394M of CEX longs at risk if BTC drops below $76,000 (Coinglass via Gate, Sep 13 07:13Z); 13.6K BTC flush already reset leverage; FOMC hike probability 'increasing by the day'",
-        "source": "Gate News (Sep 13 07:13Z) / ambcrypto (Sep 13, leverage reset) - NEW forward map + reset",
+        "headline": "CARRIED: forward crypto cascade map - $394M of CEX longs at risk if BTC drops below $76,000; 13.6K BTC leverage reset standing",
+        "source": "Gate/Coinglass map (Sep 13, carried) - carried",
         "date": "2026-09-13",
-        "summary": "Positioning risk is mapped forward: a sub-$76K print would cascade ~$394M of longs, while the earlier 13.6K-BTC flush already reset leverage. BTC ~77K weekend-carry. FOMC t-2 is the binary overhang - hike = liquidity headwind into a mapped liquidation shelf.",
+        "summary": "The forward cascade map stands: ~$394M of CEX longs sit at risk below $76,000 after the 13.6K BTC leverage reset. BTC ~77.1-77.6K is trading just above the trigger line into a risk-off FOMC week.",
         "imminence": 5,
-        "impact": 6,
-        "threads": [
-          "crypto_collapse"
-        ],
+        "impact": 5,
+        "threads": ["crypto_collapse"],
         "confidence": "MEDIUM",
-        "url": "https://www.gate.com/news/detail/bitcoin-liquidation-cascade-394m-long-positions-at-risk-if-btc-drops-below-24233061"
+        "url": "carried:blackwatch-2026-09-13-0700#fs-002"
       },
       {
         "id": "fs-003",
-        "headline": "TWO-SIDED liquidation regime: $684M SHORTS crushed in 24h (Sep 11 16:08Z) + post-CPI whipsaw $745M/24h ($76-79K range) + CPI-day $675M round-trip - forced flows elevated in both directions",
-        "source": "cryptobriefing (Sep 11, $684M shorts) / bingx (Sep 12 00:13Z, $745M) / cryptonewslive (Sep 12, $675M CPI-day) - carried + in-window",
-        "date": "2026-09-12",
-        "summary": "Crypto liquidations are firing on both sides of the book within 48 hours - short squeeze ($684M) then post-CPI whipsaw ($745M, $675M round-trip with BTC ending where it started). Volatility-without-direction: elevated forced flows, contained spot damage. FOMC is the next forced-flow catalyst.",
-        "imminence": 6,
-        "impact": 6,
-        "threads": [
-          "crypto_collapse"
-        ],
-        "confidence": "HIGH",
-        "url": "https://cryptobriefing.com/bitcoin-liquidations-684m-shorts-crushed/"
+        "headline": "CARRIED + UPDATED: weekend long-flush - $250M leveraged longs wiped on the weekend dip, open interest -2.65%, funding near baseline = leverage clearing without cascade",
+        "source": "CryptoSlate (weekend wrap, $250M longs / $38.7M BTC longs / OI -2.65%) - carried + updated",
+        "date": "2026-09-13",
+        "summary": "The two-sided liquidation regime has settled into deleveraging: the weekend dip wiped ~$250M of leveraged longs while open interest fell 2.65% and funding stayed near baseline - leverage clearing rather than rebuild. The cascade fuel is draining, which lowers near-term crypto_collapse rung risk even as the $76K trigger map stands.",
+        "imminence": 5,
+        "impact": 5,
+        "threads": ["crypto_collapse"],
+        "confidence": "MEDIUM",
+        "url": "https://cryptoslate.com/bitcoin-weekend-dip-wiped-out-250m-in-leveraged-long-traders-while-open-interest-weakens/"
       },
       {
         "id": "fs-004",
-        "headline": "CARRIED THRESHOLD: Japan reserves sub-$1T with ~70% in USTs - official-sector UST-selling channel structurally live; BOJ Sep 17-18 re-tests the intervention chest",
-        "source": "CryptoBriefing / Bloomberg via Japan Times / Reuters - carried threshold standing",
-        "date": "2026-09-09",
-        "summary": "The sub-$1T reserves threshold stands as the structural marker of the yen thread: every future yen-defense intervention draws down US Treasury holdings, mechanically coupling Japan's currency defense to US bond supply. BOJ decision t-5.",
+        "headline": "CARRIED THRESHOLD: Japan reserves sub-$1T with ~70% in USTs - official-sector UST-selling channel structurally live; BOJ Sep 18 re-tests the intervention chest",
+        "source": "Bloomberg via Japan Times / Reuters / CryptoBriefing (Sep 7, carried)",
+        "date": "2026-09-07",
+        "summary": "The structural channel stands: with reserves below $1T and ~70% in USTs, further yen-support intervention converts directly into UST selling pressure into a 5%-cusp Treasury market. The Sep 18 BOJ decision is the next test of whether hiking (rather than selling) carries the load.",
         "imminence": 8,
         "impact": 7,
-        "threads": [
-          "japan_yen",
-          "us_recession",
-          "asian_contagion"
-        ],
+        "threads": ["japan_yen", "us_recession", "asian_contagion"],
         "confidence": "HIGH",
         "url": "https://cryptobriefing.com/japan-forex-reserves-drop-yen-intervention/"
       },
       {
         "id": "fs-005",
-        "headline": "CARRIED: global bond rout leg - record foreign demand at 30Y auction YET yields surged; US10Y 4.975 cusp; Bund corroborated at 17-year high (cb-002); Bessent $6bn buyback disappointment standing",
-        "source": "carried (prior-cycle wires) / livemint (Sep 11, Bund corroboration)",
-        "date": "2026-09-11",
-        "summary": "The demand-supply paradox in USTs persists: record auction demand coexisting with surging yields - the market is absorbing official-sector selling (fs-004) and inflation repricing simultaneously. The rout leg keeps every central bank decision (FOMC t-2, ECB follow-through, BOJ t-5) high-variance.",
+        "headline": "CARRIED + UPGRADED NUMERIC: US10Y 4.975 at the 5.00 cusp (+20bp on the week, highest since 2023); Bloomberg Sep 13: 'A 5% Treasury Yield Is Raising New Risks for Markets, Economy'",
+        "source": "Bloomberg (Sep 13, 5% risks framing) / Moneycontrol (Sep 14, ~01:43Z, yields head toward 5%) / CNBC (Sep 10, 4.9% highest since 2023, carried) / 0437Z Yahoo read (4.975, +0.63%) - carried + upgraded",
+        "date": "2026-09-14",
+        "summary": "The global bond rout leg is one print from the psychological 5.00 break: US10Y at 4.975 with +20bp on the week, Bloomberg explicitly framing 5% as a new-risk threshold for markets and the economy, and the oil spike the named driver. A 5% 10Y inside a hike-into-oil-shock FOMC week is the stress-transmission spine for equities, private credit, and the AI-trade complex.",
         "imminence": 9,
         "impact": 9,
-        "threads": [
-          "japan_yen",
-          "us_recession",
-          "euro_crisis"
-        ],
+        "threads": ["us_recession", "japan_yen", "euro_crisis"],
         "confidence": "HIGH",
-        "url": "https://www.livemint.com/market/german-yield-hits-17-year-high-as-traders-up-ecb-hike-bets-11789072150224.html"
+        "url": "https://www.bloomberg.com/news/articles/2026-09-13/a-5-treasury-yield-is-raising-new-risks-for-markets-economy"
       },
       {
         "id": "fs-006",
-        "headline": "CARRIED: euro sovereign-stress leg - yields at multi-year/17-year highs, France>Italy inversion standing, BofA: investors 'regret' European/UK bond piling; ECB hiked into the selloff with no fragmentation backstop",
-        "source": "Reuters (Sep 10, carried) / livemint (Sep 11) / Gate News (carried) - carried",
+        "headline": "CARRIED: euro sovereign-stress leg - German yields 17-year high, France>Italy inversion, TTF-linked repricing standing",
+        "source": "livemint (Sep 11, carried) / stockwirex (Sep 6, France>Italy) / Gate News (Sep 7, 15-year highs) - carried",
         "date": "2026-09-11",
-        "summary": "Standing euro-area financial-stress leg: sovereign repricing to multi-decade extremes with a periphery inversion marker (France>Italy) and sell-side regret framing on European duration. The ECB's hike-into-selloff without a backstop keeps the fragmentation question formally open.",
+        "summary": "The euro sovereign-stress complex stands: German 10Y at a 17-year high with ECB follow-ups priced, the France>Italy inversion mainstreamed at debt-crisis spreads, and the gas-driven (TTF +145% YoY) inflation impulse forcing the repricing. No fresh euro leg in the window; composition-only cycle.",
         "imminence": 8,
         "impact": 8,
-        "threads": [
-          "euro_crisis"
-        ],
+        "threads": ["euro_crisis"],
+        "confidence": "MEDIUM",
+        "url": "https://stockwirex.com/analysis/france-italy-bond-yields-inversion-september-2026/"
+      },
+      {
+        "id": "fs-007",
+        "headline": "NEW: AI-trade de-rating lands in Tokyo - SoftBank -13/-14% (biggest drop in ~3 months; ~$64.6B OpenAI stake; IPO ruled out for 2026), Nikkei briefly <63,000, semis sold, SPX futures lower at reopen on AI-safety warnings + oil",
+        "source": "Bloomberg (Sep 14, SoftBank -13% after AI chiefs sound alarm) / TECHi (Sep 14 01:19Z, $64.6B OpenAI bet) / finance.biggo (Sep 14 02:05Z, Nikkei briefly <63,000, semis sold) / CNBC TV18 (Sep 14, -14%) - NEW, in-window",
+        "date": "2026-09-14",
+        "summary": "The AI-trade de-rating watch materialized in the first post-weekend session: SoftBank slid ~13% (Bloomberg: biggest drop in ~3 months) after Altman's statement that OpenAI's IPO 'will not happen in 2026' plus the Amodei/Altman/Musk AI-safety alarm; Nikkei briefly fell below 63,000 with semiconductor stocks sold across Tokyo and the HSI tech leg following. SPX futures fell at the 22:00Z reopen on the same AI-safety warnings plus oil gains. Single-name-led market dislocation feeding the FOMC-week risk-off channel - not yet systemic credit.",
+        "imminence": 8,
+        "impact": 8,
+        "threads": ["asian_contagion", "us_recession"],
         "confidence": "HIGH",
-        "url": "https://www.reuters.com/business/bond-yields-hit-multi-year-highs-traders-brace-new-ecb-rate-hike-cycle-2026-09-10/"
+        "url": "https://www.bloomberg.com/news/articles/2026-09-14/softbank-group-shares-fall-after-openai-ipo-delay-ai-warning"
       }
     ]
   },
   "convergence": {
-    "methodology": "raw_score = sum(imminence x impact) over tagged findings; convergence_score = min(100, round(raw x 0.17) + 5x(categories_beyond_2)); >=100 ACTIVE, >=50 DEVELOPING, else WATCH (formal layer). Hand layer (0-200 composite, confirmed-state rule) maintained separately in blackwatch-macro-event.json and untouched by this scan.",
+    "methodology": "raw_score = sum(imminence x impact) over tagged findings; convergence_score = min(100, round(raw x 0.17) + 5x(categories_beyond_2)); >=100 ACTIVE, >=50 DEVELOPING, else WATCH (formal layer). Hand layer (0-200 composite, confirmed-state rule) maintained separately in blackwatch-macro-event.json and untouched by this scan. De-escalation ticks carry no thread tags (v2.1).",
     "threads": {
       "us_recession": {
-        "findings": [
-          "vi-001",
-          "vi-003",
-          "cb-001",
-          "gp-004",
-          "sc-001",
-          "sc-002",
-          "rc-003",
-          "fs-001",
-          "fs-004",
-          "fs-005"
-        ],
-        "categories_represented": [
-          "verbal_intervention",
-          "central_bank_communication",
-          "geopolitical_posture",
-          "supply_chain_disruption",
-          "regulatory_change",
-          "financial_stress_precursors"
-        ],
-        "raw_score": 658,
+        "findings": ["vi-001", "vi-003", "cb-001", "gp-002", "sc-001", "sc-002", "rc-003", "fs-001", "fs-004", "fs-005", "fs-007"],
+        "categories_represented": ["verbal_intervention", "central_bank_communication", "geopolitical_posture", "supply_chain_disruption", "regulatory_change", "financial_stress_precursors"],
+        "raw_score": 705,
         "convergence_score": 100,
-        "score_breakdown": "vi-001(8x7=56) + vi-003(9x8=72) + cb-001(9x8=72) + gp-004(9x9=81) + sc-001(10x9=90) + sc-002(9x9=81) + rc-003(4x5=20) + fs-001(7x7=49) + fs-004(8x7=56) + fs-005(9x9=81) = 658 across 10 findings in 6 categories -> 658 x 0.17 = 111.86 -> 112 + 5x(6-2)=20 -> 132 -> capped at 100",
+        "score_breakdown": "vi-001(8x7=56) + vi-003(9x8=72) + cb-001(9x8=72) + gp-002(9x9=81) + sc-001(10x9=90) + sc-002(8x8=64) + rc-003(4x5=20) + fs-001(7x7=49) + fs-004(8x7=56) + fs-005(9x9=81) + fs-007(8x8=64) = 705 across 11 findings in 6 categories -> 705 x 0.17 = 119.85 -> 120 + 5x(6-2)=20 -> 140 -> capped at 100",
         "signal": "ACTIVE",
-        "assessment": "FORMAL capped 100, 3rd consecutive cycle. Rungs: hike odds consolidated ~90% amid a stock rally and easing yields INTO the decision (cb-001), Petroline remains shut ('supplies cornered' framing, gp-004), private-credit defaults rising with Fitch ~6% (fs-001). COUNTER-SIGNALS: equities rally + long-end easing into FOMC = hike treated as absorbed news; jobs beat + Hormuz escorted flows standing. Hand layer 200 MAXED ACTIVE held - formal cap is composition, not a confirmed hand state change. FOMC Sep 15-16 (t-2) is the swing event."
+        "assessment": "FORMAL capped 100, 4th consecutive cycle. Rungs: US10Y 4.975 at the 5.00 cusp with Bloomberg 'new risks' framing (fs-005), AI-trade de-rating lands in Tokyo pre-FOMC (fs-007), hike odds band PM ~80%/consensus 85-91% standing (cb-001), Brent >$107 supply shock into the decision (sc-001). COUNTER-SIGNAL SHIFT: the prior 'stock rally into the hike = absorbed' ease has REVERSED - futures lower at reopen, stress building INTO the decision. Hand layer 200 MAXED ACTIVE held. FOMC Sep 15-16 (decision Wed) is the swing event."
       },
       "middle_east_war": {
-        "findings": [
-          "vi-002",
-          "gp-001",
-          "gp-002",
-          "gp-003",
-          "gp-004",
-          "gp-005",
-          "sc-001",
-          "sc-003",
-          "sc-004",
-          "rc-002",
-          "su-001"
-        ],
-        "categories_represented": [
-          "verbal_intervention",
-          "geopolitical_posture",
-          "supply_chain_disruption",
-          "regulatory_change",
-          "social_unrest"
-        ],
-        "raw_score": 630,
+        "findings": ["vi-002", "gp-001", "gp-002", "gp-003", "gp-004", "sc-001", "sc-003", "sc-004", "rc-002", "su-001", "su-002"],
+        "categories_represented": ["verbal_intervention", "geopolitical_posture", "supply_chain_disruption", "regulatory_change", "social_unrest"],
+        "raw_score": 684,
         "convergence_score": 100,
-        "score_breakdown": "vi-002(6x7=42) + gp-001(9x9=81) + gp-002(8x8=64) + gp-003(5x6=30) + gp-004(9x9=81) + gp-005(4x6=24) + sc-001(10x9=90) + sc-003(7x7=49) + sc-004(8x8=64) + rc-002(7x7=49) + su-001(7x8=56) = 630 across 11 findings in 5 categories -> 630 x 0.17 = 107.10 -> 107 + 5x(5-2)=15 -> 122 -> capped at 100",
+        "score_breakdown": "vi-002(6x7=42) + gp-001(9x9=81) + gp-002(9x9=81) + gp-003(9x9=81) + gp-004(8x8=64) + sc-001(10x9=90) + sc-003(7x7=49) + sc-004(7x7=49) + rc-002(7x7=49) + su-001(7x8=56) + su-002(6x7=42) = 684 across 11 findings in 5 categories -> 684 x 0.17 = 116.28 -> 116 + 5x(5-2)=15 -> 131 -> capped at 100",
         "signal": "ACTIVE",
-        "assessment": "FORMAL capped 100, 7th consecutive cycle. In-window rungs: Bab el-Mandeb traffic HALVED - first measured flow impact (gp-001), Petroline remains shut + 'supplies cornered' framing (gp-004), Iran trucker strike wins dissident backing (su-001), Pezeshkian explicit Hormuz precondition (vi-002), POST-WINDOW: Iranian commercial ship struck in Hormuz, one dead, attribution unclear (gp-002). DE-ESCALATION WATCH: Monday Oman talks confirmed but Trump sours (gp-003) + escorted flows rising (gp-005). Hand layer holds 200 SUSTAINED CAT-5 (month 6+); breaking scanner delivered the window's rung Telegrams through 00:37Z Sep 13 (quiet-weekend corroboration cycle, no new rungs). KEY VECTORS: FOMC t-2, BOJ t-5, Monday Oman talks, ship-strike attribution, zone coordinates still pending."
+        "assessment": "FORMAL capped 100, 8th consecutive cycle. In-window rungs: Salalah Iran-GCC Hormuz talks POSTPONED, no new date - first crack in the de-escalation track (gp-003), 'Saudi loses BOTH export corridors' + oil nears $108 (gp-002/sc-001), Houthi overnight attack claims + UN >80k displaced + Yemen civil-war risk (gp-004), Mandeb/Perim regime regionalized (gp-001), gasoline-doubling driver feeding the strike wave (rc-002/su-002). DE-ESCALATION WATCH: no talks scheduled = no reopening catalyst this week; escorted flows counter-narrative standing (untagged). Hand layer 200 MAXED SUSTAINED (month 6+); breaking scanners delivered the window's rung Telegrams through 04:37Z Sep 14. KEY VECTORS: FOMC decision Wed Sep 16, BOJ Sep 18, new Salalah date TBD, ship-strike attribution."
       },
       "japan_yen": {
-        "findings": [
-          "vi-003",
-          "vi-004",
-          "al-001",
-          "al-002",
-          "cb-003",
-          "fs-004",
-          "fs-005"
-        ],
-        "categories_represented": [
-          "verbal_intervention",
-          "anonymous_leaks",
-          "central_bank_communication",
-          "financial_stress_precursors"
-        ],
+        "findings": ["vi-003", "vi-004", "al-001", "al-002", "cb-003", "fs-004", "fs-005"],
+        "categories_represented": ["verbal_intervention", "anonymous_leaks", "central_bank_communication", "financial_stress_precursors"],
         "raw_score": 394,
         "convergence_score": 77,
         "score_breakdown": "vi-003(9x8=72) + vi-004(8x7=56) + al-001(6x5=30) + al-002(6x6=36) + cb-003(9x7=63) + fs-004(8x7=56) + fs-005(9x9=81) = 394 across 7 findings in 4 categories -> 394 x 0.17 = 66.98 -> 67 + 5x(4-2)=10 -> 77",
         "signal": "DEVELOPING",
-        "assessment": "FORMAL 77 (from 79, -2 composition despite a NEW leg). NEW: Bloomberg survey has the follow-up BOJ hike by January after the September move - the pace dimension is repricing faster (al-002), compounding the locked Sep 17-18 hike (cb-003/al-001). Masu rapid-hike warning leg not re-captured this cycle (composition dip). Reserves sub-$1T + UST-funding channel stands (vi-003/fs-004). Hand 100 ACTIVE held - formal drift is composition, not a confirmed hand state change. BOJ decision t-5, five days after FOMC."
+        "assessment": "DEVELOPING 77 (static composition). BOJ t-4 (Sep 18) with the 1.25% hike locked, terminal 1.75% repriced faster, January follow-up in survey consensus, yen ~153.97, reserves sub-$1T UST channel standing. No fresh in-window legs; the decision itself is the next rung trigger. Hand layer 100 ACTIVE held - formal dip below 100 is composition, not a confirmed hand-state change."
       },
       "asian_contagion": {
-        "findings": [
-          "vi-003",
-          "al-001",
-          "al-003",
-          "cb-003",
-          "gp-001",
-          "gp-004",
-          "sc-001",
-          "sc-003",
-          "sc-004",
-          "rc-001",
-          "fs-004"
-        ],
-        "categories_represented": [
-          "verbal_intervention",
-          "anonymous_leaks",
-          "central_bank_communication",
-          "geopolitical_posture",
-          "supply_chain_disruption",
-          "regulatory_change",
-          "financial_stress_precursors"
-        ],
-        "raw_score": 670,
+        "findings": ["vi-003", "al-001", "al-003", "cb-003", "cb-004", "gp-001", "sc-001", "sc-003", "sc-004", "rc-001", "fs-004", "fs-007"],
+        "categories_represented": ["verbal_intervention", "anonymous_leaks", "central_bank_communication", "geopolitical_posture", "supply_chain_disruption", "regulatory_change", "financial_stress_precursors"],
+        "raw_score": 632,
         "convergence_score": 100,
-        "score_breakdown": "vi-003(9x8=72) + al-001(6x5=30) + al-003(7x6=42) + cb-003(9x7=63) + gp-001(9x9=81) + gp-004(9x9=81) + sc-001(10x9=90) + sc-003(7x7=49) + sc-004(8x8=64) + rc-001(7x6=42) + fs-004(8x7=56) = 670 across 11 findings in 7 categories -> 670 x 0.17 = 113.90 -> 114 + 5x(7-2)=25 -> 140 -> capped at 100",
+        "score_breakdown": "vi-003(9x8=72) + al-001(6x5=30) + al-003(7x6=42) + cb-003(9x7=63) + cb-004(6x6=36) + gp-001(9x9=81) + sc-001(10x9=90) + sc-003(7x7=49) + sc-004(7x7=49) + rc-001(6x6=36) + fs-004(8x7=56) + fs-007(8x8=64) = 632 across 12 findings in 7 categories -> 632 x 0.17 = 107.44 -> 107 + 5x(7-2)=25 -> 132 -> capped at 100",
         "signal": "ACTIVE",
-        "assessment": "FORMAL capped 100, 5th consecutive cycle. Rungs: Mandeb transits halved hitting Asian trade (gp-001/sc-003 India-impact analysis), Petroline shut removes Gulf redundancy (gp-004), RBI defense institutionalized across channels (al-003), Japan reserves sub-$1T (fs-004). DIVERGENCE NOTE: hand-assessment layer holds asian_contagion at 100 composite / DEVELOPING signal - won/peso/rupee stress remains idiosyncratic divergence (central banks defending individually), not confirmed broad contagion. Formal cap is a category-diversity bonus, not a confirmed hand state change; hand layer remains authoritative (Sep 8 precedent).",
-        "formal_state_note": "formal ACTIVE (capped) 5th cycle vs hand DEVELOPING - divergence logged 5th consecutive cycle, no hand upgrade without confirmed-state evidence"
-      },
-      "crypto_collapse": {
-        "findings": [
-          "cb-001",
-          "fs-002",
-          "fs-003"
-        ],
-        "categories_represented": [
-          "central_bank_communication",
-          "financial_stress_precursors"
-        ],
-        "raw_score": 138,
-        "convergence_score": 23,
-        "score_breakdown": "cb-001(9x8=72) + fs-002(5x6=30) + fs-003(6x6=36) = 138 across 3 findings in 2 categories -> 138 x 0.17 = 23.46 -> 23 + 5x(2-2)=0 -> 23",
-        "signal": "WATCH",
-        "assessment": "FORMAL 23 (from 29, -6 composition despite hotter inputs - two-category ceiling). Two-sided liquidation regime logged: $684M shorts crushed + $745M post-CPI whipsaw + $675M CPI-day round-trip (fs-003), forward cascade map $394M longs below $76K with leverage already reset by a 13.6K BTC flush (fs-002). Volatility without direction; BTC ~77K weekend-carry; FOMC t-2 is the overhang. Hand 40 WATCH held."
+        "assessment": "FORMAL capped 100, 6th consecutive cycle. Rungs: Tokyo AI-de-rating session - SoftBank -13%, Nikkei briefly <63,000, semis sold (fs-007), PBOC second consecutive weak-vs-model fix 6.7698 vs 6.7083 expected (cb-004), Mandeb Asia-route exposure + RBI institutionalized defense + Japan reserves sub-$1T standing. Divergence-not-contagion framing (strong won, RBI cushion) still holds at hand layer: DEVELOPING 100 held, no confirmed hand-state change."
       },
       "euro_crisis": {
-        "findings": [
-          "cb-002",
-          "sc-001",
-          "sc-002",
-          "sc-004",
-          "fs-005",
-          "fs-006"
-        ],
-        "categories_represented": [
-          "central_bank_communication",
-          "supply_chain_disruption",
-          "financial_stress_precursors"
-        ],
-        "raw_score": 444,
-        "convergence_score": 80,
-        "score_breakdown": "cb-002(8x8=64) + sc-001(10x9=90) + sc-002(9x9=81) + sc-004(8x8=64) + fs-005(9x9=81) + fs-006(8x8=64) = 444 across 6 findings in 3 categories -> 444 x 0.17 = 75.48 -> 75 + 5x(3-2)=5 -> 80",
+        "findings": ["cb-002", "sc-001", "sc-002", "sc-004", "fs-005", "fs-006"],
+        "categories_represented": ["central_bank_communication", "supply_chain_disruption", "financial_stress_precursors"],
+        "raw_score": 404,
+        "convergence_score": 74,
+        "score_breakdown": "cb-002(8x7=56) + sc-001(10x9=90) + sc-002(8x8=64) + sc-004(7x7=49) + fs-005(9x9=81) + fs-006(8x8=64) = 404 across 6 findings in 3 categories -> 404 x 0.17 = 68.68 -> 69 + 5x(3-2)=5 -> 74",
         "signal": "DEVELOPING",
-        "assessment": "FORMAL 80 (from 94, -14 composition). ESCALATION RUNG RETAINED: German yield hit a 17-YEAR high with ECB follow-up tightening priced (cb-002) - upgrading the 'highest since 2011' marker. Composition dip drivers: fewer distinct euro legs captured in the weekend window (6 vs 7) and no fresh ECB-communication leg beyond the Sep 10 decision cluster. Underlying stack unchanged: Bund 17-year high + TTF EUR 81 (+145% YoY) into low-inventory winter + reroute premiums + France>Italy inversion. Hand 100 ACTIVE held; formal dip is capture composition, not de-escalation. Watch: ECB follow-through communication + periphery spreads."
+        "assessment": "DEVELOPING 74 (-6 composition). No fresh euro legs in the window; TTF ~EUR 81/MWh (+145% YoY), Bund 17-year highs, France>Italy inversion, ECB follow-up pricing all carried. The oil shock (sc-001) keeps the energy-inflation channel live into the ECB-follow-up repricing. Hand layer 100 ACTIVE held - formal dip is composition, not a confirmed hand-state change."
       },
       "china_collapse": {
-        "findings": [
-          "cb-005",
-          "rc-001",
-          "rc-004"
-        ],
-        "categories_represented": [
-          "central_bank_communication",
-          "regulatory_change"
-        ],
-        "raw_score": 92,
+        "findings": ["cb-004", "rc-001", "rc-004"],
+        "categories_represented": ["central_bank_communication", "regulatory_change"],
+        "raw_score": 97,
         "convergence_score": 16,
-        "score_breakdown": "cb-005(5x5=25) + rc-001(7x6=42) + rc-004(5x5=25) = 92 across 3 findings in 2 categories -> 92 x 0.17 = 15.64 -> 16 + 5x(2-2)=0 -> 16",
+        "score_breakdown": "cb-004(6x6=36) + rc-001(6x6=36) + rc-004(5x5=25) = 97 across 3 findings in 2 categories -> 97 x 0.17 = 16.49 -> 16",
         "signal": "WATCH",
-        "assessment": "FORMAL 16 (from 24, -8 composition) - recap formalized + 'more needed' skepticism standing (rc-001), PBOC appreciation-resistance static (cb-005), credit-demand failure static (rc-004). No fresh China deterioration or improvement captured this cycle; two-category ceiling binds. Hand 120 ACTIVE held - hand layer stands on confirmed evidence (recap leg + credit-demand failure); formal dip is capture composition, not de-escalation."
+        "assessment": "WATCH 16 (static). The fresh weak-vs-model parity fix (cb-004) is the new leg; recap formalization + credit-demand failure carried. Two-category formal ceiling. Hand layer went ACTIVE 120 on the 04:52Z Sep 14 hand assessment - formal divergence logged, no confirmed-state wipe from the formal layer."
+      },
+      "crypto_collapse": {
+        "findings": ["cb-001", "fs-002", "fs-003"],
+        "categories_represented": ["central_bank_communication", "financial_stress_precursors"],
+        "raw_score": 122,
+        "convergence_score": 21,
+        "score_breakdown": "cb-001(9x8=72) + fs-002(5x5=25) + fs-003(5x5=25) = 122 across 3 findings in 2 categories -> 122 x 0.17 = 20.74 -> 21",
+        "signal": "WATCH",
+        "assessment": "WATCH 21 (-2). $250M weekend long-flush with OI -2.65% and funding near baseline = leverage clearing without cascade; $394M trigger map below $76K stands with BTC ~77.1-77.6K just above the line into a risk-off FOMC week. Two-category ceiling."
       },
       "global_pandemic": {
-        "findings": [
-          "su-003"
-        ],
-        "categories_represented": [
-          "social_unrest"
-        ],
-        "raw_score": 20,
-        "convergence_score": 3,
-        "score_breakdown": "su-003(4x5=20) = 20 across 1 findings in 1 categories -> 20 x 0.17 = 3.40 -> 3 + 5x(1-2)=0 -> 3",
+        "findings": ["su-003"],
+        "categories_represented": ["social_unrest"],
+        "raw_score": 30,
+        "convergence_score": 5,
+        "score_breakdown": "su-003(5x6=30) = 30 across 1 finding in 1 category -> 30 x 0.17 = 5.1 -> 5",
         "signal": "WATCH",
-        "assessment": "FORMAL 3 (static; single-category ceiling). Ebola rungs carried: >7,000 cases, 7th province Sud-Ubangi, deaths >3,000 (government) / ~3,400 (Africa CDC carry), CDC MMWR field notes published. No new province or threshold this cycle. Hand 40 DEVELOPING held - the hand layer carries the outbreak trajectory; formal score cannot express it without cross-category convergence."
+        "assessment": "WATCH 5 (+2). Ebola worst-ever outbreak passes 7,022 cases / 3,398 deaths across 7 provinces (fresh Sep 14 numerics, first western province Sud-Ubangi); single-category formal ceiling. Hand layer DEVELOPING 40 held."
       }
     }
   },
   "previous_scan_comparison": {
-    "reference": "blackwatch-2026-09-12-0700 (Sep 12 06:00Z)",
+    "reference": "blackwatch-2026-09-13-0700 (Sep 13 06:00Z)",
     "formal_layer_deltas": {
-      "middle_east_war": "100 -> 100 capped (7th cycle; +Mandeb traffic halved measurement, +Pezeshkian explicit precondition, +Trump-sours headwind to Oman talks, +Petroline remains-shut sustainment, +post-window ship-strike fatality)",
-      "us_recession": "100 -> 100 capped (3rd cycle; +odds ~90% consolidation amid stock rally, +Fitch ~6% private-credit numeric, +Petroline cornered framing)",
-      "asian_contagion": "100 -> 100 capped (5th cycle; +Mandeb halved Asia-route impact, +RBI channel diversification detail, +India-impact analysis)",
-      "euro_crisis": "94 -> 80 (-14 composition; +German 17-year-high numeric retained; fewer distinct legs + no fresh ECB-communication leg in weekend window; hand 100 ACTIVE held)",
-      "japan_yen": "79 -> 77 (-2 composition; +Bloomberg follow-up-by-January survey NEW; Masu leg not re-captured; hand 100 ACTIVE held)",
-      "crypto_collapse": "29 -> 23 (-6 composition despite two-sided liq regime + forward cascade map; two-category ceiling)",
-      "china_collapse": "24 -> 16 (-8 composition; recap + skepticism + demand-failure legs standing; no fresh legs)",
-      "global_pandemic": "3 -> 3 (static; Ebola rungs carried)"
+      "middle_east_war": "100 -> 100 capped (8th cycle; +Salalah postponement no-new-date = de-escalation crack; +Brent 107.6-108.2 near cycle high with 'both export corridors' framing; +Houthi overnight attack claims + UN >80k displaced; +gasoline-doubling driver detail)",
+      "us_recession": "100 -> 100 capped (4th cycle; +US10Y 4.975 5.00-cusp with Bloomberg Sep 13 'new risks' framing; +NEW AI-de-rating Tokyo leg (SoftBank -13%, Nikkei briefly <63,000) REVERSING the pre-FOMC counter-narrative; odds band PM ~80%/consensus 85-91% standing)",
+      "asian_contagion": "100 -> 100 capped (6th cycle; +SoftBank/Nikkei Tokyo leg, +PBOC second weak-vs-model fix 6.7698 vs 6.7083 expected)",
+      "euro_crisis": "80 -> 74 (-6 composition; no fresh euro legs in the window; TTF/Bund 17-yr high/France>Italy carried; hand 100 ACTIVE held)",
+      "japan_yen": "77 -> 77 (static; BOJ t-4 with hike locked, yen ~153.97; no fresh in-window legs; hand 100 ACTIVE held)",
+      "crypto_collapse": "23 -> 21 (-2; $250M weekend long-flush + OI -2.65% = deleveraging without cascade; two-category ceiling)",
+      "china_collapse": "16 -> 16 (PBOC weak-vs-model fix is the fresh leg; recap + skepticism + demand-failure carried; hand 120 ACTIVE held)",
+      "global_pandemic": "3 -> 5 (+2; Ebola passes 7,022 cases/3,398 deaths; single-category formal ceiling)"
     },
     "new_rungs_this_cycle": [
-      "German 10Y yield hits 17-YEAR HIGH as traders up ECB follow-up bets (livemint Sep 11) - numeric escalation from 'highest since 2011'",
-      "Bloomberg survey: BOJ watchers see FOLLOW-UP HIKE BY JANUARY after September move (Sep 11) - pace repricing faster",
-      "FOMC t-2: hike odds consolidated ~90% amid a STOCK RALLY and easing yields into the decision (biggo Sep 12)",
-      "FIRST MEASURED FLOW IMPACT of the Mandeb coastal takeover: ship traffic HALVED to ~15 crossings/day Friday (Kpler via The National, Sep 12)",
-      "Pezeshkian ties Hormuz reopening to END OF US BLOCKADE - explicit Iranian precondition on the de-escalation track (Iran Intl Sep 12)",
-      "Trump sours on diplomacy while GCC-Iran-Iraq Oman talks confirmed Monday (Amwaj Sep 11); Pakistan pressing both sides (The National Sep 10)",
-      "Petroline REMAINS SHUT with injuries reported; 'Mideast oil supplies cornered' framing (Turkiye Today Sep 12, Heraldo Sep 12)",
-      "TTF ~EUR 81/MWh, +145% YoY numeric logged (AInvest Sep 11); US diesel ~$6.05 record standing",
-      "Fitch-tracked US private-credit defaults ~6% on the oil spike (briefs.co Sep 11, figure MEDIUM - truncated capture)",
-      "Iran truckers' strike GROWS + wins prominent dissident support; AP: could grow into major anti-government protests (AP)",
-      "Crypto TWO-SIDED liquidation regime: $684M shorts crushed (Sep 11) + $745M post-CPI whipsaw + $675M CPI-day round-trip; NEW forward map $394M longs at risk below $76K (Gate Sep 13) after 13.6K BTC leverage reset",
-      "POST-WINDOW CATCH: Iranian commercial ship struck in Hormuz, ONE DEAD, attribution unclear (Sep 13 ~07:31Z, late-fire capture)"
+      "Salalah Iran-GCC Hormuz talks POSTPONED, no new date - first crack in the de-escalation track (Reuters Sep 13 23:02Z 'Diplomacy stumbles' / NYT / Al Arabiya / The National 'conditions not right' Sep 14 04:25Z)",
+      "Brent 107.6-108.2 (+~3%) near cycle high 109.01; 'Saudi Arabia loses BOTH export corridors' framing; oil nears $108 after Petroline shut (stockwirex Sep 14 01:16Z, The National Sep 14)",
+      "US10Y 4.975 at the 5.00 cusp; Bloomberg Sep 13: 'A 5% Treasury Yield Is Raising New Risks for Markets, Economy'; +20bp on the week, highest since 2023",
+      "AI-trade de-rating lands in Tokyo: SoftBank -13/-14% (biggest drop ~3 months, $64.6B OpenAI stake, IPO ruled out for 2026), Nikkei briefly <63,000, semis sold, SPX futures lower on AI-safety warnings (Bloomberg/TECHi/biggo Sep 14)",
+      "PBOC second consecutive weak-vs-model fix: parity 6.7698 vs Reuters-expected 6.7083 (MNI Sep 14 01:29Z / investinglive 00:26Z) - depreciation tolerance at the margin",
+      "Houthi overnight claims of fresh attacks on Saudi (AP Sep 13/14); UN >80,000 displaced since Sep 1 with Yemen civil-war risk (The Hindu)",
+      "Mandeb takeover regionalized: Al Jazeera Sep 13 analysis - bottleneck for Egypt, risk for Sudan/Somalia, leverage for Eritrea/Djibouti; Perim island seizure named as the halving mechanism",
+      "Weekend crypto long-flush: $250M leveraged longs wiped, OI -2.65%, funding near baseline (CryptoSlate)",
+      "Ebola worst-ever outbreak passes 7,000 cases (7,022) / 3,398 deaths (Japan Times/HCNTimes Sep 14)"
     ],
     "deescalation_ticks": [
-      "Hormuz escorted flows rising with US naval assistance; US-facilitated transits >10M bpd counter-narrative (carried tick)",
-      "GCC-Iran-Iraq Oman talks Monday confirmed (scheduled catalyst, not executed; headwind: Trump souring)",
-      "Crypto leverage RESET: 13.6K BTC flush resets leverage - less cascade fuel into FOMC (ambcrypto Sep 13)",
-      "Stocks rallying + long-end yields easing INTO a ~90%-priced hike - market stress easing at the margin pre-FOMC"
+      "Salalah postponement is double-edged: no near-term talks also means no forced reopening-decision catalyst this week (logged primarily as an escalation crack)",
+      "Hormuz escorted flows rising with US naval assistance; US-facilitated transits >10M bpd counter-narrative standing (carried tick)",
+      "Crypto deleveraging calm: funding near baseline, OI -2.65% - leverage clearing without cascade",
+      "PBOC fix marginally STRONGER day-over-day (6.7698 vs prev 6.7743) even as it prints weak-vs-models"
     ]
   },
-  "late_fire_note": "Scheduled 07:00 IST (06:00Z); run executed ~10:09 IST. Window anchored to the scheduled cycle (ended 06:00Z); Sep 13 06:00-09:09Z wires captured opportunistically (gp-002 ship strike flagged POST-WINDOW CATCH). No double-count vs the 00:37Z Sep 13 breaking scan (quiet-weekend corroboration, no new rungs)."
+  "late_fire_note": null
 }
