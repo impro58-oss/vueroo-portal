@@ -1,37 +1,10 @@
 {
-  "scan_id": "blackwatch-2026-09-18-1713",
+  "scan_id": "blackwatch-2026-09-19-0037",
   "scan_type": "breaking-event-4h",
-  "timestamp": "2026-09-18T17:26:00+00:00",
-  "window": "Sep 18 12:37Z -> 17:18Z (16:37Z-slot catch-up: 1637Z cycle died post-quotes 16:42Z pre-signals)",
-  "cycle": "55th consecutive CAT-5 SUSTAINED cycle, NO NEW RUNG EVENT - DECISION-EXECUTION + SETTLE-EVE TEXTURE: BOJ delivered +25bp to 1.25% 31-year high 7-2 split (expected, hawkish wagers tempered, yen weakened 156.7-158, JGB curve steeper, Nikkei +1.8-2.4%) + US10Y AT 5.00 LINE (^TNX 5.0 / WSJ 5.007 intraday; NY-close trigger untriggered day-4, close 20:00Z tonight) + OIL SUB-100 SETTLE-CONFIRM PENDING ~19:30Z (Brent 99.07/WTI 95.97 live; pipeline REMAINS OFFLINE, Hormuz exports rebound, European-cargo halt stands) + France OAT premium 2012-highs + EU Red Sea mission alert RAISED + Trump UNGA deferral next week + Macquarie/Alceon private-credit halt (non-systemic) + Ebola peaked-vs-unconfirmed conflict stands",
-  "context": "FRIDAY-EVENING settlement session (US mid-session live, Europe closed FTSE 10,659.1 +0.08% / DAX 25,304.1 -1.03%, Tokyo closed post-BOJ ~65,019-65,137 +1.8-2.4%, VIX 15.39, BTC 80,829 +3.4%, gold 4,425.3 +1.7%, EUR/USD 1.1485 sub-1.15, rupee 95.86 day-6, CNY 6.6873 strongest-since-2022); threshold job STILL STALE since Sep-11 (flagged for owner); Silver Week Japan Sep 21-23; Trump-Xi Sep 24; Libya PFG ~Sep 23; Monday Iran-GCC-Oman Hormuz meeting",
-  "queries": "19 query ops / 12 domains (us_fed x1 [FOMC outcome], japan x2 [BOJ decision + yen/JGB reaction], middle_east x3 [Iran-war/UNGA, Houthi-Mandeb, Saudi pipeline], commodities x2 [oil/gold quotes], eu_ecb x2 [ECB/France-OAT], uk x1 [BoE QT], china x1 [yuan/PBOC], em_asia x1 [rupee/RBI], latam x1 [Argentina/Brazil], africa x1 [Niger], financial_system x2 [bank failures/private credit], pandemic_health x1 [Ebola]) + Yahoo fetches 16/16 clean 17:18Z",
-  "quotes_ref": "live-quotes-2026-09-18-1713.json",
-  "key_prints": {
-    "BZ=F": 99.07,
-    "CL=F": 95.97,
-    "GC=F": 4425.3,
-    "^TNX": 5.0,
-    "^VIX": 15.39,
-    "BTC-USD": 80829.31,
-    "JPY=X": 156.711,
-    "INR=X": 95.863,
-    "EURUSD=X": 1.1485,
-    "CNY=X": 6.6873,
-    "^N225": 65018.95,
-    "^GSPC": 7624.0,
-    "^FTSE": 10659.13,
-    "^GDAXI": 25304.06
-  },
-  "watch": [
-    "Brent settle ~19:30Z (sub-100 confirm = formal rung-break)",
-    "US10Y NY close 20:00Z (5% close trigger day-4)",
-    "gold cycle-high 4,479.9 / $4,500 untested",
-    "Hormuz FRIDAY transit count",
-    "US-response wire on Trend strike",
-    "UNGA week: Trump six-Gulf-leaders meeting",
-    "Monday Iran-GCC-Oman Hormuz meeting + PBOC fix #10",
-    "JGB Friday settle print post-BOJ"
-  ],
-  "telegram": "sustained-only cycle, no confirmed state change - notification via cron announce"
+  "timestamp": "2026-09-19T00:55:00+00:00",
+  "window": "Sep 18 17:18Z -> Sep 19 00:37Z (2037Z-slot CATCH-UP folded: 2037Z cycle died post-quotes 20:46Z pre-signals)",
+  "cycle": "56th consecutive CAT-5 SUSTAINED cycle, NO NEW RUNG EVENT - SETTLE-RESOLUTION cycle: OIL SETTLE LANDED WITH DUAL-BASIS CONFLICT (Yahoo-continuous 98.77/95.47 sub-100 settles vs press basis coherent ~100-104: EnergyNow 'Oil Ends Volatile Week at $100' WTI at-line + sundayguardian 'Brent $103/WTI near $101' + DJ 'third day of falls'; offset 4-6pts all day widening at settle = >100 RUNG STANDS PER PRESS-SETTLE BASIS, cycles 53-55 basis-qualified, OWNER-VERIFY) + US10Y 5.00 NY-close trigger RESOLVED UNTRIGGERED (4.998 close, 2bp under; FOMC-day 5.006 = single close-above) + GOLD 4,415.9 +1.47% ($4,500 untested, 'toward 4,500' fresh wire) + VIX 14.81 (-11.8% big calm) + NO US-response wire + UNGA gate deferred + Hormuz FRIDAY count still unpublished + NO MOF wires + no new rungs",
+  "context": "SATURDAY-EARLY (markets closed; futures frozen at Friday settles; crypto live BTC 81,254.6 +0.16%): Friday Sep-18 closes stand - BZ=F 98.77/CL=F 95.47 (Yahoo-continuous; press basis ~100-104) / GC=F 4,415.9 / TNX 4.998 / VIX 14.81 / SPX 7,650.5 / Nikkei bar 64,136.25 (+1.01% vs 63,492.99; price-field 65,018.95 discrepancy logged prior cycles) / FTSE 10,659.13 +0.08% / DAX 25,304.06 -1.03% / yen 156.88 / CNY 6.697 / rupee 95.863; threshold job STILL STALE since Sep-13 (flagged for owner); weekend: Iran-GCC-Oman Monday + PBOC fix #10 Monday + Silver Week Sep 21-23 + Trump-Xi Sep 24 + Libya PFG ~Sep 23 + UNGA week",
+  "queries": "16 query ops / 12 domains (us_fed x1 [Fed post-FOMC weekend], latam x1 [LatAm FX], eu_ecb x1 [France OAT/Bund], uk x1 [gilt yields], japan x1 [MOF/yen intervention], china x1 [yuan PBOC fix], em_asia x1 [rupee/reserves], middle_east x3 [Trend US-response, Hormuz transits, Trump UNGA], africa x1 [Libya PFG], financial_system x1 [private credit], commodities x2 [oil settle + gold 4,500], pandemic_health x1 [Ebola]) + 0 full-text fetches + Yahoo refetch 16/16 clean 00:5xZ (settle-persistence + basis-divergence verification)",
+  "verdict": "CAT-5 SUSTAINED (56th consecutive scan cycle) - NO NEW RUNG EVENT; SETTLE-RESOLUTION CYCLE: (1) ENERGY/OIL - SETTLE LANDED WITH DUAL-BASIS CONFLICT: (a) Yahoo-continuous BZ=F 98.77 / CL=F 95.47 settles (bar re-quotes 98.54->98.77 / 95.31->95.47 post-settle = divergence persists structurally, not a one-off glitch); (b) press-settle basis coherent ~100-104: EnergyNow IN-WINDOW 'Oil Ends Volatile Week at $100 as Saudi Supply Fears Ease but Hormuz Risks Persist' = WTI AT-LINE settle ~100 + sundayguardian 12:31Z 'Brent falls to $103, WTI drops near $101' + MarketScreener/Dow Jones 15:17Z 'Oil Prices Fall for Third Day... Slightly' + AA 16:48Z 'set to end week lower'; press wires show NO $95-99 prints (a true -6.3% crash-settle would banner); (c) Yahoo-vs-press offset 4-6pts ALL DAY (08:37Z Yahoo 98.82 vs press ~103+; 12:31-12:40Z press 103/101 vs Yahoo 98.86/96.63; settle press 100-104 vs Yahoo 98.77/95.47), offset path +1.1 (Sep-11) -> -2.8 (Sep-17) -> -6.1 (Sep-18) widening; (d) CAUSE CANDIDATES: (i) Yahoo continuous rolled to deferred contract = war-premium curve discount pricing rapid de-escalation (consistent with GCC-Iran talks Monday + Saudi export options + pipeline repair), (ii) feed glitch; UNRESOLVED MEDIUM-HIGH, OWNER-VERIFY. RUNG: >100 STANDS PER PRESS-SETTLE BASIS (conservative; Brent >100, WTI at-line); cycles 53-55 'sub-100 tape' reads BASIS-QUALIFIED; war-premium unwind 4th session continues on both bases. GOLD: GC=F 4,415.9 settle (+1.47%; high 4,439.8; cycle high 4,479.9; $4,500 UNTESTED) + DailyForex ~23:40Z 'toward 4,500 as central bank risks ease' IN-WINDOW. (2) RATES: US10Y 5.00 NY-close trigger RESOLVED UNTRIGGERED day-4: ^TNX close 4.998 (2bp under; intraday high 5.008; 5d closes 4.961/4.996/5.006/4.947/4.998; Sep-16 FOMC-day close 5.006 = single close-above print, DGS10 5.01% consistent); cusp watch continues; gilt ~5.16 relief (BoE QT-halt); OAT 2012-highs carried; JGB 2.973 Thursday settle stands. (3) MIDDLE_EAST: NO US-response wire in 16-op scan (response-watch continues; Trend CONFIRMED-EVENT stands; US-contracted-strike texture Sep-5 + Centcom denial); UNGA gate STANDS DEFERRED (pre-window re-carriages only: Iran Intl 00:03Z + Reuters 05:03Z 'skeptical world leaders' + Media Line 06:44Z + ynet 00:31Z 'Trump threatens new strikes as US grants Tehran leaders UN visas'); Hormuz FRIDAY COUNT STILL UNPUBLISHED (Thursday=4 stands via Reuters 03:27Z re-carriage; MarineRadar Sep-16=4 vs Reuters Wed=3 methodology dispute; ~5-6% of norm; day-201); gCaptain US-facilitated transits >10M bpd + EU Red Sea alert-raised textures stand; NO fresh UKMTO/IRGC incidents in-window. (4) JAPAN: yen 156.88 close (158.054 weakest-touch stands); NO MOF wires RE-CONFIRMED (16-op scan all Jul-31/Aug-3 joint-intervention vintage: record $96.5B spend + Katayama 'won't hesitate'); BOJ +25bp to 1.25% delivered; Silver Week Sep 21-23 ahead. (5) US: Friday closes SPX 7,650.5 (-0.08%)/Nasdaq 26,522.5 (+0.72%)/Dow 51,682.6 (-1.70%)/VIX 14.81 (-11.8% big calm); FOMC 25bp to 3.75-4.00% delivered stands (Warsh 'timelier' + more tightening); BTC 81,128->81,254.6 Sat live (+6.3% wk; whale BE vol-spike 4.5x). (6) CHINA/EM: CNY 6.697 strongest-since-Jul-2022 (fix #10 Mon); rupee 95.863 day-6 RBI defense + record reserves $785.71B (ToI texture). (7) AFRICA/HEALTH: Ebola static (no fresh numbers; Guardian Sep-15 'peaked' vs SitRep counter-texture); Libya PFG ~Sep-23 clock (7-field shutdown threat Sep-16). (8) FIN_SYSTEM: NO new bank failures (FDIC 5 YTD); private-credit cracks non-systemic (Macquarie/Alceon Sep-18 + BCRED Sep-3 + JPM/Situational Awareness Sep-11); Turkey $18.3B liquidation execution + BIST close print still pending; LATAM calm (real comeback texture). Weekend watches: oil basis-divergence OWNER-VERIFY, US-response wire, Hormuz Friday count, Iran-GCC-Oman Monday, fix #10 Monday, TNX 5.00 cusp, gold $4,500, UNGA week."
 }
