@@ -1,10 +1,10 @@
 {
-  "scan_id": "blackwatch-2026-09-25-0037",
+  "scan_id": "blackwatch-2026-09-25-0437",
   "scan_type": "breaking_event_4h",
-  "timestamp": "2026-09-25T00:37:00+00:00",
-  "execution_note": "RESTORED POST-OUTAGE RUN: fired 00:37Z, gateway outage interrupted the pre-outage attempt after its quotes fetch (00:42:51Z script + 00:43:29Z quotes file); restored re-execution completed the chain ~00:47-01:05Z. Quotes reused (labeled 0037Z). Sibling whale scanner completed its own artifact-path run 00:38-00:39Z independently (no publish).",
-  "window": "Sep 24 20:37Z -> Sep 25 00:37Z (overnight Tokyo-morning; Tokyo open 00:00Z; Europe + US cash closed; KOSPI closed Chuseok)",
-  "verdict": "CAT-5 SUSTAINED 83rd, NO new war-rung + THREE LATE-CATCH LEGS: (1) HOUTHI SIX-BM ATTACK TAIF+YANBU THU SEP-24 + CLAIMS Riyadh/Aramco-Yanbu (second theatre; bypass-route threat; cycles 81-82 missed; primary Thursday oil driver); (2) SNB 0% HOLD + FX-INTERVENTION-THREAT DIAL-DOWN (official 07:32Z Sep-24, missed by cycles 79-82); (3) TRUMP-XI RESOLUTION: Xi announces new trade arrangement + two-month truce extension CONFIRMED (Jan-10 gate RESOLVED, below 6-month hopes) + PBOC yuan-herd caution (18:27Z). Brent Friday live 105.92 = easing off settle-conflict zone, HOLDING >105.",
+  "timestamp": "2026-09-25T04:37:00+00:00",
+  "execution_note": "Routine 0437Z cycle (no outage). Quotes fetched fresh 04:37-04:40Z (13/13). 20 search ops/12 domains + 5 fetch attempts: 3 successful full reads (Guardian Sep-25 intercepts piece + CNA/AFP France-Yanbu piece + Kyodo JGB URGENT), Reuters 401-blocked, PBS extraction-failed (headline vintage resolved via search: Sep-14 AP recirculation).",
+  "window": "Sep 25 00:37Z -> Sep 25 04:37Z (Friday Tokyo-mid-session; Tokyo closes 06:00Z; Europe opens 07:00Z; US cash 13:30Z; KOSPI Chuseok + Taiwan + Shanghai Mid-Autumn closed)",
+  "verdict": "CAT-5 SUSTAINED 84th, NO new war-rung. LEGS: (1) SETTLE-BASIS RESOLVED (Yahoo 09-24 bar -> 106.60 = SBS confirmed; c82 107.41 = artifact; WTI aligned 94.61); Brent live 105.66 >105 holds; (2) LATE-CATCH: France/Macron military assets (soldiers/radars/defence systems) to PROTECT YANBU (missed by cycle-83); second-day Houthi texture (150 killed/24h ground war; complex barrage southern-Saudi claims); (3) JGB 10Y -> 3.115% highest-since-Aug-1996; (4) Katayama: Trump yen-weakness concern at summit (yen firmed off 159.04 tag); 160 gate intact; (5) PBOC fix 6.7184 9th session; (6) pipeline loading NOT yet resumed; (7) US30Y highest since 2004, Oct hike odds ~70%, TNX basis-conflict 5.162-vs-5.196.",
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -19,67 +19,60 @@
     "commodities",
     "pandemic_health"
   ],
-  "search_ops": 17,
-  "full_reads": 5,
-  "quotes_source": "Yahoo v8 (pre-outage fetch 00:43Z, reused) - FUTURES-BAR ARTIFACT: Yahoo erased Thu 09-24 bars from BZ/CL/GC 5d series (same missing-bar class as whale 00:38Z Wed-state artifact); d/d computed vs settle anchors",
-  "settle_basis_note": "SETTLE-BASIS CONFLICT ZONE DOCUMENTED (Thu settle prints, all vs Wed 103.08 base): SBS ICE-November 106.60 (+3.41%) / straits.live 107.01 (+3.82%) / Yahoo 09-24 bar 107.41 (+4.19%, cycle-82 anchor). Anchor stays 107.41 as recorded (cycle-82); chain 99.25 -> 103.08 -> ~107 INTACT (all war-era highs). Friday live 105.92 = -0.64% vs 106.60 / -1.39% vs 107.41. WTI conflict: SBS 94.61 vs Yahoo-bar 95.14. Watch 04:37Z/20:37Z cycles for a primary-settle resolution.",
-  "findings_summary": "12 domains scanned, 17 search ops + 5 full reads. LATE-CATCH LEGS: Houthi 6-BM Taif/Yanbu attack + claims (Riyadh/Aramco-Yanbu; bypass-route threat; primary Thursday oil driver); SNB 0% hold + FX-threat dial-down; Trump-Xi resolution (2-month extension confirmed). IN-WINDOW: Straits 4-takeaways 22:35Z; Korea Times Xi new-arrangement 23:26Z; The Standard 2-month confirm ~00:20Z; biggo yen-159 piece 00:05Z; Nikkei +0.48% open print 00:16Z. CARRIES: phased-deal talks (no breakthrough; Rezaei ~Sep 28-29); UN 80-country; Libya FM pending; Ebola ~7,600+/3,699+; gilt 19-yr-high; TNX 5.162 anchor. NO: US strikes on Iran; UKMTO #4; emergency decisions; bank failures; Libya FM.",
+  "search_ops": 20,
+  "full_reads": 3,
+  "quotes_source": "Yahoo v8 (fresh fetch 04:37-40Z, 13/13) - SETTLE-BASIS RESOLVED: Yahoo 09-24 bars now match SBS prints (BZ 106.60, CL 94.61); c82 107.41/95.14 anchors corrected as bar artifacts",
+  "settle_basis_note": "SETTLE-BASIS CONFLICT RESOLVED (cycle-84): Yahoo 09-24 bar updated 107.41 -> 106.60, matching SBS ICE-November settle 106.60 (+3.41% vs Wed 103.08); straits.live 107.01 outlier confirmed as transient; cycle-82 107.41 anchor = bar artifact. Chain 99.25 -> 103.08 -> 106.60 INTACT. WTI aligned: Yahoo bar 94.61 = SBS 94.61 (c82 95.14 corrected). Brent live 105.66 = -0.88% vs settle. NEW CONFLICT (TNX): Reuters recap +8.17bp -> 5.196% vs Yahoo anchor 5.162 - Friday 13:30Z cash resolves.",
+  "findings_summary": "12 domains scanned, 20 search ops + 3 full reads. LEGS: France/Macron Yanbu military deployment (late-catch); settle-basis RESOLVED 106.60; JGB 3.115% (highest since 1996); Katayama-Trump yen-weakness concern; Nikkei 5th day +804 AM close 66,318; PBOC fix 6.7184 (9th session); pipeline loading not resumed (Reuters 22:18Z); US30Y highest-since-2004 + Oct hike odds ~70%; TNX basis-conflict; Ebola >3,700 tick + $267M + burial-shooting. KILLED: PBS 'weeks' (Sep-14 AP), iranview24 Islamabad-MoU 'war-ending deal' (Jun-18 recirc), Sudan 2025 recircs, BBC satellite (unconfirmed vintage, known-damage texture only). CARRIES: NY talks (no breakthrough; Rezaei ~Sep 28-29); Libya FM pending; gilt 19-yr-high; SVB-review texture. NO: US strikes on Iran; UKMTO #4; emergency decisions; bank failures; Libya FM.",
   "live_vs_settle": {
     "BZ=F": {
-      "live": 105.92,
-      "settle_zone": [
-        106.6,
-        107.01,
-        107.41
-      ],
-      "vs_sbs_106.60": -0.64,
-      "vs_c82_anchor_107.41": -1.39
+      "live": 105.66,
+      "settle_0924": 106.6,
+      "vs_settle": -0.88,
+      "note": "SETTLE-BASIS RESOLVED: Yahoo 09-24 bar now 106.60 = SBS print; c82 107.41 anchor corrected as artifact"
     },
     "CL=F": {
-      "live": 93.8,
-      "settle_zone": [
-        94.61,
-        95.14
-      ],
-      "vs_sbs_94.61": -0.86,
-      "vs_c82_anchor_95.14": -1.41
+      "live": 93.1,
+      "settle_0924": 94.61,
+      "vs_settle": -1.6,
+      "note": "Yahoo 09-24 bar 94.61 = SBS 94.61 (95.14 c82 anchor corrected)"
     },
     "GC=F": {
-      "live": 4303.9,
-      "settle": 4299.7,
-      "pct": 0.1
+      "live": 4305.8,
+      "settle_0924": 4298.0,
+      "pct": 0.18
     },
     "JPY=X": {
-      "live": 158.711,
-      "c82_close": 158.905,
-      "pct": -0.12
+      "live": 158.413,
+      "c83_live": 158.711,
+      "yen_pct_change": 0.19
     },
     "BTC-USD": {
-      "live": 84618.68,
-      "c82_close": 84345.55,
-      "pct": 0.32
+      "live": 84188.78,
+      "c83_live": 84618.68,
+      "pct": -0.51
     },
     "DX-Y.NYB": {
-      "live": 101.297,
-      "c82_close": 101.307,
-      "pct": -0.01
+      "live": 101.279,
+      "c83_live": 101.297,
+      "pct": -0.02
     }
   },
   "quotes": {
     "BZ=F": {
-      "price": 105.92,
+      "price": 105.66,
       "prev": 100.34,
-      "pct": 5.56
+      "pct": 5.3
     },
     "CL=F": {
-      "price": 93.8,
+      "price": 93.1,
       "prev": 95.78,
-      "pct": -2.07
+      "pct": -2.8
     },
     "GC=F": {
-      "price": 4303.9,
+      "price": 4305.8,
       "prev": 4383.9,
-      "pct": -1.82
+      "pct": -1.78
     },
     "^TNX": {
       "price": 5.162,
@@ -102,24 +95,24 @@
       "pct": 1.97
     },
     "BTC-USD": {
-      "price": 84618.68,
+      "price": 84188.78,
       "prev": 86602.914,
-      "pct": -2.29
+      "pct": -2.79
     },
     "JPY=X": {
-      "price": 158.711,
+      "price": 158.413,
       "prev": 157.046,
-      "pct": 1.06
+      "pct": 0.87
     },
     "EURUSD=X": {
-      "price": 1.1375,
+      "price": 1.1373,
       "prev": 1.148,
-      "pct": -0.91
+      "pct": -0.93
     },
     "DX-Y.NYB": {
-      "price": 101.297,
+      "price": 101.279,
       "prev": 100.43,
-      "pct": 0.86
+      "pct": 0.85
     },
     "^FTSE": {
       "price": 10679.99,
@@ -133,8 +126,8 @@
     }
   },
   "quotes_meta": {
-    "fetched_at": "2026-09-25T00:37Z",
+    "fetched_at": "2026-09-25T04:37Z",
     "source": "yahoo v8 chart 5d",
-    "yahoo_pct_caveat": "Yahoo futures bars erased Thu 09-24 in 5d series (artifact); pct fields vs stale roll anchors - use live_vs_settle for true d/d"
+    "settle_basis_note": "Yahoo 09-24 bars now match primary settles; pct fields vs chartPreviousClose roll anchors - use live_vs_settle for true d/d"
   }
 }
