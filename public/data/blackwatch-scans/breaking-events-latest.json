@@ -1,10 +1,10 @@
 {
-  "scan_id": "blackwatch-2026-09-25-0437",
+  "scan_id": "blackwatch-2026-09-25-0837",
   "scan_type": "breaking_event_4h",
-  "timestamp": "2026-09-25T04:37:00+00:00",
-  "execution_note": "Routine 0437Z cycle (no outage). Quotes fetched fresh 04:37-04:40Z (13/13). 20 search ops/12 domains + 5 fetch attempts: 3 successful full reads (Guardian Sep-25 intercepts piece + CNA/AFP France-Yanbu piece + Kyodo JGB URGENT), Reuters 401-blocked, PBS extraction-failed (headline vintage resolved via search: Sep-14 AP recirculation).",
-  "window": "Sep 25 00:37Z -> Sep 25 04:37Z (Friday Tokyo-mid-session; Tokyo closes 06:00Z; Europe opens 07:00Z; US cash 13:30Z; KOSPI Chuseok + Taiwan + Shanghai Mid-Autumn closed)",
-  "verdict": "CAT-5 SUSTAINED 84th, NO new war-rung. LEGS: (1) SETTLE-BASIS RESOLVED (Yahoo 09-24 bar -> 106.60 = SBS confirmed; c82 107.41 = artifact; WTI aligned 94.61); Brent live 105.66 >105 holds; (2) LATE-CATCH: France/Macron military assets (soldiers/radars/defence systems) to PROTECT YANBU (missed by cycle-83); second-day Houthi texture (150 killed/24h ground war; complex barrage southern-Saudi claims); (3) JGB 10Y -> 3.115% highest-since-Aug-1996; (4) Katayama: Trump yen-weakness concern at summit (yen firmed off 159.04 tag); 160 gate intact; (5) PBOC fix 6.7184 9th session; (6) pipeline loading NOT yet resumed; (7) US30Y highest since 2004, Oct hike odds ~70%, TNX basis-conflict 5.162-vs-5.196.",
+  "timestamp": "2026-09-25T08:37:00+00:00",
+  "execution_note": "Routine 0837Z cycle (no outage). Quotes fetched fresh 08:37-08:38Z (13/13). 19 search ops/12 domains + 6 fetch attempts: 4 successful reads (The National Iran-hardens piece + Outlook India Araghchi 7-day plan + saiken/MOF JGB yields + gcaptain FALCON piece - the latter resolving as Oct-18-2025 vintage recirculation and KILLING the UKMTO-#4 scare); iranintl nav-only extraction-fail (headline vintage 02:54Z via search + Outlook corroboration); Reuters 401-blocked (known). Yahoo BZ=F intraday re-pulled via v8 30m bars to resolve the 07:30Z cliff (artifact-suspect).",
+  "window": "Sep 25 04:37Z -> Sep 25 08:37Z (Friday Europe-open; Tokyo closed 06:00Z - close resolved; Europe open 07:00Z in-window; US cash 13:30Z; KOSPI Chuseok + Taiwan + Shanghai Mid-Autumn closed)",
+  "verdict": "CAT-5 SUSTAINED 85th, NO new war-rung. LEGS: (1) LATE-CATCH DE-ESCALATION STRUCTURE: Iran 7-day conditional Hormuz-reopening plan (Araghchi via intermediaries: strait opens end of 7th day if conditions met, then nuclear talks restart; June-MoU return demanded; Pezeshkian dilution + international-verification offer-texture; iranintl 02:54Z missed by c84); (2) HARDENING PARALLEL: The National Sep-25 - no concessions until US meets conditions (ease military pressure + lift port-blockade); NY talks = message exchange; (3) OIL Friday AM eased ~1-2% on truce hopes (news-consistent ~104.4-105.7; Yahoo BZ=F 07:30Z cliff to 99.18-99.31 = ARTIFACT #3 suspect, WTI steady, zero wire corroboration; settle resolves); (4) TOKYO CLOSE: Nikkei 66,304.27 (+1.21%, 5th straight day); (5) JGB Friday close print NOT yet on wires (3.115% = morning tag; saiken/MOF Thu 3.073% last settled; MoF enhanced-liquidity auction b/c 2.95 weak, date-unconfirmed); (6) EUROPE OPEN BID: FTSE +0.43%, DAX +0.62%, Bunds/gilts easing off 17-yr/19-yr highs; (7) GOLD stabilized 4,260-4,320 (5% yields test haven trade; 4,230.70 support held; GC=F +0.43% vs settle); (8) EBOLA North Kivu hotspot corroborated (Reuters Sep-25). KILLED: gcaptain FALCON UKMTO-#4 scare (Oct-18-2025 vintage), riotimes Banxico (c82-stamped), theedge gold (Jul-3), investing.com JGB cache (stale).",
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -19,60 +19,70 @@
     "commodities",
     "pandemic_health"
   ],
-  "search_ops": 20,
-  "full_reads": 3,
-  "quotes_source": "Yahoo v8 (fresh fetch 04:37-40Z, 13/13) - SETTLE-BASIS RESOLVED: Yahoo 09-24 bars now match SBS prints (BZ 106.60, CL 94.61); c82 107.41/95.14 anchors corrected as bar artifacts",
-  "settle_basis_note": "SETTLE-BASIS CONFLICT RESOLVED (cycle-84): Yahoo 09-24 bar updated 107.41 -> 106.60, matching SBS ICE-November settle 106.60 (+3.41% vs Wed 103.08); straits.live 107.01 outlier confirmed as transient; cycle-82 107.41 anchor = bar artifact. Chain 99.25 -> 103.08 -> 106.60 INTACT. WTI aligned: Yahoo bar 94.61 = SBS 94.61 (c82 95.14 corrected). Brent live 105.66 = -0.88% vs settle. NEW CONFLICT (TNX): Reuters recap +8.17bp -> 5.196% vs Yahoo anchor 5.162 - Friday 13:30Z cash resolves.",
-  "findings_summary": "12 domains scanned, 20 search ops + 3 full reads. LEGS: France/Macron Yanbu military deployment (late-catch); settle-basis RESOLVED 106.60; JGB 3.115% (highest since 1996); Katayama-Trump yen-weakness concern; Nikkei 5th day +804 AM close 66,318; PBOC fix 6.7184 (9th session); pipeline loading not resumed (Reuters 22:18Z); US30Y highest-since-2004 + Oct hike odds ~70%; TNX basis-conflict; Ebola >3,700 tick + $267M + burial-shooting. KILLED: PBS 'weeks' (Sep-14 AP), iranview24 Islamabad-MoU 'war-ending deal' (Jun-18 recirc), Sudan 2025 recircs, BBC satellite (unconfirmed vintage, known-damage texture only). CARRIES: NY talks (no breakthrough; Rezaei ~Sep 28-29); Libya FM pending; gilt 19-yr-high; SVB-review texture. NO: US strikes on Iran; UKMTO #4; emergency decisions; bank failures; Libya FM.",
+  "search_ops": 19,
+  "full_reads": 4,
+  "quotes_source": "Yahoo v8 chart 5d (fresh fetch 08:37-38Z, 13/13) + intraday 30m-bar pull on BZ=F/CL=F to resolve the 07:30Z cliff",
+  "settle_basis_note": "NEW BZ=F CONFLICT (artifact-class #3): Yahoo continuous BZ=F cliffed 106.29 (07:00Z) -> 99.36 (07:30Z) -> 99.18-99.31 (08:37Z) while WTI (CL=F) was steady (93.54 -> 93.58 -> 93.31) and NO wire corroborates a Brent crash or a ~$7 Nov/Dec curve blowout - ARTIFACT-SUSPECT (same family as c82's 107.41 bar artifact); news-consistent Brent 104.4-105.7 (-1~-2% vs 106.60 settle on truce hopes: WAM -87c 04:44Z, TradingKey -2.08%, Reuters 'oil retreats slightly' 06:15Z). FRIDAY SETTLE RESOLVES. Settle chain 99.25 -> 103.08 -> 106.60 INTACT. TNX basis conflict 5.162-vs-5.196 carries - Friday cash 13:30Z resolves.",
+  "findings_summary": "12 domains scanned, 19 search ops + 4 full reads. LEGS: Iran 7-day conditional Hormuz-reopening plan (late-catch; Araghchi; Pezeshkian dilution/verification offer-texture); Iran hardening parallel (The National); oil eased ~1-2% on truce hopes (BZ=F artifact #3 flagged); Nikkei closed +1.21% (5th day); JGB close print pending; Europe open bid with Bunds/gilts easing off 17-yr/19-yr highs; gold stabilized 4,260-4,320; Ebola North Kivu hotspot corroborated; yen firmer 158.256, 160 gate intact; MoF enhanced-liquidity auction (b/c 2.95) date-unconfirmed. KILLED: gcaptain FALCON/UKMTO-#4 (Oct-18-2025 vintage recirc: EEAS/Lloyd's List/TankerTrackers), riotimes Banxico re-carriage (c82-stamped), theedgemalaysia gold (Jul-3), investing.com JGB cache (stale). CARRIES: NY talks (no breakthrough; Rezaei ~Sep 28-29); pipeline loading-not-resumed; France/Yanbu follow-through pending; Libya FM pending; private-credit stress texture. NO: US strikes on Iran; UKMTO #4; emergency decisions; bank failures; Libya FM.",
   "live_vs_settle": {
     "BZ=F": {
-      "live": 105.66,
+      "live": 99.31,
       "settle_0924": 106.6,
-      "vs_settle": -0.88,
-      "note": "SETTLE-BASIS RESOLVED: Yahoo 09-24 bar now 106.60 = SBS print; c82 107.41 anchor corrected as artifact"
+      "vs_settle": -6.84,
+      "note": "ARTIFACT-#3 SUSPECT: 07:30Z cliff 106.29 -> 99.36 with WTI steady + zero wire corroboration; news-consistent 104.4-105.7 (-1~-2% on truce hopes); Friday settle resolves (same family as c82 107.41)"
     },
     "CL=F": {
-      "live": 93.1,
+      "live": 93.38,
       "settle_0924": 94.61,
-      "vs_settle": -1.6,
-      "note": "Yahoo 09-24 bar 94.61 = SBS 94.61 (95.14 c82 anchor corrected)"
+      "vs_settle": -1.3,
+      "note": "Smooth tape confirms BZ=F cliff is BZ=F-only artifact; WTI -1.30% vs settle consistent with wires"
     },
     "GC=F": {
-      "live": 4305.8,
+      "live": 4316.3,
       "settle_0924": 4298.0,
-      "pct": 0.18
+      "pct": 0.43
     },
     "JPY=X": {
-      "live": 158.413,
-      "c83_live": 158.711,
-      "yen_pct_change": 0.19
+      "live": 158.256,
+      "c84_live": 158.413,
+      "yen_pct_change": 0.1
     },
     "BTC-USD": {
-      "live": 84188.78,
-      "c83_live": 84618.68,
-      "pct": -0.51
+      "live": 84356.72,
+      "c84_live": 84189,
+      "pct": 0.2
     },
     "DX-Y.NYB": {
-      "live": 101.279,
-      "c83_live": 101.297,
-      "pct": -0.02
+      "live": 101.139,
+      "c84_live": 101.297,
+      "pct": -0.16
+    },
+    "^FTSE": {
+      "live": 10726.14,
+      "settle_0924": 10680.0,
+      "pct": 0.43
+    },
+    "^GDAXI": {
+      "live": 25422.17,
+      "settle_0924": 25266.53,
+      "pct": 0.62
     }
   },
   "quotes": {
     "BZ=F": {
-      "price": 105.66,
+      "price": 99.31,
       "prev": 100.34,
-      "pct": 5.3
+      "pct": -1.03
     },
     "CL=F": {
-      "price": 93.1,
+      "price": 93.38,
       "prev": 95.78,
-      "pct": -2.8
+      "pct": -2.51
     },
     "GC=F": {
-      "price": 4305.8,
+      "price": 4316.3,
       "prev": 4383.9,
-      "pct": -1.78
+      "pct": -1.54
     },
     "^TNX": {
       "price": 5.162,
@@ -80,9 +90,9 @@
       "pct": 3.28
     },
     "^VIX": {
-      "price": 15.67,
-      "prev": 14.81,
-      "pct": 5.81
+      "price": 15.53,
+      "prev": 14.87,
+      "pct": 4.44
     },
     "^GSPC": {
       "price": 7704.13,
@@ -95,39 +105,39 @@
       "pct": 1.97
     },
     "BTC-USD": {
-      "price": 84188.78,
+      "price": 84356.72,
       "prev": 86602.914,
-      "pct": -2.79
+      "pct": -2.59
     },
     "JPY=X": {
-      "price": 158.413,
+      "price": 158.256,
       "prev": 157.046,
-      "pct": 0.87
+      "pct": 0.77
     },
     "EURUSD=X": {
-      "price": 1.1373,
+      "price": 1.1391,
       "prev": 1.148,
-      "pct": -0.93
+      "pct": -0.78
     },
     "DX-Y.NYB": {
-      "price": 101.279,
+      "price": 101.139,
       "prev": 100.43,
-      "pct": 0.85
+      "pct": 0.71
     },
     "^FTSE": {
-      "price": 10679.99,
-      "prev": 10816.1,
-      "pct": -1.26
+      "price": 10726.14,
+      "prev": 10659.1,
+      "pct": 0.63
     },
     "^GDAXI": {
-      "price": 25266.53,
-      "prev": 25716.71,
-      "pct": -1.75
+      "price": 25422.17,
+      "prev": 25304.06,
+      "pct": 0.47
     }
   },
   "quotes_meta": {
-    "fetched_at": "2026-09-25T04:37Z",
+    "fetched_at": "2026-09-25T08:37Z",
     "source": "yahoo v8 chart 5d",
-    "settle_basis_note": "Yahoo 09-24 bars now match primary settles; pct fields vs chartPreviousClose roll anchors - use live_vs_settle for true d/d"
+    "settle_basis_note": "pct fields vs chartPreviousClose roll anchors - use live_vs_settle for true d/d vs 09-24 settles; BZ=F live CONFLICTED-ARTIFACT this cycle"
   }
 }
