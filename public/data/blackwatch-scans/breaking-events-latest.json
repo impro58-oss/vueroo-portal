@@ -1,10 +1,8 @@
 {
-  "scan_id": "blackwatch-2026-09-25-2037",
+  "scan_id": "blackwatch-2026-09-26-0037",
   "scan_type": "breaking_event_4h",
-  "timestamp": "2026-09-25T20:37:00+00:00",
-  "execution_note": "Routine 2037Z cycle (no outage; Friday US-close slot; post-c87 sibling whale commit 78c57d81 20:39Z). Quotes fetched fresh 20:37-20:40Z (13/13) + 30m intraday 2/2 (BZ=F/CL=F artifact-resolution tracking). 16 search ops/12 domains + 4 fetch attempts: 4 successful reads (WHO DON618 fresh Ebola numerics + Reuters global-markets wrap via devdiscourse (US-close prints: 10Y cash 5.2297 intraday highest-since-2007, 30Y 5.5252% highest-since-2004, JGB 3.121% touched, SPX mid-session +0.11%, gold spot 4,278.74, Trump-Xi summit texture) + Crux investor Brent-premium piece (TRUE settles: Brent 105.73 -87c / WTI 93.05 -1.65%; premium $12.68 widest since May; diesel-ban split analysis) + ECDC Ebola page (7,890/3,799 data-to-Sep-23)); Reuters direct 401-blocked known.",
-  "window": "Sep 25 16:37Z -> Sep 25 20:37Z (Friday US-close: Tokyo closed 06:00Z 5th day up 66,304; Europe cash closed 15:30Z; US cash closed 20:00Z; KOSPI/Taiwan closed reopen ~Mon; A-shares Mid-Autumn basis unclear)",
-  "verdict": "CAT-5 SUSTAINED 88th, NO new war-rung. GATES RESOLVED: (1) BZ=F ARTIFACT #3 RESOLVED AT SETTLE - ARTIFACT CONFIRMED: true Brent settle 105.73 (-87c, -0.82% vs 106.60; Crux + WAM -87c print + chain arithmetic EXACT) vs Yahoo BZ=F settle 97.59 = BROKEN SERIES (zero corroboration; reality chain 99.25->103.08->106.60->105.73); Brent-WTI spread $12.68-13.03 WIDEST SINCE MAY (WTI 93.05; spot premium $11.91->$18.22 Sep 8-18); Brent weekly +2.09% vs WTI weekly -6.42%; CL=F settle 92.70 (-2.02%); (2) TNX BASIS CONFLICT RESOLVED: TNX settle 5.184 (+2.2bp, below prior 5.196 pole) BUT cash intraday 5.2297 = HIGHEST SINCE 2007 (biggest weekly rise since May); 30Y 5.5252% = highest since 2004; late-session yield rally; UMich sentiment 4-month low; (3) US CLOSE: RESILIENT TAPE DAY 5: SPX 7,743.41 (+0.51%) / IXIC 27,068.72 (+0.48%) / VIX 14.87 (-5.10%); best global-equity week since early Aug; (4) EBOLA FRESH NUMERICS (WHO DON618 PUBLISHED TODAY): 7,890 confirmed / 3,799 deaths (data to Sep-23, CFR 48.1%), +1,133/+532 since DON617; 2 NEW PROVINCES (Sud Ubangi + Haut-Uélé Dungu border zone); 63 HZ/7 provinces; cross-border risk UP; North Kivu CFR 59.7% highest; ECDC matches (+117/+40 vs Sep-21); (5) EAST-WEST PIPELINE (PETROLINE) RESTORED Sep 25 (OilPrice 13:00Z, <2wks after shutdown); Yanbu loading still pending; (6) DIESEL EXPORT-BAN THEME FIRST FULL STAMP: Trump weighing 90-day ban (retail $6.529/gal +42.6% since Jul-6); LOUISIANA STATE OF EMERGENCY (WoodMac); EU warns; no timetable; (7) JGB touched 3.121% (fresh tag, highest since 1996); close print STILL pending; (8) YEN FIRMED 157.269 away from 160 gate; Katayama-Bessent reaffirm + Bessent 'strong fundamentals'; NO MOF; (9) IRAN texture carries: 7-day plan + phased-deal exploration + hardening parallel + Trump-Xi summit Thursday no-breakthrough; Rezaei ~Sep 28-29; (10) GILT 5.4% near two-decade high (no fresher); (11) LATAM: Banxico held 6.50% (dropped guidance); Argentina CB reform Senate 46-22; (12) GOLD settle 4,323.4 (+0.59%). KILLED: neutralecho strikes recirc (APRIL-ERA-CEASEFIRE VINTAGE); yenisafak Hormozgan (JUN-10 VINTAGE); brusselspost (SEP-24 VINTAGE).",
+  "timestamp": "2026-09-26T00:37:00+00:00",
+  "execution_note": "Routine 0037Z cycle (Saturday weekend slot; post-outage recovery - prior attempt 00:37-00:42Z wrote the quotes script then died before execution; this run re-executed quotes 00:49-52Z + full chain). 19 search ops/12 domains + 1 full read (FDIC Nano Banc press release). Quotes 13/13 + 30m intraday 2/2 (BZ=F/CL=F roll-check). VERDICT: CAT-5 SUSTAINED 89th, NO new war-rung + NEW FINANCIAL RUNG (Nano Banc failure).",
   "domains_scanned": [
     "us_fed",
     "latam",
@@ -19,99 +17,102 @@
     "commodities",
     "pandemic_health"
   ],
-  "search_ops": 16,
-  "full_reads": 4,
-  "quotes_source": "Yahoo v8 chart 5d (fresh fetch 20:37-40Z, 13/13) + 1d/30m intraday pull on BZ=F/CL=F (artifact-resolution tracking)",
-  "settle_basis_note": "BZ=F ARTIFACT #3 RESOLVED AT SETTLE: Yahoo BZ=F settle 97.59 = BROKEN SERIES (30m bars 96-99 the entire post-cliff Friday session incl the 19:30Z settle bar 97.35; -8.5% fake vs 106.60; zero wire corroboration; same artifact family as c82's 107.41 bar). TRUE Brent settle 105.73 (-87c, -0.82% vs 106.60; Crux investor piece + WAM morning -87c print + settle-chain arithmetic 106.60-0.87=105.73 EXACT). Settle chain REALITY: 99.25 -> 103.08 -> 106.60 -> 105.73. Brent-WTI spread $12.68-13.03 WIDEST SINCE MAY (Crux: WTI 93.05; spot premium widened $11.91->$18.22 between Sep 8-18); Brent weekly +2.09% vs WTI weekly -6.42% (WTI -13% over 6 sessions). Yahoo BZ=F UNUSABLE for d/d until wire-verified roll. TNX basis conflict RESOLVED: TNX-series settle 5.184 (+2.2bp vs 5.162, below the prior 5.196 pole) BUT cash-basis intraday 5.2297 = HIGHEST SINCE 2007 (Reuters wrap; +5.5bp to 5.217 at 11:41-EDT snapshot; biggest weekly rise since May); 30Y 5.5252% (+6.32bp) = highest since 2004.",
-  "findings_summary": "12 domains scanned, 16 search ops + 4 full reads. GATES RESOLVED: BZ=F artifact #3 = artifact at settle (true Brent 105.73, Yahoo 97.59 broken); TNX conflict resolved (settle 5.184, cash intraday 5.2297 highest-since-2007); US close resilient day 5 (SPX +0.51%, VIX -5.1%, best global week since early Aug); Ebola fresh numerics 7,890/3,799 + 2 NEW provinces (WHO DON618 today); East-West pipeline RESTORED; diesel export-ban theme first full stamp (Louisiana state of emergency); JGB touched 3.121% (close pending); yen 157.269 away from 160 + Katayama-Bessent reaffirm; gilt 5.4%; Banxico hold (scheduled); Trump-Xi summit Thursday no-breakthrough. CARRIES: NY talks (7-day plan + phased-deal; Rezaei ~Sep 28-29); Yanbu loading pending; Libya FM pending (no fresher); private-credit vintage texture. NO: US strikes on Iran; UKMTO #4; emergency decisions; bank failures; Libya FM; MOF action. KILLED: neutralecho recirc (Apr-vintage), yenisafak (Jun-vintage), brusselspost (Sep-24-vintage).",
+  "search_ops": 19,
+  "full_reads": 1,
+  "quotes_source": "Yahoo v8 chart 5d (fresh fetch 00:49-52Z, 13/13) + 1d/30m intraday pull on BZ=F/CL=F (artifact roll-check)",
+  "settle_basis_note": "BZ=F ARTIFACT #4 PERSISTS: Yahoo daily 09-25 bar 97.47 = BROKEN SERIES (30m bars ~96-99 post-cliff Friday; zero wire corroboration; same family as c82 107.41 + c88 97.59). TRUE Brent settle 105.73 (-87c, -0.82% vs 106.60; chain arithmetic + energynow 'Brent above $100' corroborate). Reality chain 99.25 -> 103.08 -> 106.60 -> 105.73. CL=F final 92.44 (-2.29% vs 94.61) wire-consistent. Yahoo roll-anchor pct fields = use live_vs_settle for true d/d. BTC/F TSE daily chains omit the 09-25 bar at this slot (00:3xZ stale-data artifact family per whale 0038Z run).",
+  "findings_summary": "12 domains scanned, 19 search ops + 1 full read. CAT-5 SUSTAINED 89th, NO new war-rung. NEW FINANCIAL RUNG: Nano Banc (Irvine CA) failure - FDIC Sep-25 evening release, $736M assets/$686M deposits, Sunwest P&A, no depositor loss, small non-systemic, first failure since Aug-21 (streak-breaker; YTD 6+3 pending list confirmation). BZ=F artifact #4 persists (97.47 vs true 105.73; roll-check Mon). BBC re-carriage of Iran 7-day plan ~00:30Z ('choice now rests with the US'); cutoff unexecuted; Rezaei ~Sep 28-29 gate. Houthi second-theatre carries (no fresh attacks). TNX settle 5.184 confirmed (intraday 5.2297 marker stands); JGB close print still pending; yen 157.185 firming away from 160; gold 4,320.5 micro-drift; BTC 83,935 weekend drift; Korea Chuseok holiday; PBOC fix Mon. CARRIES: Yanbu loading, diesel-ban timetable, Libya FM, Ebola DON618 + North-Kivu feature, H5N1 routine. NO: US strikes, UKMTO #4, emergency decisions, MOF action, Hormuz reopening.",
   "live_vs_settle": {
     "BZ=F": {
-      "live": 97.59,
+      "live": 97.47,
       "settle_0924": 106.6,
-      "vs_settle": -8.45,
+      "vs_settle": -8.56,
       "true_settle_0925": 105.73,
       "true_vs_settle": -0.82,
-      "note": "ARTIFACT #3 RESOLVED AT SETTLE - ARTIFACT CONFIRMED: Yahoo settle 97.59 = BROKEN SERIES (30m bars 96-99 entire session incl 19:30Z settle bar 97.35; zero wire corroboration; same family as c82 107.41 + post-cliff break). TRUE settle 105.73 (-0.82% vs 106.60; Crux + WAM -87c print + chain arithmetic 106.60-0.87=105.73 EXACT). Brent-WTI spread $12.68-13.03 widest since May; Yahoo BZ=F UNUSABLE for d/d"
+      "note": "ARTIFACT #4 PERSISTS - NO ROLL: daily chain 09-25 bar 97.47 (-0.12 micro-drift vs c88 97.59 print) = BROKEN SERIES continues into weekend; 30m bars end 20:59Z 97.47 (futures closed ~21:00Z); TRUE settle 105.73 (-0.82% vs 106.60; chain 99.25->103.08->106.60->105.73; energynow wrap 'Brent above $100' corroborates); Yahoo BZ=F UNUSABLE for d/d; ROLL-CHECK GATE -> MONDAY"
     },
     "CL=F": {
-      "live": 92.7,
+      "live": 92.44,
       "settle_0924": 94.61,
-      "vs_settle": -2.02,
-      "note": "Smooth tape, wire-consistent; Crux print 93.05/-1.65% = minor basis diff"
+      "vs_settle": -2.29,
+      "note": "Final 20:59Z print 92.44 (-2.29% vs 94.61); wire-consistent (Crux 93.05 minor basis); 30m end 92.44"
     },
     "GC=F": {
-      "live": 4323.4,
+      "live": 4320.5,
       "settle_0924": 4298.0,
-      "pct": 0.59,
-      "note": "Recovery continues; spot ~4,278.74 (Reuters 11:41-EDT snapshot)"
+      "pct": 0.52,
+      "note": "Micro-drift -0.07% vs c88 live 4,323.4; recovery continues; no decisive haven bid"
     },
     "JPY=X": {
-      "live": 157.269,
+      "live": 157.185,
       "thu_bar": 158.811,
-      "yen_pct_change": -0.97,
-      "note": "FIRMED into close, AWAY from 160 RED gate; Katayama-Bessent reaffirm; no MOF"
+      "yen_pct_change": -1.02,
+      "note": "FIRMING away from 160 RED gate; no MOF action (weekend)"
     },
     "BTC-USD": {
-      "live": 84059.79,
+      "live": 83935.43,
       "thu_bar": 84379.06,
-      "pct": -0.38
+      "pct_vs_thu": -0.53,
+      "note": "-0.15% vs c88 live 84,059.79; 09-25 bar MISSING in Yahoo daily chain (09-24 -> 09-26 jump) = 00:3xZ stale-data artifact family (whale 0038Z run 3rd consecutive day); rangebound mid-83Ks"
     },
     "DX-Y.NYB": {
-      "live": 101.026,
+      "live": 101.035,
       "settle_0924": 101.29,
-      "pct": -0.26
+      "pct": -0.25
     },
     "^TNX": {
       "live": 5.184,
       "settle_0924": 5.162,
-      "reuters_cash_intraday_high": 5.2297,
-      "reuters_cash_snapshot": 5.217,
-      "note": "CONFLICT RESOLVED: settle 5.184 (+2.2bp, below prior 5.196 pole) BUT cash intraday 5.2297 = HIGHEST SINCE 2007 (Reuters wrap; biggest weekly rise since May); 30Y 5.5252% = highest since 2004; late-session yield rally"
+      "settle_0925": 5.184,
+      "intraday_marker": 5.2297,
+      "note": "TNX SETTLE 5.184 CONFIRMED (+2.2bp Friday; chain 4.963/4.968/5.114/5.162/5.184); cash intraday 5.2297 highest-since-2007 marker stands; 30Y 5.5252% highest-since-2004 stands"
     },
     "^GSPC": {
       "live": 7743.41,
       "settle_0924": 7704.13,
       "pct": 0.51,
-      "note": "RESILIENT TAPE DAY 5 (AI-led; Reuters mid-session +0.11% then rallied)"
+      "note": "Settle confirmed; weekend stable"
     },
     "^IXIC": {
       "live": 27068.72,
       "settle_0924": 26939.37,
       "pct": 0.48,
-      "note": "Best global-equity week since early Aug"
+      "note": "Settle confirmed"
     },
     "^VIX": {
       "live": 14.87,
       "settle_0924": 15.67,
       "pct": -5.1,
-      "note": "Closed calm"
+      "note": "Settle confirmed"
     },
     "^FTSE": {
       "live": 10695.25,
       "settle_0924": 10680.0,
-      "pct": 0.14
+      "pct": 0.14,
+      "note": "Settle confirmed; daily chain omits 09-25 bar = range-slice artifact (price = Friday close)"
     },
     "^GDAXI": {
       "live": 25408.64,
       "settle_0924": 25266.53,
-      "pct": 0.56
+      "pct": 0.56,
+      "note": "Settle confirmed; same chain-slice artifact as FTSE"
     }
   },
   "quotes": {
     "BZ=F": {
-      "price": 97.59,
+      "price": 97.47,
       "prev": 100.34,
-      "pct": -2.74
+      "pct": -2.86
     },
     "CL=F": {
-      "price": 92.7,
+      "price": 92.44,
       "prev": 95.78,
-      "pct": -3.22
+      "pct": -3.49
     },
     "GC=F": {
-      "price": 4323.4,
+      "price": 4320.5,
       "prev": 4383.9,
-      "pct": -1.38
+      "pct": -1.45
     },
     "^TNX": {
       "price": 5.184,
@@ -134,24 +135,24 @@
       "pct": 2.06
     },
     "BTC-USD": {
-      "price": 84059.79,
-      "prev": 86602.914,
-      "pct": -2.94
+      "price": 83935.43,
+      "prev": 86172.28,
+      "pct": -2.6
     },
     "JPY=X": {
-      "price": 157.269,
+      "price": 157.185,
       "prev": 157.046,
-      "pct": 0.14
+      "pct": 0.09
     },
     "EURUSD=X": {
-      "price": 1.1399,
+      "price": 1.1392,
       "prev": 1.148,
-      "pct": -0.71
+      "pct": -0.77
     },
     "DX-Y.NYB": {
-      "price": 101.026,
+      "price": 101.035,
       "prev": 100.43,
-      "pct": 0.59
+      "pct": 0.6
     },
     "^FTSE": {
       "price": 10695.25,
@@ -165,9 +166,10 @@
     }
   },
   "quotes_meta": {
-    "fetched_at": "2026-09-25T20:37Z",
-    "source": "yahoo v8 chart 5d + 1d/30m intraday (BZ/CL)",
-    "settle_basis_note": "pct fields vs chartPreviousClose roll anchors - use live_vs_settle for true d/d vs 09-24 settles; BZ=F live = BROKEN-ARTIFACT SETTLE (true 105.73)"
+    "fetched_at": "2026-09-26T00:37Z",
+    "source": "yahoo v8 chart 5d + 1d/30m intraday (BZ/CL roll check)",
+    "actual_fetch": "00:49-52Z (script written by interrupted prior attempt, re-executed this run)",
+    "settle_basis_note": "pct fields vs 5d roll anchors - use live_vs_settle for true d/d vs 09-24 settles; BZ=F live = BROKEN-ARTIFACT print (true 105.73); FTSE/GDAXI/BTC chains omit 09-25 bar (slot artifact)"
   },
   "intraday_30m": {
     "BZ=F": [
@@ -204,7 +206,8 @@
       "19:00Z:97.79",
       "19:30Z:97.35",
       "20:00Z:97.58",
-      "20:28Z:97.58"
+      "20:30Z:97.47",
+      "20:59Z:97.47"
     ],
     "CL=F": [
       "04:00Z:93.04",
@@ -240,7 +243,8 @@
       "19:00Z:92.66",
       "19:30Z:92.23",
       "20:00Z:92.68",
-      "20:28Z:92.7"
+      "20:30Z:92.44",
+      "20:59Z:92.44"
     ]
   }
 }
