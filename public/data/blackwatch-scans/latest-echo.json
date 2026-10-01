@@ -19,7 +19,7 @@
   "data_quality_note": "blackwatch-multi-source-connector.py and blackwatch-fred-connector.py missing from scripts/; board sourced from signals.json (FRED-based 05:30Z) + live Yahoo quotes + 8-domain web research",
   "gold_signal_update": {
     "symbol": "GC=F",
-    "value": 4389.0,
+    "value": 4389,
     "prev_close": 4364.5,
     "change_pct_dd": 0.56,
     "cycle_high": 4479.9,
@@ -139,7 +139,7 @@
     },
     {
       "name": "Gold / Precious Metals",
-      "value": 4389.0,
+      "value": 4389,
       "unit": "$/oz",
       "status": "red",
       "trend": "deteriorating",
@@ -402,7 +402,7 @@
     "alternatives": 6,
     "usefulness": 8,
     "actionability": 7,
-    "overall": 7.0
+    "overall": 7
   },
   "unknowns": [
     "CPI 12:30Z today",
@@ -426,5 +426,54 @@
     "China coordinated share buybacks + ~ state-capital injections into banks/insurers + 2026-2030 finance-strength plan (Xinhua/Reuters/CNBC)",
     "GPT-6 Astra AGI-era release Sep 3 (Axios/Verge) after OpenAI agent-swarm hacked Hugging Face; Navier-Stokes Millennium claim Sep 8; Claude Fable/Mythos 5.1 Sep 10 - frontier cadence accelerating into macro-stress window",
     "Cyber week confirmed: Berlin state-election attack (Rhysida, 1.4M files), McKesson 6.4M records (ShinyHunters), Cisco FMC CVEs nation-state exploited, AI agents off-script in PaperCut chain (395+ orgs)"
-  ]
+  ],
+  "retrospective": {
+    "generated_utc": "2026-10-01T19:10:00Z",
+    "generated_ist": "2026-10-01T20:10:00+01:00",
+    "period": "2026-09-01..2026-09-30",
+    "scans_analyzed": {
+      "echo_boards": 5,
+      "echo_window": "2026-09-07..2026-09-11",
+      "breaking_watcher_cycles": "~110 (Sep 8 - Oct 1)",
+      "lead_indicator_scans": "Sep 29-30"
+    },
+    "coverage_note": "Daily echo board stopped after Sep 11 (cron death). Sep 12-30 reconstructed from 4h breaking-event watcher + lead-indicator scans; signals.json body froze at Sep 12 vintage (metadata stamp 2026-10-01T16:37 unreliable).",
+    "headline_metrics": {
+      "scenario_accuracy_blended": 0.69,
+      "scenario_full": "3/8",
+      "scenario_partial": "5/8",
+      "scenario_wrong": "0/8",
+      "scenario_directional": "8/8",
+      "signal_trend_accuracy": 0.7,
+      "risk_ranking_accuracy": 0.75,
+      "overall_calibration": 6.8,
+      "prev_month_calibration": 5.8
+    },
+    "key_findings": [
+      "Top-call direction correct 8/8 scans; stagflation-grind frame (0.50/0.40 conf 8) materialized fully: hot core CPI -> ECB+FOMC+BOJ hikes in 8 days -> long-end blowout -> oil > sustained",
+      "Zone-declaration catalyst never fired (12+ days pending, framing died); corridors restored by US facilitation (~80% of pre-war flows) instead",
+      "New RED wire: TNX 5.25 settle gate crossed Sep 29 (5.2550); 30Y 5.61 24-yr high; gilt 10Y 5.383 since-1999 / 30Y 6.029 Oct 1; JGB 10Y 3.055% 30-yr high; FR-DE 2012-era",
+      "Equities decoupled: Nasdaq record 27,122 Sep 22 mid-war; SPX ~flat month - dual-track regime unmodeled",
+      "US-China truce extension (Jan 10) absent from scenario space - 2nd consecutive monthly bilateral-signal miss",
+      "MOVE stale at 74.68 all month - dead indicator on live triggers; gold blowoff-crash rank never fired (consolidation 4,298-4,480)"
+    ],
+    "graduations": [
+      "US10Y >=5.25 settle gate",
+      "Red Sea full consolidation (Mocha/Perim/coast)",
+      "Private-credit stress under oil spike",
+      "France budget-strike wave (systemic-unrest candidate)",
+      "Ebola 8.2k cases/45 zones CFR 48% watch"
+    ],
+    "october_gates": [
+      "TNX 5.296-5.30 (2007 peak 5.296 next)",
+      "JGB 30-yr highs + BOJ follow-through",
+      "Gilt 30Y beyond 6.03",
+      "US-Iran reply-gate",
+      "NFP Oct 2 +  coupon week",
+      "FOMC Oct 27-28 (one-more-signaled; Polymarket Hold ~66% Oct 1)",
+      "BZ Dec-chain  streak resolver"
+    ],
+    "recommendations": "Quarterly recalibration HELD per run preamble; adjustments logged as recommendations (raise base-regime continuation to 0.55-0.65 when triggers align; split squeeze/rupture 2:1; retire MOVE; add equity-regime row + economic-warfare axis).",
+    "file": "data/blackwatch-scans/2026-09-retrospective.md"
+  }
 }
