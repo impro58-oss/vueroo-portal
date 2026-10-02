@@ -1,387 +1,480 @@
 {
-  "scan_id": "blackwatch-2026-10-02-0837",
+  "scan_id": "blackwatch-2026-10-02-1237",
   "scan_type": "breaking_event_4h",
-  "timestamp": "2026-10-02T08:37:00+00:00",
-  "execution_note": "Routine 0837Z Friday-morning cycle (window Oct-2 04:37Z -> 08:37Z; run executed ~08:43-09:0xZ = restored-slot timing; c123 completed fd8a3c65 04:49Z; prior c124 attempt died pre-write AFTER quotes fetch 08:43Z — restorer re-swept research fresh + re-fetched quotes 08:42-53Z 24/24; whale 0731Z ts-refresh-only published b3eb8f44 in-window (ts-refresh noted, no new whale signals); TrojanVue autosyncs 06:00/06:42Z in-window). US CLOSED (opens 13:30Z; Thu settles carry SPX 7,666.45 +0.19%/IXIC 26,871.60/DJI 50,926.56), NFP TODAY 12:30Z +085-90k fc = post-window (c125 1237Z landing), TNX settle TONIGHT 21:00Z (5.293 settle-high + 5.296 2007-peak razor; bar static 5.237), BZ settle TONIGHT 18:30Z = October-streak settle #3 (102.31 reference; intraday SUB-$100 99.41 at 08:42Z), Europe OPEN 2nd hour (opens 07:00Z; relief DAX +1.05%/CAC +1.00%/FTSE +0.66% at 08:28-37Z), Tokyo SETTLED (N225 68,309.46 -0.94% Yahoo bar 06:45Z vs investing close wire -0.87% = basis-split), HSI DAY-CLOSED -2.6% (23,972.29 08:08Z final bar; holiday-delayed catch-down LANDED), A-share + India CLOSED (Golden-Week + Gandhi-Jayanti) = double-blindspot day-2, PBOC fix suspended (reopen Oct-9). Quotes 08:42-53Z 24/24 + 30m BZ/CL day-3 chain count=11 (101.29 -> 99.41 fade). 14 search ops/12 domains + 4 verification fetches (Guardian live-blog full, politico body-blocked x2 = headline-only, dpa-rung piece PDF-linked = 147-26 rewrap confirmed, fdic.gov failed-bank-list fetch = NO 7th). c124 first-logged (grep-verified unlogged): Wright->1/3-EU-diesel-reserves quantified ask + politico assertive-response-agreed (headline-only/date-ambiguous) + China-halt every-destination/Zhejiang scope + FAO FPI 136.0 near-4y-high + Tokyo CPI 2.7% + MOF ¥15.39tn record print + BZ sub-$100 intraday break (settle-gate pending).",
-  "tb_tail": "c124 FIRST-LOGGED LEGS (grep-verified unlogged in full tb chain): (A) WRIGHT QUANTIFIED ASK - politico energy-desk: Chris Wright's detailed proposal asks Europe to release MORE THAN A THIRD of its diesel reserves ('19 HRS ago' politico-site relative at 08:5xZ fetch = ~Oct-1 13:50-14:00Z c120-window-vintage, unlogged through c121-c123; sold as way to bring down fuel prices WITHOUT banning US exports = quantifies the c123 diesel-intervention leg into a concrete bilateral ask). (B) POLITICO 'EUROPEAN COUNTRIES AGREE ON ASSERTIVE RESPONSE TO US DIESEL PRESSURE' - search snippet: 'countries including Britain, France and Germany held an emergency meeting Thursday'; body extraction BLOCKED twice (markdown+text) = headline-only class; date-AMBIGUOUS (snippet says Thursday-meeting vs france24/RTE in-window 'will meet Friday' refs) = MEDIUM-conf, NOT confirmed as final outcome; EU meeting outcome + FR/DE stockpile decisions = TONIGHT/today gate. (C) CHINA-HALT SCOPE DETAIL - thedeepdive Oct-1 06:12Z: China suspended fuel exports to EVERY DESTINATION + 'PetroChina AND Zhejiang Petrochemical scrap October cargoes' = scope-shape increment vs c121-c123 log ('one (PetroChina) cancels cargoes', beyond-HK/Macau Oct-1 Reuters rewraps); aggregator class MEDIUM; NO new event. (D) FAO SEPT FOOD PRICE INDEX 136.0 (+2.0 vs Aug 134.0) = HIGHEST SINCE NOV-2022 (near-4-year-high; Guardian live 41m-ago block ~08:13Z IN-WINDOW; FAO 09:00 BST agenda slot); sugar +11.9% (El Nino + EU sugarbeet downgrade); = fresh FOOD-security leg inside the stack (supply_chain note cross). (E) TOKYO CPI SEPT 2.7% YoY ACCELERATED (fxstreet 06:00Z 'yen rises due to hot Tokyo CPI, dovish Fed bets'; allmind 'headline+core reac[h]...' investing.com syndication) = BOJ-hawkish texture supporting yen-firm; JPY 157.611 (08:52Z) vs 158.056 weakest-tracked (c122). (F) MOF ¥15.39tn RECORD single-currency intervention-spend print (tokyotribune '1 week ago' aggregator = ~Sep-25-vintage, MEDIUM-LOW conf, first-logged for the NUMBER; official-basis verify pending; no NEW intervention wires in-window; JPY 157.6 no MOF). MARKET-STATE LEG: BZ SUB-$100 INTRADAY BREAK (de-esc texture, settle-gate deferred): BZ=F last 99.41 -2.83% (08:42Z re-fetch; 99.56@08:33Z prior fetch) + 30m DAY-3 chain count=11 fade 101.25 -> 101.29 -> 100.37 -> 99.69 -> 99.41 -> 99.58 -> 99.41 = 2.5h Europe-session fade below the $100 gate; CL 89.48 -3.65% (sub-90 handle touch); attribution MULTI-CAUSE (MEDIUM): coordinated-release-path texture (EU assertive-agreed + Wright quantified ask + taskforce-today stocks) + NFP-pre positioning (12:30Z) + global-rout-EASING (Guardian ~07:30Z 'global bond market STEADYING' + UK 10y gilt EASES after 2007-high TE 07:10Z + Asia-session bond wild-swings then steadier Reuters wrap 02:10Z-carry) - vs Oct-1 intra precedent 96.76 (streak = SETTLE-basis; intra prints non-breaking); GATE: settle #3 TONIGHT 18:30Z (102.31 reference) = c125/c126-c127 verdict. EUROPE OPEN RELIEF vs SPREAD-DIVERGENCE: DAX 25,201.39 +1.05% + CAC 7,913.29 +1.00% + FTSE 10,497.23 +0.66% (08:28-37Z Yahoo bars vs Oct-1 closes 24,939.35/7,835.31/10,428.27) BUT BONDS: FR-DE 10y spread +13.9bp YESTERDAY = BIGGEST DAILY JUMP SINCE MARCH-2020-covid (DB Reid via Guardian; FR-DE widest-since-2012; OAT 4.92% highest-since-2002 il-Mattino + spread-140 print) + ITALY BOND SPREAD CLIMBS FURTHER (Ansa 09:46-cest 07:46Z IN-WINDOW; BTP 10y yield STABLE + spread surge continues; BTP-Bund 118bp close-class carry) + Reid 'daily moves were REMINISCENT OF THE EURO CRISIS... sovereign contagion a big talking point' + Guardian 'French bond sell-off reminiscent of the euro crisis as Paris proposes cuts and tax rises' + EURO NEAR 17-MONTH-LOW texture (Guardian block, basis consistent w/ EURUSD 1.1251 -0.67%) = equities-relief + spread-divergence (rate-crisis texture, NOT bank stress). UK: 10y gilt EASES after 2007-high print (TE 07:10Z); 30y 6.029%-1998-class basis-split carries; diesel GBP2/litre records (forecourttrader Oct-1 11:16BST cross + upday Oct-2 06:20 rewrap; fillitup diesel avg 196.7p +4p feed); O'Neill fiscal-buffer texture. US/NFP: US CLOSED (Thu settles carry); VIX 15.98 -2.5% live 08:37Z (relief); hot-NFP tail-risk (fxstreet Oct-2 'we expect a HOT one' + piptheory Sept-preview +85k fc vs c123 +90k fc basis-split vs +162k prev, U4.1%) = 12:30Z TODAY reprice gate (c125 landing); Fed de-esc snapshots ALL-LOGGED vintage-varied: predictionscout Oct-2 Kalshi HOLD ~72% favorite + lines.com Oct-1 Polymarket HIKE 37% + bitget/feihai Oct-2 00:29 'October HIKE PROBABILITY PLUMMETED IN A WEEK' (aggregator classes, vintage UNKNOWN each); FOMC Oct-27/28; factory orders 15:00 BST. JAPAN: N225 SETTLED 68,309.46 -0.94% Yahoo (06:45Z bar) vs investing close wire -0.87% (basis-split); Tokyo-CPI-hot; KOSPI 7,003.74 +0.46% (06:30Z settled); TWII 48,475.74 +0.25% (05:33Z bar); JPY 157.61 firmed (NO MOF wires in-window; ¥15.39tn record-print first-log). CHINA: Golden-Week parked day-2 (SSE 3,842.19/ChiNext 3,135.28 Sep-30 bars; PBOC fix suspended last 6.7351; reopen Oct-9); halt-SCOPE detail first-log (every-destination + Zhejiang); HSI DAY-CLOSED 23,972.29 -2.6% (08:08Z; catch-down LANDED from c123's live -2.64% = no further leg); Xi Taiwan-warning carry; Stock-Connect suspended. EM-ASIA: Reuters global-wrap 02:10Z (c123-window carry) 'ASIAN SHARES FALL after WILD SWINGS IN BONDS, FX before US jobs data' + AP 04:53Z 'mixed after bond sell-off deepens' + investing Oct-2 'Mixed ahead of US jobs; HONG KONG SHARES DROP 3%' = catch-down confirmed then close-basis -2.6%; India CLOSED (Gandhi-Jayanti resume Oct-5) = double-blindspot continues; rupee 96.31-32 carries. FIN-SYSTEM: FDIC 6+3 STANDS NO-7TH (fetch-verified 08:55Z: failed-bank-list top row = Nano Banc Sep-25 2026 + Tioga-Franklin next = UNCHANGED); Cook private-credit downplay + PC-ladder + CCC ~1,000bp + ETF-streak-broken $149M carries; bond-rout-easing = relief texture; NO systemic wire in-window. AFRICA/PANDEMIC: EBOLA 8,200+/45-zones STANDS NO fresh OFFICIAL increment (ECDC page Sep-28 vintage; DRC SitRep #136 27-09-class; WHO DON Sep-25; newkerala Oct-1 23:16 Africa-CDC case-drop-may-mask-spread warning = c123-carried; UN transit-centre-fire carry); radiogeneration Oct-1 rewrap 8,200+/45 = same numbers. LATAM: BRAZIL T-2 (vote SAT Oct-4; c126 1237Z day-of): Datafolha Oct-1 22:05Z final Lula 42/38 1st + Reuters 22:24Z 2nd-round Lula +3 (48/45-class) vs Vox-Brasil Flavio 48.2/45.2 (opposite-lead basis-split) vs RTBD 43/39 TIED = runoffs basis-split LOGGED; Folha/BangkokPost Oct-2 campaign texture (Flavio 'voto de revolta' + Lula-indecisos); Polymarket-advance ~96% carry. CRYPTO: BTC 86,285.13 +1.69% (08:52Z) = churn-hold above 85k-range-top (c123 86,519.10 peak print -> 86,285; fresh 86.5k-zone break HOLDS intraday); attribution wire STILL UNFOUND = MEDIUM persists; whale 0731Z ts-refresh-only (b3eb8f44 in-window); ETF-streak-broken carries; ADBE MTD anchor watch carries.",
+  "timestamp": "2026-10-02T12:37:00+00:00",
+  "execution_note": "Routine 1237Z Friday-midday cycle (window Oct-2 08:37Z -> 12:37Z; run executed ~12:37-12:5xZ; c124 completed 08:58Z commit 15b36ebb + 0901Z retry-noop verification-only close (scheduler-anchor note, no re-scan); whale-job quiet in-window; Friday midday). US PRE-OPEN (opens 13:30Z minutes post-window; Thu settles carry SPX 7,666.45 +0.19%/IXIC 26,871.60/DJI 50,926.56), NFP LANDED 12:30Z = headline print NOT-YET-WIRED-by-search-index at scan close (consensus 84-90k slowdown; unemployment-likely-steady; August +162k/4.1%; ADP +90k Sep-30; reaction = c126), eurozone flash CPI 3.8% PRINTED 09:00Z in-window (+0.6pp vs Aug; beat; Reuters 'pressure on ECB to hike'), FR-DE spread ->150bp widest-since-2012 (11:01Z), TNX settle TONIGHT 21:00Z razor (5.293/5.296; live 5.218 -0.36% pre-print ease; 24-yr-high FXStreet-label basis-conflict vs 19-yr/2007-peak standing logged), BZ settle TONIGHT 18:30Z = October-streak settle #3 (Oct-1 settle 102.31 CONFIRMED multi-source after c124 basis-conflict; intraday sub-$100 day-2 persistence 99.83 12:28Z), Europe mid-afternoon: relief equities (GDAXI +0.98% 12:23Z) vs spread-escalation divergence continues, Tokyo settled (N225 -0.94% Yahoo-bar), HSI closed 23,972.29 -2.6% (c124 catch-down stands), A-share + India CLOSED day-2 (Golden-Week + Gandhi-Jayanti), PBOC fix suspended (reopen Oct-9). Quotes 12:28-38Z 24/24 + 30m BZ/CL day-3 chain count=18 (last 99.83 @12:28Z). 16 search ops / 12 domains + 2 full-read verification fetches (Al Jazeera Iran-war live-blog 12:41Z + Euronews EU-crisis-meeting 12:40Z) + NFP-vintage-kill + FDIC-list + FDIC-in-brief checks. c125 first-logged (grep-verified): EU-FULLY-REJECTS-US-diesel-demand (AJ) vs FRANCE-100M-float + MACRON-50M-proposal + UK-CUT-OUT (Telegraph 11:06Z) + EU-meeting-today-confirmed (Ireland-presidency) + eurozone-CPI-3.8-level-change + FR-DE-150bp + YEMEN-GOV-OFFENSIVE (Sana'a-high-value + 20-Taiz-attacks claims) + China-halt-Asia-choke (08:59Z) + force-build-end-Nov quantified (3-carriers-2-ARGs) + Trump-warns-new-strikes (CNBC 06:51Z).",
+  "tb_tail": "c125 (2026-10-02 1237Z) FIRST-LOGGED/PENDING legs: (1) EURO-SPREAD ESCALATION CONTINUES: FR-DE 10y spread breaches 150bp (roic.ai Oct-2 11:01Z 'France's 10-year borrowing premium over Germany surged to 1.5pp, WIDEST SINCE THE 2012 euro-area debt crisis'; vs c124-stack ActionForex-140.6-break = fresh +9-10bp progression); OAT 4.937% (MarketScreener 06:45Z carry; c124 4.92% 2002-high). (2) EUROZONE FLASH CPI 3.8% y/y vs 3.2% Aug = +0.6pp ONE-MONTH SURGE, beat 3.6/3.7 estimates (Eurostat flash 09:00Z; dpa 10:09Z; XTB 'higher than expected, euro reacts'; energy-highest-component; Reuters 09:05Z 'keeping pressure on ECB to hike') = level-change leg on euro-inflation vector vs Newsquawk-Oct-1 16:01Z 'money markets no longer fully price one more ECB hike by year-end' + FXStreet-Oct-2 06:45 'combined pushback trimmed the October [hike odds]' — hike-odds tug-of-war resolved by TODAY's CPI print back-toward-hikes; ECB next Oct-29. (3) DIESEL-INTERVENTION FORK MATURATES: AJ live-blog (2-Oct, full-read 12:41Z): 'European Union FULLY REJECTS a US demand to release emergency diesel stocks' (escalation on diplomacy vector) — RECONCILED vs voluntary-path: politico FRANCE FLOATS 100 MILLION barrels crude+diesel release + Telegraph 11:06Z MACRON proposes 50M-barrel EU release + euronews full-fetch 12:40Z EU-CRISIS-MEETING-TODAY (Ireland rotating-presidency confirmed; Jorgensen Thursday: release 'a possibility... discussing with ALL IEA members when the right time'; IEA-Birol urging; commission-spokesperson confirms ban-threat warning) + politico assertive-agreed STAMPED Oct-1 14:44:54Z (resolves c124 date-ambiguity: Thursday-Oct-1 emergency meeting, formal outcome pending) + UK CUT OUT of talks (Telegraph: 'UK's exclusion from a potential Trump-EU deal risks leaving it reliant on its own meagre fuel stockpile' = UK-vector exclusion leg; Independent: transport-minister Mather 'supply robust' reassurance) — MEETING OUTCOME + FR/DE-DECISIONS = c126 gate. (4) YEMEN-GOV-OFFENSIVE claims (AJ live-blog 12:41Z): Yemen army spox Majed al-Nuzaili — gov forces struck 'HIGH-VALUE TARGETS' IN SANA'A + 20 air attacks vs Houthis in TAIZ governorate = Yemen-theatre gov-offensive leg (claims-only MEDIUM; escalation counterweight vs Houthi naval-blockade + second-theatre carries); gulfnews Oct-2 'Saudi Arabia intercepts Houthi missile' carry-class vintage-unplaced MEDIUM-LOW. (5) FORCE-BUILD END-NOV QUANTIFIED (AJ explainer Oct-2): 'by end-November THREE US carriers AND TWO amphibious landing groups positioned' + CNBC Oct-2 06:51Z 'U.S. looks to boost Mideast buildup as TRUMP WARNS OF NEW IRAN STRIKES' (Trump-warning texture first-log) + NYP Oct-1 '10K more troops... weighs post-midterm Iran assault' = c123 3-carrier-leg follow-through (texture, NO new rung). (6) CHINA-HALT ASIA-CHOKE FOLLOW-THROUGH (in-window): Reuters Oct-2 08:59Z 'China fuel export suspension to CHOKE SUPPLIES IN ASIA' + SeoulEcon Oct-2 'large share of month's shipments cancelled; export resumption reviewed only AFTER [Oct] 7th; seen targeting US diesel shock' + Sputnik/NAMPA-Oct-2 partially-restricted-confirm + DNYUZ-Bloomberg-Oct-2 = Asia-products-squeeze quantification of logged halt. (7) MARKET STATE: BZ 99.83 -2.42% (12:28Z) = second-day-sub-$100-INTRA-persistence (30m day-3 chain count=18 101.29->99.41->99.83 midday; Oct-1 intra precedent 96.76; streak = SETTLE-basis; settle #3 GATE TONIGHT 18:30Z; Oct-1 SETTLE BASIS 102.31 CONFIRMED multi-source: tokenpost + europeansuntimes both 'jumps 4%/4.4% to settle 102.31' = c124 basis-conflict RESOLVED) + CL 89.80 -3.31% sub-90-persists (settle 92.87) + GC 4,210.7 +0.20% STABILIZE-after-7wk-low-zone (spot 4,161.58 -0.4% = SECOND WEEKLY LOSS -3% w/w Reuters-based; MNI spot 4,138.04 low 01:13Z) + SI 61.435 +1.17% record-zone + TNX 5.218 -0.36% (12:23Z pre-print ease; 5.293/5.296 razor settle TONIGHT 21:00Z; US10y/30y 24-YEAR-HIGH labels FXStreet+Vantage+capwolf = label-basis-conflict vs c124-stacked 19-yr/2007-peak, logged-no-overwrite) + TYX 5.592 + 30y-5.618-allmind + VIX 16.05 -2.07% NO-fear + Europe relief (GDAXI 25,184.81 +0.98%/FCHI 7,872.14 +0.47%/FTSE 10,450.14 +0.21% 12:23Z) vs euro 1.1254 -0.64% near-17-mo-low-tex + BTC 86,832.19 +2.33% (12:38Z range-top-break extension) + JPY 157.087 -0.30% firmed (12:38Z; Investing-08:40-EDT 'yen firms on strong inflation' right-side; ELEV8 'weakens-above-158.00/hike-bets-halved' BASIS-CONFLICT-KILLED vs panel) + DXY 102.069 + HSI closed 23,972.29 -2.6% stands + N225 settled -0.94%. (8) NFP: LANDED 12:30Z (consensus 84k WSJ/Reuters-slowdown/unemployment-steady; ADP+90k Sep-30); PRINT NOT-YET-WIRED at scan-close — POST-print reaction + TNX/BZ settles = c126 verdict gates. (9) QUIET: FDIC-list top-row NANO-BANC UNCHANGED = NO-7TH (snippet 12:3xZ; c124 fdic.gov-fetch-verify carry) — fdic.gov-2026-in-brief-page-'5-failures' vs standing-6-bank-YTD = page-methodology FLAG (operative=failed-bank-list-top-row); EBOLA 8,200+/45-zones NO-increment (africa-search-clean, old vintages only); Brazil T-2 vote-SAT Datafolha-Lula-48/45 (Oct-1 19:05 BRT) vs Vox-Flavio-48.2/45.2 basis-split carries; UK gilts fall-sharply (lse-Reuters 09:42Z post-multi-decade-high relief); JGB mixed-basis (MS 3.058% 06:00Z + rallies 3.100% multi-decade-tread vs ET-Reuters-07:46Z 'yields fall' resolve Friday-close c126). (10) KILLS: AP-'-23,000-jobs'-piece = AUG-7-2026-vintage recirculation (LA-Times-2026-08-07-URL + WashTimes-aug/7 + Marshall-Aug-7 date-stamps) KILLED-as-stale; gulfnews-'May-04-2026'-tanker-piece KILLED; fdic-5-count-page flagged; Elev8-JPY-158 killed.",
   "panel": {
     "BZ=F": {
-      "live": 99.41,
+      "live": 99.83,
       "settle_0930": 102.31,
-      "chain_pct": -2.83,
-      "note": "SUB-$100 INTRADAY BREAK: 30m day-3 chain 101.29 -> 99.41 (2.5h Europe-session fade); Oct-1 intra precedent 96.76; streak = SETTLE-basis; settle #3 GATE TONIGHT 18:30Z; live band 99.41-99.58"
+      "chain_pct": -2.42,
+      "note": "SECOND-DAY sub-$100 INTRADAY persistence: 30m day-3 chain count=18 (c124 count=11), last 99.83 @12:28Z, fade leg 101.29->99.41->99.83; Oct-1 intra precedent 96.76; October >$100 streak = SETTLE-basis; settle #3 GATE TONIGHT 18:30Z (102.31 Oct-1 Dec-front reference CONFIRMED multi-source); live band 99.41-99.99"
     },
     "CL=F": {
-      "live": 89.48,
+      "live": 89.8,
       "settle_0930": 92.87,
-      "chain_pct": -3.65,
-      "note": "WTI sub-90 handle touch 89.48 vs 92.87 settle; -3.65%; same multi-cause attribution; sub-90 = CL-leg de-esc texture"
+      "chain_pct": -3.31,
+      "note": "WTI sub-90 persists 89.80 vs 92.87 Oct-1 settle; -3.31%; same multi-cause attribution (coordinated-release-path + NFP-pre + rout-easing); sub-90 = CL-leg de-esc texture"
     },
     "GC=F": {
-      "live": 4211.6,
+      "live": 4210.7,
       "settle_0930": 4207.8,
-      "chain_pct": 0.22,
-      "note": "flat churn ~4,207-4,219 zone extending settle basis; $4,500 untested; NFP+TNX gates"
+      "chain_pct": 0.2,
+      "note": "STABILIZE after 7-week-low-zone (c124 4,168.7 -3.53% leg); spot 4,161.58 -0.4% = SECOND WEEKLY LOSS (-3% w/w, Reuters-based rallies.ai); MNI spot-print 4,138.04 low (01:13Z); no haven bid; NFP/TNX-settle = next movers"
     },
     "SI=F": {
-      "live": 61.57,
+      "live": 61.435,
       "settle_0930": 61.35,
-      "chain_pct": 1.39,
-      "note": "record-zone extension maintained (+1.39%)"
+      "chain_pct": 1.17,
+      "note": "record-zone extension maintained (+1.17%)"
     },
     "^TNX": {
-      "live": 5.237,
+      "live": 5.218,
       "settle_0930": 5.293,
-      "note": "Oct-1 bar 5.237 static carry (5.293 settle-high + 5.296 2007-peak both HOLD); Oct-2 settle TONIGHT 21:00Z = gate OPEN at scan time (post-window; c125 carries, resolution c126/c127 convention)"
+      "note": "Oct-1 bar 5.237 -> live 5.218 -0.36% (12:23Z PRE-NFP print ease; bond-steadying relief); razor 5.293 settle-high + 5.296 2007-peak HOLD; Oct-2 settle TONIGHT 21:00Z = gate OPEN at scan time (resolution c126/c127); US10y+US30y '24-YEAR-HIGH' labels (FXStreet Oct-2 06:45 + Vantage + capwolf = 24-yr label-basis) vs c124-stacked 19-yr/2007-peak = LABEL BASIS CONFLICT logged, anchors preserved"
     },
     "^TYX": {
-      "live": 5.603,
+      "live": 5.592,
       "settle_0930": 5.638,
-      "note": "30Y Oct-1 bar 5.603 carry; Sep-30 settle-high 5.638 stands"
+      "note": "30Y 5.592 -0.20% (12:23Z); Sep-30 settle-high 5.638 stands; allmind 30y-5.618 + 24-yr-high label-basis logged"
     }
   },
   "quotes": {
-    "BZ=F": {
-      "price": 99.41,
-      "prev": 102.31,
-      "pct": -2.83,
-      "daily5": [
-        "09-28:105.28",
-        "09-29:102.59",
-        "09-30:103.53",
-        "10-01:102.31",
-        "10-02:99.41"
-      ],
-      "t": "10-02 08:42Z"
+    "fetched_utc": "2026-10-02T12:39Z",
+    "source": "yahoo v8 chart 5d + 1d/30m intraday (BZ/CL) - breaking c125 fetch (routine 1237Z slot; window Oct-2 0837Z->1237Z; US OPEN 13:30Z = ~1h7m session; NFP LANDED 12:30Z = in-window; Europe mid-afternoon; Tokyo closed afternoon; HSI/HSCEI LIVE post-holiday; A-share + India CLOSED day-2; BZ settle #3 TONIGHT 18:30Z; TNX settle TONIGHT 21:00Z)",
+    "quotes": {
+      "BZ=F": {
+        "price": 99.83,
+        "prev": 102.31,
+        "pct": -2.42,
+        "daily5": [
+          "09-28:105.28",
+          "09-29:102.59",
+          "09-30:103.53",
+          "10-01:102.31",
+          "10-02:99.83"
+        ],
+        "t": "10-02 12:28Z"
+      },
+      "CL=F": {
+        "price": 89.8,
+        "prev": 92.87,
+        "pct": -3.31,
+        "daily5": [
+          "09-28:92.6",
+          "09-29:89.38",
+          "09-30:90.42",
+          "10-01:92.87",
+          "10-02:89.8"
+        ],
+        "t": "10-02 12:28Z"
+      },
+      "GC=F": {
+        "price": 4210.7,
+        "prev": 4202.2998,
+        "pct": 0.2,
+        "daily5": [
+          "09-28:4168.3999",
+          "09-29:4179.7002",
+          "09-30:4186.7002",
+          "10-01:4202.2998",
+          "10-02:4210.7002"
+        ],
+        "t": "10-02 12:28Z"
+      },
+      "SI=F": {
+        "price": 61.435,
+        "prev": 60.725,
+        "pct": 1.17,
+        "daily5": [
+          "09-28:61.22",
+          "09-29:60.668",
+          "09-30:60.098",
+          "10-01:60.725",
+          "10-02:61.435"
+        ],
+        "t": "10-02 12:28Z"
+      },
+      "^TNX": {
+        "price": 5.218,
+        "prev": 5.237,
+        "pct": -0.36,
+        "daily5": [
+          "09-28:5.24",
+          "09-29:5.255",
+          "09-30:5.293",
+          "10-01:5.237",
+          "10-02:5.218"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^TYX": {
+        "price": 5.592,
+        "prev": 5.603,
+        "pct": -0.2,
+        "daily5": [
+          "09-28:5.561",
+          "09-29:5.594",
+          "09-30:5.638",
+          "10-01:5.603",
+          "10-02:5.592"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^VIX": {
+        "price": 16.05,
+        "prev": 16.39,
+        "pct": -2.07,
+        "daily5": [
+          "09-28:16.07",
+          "09-29:16.04",
+          "09-30:16.34",
+          "10-01:16.39",
+          "10-02:16.05"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^GSPC": {
+        "price": 7666.45,
+        "prev": 7651.54,
+        "pct": 0.19,
+        "daily5": [
+          "09-25:7743.4102",
+          "09-28:7683.6899",
+          "09-29:7670.8398",
+          "09-30:7651.54",
+          "10-01:7666.4502"
+        ],
+        "t": "10-01 20:35Z"
+      },
+      "^IXIC": {
+        "price": 26871.596,
+        "prev": 26861.0605,
+        "pct": 0.04,
+        "daily5": [
+          "09-25:27068.7207",
+          "09-28:26820.3809",
+          "09-29:26797.5391",
+          "09-30:26861.0605",
+          "10-01:26871.5996"
+        ],
+        "t": "10-01 21:15Z"
+      },
+      "^DJI": {
+        "price": 50926.56,
+        "prev": 50906.0508,
+        "pct": 0.04,
+        "daily5": [
+          "09-25:51828.6211",
+          "09-28:51481.5117",
+          "09-29:51349.9219",
+          "09-30:50906.0508",
+          "10-01:50926.5586"
+        ],
+        "t": "10-01 20:35Z"
+      },
+      "BTC-USD": {
+        "price": 86832.19,
+        "prev": 84853.1016,
+        "pct": 2.33,
+        "daily5": [
+          "09-28:83502.6094",
+          "09-29:83622.4297",
+          "09-30:83553.8516",
+          "10-01:84853.1016",
+          "10-02:86832.1875"
+        ],
+        "t": "10-02 12:38Z"
+      },
+      "JPY=X": {
+        "price": 157.087,
+        "prev": 157.558,
+        "pct": -0.3,
+        "daily5": [
+          "09-27:157.463",
+          "09-28:157.361",
+          "09-29:157.404",
+          "09-30:157.558",
+          "10-02:157.087"
+        ],
+        "t": "10-02 12:38Z"
+      },
+      "EURUSD=X": {
+        "price": 1.1254,
+        "prev": 1.1327,
+        "pct": -0.64,
+        "daily5": [
+          "09-27:1.1378",
+          "09-28:1.1373",
+          "09-29:1.1341",
+          "09-30:1.1327",
+          "10-02:1.1254"
+        ],
+        "t": "10-02 12:38Z"
+      },
+      "DX-Y.NYB": {
+        "price": 102.069,
+        "prev": 102.1,
+        "pct": -0.03,
+        "daily5": [
+          "09-28:101.2",
+          "09-29:101.37",
+          "09-30:101.45",
+          "10-01:102.1",
+          "10-02:102.069"
+        ],
+        "t": "10-02 12:28Z"
+      },
+      "^FTSE": {
+        "price": 10450.14,
+        "prev": 10428.2998,
+        "pct": 0.21,
+        "daily5": [
+          "09-28:10684.9004",
+          "09-29:10636.7002",
+          "09-30:10606.0",
+          "10-01:10428.2998",
+          "10-02:10450.1396"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^GDAXI": {
+        "price": 25184.81,
+        "prev": 24939.3496,
+        "pct": 0.98,
+        "daily5": [
+          "09-28:25374.4199",
+          "09-29:25399.2109",
+          "09-30:25199.1895",
+          "10-01:24939.3496",
+          "10-02:25184.8105"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^FCHI": {
+        "price": 7872.14,
+        "prev": 7835.3101,
+        "pct": 0.47,
+        "daily5": [
+          "09-28:8078.48",
+          "09-29:8035.8701",
+          "09-30:7964.5098",
+          "10-01:7835.3101",
+          "10-02:7872.1401"
+        ],
+        "t": "10-02 12:23Z"
+      },
+      "^N225": {
+        "price": 68309.46,
+        "prev": 68956.7188,
+        "pct": -0.94,
+        "daily5": [
+          "09-28:65877.6172",
+          "09-29:65481.2695",
+          "09-30:66753.7188",
+          "10-01:68956.7188",
+          "10-02:68309.4609"
+        ],
+        "t": "10-02 06:45Z"
+      },
+      "^KS11": {
+        "price": 7003.74,
+        "prev": 6971.3501,
+        "pct": 0.46,
+        "daily5": [
+          "09-28:6889.7402",
+          "09-29:6870.8101",
+          "09-30:6838.04",
+          "10-01:6971.3501",
+          "10-02:7003.7402"
+        ],
+        "t": "10-02 11:05Z"
+      },
+      "^TWII": {
+        "price": 48475.74,
+        "prev": 48353.4883,
+        "pct": 0.25,
+        "daily5": [
+          "09-24:48024.6016",
+          "09-29:47631.9609",
+          "09-30:47940.1289",
+          "10-01:48353.4883",
+          "10-02:48475.7383"
+        ],
+        "t": "10-02 05:33Z"
+      },
+      "000001.SS": {
+        "price": 3842.1946,
+        "prev": 3830.4509,
+        "pct": 0.31,
+        "daily5": [
+          "09-23:3936.52",
+          "09-24:3888.374",
+          "09-28:3823.6211",
+          "09-29:3830.4509",
+          "09-30:3842.1951"
+        ],
+        "t": "09-30 07:00Z"
+      },
+      "399006.SZ": {
+        "price": 3135.277,
+        "prev": null,
+        "pct": null,
+        "daily5": [
+          "09-30:3135.2766"
+        ],
+        "t": "09-30 08:29Z"
+      },
+      "^HSI": {
+        "price": 23972.29,
+        "prev": 24613.2695,
+        "pct": -2.6,
+        "daily5": [
+          "09-25:24510.0898",
+          "09-28:24642.5098",
+          "09-29:24523.5703",
+          "09-30:24613.2695",
+          "10-02:23972.2891"
+        ],
+        "t": "10-02 08:08Z"
+      },
+      "^NSEI": {
+        "price": 22421.95,
+        "prev": 22620.4492,
+        "pct": -0.88,
+        "daily5": [
+          "09-28:22780.25",
+          "09-29:22716.1992",
+          "09-30:22620.4492",
+          "10-01:22421.9492"
+        ],
+        "t": "10-01 10:01Z"
+      }
     },
-    "CL=F": {
-      "price": 89.48,
-      "prev": 92.87,
-      "pct": -3.65,
-      "daily5": [
-        "09-28:92.6",
-        "09-29:89.38",
-        "09-30:90.42",
-        "10-01:92.87",
-        "10-02:89.48"
-      ],
-      "t": "10-02 08:42Z"
+    "intraday_30m": {
+      "BZ=F": {
+        "bars": [
+          [
+            "10-02 07:00",
+            101.29
+          ],
+          [
+            "10-02 07:30",
+            100.37
+          ],
+          [
+            "10-02 08:00",
+            99.69
+          ],
+          [
+            "10-02 08:30",
+            99.37
+          ],
+          [
+            "10-02 09:00",
+            99.35
+          ],
+          [
+            "10-02 09:30",
+            99.32
+          ],
+          [
+            "10-02 10:00",
+            99.95
+          ],
+          [
+            "10-02 10:30",
+            99.93
+          ],
+          [
+            "10-02 11:00",
+            99.88
+          ],
+          [
+            "10-02 11:30",
+            99.76
+          ],
+          [
+            "10-02 12:00",
+            99.82
+          ],
+          [
+            "10-02 12:28",
+            99.83
+          ]
+        ],
+        "count": 18
+      },
+      "CL=F": {
+        "bars": [
+          [
+            "10-02 07:00",
+            91.22
+          ],
+          [
+            "10-02 07:30",
+            90.22
+          ],
+          [
+            "10-02 08:00",
+            89.62
+          ],
+          [
+            "10-02 08:30",
+            89.34
+          ],
+          [
+            "10-02 09:00",
+            89.24
+          ],
+          [
+            "10-02 09:30",
+            89.18
+          ],
+          [
+            "10-02 10:00",
+            89.54
+          ],
+          [
+            "10-02 10:30",
+            89.39
+          ],
+          [
+            "10-02 11:00",
+            89.3
+          ],
+          [
+            "10-02 11:30",
+            89.54
+          ],
+          [
+            "10-02 12:00",
+            89.81
+          ],
+          [
+            "10-02 12:29",
+            89.77
+          ]
+        ],
+        "count": 18
+      }
     },
-    "GC=F": {
-      "price": 4211.6,
-      "prev": 4202.2998,
-      "pct": 0.22,
-      "daily5": [
-        "09-28:4168.3999",
-        "09-29:4179.7002",
-        "09-30:4186.7002",
-        "10-01:4202.2998",
-        "10-02:4211.6001"
-      ],
-      "t": "10-02 08:42Z"
-    },
-    "SI=F": {
-      "price": 61.57,
-      "prev": 60.725,
-      "pct": 1.39,
-      "daily5": [
-        "09-28:61.22",
-        "09-29:60.668",
-        "09-30:60.098",
-        "10-01:60.725",
-        "10-02:61.57"
-      ],
-      "t": "10-02 08:42Z"
-    },
-    "^TNX": {
-      "price": 5.237,
-      "prev": 5.293,
-      "pct": -1.06,
-      "daily5": [
-        "09-25:5.184",
-        "09-28:5.24",
-        "09-29:5.255",
-        "09-30:5.293",
-        "10-01:5.237"
-      ],
-      "t": "10-01 18:59Z"
-    },
-    "^TYX": {
-      "price": 5.603,
-      "prev": 5.638,
-      "pct": -0.62,
-      "daily5": [
-        "09-25:5.504",
-        "09-28:5.561",
-        "09-29:5.594",
-        "09-30:5.638",
-        "10-01:5.603"
-      ],
-      "t": "10-01 18:59Z"
-    },
-    "^VIX": {
-      "price": 15.98,
-      "prev": 16.39,
-      "pct": -2.5,
-      "daily5": [
-        "09-28:16.07",
-        "09-29:16.04",
-        "09-30:16.34",
-        "10-01:16.39",
-        "10-02:15.98"
-      ],
-      "t": "10-02 08:37Z"
-    },
-    "^GSPC": {
-      "price": 7666.45,
-      "prev": 7651.54,
-      "pct": 0.19,
-      "daily5": [
-        "09-25:7743.4102",
-        "09-28:7683.6899",
-        "09-29:7670.8398",
-        "09-30:7651.54",
-        "10-01:7666.4502"
-      ],
-      "t": "10-01 20:35Z"
-    },
-    "^IXIC": {
-      "price": 26871.596,
-      "prev": 26861.0605,
-      "pct": 0.04,
-      "daily5": [
-        "09-25:27068.7207",
-        "09-28:26820.3809",
-        "09-29:26797.5391",
-        "09-30:26861.0605",
-        "10-01:26871.5996"
-      ],
-      "t": "10-01 21:15Z"
-    },
-    "^DJI": {
-      "price": 50926.56,
-      "prev": 50906.0508,
-      "pct": 0.04,
-      "daily5": [
-        "09-25:51828.6211",
-        "09-28:51481.5117",
-        "09-29:51349.9219",
-        "09-30:50906.0508",
-        "10-01:50926.5586"
-      ],
-      "t": "10-01 20:35Z"
-    },
-    "BTC-USD": {
-      "price": 86285.13,
-      "prev": 84853.1016,
-      "pct": 1.69,
-      "daily5": [
-        "09-28:83502.6094",
-        "09-29:83622.4297",
-        "09-30:83553.8516",
-        "10-01:84853.1016",
-        "10-02:86285.1328"
-      ],
-      "t": "10-02 08:52Z"
-    },
-    "JPY=X": {
-      "price": 157.611,
-      "prev": 157.558,
-      "pct": 0.03,
-      "daily5": [
-        "09-27:157.463",
-        "09-28:157.361",
-        "09-29:157.404",
-        "09-30:157.558",
-        "10-02:157.611"
-      ],
-      "t": "10-02 08:52Z"
-    },
-    "EURUSD=X": {
-      "price": 1.1251,
-      "prev": 1.1327,
-      "pct": -0.67,
-      "daily5": [
-        "09-27:1.1378",
-        "09-28:1.1373",
-        "09-29:1.1341",
-        "09-30:1.1327",
-        "10-02:1.1251"
-      ],
-      "t": "10-02 08:52Z"
-    },
-    "DX-Y.NYB": {
-      "price": 101.918,
-      "prev": 102.1,
-      "pct": -0.18,
-      "daily5": [
-        "09-28:101.2",
-        "09-29:101.37",
-        "09-30:101.45",
-        "10-01:102.1",
-        "10-02:101.918"
-      ],
-      "t": "10-02 08:42Z"
-    },
-    "^FTSE": {
-      "price": 10497.23,
-      "prev": 10428.2998,
-      "pct": 0.66,
-      "daily5": [
-        "09-28:10684.9004",
-        "09-29:10636.7002",
-        "09-30:10606.0",
-        "10-01:10428.2998",
-        "10-02:10497.2305"
-      ],
-      "t": "10-02 08:37Z"
-    },
-    "^GDAXI": {
-      "price": 25201.39,
-      "prev": 24939.3496,
-      "pct": 1.05,
-      "daily5": [
-        "09-28:25374.4199",
-        "09-29:25399.2109",
-        "09-30:25199.1895",
-        "10-01:24939.3496",
-        "10-02:25201.3906"
-      ],
-      "t": "10-02 08:37Z"
-    },
-    "^FCHI": {
-      "price": 7913.29,
-      "prev": 7835.3101,
-      "pct": 1.0,
-      "daily5": [
-        "09-28:8078.48",
-        "09-29:8035.8701",
-        "09-30:7964.5098",
-        "10-01:7835.3101",
-        "10-02:7913.29"
-      ],
-      "t": "10-02 08:37Z"
-    },
-    "^N225": {
-      "price": 68309.46,
-      "prev": 68956.7188,
-      "pct": -0.94,
-      "daily5": [
-        "09-28:65877.6172",
-        "09-29:65481.2695",
-        "09-30:66753.7188",
-        "10-01:68956.7188",
-        "10-02:68309.4609"
-      ],
-      "t": "10-02 06:45Z"
-    },
-    "^KS11": {
-      "price": 7003.74,
-      "prev": 6971.3501,
-      "pct": 0.46,
-      "daily5": [
-        "09-28:6889.7402",
-        "09-29:6870.8101",
-        "09-30:6838.04",
-        "10-01:6971.3501",
-        "10-02:7003.7402"
-      ],
-      "t": "10-02 06:30Z"
-    },
-    "^TWII": {
-      "price": 48475.74,
-      "prev": 48353.4883,
-      "pct": 0.25,
-      "daily5": [
-        "09-24:48024.6016",
-        "09-29:47631.9609",
-        "09-30:47940.1289",
-        "10-01:48353.4883",
-        "10-02:48475.7383"
-      ],
-      "t": "10-02 05:33Z"
-    },
-    "000001.SS": {
-      "price": 3842.1946,
-      "prev": 3830.4509,
-      "pct": 0.31,
-      "daily5": [
-        "09-23:3936.52",
-        "09-24:3888.374",
-        "09-28:3823.6211",
-        "09-29:3830.4509",
-        "09-30:3842.1951"
-      ],
-      "t": "09-30 07:00Z"
-    },
-    "399006.SZ": {
-      "price": 3135.277,
-      "prev": null,
-      "pct": null,
-      "daily5": [
-        "09-30:3135.2766"
-      ],
-      "t": "09-30 08:29Z"
-    },
-    "^HSI": {
-      "price": 23972.29,
-      "prev": 24613.2695,
-      "pct": -2.6,
-      "daily5": [
-        "09-25:24510.0898",
-        "09-28:24642.5098",
-        "09-29:24523.5703",
-        "09-30:24613.2695",
-        "10-02:23972.2891"
-      ],
-      "t": "10-02 08:08Z"
-    },
-    "^NSEI": {
-      "price": 22421.95,
-      "prev": 22620.4492,
-      "pct": -0.88,
-      "daily5": [
-        "09-28:22780.25",
-        "09-29:22716.1992",
-        "09-30:22620.4492",
-        "10-01:22421.9492"
-      ],
-      "t": "10-01 10:01Z"
+    "fetch_stats": {
+      "ok": 24,
+      "total": 24,
+      "fails": []
     }
   },
   "quotes_meta": {
-    "fetched_utc": "2026-10-02T08:53Z",
-    "panel": "24/24 ok (08:42-53Z Oct-2 Friday-morning re-fetch by restoring run; prior-attempt partial 08:43Z superseded)",
-    "chains_30m": "BZ count=11 + CL count=11 (day-3 chain since Oct-2 session start; c123 count=3 -> 11; fade 101.29 -> 99.41 = Europe-session leg)",
-    "source": "yahoo v8 chart 5d + 1d/30m intraday (BZ/CL) - breaking c124 fetch (window Oct-2 0437->0837Z; Friday morning: Europe LIVE 2nd-hour (opened 07:00Z), US pre-NFP CLOSED (opens 13:30Z), NFP TODAY 12:30Z, TNX settle TONIGHT 21:00Z (5.293/5.296 razor), BZ settle TONIGHT 18:30Z = October-streak settle #3 (intraday SUB-$100), Tokyo SETTLED (close -0.87 wire/-0.94 Yahoo-bar), HSI DAY-CLOSED -2.6% (catch-down landed), A-share + India CLOSED (Golden-Week + Gandhi-Jayanti) = double-blindspot, PBOC fix suspended, FX/crypto live"
+    "fetched_utc": "2026-10-02T12:28-38Z",
+    "panel": "24/24 ok (12:28-38Z Oct-2 Friday-midday fetch; NFP LANDED 12:30Z MID-FETCH — BTC/JPY/EURUSD bars 12:38Z = post-print, TNX/US-futures bars 12:23-28Z = pre-print; equity reaction NOT attributable — US opens 13:30Z; no reaction-claim logged)",
+    "chains_30m": "BZ count=18 + CL count=18 (day-3 chain since Oct-2 session start; c124 count=11 -> 18; last BZ 99.83 @12:28Z sub-$100 persistence)",
+    "source": "yahoo v8 chart 5d + 1d/30m intraday (BZ/CL) - breaking c125 fetch (window Oct-2 0837->1237Z; Friday midday: US PRE-OPEN (opens 13:30Z), NFP LANDED 12:30Z print-not-yet-wired, TNX settle TONIGHT 21:00Z (5.293/5.296 razor), BZ settle TONIGHT 18:30Z = October-streak settle #3 (102.31 Oct-1 confirmed), Europe mid-afternoon relief-vs-spread, Tokyo SETTLED, HSI closed -2.6% stands, A-share + India CLOSED day-2, PBOC fix suspended, FX/crypto live)"
   },
   "intraday_30m": {
     "BZ=F": {
       "bars": [
-        [
-          "10-02 04:00",
-          102.23
-        ],
-        [
-          "10-02 04:30",
-          102.21
-        ],
-        [
-          "10-02 05:00",
-          102.05
-        ],
-        [
-          "10-02 05:30",
-          102.06
-        ],
-        [
-          "10-02 06:00",
-          101.66
-        ],
-        [
-          "10-02 06:30",
-          101.25
-        ],
         [
           "10-02 07:00",
           101.29
@@ -396,41 +489,45 @@
         ],
         [
           "10-02 08:30",
-          99.1
+          99.37
         ],
         [
-          "10-02 08:42",
-          99.41
+          "10-02 09:00",
+          99.35
+        ],
+        [
+          "10-02 09:30",
+          99.32
+        ],
+        [
+          "10-02 10:00",
+          99.95
+        ],
+        [
+          "10-02 10:30",
+          99.93
+        ],
+        [
+          "10-02 11:00",
+          99.88
+        ],
+        [
+          "10-02 11:30",
+          99.76
+        ],
+        [
+          "10-02 12:00",
+          99.82
+        ],
+        [
+          "10-02 12:28",
+          99.83
         ]
       ],
-      "count": 11
+      "count": 18
     },
     "CL=F": {
       "bars": [
-        [
-          "10-02 04:00",
-          92.58
-        ],
-        [
-          "10-02 04:30",
-          92.55
-        ],
-        [
-          "10-02 05:00",
-          92.45
-        ],
-        [
-          "10-02 05:30",
-          92.49
-        ],
-        [
-          "10-02 06:00",
-          92.14
-        ],
-        [
-          "10-02 06:30",
-          91.66
-        ],
         [
           "10-02 07:00",
           91.22
@@ -445,14 +542,42 @@
         ],
         [
           "10-02 08:30",
-          89.23
+          89.34
         ],
         [
-          "10-02 08:42",
-          89.51
+          "10-02 09:00",
+          89.24
+        ],
+        [
+          "10-02 09:30",
+          89.18
+        ],
+        [
+          "10-02 10:00",
+          89.54
+        ],
+        [
+          "10-02 10:30",
+          89.39
+        ],
+        [
+          "10-02 11:00",
+          89.3
+        ],
+        [
+          "10-02 11:30",
+          89.54
+        ],
+        [
+          "10-02 12:00",
+          89.81
+        ],
+        [
+          "10-02 12:29",
+          89.77
         ]
       ],
-      "count": 11
+      "count": 18
     }
   }
 }
