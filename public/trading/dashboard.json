@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T15:00:33.087523",
+  "timestamp": "2026-10-12T18:00:33.981401",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,9 +31,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -608.95,
-    "unrealized_pnl_eur": -8.75,
-    "total_pnl_eur": -617.69,
-    "open_positions": 1,
+    "unrealized_pnl_eur": -14.02,
+    "total_pnl_eur": -622.97,
+    "open_positions": 2,
     "closed_trades": 212,
     "wins": 75,
     "losses": 137,
@@ -49,12 +49,28 @@
       "stop": 0.0028557,
       "highest": 0.003181,
       "lowest": 0.003173,
-      "bars_held": 3,
+      "bars_held": 4,
       "signal": "D_HIGH_BREAKOUT",
       "btc_regime": "BULLISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.003032
+      "current_price": 0.002995
+    },
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-10-12T18:00:33.981401",
+      "entry_price": 1.1165,
+      "atr": 0.005757142857142842,
+      "stop": 1.22815,
+      "highest": 1.1165,
+      "lowest": 1.1165,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 1.1165
     }
   },
   "recent_trades": [
@@ -319,20 +335,20 @@
       "timeframe": "DAILY"
     }
   ],
-  "btc_regime": "BULLISH",
+  "btc_regime": "NEUTRAL",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "USD1USDT",
     "RLUSDUSDT",
-    "XAUTUSDT",
-    "PAXGUSDT",
     "EURUSDT",
-    "XUSDUSDT",
     "KASUSDT",
     "USDEUSDT",
+    "ZECUSDT",
+    "XUSDUSDT",
     "BFUSDUSDT",
+    "USD1USDT",
     "UUSDT",
-    "ZECUSDT"
+    "XAUTUSDT",
+    "PAXGUSDT"
   ]
 }
