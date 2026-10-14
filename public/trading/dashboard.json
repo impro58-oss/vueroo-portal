@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-14T09:00:48.287556",
+  "timestamp": "2026-10-14T12:00:47.176245",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,32 +30,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -658.95,
-    "unrealized_pnl_eur": -8.39,
-    "total_pnl_eur": -667.34,
-    "open_positions": 5,
-    "closed_trades": 214,
+    "realized_pnl_eur": -659.69,
+    "unrealized_pnl_eur": 0.25,
+    "total_pnl_eur": -659.44,
+    "open_positions": 4,
+    "closed_trades": 215,
     "wins": 75,
-    "losses": 139,
-    "win_rate": 35.0
+    "losses": 140,
+    "win_rate": 34.9
   },
   "open_positions": {
-    "EURIUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-10-12T18:00:33.981401",
-      "entry_price": 1.1165,
-      "atr": 0.005757142857142842,
-      "stop": 1.22815,
-      "highest": 1.1165,
-      "lowest": 1.1157,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 1.1206
-    },
     "TRXUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -65,12 +49,12 @@
       "stop": 0.36278,
       "highest": 0.3298,
       "lowest": 0.327,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.3321
+      "current_price": 0.3337
     },
     "BARDUSDT": {
       "status": "OPEN",
@@ -81,12 +65,12 @@
       "stop": 0.12936,
       "highest": 0.1176,
       "lowest": 0.112,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.1164
+      "current_price": 0.1153
     },
     "SAGAUSDT": {
       "status": "OPEN",
@@ -97,12 +81,12 @@
       "stop": 0.022759,
       "highest": 0.02069,
       "lowest": 0.01962,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.02107
+      "current_price": 0.02065
     },
     "SAPIENUSDT": {
       "status": "OPEN",
@@ -113,28 +97,15 @@
       "stop": 0.07304000000000001,
       "highest": 0.0664,
       "lowest": 0.0643,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0673
+      "current_price": 0.0669
     }
   },
   "recent_trades": [
-    {
-      "symbol": "HUMAUSDT",
-      "direction": "LONG",
-      "entry_date": "2026-08-27T03:05:37.439429",
-      "exit_date": "2026-08-29T00:00:14.618009",
-      "entry_price": 0.0247,
-      "exit_price": 0.02223,
-      "pnl_pct": -10.0,
-      "pnl_eur": -25.0,
-      "reason": "HARD_STOP_10.0%",
-      "bars_held": 14,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "NIGHTUSDT",
       "direction": "LONG",
@@ -381,22 +352,35 @@
       "reason": "HARD_STOP_10.0%",
       "bars_held": 8,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "EURIUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-10-12T18:00:33.981401",
+      "exit_date": "2026-10-14T12:00:47.176245",
+      "entry_price": 1.1165,
+      "exit_price": 1.1198,
+      "pnl_pct": -0.3,
+      "pnl_eur": -0.74,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BULLISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XUSDUSDT",
-    "USDEUSDT",
-    "RLUSDUSDT",
     "USD1USDT",
+    "PAXGUSDT",
     "XAUTUSDT",
+    "RLUSDUSDT",
     "ZECUSDT",
+    "USDEUSDT",
+    "XUSDUSDT",
     "BFUSDUSDT",
     "EURUSDT",
     "UUSDT",
-    "PAXGUSDT",
     "KASUSDT"
   ]
 }
