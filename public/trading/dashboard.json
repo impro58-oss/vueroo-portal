@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-24T09:00:47.198935",
+  "timestamp": "2026-10-24T12:00:46.045524",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,9 +31,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -715.42,
-    "unrealized_pnl_eur": 1.31,
-    "total_pnl_eur": -714.11,
-    "open_positions": 2,
+    "unrealized_pnl_eur": 5.17,
+    "total_pnl_eur": -710.25,
+    "open_positions": 4,
     "closed_trades": 229,
     "wins": 78,
     "losses": 151,
@@ -49,7 +49,7 @@
       "stop": 0.06292,
       "highest": 0.0572,
       "lowest": 0.0552,
-      "bars_held": 6,
+      "bars_held": 7,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
@@ -64,13 +64,45 @@
       "atr": 0.8121428571428572,
       "stop": 11.264000000000001,
       "highest": 10.24,
-      "lowest": 10.15,
-      "bars_held": 1,
+      "lowest": 10.09,
+      "bars_held": 2,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "NEUTRAL",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 10.15
+      "current_price": 10.1
+    },
+    "PLUMEUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-10-24T12:00:46.045524",
+      "entry_price": 0.01561,
+      "atr": 0.002085,
+      "stop": 0.017171000000000002,
+      "highest": 0.01561,
+      "lowest": 0.01561,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.01562
+    },
+    "ALLOUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-10-24T12:00:46.045524",
+      "entry_price": 0.1862,
+      "atr": 0.015035714285714288,
+      "stop": 0.20482000000000003,
+      "highest": 0.1862,
+      "lowest": 0.1862,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "NEUTRAL",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.1862
     }
   },
   "recent_trades": [
@@ -339,16 +371,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
+    "USDEUSDT",
     "USD1USDT",
+    "XUSDUSDT",
+    "ZECUSDT",
+    "UUSDT",
+    "PAXGUSDT",
+    "EURUSDT",
     "KASUSDT",
     "RLUSDUSDT",
     "XAUTUSDT",
-    "PAXGUSDT",
-    "EURUSDT",
-    "XUSDUSDT",
-    "BFUSDUSDT",
-    "USDEUSDT",
-    "ZECUSDT",
-    "UUSDT"
+    "BFUSDUSDT"
   ]
 }
