@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-30T06:00:46.875565",
+  "timestamp": "2026-10-30T09:00:45.492228",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,14 +30,14 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -739.35,
-    "unrealized_pnl_eur": 88.88,
-    "total_pnl_eur": -650.46,
-    "open_positions": 5,
-    "closed_trades": 241,
+    "realized_pnl_eur": -749.88,
+    "unrealized_pnl_eur": 71.64,
+    "total_pnl_eur": -678.24,
+    "open_positions": 4,
+    "closed_trades": 242,
     "wins": 85,
-    "losses": 156,
-    "win_rate": 35.3
+    "losses": 157,
+    "win_rate": 35.1
   },
   "open_positions": {
     "APTUSDT": {
@@ -49,12 +49,12 @@
       "stop": 0.7513000000000001,
       "highest": 0.683,
       "lowest": 0.5753,
-      "bars_held": 13,
+      "bars_held": 14,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.6194
+      "current_price": 0.6168
     },
     "DOTUSDT": {
       "status": "OPEN",
@@ -65,12 +65,12 @@
       "stop": 1.0956000000000001,
       "highest": 0.996,
       "lowest": 0.869,
-      "bars_held": 13,
+      "bars_held": 14,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.952
+      "current_price": 0.938
     },
     "PIXELUSDT": {
       "status": "OPEN",
@@ -81,12 +81,12 @@
       "stop": 0.00506,
       "highest": 0.0046,
       "lowest": 0.004,
-      "bars_held": 13,
+      "bars_held": 14,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.00423
+      "current_price": 0.00429
     },
     "LINEAUSDT": {
       "status": "OPEN",
@@ -97,44 +97,15 @@
       "stop": 0.002706,
       "highest": 0.00246,
       "lowest": 0.00216,
-      "bars_held": 11,
+      "bars_held": 12,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.002281
-    },
-    "EURIUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-10-27T21:00:45.267260",
-      "entry_price": 1.1139,
-      "atr": 0.00502857142857143,
-      "stop": 1.22529,
-      "highest": 1.1139,
-      "lowest": 1.1115,
-      "bars_held": 7,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "NEUTRAL",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 1.1316
+      "current_price": 0.002306
     }
   },
   "recent_trades": [
-    {
-      "symbol": "BIOUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-10-18T16:40:54.970441",
-      "exit_date": "2026-10-20T12:00:47.383905",
-      "entry_price": 0.02314,
-      "exit_price": 0.02353,
-      "pnl_pct": -1.69,
-      "pnl_eur": -4.21,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "LINKUSDT",
       "direction": "SHORT",
@@ -381,22 +352,35 @@
       "reason": "HARD_STOP_10.0%",
       "bars_held": 10,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "EURIUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-10-27T21:00:45.267260",
+      "exit_date": "2026-10-30T09:00:45.492228",
+      "entry_price": 1.1139,
+      "exit_price": 1.1721,
+      "pnl_pct": -4.21,
+      "pnl_eur": -10.53,
+      "reason": "DONCHIAN_EXIT_DAILY",
+      "bars_held": 8,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "KASUSDT",
     "USD1USDT",
-    "XAUTUSDT",
     "BFUSDUSDT",
     "UUSDT",
-    "EURUSDT",
-    "PAXGUSDT",
-    "XUSDUSDT",
+    "XAUTUSDT",
+    "RLUSDUSDT",
     "ZECUSDT",
     "USDEUSDT",
-    "RLUSDUSDT"
+    "EURUSDT",
+    "KASUSDT",
+    "XUSDUSDT",
+    "PAXGUSDT"
   ]
 }
