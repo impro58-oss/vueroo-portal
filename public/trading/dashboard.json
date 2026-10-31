@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-31T00:00:47.181885",
+  "timestamp": "2026-10-31T03:00:47.229058",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,15 +31,32 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -682.1,
-    "unrealized_pnl_eur": 0,
+    "unrealized_pnl_eur": 0.0,
     "total_pnl_eur": -682.1,
-    "open_positions": 0,
+    "open_positions": 1,
     "closed_trades": 246,
     "wins": 89,
     "losses": 157,
     "win_rate": 36.2
   },
-  "open_positions": {},
+  "open_positions": {
+    "ALLOUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-10-31T03:00:47.229058",
+      "entry_price": 0.1667,
+      "atr": 0.012414285714285715,
+      "stop": 0.18337,
+      "highest": 0.1667,
+      "lowest": 0.1667,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "BEARISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.1669
+    }
+  },
   "recent_trades": [
     {
       "symbol": "XLMUSDT",
@@ -306,16 +323,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "UUSDT",
-    "XUSDUSDT",
+    "XAUTUSDT",
     "RLUSDUSDT",
+    "ZECUSDT",
     "USD1USDT",
     "KASUSDT",
-    "XAUTUSDT",
+    "UUSDT",
     "PAXGUSDT",
-    "USDEUSDT",
-    "BFUSDUSDT",
     "EURUSDT",
-    "ZECUSDT"
+    "XUSDUSDT",
+    "BFUSDUSDT",
+    "USDEUSDT"
   ]
 }
