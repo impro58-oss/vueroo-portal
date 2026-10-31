@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-31T06:00:47.313838",
+  "timestamp": "2026-10-31T09:00:45.695411",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,9 +31,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -682.1,
-    "unrealized_pnl_eur": 0.0,
-    "total_pnl_eur": -682.1,
-    "open_positions": 1,
+    "unrealized_pnl_eur": 3.45,
+    "total_pnl_eur": -678.65,
+    "open_positions": 2,
     "closed_trades": 246,
     "wins": 89,
     "losses": 157,
@@ -48,13 +48,29 @@
       "atr": 0.012414285714285715,
       "stop": 0.18337,
       "highest": 0.1667,
-      "lowest": 0.1649,
-      "bars_held": 1,
+      "lowest": 0.1624,
+      "bars_held": 2,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.1649
+      "current_price": 0.1644
+    },
+    "TRXUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-10-31T09:00:45.695411",
+      "entry_price": 0.318,
+      "atr": 0.008199999999999989,
+      "stop": 0.34980000000000006,
+      "highest": 0.318,
+      "lowest": 0.318,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "BEARISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.3184
     }
   },
   "recent_trades": [
@@ -323,14 +339,14 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "RLUSDUSDT",
     "USD1USDT",
-    "KASUSDT",
-    "UUSDT",
-    "ZECUSDT",
-    "XUSDUSDT",
-    "BFUSDUSDT",
     "EURUSDT",
+    "UUSDT",
+    "RLUSDUSDT",
+    "BFUSDUSDT",
+    "XUSDUSDT",
+    "KASUSDT",
+    "ZECUSDT",
     "PAXGUSDT",
     "XAUTUSDT",
     "USDEUSDT"
