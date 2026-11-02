@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T18:00:47.040848",
+  "timestamp": "2026-11-02T21:00:45.583737",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,15 +31,32 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -673.56,
-    "unrealized_pnl_eur": 0,
+    "unrealized_pnl_eur": 0.0,
     "total_pnl_eur": -673.56,
-    "open_positions": 0,
+    "open_positions": 1,
     "closed_trades": 248,
     "wins": 91,
     "losses": 157,
     "win_rate": 36.7
   },
-  "open_positions": {},
+  "open_positions": {
+    "SAPIENUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-11-02T21:00:45.583737",
+      "entry_price": 0.04872,
+      "atr": 0.0026478571428571428,
+      "stop": 0.053592,
+      "highest": 0.04872,
+      "lowest": 0.04872,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "BEARISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.04874
+    }
+  },
   "recent_trades": [
     {
       "symbol": "GUNUSDT",
@@ -306,16 +323,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XUSDUSDT",
-    "XAUTUSDT",
     "USD1USDT",
-    "UUSDT",
-    "KASUSDT",
-    "RLUSDUSDT",
-    "PAXGUSDT",
-    "ZECUSDT",
+    "XAUTUSDT",
     "USDEUSDT",
     "BFUSDUSDT",
-    "EURUSDT"
+    "XUSDUSDT",
+    "PAXGUSDT",
+    "EURUSDT",
+    "RLUSDUSDT",
+    "ZECUSDT",
+    "KASUSDT",
+    "UUSDT"
   ]
 }
