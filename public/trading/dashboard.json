@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-05T09:00:47.679037",
+  "timestamp": "2026-11-05T12:00:46.839747",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,32 +30,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -764.17,
-    "unrealized_pnl_eur": -45.7,
-    "total_pnl_eur": -809.87,
-    "open_positions": 3,
-    "closed_trades": 255,
+    "realized_pnl_eur": -772.6,
+    "unrealized_pnl_eur": -37.26,
+    "total_pnl_eur": -809.86,
+    "open_positions": 2,
+    "closed_trades": 256,
     "wins": 91,
-    "losses": 164,
-    "win_rate": 35.7
+    "losses": 165,
+    "win_rate": 35.5
   },
   "open_positions": {
-    "0GUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-11-03T15:00:45.329233",
-      "entry_price": 0.1512,
-      "atr": 0.015442857142857138,
-      "stop": 0.16632000000000002,
-      "highest": 0.1512,
-      "lowest": 0.1495,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.1563
-    },
     "SOLUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -65,12 +49,12 @@
       "stop": 99.66,
       "highest": 90.6,
       "lowest": 89.86,
-      "bars_held": 10,
+      "bars_held": 11,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 96.67
+      "current_price": 96.37
     },
     "SPKUSDT": {
       "status": "OPEN",
@@ -81,28 +65,15 @@
       "stop": 0.0176132,
       "highest": 0.016012,
       "lowest": 0.015885,
-      "bars_held": 10,
+      "bars_held": 11,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.017248
+      "current_price": 0.017153
     }
   },
   "recent_trades": [
-    {
-      "symbol": "SEIUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-10-25T09:00:47.310315",
-      "exit_date": "2026-10-27T06:00:45.445371",
-      "entry_price": 0.05223,
-      "exit_price": 0.05152,
-      "pnl_pct": 1.36,
-      "pnl_eur": 3.4,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "WLFIUSDT",
       "direction": "SHORT",
@@ -349,22 +320,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "0GUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-11-03T15:00:45.329233",
+      "exit_date": "2026-11-05T12:00:46.839747",
+      "entry_price": 0.1512,
+      "exit_price": 0.1563,
+      "pnl_pct": -3.37,
+      "pnl_eur": -8.43,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "EURUSDT",
-    "XUSDUSDT",
-    "USDEUSDT",
-    "KASUSDT",
-    "UUSDT",
-    "XAUTUSDT",
-    "BFUSDUSDT",
     "PAXGUSDT",
+    "UUSDT",
+    "BFUSDUSDT",
+    "XUSDUSDT",
     "RLUSDUSDT",
+    "ZECUSDT",
+    "XAUTUSDT",
     "USD1USDT",
-    "ZECUSDT"
+    "KASUSDT",
+    "EURUSDT",
+    "USDEUSDT"
   ]
 }
