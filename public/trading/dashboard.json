@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-11-08T21:00:46.443971",
+  "timestamp": "2026-11-09T09:51:45.304665",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
     "entry_channel": 20,
-    "exit_channel": 40,
+    "exit_channel": 0,
     "sma_filter": 50,
     "time_stop": 15,
     "atr_stop_mult": 0,
-    "trailing_atr_mult": 3.0,
-    "hard_stop_pct": 10.0,
+    "trailing_atr_mult": 1.5,
+    "hard_stop_pct": 5.0,
     "trailing_activation_pct": 2.0,
     "max_positions": 10,
     "capital_per_token_eur": 250,
@@ -31,8 +31,8 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -763.24,
-    "unrealized_pnl_eur": -3.03,
-    "total_pnl_eur": -766.26,
+    "unrealized_pnl_eur": 19.22,
+    "total_pnl_eur": -744.02,
     "open_positions": 10,
     "closed_trades": 263,
     "wins": 96,
@@ -48,13 +48,13 @@
       "atr": 0.004000000000000001,
       "stop": 0.0671,
       "highest": 0.061,
-      "lowest": 0.0589,
-      "bars_held": 4,
+      "lowest": 0.0563,
+      "bars_held": 5,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0592
+      "current_price": 0.0589
     },
     "PUMPUSDT": {
       "status": "OPEN",
@@ -64,13 +64,13 @@
       "atr": 0.00039049999999999995,
       "stop": 0.0041107,
       "highest": 0.003737,
-      "lowest": 0.003624,
-      "bars_held": 4,
+      "lowest": 0.003489,
+      "bars_held": 5,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.003731
+      "current_price": 0.003579
     },
     "ESPUSDT": {
       "status": "OPEN",
@@ -80,13 +80,13 @@
       "atr": 0.006241428571428569,
       "stop": 0.082984,
       "highest": 0.07544,
-      "lowest": 0.07388,
-      "bars_held": 4,
+      "lowest": 0.07359,
+      "bars_held": 5,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.07545
+      "current_price": 0.07614
     },
     "PLUMEUSDT": {
       "status": "OPEN",
@@ -96,13 +96,13 @@
       "atr": 0.0010649999999999998,
       "stop": 0.013827,
       "highest": 0.01257,
-      "lowest": 0.01254,
-      "bars_held": 2,
+      "lowest": 0.01232,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.01277
+      "current_price": 0.01263
     },
     "FETUSDT": {
       "status": "OPEN",
@@ -112,13 +112,13 @@
       "atr": 0.011364285714285712,
       "stop": 0.15499000000000002,
       "highest": 0.1409,
-      "lowest": 0.1402,
-      "bars_held": 2,
+      "lowest": 0.1372,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.1423
+      "current_price": 0.1417
     },
     "AVNTUSDT": {
       "status": "OPEN",
@@ -128,13 +128,13 @@
       "atr": 0.006571428571428574,
       "stop": 0.09009,
       "highest": 0.0819,
-      "lowest": 0.0804,
-      "bars_held": 2,
+      "lowest": 0.078,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0819
+      "current_price": 0.0814
     },
     "THETAUSDT": {
       "status": "OPEN",
@@ -144,13 +144,13 @@
       "atr": 0.010021428571428579,
       "stop": 0.15290000000000004,
       "highest": 0.139,
-      "lowest": 0.138,
-      "bars_held": 2,
+      "lowest": 0.1357,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.1397
+      "current_price": 0.1394
     },
     "PEOPLEUSDT": {
       "status": "OPEN",
@@ -160,13 +160,13 @@
       "atr": 0.00047785714285714277,
       "stop": 0.00638,
       "highest": 0.0058,
-      "lowest": 0.00577,
-      "bars_held": 2,
+      "lowest": 0.00562,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.00586
+      "current_price": 0.00577
     },
     "IOTAUSDT": {
       "status": "OPEN",
@@ -176,13 +176,13 @@
       "atr": 0.002514285714285714,
       "stop": 0.038060000000000004,
       "highest": 0.0346,
-      "lowest": 0.0345,
-      "bars_held": 2,
+      "lowest": 0.0331,
+      "bars_held": 3,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0346
+      "current_price": 0.0343
     },
     "NILUSDT": {
       "status": "OPEN",
@@ -192,13 +192,13 @@
       "atr": 0.011645714285714284,
       "stop": 0.06337100000000001,
       "highest": 0.05761,
-      "lowest": 0.05759,
-      "bars_held": 0,
+      "lowest": 0.05594,
+      "bars_held": 1,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.05759
+      "current_price": 0.05756
     }
   },
   "recent_trades": [
@@ -467,16 +467,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "UUSDT",
-    "PAXGUSDT",
     "BFUSDUSDT",
-    "XUSDUSDT",
-    "RLUSDUSDT",
+    "PAXGUSDT",
     "EURUSDT",
-    "USDEUSDT",
     "KASUSDT",
-    "ZECUSDT",
     "USD1USDT",
-    "XAUTUSDT"
+    "RLUSDUSDT",
+    "XUSDUSDT",
+    "UUSDT",
+    "ZECUSDT",
+    "XAUTUSDT",
+    "USDEUSDT"
   ]
 }
