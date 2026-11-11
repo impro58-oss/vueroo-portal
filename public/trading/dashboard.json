@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-11T08:24:12.623518",
+  "timestamp": "2026-11-11T09:00:48.230938",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,47 +30,17 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -756.7,
-    "unrealized_pnl_eur": 6.86,
+    "realized_pnl_eur": -749.84,
+    "unrealized_pnl_eur": 0,
     "total_pnl_eur": -749.84,
-    "open_positions": 1,
-    "closed_trades": 272,
-    "wins": 101,
+    "open_positions": 0,
+    "closed_trades": 273,
+    "wins": 102,
     "losses": 171,
-    "win_rate": 37.1
+    "win_rate": 37.4
   },
-  "open_positions": {
-    "NILUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-11-08T21:00:46.443971",
-      "entry_price": 0.05761,
-      "atr": 0.011645714285714284,
-      "stop": 0.06337100000000001,
-      "highest": 0.05761,
-      "lowest": 0.05545,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.05603
-    }
-  },
+  "open_positions": {},
   "recent_trades": [
-    {
-      "symbol": "THETAUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-11-03T03:00:47.947912",
-      "exit_date": "2026-11-05T00:00:46.939302",
-      "entry_price": 0.1477,
-      "exit_price": 0.1562,
-      "pnl_pct": -5.75,
-      "pnl_eur": -14.39,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "WUSDT",
       "direction": "SHORT",
@@ -317,22 +287,35 @@
       "reason": "TIME_STOP",
       "bars_held": 15,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "NILUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-11-08T21:00:46.443971",
+      "exit_date": "2026-11-11T09:00:48.230938",
+      "entry_price": 0.05761,
+      "exit_price": 0.05603,
+      "pnl_pct": 2.74,
+      "pnl_eur": 6.86,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "XAUTUSDT",
-    "RLUSDUSDT",
-    "XUSDUSDT",
-    "UUSDT",
-    "PAXGUSDT",
-    "USD1USDT",
-    "ZECUSDT",
     "EURUSDT",
-    "BFUSDUSDT",
+    "USD1USDT",
     "USDEUSDT",
-    "KASUSDT"
+    "BFUSDUSDT",
+    "UUSDT",
+    "XAUTUSDT",
+    "PAXGUSDT",
+    "XUSDUSDT",
+    "KASUSDT",
+    "ZECUSDT",
+    "RLUSDUSDT"
   ]
 }
