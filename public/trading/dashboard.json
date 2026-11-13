@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-13T12:00:47.685870",
+  "timestamp": "2026-11-13T15:00:50.718276",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -31,9 +31,9 @@
   "portfolio": {
     "total_capital_eur": 2500,
     "realized_pnl_eur": -762.34,
-    "unrealized_pnl_eur": 9.02,
-    "total_pnl_eur": -753.32,
-    "open_positions": 3,
+    "unrealized_pnl_eur": 6.76,
+    "total_pnl_eur": -755.58,
+    "open_positions": 4,
     "closed_trades": 274,
     "wins": 102,
     "losses": 172,
@@ -49,12 +49,12 @@
       "stop": 0.14836500000000002,
       "highest": 0.1413,
       "lowest": 0.1317,
-      "bars_held": 9,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.138
+      "current_price": 0.1383
     },
     "SAHARAUSDT": {
       "status": "OPEN",
@@ -65,12 +65,12 @@
       "stop": 0.006205500000000001,
       "highest": 0.00591,
       "lowest": 0.00561,
-      "bars_held": 7,
+      "bars_held": 8,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.00585
+      "current_price": 0.00586
     },
     "EURIUSDT": {
       "status": "OPEN",
@@ -81,12 +81,28 @@
       "stop": 1.16046,
       "highest": 1.1052,
       "lowest": 1.1034,
-      "bars_held": 5,
+      "bars_held": 6,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 1.1051
+      "current_price": 1.1058
+    },
+    "RAREUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-11-13T15:00:50.718276",
+      "entry_price": 0.00961,
+      "atr": 0.0007800000000000001,
+      "stop": 0.0100905,
+      "highest": 0.00961,
+      "lowest": 0.00961,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "BEARISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 0.00961
     }
   },
   "recent_trades": [
@@ -356,15 +372,15 @@
   "h4_tokens_scanned": 50,
   "blacklisted": [
     "BFUSDUSDT",
-    "XAUTUSDT",
-    "USD1USDT",
-    "XUSDUSDT",
+    "EURUSDT",
     "KASUSDT",
     "UUSDT",
-    "PAXGUSDT",
     "RLUSDUSDT",
-    "EURUSDT",
     "ZECUSDT",
+    "PAXGUSDT",
+    "XAUTUSDT",
+    "XUSDUSDT",
+    "USD1USDT",
     "USDEUSDT"
   ]
 }
