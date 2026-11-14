@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-14T03:00:49.609056",
+  "timestamp": "2026-11-14T09:31:03.232738",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -30,32 +30,16 @@
   },
   "portfolio": {
     "total_capital_eur": 2500,
-    "realized_pnl_eur": -762.34,
-    "unrealized_pnl_eur": 27.31,
-    "total_pnl_eur": -735.03,
-    "open_positions": 4,
-    "closed_trades": 274,
-    "wins": 102,
+    "realized_pnl_eur": -738.99,
+    "unrealized_pnl_eur": 16.49,
+    "total_pnl_eur": -722.5,
+    "open_positions": 3,
+    "closed_trades": 275,
+    "wins": 103,
     "losses": 172,
-    "win_rate": 37.2
+    "win_rate": 37.5
   },
   "open_positions": {
-    "ENAUSDT": {
-      "status": "OPEN",
-      "direction": "SHORT",
-      "entry_date": "2026-11-12T08:32:02.519504",
-      "entry_price": 0.1413,
-      "atr": 0.015278571428571428,
-      "stop": 0.14836500000000002,
-      "highest": 0.1413,
-      "lowest": 0.1282,
-      "bars_held": 14,
-      "signal": "D_LOW_BREAKDOWN",
-      "btc_regime": "BEARISH",
-      "timeframe": "DAILY",
-      "capital": 250,
-      "current_price": 0.1312
-    },
     "SAHARAUSDT": {
       "status": "OPEN",
       "direction": "SHORT",
@@ -65,12 +49,12 @@
       "stop": 0.006205500000000001,
       "highest": 0.00591,
       "lowest": 0.00561,
-      "bars_held": 12,
+      "bars_held": 13,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.00578
+      "current_price": 0.00569
     },
     "EURIUSDT": {
       "status": "OPEN",
@@ -81,12 +65,12 @@
       "stop": 1.16046,
       "highest": 1.1052,
       "lowest": 1.1012,
-      "bars_held": 10,
+      "bars_held": 11,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 1.1016
+      "current_price": 1.1022
     },
     "RAREUSDT": {
       "status": "OPEN",
@@ -96,29 +80,16 @@
       "atr": 0.0007800000000000001,
       "stop": 0.0100905,
       "highest": 0.00961,
-      "lowest": 0.00926,
-      "bars_held": 4,
+      "lowest": 0.00923,
+      "bars_held": 5,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.0095
+      "current_price": 0.00936
     }
   },
   "recent_trades": [
-    {
-      "symbol": "WBTCUSDT",
-      "direction": "SHORT",
-      "entry_date": "2026-11-03T09:00:47.578518",
-      "exit_date": "2026-11-05T06:00:46.934074",
-      "entry_price": 76467.88,
-      "exit_price": 80322.75,
-      "pnl_pct": -5.04,
-      "pnl_eur": -12.6,
-      "reason": "TIME_STOP",
-      "bars_held": 15,
-      "timeframe": "DAILY"
-    },
     {
       "symbol": "0GUSDT",
       "direction": "SHORT",
@@ -365,22 +336,35 @@
       "reason": "HARD_STOP_5.0%",
       "bars_held": 10,
       "timeframe": "DAILY"
+    },
+    {
+      "symbol": "ENAUSDT",
+      "direction": "SHORT",
+      "entry_date": "2026-11-12T08:32:02.519504",
+      "exit_date": "2026-11-14T09:31:03.232738",
+      "entry_price": 0.1413,
+      "exit_price": 0.1281,
+      "pnl_pct": 9.34,
+      "pnl_eur": 23.35,
+      "reason": "TIME_STOP",
+      "bars_held": 15,
+      "timeframe": "DAILY"
     }
   ],
   "btc_regime": "BEARISH",
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "KASUSDT",
+    "RLUSDUSDT",
     "XUSDUSDT",
-    "PAXGUSDT",
-    "EURUSDT",
-    "UUSDT",
     "XAUTUSDT",
     "USD1USDT",
+    "BFUSDUSDT",
+    "KASUSDT",
+    "EURUSDT",
+    "PAXGUSDT",
     "USDEUSDT",
-    "ZECUSDT",
-    "RLUSDUSDT",
-    "BFUSDUSDT"
+    "UUSDT",
+    "ZECUSDT"
   ]
 }
