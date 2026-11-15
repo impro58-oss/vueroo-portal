@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-14T21:00:45.682900",
+  "timestamp": "2026-11-15T00:00:45.362984",
   "version": "5.3.2-RISK-MANAGED",
   "system": "V5.3.2 \u2014 Donchian 40 + Time Stop 15 + HARD STOP 10% + Trailing 3 ATR (activated at +2%)",
   "parameters": {
@@ -33,7 +33,7 @@
     "realized_pnl_eur": -734.49,
     "unrealized_pnl_eur": 30.18,
     "total_pnl_eur": -704.31,
-    "open_positions": 1,
+    "open_positions": 2,
     "closed_trades": 278,
     "wins": 105,
     "losses": 173,
@@ -49,12 +49,28 @@
       "stop": 0.0100905,
       "highest": 0.00961,
       "lowest": 0.00837,
-      "bars_held": 9,
+      "bars_held": 10,
       "signal": "D_LOW_BREAKDOWN",
       "btc_regime": "BEARISH",
       "timeframe": "DAILY",
       "capital": 250,
-      "current_price": 0.00841
+      "current_price": 0.00849
+    },
+    "EURIUSDT": {
+      "status": "OPEN",
+      "direction": "SHORT",
+      "entry_date": "2026-11-15T00:00:45.362984",
+      "entry_price": 1.1011,
+      "atr": 0.010607142857142846,
+      "stop": 1.156155,
+      "highest": 1.1011,
+      "lowest": 1.1,
+      "bars_held": 0,
+      "signal": "D_LOW_BREAKDOWN",
+      "btc_regime": "BEARISH",
+      "timeframe": "DAILY",
+      "capital": 250,
+      "current_price": 1.1
     }
   },
   "recent_trades": [
@@ -323,16 +339,16 @@
   "daily_tokens_scanned": 189,
   "h4_tokens_scanned": 50,
   "blacklisted": [
-    "ZECUSDT",
     "UUSDT",
-    "USD1USDT",
-    "XUSDUSDT",
-    "XAUTUSDT",
-    "EURUSDT",
-    "KASUSDT",
     "PAXGUSDT",
-    "USDEUSDT",
+    "BFUSDUSDT",
+    "KASUSDT",
+    "XUSDUSDT",
     "RLUSDUSDT",
-    "BFUSDUSDT"
+    "USD1USDT",
+    "EURUSDT",
+    "ZECUSDT",
+    "USDEUSDT",
+    "XAUTUSDT"
   ]
 }
